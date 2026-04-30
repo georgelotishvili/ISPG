@@ -1,0 +1,32 @@
+# Ignore everything by default.
+*
+
+# Keep this ignore file visible in the repository.
+!/.gitignore
+
+# Publish only selected source/result file types from the core research folders.
+!/MAIN/
+!/MAIN/**/
+!/MAIN/**/*.tex
+!/MAIN/**/*.py
+!/MAIN/**/*.pdf
+!/MASS/
+!/MASS/**/
+!/MASS/**/*.tex
+!/MASS/**/*.py
+!/MASS/**/*.pdf
+!/MOND/
+!/MOND/**/
+!/MOND/**/*.tex
+!/MOND/**/*.py
+!/MOND/**/*.pdf
+!/QUANTUM/
+!/QUANTUM/**/
+!/QUANTUM/**/*.tex
+!/QUANTUM/**/*.py
+!/QUANTUM/**/*.pdf
+!/SM/
+!/SM/**/
+!/SM/**/*.tex
+!/SM/**/*.py
+!/SM/**/*.pdf

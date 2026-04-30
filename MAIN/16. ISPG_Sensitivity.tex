@@ -1,0 +1,944 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{mathtools}
+
+\newcommand{\rs}{r_{\mathrm{s}}}
+\newcommand{\Cc}{\mathcal{C}}
+
+\title{Appendix 16 (to main theory): Scalar Sensitivity of Compact
+  Bodies in the Bi-Conformal Framework}
+\author{}
+\date{}
+
+\begin{document}
+\let\phi\varphi
+\maketitle
+
+\section*{Purpose and scope}
+This appendix analyses the scalar sensitivity parameter~$s$
+introduced in the main theory (Sec.~9.3) from the coupled
+field equations of the bi-conformal action.  The goals are:
+(i)~derive the modified Tolman--Oppenheimer--Volkoff (TOV)
+equations for a static spherical star in the bi-conformal
+metric; (ii)~record the formal definition of~$s$ in terms of
+$M_{\mathrm{Komar}}$ and the kinematic motivation that
+selects $s = 1/2$ from the bare-mass Komar integrand
+$\rho_0\,e^{-\phi}$ (combining the universal conformal
+redshift $e^{\phi/2}$ with the proper-volume factor
+$e^{-3\phi/2}$) under the approximate rigid shift; (iii)~examine the status of the structural
+``shift-symmetry'' argument that was previously invoked to
+promote $s_{\mathrm{excess}} = 0$ to an exact, body-universal
+statement; and (iv)~confront the resulting picture with
+existing pulsar-timing constraints.  No new fields or
+parameters are introduced; every equation follows from the
+same action used throughout the main theory.
+
+\paragraph{Epistemic status (this appendix).}
+The TOV pressure-gradient equation~\eqref{eq:tov_dp} is
+strictly shift-invariant under $\phi\to\phi+\delta$
+(Sec.~\ref{sec:interior}).  The coupled scalar
+equation~\eqref{eq:phi_interior}, by contrast, acquires an
+explicit $e^{-\phi}$ prefactor on its matter-source side and
+therefore \emph{breaks} strict shift symmetry in the
+presence of matter.  As a result, the earlier claim that
+``$s_{\mathrm{excess}} = 0$ exactly and non-perturbatively
+for every body'' is \emph{not} a theorem of the classical
+coupled system.  What survives is: (a) a strictly
+shift-invariant hydrostatic sector; (b) a kinematic
+argument from the bare-mass Komar integrand
+$\rho_0\,e^{-\phi} = \rho_0\,e^{\phi/2}\,e^{-3\phi/2}$
+(combining the universal effective mass
+$m_{\mathrm{eff}} = m_0\,e^{\phi/2}$ with the proper
+spatial-volume factor $e^{-3\phi/2}$) that motivates
+$s=1/2$ at leading order under the approximate rigid
+shift; (c) a weak-field regime in which shift invariance
+of the full coupled system is recovered approximately.  A fully
+rigorous proof that $s_{\mathrm{excess}} = 0$ exactly
+(rather than to leading order in $|\phi|$) is an
+\emph{open task}, deferred to future work.  All claims
+below are labelled accordingly.
+
+\section*{Non-negotiable consistency with the main theory}
+\begin{itemize}
+\item The covariant action is
+\begin{equation}\label{eq:action_app16}
+S=\frac{1}{16\pi G}\int d^4x\sqrt{-g}\left[R+\frac12\,
+  g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi\right]
+  +S_m[g_{\mu\nu},\psi]\,,
+\end{equation}
+with matter minimally coupled to the single physical
+metric $g_{\mu\nu}$.
+\item The bi-conformal ansatz for a static spherical
+configuration is
+\begin{equation}\label{eq:metric_static_app16}
+  ds^2 = -e^{\phi}\,c^2\,dt^2 + e^{-\phi}
+  (dr^2 + r^2\,d\Omega^2)\,.
+\end{equation}
+\item The scalar field equation in the presence of matter is
+$\Box\phi = -(8\pi G/c^4)\,T$, where
+$T = g^{\mu\nu}T_{\mu\nu}^{(\mathrm{m})}$.
+\end{itemize}
+
+%===================================================================
+\section{Interior field equations}\label{sec:interior}
+%===================================================================
+
+For a static, spherically symmetric perfect fluid with
+rest-mass density~$\rho$ and pressure~$p$ (both measured
+locally; the corresponding total energy density is
+$\varepsilon=\rho c^2+\text{internal energy}$, but in the
+non-relativistic-fluid regime used throughout this appendix
+the internal-energy contribution is absorbed into the
+equation of state), the matter energy-momentum tensor is
+$T^{\mu\nu} = (\rho c^2 + p)\,u^\mu u^\nu/c^2 + p\,g^{\mu\nu}$
+[equivalently $(\rho + p/c^2)\,u^\mu u^\nu + p\,g^{\mu\nu}$],
+and its trace is $T = -\rho\,c^2 + 3p$.
+
+Substituting the bi-conformal
+ansatz~(\ref{eq:metric_static_app16}) into the field equations
+and restricting to hydrostatic equilibrium yields two
+coupled radial ODEs (the hydrostatic
+equation~\ref{eq:tov_dp} for $p(r)$ and the scalar
+equation~\ref{eq:phi_interior} for $\phi(r)$), closed by an
+equation of state $p=p(\rho)$ and supplemented by an
+auxiliary mass function
+\begin{equation}\label{eq:mass_func}
+  m(r) \equiv \int_0^r 4\pi\,\rho(r')\,e^{-3\phi/2}\,
+  {r'}^2\,dr'\,,
+\end{equation}
+which accounts for the proper spatial volume element
+$\sqrt{g^{(3)}} = e^{-3\phi/2}\,r^2\sin\theta$.
+
+\subsection{Modified TOV: pressure gradient}
+
+The radial component of hydrostatic equilibrium,
+$\nabla_\mu T^{\mu r} = 0$, gives
+\begin{equation}\label{eq:tov_dp}
+  \frac{dp}{dr} = -(\rho + p/c^2)\,\frac{c^2}{2}\,
+  \frac{d\phi}{dr}\,.
+\end{equation}
+This differs from the standard TOV equation in that the
+gravitational ``acceleration'' is $g = (c^2/2)\,d\phi/dr$
+rather than the Schwarzschild expression
+$Gm/(r^2(1-2Gm/c^2r))$.  In the weak-field limit
+$\phi \approx -\rs/r$ and
+$g \approx GM/r^2$, recovering Newton.
+
+\textbf{Key structural property:} Eq.~(\ref{eq:tov_dp})
+depends on $d\phi/dr$, \emph{not} on $\phi$ itself.
+A constant shift $\phi \to \phi + \delta$ leaves the
+pressure gradient, and therefore the entire density and
+pressure profiles $\rho(r)$, $p(r)$, unchanged.
+
+\subsection{Scalar field equation inside matter}
+
+Direct reduction of the scalar equation
+$\Box\phi = -(8\pi G/c^4)\,T$ in the bi-conformal static
+metric~(\ref{eq:metric_static_app16}) gives the
+d'Alembertian $\Box\phi = e^{\phi}(\phi''+2\phi'/r)$ and,
+with $T = -\rho c^2 + 3p$, yields
+\begin{equation}\label{eq:phi_interior}
+  \frac{d^2\phi}{dr^2} + \frac{2}{r}\frac{d\phi}{dr}
+  = \frac{8\pi G}{c^4}\,e^{-\phi}\,
+  (\rho\,c^2 - 3p)\,.
+\end{equation}
+This form is consistent with the canonical vacuum solution
+$\phi = -\rs/r$: at $T=0$ both sides vanish, and
+$\phi''+2\phi'/r = 0$ is satisfied identically.  A
+symbolic verification of $\Box\phi = 0$ for the vacuum
+solution is provided by
+\texttt{MAIN/Python/Shapiro/check\_kappa\_consistency.py} (see Issue~\#14
+audit).
+
+\textbf{Structural property and partial shift invariance.}
+Under a global shift $\phi\to\phi+\delta$ with constant
+$\delta$, the left-hand side of
+Eq.~\eqref{eq:phi_interior} is invariant (it contains only
+derivatives), but the right-hand side acquires a factor
+$e^{-\delta}$ through the explicit $e^{-\phi}$ coupling.
+The interior scalar equation is therefore \emph{not}
+strictly shift-invariant when matter is present, even
+for finite constant $\delta$: the multiplicative factor
+$e^{-\delta}$ is non-vanishing for any finite shift.  The
+shift symmetry is recovered only in the perturbative
+small-field limit $|\phi|\ll 1$ (where $e^{-\phi}\approx 1$
+and the residual is $O(|\phi|)$ in the sensitivity
+expansion); at strong field (neutron-star interiors,
+$|\phi|\sim 0.1$ near the centre) the correction is
+$\sim 10\%$.
+
+\subsection{Boundary conditions}
+
+At the centre ($r = 0$): $\phi(0) = \phi_c$ (a free
+parameter determined by matching), $d\phi/dr|_0 = 0$
+(regularity).  At the stellar surface ($r = R$, where
+$p = 0$): the interior solution joins the vacuum exterior
+$\phi_{\mathrm{ext}} = -\rs/r + \phi_\infty$, where
+$\phi_\infty$ is the asymptotic (background) scalar field
+value.
+
+%===================================================================
+\section{Shift invariance: sectoral analysis}
+\label{sec:shift}
+%===================================================================
+
+The TOV pressure-gradient
+equation~(\ref{eq:tov_dp}) depends only on a
+\emph{derivative} of~$\phi$, whereas the reduced scalar
+equation~(\ref{eq:phi_interior}) carries an explicit
+$e^{-\phi}$ prefactor on its matter-source side.  The two
+sectors therefore have different behaviour under a rigid
+shift $\phi\to\phi+\delta$, and must be analysed
+separately.
+
+\subsection{TOV-level shift invariance (rigorous)}
+\label{sec:shift_tov}
+
+\begin{quote}
+\textbf{Lemma (Hydrostatic shift invariance, exact).}
+Fix the scalar profile $\phi_0(r)$ as an externally
+specified background (i.e.\ \emph{do not} re-solve the
+coupled scalar equation~(\ref{eq:phi_interior}) for the
+shifted profile), the equation of state $p=p(\rho)$, and
+the central boundary data $\rho(0)$, $p(0)$.  Then the
+hydrostatic equation~(\ref{eq:tov_dp}) is invariant
+under $\phi_0 \to \phi_0 + \delta$ for any constant
+$\delta$: the pressure gradient $dp/dr$, and hence
+the density and pressure profiles $\rho(r)$ and $p(r)$
+generated by integrating~(\ref{eq:tov_dp}) from the
+centre, are unchanged.  The lemma applies to the
+hydrostatic sub-equation in isolation; it does
+\emph{not} establish invariance of the full coupled
+matter--scalar system, which is broken by the
+$e^{-\phi}$ source factor of
+Eq.~(\ref{eq:phi_interior}).
+\end{quote}
+
+\textit{Proof.}---Under $\phi_0 \to \phi_0 + \delta$,
+$d\phi_0/dr \to d\phi_0/dr$ (unchanged), so the
+right-hand side of~(\ref{eq:tov_dp}) is unchanged.
+Integrating from the centre with boundary conditions
+at $r=0$, the profiles $\rho(r)$ and $p(r)$ are
+identical.~\hfill$\square$
+
+This sub-sectoral invariance is \emph{exact} and
+\emph{non-perturbative}.  It is a direct consequence
+of the minimal matter coupling to $g_{\mu\nu}$ and of
+the constancy of $G_4$ (no Brans--Dicke running of the
+gravitational coupling).  It underpins the statement
+that ``the stellar structure does not care about the
+absolute value of the background scalar, only about
+its gradient.''
+
+\subsection{Coupled-system shift symmetry (approximate;
+broken at $O(|\phi|)$)}
+\label{sec:shift_coupled}
+
+The coupled system is not strictly shift-invariant.
+Under $\phi \to \phi + \delta$ with $\rho, p$ held
+fixed, the left-hand side of~(\ref{eq:phi_interior})
+is unchanged but the right-hand side acquires a factor
+$e^{-\delta}$.  To restore a solution, one must rescale
+the matter source by $e^{+\delta}$, which is not a
+symmetry of the matter action.  Explicitly:
+\begin{itemize}
+\item in the weak-field limit $|\phi|\ll 1$, one has
+  $e^{-\phi} \approx 1 - \phi + \tfrac12\phi^2 - \cdots$,
+  and shift invariance is recovered at zeroth order;
+\item the leading correction is linear in $|\phi|$;
+  for neutron-star interiors $|\phi_c| \sim \rs/R \sim
+  0.2$, the shift asymmetry is at the $\sim\!10\%$ level;
+\item for vacuum ($\rho = p = 0$), the right-hand side
+  vanishes identically and shift invariance is exactly
+  restored---consistent with the vacuum no-hair
+  derivation of main theory Sec.~7.
+\end{itemize}
+
+\textbf{Status.}  An \emph{exact} rigid-shift symmetry
+of the coupled TOV--scalar system is not a property of
+the classical equations in matter; it holds strictly only
+at the level of~(\ref{eq:tov_dp}) and in vacuum.  Any
+claim of exact non-perturbative universality of $s$ at
+arbitrary compactness must be supported by an argument
+beyond a naive rigid shift (e.g.\ an on-shell
+reformulation of the matter sector that absorbs the
+$e^{-\phi}$ factor into a redefined proper density;
+this is the programme flagged in the quantum paper and
+discussed in Sec.~\ref{sec:summary_app16} below).
+This programme is an \textbf{open task}.
+
+%===================================================================
+\section{Scalar sensitivity: formal definition, motivated value}
+\label{sec:s_def}
+%===================================================================
+
+Place the star in a weak, uniform external scalar field
+$\phi_\infty \neq 0$.  The total (Komar) mass measured at
+infinity depends on $\phi_\infty$ through two channels:
+(a)~the conformal factor $e^{\phi/2}$ that defines the
+effective mass (main theory Eq.~(46)); and (b)~the internal
+structure adjustment---the star re-equilibrates when the
+external field changes.
+
+The scalar sensitivity is
+\begin{equation}\label{eq:s_formal}
+  \boxed{s \equiv -\frac{1}{2}\,
+  \frac{\partial\ln M_{\mathrm{Komar}}}
+       {\partial\phi_\infty}
+  \bigg|_{\phi_\infty = 0}\,.}
+\end{equation}
+
+\subsection{Kinematic motivation: $s = 1/2$ from the
+universal conformal rescaling}
+\label{sec:s_kinematic}
+
+The position-dependent effective mass assigned to any
+localised body in the bi-conformal metric is
+\begin{equation}\label{eq:meff_app16}
+  m_{\mathrm{eff}}(\phi) = m_0\,e^{\phi/2}\,,
+\end{equation}
+as derived in the main theory (Sec.~9.2, Eq.~(46)) from
+the conformal redshift of the static clock factor.  This
+rescaling is \emph{universal}: it multiplies every
+localised energy by the same factor $e^{\phi/2}$,
+independently of composition or compactness.
+
+The formal sensitivity~(\ref{eq:s_formal}) is defined,
+however, in terms of the Komar mass $M_{\mathrm{Komar}}$
+that controls the asymptotic-field response, not in terms
+of the test-particle Killing-energy
+$m_{\mathrm{eff}}$~(\ref{eq:meff_app16}).  Combining the
+universal conformal redshift $e^{\phi/2}$ with the proper
+spatial-volume element $\sqrt{g^{(3)}}=e^{-3\phi/2}r^2
+\sin\theta$ yields the bare-mass Komar
+integrand~$\rho_0\,e^{-\phi}$ of
+Eq.~\eqref{eq:komar_app16}: the universal redshift and
+proper-volume factors combine into the single weight
+$e^{\phi/2}\cdot e^{-3\phi/2}=e^{-\phi}$.  If, in the
+weak-field/leading-order regime $|\phi|\ll1$, the interior
+profile is approximated as shifting rigidly under
+$\phi_\infty\to\phi_\infty+\delta$ (an approximation
+exact to $O(|\phi|)$, and broken at higher order by the
+$e^{-\phi}$ matter source factor of
+Eq.~\ref{eq:phi_interior}; see
+Sec.~\ref{sec:shift_coupled}), the bare Komar mass
+rescales rigidly as
+$M_{\mathrm{Komar}}^{(0)}(\phi_\infty+\delta)=
+e^{-\delta}\,M_{\mathrm{Komar}}^{(0)}(\phi_\infty)$, so
+$\partial\ln M_{\mathrm{Komar}}/\partial\phi_\infty=-1$ at
+leading order, and the formal definition~(\ref{eq:s_formal})
+gives
+\begin{equation}\label{eq:s_kinematic}
+  s_{\mathrm{kin}}
+  \;=\;-\frac{1}{2}\cdot
+  \left.\frac{\partial\ln M_{\mathrm{Komar}}^{(0)}}
+       {\partial\phi_\infty}\right|_{\mathrm{rigid\;shift}}
+  \;=\;-\frac{1}{2}\cdot(-1)\;=\;\frac{1}{2}\,.
+\end{equation}
+The kinematic channel therefore selects $s = 1/2$ for
+every body at leading order.  The universal
+conformal-redshift factor $e^{\phi/2}$ of
+Eq.~\eqref{eq:meff_app16} appears here as one of the two
+factors in the combined Komar weight $e^{-\phi}$ (alongside
+the proper-volume factor $e^{-3\phi/2}$); on its own it
+does \emph{not} produce $s=1/2$, and the previous-draft
+attempt to differentiate $m_{\mathrm{eff}}$ alone (instead
+of $M_{\mathrm{Komar}}$) was a category error in the
+formal definition.
+
+\paragraph{Status.}  Equation~(\ref{eq:s_kinematic})
+identifies $s=1/2$ as the natural value common to all
+bodies from a purely kinematic (geometric) argument.  It
+does \emph{not} prove $s_{\mathrm{excess}} = 0$
+\emph{exactly}: the structural-adjustment channel (the
+star re-equilibrating when $\phi_\infty$ shifts) is not
+shown to vanish strictly, because the full coupled shift
+symmetry is broken (Sec.~\ref{sec:shift_coupled}).  What
+is established here is:
+\begin{itemize}
+\item in the weak-field regime $|\phi| \ll 1$, the
+  structural-response correction is $O(|\phi|)$ and
+  sub-dominant, so $s \simeq 1/2 + O(|\phi|)$ for every
+  body;
+\item at leading order in $|\phi|$, the body-to-body
+  difference is $O(|\phi_A - \phi_B|)$ at matched
+  asymptotic $\phi_\infty$, vanishing identically when
+  the bodies share a common background;
+\item the question whether the $O(|\phi|)$ correction
+  itself cancels body-to-body at all orders
+  (giving $s_{\mathrm{excess}} = 0$ exactly at arbitrary
+  compactness) is \textbf{an open task}.
+\end{itemize}
+
+\subsection{Structural-response correction (not derived
+to vanish)}
+
+The \emph{bare-mass} Komar integral (main theory
+Eq.~(47); see also ``Scope of Eq.~(\ref{eq:komar_app16})''
+below) is
+\begin{equation}\label{eq:komar_app16}
+  M_{\mathrm{Komar}}^{(0)} \equiv
+  \int \rho_0\,e^{-\phi}\,d^3x\,.
+\end{equation}
+When $\phi_\infty$ shifts by $\delta$, the interior
+profile does \emph{not} shift rigidly: because the
+coupled equation~(\ref{eq:phi_interior}) carries the
+matter-side factor $e^{-\phi}$, the solution
+$\phi(r;\phi_\infty+\delta)$ differs from
+$\phi(r;\phi_\infty) + \delta$ by a correction of order
+$|\phi|$ localised inside the body.  Consequently the
+identity $M_{\mathrm{Komar}}^{(0)}(\phi_\infty+\delta) =
+e^{-\delta}\,M_{\mathrm{Komar}}^{(0)}(\phi_\infty)$, which
+would give $\partial\ln M_{\mathrm{Komar}}^{(0)}/\partial
+\phi_\infty = -1$ exactly, holds only to leading order
+in $|\phi|$.
+
+\paragraph{Scope of Eq.~(\ref{eq:komar_app16}):
+bare-mass vs.\ Tolman--Komar form.}
+Equation~(\ref{eq:komar_app16}) weights the rest-mass
+density $\rho_0$ by the gravitational redshift / proper
+volume factor $e^{-\phi} = e^{\phi/2}\,e^{-3\phi/2}$
+alone.  The stationary Tolman--Komar perfect-fluid mass,
+on the other hand, carries an additional pressure
+contribution:
+\begin{equation}\label{eq:komar_TK}
+  M_{\mathrm{Komar}}^{\mathrm{TK}} =
+  \int (\rho_0 + 3p/c^2)\,e^{-\phi}\,d^3x\,.
+\end{equation}
+The two integrals agree in the dust limit $p\ll\rho_0
+c^2$ and differ by $O(p/\rho_0 c^2)$ otherwise.  For
+neutron-star interiors $p/(\rho_0 c^2)\sim 0.2$--$0.3$
+near the centre, the relative difference is $\sim 30\%$
+and concentrated in the pressure-dominated core.  The
+kinematic motivation of $s=1/2$ (Sec.~\ref{sec:s_kinematic})
+uses the full bare-mass weight $e^{-\phi}=e^{\phi/2}\,e^{-3\phi/2}$
+(universal conformal redshift combined with proper
+spatial-volume factor); both factors are common to the
+bare-mass and Tolman--Komar forms, so the motivation is
+not altered by this choice.  The body-to-body cancellation of the
+residual structural-response correction at
+$O(|\phi|)$---the open task flagged in
+Sec.~\ref{sec:shift_coupled}---depends on which Komar
+integral is adopted for matter-filled strong-field
+regimes; the perfect-fluid analysis with
+Eq.~(\ref{eq:komar_TK}) is part of the same open task.
+
+\textbf{Working assumption used elsewhere.}  Throughout
+the main theory and companion papers, the working value
+adopted is
+\begin{equation}\label{eq:s_working}
+  s = \frac{1}{2}\,,\qquad
+  s_{\mathrm{excess}} = 0 \quad
+  \text{(leading order; exact result deferred)}.
+\end{equation}
+The dipole radiation formula (main theory Eq.~(17)) and
+the Nordtvedt prediction (main theory Eq.~(26)) are
+evaluated with~(\ref{eq:s_working}); the resulting
+predictions are correct to leading order in $|\phi|$.
+Whether these predictions remain exact at arbitrary
+compactness requires the open-task analysis flagged in
+Sec.~\ref{sec:shift_coupled}.
+
+\subsection{Physical interpretation (weak-field)}
+
+The approximate vanishing of $s_{\mathrm{excess}}$ has a
+transparent physical origin.  Under a rigid background
+shift $\phi_\infty\to\phi_\infty+\delta$, the bare-mass
+Komar weight $e^{-\phi}=e^{\phi/2}\,e^{-3\phi/2}$
+multiplies the Komar integral of every body by the same
+overall factor $e^{-\delta}$ at leading order in $|\phi|$
+(both the universal conformal-redshift factor $e^{\phi/2}$
+and the universal proper-volume factor $e^{-3\phi/2}$
+contribute, and the position-dependent test-particle mass
+$m_{\mathrm{eff}}=m_0\,e^{\phi/2}$ of main-theory Eq.~(46)
+is one of these two factors, not the whole story).  Since
+sensitivity measures the \emph{differential} response
+between bodies, and the leading-order Komar response
+$\partial\ln M_{\mathrm{Komar}}/\partial\phi_\infty=-1$
+is the same for every body, the leading-order excess
+vanishes.  The higher-order structural correction,
+induced by the matter-side $e^{-\phi}$ coupling on the
+RHS of Eq.~(\ref{eq:phi_interior}), is not proven to
+cancel body-to-body and is the content of the open task.
+
+%===================================================================
+\section{Coupled linear perturbation: status}
+\label{sec:correction}
+%===================================================================
+
+A naive linearisation of the scalar field
+equation~(\ref{eq:phi_interior}) around a background
+$\phi_0(r)$, \emph{holding the density $\rho$ fixed},
+yields an apparent screening equation:
+\begin{equation}\label{eq:wrong_pert}
+  \frac{1}{r^2}\frac{d}{dr}\!\left(r^2\,
+  \frac{d(\delta\phi)}{dr}\right)
+  + \frac{8\pi G\rho}{c^2}\,e^{-\phi_0}\,\delta\phi
+  = 0\,,
+  \qquad\textbf{(incomplete: $\rho$ held fixed)}
+\end{equation}
+with an effective mass term $\mu^2 \propto 8\pi G\rho\,
+e^{-\phi_0}/c^2$ that would screen the external field
+perturbation and produce $s_{\mathrm{excess}} \neq 0$.
+
+\textbf{This equation is incomplete.}  It omits the
+structural response $(\delta\rho,\,\delta p)$ that
+accompanies $\delta\phi$.  The correct coupled
+linearisation is recorded below; it weakens but does
+\emph{not} fully cancel the screening term at strong
+field.
+
+\subsection{Full coupled perturbation}
+
+Let $\phi = \phi_0 + \epsilon\,\delta\phi$,
+$\rho = \rho_0 + \epsilon\,\delta\rho$,
+$p = p_0 + \epsilon\,\delta p$.  Linearising the
+scalar equation~(\ref{eq:phi_interior}) gives:
+\begin{align}
+  \text{LHS:}\quad &
+  \delta\phi'' + \frac{2}{r}\,\delta\phi',
+  \label{eq:LHS_pert}\\[4pt]
+  \text{RHS:}\quad &
+  \frac{8\pi G}{c^4}\,e^{-\phi_0}\,\bigl[
+  (\delta\rho\,c^2 - 3\,\delta p)
+  - (\rho_0 c^2 - 3p_0)\,\delta\phi\bigr]\,.
+  \label{eq:RHS_pert}
+\end{align}
+
+\subsection{The rigid-shift ansatz does not solve the
+coupled system in matter}
+
+Substitute $\delta\phi = \mathrm{const}$ and
+$\delta\rho = \delta p = 0$:
+\begin{itemize}
+\item LHS: $\delta\phi' = 0 \Rightarrow$ LHS~$=0$.
+\item RHS: $\delta\rho = \delta p = 0 \Rightarrow$
+  RHS~$= -\delta\phi\,(8\pi G/c^4)\,e^{-\phi_0}\,
+  (\rho_0 c^2 - 3p_0)$.
+\item The two sides agree only where the background
+  matter source $(\rho_0 c^2 - 3p_0)$ vanishes, i.e.\
+  outside the star.  Inside the star the rigid shift
+  is \emph{not} a solution.
+\end{itemize}
+This is the linearised counterpart of the strict
+shift-symmetry failure in matter established in
+Sec.~\ref{sec:shift_coupled}: the naive
+rigid-shift ansatz ceases to be an equilibrium once the
+explicit $e^{-\phi}$ coupling is retained.
+
+\paragraph{What survives.}  In the vacuum exterior
+($\rho_0 = p_0 = 0$), the rigid shift is an exact
+solution; in the weak-field regime $|\phi_0| \ll 1$,
+the right-hand side is suppressed by $e^{-\phi_0} \approx 1$
+and the leading-order rigid-shift picture is restored.
+Whether a modified ansatz (e.g.\ one in which the
+structural response $(\delta\rho,\delta p)$ is chosen
+self-consistently to cancel the matter-side correction)
+solves the coupled system non-perturbatively is an open
+question: it would amount to showing that the full
+coupled system has a hidden rigid-shift invariance not
+manifest in the equations as written.  The construction
+of such a reformulation (if it exists) is the same
+\textbf{open task} referenced in
+Sec.~\ref{sec:shift_coupled}.
+
+%===================================================================
+\section{No-hair property: scope}
+\label{sec:nohair}
+%===================================================================
+
+Two statements must be distinguished:
+\begin{enumerate}
+\item \textbf{Vacuum no-hair (rigorously established).}
+  In the vacuum exterior, $\nabla^2\phi = 0$ together with
+  asymptotic boundary data fixes the harmonic profile
+  $\phi(r) = \phi_\infty - C/r$ uniquely up to the monopole
+  coefficient $C$ (main theory Sec.~7 and Appendix~1).
+  For an isolated body this profile shifts rigidly under
+  $\phi_\infty\to\phi_\infty+\delta$ ($C$ unchanged), so
+  the bare-mass Komar
+  integral~(\ref{eq:komar_app16}) rescales by the rigid
+  factor $e^{-\delta}$ and the formal
+  definition~(\ref{eq:s_formal}) gives $s=1/2$,
+  $s_{\mathrm{excess}}=0$ as in
+  Sec.~\ref{sec:s_kinematic}, but now \emph{exactly}
+  rather than at leading order: there is no matter source
+  to spoil the rigid shift.  This is fully derived and
+  non-perturbative.
+\item \textbf{Matter-filled body no-hair (leading order;
+  exact statement deferred).}  For stars with internal
+  structure, the kinematic argument of
+  Sec.~\ref{sec:s_kinematic} selects $s=1/2$ at leading
+  order in $|\phi|$.  The full coupled-system shift
+  symmetry that would promote this to an exact statement
+  at arbitrary compactness is \emph{not} established
+  (Sec.~\ref{sec:shift_coupled}); the structural-response
+  correction is of order $|\phi_c|$ inside the body and
+  is not proven to cancel body-to-body.
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{lccl}
+\hline
+Body type & $s$ & $s_{\mathrm{excess}}$ & Status \\
+\hline
+Test particle & $1/2$ & $0$ & exact (Komar route, Sec.~\ref{sec:s_kinematic}) \\
+Vacuum compact object & $1/2$ & $0$ & exact (rigid-shift Komar response, item~1 above) \\
+White dwarf ($\Cc \sim 10^{-4}$) & $\simeq 1/2$ &
+  $O(10^{-4})$ & leading order; exact value deferred \\
+Neutron star ($\Cc \sim 0.2$) & $\simeq 1/2$ &
+  $O(0.2)$ if uncancelled & leading order; exact value deferred \\
+\hline
+\end{tabular}
+\end{center}
+
+\textit{Physical interpretation (weak-field).}---Every
+body in the bi-conformal theory responds to a background
+scalar field \emph{at leading order} as a test particle
+does: its scalar field shifts rigidly with $\phi_\infty$
+up to corrections of order $|\phi|$ localised inside the
+body.  The leading-order universality reflects that the
+internal structure is governed by $d\phi/dr$ (the
+gradient) rather than by $\phi$ (the absolute value) at
+the level of the TOV pressure-gradient equation.  Whether
+the residual $O(|\phi|)$ correction also cancels
+body-to-body to yield an exact effacement for strong
+field is the open task flagged throughout.
+
+\paragraph{Universal scalar charge, effaced
+differential response.}
+It is worth emphasising that the no-hair result of this
+appendix does \emph{not} say that bodies carry no scalar
+charge.  The scalar charge is defined via the response of
+the bare-mass Komar integral~(\ref{eq:komar_app16}) to a
+rigid shift of the asymptotic scalar value, evaluated at
+the reference background $\phi_\infty=0$:
+\begin{equation}\label{eq:qs_def}
+  q_s \equiv -\frac{\partial M_{\mathrm{Komar}}^{(0)}}
+       {\partial\phi_\infty}\bigg|_{\phi_\infty=0}
+  = 2\,s\,M\,,
+\end{equation}
+where $M\equiv M_{\mathrm{Komar}}^{(0)}(\phi_\infty=0)$
+is the unshifted Komar mass and the factor $2$ comes
+from the convention of~(\ref{eq:s_formal}).  In the
+vacuum-exterior monopole profile $\phi(r)=\phi_\infty-C/r$,
+the coefficient $C$ is normalised by matching to this
+Komar mass: at leading order $C=2GM/c^2=\rs$, so the
+boundary scalar charge $C$ and the Komar-response charge
+$q_s$ refer to the same quantity in different
+parametrisations.  The working value $s=1/2$ (exact for
+vacuum compact objects; leading order, all bodies) gives
+\begin{equation}\label{eq:qs_universal}
+  q_s = M\qquad\text{(leading order, every body)}.
+\end{equation}
+Every body therefore carries a nonzero scalar charge
+proportional to its mass.  What is effaced is not the
+charge but the \emph{differential} response: because
+$q_s/M$ is a universal constant (independent of
+compactness and equation of state at leading order),
+binary systems satisfy $s_A = s_B$ and therefore
+$(q_{s,A}/M_A) - (q_{s,B}/M_B) = 0$, which kills the
+dipole radiation formula of main theory Eq.~(17) and
+the Nordtvedt effect.  The distinction
+``universal charge with effaced differential response''
+is the physically correct statement of the no-hair result;
+``no independent scalar charge'' would be a stronger
+claim not supported here.
+
+\paragraph{Scope framing: vacuum vs.\ matter derivations.}
+The two no-hair statements above are \emph{consistent
+across derivations} rather than instances of one proof:
+vacuum compact objects follow from the vacuum exterior
+harmonic monopole profile
+($\phi=\phi_\infty - C/r$, with $C$ fixed by the
+mass/source normalization; main theory Sec.~7 and
+Appendix~1) \emph{combined with} the
+rigid-shift response of the bare-mass Komar
+integral~(\ref{eq:komar_app16}); the uniqueness step
+alone fixes the profile, the Komar-response step
+delivers the sensitivity value (Sec.~\ref{sec:nohair},
+item~1).  Matter-filled bodies follow from the kinematic
+Komar-integrand argument of Sec.~\ref{sec:s_kinematic}
+(rigid-shift response of $\rho_0\,e^{-\phi}=\rho_0\,
+e^{\phi/2}\,e^{-3\phi/2}$) at leading order.
+Both yield $s=1/2$, $s_{\mathrm{excess}}=0$, but by
+different routes; a single unified proof covering both
+regimes exactly would require closure of the open task
+of Sec.~\ref{sec:shift_coupled}.
+
+%===================================================================
+\section{Confrontation with pulsar-timing bounds}
+\label{sec:bounds}
+%===================================================================
+
+\subsection{Current constraints}
+
+The strongest constraints on scalar sensitivity come from:
+\begin{enumerate}
+\item \textbf{PSR~J1738+0333} (Freire et~al.\ 2012):
+  a pulsar--white-dwarf binary with precisely measured
+  orbital decay.  Since the dipole rate scales as
+  $(s_{\mathrm{NS}}-s_{\mathrm{WD}})^{2}$ (see
+  Eq.~\ref{eq:Pdot_dipole_app16}), the absence of anomalous
+  decay constrains the excess sensitivity (relative to the
+  universal kinematic value $s=1/2$) to
+  $|s_{\mathrm{excess}}|^2 \lesssim 2.5\times10^{-3}$, i.e.\
+  $|s_{\mathrm{excess}}| \lesssim 0.05$ at $95\%$
+  confidence as an
+  \emph{order-of-magnitude illustrative} reading; a
+  faithful translation requires the ISPG-specific
+  charge-to-coupling normalization for matter-filled
+  bodies (open task, see Sec.~\ref{sec:bounds}
+  Compatibility-table footnote).
+
+\item \textbf{PSR~J0337+1715} (Archibald et~al.\ 2018):
+  a millisecond pulsar in a hierarchical triple with two
+  white dwarfs.  Tests the universality of free fall
+  (Nordtvedt effect) to
+  $|\Delta a/a| < 2.6\times10^{-6}$ (conservative 2018
+  Archibald limit; the 2025 Voisin et~al.\
+  re-analysis~\cite{Voisin2025} tightens this to
+  model-dependent
+  $|\Delta|\lesssim 1.5$--$2.3\times10^{-6}$).
+\end{enumerate}
+
+\subsection{Compatibility assessment}
+
+Under the working assumption $s_{\mathrm{excess}}\to 0$
+(consistent with the leading-order kinematic result of
+Sec.~\ref{sec:s_kinematic}), the predictions are:
+
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+Test & Requires$^{\dagger}$ & Predicted & Status \\
+\hline
+J0337+1715 (Nordtvedt) & $|s_{\mathrm{excess}}| \lesssim 2.6\times10^{-6}$
+  & $s_{\mathrm{excess}} \to 0$ & consistent if open task closes \\
+J1738+0333 ($\dot{P}_b$) & $|s_{\mathrm{excess}}| \lesssim 0.05$
+  & $s_{\mathrm{excess}} \to 0$ & consistent if open task closes \\
+LIGO (BH--BH dipole) & $s_{\mathrm{excess}} = 0$
+  & $s_{\mathrm{excess}} = 0$ (vacuum exact) & \textbf{passes rigorously} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip\noindent{\footnotesize
+$^{\dagger}$The pulsar entries are
+\emph{order-of-magnitude illustrative} requirements
+obtained by reading published bounds as direct
+constraints on $|s_{\mathrm{excess}}|$ in the working
+ISPG convention $s\to 1/2+s_{\mathrm{excess}}$.
+A faithful comparison to the standard pulsar dipole
+coefficient $\kappa_D$ and to the strong-field UFF
+parameter $\Delta$ requires deriving the ISPG
+charge-to-coupling normalization for matter-filled
+bodies; that normalization is part of the same open task
+as the matter-filled $s_{\mathrm{excess}}$ cancellation.
+The LIGO row is a vacuum-sector statement and is not
+subject to that normalization.}
+
+\textit{(a) Orbital decay (J1738+0333).}---The dipole
+contribution to the period derivative is (main theory
+Eq.~(20)):
+\begin{equation}\label{eq:Pdot_dipole_app16}
+  \dot{P}_b^{(\mathrm{dipole})} \propto
+  (s_{\mathrm{NS}} - s_{\mathrm{WD}})^2\,.
+\end{equation}
+At leading order in $|\phi|$, $s_{\mathrm{NS}} \simeq
+s_{\mathrm{WD}} \simeq 1/2$ and the dipole amplitude is
+suppressed.  The residual body-to-body difference is
+$O(|\phi_{c,\mathrm{NS}}| - |\phi_{c,\mathrm{WD}}|)
+\sim O(0.2)$ if uncancelled, but the observational
+bound, read illustratively as a direct constraint on
+$|s_{\mathrm{excess}}|$ pending the ISPG-specific
+$\kappa_D$ normalization (Sec.~\ref{sec:bounds}
+Compatibility-table footnote), allows
+$|s_{\mathrm{excess}}| \lesssim 0.05$, so the theory is
+consistent with data whenever the cancellation
+established at leading order persists at $O(|\phi|)$
+after the open task is closed.
+
+\textit{(b) Universality of free fall (J0337+1715).}---The
+schematic Nordtvedt-type identity in the ISPG convention
+is (main theory Eq.~(26))
+\begin{equation}\label{eq:nordtvedt_app16}
+  \frac{\Delta a}{a} = s_{\mathrm{NS}} - s_{\mathrm{WD}}\,,
+\end{equation}
+which reduces, at leading order, to $\Delta a/a \simeq 0$
+because $s_{\mathrm{NS}}\simeq s_{\mathrm{WD}}\simeq 1/2$.
+The translation of this schematic identity into the
+strong-field UFF parameter $\Delta$ measured in pulsar
+timing requires an ISPG-specific coupling normalization
+for matter-filled bodies (the same open task as the
+matter-filled $s_{\mathrm{excess}}$ cancellation); the
+identity above is therefore an order-of-magnitude
+schematic statement, not a literal substitution into the
+published bound.  With that proviso, consistency with
+the conservative 2018 Archibald limit
+$|\Delta a/a| < 2.6\times10^{-6}$~\cite{Archibald2018}
+(later tightened to model-dependent
+$|\Delta| \lesssim 1.5$--$2.3\times10^{-6}$ in the 2025
+Voisin et al.\ re-analysis~\cite{Voisin2025}) then
+requires that the $O(|\phi|)$ structural-response
+correction also cancel between NS and WD to
+$\sim 10^{-5}$ relative precision.  This stringent bound
+is the \emph{empirical} motivation for expecting the
+open task to close with $s_{\mathrm{excess}} = 0$
+exactly; it is not a derived result of the classical
+coupled system.
+
+\textit{(c) LIGO compact-object mergers.}---For vacuum
+binaries (BH--BH), the no-hair result holds rigorously:
+$\nabla^2\phi = 0$ fixes the exterior harmonic profile
+$\phi=\phi_\infty-C/r$ (Sec.~\ref{sec:nohair}, item~1)
+and the rigid-shift response of the bare-mass Komar
+integral~(\ref{eq:komar_app16}) gives
+$s_A = s_B = 1/2$ and $s_{\mathrm{excess}} = 0$ exactly
+via Eq.~(\ref{eq:s_formal}).  No dipole radiation is
+predicted, consistent with all LIGO--Virgo BH--BH
+detections.  For NS--NS and NS--CO binaries, the statement
+is leading-order, contingent on the open task.
+
+\subsection{Contrast with Brans--Dicke / DEF}
+
+In Brans--Dicke and DEF-type scalar-tensor theories, the
+effective gravitational coupling $G_{\mathrm{eff}}$ depends
+on the scalar field through $G_4(\varphi)$.  When the
+background field $\phi_\infty$ changes, $G_{\mathrm{eff}}$
+changes, forcing the star to restructure.  This gives
+$s_{\mathrm{excess}} \neq 0$ with a compactness-dependent
+coefficient.
+
+In the present theory, $G_4 = M_{\mathrm{Pl}}^2/2 =
+\mathrm{const}$: there is no running of the gravitational
+coupling.  The scalar field enters only through the
+bi-conformal metric, and the TOV pressure-gradient equation
+depends on $d\phi/dr$ rather than on $\phi$.  This
+sub-sectoral shift invariance is the structural reason
+why $s_{\mathrm{excess}}$ is \emph{small} (leading order
+$O(|\phi|)$) rather than $O(1)$, and is what makes the
+theory compatible with pulsar-timing data at the
+leading-order level.  Whether it is strictly zero at all
+orders is the open task.
+
+%===================================================================
+\section{Summary}\label{sec:summary_app16}
+%===================================================================
+
+\begin{enumerate}
+\item The bi-conformal TOV equations~(\ref{eq:tov_dp})--(\ref{eq:phi_interior})
+  are the interior counterpart of the exterior exponential
+  metric used throughout the main theory.
+
+\item The TOV pressure-gradient equation~(\ref{eq:tov_dp})
+  depends only on $d\phi/dr$ and is therefore strictly
+  shift-invariant under $\phi\to\phi+\delta$
+  (Sec.~\ref{sec:shift_tov}).  The reduced scalar
+  equation~(\ref{eq:phi_interior}) carries an explicit
+  $e^{-\phi}$ prefactor on its matter-source side and
+  is \emph{not} strictly shift-invariant in matter; shift
+  invariance of the full coupled system is recovered only
+  at leading order in $|\phi|$ (Sec.~\ref{sec:shift_coupled}).
+
+\item The kinematic channel selects the value
+  \begin{equation}
+    s = \frac{1}{2}\quad\text{(leading order, for all
+    bodies)}
+  \end{equation}
+  via the bare-mass Komar integrand
+  $\rho_0\,e^{-\phi} = \rho_0\,e^{\phi/2}\,e^{-3\phi/2}$,
+  which combines the universal conformal redshift
+  $e^{\phi/2}$ with the proper-volume factor $e^{-3\phi/2}$
+  (Sec.~\ref{sec:s_kinematic}); the redshift factor alone
+  does not produce $s=1/2$, since the formal
+  definition~(\ref{eq:s_formal}) acts on $M_{\mathrm{Komar}}$,
+  not on the test-particle Killing-energy
+  $m_{\mathrm{eff}}$.  At leading order in $|\phi|$, the
+  excess sensitivity satisfies
+  \begin{equation}
+    s_{\mathrm{excess}} = 0 + O(|\phi|)\,.
+  \end{equation}
+
+\item A naive perturbation analysis that holds $\rho$
+  fixed while varying $\phi$ yields a screening term
+  $\mu^2\,\delta\phi$ of the wrong structural type.  The
+  correct coupled linearisation (Sec.~\ref{sec:correction})
+  shows that this term is \emph{not a solution} of the
+  coupled system in matter, but it also shows that a
+  constant-$\delta\phi$ rigid-shift ansatz with
+  $\delta\rho = \delta p = 0$ is \emph{not} a solution
+  inside the star either.  Whether a modified ansatz
+  with self-consistent $(\delta\rho,\delta p)$ solves the
+  coupled system non-perturbatively at strong field is
+  an \textbf{open task}.
+
+\item The position-dependent effective mass
+  $m_{\mathrm{eff}} = m_0\,e^{\phi/2}$ is fully retained;
+  it is one of the two factors (alongside the
+  proper-volume element $e^{-3\phi/2}$) entering the
+  bare-mass Komar integrand $\rho_0\,e^{-\phi}$ that
+  produces the leading-order universality of $s=1/2$
+  (Sec.~\ref{sec:s_kinematic}).  The theory does not
+  require abandoning the
+  variable mass.
+
+\item Vacuum bi-conformal compact objects carry
+  $s_{\mathrm{excess}} = 0$ exactly, as derived from
+  the vacuum exterior harmonic monopole profile (main theory
+  Sec.~7) \emph{combined with} the rigid-shift response
+  of the bare-mass Komar integral
+  (Sec.~\ref{sec:nohair}, item~1).  This is the only
+  regime in which the exact statement is presently
+  proven.
+
+\item The theory is compatible with all current
+  pulsar-timing tests at leading order:
+  \begin{itemize}
+  \item J0337+1715 (Nordtvedt): $\Delta a/a \simeq 0$
+    at leading order vs.\ conservative 2018
+    Archibald bound $|\Delta a/a| < 2.6\times10^{-6}$
+    (tightened to model-dependent
+    $|\Delta|\lesssim 1.5$--$2.3\times10^{-6}$ by the
+    2025 Voisin et~al.\ re-analysis~\cite{Voisin2025})
+    --- consistent if the open task closes with
+    $s_{\mathrm{excess}}\to 0$ to the required precision.
+  \item J1738+0333 (orbital decay):
+    $\dot{P}_b^{(\mathrm{dipole})} \simeq 0$ at leading
+    order vs.\ illustrative bound
+    $|s_{\mathrm{excess}}| \lesssim 0.05$
+    (pending the ISPG-specific $\kappa_D$ normalization;
+    see Sec.~\ref{sec:bounds} Compatibility-table
+    footnote) --- consistent.
+  \item LIGO (BH--BH binaries):
+    no dipole radiation --- consistent, rigorously
+    (vacuum no-hair).
+  \end{itemize}
+
+\item The structural reason for the leading-order
+  universality is unique to the bi-conformal framework:
+  constant $G_4$ (no Brans--Dicke running) and minimal
+  coupling ensure that $d\phi/dr$, not $\phi$, governs
+  the interior hydrostatic equilibrium.  This is what
+  distinguishes the theory from Brans--Dicke, DEF, and
+  TeVeS, all of which have $s_{\mathrm{excess}} = O(1)$
+  compactness-dependent effects.
+
+\item \textbf{Quantum-paper conjecture and open task.}
+  The companion quantum paper~\cite{Lotishvili2026Q}
+  conjectures that the leading-order classical shift
+  invariance of the TOV sector is promoted to an exact
+  Ward identity of the full quantised coupled system,
+  which would make $s = 1/2$ and $s_{\mathrm{excess}} = 0$
+  exact at all loop orders.  The present appendix does
+  \emph{not} prove this: the classical coupled system
+  as written has only leading-order shift invariance
+  in matter.  A rigorous derivation of an exact rigid-shift
+  symmetry (classical or quantum) for the matter sector
+  is the principal open task of the sensitivity programme.
+\end{enumerate}
+\end{document}

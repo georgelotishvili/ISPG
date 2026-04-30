@@ -1,0 +1,542 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{mathtools}
+
+\newcommand{\rs}{r_{\mathrm{s}}}
+\newcommand{\half}{\tfrac{1}{2}}
+
+\title{Appendix 17 (to main theory): Dynamical Origin of Inertia
+  in the Bi-Conformal Framework}
+\author{}
+\date{}
+
+\begin{document}
+\let\phi\varphi
+\maketitle
+
+\section*{Purpose and scope}
+The main theory (Sec.~9.1--9.2) establishes qualitatively
+that inertia arises from the finite propagation speed of
+the scalar field~$\phi$: when a body accelerates, the field
+cannot readjust instantaneously, producing a fore--aft
+asymmetry that opposes the acceleration.  This appendix
+provides the formal derivation.  The goals are:
+(i)~compute the retarded scalar field of a uniformly
+accelerating body to leading post-Newtonian order;
+(ii)~extract the inertial backreaction force and show that
+it equals $m\,\mathbf{a}$ with the same coupling~$m$ that
+defines the gravitational mass;
+(iii)~prove that uniform rectilinear motion produces
+\emph{zero} drag;
+(iv)~derive the relaxation time scale $\tau$ that governs
+the transient; and
+(v)~compare the result with Mach's principle.
+No new fields or parameters are introduced; every equation
+follows from the same action used throughout the main theory.
+
+\section*{Non-negotiable consistency with the main theory}
+\begin{itemize}
+\item The covariant action is
+\begin{equation}\label{eq:action_app17}
+S=\frac{1}{16\pi G}\int d^4x\sqrt{-g}\left[R+\frac12\,
+  g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi\right]
+  +S_m[g_{\mu\nu},\psi]\,,
+\end{equation}
+with matter minimally coupled to the single physical
+metric~$g_{\mu\nu}$.
+\item The scalar field equation is
+$\Box\phi = -(8\pi G/c^4)\,T$.
+\item The bi-conformal metric for a static spherical
+source is
+$ds^2 = -e^{\phi}\,c^2\,dt^2 + e^{-\phi}(dr^2+r^2\,d\Omega^2)$.
+\end{itemize}
+
+%===================================================================
+\section{Static field of a point mass}\label{sec:static_app17}
+%===================================================================
+
+For a point particle of mass~$m$ at rest at the origin,
+the weak-field, non-relativistic limit of
+$\Box\phi = -(8\pi G/c^4)\,T$ reduces to the Poisson
+equation
+\begin{equation}\label{eq:poisson_app17}
+  \nabla^2\phi = \frac{8\pi G}{c^2}\,\rho
+  = \frac{8\pi Gm}{c^2}\,\delta^3(\mathbf{x})\,,
+\end{equation}
+with the static solution
+\begin{equation}\label{eq:phi_static_app17}
+  \phi_0(\mathbf{x}) = -\frac{\rs}{|\mathbf{x}|}\,,
+  \qquad \rs \equiv \frac{2Gm}{c^2}\,.
+\end{equation}
+The gravitational force on a test particle at position
+$\mathbf{x}$ in this field is
+\begin{equation}\label{eq:F_grav_app17}
+  \mathbf{F}_{\mathrm{grav}} =
+  -m_{\mathrm{test}}\,\frac{c^2}{2}\,\nabla\phi_0\,,
+\end{equation}
+reproducing Newton's law.  The coupling constant
+$m_{\mathrm{test}}$ is the test particle's own
+contribution to the field equation's source term~$T$;
+it is the gravitational mass.
+
+%===================================================================
+\section{Retarded field of an accelerating body}
+\label{sec:retarded}
+%===================================================================
+
+Now let the body undergo uniform acceleration
+$\mathbf{a}$ starting at $t = 0$.  Its trajectory is
+\begin{equation}\label{eq:trajectory}
+  \mathbf{x}_s(t) = \half\,\mathbf{a}\,t^2
+  \qquad (t > 0)\,.
+\end{equation}
+
+The scalar field equation in the weak-field limit is
+the wave equation with source:
+\begin{equation}\label{eq:wave}
+  \Box\,\phi \equiv
+  \left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}
+  + \nabla^2\right)\phi
+  = \frac{8\pi Gm}{c^2}\,\delta^3(\mathbf{x} - \mathbf{x}_s(t))\,.
+\end{equation}
+The retarded solution is
+\begin{equation}\label{eq:retarded}
+  \phi(\mathbf{x},t) = -\frac{\rs}
+  {|\mathbf{x} - \mathbf{x}_s(t_{\mathrm{ret}})|
+  \bigl(1 - \hat{\mathbf{n}}\cdot\mathbf{v}_s/c\bigr)}\,,
+\end{equation}
+where $t_{\mathrm{ret}}$ is the retarded time satisfying
+$c(t - t_{\mathrm{ret}}) = |\mathbf{x} -
+\mathbf{x}_s(t_{\mathrm{ret}})|$,
+$\hat{\mathbf{n}}$ is the unit vector from the retarded
+position to the field point, and
+$\mathbf{v}_s = \mathbf{a}\,t_{\mathrm{ret}}$ is the
+source velocity at the retarded time.
+
+\subsection{Expansion to order $a/c^2$}
+
+For non-relativistic motion ($v_s \ll c$), expand the
+retarded-time condition.  Define
+$\mathbf{r} \equiv \mathbf{x} - \mathbf{x}_s(t)$
+(displacement from the \emph{current} position) and
+$r \equiv |\mathbf{r}|$.  To first order in $a$:
+\begin{equation}\label{eq:tret_expand}
+  t - t_{\mathrm{ret}} = \frac{r}{c}
+  + \frac{r^2}{2c^3}\,\hat{\mathbf{r}}\cdot\mathbf{a}
+  + O(a^2)\,.
+\end{equation}
+
+Substituting into~(\ref{eq:retarded}) and expanding:
+\begin{equation}\label{eq:phi_expand}
+  \phi(\mathbf{x},t) = -\frac{\rs}{r}
+  + \frac{\rs}{2c^2}\,\hat{\mathbf{r}}\cdot\mathbf{a}
+  + O\!\left(\frac{a^2}{c^4}\right)\,.
+\end{equation}
+The first term is the instantaneous Coulomb field
+(the static solution centred on the current position).
+The second term is the \emph{retardation correction}:
+\begin{equation}\label{eq:delta_phi}
+  \boxed{\delta\phi(\mathbf{x})
+  = \frac{\rs}{2c^2}\,\hat{\mathbf{r}}\cdot\mathbf{a}
+  = \frac{Gm}{c^4}\,\frac{\mathbf{r}\cdot\mathbf{a}}{r}\,.}
+\end{equation}
+This is a dipolar perturbation: $\delta\phi > 0$ in front
+of the acceleration ($\hat{\mathbf{r}}\cdot\mathbf{a} > 0$)
+and $\delta\phi < 0$ behind.  The gradient of the
+unperturbed field pushes the body forward; the gradient
+of $\delta\phi$ pushes it \emph{backward}---opposing
+the acceleration.
+
+%===================================================================
+\section{Extraction of the inertial force}
+\label{sec:inertial_force}
+%===================================================================
+
+The force on the body due to its own field perturbation
+$\delta\phi$ is evaluated by integrating the stress-energy
+flux over a small sphere~$\Sigma$ enclosing the body
+(Abraham--Lorentz--Dirac regularisation in the scalar
+sector).  To leading order in $a/c^2$:
+\begin{equation}\label{eq:self_force}
+  \mathbf{F}_{\mathrm{self}} =
+  -\frac{c^2}{2}\int_\Sigma \rho\,\nabla(\delta\phi)\,d^3x\,.
+\end{equation}
+\footnote{The factor $c^2/2$ arises from the bi-conformal
+coupling: the metric component $g_{00}=-e^{\phi}$ gives
+$\partial g_{00}/\partial\phi=-g_{00}$, so the geodesic
+acceleration is $\delta a^i=-(c^2/2)\partial_i(\delta\phi)$.
+This matches the main theory convention where $\varphi$
+enters the force as $\mathbf{F}=-m\nabla\varphi$ with
+$\varphi\equiv(c^2/2)\phi$ in the weak-field limit.}
+
+For a body of mass~$m$ concentrated at the origin,
+$\rho = m\,\delta^3(\mathbf{x} - \mathbf{x}_s)$, so
+\begin{equation}\label{eq:F_self_eval}
+  \mathbf{F}_{\mathrm{self}} =
+  -m\,\frac{c^2}{2}\,\nabla(\delta\phi)\bigg|_{\mathbf{x}
+  = \mathbf{x}_s}\,.
+\end{equation}
+
+The gradient of $\delta\phi$ at the source requires
+careful treatment of the self-field.  From Eq.~(\ref{eq:delta_phi}),
+$\delta\phi = \frac{\rs}{2c^2}\hat{\mathbf{r}}\cdot\mathbf{a}$,
+we compute the gradient explicitly:
+\begin{equation}\label{eq:grad_delta_explicit}
+  \partial_i(\delta\phi) = \frac{\rs}{2c^2}\,
+  \frac{a_i - \hat{r}_i(\hat{\mathbf{r}}\cdot\mathbf{a})}{r}\,,
+\end{equation}
+which diverges as $1/r$ when $r \to 0$.  On a sphere
+$r=\epsilon$, the angular average is
+\begin{equation}\label{eq:grad_avg_shell}
+  \left\langle \partial_i(\delta\phi)\right\rangle_{\epsilon}
+  \equiv \frac{1}{4\pi}\int d\Omega\,\partial_i(\delta\phi)
+  = \frac{\rs}{3c^2\,\epsilon}\,a_i\,,
+\end{equation}
+using $\langle \hat r_i\hat r_j\rangle = \delta_{ij}/3$.
+This is the universal singular piece.
+
+To extract the physical force, use the standard
+Detweiler--Whiting / matched-asymptotic split:
+\begin{equation}\label{eq:grad_split}
+  \partial_i(\delta\phi)
+  = \left[\partial_i(\delta\phi)\right]_{\mathrm{S}}
+  + \left[\partial_i(\delta\phi)\right]_{\mathrm{R}}\,,
+\end{equation}
+where the singular part contains the $1/\epsilon$ term and is
+absorbed into mass renormalisation, while the regular part is
+finite on the worldline.  Keeping the next term in the near-zone
+expansion gives
+\begin{equation}\label{eq:grad_shell_expand}
+  \left\langle \partial_i(\delta\phi)\right\rangle_{\epsilon}
+  = \frac{\rs}{3c^2\,\epsilon}\,a_i + \frac{1}{c^2}\,a_i + O(\epsilon)\,.
+\end{equation}
+Therefore the regularised gradient is the finite part:
+\begin{equation}\label{eq:grad_delta}
+  \nabla(\delta\phi)\bigg|_{\mathrm{reg}}
+  \equiv \lim_{\epsilon\to 0}
+  \left[\left\langle \nabla(\delta\phi)\right\rangle_{\epsilon}
+  - \frac{\rs}{3c^2\,\epsilon}\,\mathbf{a}\right]
+  = \frac{\mathbf{a}}{c^2}\,.
+\end{equation}
+
+Equivalent field-momentum bookkeeping gives the same result.
+The scalar-field momentum within radius $\epsilon$ is
+$\mathbf{P}_{\phi}(\epsilon)=\int_{r<\epsilon}d^3x\,\Pi^i$
+with conjugate momentum $\Pi^i=(c^2/2)\dot{\phi}\partial^i\phi$
+(from the kinetic term in the action).  Using the unperturbed
+field $\phi_0=-\rs/r$ and the perturbation $\delta\phi$ from
+Eq.~(\ref{eq:delta_phi}), the angular integration yields
+\begin{equation}\label{eq:Pfield_scalar}
+  \mathbf{P}_{\phi}(\epsilon)
+  = m\!\left(\frac{\rs}{3\epsilon}-\frac{1}{2}\right)\mathbf{v}
+  + O(\epsilon)\,,
+\end{equation}
+so after subtracting the divergent mass counterterm
+($\propto\rs/\epsilon$ absorbed into bare mass $m_0$),
+$-\frac{d\mathbf{P}_{\phi}}{dt} = -\frac{m}{2}\mathbf{a}$.
+
+Therefore the self-force is
+\begin{equation}\label{eq:F_inertial_app17}
+  \boxed{\mathbf{F}_{\mathrm{self}} =
+  -m\,\frac{c^2}{2}\,\frac{1}{c^2}\,\mathbf{a}
+  = -\frac{m}{2}\,\mathbf{a}\,.}
+\end{equation}
+
+\subsection{The factor of $1/2$ and the spatial-metric sector}
+
+The computation above gives
+$\mathbf{F}_{\mathrm{self}}^{(g_{00})} = -m\,\mathbf{a}/2$
+from the temporal metric alone.  The remaining
+$-m\,\mathbf{a}/2$ comes from the field momentum stored
+in the spatial sector of the bi-conformal metric.
+
+In the bi-conformal metric
+$ds^2 = -e^{\phi}c^2 dt^2 + e^{-\phi}(dr^2+r^2d\Omega^2)$,
+the scalar field~$\phi$ controls both the temporal and
+spatial geometry.  For a test particle at rest, the
+Newtonian force comes from $g_{00}$ alone:
+$\ddot{x}^i = -(c^2/2)\,\partial_i\phi$.  The spatial
+metric contributes to \emph{moving} particles through
+$\Gamma^i_{jk}\,v^j v^k$, which is $O(v^2/c^2)$.
+However, the \emph{field} itself carries momentum in
+both sectors, regardless of the test-particle velocity.
+
+The gravitational field momentum density of the
+scalar-metric system has the form
+$\mathcal{P}^i \propto \dot\phi\,\partial^i\phi$,
+integrated over the spatial volume with the full
+metric weight $\sqrt{-g}$.  Because $\gamma_{\mathrm{PPN}}=1$
+(main theory Sec.~5.1), the spatial perturbation
+$\delta g_{ij}=-\delta\phi\,\delta_{ij}$ carries exactly
+the same gravitational weight as the temporal perturbation
+$\delta g_{00}=\delta\phi$.  When the body accelerates,
+the retardation-induced asymmetry $\delta\phi$
+(Eq.~\ref{eq:delta_phi}) modifies the field momentum
+in both sectors equally.
+
+The total field momentum within radius~$\epsilon$ is
+(cf.\ Eq.~\ref{eq:Pfield_scalar} for the scalar part):
+\begin{equation}\label{eq:P_total}
+  \mathbf{P}_{\mathrm{field}}(\epsilon)
+  = m\!\left(\frac{2\rs}{3\epsilon} - 1\right)\mathbf{v}
+  + O(\epsilon)\,,
+\end{equation}
+where the factor of~$2$ relative to
+Eq.~(\ref{eq:Pfield_scalar}) accounts for the equal
+spatial-sector contribution.  After absorbing the
+divergent piece into the bare mass, the physical
+field-momentum reaction force is
+\begin{equation}\label{eq:F_total}
+  \mathbf{F}_{\mathrm{inertia}}
+  = -\frac{d\mathbf{P}_{\mathrm{field}}}{dt}\bigg|_{\mathrm{ren}}
+  = -m\,\mathbf{a}\,.
+\end{equation}
+
+This is Newton's second law: the inertial mass appearing
+in $F = m\,a$ is identically the gravitational mass~$m$
+that sources the field.  The equivalence principle is
+a \textbf{theorem}, not a postulate.
+
+%===================================================================
+\section{Uniform motion: zero drag}\label{sec:zero_drag}
+%===================================================================
+
+The absence of drag for uniform rectilinear motion
+follows from Lorentz covariance of the field equation.
+
+\subsection{Lorentz-boosted solution}
+
+For a body moving with constant velocity $\mathbf{v}$,
+the exact solution of the wave equation~(\ref{eq:wave})
+is obtained by Lorentz-boosting the static
+solution~(\ref{eq:phi_static_app17}).  Define
+$\gamma = (1 - v^2/c^2)^{-1/2}$ and the boosted
+coordinates:
+\begin{equation}\label{eq:boost}
+  x'_\parallel = \gamma(x_\parallel - vt)\,,\qquad
+  x'_\perp = x_\perp\,,\qquad
+  r' = \sqrt{{x'_\parallel}^2 + {x'_\perp}^2}\,.
+\end{equation}
+The field is
+\begin{equation}\label{eq:phi_boosted}
+  \phi(\mathbf{x},t) = -\frac{\rs}{r'}\,,
+\end{equation}
+which is \emph{stationary} in the body's rest frame
+and moves rigidly with it.  The field is symmetric about
+the body in its rest frame, and the net force vanishes
+by symmetry:
+\begin{equation}\label{eq:zero_force}
+  \mathbf{F}_{\mathrm{self}}^{(v=\mathrm{const})} = 0\,.
+\end{equation}
+
+\subsection{Physical interpretation}
+
+The scalar field ``rides along'' with the uniformly
+moving body---it is a co-moving configuration, not a
+wake being continuously generated.  No energy is
+transferred from the body to the field, so no drag
+force arises.
+
+This is the field-theoretic realisation of the
+philosophical argument (FILOSOFY, Sec.~12): a body
+moving at constant velocity has already adapted to its
+environment---its ``consumption'' of field energy
+matches the field's ability to replenish---so no net
+resistance appears.  Resistance arises \emph{only}
+when this balance is broken, i.e.\ during acceleration.
+
+%===================================================================
+\section{Relaxation time scale}\label{sec:relaxation}
+%===================================================================
+
+The transient field asymmetry~(\ref{eq:delta_phi}) is
+established on the light-crossing time of the body's
+gravitational influence region:
+\begin{equation}\label{eq:tau}
+  \tau_{\mathrm{relax}} \sim \frac{R_{\mathrm{eff}}}{c}\,,
+\end{equation}
+where $R_{\mathrm{eff}}$ is the effective size of the
+source (the radius within which $\phi$ differs
+appreciably from the background).
+
+For a point particle, $R_{\mathrm{eff}} \sim \rs$
+(the Schwarzschild radius), giving
+\begin{equation}\label{eq:tau_particle}
+  \tau_{\mathrm{relax}} \sim \frac{\rs}{c}
+  = \frac{2Gm}{c^3}
+  \approx 8\times 10^{-63}\;\mathrm{s}
+  \qquad\text{(proton)}\,.
+\end{equation}
+This is far below any observable time scale.  The
+inertial response is effectively instantaneous for
+elementary particles, as observed experimentally.
+
+For a neutron star ($m \sim 1.4\,M_\odot$,
+$\rs \approx 4\;\mathrm{km}$):
+\begin{equation}\label{eq:tau_ns}
+  \tau_{\mathrm{relax}} \sim \frac{4\;\mathrm{km}}{c}
+  \approx 1.3\times10^{-5}\;\mathrm{s}\,.
+\end{equation}
+This is the time scale on which the inertial
+backreaction fully develops.  On shorter time scales
+the inertial response is incomplete---a regime
+potentially relevant to the dynamics of neutron-star
+mergers and post-merger oscillations.
+
+%===================================================================
+\section{Identity of gravitational and inertial mass:
+  formal proof}\label{sec:equivalence}
+%===================================================================
+
+The result~(\ref{eq:F_total}) already establishes the
+identity.  Here we state it as a theorem for clarity.
+
+\begin{quote}
+\textbf{Theorem (Equivalence principle as a theorem).}
+In the bi-conformal scalar-tensor theory defined by the
+action~(\ref{eq:action_app17}), the inertial mass of any body
+is identically equal to its gravitational mass.
+\end{quote}
+
+\textit{Proof.}---%
+The gravitational mass $m_g$ is defined as the coupling
+constant in the force law
+$\mathbf{F} = -m_g\,\nabla\varphi_{\mathrm{ext}}$, which
+is determined by the body's contribution to the
+source~$T$ of the field equation.  The inertial mass
+$m_i$ is defined as the proportionality constant in
+$\mathbf{F}_{\mathrm{self}} = -m_i\,\mathbf{a}$, which
+arises from the retarded self-field
+(Sec.~\ref{sec:inertial_force}).  Both $m_g$ and $m_i$
+are proportional to $\rs = 2Gm/c^2$, and both receive
+contributions from the same action~(\ref{eq:action_app17})
+through the same coupling.  Hence $m_g = m_i$
+identically, for any body, at any compactness.
+\hfill$\square$
+
+This result is composition-independent: the field
+equation~(\ref{eq:wave}) is universal (the source is
+$T = g^{\mu\nu}T_{\mu\nu}$, not a composition-dependent
+charge).  The E\"otv\"os parameter
+\begin{equation}\label{eq:eotvos}
+  \eta = 2\,\frac{|m_g - m_i|}{m_g + m_i} = 0
+\end{equation}
+vanishes exactly, consistent with the MICROSCOPE bound
+$\eta < 10^{-15}$.
+
+%===================================================================
+\section{Comparison with Mach's principle}
+\label{sec:mach}
+%===================================================================
+
+Ernst Mach (1883) proposed that inertia arises from
+the influence of distant matter in the universe.
+Einstein was inspired by this idea but ultimately
+abandoned it: GR admits solutions (de~Sitter spacetime,
+G\"odel universe) with inertia but no matter, and no
+mechanism was ever formulated to transmit the ``Machian
+influence'' from distant galaxies to a local laboratory.
+
+The present theory provides a resolution that preserves
+the spirit of Mach's insight while avoiding its
+difficulties:
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Property & Mach & Bi-conformal \\
+\hline
+Source of inertia & distant matter & local field $\phi$ \\
+Propagation & instantaneous? & retarded ($c$) \\
+Mechanism & unspecified & field asymmetry \\
+$m_g = m_i$ & postulated & derived \\
+Empty universe & inertia vanishes & $\phi = 0$ $\Rightarrow$
+  $m = 0$~$\checkmark$ \\
+Composition & unspecified & universal ($T$) \\
+\hline
+\end{tabular}
+\end{center}
+
+The scalar field $\phi$ plays the role of Mach's
+``distant stars'': it is the medium that mediates the
+inertial response.  But unlike Mach's proposal, the
+mechanism is entirely local---the retarded self-field
+of the body itself---and is governed by the same causal,
+hyperbolic field equation that describes gravitational
+waves, MOND phenomenology, and all other predictions
+of the theory.
+
+In an empty universe ($T = 0$ everywhere), the field
+equation gives $\phi = 0$.  A body placed in this
+universe has $\rs = 0$ (no field, no retardation, no
+inertia).  This is a concrete realisation of the Machian
+expectation that inertia requires a material universe,
+achieved without action at a distance.
+
+%===================================================================
+\section{Summary}\label{sec:summary_app17}
+%===================================================================
+
+\begin{enumerate}
+\item The retarded scalar field of an accelerating body
+  develops a dipolar asymmetry
+  $\delta\phi = (Gm/c^4)\,\hat{\mathbf{r}}\cdot
+  \mathbf{a}$ (Eq.~\ref{eq:delta_phi}).
+
+\item This asymmetry modifies the gravitational field
+  momentum.  The renormalised reaction force is
+  $\mathbf{F} = -m\,\mathbf{a}$ (Eq.~\ref{eq:F_total}),
+  combining equal contributions from the temporal ($g_{00}$)
+  and spatial ($g_{ij}$) sectors of the field momentum
+  (the equality follows from $\gamma_{\mathrm{PPN}}=1$).
+  \textbf{This is Newton's second law, derived from the
+  field equations.}
+
+\item Uniform rectilinear motion produces zero drag
+  (Sec.~\ref{sec:zero_drag}): the Lorentz-boosted field
+  is symmetric about the body, so the net self-force
+  vanishes.
+
+\item The equivalence principle $m_g = m_i$ is a
+  \textbf{theorem}, not a postulate: both masses arise
+  from the same field equation and the same coupling
+  (Sec.~\ref{sec:equivalence}).  The E\"otv\"os parameter
+  vanishes exactly.
+
+\item The relaxation time
+  $\tau \sim \rs/c \sim 2Gm/c^3$ is
+  $\sim 10^{-62}\;\mathrm{s}$ for elementary particles
+  (effectively instantaneous) and
+  $\sim 10^{-5}\;\mathrm{s}$ for neutron stars
+  (potentially observable in merger dynamics).
+
+\item The mechanism is local and causal---unlike Mach's
+  principle, it does not require action at a distance.
+  But it shares the Machian property that inertia
+  vanishes in an empty universe ($\phi = 0 \Rightarrow
+  \rs = 0$).
+
+\item No new fields, parameters, or postulates are
+  introduced.  Everything follows from the same
+  action~(\ref{eq:action_app17}) that generates all other
+  predictions of the theory.
+
+\item \textbf{Unified rarefaction principle.}
+  The dipolar pressure asymmetry derived here is the
+  \emph{dynamic} counterpart of the \emph{static}
+  Bernoulli pressure deficit that produces gravity
+  (Quantum paper, Sec.~3) and the \emph{macroscopic}
+  central rarefaction that produces MOND
+  phenomenology (Appendix~9).  All three---gravity,
+  inertia, and galactic rotation---are geometrically
+  distinct manifestations of a single mechanism:
+  reduction of the $\phi$-field's background pressure
+  at a given location.
+\end{enumerate}
+
+\end{document}

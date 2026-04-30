@@ -1,0 +1,645 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{mathtools}
+
+\newcommand{\rs}{r_{\mathrm{s}}}
+
+\title{Appendix 13 (to main theory): Covariant Hysteresis Sector: Augmented Action, Stability, and Quasi-Static Reduction}
+\author{}
+\date{}
+
+\begin{document}
+\let\phi\varphi
+\maketitle
+
+\section*{Purpose, scope, and reader contract}
+This appendix accompanies the main theory. It serves two purposes:
+\begin{enumerate}
+\item \textbf{Baseline map:} a compact dependency map of the ISPG ingredients used downstream;
+\item \textbf{Hysteresis phenomenology:} a specification of effective memory effects (captured by the field $\chi$ or, at effective level, by the transported hysteretic response derived in the companion MOND paper~\cite{Lotishvili2026MOND}) that reproduce galaxy-halo phenomenology without new fundamental particle species.  In the covariant template below, $\chi$ is an effective collective memory field, not a new fundamental degree of freedom.
+\end{enumerate}
+
+\textbf{Relation to the companion MOND paper~\cite{Lotishvili2026MOND}.}
+the companion MOND paper~\cite{Lotishvili2026MOND} derives the MOND interpolating function $\mu(x)=x/(1+x)$ from the bound-structure Bernoulli$+$vortex closure in rotating galaxies, with the scalar field equation $\Box\varphi=S$ on a weak-field rotating background fixing the relaxation time scale and transport rate. The present Appendix~13 provides an \emph{effective closure} perspective on the hysteretic part of the same physics: the field $\chi$ captures the transported memory response that the companion MOND paper~\cite{Lotishvili2026MOND} derives from first principles via Fourier decomposition and Bessel eigenvalue analysis. The two appendices are \emph{complementary}: the companion MOND paper~\cite{Lotishvili2026MOND} gives the formal bound-structure derivation; Appendix~13 gives the phenomenological implementation and strengthening routes for future work.
+In other words, the $\chi$ appearing here is not a second unrelated MOND coefficient: it is the dynamical coarse-grained field-level representative of the same transported response that the companion MOND paper~\cite{Lotishvili2026MOND} writes locally as the vortex-source multiplier.  The precise mathematical identification of $\chi$ with the companion paper's local multiplier---the explicit mapping between Eq.~\eqref{eq:chi_KG} and the vortex-closure equation at the bound-structure level---is the content of the Route~B coarse-graining programme (Sec.~\ref{sec:ledger_app13}) and is listed there as an open item; the statement here is that both objects describe the same physical quantity, not that the mapping has been carried out in closed form.
+
+\textbf{Scope boundary.}
+The $\chi$ evolution laws were originally introduced as
+an effective closure reproducing the results of the companion MOND paper~\cite{Lotishvili2026MOND}.
+In Sec.~\ref{sec:routeA_real} of this appendix,
+\textbf{Route~A is treated as a covariant effective template}
+for an effective collective field with standalone covariant
+dynamics in the quasi-static bound-structure sector.  The
+standalone $\chi$ equation is ghost-free, gradient-stable,
+and normally hyperbolic when its source is treated as an
+external quasi-static functional of the background scalar.
+The fully varied backreacting $(\varphi,\chi)$ principal-symbol
+analysis remains open.  The main strengthening route is:
+\begin{itemize}
+\item \textbf{Route B (coarse--graining/EFT):} obtain $\chi$ as an emergent slow variable from the nonlinear dynamics of $\phi$ around bound structures, connecting to the rotational bound-structure analysis of the companion MOND paper~\cite{Lotishvili2026MOND}.
+\end{itemize}
+
+\section{Baseline: bi--conformal metric and covariant action}\label{sec:base}
+\subsection{Bi--conformal metric ansatz}
+The constructive requirement is that a single scalar $\phi$ controls local clock rates and local spatial scales reciprocally. This is implemented by the bi--conformal ansatz
+\begin{equation}
+ds^2 = -e^{\phi}\,c^2 dt^2 + e^{-\phi}\left(dx^2+dy^2+dz^2\right).
+\label{eq:biconf_app13}
+\end{equation}
+
+\subsection{Covariant action and minimal Horndeski placement}
+The baseline action is of scalar--tensor form with minimal coupling of matter to $g_{\mu\nu}$:
+\begin{equation}
+S=\frac{1}{16\pi G}\int d^4x\sqrt{-g}\left[R+\frac12 g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi\right]+S_m[g_{\mu\nu},\psi].
+\label{eq:action_app13}
+\end{equation}
+A compact Horndeski mapping (minimally coupled single--field subclass) is:
+\begin{equation}
+G_2 = -\frac{M_{\rm Pl}^2}{2}X,\qquad
+G_3=0,\qquad
+G_4=\frac{M_{\rm Pl}^2}{2},\qquad
+G_5=0,\qquad
+X\equiv -\frac12 \partial_\mu\phi\,\partial^\mu\phi.
+\label{eq:horndeski_app13}
+\end{equation}
+(Discussion of the sign choice and stability conditions is given in the main theory and is not reopened here.)
+
+\section{Weak--field limit and the Shapiro discriminator}\label{sec:ppn_app13}
+Expanding \eqref{eq:biconf_app13} for small $\phi$ yields
+\begin{equation}
+g_{tt}\simeq -(1+\phi),\qquad g_{ij}\simeq (1-\phi)\delta_{ij},
+\end{equation}
+so that $\Phi=\Psi=(c^2/2)\phi$ and $\gamma_{\rm PPN}=1$ at leading order.
+
+The main theory derives the 1PN Shapiro delay via an effective refractive index $n(r)=e^{-\phi}$ (identical to GR at 1PN, as $\gamma=1$) and identifies a structurally distinct 2PN signature from the exponential $n=e^{-\phi}$; the refractive sub-piece of the 2PN delay is derived exactly and the closed ISPG--GR difference $\Delta B = \pi/4$ is established at the regularization-independent level, while the absolute 2PN coefficient (including bent-ray and path-length contributions) is deferred to future work (the main theory Shapiro section~\cite{Lotishvili2026} and Appendix~6). For later use we record the dependency structure:
+\begin{equation}
+n(r)=e^{-\phi}\simeq 1+\frac{\rs}{r},\qquad
+\Delta t_{2\rm PN}^{\rm ISPG}\propto \frac{G^2M^2}{c^5 b}.
+\end{equation}
+
+\section{Linear cosmology versus bound structures: regime separation}\label{sec:regime}
+A central design goal of the main theory is that \emph{linear} cosmology can remain GR-identical while \emph{nonlinear} bound structures exhibit new behaviour. The separation is operationally expressed by a scale hierarchy:
+\begin{equation}
+k \ll \frac{aH}{c}\quad (\text{super-/horizon scales, linear cosmology}),\qquad
+k \gg \frac{aH}{c}\ \text{and}\ \partial_t \ll c\nabla\quad (\text{quasi-static, bound structures}).
+\label{eq:scaleseparation}
+\end{equation}
+
+\textbf{Cosmic-time compatibility.}
+In the cosmic-time frame tied to matter clocks (comoving observers), $t=\tau$ along comoving worldlines, so $g_{tt}=-1$ in standard FLRW form. The bi--conformal structure \eqref{eq:biconf_app13} then requires $e^{\phi_0}=1$ and hence $\phi_0=0$ at the homogeneous level. This fixes the \emph{background} without eliminating \emph{inhomogeneous} responses sourced by matter in the quasi-static sector.
+
+\section{Matter-sourced scalar response in the quasi-static sector}\label{sec:deltaphi}
+The representative matter-sourced perturbation equation used in the main theory (metric-decoupled at linear order under $\alpha_i=0$, but not a free spectator; it is driven by $\delta T_k$ and inherits the phantom-sign caveat of the background action, cf.\ App.~11) is
+\begin{equation}
+\delta\ddot{\phi}_k + 3H\,\delta\dot{\phi}_k + \left(\frac{c^2k^2}{a^2}\right)\delta\phi_k = \frac{8\pi G}{c^2}\,\delta T_k.
+\label{eq:deltaphi_app13}
+\end{equation}
+The RHS coefficient $8\pi G/c^2$ follows from the FLRW expansion of the sourced scalar equation $\Box\phi=-(8\pi G/c^4)T$ of App.~1: $\Box\phi=-c^{-2}(\ddot\phi+3H\dot\phi)+a^{-2}\nabla^2\phi$, multiplied by $-c^2$, gives the form above and matches App.~9 Eq.~\eqref{eq:deltaphi_app9}.
+Equation~\eqref{eq:deltaphi_app13} makes explicit that localized inhomogeneities can excite $\delta\phi$ through $\delta T_k$ even when the homogeneous background is fixed to $\phi_0=0$ in cosmic time. The MOND phenomenology of the main theory is associated with the quasi-static, weak-field, nonrelativistic limit around bound structures, not with the linear FLRW sector.
+
+\section{The hysteresis field $\chi$: closure, selection principle, and strengthening routes}\label{sec:chi}
+\subsection{Intent and modelling posture}
+We introduce $\chi$ as the effective field capturing medium--memory (hysteresis) effects. In this appendix it serves as the field-level effective closure of the transported response discussed in the companion MOND paper~\cite{Lotishvili2026MOND}. Its purpose is to (i) encode memory effects with minimal extra structure, (ii) produce falsifiable halo-scale consequences, and (iii) admit a controlled coarse-graining derivation from the underlying bound-structure dynamics via Route~B.
+
+\subsection{Phenomenological relaxation ansatz}
+As motivation, we first record the relaxation law toward a local equilibrium functional $\chi_{\rm eq}$:
+\begin{equation}
+\dot{\chi} = -\tau^{-1}\big(\chi-\chi_{\rm eq}\big),
+\label{eq:chi1}
+\end{equation}
+with $\tau$ to be determined.  (This ansatz is \emph{recovered}
+as an overdamped, coarse-grained limit of the covariant template
+in Sec.~\ref{sec:qsreduction}; the free massive KG sector by itself
+oscillates rather than relaxing.)
+
+\subsection{Closure choice for relaxation}
+We take the leading local equilibrium to be proportional to the quasi-static gradient strength,
+\begin{equation}
+\chi_{\rm eq}=\beta\,|\nabla\phi|,\qquad \beta>0,
+\label{eq:chieq}
+\end{equation}
+and we adopt the leading local relaxation-rate law
+\begin{equation}
+\tau^{-1} = \gamma\,|\nabla\phi|\qquad \text{(Variant A)}.
+\label{eq:chi2}
+\end{equation}
+
+\paragraph{Working assumptions (explicit).}
+In the hysteresis sector we restrict attention to the quasi-static, weak-field regime around bound structures, characterized by $\partial_t \ll c\nabla$ and (for Fourier modes) $k\gg aH/c$. The closure is required to be \emph{local}: it depends only on local scalars built from the fields and the metric in this regime. Concretely, at leading order we allow dependence on
+\begin{equation}
+|\nabla\phi|,\qquad
+Y_{\rm qs}\equiv \sqrt{\nabla_\mu\phi\,\nabla^\mu\phi},
+\end{equation}
+where $Y_{\rm qs}$ is defined only in the spacelike-gradient,
+quasi-static bound-structure regime.  We exclude explicit dependence
+on coordinate radius $r$, galaxy-specific input scales, or ad hoc
+profile functions. The ``no new macroscopic scales'' requirement means
+that $\tau$ and $\chi_{\rm eq}$ must be expressible in terms of these
+local invariants and constants already present in the baseline sector,
+without introducing an additional halo-tuned length or time scale.
+
+\paragraph{Minimal (leading-order) character of Variant A.}
+Under locality, monotonicity (stronger gradients relax faster), and the absence of additional macroscopic scales, the choice $\tau^{-1}\propto|\nabla\phi|$ can be viewed as the leading-order term in a local gradient-expansion for the relaxation rate. Alternative closures correspond to higher-order corrections (involving additional invariants or suppressed operators) or to genuinely new microphysical scales; in either case they predict quantitatively distinct halo profiles and lensing--dynamics relations and are therefore observationally discriminable.
+
+\subsection{Static limit $\Rightarrow$ isothermal scaling (consistency check)}
+In the static weak-field limit of isolated sources one has $|\nabla\phi|\propto 1/r^2$. Under Variant~A, the closure drives $\chi\propto |\nabla\phi|$ and therefore $\chi\propto 1/r^2$ (and similarly $\rho_\chi\propto 1/r^2$ if $\rho_\chi$ is taken proportional to $\chi$).
+\textbf{Intended reading:} this is a \emph{consistency check} for the chosen closure, not a first-principles derivation. The decisive content is that other relaxation laws predict different halo profiles, providing observational discriminants.
+
+\subsection{Rotation curves and lensing fingerprints}
+Because $\chi$ is tied to gradients of $\phi$, galaxy dynamics and lensing are linked. Different closure choices $\tau(|\nabla\phi|)$ predict different outer-halo slopes and transition radii, and therefore distinct relations between rotation curves and shear profiles. This is one of the primary falsification channels.
+
+\subsection{Route A sketch: a concrete covariant template}\label{sec:routeA}
+To make Route~A concrete, we record a covariant effective template in
+which a memory field is driven toward a gradient-built equilibrium.
+Throughout this Route~A section, the source functional is treated as
+an external quasi-static functional of the background $\phi$; the fully
+varied two-field principal-symbol analysis is an open task.  Define
+the quasi-static invariant
+\begin{equation}
+Y_{\rm qs} \equiv \sqrt{\nabla_\mu\phi\,\nabla^\mu\phi}\quad
+\text{(spacelike-gradient dominated in the quasi-static sector)}.
+\end{equation}
+A minimal augmented-action ansatz can be written schematically as
+\begin{equation}
+S[g,\phi,\chi]=S_{\rm ISPG}[g,\phi] + \int d^4x\sqrt{-g}\left[-\frac{1}{2}(\nabla\chi)^2 - U(\chi) - \frac{\lambda}{2}\big(\chi-\beta Y_{\rm qs}\big)^2\right],
+\label{eq:augaction}
+\end{equation}
+where $\lambda$ controls the stiffness toward the local equilibrium
+$\chi\simeq \beta Y_{\rm qs}$. In the quasi-static sector with
+sufficiently large $\lambda$, the field tracks
+$\chi_{\rm eq}\approx \beta Y_{\rm qs}$ up to controlled corrections.
+We now record the supported one-way effective construction explicitly.
+
+\section{Route~A realization: field equation and stability}\label{sec:routeA_real}
+
+\subsection{Minimal action ($U = 0$)}\label{sec:minaction}
+Following the parameter-economy principle, we set $U(\chi) = 0$
+in~\eqref{eq:augaction}, retaining only the kinetic and
+stiffness terms:
+\begin{equation}
+S_\chi = \int d^4x\,\sqrt{-g}\left[
+  -\frac{1}{2}\,\nabla_\mu\chi\,\nabla^\mu\chi
+  - \frac{\lambda}{2}\bigl(\chi - \beta\,Y_{\rm qs}\bigr)^2
+\right],
+\label{eq:Schi}
+\end{equation}
+with
+\begin{equation}
+Y_{\rm qs} \equiv \sqrt{\nabla_\mu\varphi\,\nabla^\mu\varphi}
+\end{equation}
+in the spacelike-gradient, quasi-static bound-structure sector,
+with $\lambda > 0$ carrying dimensions of
+$[\mathrm{length}^{-2}]$ (equivalently mass$^{2}$ in
+natural units) and $\beta > 0$.
+Here $\chi$ is an effective collective field with standalone covariant
+dynamics in the quasi-static bound-structure sector. In that limit it
+should be read as the field-level effective realization of the local
+transported-response multiplier used in the companion MOND
+paper~\cite{Lotishvili2026MOND}, while Route~B remains the microscopic
+coarse-graining step.
+No additional self-interaction potential is introduced;
+the only scale controlling $\chi$ dynamics is the
+stiffness parameter~$\lambda$.
+
+\paragraph{Microscopic stiffness scale.}
+In the classical context of this appendix, $\lambda$ was
+originally a closure stiffness.  The quantum
+extension~\cite{Lotishvili2026Q} identifies the microscopic tracking
+scale with the quasi-normal mode structure of the oscillon:
+\begin{equation}
+  \lambda_{\mathrm{micro}}
+  = \frac{\omega_0^2}{c^2}
+  = \left(\frac{m_0 c}{\hbar}\right)^{\!2} e^{\varphi}\,,
+  \label{eq:lambda_micro}
+\end{equation}
+where $\omega_0$ is the fundamental confining frequency
+and $m_0$ the oscillon rest mass.  This fixes the
+microphysical tracking stiffness, but it does not by itself derive the
+macroscopic collective relaxation scale used in galaxy-scale
+hysteresis.  That macro-scale matching remains part of the Route~B
+coarse-graining programme, and $\beta$ remains a phenomenological
+closure normalization until the full bound-structure derivation is
+completed.
+
+\paragraph{Domain and regularity note.}
+The source functional
+$Y_{\rm qs} = \sqrt{\nabla_\mu\varphi\,\nabla^\mu\varphi}$
+is real only in the spacelike-gradient or null-gradient regime and is
+therefore used here as a quasi-static bound-structure quantity, not as
+a homogeneous FLRW/timelike-gradient scalar.  It is also non-smooth at
+$Y_{\rm qs} = 0$: the variation
+$\delta Y_{\rm qs}/\delta(\partial_\mu\varphi) =
+\nabla^\mu\varphi/Y_{\rm qs}$
+diverges there.  In the quasi-static sector around
+gravitating sources $\nabla\varphi \neq 0$ everywhere
+outside the source centre, so the singularity is not
+encountered in practice.  Should a fully global treatment
+be required, the standard remedy is to replace $Y_{\rm qs}$ with
+a regularized form
+$Y_{{\rm qs},\epsilon} \equiv
+\sqrt{\nabla_\mu\varphi\,\nabla^\mu\varphi
++ \epsilon^2}$ ($\epsilon \to 0^+$), which preserves all
+quasi-static results derived below while rendering the action smooth.
+
+\subsection{Field equation for $\chi$}\label{sec:chi_eom}
+Varying~\eqref{eq:Schi} with respect to $\chi$ gives
+\begin{equation}
+\frac{\delta S_\chi}{\delta\chi}
+= \Box\chi - \lambda\bigl(\chi - \beta\,Y_{\rm qs}\bigr) = 0\,,
+\label{eq:chi_eom}
+\end{equation}
+which can be written as
+\begin{equation}
+\boxed{\Box\chi - \lambda\,\chi = -\lambda\,\beta\,Y_{\rm qs}\,.}
+\label{eq:chi_KG}
+\end{equation}
+This is a Klein--Gordon equation with effective
+mass $m_\chi^2 = \lambda$ and source $\lambda\beta Y_{\rm qs}$.
+The source is built entirely from the scalar field
+$\varphi$ of the baseline ISPG sector; no new coupling
+to matter is introduced.
+
+\paragraph{Structure of the equation.}
+\begin{itemize}
+\item In regions where $\varphi$ is slowly varying
+  ($Y_{\rm qs} \to 0$), the source vanishes.  The free
+  homogeneous KG mode then oscillates with frequency
+  $c\sqrt{\lambda}$; relaxation to zero requires
+  damping, coarse-graining, or outgoing boundary
+  conditions.
+\item Near a gravitating source where
+  $|\nabla\varphi| \sim r_s/r^2$, the field is driven
+  toward $\chi \approx \beta Y_{\rm qs}$, i.e.\ the local
+  equilibrium of the phenomenological closure.
+\item The $\Box\chi$ term provides the propagation dynamics
+  absent in the original relaxation ansatz~\eqref{eq:chi1},
+  upgrading it from a first-order ODE to a covariant
+  hyperbolic PDE.
+\end{itemize}
+
+\subsection{Ghost freedom}\label{sec:ghost_app13}
+A ghost (negative-norm excitation) arises when the
+kinetic term of a dynamical field carries the wrong
+sign, rendering the Hamiltonian unbounded from below.
+In~\eqref{eq:Schi} the $\chi$~kinetic term is
+\begin{equation}
+\mathcal{L}_{\rm kin}^{(\chi)}
+= -\tfrac{1}{2}\,\nabla_\mu\chi\,\nabla^\mu\chi\,.
+\label{eq:Lkin}
+\end{equation}
+With the mostly-plus signature convention
+$(-,+,+,+)$ used throughout the main theory,
+$\nabla_\mu\chi\,\nabla^\mu\chi
+= -\dot\chi^2/c^2 + (\partial_i\chi)^2$,
+so the Lagrangian density becomes
+\begin{equation}
+\mathcal{L}_{\rm kin}^{(\chi)}
+= +\frac{1}{2c^2}\,\dot\chi^2
+  - \frac{1}{2}\,(\partial_i\chi)^2\,.
+\label{eq:Lkin_3p1}
+\end{equation}
+The time-kinetic part $+\dot\chi^2/(2c^2)$ enters
+with a \emph{positive} sign.  The conjugate momentum is
+\begin{equation}
+\pi_\chi = \frac{\partial\mathcal{L}}{\partial\dot\chi}
+= \frac{\dot\chi}{c^2}\,,
+\label{eq:pi_chi}
+\end{equation}
+and the corresponding Hamiltonian density is
+\begin{equation}
+\mathcal{H}_\chi
+= \frac{c^2}{2}\,\pi_\chi^2
+  + \frac{1}{2}\,(\partial_i\chi)^2
+  + \frac{\lambda}{2}\,(\chi - \beta Y_{\rm qs})^2\,.
+\label{eq:H_chi}
+\end{equation}
+Every term is non-negative for $\lambda > 0$.
+Therefore the $\chi$~sector is \textbf{ghost-free}:
+the energy is bounded from below and no negative-norm
+states propagate.
+
+\subsection{Gradient stability}\label{sec:gradient}
+Gradient instability occurs when spatial perturbations
+grow exponentially, signalling that the field equation
+is ill-posed as an initial-value problem.
+To check this, linearize~\eqref{eq:chi_KG} around a
+static background $\bar\chi$:
+\begin{equation}
+\chi = \bar\chi + \delta\chi\,,\qquad
+\delta\chi \propto e^{-i\omega t + i\mathbf{k}\cdot\mathbf{x}}\,.
+\label{eq:pert_ansatz}
+\end{equation}
+Substituting into~\eqref{eq:chi_KG} and keeping only
+the homogeneous part (the source $\lambda\beta Y_{\rm qs}$ is
+fixed by the background $\varphi$), the dispersion
+relation is
+\begin{equation}
+\boxed{\omega^2 = c^2\,|\mathbf{k}|^2 + \lambda\,c^2\,.}
+\label{eq:dispersion_app13}
+\end{equation}
+For all $\lambda > 0$:
+\begin{itemize}
+\item $\omega^2 > 0$ for every wavenumber $\mathbf{k}$,
+  so no mode grows exponentially.
+\item The group velocity
+  $v_g = \partial\omega/\partial|\mathbf{k}|
+  = c^2|\mathbf{k}|/\omega < c$,
+  so $\chi$ perturbations propagate subluminally
+  (massive field).
+\item The phase velocity $v_p = \omega/|\mathbf{k}|
+  = c\sqrt{1 + \lambda/|\mathbf{k}|^2} > c$ in the
+  usual massive-field sense, but carries no information
+  superluminally.
+\end{itemize}
+The spatial-gradient coefficient in the
+Hamiltonian~\eqref{eq:H_chi} is $+\tfrac{1}{2}$
+(positive definite), confirming the absence of
+gradient instability at the nonlinear level as well.
+
+\subsection{Quasi-static reduction to the phenomenological
+  closure}\label{sec:qsreduction}
+We now show that the covariant field
+equation~\eqref{eq:chi_KG} reproduces the
+phenomenological relaxation law~\eqref{eq:chi1}
+in the appropriate limit.
+
+In the FLRW background the d'Alembertian acquires
+a Hubble friction term:
+\begin{equation}
+\Box\chi = -\frac{1}{c^2}\,\ddot\chi
+  - \frac{3H}{c^2}\,\dot\chi
+  + \frac{1}{a^2}\,\nabla^2\chi\,.
+\label{eq:box_flrw}
+\end{equation}
+The field equation~\eqref{eq:chi_KG} becomes
+\begin{equation}
+-\frac{1}{c^2}\,\ddot\chi
+  - \frac{3H}{c^2}\,\dot\chi
+  + \frac{1}{a^2}\,\nabla^2\chi
+  + \lambda\,\chi
+  = \lambda\,\beta\,Y_{\rm qs}\,.
+\label{eq:chi_flrw}
+\end{equation}
+
+\paragraph{Overdamped, long-wavelength limit.}
+In the quasi-static sector around bound structures,
+two conditions hold:
+\begin{enumerate}
+\item \emph{Overdamped:} the field evolves on
+  timescales much longer than $1/\sqrt{\lambda}\,c$,
+  so $|\ddot\chi| \ll \lambda c^2\,|\chi|$ and
+  the $\ddot\chi$~term can be dropped.
+\item \emph{Long-wavelength:} the characteristic
+  spatial scale $\ell$ of $\chi$ satisfies
+  $1/\ell^2 \ll \lambda$, so
+  $|\nabla^2\chi| \ll \lambda\,|\chi|$ and
+  the Laplacian can be dropped.
+\end{enumerate}
+Under these two conditions, Eq.~\eqref{eq:chi_flrw}
+reduces to
+\begin{equation}
+-\frac{3H}{c^2}\,\dot\chi
+  = \lambda\bigl(\chi - \beta\,Y_{\rm qs}\bigr)\,,
+\end{equation}
+which can be rewritten as
+\begin{equation}
+\boxed{\dot\chi
+  = -\frac{\lambda\,c^2}{3H}
+    \bigl(\chi - \beta\,Y_{\rm qs}\bigr)\,.}
+\label{eq:chi_relaxation}
+\end{equation}
+This is precisely the phenomenological
+relaxation~\eqref{eq:chi1} with the identifications
+\begin{equation}
+\chi_{\rm eq} = \beta\,Y_{\rm qs}\,,\qquad
+\tau^{-1} = \frac{\lambda\,c^2}{3H}\,.
+\label{eq:tau_derived}
+\end{equation}
+
+\paragraph{Physical content.}
+\begin{itemize}
+\item Within the overdamped, long-wavelength reduction,
+  the effective relaxation timescale
+  $\tau = 3H/(\lambda c^2)$ is fixed by the ratio of
+  Hubble friction to the stiffness parameter~$\lambda$.
+\item For $\lambda \gg H^2/c^2$ the field tracks $\beta Y_{\rm qs}$
+  almost instantaneously; for $\lambda \sim H^2/c^2$
+  the lag becomes cosmologically significant, producing
+  observable hysteresis.
+\item The equilibrium value $\chi_{\rm eq} = \beta Y_{\rm qs}
+  \approx \beta\,|\nabla\varphi|$ in the quasi-static
+  sector, matching the phenomenological
+  closure~\eqref{eq:chieq}.
+\item The original Variant~A ansatz
+  $\tau^{-1} = \gamma\,|\nabla\varphi|$
+  (Eq.~\ref{eq:chi2}) was a phenomenological
+  gradient-dependent closure originally introduced to
+  reproduce the isothermal scaling of the halo regime.
+  The present covariant derivation supersedes it: the
+  leading-order relaxation rate obtained directly from
+  the action~\eqref{eq:Schi} is instead
+  Hubble-regulated, $\tau^{-1}=\lambda c^2/(3H)$, and
+  is not gradient-dependent to this order.
+  Reconciling the two forms therefore requires either
+  a subleading gradient-dependent correction to the
+  covariant $\lambda$, or the identification of a
+  specific regime in which the effective Variant~A
+  re-emerges from the covariant theory.  This
+  reconciliation is listed as an open item in the
+  Route~B programme (Sec.~\ref{sec:ledger_app13}),
+  and the outer-halo region $|\nabla\varphi|$ varies
+  rapidly provides the natural observational setting
+  in which any residual gradient dependence would be
+  tested against the Hubble-regulated baseline.
+\end{itemize}
+
+\subsection{Hyperbolicity and well-posedness}\label{sec:wellposed}
+A PDE system is well-posed as an initial-value problem
+if and only if its principal part is hyperbolic.
+The principal symbol of the $\chi$ field
+equation~\eqref{eq:chi_KG} is determined by its
+highest-derivative term:
+\begin{equation}
+\mathcal{P}(\chi) = \Box\chi + (\text{lower order})
+\quad\Longrightarrow\quad
+\sigma(\xi) = g^{\mu\nu}\xi_\mu\xi_\nu\,,
+\label{eq:principal_app13}
+\end{equation}
+where $\xi_\mu$ is the covector of the Fourier mode.
+The mass term $\lambda\chi$ and the source $\lambda\beta Y_{\rm qs}$
+are algebraic (non-derivative) and do not contribute
+to the principal symbol of the standalone $\chi$ equation when
+$Y_{\rm qs}$ is treated as an external quasi-static background
+functional.
+
+For a Lorentzian metric $g_{\mu\nu}$ with signature
+$(-,+,+,+)$, the symbol $\sigma(\xi) = 0$ defines
+a cone with one timelike and three spacelike
+directions.  This is the defining property of a
+\emph{normally hyperbolic} operator.  By the standard
+theory of linear wave equations on globally hyperbolic
+spacetimes (see e.g.\ Wald, \textit{General Relativity}, 1984,
+Ch.~10; Hawking \& Ellis, \textit{The Large Scale
+Structure of Space-Time}, 1973, Ch.~7),
+the Cauchy problem
+\begin{equation}
+\Box\chi - \lambda\chi = -\lambda\beta Y_{\rm qs}\,,\quad
+\chi\big|_{\Sigma} = \chi_0\,,\quad
+\dot\chi\big|_{\Sigma} = \chi_1\,,
+\label{eq:cauchy}
+\end{equation}
+on any spacelike hypersurface $\Sigma$ admits a
+unique, continuously dependent solution for smooth
+initial data $(\chi_0,\chi_1)$ and source~$Y_{\rm qs}$.
+
+\paragraph{Joint system $(\varphi,\chi)$.}
+The preceding argument establishes the sourced KG problem for
+$\chi$ on a prescribed quasi-static scalar background.  It does
+\emph{not} by itself prove hyperbolicity of the fully varied
+backreacting $(\varphi,\chi)$ system.  The reason is that
+$Y_{\rm qs}$ depends on first derivatives of~$\varphi$; varying the
+term $(\chi-\beta Y_{\rm qs})^2$ with respect to $\varphi$ can modify
+the $\varphi$ principal block through derivative-coupling and kinetic
+renormalization terms.  A direct two-field principal-symbol
+calculation is therefore required before claiming full covariant
+well-posedness of the backreacting system.  In the present appendix
+we use Route~A only as a one-way quasi-static effective template.
+
+\section{Normalization and parameter economy}\label{sec:norm}
+\subsection{Closing the normalization via the cosmological MOND scale}
+A key aim is to preserve the parameter economy of the main theory by fixing the free parameters through the MOND scale $a_0$, determined independently in the cosmological sector (the main theory) as
+\begin{equation}
+a_0 = \frac{cH_0}{2\pi}.
+\label{eq:a0}
+\end{equation}
+The $2\pi$ factor follows from the standard Fourier convention:
+\begin{equation}
+k_H \equiv \frac{aH}{c},\qquad
+\lambda_H \equiv \frac{2\pi a}{k_H}=\frac{2\pi c}{H},\qquad
+\text{and we identify}\quad a_0 \equiv \frac{c^2}{\lambda_H}.
+\end{equation}
+The identification $a_0\equiv c^2/\lambda_H$ is a physical linkage (not a mathematical identity): it ties a characteristic cosmological wavelength scale to an acceleration scale in the emergent MOND sector.
+
+\paragraph{Normalization target equation (explicit).}
+To make the parameter-economy goal operational, we parametrize the halo-regime closure such that the asymptotic circular speed can be written as
+\begin{equation}
+V_{\rm flat}^4 \;=\; G M\,\mathcal{N}\!\left(\beta,\lambda\right)\,a_0,
+\label{eq:normtarget}
+\end{equation}
+where $\mathcal{N}(\beta,\lambda)$ is the dimensionless normalization implied by the specific $\chi$ implementation.  In the covariant effective formulation of Sec.~\ref{sec:routeA_real}, the overdamped relaxation rate is Hubble-regulated ($\tau^{-1}=\lambda c^2/3H$), so in the static limit $\chi\to\chi_{\rm eq}=\beta Y_{\rm qs}$ the normalization depends only on~$\beta$; the stiffness~$\lambda$ controls only the \emph{approach} to equilibrium.  The \emph{parameter-free target} is $\mathcal{N}=1$, at which the BTFR normalisation would be inherited directly from $a_0$ with no additional fit parameter.  Whether the covariant closure actually realises $\mathcal{N}=1$---i.e.\ whether the correct $\beta$ is the one that already follows from $a_0=cH_0/2\pi$ with no residual multiplicative factor---is an open check and depends on the full bound-structure derivation in the companion MOND paper~\cite{Lotishvili2026MOND} and on the Route~B programme (Sec.~\ref{sec:ledger_app13}).  The non-circularity of the construction is nevertheless preserved: $a_0$ is determined first from the cosmological linkage in the main theory and only then used to set the galaxy-scale normalisation through Eq.~\eqref{eq:normtarget}; if the ultimate $\mathcal{N}$ differs from unity the discrepancy is absorbed into a single well-defined dimensionless closure ratio, not into an already-derived first-principles constant.
+
+\section{Derived vs.\ Proposed: compact ledger}\label{sec:ledger_app13}
+\begin{center}
+\begin{tabular}{@{}p{0.27\linewidth}p{0.63\linewidth}@{}}
+\toprule
+\textbf{Derived (baseline)} &
+Bi--conformal metric \eqref{eq:biconf_app13}; covariant action \eqref{eq:action_app13}; weak-field $\gamma_{\rm PPN}=1$; Shapiro 1PN with a 2PN discriminator; linear-cosmology GR-identity under $\alpha_i=0$ (the main theory and CMB appendix); spectator sourcing \eqref{eq:deltaphi_app13}; MOND interpolating function $\mu(x)=x/(1+x)$ from the bound-structure Bernoulli$+$vortex closure (the companion MOND paper~\cite{Lotishvili2026MOND}).\\
+\midrule
+\textbf{Established (Route~A effective template)} &
+Minimal augmented action~\eqref{eq:Schi} with $U=0$;
+Klein--Gordon field equation~\eqref{eq:chi_KG};
+ghost freedom (Sec.~\ref{sec:ghost_app13});
+gradient stability and subluminal propagation
+(Sec.~\ref{sec:gradient});
+quasi-static reduction to first-order relaxation
+with effective overdamped timescale
+$\tau^{-1}=\lambda c^2/(3H)$~\eqref{eq:tau_derived};
+normal hyperbolicity and well-posedness of the standalone sourced
+$\chi$ equation for prescribed $Y_{\rm qs}$ (Sec.~\ref{sec:wellposed}).\\
+\midrule
+\textbf{Microscopic input (quantum extension~\cite{Lotishvili2026Q})} &
+Microscopic tracking stiffness
+$\lambda = \omega_0^2/c^2 = (m_0 c/\hbar)^2\,e^{\varphi}$
+from the oscillon's fundamental quasi-normal mode
+(Eq.~\ref{eq:lambda_micro}); this does not by itself derive the
+macroscopic collective relaxation scale or the closure normalization
+$\beta$.\\
+\midrule
+\textbf{Remaining open items} &
+Route~B coarse-graining derivation of $\chi$ from
+nonlinear $\varphi$ dynamics;
+full backreacting $(\varphi,\chi)$ principal-symbol analysis;
+macroscopic collective relaxation scale;
+numerical halo profiles from the full
+PDE~\eqref{eq:chi_flrw};
+comparison of Hubble-regulated vs.\
+gradient-dependent relaxation with observed
+rotation curves;
+determination of $\beta$ from first principles.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Falsifiable discriminants}\label{sec:pred}
+The hysteresis closure is designed to be testable by comparing model variants. The most direct discriminants are:
+\begin{itemize}
+\item \textbf{Halo scaling and transition:} different $\tau(|\nabla\phi|)$ imply different radial slopes and transition radii.
+\item \textbf{Lensing--dynamics relation:} because $\chi$ is tied to gradients of $\phi$, shear profiles and rotation curves are linked in a way that differs from NFW-based fits.
+\item \textbf{Environment sensitivity:} the local-gradient dependence naturally introduces external-field sensitivity, providing a clear test with satellites and dwarfs.
+\item \textbf{Redshift drift of normalization:} through $a_0(z)\propto H(z)$ (the main theory), the BTFR normalization is predicted to evolve with cosmic time.
+\end{itemize}
+
+\section{Notes for future work}\label{sec:notes}
+The Route~A programme now provides a controlled effective template:
+the $\chi$ field equation follows from the augmented action, and
+ghost freedom, gradient stability, standalone KG hyperbolicity, and
+the quasi-static overdamped reduction are established within the
+one-way source treatment.  The remaining open items are:
+\begin{enumerate}
+\item \textbf{Route~B (coarse-graining):} derive $\chi$
+  as an emergent slow variable from the nonlinear
+  dynamics of~$\varphi$ around bound structures,
+  connecting to the Bessel eigenvalue analysis of
+  the companion MOND paper~\cite{Lotishvili2026MOND}.  (The quantum
+  extension~\cite{Lotishvili2026Q} partially addresses
+  the microscopic tracking scale through the oscillon
+  quasi-normal mode structure,
+  $\lambda_{\rm micro} = \omega_0^2/c^2$; a full
+  coarse-graining from the classical nonlinear sector and the
+  macroscopic collective relaxation scale remain open.)
+\item \textbf{Backreacting principal symbol:} vary the full
+  $(\varphi,\chi)$ action, including the derivative dependence of
+  $Y_{\rm qs}$, and establish the conditions for covariant
+  hyperbolicity of the coupled system.
+\item \textbf{Numerical profiles:} solve the full
+  PDE~\eqref{eq:chi_flrw} for realistic galaxy
+  potentials and compare the resulting rotation curves
+  and lensing profiles with observations.
+\item \textbf{Relaxation-rate discriminant:} the
+  Hubble-regulated rate
+  $\tau^{-1} = \lambda c^2/(3H)$ and the original
+  gradient-dependent rate
+  $\tau^{-1} = \gamma|\nabla\varphi|$ predict
+  different outer-halo slopes; quantify this difference
+  for observational tests.
+\end{enumerate}
+
+\section*{Takeaway}
+The $\chi$ hysteresis sector is now placed on a
+covariant effective-template footing.  Starting from the minimal
+augmented action~\eqref{eq:Schi} with $U = 0$ and prescribed
+quasi-static source $Y_{\rm qs}$:
+(i)~the field equation~\eqref{eq:chi_KG} is a standard
+massive Klein--Gordon equation sourced by quasi-static $\varphi$
+gradients in the bound-structure sector;
+(ii)~the sector is ghost-free, gradient-stable,
+and normally hyperbolic as a standalone sourced KG problem;
+(iii)~in the quasi-static, overdamped limit the
+covariant equation reduces to the phenomenological
+relaxation law with an effective Hubble-friction timescale
+$\tau^{-1} = \lambda c^2/(3H)$;
+(iv)~the microscopic tracking stiffness
+$\lambda_{\rm micro} = \omega_0^2/c^2$ is tied to the oscillon
+quasi-normal mode structure in the quantum
+extension~\cite{Lotishvili2026Q}
+(Eq.~\ref{eq:lambda_micro}), while the macroscopic collective
+relaxation scale and the closure normalization $\beta$ remain open
+Route~B/coarse-graining tasks.  The BTFR normalization target is
+anchored by the independently determined $a_0 = cH/(2\pi)$, but its
+full realization remains a bound-structure closure check.
+\end{document}

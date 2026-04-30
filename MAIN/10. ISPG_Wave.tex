@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{mathtools}
+
+\newcommand{\rs}{r_{\mathrm{s}}}
+
+\title{Appendix 10 (to main theory): Gravitational-Wave Modes, Polarizations, and Detectability in ISPG}
+\author{}
+\date{}
+
+\begin{document}
+\let\phi\varphi
+\maketitle
+
+\section*{Non-negotiable consistency with the main theory (one-metric formulation)}
+This appendix is written strictly in the main theory formulation:
+\begin{itemize}
+\item matter is minimally coupled to the single physical metric $g_{\mu\nu}$ (no disformal or conformal matter metric is introduced here);
+\item the covariant backbone is the main theory scalar--tensor action and its Horndeski mapping with $G_4=\mathrm{const}$, $G_{4,X}=0$, and $G_5=0$;
+\item consequently, the tensor propagation speed satisfies $c_g=c$ \emph{exactly} (not as a vacuum-limit approximation), in agreement with GW170817~\cite{LIGO_GW170817}.
+\end{itemize}
+No Einstein/Jordan frame change is required for this argument; all statements are made in the single-metric bi--conformal geometry used in the main theory.
+
+\section{GW170817 consistency from $\alpha_T=0$ (exact)}\label{sec:alphaT}
+In the EFT-of-dark-energy / Horndeski parameterization (Bellini--Sawicki~\cite{BelliniSawicki2014}), the tensor speed excess is
+\begin{equation}
+\alpha_T \equiv c_T^2/c^2 - 1.
+\end{equation}
+For Horndeski theories, $\alpha_T$ receives contributions only from $G_{4,X}$ and $G_5$ (and their derivatives). In the main theory mapping one has
+\begin{equation}
+G_4=\frac{M_{\rm Pl}^2}{2}=\mathrm{const},\qquad G_{4,X}=0,\qquad G_5=0,
+\label{eq:G4G5}
+\end{equation}
+hence
+\begin{equation}
+\alpha_T=0\quad\Rightarrow\quad c_g=c\ \text{exactly}.
+\label{eq:cg_app10}
+\end{equation}
+Therefore the GW170817~\cite{LIGO_GW170817} constraint is satisfied structurally by the main theory backbone, without invoking vacuum boundary conditions.
+
+\section{Scalar polarization content and the breathing mode}\label{sec:breathing_app10}
+Beyond the two tensor polarizations of GR, the scalar sector implies an additional scalar (breathing) polarization. In the main theory programme the breathing mode is present but suppressed.
+
+\subsection{Multipole structure and source suppression}\label{sec:multipole}
+For compact binaries, the scalar radiation channel admits a multipolar expansion. The key suppression chain follows from the leading-order scalar sensitivity $s=1/2$ motivated in Appendix~16 from the bare-mass Komar integrand $\rho_0 e^{-\phi}=\rho_0 e^{\phi/2}e^{-3\phi/2}$ (so $q_s=2sM=M$ for every body at leading order in $|\phi|$):
+\begin{itemize}
+\item \textbf{Monopole:} no radiation for stationary total mass/charge ($S_0=\mathrm{const}$).
+\item \textbf{Dipole:} cancels at leading order because $s_A\simeq s_B\simeq 1/2$ from the Komar-integrand route; the residual body-to-body difference is $O(|\phi_A|-|\phi_B|)$ and is expected (but not rigorously proven) to cancel to higher order (Appendix~16, open task).
+\item \textbf{Leading order:} the first non-vanishing scalar radiation is the trace quadrupole, suppressed by $v^2/c^2$ relative to the tensor quadrupole.
+\end{itemize}
+Thus the scalar-radiation amplitude ratio is estimated as
+\begin{equation}
+\frac{A_b}{A_t}\sim \left(\frac{v}{c}\right)^2
+\sim \frac{\rs}{r}\,,
+\label{eq:AbAt_v}
+\end{equation}
+where the last step uses the virial relation $v^2/c^2\sim \rs/r$. This linear scaling is a working estimate, not a fully derived prediction: tensor radiation is also quadrupolar, so the extra $v^2/c^2$ suppression of the scalar trace quadrupole relative to the tensor channel is not established by multipole counting alone and requires an explicit post-Newtonian calculation of the scalar quadrupole amplitude in the bi-conformal metric. At the leading-order level used here, no additional compactness-dependent prefactor multiplies Eq.~\eqref{eq:AbAt_v}: the scalar coupling constant per unit mass is fixed to $1/2$ by the kinematic conformal-redshift factor, independently of the body's internal structure (Appendix~16, Sec.~``Kinematic motivation''). The source scaling is therefore linear in $\rs/r$ at leading order in this estimate, in contrast to earlier heuristic assertions of a quadratic $(\rs/r)^2$ suppression; both the linear scaling and its prefactor remain conditional on the open PN derivation. Whether the exact coefficient is also shifted by the residual structural-response correction (the open task flagged in Appendix~16) is not resolved here.
+
+\subsection{Detector geometry: partial breathing-mode suppression in L-shaped interferometers}\label{sec:det}
+Even if a breathing mode is present in the incident wave, a Michelson interferometer's antenna response to an isotropic transverse expansion/contraction is in general partially suppressed and direction/network dependent rather than a universal null. For an idealized breathing polarization arriving from a sky position aligned with the detector plane normal, both orthogonal arms experience comparable fractional length changes and the arm-difference output is significantly reduced; for off-axis incidence the suppression is weaker and the precise antenna-pattern factor follows from the standard polarization-decomposition formulas (see e.g.\ the GW polarization-test literature). This geometric (antenna-pattern) suppression is logically independent of the source suppression \eqref{eq:AbAt_v} and, combined with the linear-$\rs/r$ source scaling (itself conditional on the open scalar-quadrupole PN derivation), is qualitatively consistent with the absence of a confirmed breathing signature in current LIGO/Virgo inspiral data at $r\gtrsim 10\rs$ (where $\rs/r\lesssim 10^{-1}$), without requiring a quadratic compactness prefactor.
+
+\section{Falsifiability channels}\label{sec:test}
+The main theory GW sector is testable via:
+\begin{enumerate}
+\item \textbf{Exact luminal tensor speed:} $c_g=c$ from \eqref{eq:cg_app10} (GW170817~\cite{LIGO_GW170817} consistency by structure).
+\item \textbf{Scalar polarization searches:} suppressed breathing mode with estimated amplitude ratio $A_b/A_t\sim \rs/r$ from Eq.~\eqref{eq:AbAt_v} (working/conditional, pending the open PN derivation noted below), motivated by leading-order $s=1/2$ (Appendix~16); additional partial antenna-pattern suppression (Sec.~\ref{sec:det}).
+\item \textbf{System targets:} the best prospects are systems in the strong-field regime ($\rs/r\sim 1$), such as massive-BH mergers in the LISA band, together with detectors having polarization resolution (next-generation networks, space-based detectors). The quadratic compactness scaling assumed in earlier drafts is \emph{not} supported by the ISPG backbone once $s=1/2$ is recognised as the leading-order kinematic value common to all bodies; the linear-scaling working estimate of Eq.~\eqref{eq:AbAt_v} (conditional on the open PN derivation) is the one to test, and a literal extrapolation to $\rs/r\sim 1$ is itself outside the stated weak-field/slow-motion derivation domain.
+\end{enumerate}
+
+\paragraph{Open task: first-principles derivation of PN order, scaling and amplitude coefficient.}
+Equation~\eqref{eq:AbAt_v} gives a working parametric estimate. Both the linear-$\rs/r$ scaling itself and the dimensionless prefactor of order unity require an explicit post-Newtonian calculation of scalar radiation in the bi-conformal metric: in particular, whether the scalar trace quadrupole carries the additional $v^2/c^2\sim\rs/r$ factor relative to the tensor quadrupole as estimated above (and, separately, whether the universal $s=1/2$ selection drives the scalar amplitude further toward suppression as in Brans--Dicke with $s-1/2\to 0$ or leaves it finite) is not settled by the multipole-counting argument used here. This PN calculation is an open task; pending its completion, the detectability discussion above uses only the parametric $\rs/r$ estimate of Eq.~\eqref{eq:AbAt_v}, and treats the scaling as conditional rather than derived.
+
+\section*{Takeaway}
+In the main theory one-metric formulation, GW170817 compatibility is guaranteed by the Horndeski condition $\alpha_T=0$, yielding $c_g=c$ exactly. The scalar sector contains a breathing polarization whose emission at the source is parametrically estimated as $A_b/A_t\sim \rs/r$ (linear scaling, with no additional quadratic compactness factor at leading order under the kinematic $s=1/2$ result of Appendix~16) and further reduced in L-shaped interferometers by partial antenna-pattern suppression. Both the linear scaling itself and its numerical prefactor remain conditional on a first-principles post-Newtonian derivation of scalar radiation in the bi-conformal metric (open task), as does any correction induced by the residual structural-response channel in Appendix~16.
+
+\end{document}

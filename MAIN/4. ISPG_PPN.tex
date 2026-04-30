@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{mathtools}
+
+\title{Appendix 4 (to main theory): PPN Framework in the One--Metric Bi--Conformal ISPG Geometry}
+\author{}
+\date{}
+
+\begin{document}
+\let\phi\varphi
+\maketitle
+
+\section*{Purpose and scope}
+This appendix derives the standard Parametrized Post--Newtonian (PPN) parameters $\gamma$ and $\beta$ for the main theory formulation. The result is stated in the conventional isotropic, asymptotically Minkowski coordinates used for Solar-System tests. The derivation uses only the one-metric bi--conformal geometry of the main theory and does not introduce any disformal mapping or frame change.
+
+\section*{Non-negotiable consistency with the main theory (one-metric formulation)}
+We work strictly within the main theory posture:
+\begin{itemize}
+\item matter is minimally coupled to the single physical metric $g_{\mu\nu}$;
+\item the physical metric is the bi--conformal line element $ds^2=-e^{\phi}c^2dt^2+e^{-\phi}d\sigma^2$;
+\item the static exterior scalar profile is the exact vacuum solution $\phi(r)=-2GM/(c^2 r)$ of the main theory (Eq.~\eqref{eq:phi_static}); the PN expansion of the resulting metric below proceeds in powers of $c^{-2}$.
+\end{itemize}
+
+\section{Standard PPN metric (isotropic coordinates)}\label{sec:ppnstandard}
+For a static, spherically symmetric source, the standard PPN metric in isotropic coordinates reads
+\begin{align}
+g_{tt} &= -\left(1-\frac{2U}{c^2}+\frac{2\beta U^2}{c^4}+O(c^{-6})\right),\label{eq:ppn_tt}\\
+g_{ij} &= \left(1+\frac{2\gamma U}{c^2}+O(c^{-4})\right)\delta_{ij},\label{eq:ppn_ij}
+\end{align}
+where $U(r)=GM/r$ is the dimensionful Newtonian potential (note: the main text uses the dimensionless convention $U_{\rm main}=GM/(c^2 r)$, so $U_{\rm main} = U/c^2$ here) and $\gamma,\beta$ are the Eddington PPN parameters. In GR one has $\gamma=\beta=1$.
+
+\section{Bi--conformal ISPG metric and weak-field expansion}\label{sec:ispgexp}
+The main theory uses the bi--conformal metric
+\begin{equation}
+ds^2=-e^{\phi(r)}c^2dt^2+e^{-\phi(r)}\left(dx^2+dy^2+dz^2\right),
+\label{eq:biconf_app4}
+\end{equation}
+with asymptotic normalization $\phi(\infty)=0$. The exact static vacuum exterior scalar profile (Eq.~\eqref{eq:phi_static} of the main theory) is
+\begin{equation}
+\phi(r)=-\frac{2U(r)}{c^2}.
+\label{eq:phiU}
+\end{equation}
+Expanding \eqref{eq:biconf_app4} to second order in $U/c^2$ gives
+\begin{align}
+g_{tt} &=-e^{\phi}= -\exp\!\left(-\frac{2U}{c^2}\right)
+= -\left(1-\frac{2U}{c^2}+\frac{1}{2}\left(\frac{2U}{c^2}\right)^2+O(c^{-6})\right)= -\left(1-\frac{2U}{c^2}+\frac{2U^2}{c^4}+O(c^{-6})\right),\label{eq:ispg_tt}\\
+g_{ij} &= e^{-\phi}\delta_{ij}= \exp\!\left(\frac{2U}{c^2}\right)\delta_{ij}
+= \left(1+\frac{2U}{c^2}+\frac{2U^2}{c^4}+O(c^{-6})\right)\delta_{ij}.\label{eq:ispg_ij}
+\end{align}
+
+\section{Identification of $\gamma$ and $\beta$}\label{sec:identify}
+Comparing \eqref{eq:ispg_tt} with the standard PPN form \eqref{eq:ppn_tt} yields immediately
+\begin{equation}
+\beta=1.
+\label{eq:beta1}
+\end{equation}
+Comparing the $O(c^{-2})$ spatial part \eqref{eq:ispg_ij} with \eqref{eq:ppn_ij} yields
+\begin{equation}
+\gamma=1.
+\label{eq:gamma1}
+\end{equation}
+Thus the main theory one-metric bi--conformal geometry reproduces the GR values
+\begin{equation}
+\gamma=\beta=1
+\end{equation}
+for Solar-System PPN tests.
+
+\paragraph{Interpretation (why $\gamma=1$ is structural).}
+Equation \eqref{eq:biconf_app4} enforces $\Phi=\Psi$ in the weak field, because the same scalar controls the time and space conformal factors with opposite exponent. In PPN language this equality of potentials is precisely the statement $\gamma=1$ at 1PN order.
+
+\section{Practical consequences for classical tests}\label{sec:tests}
+With $\gamma=\beta=1$, the leading classical tests match GR at 1PN order:
+\begin{itemize}
+\item \textbf{Light deflection (1PN):} the bending angle equals the GR value $4GM/(c^2 b)$ for impact parameter $b$.
+\item \textbf{Perihelion advance (1PN):} the advance matches the GR expression at leading PN order.
+\item \textbf{Shapiro delay (1PN):} the logarithmic 1PN delay matches GR.
+\end{itemize}
+The main theory then isolates genuinely new structure at 2PN order: the bi-conformal exponential refractive index $n=e^{-\phi}$ produces a structurally distinct 2PN Shapiro signature whose refractive sub-piece is derived exactly; the full 2PN coefficient (including bent-ray and path-length contributions) is an open task and is developed in Appendix~6.
+
+\section{Derived vs.\ stated: compact ledger}\label{sec:ledger_app4}
+\begin{center}
+\begin{tabular}{@{}p{0.28\linewidth}p{0.62\linewidth}@{}}
+\toprule
+\textbf{Derived here} &
+Weak-field expansion of the main theory bi--conformal metric in isotropic coordinates; direct identification $\gamma=1$ and $\beta=1$ by comparison with the standard PPN metric.\\
+\midrule
+\textbf{Used elsewhere in the package} &
+Light deflection and perihelion precession appendices rely on \eqref{eq:gamma1}; Shapiro 1PN relies on $\gamma=1$; the 2PN Shapiro structure (refractive sub-piece derived; bent-ray and path-length contributions open) is developed in Appendix~6.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Takeaway}
+In the main theory one-metric bi--conformal geometry, the weak-field exterior profile $\phi=-2U/c^2$ yields the standard PPN parameters
+\[
+\gamma=1,\qquad \beta=1,
+\]
+so that all classical 1PN Solar-System tests agree with GR. The distinctive ISPG signature is therefore pushed to higher order (2PN) effects, addressed in the dedicated Shapiro appendix.
+
+\end{document}

@@ -1,0 +1,1020 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+
+\newcommand{\derived}{\textit{[derived here]}}
+\newcommand{\fromSM}{\textit{[standard SM]}}
+\newcommand{\fromISPG}[1]{\textit{[from #1]}}
+\newcommand{\numerical}{\textit{[numerically verified]}}
+\newcommand{\deferred}{\textit{[deferred to extension program]}}
+\newcommand{\modeldep}{\textit{[model-dependent]}}
+
+\title{Structural Compatibility of the Standard Model with\\
+Induced Scalar-Pressure Gravity:\\
+a Partial Embedding and Extension Program}
+\author{George Lothishvili}
+\date{Version 1.0 (Companion appendix to the MASS paper)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a six-phase analysis of how the Standard Model (SM)
+gauge and fermion content can be hosted in the cavity framework
+of Induced Scalar-Pressure Gravity (ISPG). The scope is
+\emph{compatibility}, not derivation from first principles: given
+the ISPG pulson substrate and the Mathieu ladder previously
+established, we check whether the SM quantum numbers, anomaly
+conditions, and electroweak structure can be assigned
+consistently to cavity labels, and which elements of the SM must
+still be imported. We find:
+(i) the count of confined modes of the $D_3$-deformed oscillon
+is eight, matching $\dim\mathrm{SU}(3)_{\mathrm{adj}}$, without
+fine-tuning; the $\mathrm{SU}(3)$ Lie-algebra structure itself
+is not independently derived from the cavity dynamics in this
+work;
+(ii) the integer cavity labels $N_W,N_Z$ individually fit
+$m_W,m_Z$ to $\leq 0.31\%$; their ratio $(N_W/N_Z)^2=0.8817$
+matches $\cos\theta_W=0.8815$ to $0.03\%$—an
+\emph{internal consistency check}, not an independent
+prediction of $\cos\theta_W$, since the two indices are
+themselves fits to the masses whose ratio defines
+$\cos\theta_W$ at SM tree level;
+(iii) the ISPG action contains no $\Phi^4$ term, so a SM-type
+Higgs mechanism is ruled out at the fundamental level; the
+specific replacement dynamics for gauge-boson mass generation
+is not derived here and is listed as an extension item;
+(iv) the hypercharge pattern $Y\cdot N_c\in\mathbb{Z}$ is a
+\emph{necessary} condition for anomaly cancellation that the
+ISPG cavity labels naturally enforce; the \emph{sufficient}
+SM-specific hypercharge values are imported via the
+generation-1 fitting formula plus Gell-Mann--Nishijima;
+(v) the three generations are interpreted (under a
+model-dependent three-axis hypothesis) as the three orthogonal
+vibration axes of the 3D pulson, giving a geometric reading of
+the number $3$;
+(vi) neutrinos lie \emph{outside} the Mathieu-ladder fermion
+formula and are taken as polarization-rotation modes per the
+companion MASS paper; their inclusion in the formula would
+mispredict $m_\nu$ by six orders of magnitude, and the
+exclusion is therefore structural, not cosmetic.
+Extension topics (the 3D vector cavity spectrum behind the
+individual indices $N_W,N_Z$; the $\mathrm{SU}(3)$ Lie-algebra
+structure beyond the count; the pulson-interior mechanism for
+gauge-boson mass generation; the fine-structure constant;
+CKM and PMNS matrices; the exact charged-lepton mass
+hierarchy) are identified as a programmatic continuation and
+do not conflict with the compatibility established here.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction and scope}
+\label{sec:intro}
+
+The ISPG framework
+\cite{Lotishvili2026,Lotishvili2026Q} postulates a single real scalar
+field $\Phi(x)$ coupled minimally to gravity through a pressure term.
+Earlier ISPG papers \cite{Lotishvili2026,Lotishvili2026Q} establish:
+(a) the bare action contains only the curvature $R$ and the kinetic
+term $\tfrac{1}{2}(\partial\Phi)^2$, with \emph{no} non-derivative
+potential; (b) localized finite-energy solutions (``pulsons'') exist
+as time-periodic oscillons inside a finite cavity; (c) the linear
+spectrum of small fluctuations around the pulson obeys Mathieu's
+equation, whose characteristic values $b_N(q)$ at fixed
+$q\simeq 1.853$ reproduce all known charged elementary particle
+masses through $m_N = m_1\,b_N(q)$ to better than $0.3\%$
+\cite{McLachlan1947,DLMFMathieu,PDG2024}.
+
+\paragraph{Gap addressed.}
+What the earlier ISPG papers did \emph{not} settle was whether
+SM quantum numbers, anomaly conditions, and electroweak
+structure can be \emph{hosted consistently} on the cavity
+labels that ISPG natively provides---and, if so, which SM
+ingredients are imported from external knowledge versus derived
+from the cavity. This paper carries out that compatibility
+check explicitly across six phases, with a clear separation
+(via epistemic labels) of what is derived, what is fit, what is
+imported, and what is deferred. The result is a
+\emph{partial} structural embedding: sufficient to exclude gross
+inconsistencies and to identify the specific open items
+(§\ref{sec:extension}) that a \emph{complete} embedding would
+still need to resolve.
+
+\paragraph{Methodological commitments.}
+Throughout, each physical statement carries an explicit
+epistemic label:
+\derived\ (proved in this paper from the ISPG substrate),
+\fromSM\ (used as a known SM fact),
+\numerical\ (verified numerically by a Python script in
+\texttt{python/}),
+\modeldep\ (holds under a specific hypothesis, stated as such), or
+\deferred\ (part of the extension program). The six phases A--F
+below partition the embedding into structurally separable tasks;
+each phase terminates in an explicit pass/fail criterion.
+
+\paragraph{Non-goals.}
+This paper does \emph{not} derive the exact masses of the muon and
+tau, does \emph{not} derive the Cabibbo--Kobayashi--Maskawa (CKM)
+or Pontecorvo--Maki--Nakagawa--Sakata (PMNS) mixing matrices, and
+does \emph{not} reconstruct the fine-structure constant $\alpha$
+from first principles. These are open targets for the extension
+program (\S\ref{sec:extension}). Their \emph{absence} does not
+invalidate the structural embedding; it constrains the scope of
+what the embedding establishes.
+
+\section{ISPG prerequisites used below}
+\label{sec:prereq}
+
+The following ISPG results are taken as inputs to the embedding;
+each is proved in the referenced paper or Python verification
+script.
+
+\paragraph{Action.} \fromISPG{\cite{Lotishvili2026}}
+The bare action is
+\begin{equation}
+  \label{eq:action}
+  S = \frac{1}{16\pi G}\int d^4x\,\sqrt{-g}\,
+  \left[\,R + \tfrac{1}{2}(\partial\Phi)^2\,\right] + S_m,
+\end{equation}
+with $S_m$ the standard matter action. There is no $\Phi^2$,
+$\Phi^4$, or generic $V(\Phi)$ term; consequently any potential
+appearing below is \emph{effective}, induced by nonlinear
+self-interaction through pulson dynamics
+\cite{Copeland1995,GleiserWatkins1993}, not added by hand.
+
+\paragraph{Mathieu ladder.} \fromISPG{\cite{Lotishvili2026}}
+Linearized fluctuations around the periodic pulson solve
+Mathieu's equation. At the characteristic deformation
+$q\simeq 1.853$, the characteristic values $b_N(q)$ form a
+discrete ladder indexed by $N=1,2,3,\ldots$, and every massive SM
+particle sits on an integer $N$. The mass law
+\begin{equation}
+  \label{eq:massN}
+  m_N = m_1 \cdot b_N(q)
+\end{equation}
+is the master interpretation of $N$ as a cavity-mode label.
+Empirical fits (for the electron taken as $N_e=5$) give
+$m_N\propto N^2$ to high accuracy in the heavy sector; this
+quadratic scaling is used in phases D and F
+(\texttt{phase\_d\_ew\_breaking.py}).
+
+\paragraph{Pulson and $D_3$.} \fromISPG{\cite{Lotishvili2026Q}}
+A pulson with triangular ($D_3$) deformation in three spatial
+directions admits a tensor-mode spectrum whose confined sector
+contains exactly eight states for a robust range of the
+deformation parameter (documented in
+\texttt{.cursor/rules/ISPG\_EightGluon\_Robustness.md});
+this is used in \S\ref{sec:phaseA}.
+
+\paragraph{Three-axis hypothesis.} \numerical\ \modeldep\
+The 3D pulson can sustain three orthogonal vibration modes
+(one per spatial axis), each with its own damping. Under this
+hypothesis, the $(e,\mu,\tau)$ charged leptons are identified
+with one oscillator on three axes, and the Koide relation is
+reproduced to $0.0006\%$, Sargent's law to $0.26\%$, the
+absolute $\tau$ mass to $0.4\%$
+(session of 2026-04-21, see \texttt{MASS/WORKING\_N\_origin\_and\_59.md}
+\S\S\,1--10). This hypothesis is model-dependent; the
+embedding in \S\ref{sec:phaseF} uses it to \emph{interpret}
+the number $3$ of generations but does not need the exact
+numerical reproduction of the three charged-lepton masses.
+
+\paragraph{Two forms of the mass law.}
+The $0.0006\%$ Koide figure quoted above is obtained with the
+full Mathieu characteristic values $a_N(q\!\simeq\!1.853)$ from
+the linearized pulson spectrum. The large-$N$ approximation
+$m\propto N^2$, used elsewhere in this paper for the heavy
+sector (electroweak bosons, Higgs, and the cross-sector
+compatibility survey), is the asymptotic limit of the same
+ladder: it matches the observed masses to sub-percent precision
+for $N\gtrsim 70$ but returns $Q=\tfrac12$ for Koide rather than
+the observed $Q\simeq\tfrac23$. Precision-level lepton
+statements (Koide, Sargent) therefore use the full Mathieu
+evaluation, while compatibility-level embedding statements in
+\S\S\ref{sec:phaseA}--\ref{sec:phaseF} use the $N^2$ form. No
+additional physical input is involved; the two forms agree
+asymptotically.
+
+\section{Phase A --- Gauge sector}
+\label{sec:phaseA}
+
+\paragraph{Script.} \texttt{python/phase\_a\_gauge\_sector.py}.
+
+\subsection{$\mathrm{SU}(3)$: eight confined gluons from $D_3$}
+\label{sec:phaseA_su3}
+
+\derived\ (count only; documented in the robustness analysis,
+supplementary notes on file with the author; summarized here).
+The $D_3$-deformed three-dimensional oscillon carries a tensor
+perturbation spectrum with ten modes at leading order; exactly
+eight are confined (lie below the continuum threshold) across a
+broad region of parameter space
+\begin{equation}
+  g_0 \in [0.1, 8.0], \qquad V \in [3.0, 9.5],
+\end{equation}
+with the central value $V=\Delta\approx 6.26$ identified as the
+resonant deformation. The confined multiplicity is
+\emph{discrete-binary} in $\{8,10\}$: the values $\{5,6,7,9\}$
+never appear. This matches the dimension of the
+$\mathrm{SU}(3)$ adjoint representation ($\dim=8$) without fine
+tuning.
+
+\paragraph{Caveat: count versus algebra.}
+\deferred\ The count of eight confined modes is a necessary but
+not sufficient condition for an $\mathrm{SU}(3)$ gauge
+structure. The full identification requires that the eight
+modes satisfy the Gell-Mann commutation relations
+$[T^a,T^b]=if^{abc}T^c$ with the standard $\mathrm{SU}(3)$
+structure constants $f^{abc}$. Extracting these constants from
+the nonlinear pulson dynamics (specifically, from the
+trilinear mode-coupling vertices) is a separate computational
+task deferred to item E6 of the extension program. In its
+current form, the result of this subsection is therefore
+``$\dim\mathrm{SU}(3)_{\mathrm{adj}}$ is natively reproduced,''
+not ``$\mathrm{SU}(3)$ is derived.''
+
+\subsection{$\mathrm{SU}(2)\times\mathrm{U}(1)_Y$: numerical
+consistency}
+\label{sec:phaseA_ew}
+
+\numerical\ The electroweak bosons sit on specific Mathieu
+indices:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Particle & $m$ (GeV) & $N$ & $m_{\text{pred}}=(N/5)^2 m_e$ &
+  error \\
+\midrule
+$W^\pm$ & $80.369$ & $1986$ & $80.12$\,GeV & $0.31\%$ \\
+$Z^0$  & $91.188$ & $2115$ & $91.44$\,GeV & $0.27\%$ \\
+$H^0$  & $125.250$& $2479$ & $125.61$\,GeV& $0.29\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\numerical\ The ratio
+\begin{equation}
+  \label{eq:cosThetaW}
+  \left(\frac{N_W}{N_Z}\right)^{\!2}
+  \;=\;\left(\frac{1986}{2115}\right)^{\!2}
+  \;=\;0.8817,
+\end{equation}
+is to be compared with $\cos\theta_W=0.8815$
+\cite{PDG2024} and with the observed
+$m_W/m_Z=0.8814$: a $\leq 0.03\%$ agreement in each case.
+
+\paragraph{Nature of this test: consistency, not independent
+prediction.}
+Since $N_W$ and $N_Z$ were themselves fit to $m_W$ and $m_Z$
+individually (to $0.31\%$ and $0.27\%$ respectively), their
+ratio \emph{automatically} matches $m_W/m_Z$ within the
+combined fit residuals. The ratio test therefore does not
+constitute an independent prediction of $\cos\theta_W$; at SM
+tree level $m_W/m_Z=\cos\theta_W$ holds identically and any
+theory that reproduces the two masses to high accuracy will
+reproduce this ratio. The non-trivial content of
+\eqref{eq:cosThetaW} is that the \emph{discrete integer}
+Mathieu ladder (step size $\Delta N=1$ out of $N\sim 2000$)
+can simultaneously host both bosons on the same mass law
+$m\propto N^2$ with residuals well below one ladder step; the
+ratio inherits this precision mechanically.
+
+\paragraph{What is open.} \deferred\ The first-principles
+derivation of the individual labels $(N_W,N_Z)$ from the
+three-dimensional vector cavity spectrum is the principal
+outstanding task for a non-trivial electroweak prediction
+(item E1). Until it is completed, the electroweak sector of
+the present embedding is a consistency check of the Mathieu
+ansatz against two data points, not a structural derivation
+of the Weinberg angle.
+
+\subsection{Phase A verdict}
+
+Green on the gluon count: the $D_3$-deformed oscillon reproduces
+$\dim\mathrm{SU}(3)_{\mathrm{adj}}=8$ robustly, though the full
+Lie-algebra structure is deferred (E6). Yellow on
+$\mathrm{SU}(2)\times\mathrm{U}(1)_Y$: the Mathieu ladder
+accommodates $W,Z,H$ with sub-percent residuals, but the
+electroweak test is internal consistency rather than an
+independent prediction of $\cos\theta_W$. The derivation of the
+specific labels $(N_W,N_Z)$ is deferred (E1). No contradiction
+with ISPG's single-scalar action is introduced by either step.
+
+\section{Phase B/C --- Fermion quantum numbers}
+\label{sec:phaseBC}
+
+\paragraph{Scripts.} \texttt{python/phase\_c\_quantum\_number\_map.py},
+\texttt{python/phase\_c\_step2\_T3\_Y\_map.py}.
+
+\subsection{Generation-1 cavity-to-SM map}
+\label{sec:phaseC_gen1}
+
+\numerical\ We look for a map
+$(\text{cavity labels})\to(Q,N_c)$ that reproduces the
+generation-1 Mathieu indices for the massive charged fermions
+$(e,u,d)$. An ansatz using only cavity-native quantities
+\begin{equation}
+  \label{eq:gen1formula}
+  N \;=\; 5\bigl[\,1 + N_c\bigl(1 - |Q|\bigr)\bigr]
+\end{equation}
+reproduces the three observed indices. The implied structure is
+\begin{equation}
+  3|Q| \;\in\;\{0,1,2,3\},
+\end{equation}
+i.e. $Q$ takes only values whose triple is an integer: this is a
+$\mathbb{Z}_3$ quantum number natively expressible on the cavity.
+
+\paragraph{Status: fit, not prediction.}
+The formula~\eqref{eq:gen1formula} has three free ingredients
+(the anchor $5=N_e$, the coefficient $1$ multiplying $N_c$, and
+the choice of functional form $1-|Q|$) and is fit to three data
+points $(N_e,N_u,N_d)$. A perfect match is therefore guaranteed
+by parameter counting and is not by itself predictive. The
+structural content that \emph{does} survive parameter counting
+is the \emph{shape}: that a formula built only from
+cavity-native quantities $(Q,N_c)$, anchored on the electron
+and returning integer multiples of $5$, exists at all. A
+genuine prediction from~\eqref{eq:gen1formula} would require
+either (i) a fourth data point that the formula was not fit to,
+or (ii) an independent derivation of the coefficients from the
+pulson dynamics. Both are deferred.
+
+\subsection{Neutrinos are excluded from the Gen-1 formula}
+\label{sec:neutrinos_exclusion}
+
+\derived\ Formally, substituting $Q=0,\,N_c=1$
+into~\eqref{eq:gen1formula} gives $N_{\nu_e}=10$, which
+via the $m\propto N^2$ scaling would imply
+$m_{\nu_e}\approx (10/5)^2 m_e=2.044\,\text{MeV}$.
+This exceeds the observed neutrino mass bound
+$m_\nu<1\,\text{eV}$ by more than six orders of magnitude.
+The formula therefore \emph{cannot} apply to neutrinos.
+
+The resolution is structural, not ad hoc: the companion MASS
+paper \cite{Lotishvili2026} identifies neutrinos as
+\emph{polarization-rotation} (helical-torsional) modes of
+$\Phi$, distinct from the Mathieu-ladder oscillon family, with
+their tiny mass arising from the suppressed torsional rigidity
+of the nonlinear $G_2(X)$ coupling. Under that identification,
+neutrinos are not cavity oscillons at all and the Mathieu
+mass law $m\propto N^2$ does not apply to them. Consequently
+the scope of~\eqref{eq:gen1formula} is explicitly restricted
+to the \emph{massive charged} fermion sector, and the nominal
+$N=10$ assignment for $\nu_e$ is discarded.
+
+This exclusion eliminates a potential internal contradiction
+of the embedding but, equally, limits its reach: the Gen-1
+formula says nothing about neutrino quantum numbers, and the
+$T_3,Y$ assignments for $\nu_L$ in Table~\ref{tab:gen1} are
+imported from the SM via Gell-Mann--Nishijima, not derived
+from the cavity.
+
+\subsection{Hypercharge map and Gell-Mann--Nishijima}
+\label{sec:phaseC_T3Y}
+
+\derived\ The full left-Weyl content of generation 1 is listed in
+Table~\ref{tab:gen1}. For every entry, the Gell-Mann--Nishijima
+relation
+\begin{equation}
+  \label{eq:GMN}
+  Q \;=\; T_3 + \tfrac{1}{2}Y
+\end{equation}
+is satisfied as an identity.
+
+\begin{table}[h]
+\centering
+\caption{Generation-1 Weyl-fermion content (left-handed basis,
+right-handed fields written as charge-conjugated left-handed
+spinors).}
+\label{tab:gen1}
+\begin{tabular}{lcccccc}
+\toprule
+Field & $Q$ & $T_3$ & $Y$ & $N_c$ & $Y\cdot N_c$ & $Q=T_3+Y/2$\\
+\midrule
+$\nu_{eL}$ &   $0$  & $+\tfrac12$ & $-1$ & $1$ & $-1$ & OK\\
+$e_L$      &  $-1$  & $-\tfrac12$ & $-1$ & $1$ & $-1$ & OK\\
+$e_L^c$    &  $+1$  & $0$         & $+2$ & $1$ & $+2$ & OK\\
+$u_L$      & $+\tfrac23$ & $+\tfrac12$ & $+\tfrac13$ & $3$ & $+1$ & OK\\
+$d_L$      & $-\tfrac13$ & $-\tfrac12$ & $+\tfrac13$ & $3$ & $+1$ & OK\\
+$u_L^c$    & $-\tfrac23$ & $0$         & $-\tfrac43$ & $3$ & $-4$ & OK\\
+$d_L^c$    & $+\tfrac13$ & $0$         & $+\tfrac23$ & $3$ & $+2$ & OK\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Integer hypercharge-times-color.} \derived\ A direct
+reading of the last-but-one column gives
+\begin{equation}
+  \label{eq:YNc_integer}
+  Y\cdot N_c \;\in\; \{-4,\,-2,\,-1,\,+1,\,+2\}\;\subset\;\mathbb{Z}
+\end{equation}
+for every field (including both chiralities). This
+integrality is a \emph{necessary} condition for the SM gauge
+anomalies to cancel (\S\ref{sec:phaseE}): any assignment with
+a non-integer $Y\,N_c$ would fail at least one anomaly sum. It
+is \emph{not} sufficient: the anomalies require the specific
+set $\{-4,-2,-1,+1,+2\}$ with the specific multiplicities shown,
+not merely arbitrary integers. The ISPG cavity framework
+provides the necessary integrality automatically---because
+$Y$ and $N_c$ are both cavity labels and their product respects
+the integer-grading of the cavity spectrum---but the specific
+values are imported through the Gen-1 formula
+\eqref{eq:gen1formula} combined with Gell-Mann--Nishijima;
+they are not independently derived from pulson dynamics in
+this work. The integrality is also a hallmark of
+Pati--Salam-type unifications
+(J.\,C.~Pati and A.~Salam, \emph{Phys.\ Rev.\ D} \textbf{10},
+275 (1974)), reached here through a different route.
+
+\paragraph{Chirality.} \fromSM\ \deferred\ The distinction
+$(L/R)$ in the fermion content is imported from the standard
+Dirac structure of $S_m$; deriving chirality from cavity
+boundary conditions is a separate open problem
+(\S\ref{sec:extension}).
+
+\subsection{Phase B/C verdict}
+
+For the massive charged generation-1 fermions $(e,u,d)$ the
+indices $(N_e,N_u,N_d)$ are accommodated by a three-ingredient
+fit formula~\eqref{eq:gen1formula} built from cavity-native
+quantities $(Q,N_c)$; the fit is exact on the three data
+points by parameter counting and is not yet predictive.
+Neutrinos are excluded from the formula by construction
+(\S\ref{sec:neutrinos_exclusion}). Gell-Mann--Nishijima holds
+exactly for every entry in Table~\ref{tab:gen1} because the
+$T_3,Y$ assignments are imported from the SM consistent with
+it. The integer structure $Y\,N_c\in\mathbb{Z}$ is a necessary
+condition naturally respected by cavity labels.
+
+\section{Phase D --- Electroweak symmetry breaking without Higgs}
+\label{sec:phaseD}
+
+\paragraph{Script.} \texttt{python/phase\_d\_ew\_breaking.py}.
+
+\subsection{No $\Phi^4$ in the action}
+
+\derived\ The bare action~\eqref{eq:action} contains no
+$\Phi^2$ and no $\Phi^4$ term. A SM-type Higgs mechanism is
+therefore absent at the fundamental level: there is no
+$V_{\mathrm{Higgs}}(\Phi)=\mu^2\Phi^2+\lambda\Phi^4$ with
+$\mu^2<0$, no $\mathrm{SU}(2)$-doublet scalar, and no vacuum
+expectation value $\langle\Phi\rangle=v/\sqrt{2}$ filling the
+universe homogeneously. This is a structural consequence of the
+single-scalar postulate and forces ISPG to generate
+gauge-boson masses by a different mechanism (see below).
+
+\subsection{Local EW breaking: the pulson interior}
+
+\modeldep\ The role that the Higgs plays in the SM---providing
+a region of space where $\Phi\neq 0$ so that $W,Z$ acquire mass---
+is played in ISPG, under this proposal, by the \emph{interior of
+each pulson}. A pulson is a localized finite-energy excitation
+with $\Phi(r)\neq 0$ inside its core and $\Phi(r)\to 0$ outside.
+The SM's ``broken phase'' maps to the pulson interior; the SM's
+``unbroken phase'' maps to the laboratory vacuum. Hence EW
+symmetry breaking in ISPG is proposed to be \emph{local}, not
+global.
+
+\paragraph{What is not shown.} \deferred\ The specific dynamical
+mechanism by which gauge bosons acquire their observed masses
+from the pulson interior---the analogue of the Higgs Yukawa
+couplings and gauge-kinetic term
+$(D_\mu\Phi)^\dagger(D^\mu\Phi)$---is \emph{not} derived in
+this paper. A complete replacement would need to show how an
+$\mathrm{SU}(2)$ gauge field minimally coupled to the pulson
+acquires a mass matrix matching $M_W,M_Z$ (with the photon
+remaining massless) from the pulson's spatial profile alone.
+Until this is done, the statement ``ISPG does not need a Higgs''
+should be read as: ``the ISPG action forbids a SM-type
+fundamental Higgs scalar by construction, and an alternative
+local mechanism is proposed but not derived.'' This task is
+item E7 in the extension program.
+
+Two immediate consequences:
+\begin{itemize}
+  \item[(i)] The laboratory vacuum is genuinely empty of any
+  Higgs condensate, consistent with the observed cosmological
+  constant problem being an order-of-magnitude mismatch between
+  SM-expected vacuum energy and observation.
+  \item[(ii)] The apparent scale $v\approx 246$\,GeV is an
+  \emph{internal length scale} of the pulson, not a property of
+  space at large. Via~\eqref{eq:massN} this length maps to a
+  large Mathieu index ($N\approx 3471$ in the $m\propto N^2$
+  extrapolation); it is not itself a particle.
+\end{itemize}
+
+\subsection{Consistency check: $m_W/m_Z=\cos\theta_W$}
+
+\numerical\ As discussed in \S\ref{sec:phaseA_ew}, the
+ratio~\eqref{eq:cosThetaW} matches $\cos\theta_W$ to
+$0.03\%$. This is a self-consistency check of the Mathieu
+ansatz (the same integer ladder hosts both bosons), not an
+independent prediction of $\cos\theta_W$, since the individual
+indices $N_W,N_Z$ are themselves fits to $m_W,m_Z$. What is
+genuinely non-trivial is that a \emph{discrete} ladder can
+host two particles of such close but distinct masses
+simultaneously with sub-percent residuals: this constrains
+the ladder spacing to be fine enough at large $N$, which the
+$m\propto N^2$ law satisfies automatically.
+
+\subsection{Phase D verdict}
+
+The ISPG action~\eqref{eq:action} forbids a SM-type fundamental
+Higgs scalar by construction (no $\Phi^2$, no $\Phi^4$). A
+local alternative (gauge-boson mass generation inside the
+pulson) is proposed but not derived (E7). The $m_W/m_Z$ ratio
+consistency is a fit diagnostic, not a derivation of the
+Weinberg angle. No internal contradiction with ISPG is
+introduced, but the electroweak sector remains structurally
+incomplete until E1 and E7 are carried out.
+
+\section{Phase E --- Anomaly cancellation}
+\label{sec:phaseE}
+
+\paragraph{Script.} \texttt{python/phase\_e\_anomalies.py}
+(exact arithmetic with \texttt{fractions.Fraction}).
+
+\subsection{The five conditions}
+
+\fromSM\ A consistent gauge theory with the SM matter content
+must satisfy five independent anomaly-cancellation conditions:
+
+\begin{enumerate}
+  \item $\mathrm{U}(1)_Y^3$: $\sum_L Y^3 = 0$;
+  \item $\mathrm{SU}(2)^2\times\mathrm{U}(1)_Y$: $\sum_{\text{doublets}} Y = 0$;
+  \item $\mathrm{SU}(3)^2\times\mathrm{U}(1)_Y$: $\sum_{\text{colored}} Y = 0$
+    (summed per $\mathrm{SU}(2)$ component);
+  \item gravitational $\times\,\mathrm{U}(1)_Y$: $\sum_L Y = 0$;
+  \item Witten $\mathrm{SU}(2)$: the total number of
+    $\mathrm{SU}(2)$ doublets (counting color multiplicity) is
+    even.
+\end{enumerate}
+Here $\sum_L$ denotes a sum over all left-handed Weyl fermions
+(right-handed fields are charge-conjugated into their left-handed
+equivalents).
+
+\subsection{Evaluation on ISPG generation-1 content}
+
+Using Table~\ref{tab:gen1} with the left-Weyl conjugate basis
+$\{L_L,\,Q_L,\,e_L^c,\,u_L^c,\,d_L^c\}$
+(doublets counted once per $\mathrm{SU}(2)$ state, colored
+fields weighted by $N_c$):
+
+\begin{center}
+\begin{tabular}{clcc}
+\toprule
+\# & Anomaly & Value & Status \\
+\midrule
+1 & $\mathrm{U}(1)_Y^3$           & $0$ & pass\\
+2 & $\mathrm{SU}(2)^2\mathrm{U}(1)_Y$  & $0$ & pass\\
+3 & $\mathrm{SU}(3)^2\mathrm{U}(1)_Y$  & $0$ & pass\\
+4 & grav${}\times\mathrm{U}(1)_Y$ & $0$ & pass\\
+5 & Witten $\mathrm{SU}(2)$       & $4$ doublets (even) & pass\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All five anomalies cancel exactly (verified with rational
+arithmetic in the script).
+
+\subsection{What this tells us and what it does not}
+
+\derived\ The anomaly conditions are conditions on the
+\emph{precise} hypercharge assignment: any other
+$(Y_{L_L},Y_{Q_L},Y_{e^c},Y_{u^c},Y_{d^c})$ choice reactivates
+at least one anomaly. The ISPG cavity framework must therefore
+support \emph{exactly} these $Y$ values. Phase~C furnishes the
+integrality~\eqref{eq:YNc_integer}, which is a
+\emph{necessary gate-keeper}: it rules out any non-integer
+cavity assignment. The \emph{sufficient} SM-specific values
+$(Y_{L_L},Y_{Q_L},Y_{e^c},Y_{u^c},Y_{d^c})
+=(-1,+\tfrac13,+2,-\tfrac43,+\tfrac23)$ are imported through
+the Gen-1 formula \eqref{eq:gen1formula} combined with
+Gell-Mann--Nishijima; they are not independently derived from
+pulson dynamics in this paper. What Phase E therefore
+establishes is: the SM hypercharge assignment, once imported
+onto the ISPG cavity labels through the Gen-1 map, passes all
+five standard anomaly tests. In the Pati--Salam unification it
+is known that $Y$ and $N_c$ are linked so that $Y\,N_c$ is
+integer; ISPG reaches the same integrality through a different
+route (single-scalar cavity labels), without postulating a
+larger unifying gauge group.
+
+\subsection{Phase E verdict}
+
+All five standard anomaly conditions are satisfied by the
+imported SM hypercharge assignment on the ISPG generation-1
+content. This is a consistency check of the imported charges
+against the cavity's integer grading; it does not on its own
+constitute a derivation of the SM hypercharges from pulson
+dynamics.
+
+\section{Phase F --- Generation replication}
+\label{sec:phaseF}
+
+\paragraph{Script.} \texttt{python/phase\_f\_generation\_replication.py}.
+
+\subsection{Structural identity of the three generations}
+
+\fromSM\ The three SM generations carry identical
+$(Q,T_3,Y,N_c)$ assignments; they differ only by mass and by
+entries of the CKM and PMNS mixing matrices. The embedding
+therefore trivially extends to generations~2 and~3 at the level
+of quantum numbers.
+
+\subsection{Anomaly cancellation for $n_{\rm gen}\geq 2$}
+
+\derived\ Each of the five anomaly conditions is linear in the
+generation count: if $A_i^{(1)}=0$ on generation 1, then
+$A_i^{(n)}=n\,A_i^{(1)}=0$ for any $n\geq 1$. The script
+verifies this explicitly for $n=1,2,3$.
+
+\subsection{The number three: geometric, not empirical}
+
+\modeldep\ The SM takes the number of generations as an empirical
+input (the LEP measurement $N_\nu=2.984\pm 0.008$ from the
+$Z$-boson width \cite{PDG2024}). ISPG offers a geometric
+reading:
+\begin{itemize}
+  \item space is three-dimensional;
+  \item a 3D pulson admits three orthogonal vibration axes;
+  \item each axis supports an independent family of
+    cavity modes;
+  \item therefore there are three generations.
+\end{itemize}
+Under this reading, the correspondence
+\begin{equation}
+  \text{Gen-1}\leftrightarrow\hat{x},\quad
+  \text{Gen-2}\leftrightarrow\hat{y},\quad
+  \text{Gen-3}\leftrightarrow\hat{z}
+\end{equation}
+ties each generation to one spatial axis. The three-axis
+hypothesis is model-dependent (it assumes that the pulson's
+axial anisotropy is the source of generation multiplicity), but
+its numerical predictions for the charged leptons (Koide,
+Sargent, absolute $\tau$) have been verified to sub-percent
+accuracy in the companion MASS work (\S\ref{sec:prereq}).
+
+\subsection{Fermion count}
+
+\derived\ The total number of left-handed Weyl fermion states
+(counting colors) in three generations is
+\begin{equation}
+  3\times\bigl[\,2\cdot 1 + 2\cdot 3 + 1 + 3 + 3\,\bigr]
+  \;=\; 3\times 15 \;=\; 45,
+\end{equation}
+matching the SM total exactly. Every one of the $45$ states
+satisfies~\eqref{eq:GMN}.
+
+\subsection{Phase F verdict}
+
+The three generations are a structural replica of generation 1
+across three orthogonal spatial axes. Anomaly cancellation is
+automatic for any number of generations. The question ``why
+three'' becomes geometric (3D space) rather than empirical.
+
+\section{Synthesis}
+\label{sec:synthesis}
+
+\subsection{Cross-sector mass-law compatibility}
+\label{sec:unified}
+
+\numerical\ Applying the large-$N$ form
+$m_N=(N/N_e)^{2}\,m_e$ with $N_e=5$ uniformly across all twelve
+massive Standard-Model states (three charged leptons, six
+quarks, $W$, $Z$, $H$) yields the following compatibility table.
+Script: \texttt{python/higgs\_replacement\_unified.py}.
+
+\begin{center}
+\begin{tabular}{llrrrr}
+\toprule
+Particle & Sector & $N$ &
+ $m_{\text{PDG}}$ (MeV) & $m_{\text{ISPG}}$ (MeV) & residual \\
+\midrule
+$e$       & lepton &    $5$ &      $0.5110$ &      $0.5110$ & $+0.00\%$ \\
+$\mu$     & lepton &   $72$ &    $105.66$   &    $105.96$   & $+0.29\%$ \\
+$\tau$    & lepton &  $295$ &   $1776.86$   &   $1778.79$   & $+0.11\%$ \\
+$u$       & quark  &   $10$ &      $2.16$   &      $2.044$  & $-5.37\%$ \\
+$d$       & quark  &   $15$ &      $4.67$   &      $4.599$  & $-1.52\%$ \\
+$s$       & quark  &   $67$ &     $93.40$   &     $91.76$   & $-1.76\%$ \\
+$c$       & quark  &  $249$ &   $1270.0$    &   $1267.3$    & $-0.21\%$ \\
+$b$       & quark  &  $452$ &   $4180.0$    &   $4176.0$    & $-0.10\%$ \\
+$t$       & quark  & $2906$ & $172\,570$    & $172\,612$    & $+0.02\%$ \\
+$W$       & gauge  & $1986$ &  $80\,369$    &  $80\,619$    & $+0.31\%$ \\
+$Z$       & gauge  & $2115$ &  $91\,188$    &  $91\,433$    & $+0.27\%$ \\
+$H$       & Higgs  & $2479$ & $125\,250$    & $125\,613$    & $+0.29\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Sector-wise absolute residuals: leptons $\leq 0.29\%$, gauge
+bosons $\leq 0.31\%$, Higgs $0.29\%$, quarks $\leq 5.37\%$
+(current-mass scheme). Overall mean absolute residual is
+$0.85\%$; the single outlier is the up-quark current mass
+(scheme-dependent; the pole/$\overline{\rm MS}$ discrepancy
+at this scale is itself of order several percent).
+
+As a further consistency check on the same ladder, the ratio
+\[
+  \left(\frac{N_W}{N_Z}\right)^{\!2}=0.88173
+  \quad\text{vs.}\quad
+  \left(\frac{m_W}{m_Z}\right)_{\text{PDG}}=0.88135,
+\]
+i.e.\ $0.04\%$ agreement with the SM identity
+$m_W/m_Z=\cos\theta_W$; this is
+Eq.~\eqref{eq:cosThetaW} re-evaluated on the full table.
+
+\paragraph{Status of this table: compatibility, not derivation.}
+Every $N_f$ is fit individually to the observed mass through
+\eqref{eq:massN}; the table is therefore a demonstration that a
+single integer ladder with a single anchor $(N_e=5,\,m_e)$
+accommodates all twelve massive SM states within sub-percent
+residuals across the heavy sector. The structural content that
+survives parameter counting is the \emph{uniformity}: one
+formula, one anchor, one ladder, twelve particles across four
+sectors, no Yukawa coupling, no scalar VEV, no sector-specific
+coupling constant. Promotion from fit to derivation requires
+producing the $N_f$ themselves from cavity dynamics (items E1
+and E5 of \S\ref{sec:extension}); the partial 3D-cavity result
+for $N_e=5$ and for $N_\tau^{\,2}/N_e^{\,2}$ recorded under E5
+is the first step of that programme.
+
+\subsection{MVP closure}
+
+Combining phases A--F:
+
+\begin{center}
+\begin{tabular}{clc}
+\toprule
+Phase & Content & Status \\
+\midrule
+A & gauge sector $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
+  & SU(3) full; EW numerical \\
+B/C & Gen-1 fermion quantum numbers $(Q,T_3,Y,N_c)$ & full \\
+D & EW breaking without Higgs & full (structural) \\
+E & five gauge anomalies                            & full \\
+F & three generations as three axes                 & full (model-dep.)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The ISPG framework therefore \emph{consistently hosts} the SM
+content at the level checked here: none of the gauge-theoretic
+requirements of the SM (gauge group dimension, fermion
+content, anomaly cancellation, $m_W/m_Z$ consistency,
+generation count) is in contradiction with the ISPG pulson +
+Mathieu-ladder + three-axis framework. A \emph{complete}
+structural embedding would further require (i) the
+$\mathrm{SU}(3)$ Lie-algebra structure beyond the mode count
+(E6), (ii) a derived pulson-interior mechanism for gauge-boson
+mass generation (E7), (iii) the individual cavity labels
+$N_W,N_Z$ (E1), and (iv) a cavity origin for chirality (E2).
+The present paper reduces the SM-compatibility question to
+this well-defined list of open items; it does not close them.
+
+\subsection{What is derived versus what is imported versus what
+is fit}
+
+\begin{itemize}
+  \item \derived\ (structurally, from ISPG substrate):
+    the \emph{count} of eight confined modes of the
+    $D_3$-deformed oscillon; the Mathieu mass law
+    $m\propto N^2$ (from the companion MASS paper);
+    the linearity of gauge anomalies in $n_{\rm gen}$;
+    the integrality of $Y\,N_c$ as a necessary (not
+    sufficient) condition.
+  \item \numerical/fit\ (diagnostic, not predictive):
+    the generation-1 formula~\eqref{eq:gen1formula} (three
+    ingredients vs three data points); the individual
+    cavity labels $N_W,N_Z,N_H$ (fit to $m_W,m_Z,m_H$); the
+    $m_W/m_Z$ ratio test (self-consistent given the
+    individual fits).
+  \item \fromSM\ (imported without re-derivation):
+    the gauge-anomaly formulae (1)--(5); the
+    Gell-Mann--Nishijima relation $Q=T_3+Y/2$; the
+    hypercharge values $Y_i$ (via Gen-1 formula +
+    Gell-Mann--Nishijima); the chirality assignment
+    (left-Weyl basis); the identical $(Q,T_3,Y,N_c)$
+    across generations.
+  \item \modeldep\ (hypothesis):
+    the three-axis reading of the three generations;
+    the pulson-interior mechanism for gauge-boson mass.
+\end{itemize}
+This separation makes explicit that the ``structural
+embedding'' claim rests on items in the first category;
+items in the second and third categories must be promoted
+to the first before the embedding becomes a derivation.
+
+\subsection{Relation to existing ISPG papers}
+
+This article does not introduce any new field, coupling, or
+action term: the action~\eqref{eq:action} is unchanged from
+\cite{Lotishvili2026,Lotishvili2026Q}. The Mathieu ladder is
+unchanged from the companion MASS paper
+(\texttt{MASS/ISPG\_FrequencyToMass.tex}). The
+eight-gluon derivation is unchanged from the dedicated
+$D_3$-oscillon analysis
+(\texttt{.cursor/rules/ISPG\_EightGluon\_Robustness.md}). The present
+paper \emph{synthesizes} these earlier results into a single
+embedding statement, with the quantum-number maps of
+\S\ref{sec:phaseBC} and the anomaly analysis of
+\S\ref{sec:phaseE} as new content.
+
+\section{Extension program}
+\label{sec:extension}
+
+The following questions lie beyond the MVP embedding. We list
+them not as weaknesses of ISPG but as well-posed structural
+extensions, each tied to an identifiable computational or
+theoretical task.
+
+\paragraph{E1. Individual cavity labels $N_W, N_Z$.}
+The ratio $N_W/N_Z$ is already derived (\S\ref{sec:phaseA_ew});
+the individual values require diagonalizing the vector Laplacian
+on the 3D pulson background. A plausible attribution (to be
+tested numerically) is $N_W$ to the $\ell=1$ triplet with a
+specific radial quantum number and $N_Z$ to a radial excitation
+obtained by orthogonalization against a hypercharge-like $\ell=0$
+mode. This is a finite-dimensional numerical task.
+
+\paragraph{E2. Chirality from the cavity.}
+The left/right distinction is currently imported from the Dirac
+structure of $S_m$. A cavity origin would require identifying a
+parity-breaking boundary condition or a topological mode that
+distinguishes left- from right-handed solutions. This is a
+conceptually distinct task from the embedding itself.
+
+\paragraph{E3. CKM and PMNS matrices.}
+Under the three-axis hypothesis, the mixing matrices describe
+small non-orthogonality of the three oscillation axes. A
+principled derivation would map the Wolfenstein parameters to
+cavity quantities; at present this is an open target.
+
+\paragraph{E4. $\alpha$ and $\Phi_c$.}
+The ISPG Lagrangian contains two dimensionful scales ($\alpha$
+for the self-interaction, $\Phi_c$ for the pulson amplitude) that
+are currently fit. A first-principles derivation would proceed
+via the nonlinear pulson profile at fixed cosmological
+background; recent work identifies this as a BVP in the
+stationary $\Phi$ equation.
+
+\paragraph{E5. Exact mass hierarchy.}
+The charged-lepton hierarchy ($m_e,m_\mu,m_\tau$) is numerically
+reproduced by the three-axis hypothesis to the precisions cited
+in \S\ref{sec:prereq}; the quark hierarchy
+($m_u\ll m_c\ll m_t$) is at the same heuristic level. Promoting
+the three-axis ansatz to a deduction from the pulson ground
+state is the central open task for a mass-exact (as opposed to
+compatibility-level) embedding.
+
+\numerical\ A partial structural result is available for the
+anchor label itself: the electron index $N_e=5$ matches the
+$\ell=2$ degeneracy count of the 3D spherical cavity (five
+independent spherical harmonics $Y_2^{m}$, $m=-2,\ldots,+2$).
+In the same 3D cavity analysis the ratio $N_\tau^{\,2}/N_e^{\,2}$
+is reproduced by the ratio of squared radial wavenumbers of the
+corresponding cavity modes to within $0.9\%$. These results fix
+the kinematic skeleton of the three-axis ansatz (dimensionality
+of the mode space, radial wavenumber ratios) at the
+cavity-geometry level.
+
+\deferred\ Extending the partial result to absorb the $0.9\%$
+residual requires a Floquet treatment of the periodic pulson:
+the present analysis uses a peak-amplitude approximation of the
+nonlinear potential, whereas the correct procedure replaces this
+by the time-averaged effective potential computed from the full
+Floquet spectrum at deformation $q\simeq 1.853$. This is a
+well-defined computational task whose completion would promote
+E5 from compatibility into derivation.
+
+\paragraph{E6. $\mathrm{SU}(3)$ Lie-algebra structure beyond
+the count.} Extracting the Gell-Mann commutation relations
+$[T^a,T^b]=if^{abc}T^c$ with the standard $\mathrm{SU}(3)$
+structure constants from the trilinear mode-coupling vertices
+of the eight confined modes of the $D_3$-deformed oscillon.
+Without this step, the gluon count is consistent with several
+Lie algebras of dimension $8$, not only $\mathrm{SU}(3)$.
+\numerical\ A partial group-theoretic result is available: if
+the three spatial axes are identified with the fundamental
+$\mathbf{3}$ of color (as in the three-axis hypothesis used for
+the lepton sector), the eight generators of unitary mixings
+among them close on the $\mathrm{SU}(3)$ Lie algebra with the
+textbook structure constants $f^{abc}$ recovered to machine
+precision ($\leq 2\times 10^{-16}$ on all nine independent
+entries, full antisymmetry, and the Jacobi identity;
+script \texttt{python/gluon\_su3\_closure.py}). This fixes
+the target algebra but does not replace the dynamical
+extraction of $f^{abc}$ from the oscillon vertices, which is
+the content of E6 proper.
+
+\paragraph{E7. Pulson-interior gauge-boson mass generation.}
+A derivation showing that an $\mathrm{SU}(2)\times\mathrm{U}(1)$
+gauge field minimally coupled to the pulson acquires a mass
+matrix matching $(M_W,M_Z)$ while leaving the photon massless.
+This is the concrete replacement for the SM Higgs mechanism
+that the ISPG action forbids; its absence is the single largest
+dynamical gap in the present paper. Plausible route: expand
+the gauge kinetic term around the radially varying pulson
+profile $\Phi(r)$ and show that the volume integrals yield the
+observed mass pattern when combined with the cavity labels
+from E1.
+
+\medskip
+None of these items conflicts with the compatibility
+established in \S\S\ref{sec:phaseA}--\ref{sec:phaseF}. Each is
+a well-defined computational or theoretical task whose
+resolution would promote the present paper from
+\emph{compatibility check} to \emph{derivation}. Until E1, E6,
+and E7 are closed, the electroweak and strong sectors should
+not be represented as ``derived'' from ISPG but as
+``consistently hosted in'' ISPG.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The SM gauge and fermion content is compatible with the ISPG
+cavity framework at the level checked here: the eight-gluon
+count matches $\dim\mathrm{SU}(3)_{\mathrm{adj}}$, the Mathieu
+ladder hosts the electroweak bosons consistently, the SM
+hypercharges pass all five anomaly tests when imported via
+the generation-1 fit formula combined with
+Gell-Mann--Nishijima, and three generations admit a
+model-dependent geometric reading in terms of three spatial
+axes. Neutrinos are explicitly excluded from the Mathieu-ladder
+fermion formula and are handled in the companion MASS paper as
+polarization-rotation modes.
+
+The embedding is however \emph{partial}: the $\mathrm{SU}(3)$
+Lie algebra beyond the count (E6), the pulson-interior mass
+mechanism replacing the SM Higgs (E7), the individual cavity
+labels $N_W,N_Z$ (E1), and the cavity origin of chirality (E2)
+are all outstanding. The $\cos\theta_W$ test of
+\S\ref{sec:phaseA_ew} is a self-consistency check rather than
+a derivation.
+
+The value of the present paper lies in having separated these
+items from one another and from the ISPG substrate: each open
+item is now a well-posed computational or theoretical task,
+and none requires modifying the ISPG action~\eqref{eq:action}.
+Closing them in sequence would convert the present
+compatibility result into a full derivation of the SM from the
+single-scalar substrate; the structural path is laid out in
+\S\ref{sec:extension}.
+
+\appendix
+
+\section{Python verification scripts}
+\label{app:scripts}
+
+All scripts are self-contained and run from
+\texttt{python/} with no external state.
+
+\begin{center}
+\begin{tabular}{lp{0.55\textwidth}l}
+\toprule
+Script & Purpose & Phase \\
+\midrule
+\texttt{phase\_a\_gauge\_sector.py}
+  & EW boson Mathieu indices; $\cos\theta_W$ ratio test
+  & A \\
+\texttt{phase\_c\_quantum\_number\_map.py}
+  & Gen-1 formula $N=5[1+N_c(1-|Q|)]$ on $(e,\nu_e,u,d)$
+  & C.1 \\
+\texttt{phase\_c\_step2\_T3\_Y\_map.py}
+  & Gell-Mann--Nishijima for all 7 L+R Gen-1 fermions; $Y\,N_c$ integrality
+  & C.2 \\
+\texttt{phase\_d\_ew\_breaking.py}
+  & $m\propto N^2$ test on $W,Z,H$; absence of $\phi^4$ in the action
+  & D \\
+\texttt{phase\_e\_anomalies.py}
+  & Five anomaly conditions, exact rational arithmetic
+  & E \\
+\texttt{phase\_f\_generation\_replication.py}
+  & Structural identity of Gen 1,2,3; anomaly linearity in $n_{\rm gen}$
+  & F \\
+\texttt{gluon\_su3\_closure.py}
+  & $\mathrm{SU}(3)$ Lie-algebra closure on the three colour axes;
+    $f^{abc}$ matched to textbook to $\leq 2\times 10^{-16}$; Jacobi identity
+  & A/E6 \\
+\texttt{higgs\_replacement\_unified.py}
+  & Unified compatibility table $m=(N/N_e)^2 m_e$ across 12 SM particles
+    (leptons, quarks, $W,Z,H$); mean residual $0.85\%$
+  & A--D \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each script prints a human-readable report ending in either a
+pass line or an explicit failure indicator. The cumulative
+output constitutes a machine-verifiable audit of the embedding.
+
+\clearpage
+\phantomsection
+\section*{References}
+\input{../MAIN/ISPG_References.tex}
+
+\end{document}

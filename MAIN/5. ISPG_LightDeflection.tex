@@ -1,0 +1,229 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{mathtools}
+
+\newcommand{\rs}{r_{\mathrm{s}}}
+
+\title{Appendix 5 (to main theory): Light Deflection at 1PN and 2PN in the One--Metric Bi--Conformal ISPG Geometry}
+\author{}
+\date{}
+
+\begin{document}
+\let\phi\varphi
+\maketitle
+
+\section*{Purpose and scope}
+This appendix derives the light-deflection angle in the main theory one-metric formulation. The 1PN result reproduces the GR value, while the 2PN coefficient provides a compact extension that gives this appendix independent value within the main theory test package.
+
+\section*{Non-negotiable consistency with the main theory (one-metric formulation)}
+We work strictly within the main theory posture:
+\begin{itemize}
+\item light is minimally coupled to the single physical metric $g_{\mu\nu}$;
+\item the physical geometry is bi--conformal, $ds^2=-e^{\phi}c^2dt^2+e^{-\phi}d\sigma^2$;
+\item the exact static vacuum exterior scalar profile is $\phi(r)=-\rs/r$ with $\rs\equiv 2GM/c^2$ (the static exterior solution of the main theory~\cite{Lotishvili2026}).
+\end{itemize}
+No disformal mapping and no frame change are introduced.
+
+\section{Null condition, optical form, and why Fermat applies here}\label{sec:fermat}
+For a static, spherically symmetric source in isotropic coordinates,
+\begin{equation}
+ds^2=-e^{\phi(r)}c^2dt^2+e^{-\phi(r)}\left(dx^2+dy^2+dz^2\right).
+\label{eq:biconf_app5}
+\end{equation}
+For null rays ($ds^2=0$) this implies \emph{exactly}
+\begin{equation}
+c\,dt = e^{-\phi(r)}\,dl,\qquad dl\equiv \sqrt{dx^2+dy^2+dz^2},
+\label{eq:dt_app5}
+\end{equation}
+so the coordinate travel time is the optical path length with an effective refractive index
+\begin{equation}
+n(r)\equiv e^{-\phi(r)}.
+\label{eq:n}
+\end{equation}
+This optical interpretation is available precisely because the spatial sector is \emph{conformally flat and isotropic} ($e^{-\phi}\delta_{ij}$). A purely conformal spacetime metric of the form $ds^2=\Omega^2\eta_{\mu\nu}dx^\mu dx^\nu$ would instead give $n\equiv 1$ and no bending, which is not the present bi--conformal case; here the reciprocal scaling of time and space makes $n(r)\neq 1$ and produces deflection.
+
+In the weak field, with $\phi(r)=-\rs/r$,
+\begin{equation}
+n(r)=e^{\rs/r}=1+\frac{\rs}{r}+\frac{\rs^2}{2r^2}+O(\rs^3).
+\label{eq:nexp}
+\end{equation}
+Because $t=\int n\,dl/c$ with an isotropic $n(r)$, standard Fermat/variational optics applies: the ray is a stationary curve of the functional $\int n\,dl$.
+
+\section{Master bending formula (Born expansion)}\label{sec:master}
+Choose the asymptotic propagation direction as the $z$ axis and the impact parameter as the asymptotic transverse offset $x=b$. To leading order the unperturbed path is
+\begin{equation}
+r_0(z)=\sqrt{b^2+z^2}.
+\label{eq:r0_app5}
+\end{equation}
+For an isotropic refractive index $n(r)=1+\delta n(r)$, the deflection angle admits the first-order (Born) representation
+\begin{equation}
+\Delta\theta \;=\; -\int_{-\infty}^{+\infty}\partial_b\,\delta n\!\left(r_0(z)\right)\,dz \;+\; O(\delta n^2),
+\label{eq:defl1}
+\end{equation}
+where $\partial_b$ is taken at fixed $z$ and the leading minus sign implements the convention that $\Delta\theta>0$ for bending \emph{toward} the source (attractive index gradient). At 2PN order one must include (i) the $O(\rs^2)$ term in $\delta n$ evaluated on the straight path and (ii) the correction obtained by evaluating the $O(\rs)$ term on the $O(\rs)$-bent path. We compute both explicitly below.
+
+\section{1PN deflection (exact integral)}\label{sec:1pn}
+From \eqref{eq:nexp} the 1PN piece is $\delta n_1=\rs/r$. Using \eqref{eq:defl1},
+\begin{equation}
+\partial_b\left(\frac{\rs}{r_0}\right)=-\frac{\rs\,b}{(b^2+z^2)^{3/2}},
+\end{equation}
+so
+\begin{equation}
+\Delta\theta_{1{\rm PN}}
+= \rs\,b\int_{-\infty}^{+\infty}\frac{dz}{(b^2+z^2)^{3/2}}
+= \frac{2\rs}{b}
+=\frac{4GM}{c^2 b},
+\label{eq:theta1}
+\end{equation}
+where the overall sign follows from the convention of
+Eq.~\eqref{eq:defl1} ($-\int\partial_b\delta n$) combined with
+$\partial_b(\rs/r_0)=-\rs b/(b^2+z^2)^{3/2}$.
+
+\section{2PN deflection: metric-source and geometric-source pieces}\label{sec:2pn}
+We write
+\begin{equation}
+\Delta\theta_{2{\rm PN}}=\Delta\theta_{2{\rm PN}}^{\rm (metric)}+\Delta\theta_{2{\rm PN}}^{\rm (geom)}.
+\label{eq:split_app5}
+\end{equation}
+
+\subsection{Metric-source term from $\rs^2/(2r^2)$ (exact)}\label{sec:metric_app5}
+From \eqref{eq:nexp}, $\delta n_2 = \frac{\rs^2}{2r^2}$. Evaluated on the straight path $r_0(z)$,
+\begin{equation}
+\partial_b\left(\frac{\rs^2}{2r_0^2}\right)
+=\partial_b\left(\frac{\rs^2}{2(b^2+z^2)}\right)
+=-\frac{\rs^2\,b}{(b^2+z^2)^2}.
+\end{equation}
+Therefore
+\begin{equation}
+\Delta\theta_{2{\rm PN}}^{\rm (metric)}
+= \rs^2\,b\int_{-\infty}^{+\infty}\frac{dz}{(b^2+z^2)^2}
+= \rs^2\,b\cdot \frac{\pi}{2b^3}
+= \frac{\pi}{2}\frac{\rs^2}{b^2},
+\label{eq:theta2_metric}
+\end{equation}
+where again the leading sign follows from applying the
+overall minus of Eq.~\eqref{eq:defl1} to the negative
+integrand $\partial_b\delta n_2=-\rs^2 b/(b^2+z^2)^2$, so the net deflection is positive and consistent with bending toward the source.
+
+\subsection{Geometric-source term from evaluating $\delta n_1$ on the bent path (explicit)}\label{sec:geom}
+The first-order transverse displacement $x(z)=b+\delta x(z)$ obeys the ray equation in a graded-index medium,
+\begin{equation}
+\frac{d^2x}{dz^2}=\partial_x\,\delta n_1=\partial_x\!\left(\frac{\rs}{r}\right)
+=-\frac{\rs\,x}{r^3},
+\end{equation}
+so along the unperturbed path ($x=b$, $r=r_0$) we have
+\begin{equation}
+\delta x''(z)=-\frac{\rs\,b}{\big(b^2+z^2\big)^{3/2}},
+\qquad
+\delta x(-\infty)=\delta x'(-\infty)=0.
+\label{eq:dxeq}
+\end{equation}
+Using the elementary antiderivative
+\begin{equation}
+\int \frac{dz}{(b^2+z^2)^{3/2}}=\frac{z}{b^2\sqrt{b^2+z^2}},
+\end{equation}
+one finds
+\begin{align}
+\delta x'(z) &=
+-\rs b\int_{-\infty}^{z}\frac{dz'}{(b^2+z'^2)^{3/2}}
+=-\frac{\rs}{b}\left(1+\frac{z}{\sqrt{b^2+z^2}}\right),\\
+\delta x(z) &= \int_{-\infty}^{z}\delta x'(z')\,dz'
+=-\frac{\rs}{b}\Big(\sqrt{b^2+z^2}+z\Big).
+\label{eq:dxsol}
+\end{align}
+
+The geometric 2PN contribution is the $O(\rs^2)$ correction obtained by inserting the $O(\rs)$ path correction into the 1PN bending functional (note the same leading minus sign as in Eq.~\eqref{eq:defl1}):
+\begin{equation}
+\Delta\theta_{2{\rm PN}}^{\rm (geom)}
+=-\int_{-\infty}^{+\infty}\partial_b^2\!\left(\frac{\rs}{r_0}\right)\delta x(z)\,dz.
+\label{eq:geomdef}
+\end{equation}
+We need
+\begin{equation}
+\partial_b^2\!\left(\frac{\rs}{r_0}\right)
+=\partial_b^2\!\left(\frac{\rs}{\sqrt{b^2+z^2}}\right)
+=-\rs\,\frac{z^2-2b^2}{(b^2+z^2)^{5/2}}.
+\label{eq:db2}
+\end{equation}
+Insert \eqref{eq:dxsol} and note that the term proportional to $z$ in $\delta x(z)$ is odd and integrates to zero. Indeed, $\delta x(z)=-(\rs/b)\,r_0(z)\;-\;(\rs/b)\,z$, where $r_0(z)=\sqrt{b^2+z^2}$ is even in $z$ and $z$ is odd. Since $\partial_b^2(\rs/r_0)$ in \eqref{eq:db2} is even in $z$, the product with the odd part integrates to zero, and only the even piece proportional to $r_0(z)$ contributes. Moreover, $r_0(z)/(b^2+z^2)^{5/2}=1/(b^2+z^2)^2$, which reduces the denominator power from $5/2$ to $2$ in the next line. Using $r_0=\sqrt{b^2+z^2}$, the remaining even part reduces to
+\begin{align}
+\Delta\theta_{2{\rm PN}}^{\rm (geom)}
+&=-\frac{\rs^2}{b}\int_{-\infty}^{+\infty}\frac{z^2-2b^2}{(b^2+z^2)^2}\,dz \nonumber\\
+&=-\frac{\rs^2}{b}\int_{-\infty}^{+\infty}\left[\frac{1}{b^2+z^2}-\frac{3b^2}{(b^2+z^2)^2}\right]dz \nonumber\\
+&=-\frac{\rs^2}{b}\left(\frac{\pi}{b}-\frac{3b^2\pi}{2b^3}\right)
+=\frac{\pi}{2}\frac{\rs^2}{b^2},
+\label{eq:theta2_geom}
+\end{align}
+In the second line we used the identity $z^2-2b^2=(b^2+z^2)-3b^2$ to split the integrand into standard forms, and evaluated the remaining standard integrals using $\int dz/(b^2+z^2)=\pi/b$ and $\int dz/(b^2+z^2)^2=\pi/(2b^3)$. Thus the geometric-source term equals the metric-source term \eqref{eq:theta2_metric} exactly at 2PN order.
+
+
+\subsection{Total ISPG 2PN deflection coefficient}\label{sec:total}
+Combining \eqref{eq:split_app5}, \eqref{eq:theta2_metric}, and \eqref{eq:theta2_geom},
+\begin{equation}
+\boxed{\ \Delta\theta \;=\; \frac{2\rs}{b}\;+\;\pi\,\frac{\rs^2}{b^2}\;+\;O\!\left(\frac{\rs^3}{b^3}\right)\ }
+\qquad \text{(ISPG, 1PN+2PN)}.
+\label{eq:theta_total}
+\end{equation}
+
+
+\section{GR 2PN coefficient and the universal $16/15$ ratio}\label{sec:grcomp}
+For the Schwarzschild exterior in GR, the 2PN correction to the bending angle for a point mass in isotropic coordinates is known in the literature. It can be written in the same expansion form,
+\begin{equation}
+\Delta\theta_{\rm GR}
+=\frac{2\rs}{b}+\left(\frac{15\pi}{16}\right)\frac{\rs^2}{b^2}
++O\!\left(\frac{\rs^3}{b^3}\right).
+\label{eq:theta_gr}
+\end{equation}
+(See, e.g., standard 2PN light-bending treatments in the post-Newtonian/lensing literature; see, e.g., Refs.~\cite{EpsteinShapiro1980,BodennerWill2003,KeetonPetters2005}.)
+
+Comparing \eqref{eq:theta_total} with \eqref{eq:theta_gr}, the ratio of the 2PN coefficients is
+\begin{equation}
+\frac{\pi}{15\pi/16}=\frac{16}{15}\approx 1.0667,
+\label{eq:ratio1615}
+\end{equation}
+i.e.\ a $6.7\%$ enhancement of the 2PN bending angle relative to GR. This ratio shares a common origin with the main theory 2PN Shapiro-delay discriminator: both are consequences of the exponential bi--conformal time/space structure underlying the weak-field expansion. Specifically, the 2PN bending angle and the refractive$+$geometric part of the 2PN Shapiro delay are both controlled by the $O(\rs^2/r^2)\sim O(\phi^2)$ coefficient in the expansion of the optical index $n=e^{-\phi}$: the exponential metric fixes this coefficient to $1/2$ in \eqref{eq:nexp}, whereas the rational Schwarzschild/isotropic GR structure produces a different $O(\phi^2)$ coefficient, yielding the $16/15$ ratio for the bending angle. The corresponding Shapiro-delay ratio is the subject of Appendix~6 (the closed ISPG--GR difference $\Delta B = \pi/4$ is the regularization-independent observable; the absolute 2PN coefficient remains an open finite-endpoint task per the main theory Shapiro section).
+
+In terms of $r_g\equiv GM/c^2=\rs/2$, the 2PN coefficient is $4\pi\,r_g^2/b^2$.
+
+\section{Numerical scales (Sun and EHT targets)}\label{sec:numerics}
+A useful ratio is
+\begin{equation}
+\frac{\Delta\theta_{2{\rm PN}}}{\Delta\theta_{1{\rm PN}}}
+=\frac{\pi}{2}\frac{\rs}{b}.
+\end{equation}
+For the Sun with $\rs\simeq 2.95\,{\rm km}$ and $b\simeq R_\odot\simeq 6.96\times 10^8\,{\rm m}$,
+\begin{equation}
+\Delta\theta_{1{\rm PN}}\simeq 1.7505^{\prime\prime} ,\qquad
+\Delta\theta_{2{\rm PN}}\simeq 1.17\times 10^{-5}\,^{\prime\prime} \ (\approx 0.012~{\rm mas}).
+\end{equation}
+For the Sun, the ISPG--GR difference at 2PN is of order $\sim 1\,\mu$as, far below current astrometric precision; as in the main theory Shapiro discriminator, the realistic arena is strong-field timing/lensing with impact parameters of only a few $\rs$.
+For EHT-scale systems it is natural to quote the expansion in units of $b$ measured in Schwarzschild radii:
+\begin{equation}
+\Delta\theta_{1{\rm PN}} \sim 2\left(\frac{\rs}{b}\right),\qquad
+\Delta\theta_{2{\rm PN}}\sim \pi\left(\frac{\rs}{b}\right)^2,
+\end{equation}
+so that near-horizon trajectories ($b$ only a few $\rs$) enter a regime where higher-order terms become important and the full (non-perturbative) geodesic integral is the appropriate tool.
+
+
+\paragraph{EHT targets (scale information).}
+For Sgr~A$^\ast$ ($M\simeq 4\times 10^6\,M_\odot$, $D\simeq 8.2\,{\rm kpc}$) and M87$^\ast$ ($M\simeq 6.5\times 10^9\,M_\odot$, $D\simeq 16.8\,{\rm Mpc}$), the angular size of one Schwarzschild radius is of order
+\begin{equation}
+\theta_{\rs}\equiv \frac{\rs}{D}\ \sim\ 10~\mu{\rm as}\quad(\text{Sgr~A}^\ast),\qquad
+\theta_{\rs}\sim 8~\mu{\rm as}\quad(\text{M87}^\ast).
+\end{equation}
+EHT imaging probes impact parameters of a few $\rs$, where the expansion parameter $\rs/b$ is not very small and a full (non-perturbative) null-geodesic integration is the appropriate tool for precision ray-tracing. Nevertheless, in the weak-deflection regime ($b\gg \rs$) the 2PN coefficient ratio \eqref{eq:ratio1615} predicts a $6.7\%$ enhancement of the leading post-GR bending-angle correction relative to GR, providing a target for future high-precision strong-field lensing analyses.
+
+
+\section*{Takeaway}
+In the main theory one-metric bi--conformal geometry, the null condition yields an exact optical form with $n(r)=e^{-\phi}$. The weak-field expansion $n(r)=1+\rs/r+\rs^2/(2r^2)+\cdots$ gives the GR 1PN deflection and an explicit ISPG 2PN coefficient:
+\[
+\Delta\theta=\frac{2\rs}{b}+\pi\frac{\rs^2}{b^2}+O\!\left(\frac{\rs^3}{b^3}\right).
+\]
+This 2PN term provides a natural companion observable to the 2PN Shapiro discriminator in the main theory test package.
+
+\end{document}

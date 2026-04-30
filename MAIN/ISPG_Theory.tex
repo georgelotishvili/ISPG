@@ -1,0 +1,190 @@
+% Master file: main theory + all appendices as one PDF.
+% Build: pdflatex ISPG_Theory.tex (run twice for TOC/refs)
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Base geometry ----------
+\usepackage[a4paper,margin=1in]{geometry}
+
+% ---------- Scalable fonts (fixes microtype expansion errors) ----------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Math and symbols ----------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{physics}
+
+% ---------- Graphics and color ----------
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+
+% ---------- Tables ----------
+\usepackage{booktabs}
+\usepackage{array}
+
+% ---------- Bibliography ----------
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+
+% ---------- Subfiles (key package) ----------
+\usepackage{subfiles}
+
+% ---------- Hyperlinks (load last) ----------
+\usepackage[
+  hidelinks,
+  bookmarks=false,
+  pdfpagelabels=true
+]{hyperref}
+
+% ---------- Custom commands ----------
+\newcommand{\Mpl}{M_{\mathrm{Pl}}}
+\newcommand{\half}{\tfrac{1}{2}}
+\newcommand{\rs}{r_{\mathrm{s}}}
+\newcommand{\azero}{a_{0}}
+\newcommand{\phigr}{\varphi_{\mathrm{gr}}}
+\newcommand{\aB}{\alpha_{\rm B}}
+\newcommand{\aK}{\alpha_{\rm K}}
+\newcommand{\aM}{\alpha_{\rm M}}
+\newcommand{\aT}{\alpha_{\rm T}}
+\newcommand{\LCDM}{$\Lambda$CDM}
+\newcommand{\Cc}{\mathcal{C}}
+
+% ---------- Theorem environments ----------
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+% ---------- Line spacing ----------
+\linespread{1.15}\selectfont
+
+% ---------- Fix for revtex4-2 environments used in 0. MAIN.tex ----------
+\makeatletter
+\let\oldtable\table
+\let\endoldtable\endtable
+\newenvironment{ruledtabular}{}{}
+\newenvironment{acknowledgments}{%
+  \section*{Acknowledgments}
+}{}
+\makeatother
+
+% ---------- Title format ----------
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \begin{center}%
+    \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1.5em%
+    {\large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 1em%
+    {\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1.5em}
+\makeatother
+
+% ---------- TOC formatting ----------
+\makeatletter
+\renewcommand*{\l@section}[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty{\@secpenalty}%
+    \addvspace{1.0em \@plus\p@}%
+    {\bfseries\@dottedtocline{1}{0em}{2.9em}{#1}{#2}}%
+  \fi}%
+\renewcommand*{\l@subsection}{\@dottedtocline{2}{2.9em}{3.6em}}%
+\makeatother
+
+% ---------- Master-build markers and appendix inclusion ----------
+\newcommand{\ISPGMasterBuildFlag}{}
+\newcommand{\ISPGAppendixSubfile}[3]{%
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \setcounter{subsubsection}{0}%
+  \renewcommand{\thesection}{#1.\arabic{section}}%
+  \renewcommand{\thesubsection}{#1.\arabic{section}.\arabic{subsection}}%
+  \renewcommand{\thesubsubsection}{#1.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}%
+  \renewcommand{\theHsection}{appendix.#1.\arabic{section}}%
+  \renewcommand{\theHsubsection}{appendix.#1.\arabic{section}.\arabic{subsection}}%
+  \renewcommand{\theHsubsubsection}{appendix.#1.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}%
+  \phantomsection%
+  \addcontentsline{toc}{section}{\textbf{Appendix #1:} #2}%
+  \begin{center}%
+    {\Large\bfseries Appendix #1: #2\par}%
+  \end{center}%
+  \vspace{0.75em}%
+  \subfile{#3}%
+}
+
+% ============================================
+\begin{document}
+% ============================================
+
+\title{%
+Bi-conformal scalar-tensor gravity:\\
+exact PPN equivalence with general relativity\\
+and falsifiable predictions\\[1em]
+\large (Complete theory with appendices)
+}
+
+\author{George Lotishvili}
+\date{Version 4.7 \\ \today}
+
+\maketitle
+
+\begin{abstract}
+This document presents the complete Induced Scalar-Pressure Gravity (ISPG) theory,
+including the main theoretical framework and all supporting appendices.
+The theory is defined by a scalar-tensor action with bi-conformal metric ansatz,
+yielding exact post-Newtonian equivalence with general relativity at 1PN order
+while producing falsifiable deviations at 2PN order.
+The emergent MOND phenomenology is developed in a companion paper.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ============================================
+% MAIN THEORY
+% ============================================
+\part{Main Theory}
+\label{part:main}
+
+\subfile{0. MAIN}
+
+% ============================================
+% APPENDICES
+% ============================================
+\newpage
+\part{Appendices}
+\label{part:appendices}
+
+\ISPGAppendixSubfile{1}{Field Equations from the One-Metric ISPG Action}{1. ISPG_FieldEquations}
+\ISPGAppendixSubfile{2}{Energy--Momentum Tensor and Conservation}{2. ISPG_EnergyMomentum}
+\ISPGAppendixSubfile{3}{Emergent Bi-Conformal Geometry}{3. ISPG_EmergentGeometry}
+\ISPGAppendixSubfile{4}{PPN Framework}{4. ISPG_PPN}
+\ISPGAppendixSubfile{5}{Light Deflection at 1PN and 2PN}{5. ISPG_LightDeflection}
+\ISPGAppendixSubfile{6}{2PN Shapiro Delay}{6. ISPG_Shapiro}
+\ISPGAppendixSubfile{7}{Perihelion Precession}{7. ISPG_Perihelion}
+\ISPGAppendixSubfile{8}{Frame Dragging (Lense--Thirring)}{8. ISPG_FrameDragging}
+\ISPGAppendixSubfile{9}{CMB and Linear-Cosmology Consistency}{9. ISPG_CMB}
+\ISPGAppendixSubfile{10}{Gravitational-Wave Modes and Polarizations}{10. ISPG_Wave}
+\ISPGAppendixSubfile{11}{Ghost-Freedom, Hyperbolicity, Causal Propagation}{11. ISPG_Stability}
+\ISPGAppendixSubfile{12}{Geodesic Structure of the Bi-Conformal Compact Object}{12. ISPG_Geodesics}
+\ISPGAppendixSubfile{13}{Covariant Hysteresis Sector}{13. ISPG_Relics}
+\ISPGAppendixSubfile{14}{Bi-conformal Interior and Space Deficit}{14. ISPG_Interior}
+\ISPGAppendixSubfile{15}{Verification of Scalar Perturbation Stability}{15. ISPG_Verification_Task1a}
+\ISPGAppendixSubfile{16}{Scalar Sensitivity of Compact Objects}{16. ISPG_Sensitivity}
+\ISPGAppendixSubfile{17}{Dynamical Origin of Inertia}{17. ISPG_Inertia}
+\ISPGAppendixSubfile{18}{Pressure-History Process Time, Operational Time, and Rate Conversion}{18. ISPG_ProcessTime}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{part}{References}
+\input{ISPG_References}
+
+\end{document}
