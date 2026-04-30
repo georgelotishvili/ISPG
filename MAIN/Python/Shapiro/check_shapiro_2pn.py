@@ -176,17 +176,19 @@ def main():
     # use small rg values to stay well in weak-field (rg/b << 1)
     rg_values = [1e-3, 3e-3, 1e-2, 3e-2]
     zmax_values = [50.0, 100.0, 200.0]
-    print("ISPG 2PN Shapiro — diagnostic (full coefficient is OPEN).")
+    print("ISPG 2PN Shapiro — diagnostic for the naive absolute coefficient.")
     print("See tools/check_shapiro_born.py for the proven refractive")
     print("sub-piece B_refr = 2*pi =", 2.0 * math.pi)
+    print("The ISPG-GR differential coefficient is closed in Appendix 6: Delta B = pi/4.")
     print()
     for zmax in zmax_values:
         A, B, dts = extract_2pn_coeff(rg_values, b, zmax)
         print(f"zmax = {zmax}:  1PN log-A = {A:.4f}   2PN B (cutoff-dep.) = {B:.6f}")
         print(f"             Delta t samples = {[f'{d:.6e}' for d in dts]}")
     # B grows linearly in zmax here: this IS the infra-red signature, not
-    # a bug.  Regularizing requires the BVP formulation flagged as future
-    # work in MAIN/6. ISPG_Shapiro.tex (sec:open).
+    # a bug.  A standalone absolute coefficient requires a finite-endpoint
+    # convention.  The ISPG-GR difference is closed analytically in
+    # MAIN/6. ISPG_Shapiro.tex (sec:diff).
 
 
 if __name__ == "__main__":

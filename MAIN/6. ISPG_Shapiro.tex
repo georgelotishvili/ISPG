@@ -18,13 +18,12 @@
 \maketitle
 
 \section*{Purpose and scope}
-This appendix fixes the \emph{structural} form of the
-second post-Newtonian (2PN) Shapiro time delay in the
-bi--conformal ISPG geometry.  It proves one finite,
-convention-independent sub-piece---the \emph{refractive}
-contribution---as an exact analytic statement, and it
-sets up (but does not close) the two remaining pieces
-that together compose the full 2PN coefficient:
+This appendix fixes the second post-Newtonian (2PN) Shapiro
+signature of the bi--conformal ISPG geometry in the operational
+form relevant for comparison with GR.  It proves the exact
+straight-line refractive sub-piece and, more importantly, closes
+the finite ISPG--GR \emph{differential} coefficient.  The three
+pieces entering an absolute 2PN light time are:
 
 \begin{enumerate}
 \item a \textbf{refractive (straight-line) contribution} from
@@ -46,15 +45,13 @@ same sense as (ii).
 Piece~(i) is established here analytically and has been
 cross-checked numerically
 (\texttt{MAIN/Python/Shapiro/check\_shapiro\_born.py}).  Pieces~(ii)
-and~(iii) are flagged as \emph{in progress}: their individual
-finite coefficients are not asserted, and the full 2PN
-coefficient $\Delta t_{2\mathrm{PN}}^{\mathrm{ISPG}}$ is left
-as future work.  Although the individual pieces remain open,
+and~(iii) are individually convention-dependent unless one
+chooses a complete finite-endpoint time-transfer prescription.
+For the ISPG--GR comparison they do not remain as unresolved physics:
 their dependence is entirely on the shared $O(r_g)$ trajectory
-of the two metrics, so they cancel in the ISPG--GR
-\emph{difference}; the difference of the full 2PN coefficient
-is therefore finite, IR-insensitive, and computed exactly in
-Sec.~\ref{sec:diff}, with the closed form
+of the two metrics, so they cancel in the difference.  The
+differential 2PN coefficient is therefore finite, IR-insensitive,
+and computed exactly in Sec.~\ref{sec:diff}, with the closed form
 \[
 \Delta t_{2{\rm PN}}^{\rm ISPG}-\Delta t_{2{\rm PN}}^{\rm GR}
 =\frac{r_g^2}{cb}\cdot\frac{\pi}{4}.
@@ -64,7 +61,9 @@ that the bi-conformal exponential refractive index
 $n=e^{-\phi}$ produces a 2PN Shapiro signature distinct from
 GR's rational-polynomial form; the closed-form ISPG--GR
 discriminator above is the operational expression of that
-distinction.
+distinction.  Absolute finite-endpoint coefficients for each
+metric separately belong to a chosen timing convention; they are
+not needed for the differential discriminator closed here.
 
 \section{Conventions and the static ISPG exterior}
 We use the static, spherically symmetric ISPG line element (the main theory)
@@ -101,7 +100,7 @@ Throughout this appendix we take~\eqref{eq:bdef} as the operational
 definition of the impact parameter; the distinct quantity
 $r_{\min}$ (geometric closest approach of the bent trajectory)
 differs from $b$ at $O(r_g)$, and the distinction is essential
-to the finite-coefficient determination in Sec.~\ref{sec:open}.
+to the absolute-coefficient bookkeeping in Sec.~\ref{sec:open}.
 
 The zeroth-order trajectory is the straight line
 \begin{equation}
@@ -181,13 +180,18 @@ structural difference (exponential vs.\ rational) is the
 basic origin of any 2PN discrepancy between ISPG and GR and
 survives independently of the two remaining pieces below.
 
-\section{Bent-ray refractive and path-length contributions (in progress)}\label{sec:open}
+\section{Common bent-ray and path-length terms}\label{sec:open}
 
 The two remaining 2PN contributions involve the
-$O(r_g)$ trajectory correction and are currently \emph{open}
-in this appendix.  We record here only the mathematical
-framework and the issues that must be resolved for a rigorous
-finite-coefficient statement.
+$O(r_g)$ trajectory correction.  For an absolute coefficient
+assigned to one metric in isolation they require a definite
+finite-endpoint time-transfer convention.  For the ISPG--GR
+differential coefficient they are common terms: both metrics
+share the same 1PN optical index and therefore the same
+$O(r_g)$ ray shape.  We record the framework to show why the
+individual pieces are not separately meaningful in the
+unregularized decomposition and why they cancel in the
+observable difference.
 
 \subsection{$O(r_g)$ trajectory correction: convention issue}
 
@@ -250,7 +254,7 @@ while the path-length excess is
 where $dx/dz$ is the $O(r_g)$ slope of the bent trajectory in
 the straight-line coordinate~$z$.
 
-\paragraph{The infra-red issue.}
+\paragraph{The infra-red issue for individual coefficients.}
 Evaluating~\eqref{eq:bent_integral} or~\eqref{eq:path_integral}
 over $(-\infty,+\infty)$ in either of the two conventions of
 the preceding subsection produces \emph{divergent}
@@ -260,18 +264,18 @@ physical answer emerges only after consistent finite-endpoint
 regularization at emitter radius $r_1$ and receiver radius
 $r_2$.  Finite-distance structure for the
 \emph{refractive}-only master integral is noted in
-Sec.~\ref{sec:finite} below; the analogous finite-distance
-treatment for~\eqref{eq:bent_integral}--\eqref{eq:path_integral},
-with matching between the near-lens perturbative region and
-the asymptotic deflected-straight-line region, is the content
-of the open calculation.
+Sec.~\ref{sec:finite} below.  The analogous absolute
+finite-distance treatment for~\eqref{eq:bent_integral}--\eqref{eq:path_integral}
+is a timing-convention problem; it is common to both metrics
+at the differential order considered here.
 
 \paragraph{Consequence for the main theory.}
-Until both pieces are closed in a single consistent
-convention with matched asymptotics, neither the individual
-coefficients of~\eqref{eq:bent2pn}--\eqref{eq:path2pn} nor the
-total 2PN coefficient are asserted.  The main theory Shapiro section~\cite{Lotishvili2026}
-correspondingly carries only the structural claim.
+The main theory does not need the separate absolute values of
+the bent-ray and path-length pieces to make its 2PN Shapiro
+prediction.  Since these terms are generated by the shared
+1PN trajectory, they cancel in the ISPG--GR subtraction.
+The closed prediction is therefore the finite differential
+coefficient derived in Sec.~\ref{sec:diff}.
 
 \section{Finite-distance endpoints: the refractive master integral}\label{sec:finite}
 For emitter and receiver at finite radii $r_1,r_2\gg b$, the
@@ -291,14 +295,16 @@ pulsar-timing geometry with $r_i\gtrsim 10^2 r_g$ and
 $b\sim (10$--$30)\,r_g$ these are percent-level; for the solar
 system they are negligible.  The analogous finite-endpoint
 formulas for~\eqref{eq:bent_integral}--\eqref{eq:path_integral}
-require the open calculation of Sec.~\ref{sec:open}.
+belong to the absolute time-transfer convention and cancel
+from the ISPG--GR differential coefficient.
 
 \section{ISPG--GR 2PN difference (closed)}\label{sec:diff}
 
 A finite, IR-stable statement is available about the
 \emph{difference} between the ISPG and GR 2PN Shapiro
-coefficients, even though each individual coefficient remains
-open in the present decomposition (Sec.~\ref{sec:open}).
+coefficients, even though each individual absolute coefficient
+is convention-dependent in the present decomposition
+(Sec.~\ref{sec:open}).
 
 \subsection{Decomposition with shared 1PN trajectory}
 
@@ -388,11 +394,11 @@ $L\to\infty$ limit~\eqref{eq:db_inf}.  The driver is
 
 \subsection{Significance for the main theory}
 
-The individual 2PN coefficients $B_{\rm ISPG}$ and $B_{\rm GR}$
+The individual absolute 2PN coefficients $B_{\rm ISPG}$ and $B_{\rm GR}$
 are each IR-divergent at intermediate stages of the
 decomposition~\eqref{eq:2pn_full} (Sec.~\ref{sec:open});
-their absolute values require the open finite-endpoint
-calculation flagged there.  The
+their standalone values require a specified finite-endpoint
+time-transfer convention.  The
 \emph{difference}~\eqref{eq:db_inf}, however, is the sole
 $O(r_g^2/(cb))$ Shapiro-delay correction that distinguishes
 the bi-conformal ISPG metric from the GR Schwarzschild
@@ -407,10 +413,9 @@ The bi-conformal ISPG geometry produces an exact
 \]
 which is convention-independent and numerically verified.
 The bent-ray and path-length contributions to the
-\emph{individual} 2PN coefficient remain open
-(Sec.~\ref{sec:open}), pending consistent finite-endpoint
-regularization.  Their dependence on the shared $O(r_g)$
-trajectory makes them identical in ISPG and GR, and the
+\emph{individual} absolute 2PN coefficient are convention-dependent
+(Sec.~\ref{sec:open}).  Their dependence on the shared $O(r_g)$
+trajectory makes them identical in ISPG and GR, so the
 corresponding ISPG--GR 2PN \emph{difference}
 \[
 \Delta t_{2{\rm PN}}^{\rm ISPG}-\Delta t_{2{\rm PN}}^{\rm GR}

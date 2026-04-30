@@ -119,12 +119,12 @@ the theory simultaneously:
   ($\gamma = \beta = 1$ from the static spherical sector;
   preferred-frame and non-conservative PPN parameters
   $\alpha_i,\xi,\zeta_i$ are not separately derived here),
-  and predicts a
-  structurally distinct 2PN Shapiro-delay signature
-  (arising from the exponential bi-conformal refractive
-  index); the exact 2PN coefficient awaits a full
-  finite-endpoint derivation and is flagged as future work
-  in Sec.~\ref{sec:shapiro};
+  and closes the regularization-independent 2PN Shapiro
+  discriminator: the exponential bi-conformal refractive
+  index gives
+  $\Delta t_{\rm ISPG}-\Delta t_{\rm GR}
+  =(\pi/4)G^2M^2/(c^5 b)$ for asymptotic endpoints
+  (Sec.~\ref{sec:shapiro}; Appendix~6);
 \item is fully compatible with the gravitational-wave speed
   constraint $|c_{g} - c|/c \lesssim \text{few}\times 10^{-15}$
   from GW170817~\cite{LIGO_GW170817} (full asymmetric interval
@@ -194,10 +194,9 @@ classification.  Section~\ref{sec:solar} establishes
 weak-field correspondence with GR through the PPN formalism,
 light deflection, perihelion precession, and frame dragging.
 Section~\ref{sec:shapiro} presents the Shapiro time delay
-at 1PN order (where ISPG matches GR exactly) and sketches
-the structural 2PN signature induced by the bi-conformal
-exponential refractive index, while flagging the complete
-2PN coefficient as open (future work).
+at 1PN order (where ISPG matches GR exactly) and the closed
+2PN ISPG--GR differential benchmark induced by the
+bi-conformal exponential refractive index.
 Section~\ref{sec:gw} analyzes gravitational-wave propagation,
 polarization content, scalar dipole radiation from
 mixed-compactness binaries, and observational constraints.
@@ -832,41 +831,63 @@ function of $\rs/r$ and generates a different coefficient.
 The refractive contribution~\eqref{eq:refr_integral} has been
 verified numerically (\texttt{MAIN/Python/Shapiro/check\_shapiro\_born.py}).
 
-\textit{Bent-ray optical and excess path-length contributions
-(in progress).}---At 2PN order the photon follows a bent
-trajectory corrected at $O(r_{g})$, and the bending produces
-both (i) a shift of the $O(r_{g})$ refractive integrand along
-the corrected path, and (ii) an excess Euclidean length of the
-bent spatial path.  A \emph{rigorous} derivation of these two
-contributions requires (a) a consistent convention for the
-asymptotic impact parameter $b$ versus the geometric closest
-approach, and (b) a careful treatment of the finite
-emitter/receiver endpoints $r_{1},r_{2}$, because individually
-each piece is infra-red sensitive (log/linear in the endpoint
-radii) and only the full combination is finite.  A self-contained
-such derivation in the bi-conformal ISPG geometry is deferred
-to future work.
+\textit{Differential 2PN benchmark (closed).}---At 2PN order
+the photon follows a trajectory corrected at $O(r_{g})$, and
+the bending produces both a shift of the $O(r_g)$ refractive
+integrand along the corrected path and an excess Euclidean
+path length.  These two terms depend only on the shared 1PN
+trajectory, because both ISPG and Schwarzschild GR have
+$n=1+2r_g/r+O(r_g^2)$ with $r_g=GM/c^2$.  They therefore
+cancel identically in the ISPG--GR difference at fixed
+finite endpoints and fixed zeroth-order impact parameter.
+Only the explicit 2PN optical-index coefficient remains.
+Writing
+\[
+  n(r)=1+\frac{2r_g}{r}
+      +\alpha\frac{r_g^2}{r^2}+O(r_g^3),
+  \qquad
+  \alpha_{\rm ISPG}=2,\qquad
+  \alpha_{\rm GR}=\frac{7}{4},
+\]
+one obtains the finite-endpoint result
+\begin{equation}\label{eq:shapiro_delta_finite}
+  \Delta t_{2{\rm PN}}^{\rm ISPG}
+  -\Delta t_{2{\rm PN}}^{\rm GR}
+  =
+  \frac{G^2M^2}{4c^5 b}
+  \left[
+    \arctan\!\left(\frac{z_A}{b}\right)
+    +\arctan\!\left(\frac{z_B}{b}\right)
+  \right]
+  +O(G^3),
+\end{equation}
+where $z_A$ and $z_B$ are the source and receiver distances
+from the point of closest approach along the unperturbed ray.
+For asymptotic endpoints this reduces to
+\begin{equation}\label{eq:shapiro_delta_asymp}
+  \Delta t_{2{\rm PN}}^{\rm ISPG}
+  -\Delta t_{2{\rm PN}}^{\rm GR}
+  =
+  \frac{\pi}{4}\,\frac{G^2M^2}{c^5 b}
+  =
+  \frac{\pi}{16}\,\frac{\rs^2}{c b}.
+\end{equation}
 
 \paragraph{Summary (epistemic status).}
 The \emph{refractive 2PN piece}~\eqref{eq:refr_integral} of the
 ISPG Shapiro delay is established analytically and verified
-numerically.  The \emph{ISPG--GR difference} $\Delta B = \pi/4$
-is closed at the regularization-independent level (Appendix~6:
-the bent-ray and path-length pieces are common to both metrics
-and cancel in the difference, while the refractive coefficients
-$\alpha_{\rm ISPG} = 2$ vs $\alpha_{\rm GR} = 7/4$ leave a clean
-$(\alpha_{\rm ISPG}-\alpha_{\rm GR})\pi = \pi/4$ residual).
-The \emph{absolute} 2PN coefficient---which requires
-finite-endpoint analysis of the individually infra-red-sensitive
-bent-ray and path-length contributions---is flagged here as an
-open task.  What is theoretically secure at this stage is
-therefore: (i) the regularization-independent ISPG--GR
-discriminator $\Delta B = \pi/4$, and (ii) the
-\emph{structural} claim that the bi-conformal exponential
-$n = e^{-\varphi}$ produces a 2PN Shapiro signature distinct
-from GR's rational-polynomial refractive index.  The
-absolute-coefficient observational prospects depend on the
-completed derivation.
+numerically.  More importantly for observation, the
+\emph{ISPG--GR difference} is closed:
+$\Delta B=B_{\rm ISPG}-B_{\rm GR}=\pi/4$ in units of
+$G^2M^2/(c^5b)$ for asymptotic endpoints, with the
+finite-distance arctangent form given in
+Eq.~\eqref{eq:shapiro_delta_finite}.  The standalone absolute
+2PN coefficient of either metric remains convention-dependent
+until a full finite-endpoint time-transfer convention is chosen,
+but that ambiguity is common and cancels from the differential
+benchmark.  The operational 2PN Shapiro prediction of this
+paper is therefore the closed ISPG--GR discriminator
+\eqref{eq:shapiro_delta_asymp}.
 
 %===================================================================
 \section{Gravitational waves}\label{sec:gw}
@@ -3450,8 +3471,12 @@ deferred as follows:
   and Hamiltonian boundedness within the pure-gravity
   constrained sector; matter-coupled extension via the EFT
   completion) are presented in~\cite{Lotishvili2026Q}.
-\item Full numerical ray-tracing for 2PN Shapiro delay in
-  Eq.~(\ref{eq:metric_static}) is future work.
+\item The 2PN Shapiro discriminator is closed analytically as
+  the finite ISPG--GR difference
+  $\Delta B=\pi/4$ (Sec.~\ref{sec:shapiro}; Appendix~6).
+  Full ray-tracing and absolute finite-endpoint coefficients
+  for a chosen observational timing model remain implementation
+  tasks, not open pieces of the differential benchmark.
 \item Black-hole shadow prediction:
   the static spherical benchmark gives
   $b_c=e\,\rs$, a $4.6\%$ enhancement over the
@@ -3522,14 +3547,21 @@ gravitational parameters beyond $G$.  Main results:
   1PN light deflection, perihelion, Shapiro delay, and
   Lense--Thirring agree with GR (Sec.~\ref{sec:solar}).
 
-\item \textbf{2PN Shapiro (structural):} the bi-conformal
+\item \textbf{2PN Shapiro (closed differential benchmark):} the bi-conformal
   exponential refractive index $n=e^{-\varphi}$ produces a
   2PN delay signature distinct from GR's rational-polynomial
-  form; the refractive piece yields an exact $2\pi$ coefficient.
-  A complete 2PN coefficient (including bent-ray and
-  path-length contributions with consistent finite-endpoint
-  regularization) is flagged as future work
-  (Sec.~\ref{sec:shapiro}).
+  form.  The straight-line refractive sub-piece yields the exact
+  coefficient $2\pi$, while the bent-ray and path-length pieces
+  are common to the shared 1PN trajectory and cancel in the
+  differential comparison.  The closed result is
+  \[
+  \Delta t_{2{\rm PN}}^{\rm ISPG}
+  -\Delta t_{2{\rm PN}}^{\rm GR}
+  =
+  \frac{\pi}{4}\,\frac{G^2M^2}{c^5 b}
+  \]
+  for asymptotic endpoints, with the finite-distance arctangent
+  form given in Sec.~\ref{sec:shapiro}.
 
 \item \textbf{GW sector:} $c_g=c$ exactly;
   modes $(h_+,h_\times,h_b)$ with estimated
