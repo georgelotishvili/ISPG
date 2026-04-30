@@ -41,9 +41,11 @@ scalar mode satisfies $\phi_0=0$ as a consistency requirement of simultaneously
 (i) using comoving proper time $t=\tau$ and (ii) imposing the bi-conformal ansatz
 for $g_{tt}$. Under this condition all four Bellini--Sawicki EFT functions vanish
 identically ($\aK=\aB=\aM=\aT=0$), so the linear Einstein--Boltzmann system reduces
-to that of \LCDM{} with the same matter content and initial conditions. Therefore the
-primary CMB angular power spectrum, BAO scale, supernova distance measures, and
-BBN expansion-rate constraints are inherited at linear order. The distinguishing
+to that of \LCDM{} with the same matter content and initial conditions. Within this
+metric-sector limit, the primary CMB angular power spectrum, BAO scale, supernova
+distance measures, and BBN expansion-rate constraints are inherited at linear order;
+possible matter-sector pressure-history backreaction is a separate issue outside
+the linear claim made here. The distinguishing
 prediction of the framework lies in the quasi-static, weak-field regime around
 bound structures: the MOND sector implies a redshift evolution
 $\azero(z)=cH(z)/(2\pi)$.
@@ -154,10 +156,11 @@ consistency statement in the physical cosmic-time frame.
 
 \paragraph{Clarifying remark (construction vs dynamics).}
 Equation~\eqref{eq:phi0} shows that, in the matter-clock cosmic-time frame, the homogeneous
-cosmological scalar background is \emph{forced} to vanish by simultaneous imposition of the FLRW
+cosmological metric scalar is \emph{fixed} to vanish by simultaneous imposition of the FLRW
 cosmic-time condition and the bi-conformal $g_{tt}$ ansatz. Accordingly, the agreement with GR at
 the background level is a \emph{consistency consequence of the construction}, rather than an
-independent dynamical prediction. This appendix makes this point explicit to avoid any ambiguity.
+independent dynamical prediction. This statement concerns the homogeneous metric mode
+$\phi_0$, not the coarse-grained pressure-history diagnostic used in the process-time sector.
 
 \paragraph{Immediate consequence.}
 When $\dot\phi_0=0$ the scalar stress tensor vanishes on the background:
@@ -231,8 +234,9 @@ In EFT language, departures from these GR forms arise through combinations of
 $\aB,\aM,\aT$; since they vanish here, the linear Einstein--Boltzmann system for
 photons, baryons, CDM and neutrinos is unchanged (for the same matter content
 and initial conditions). The scalar perturbation propagates as a matter-sourced
-mode; under $\alpha_i=0$ it does not back-react on the metric potentials at
-linear order.
+mode.  Since $\partial_\mu\phi_0=0$ on the background, the scalar stress tensor
+has no term linear in $\delta\phi$; in this reduced metric sector the sourced
+scalar therefore does not back-react on the metric potentials at linear order.
 
 \paragraph{Matter-sourced scalar mode.}
 In Fourier space the linear scalar perturbation obeys a damped wave equation on
@@ -243,7 +247,8 @@ FLRW, sourced by the matter trace (Appendix~1 sourced EOM):
 \label{eq:deltaphi_app9}
 \end{equation}
 illustrating that the scalar mode is sourced by $\delta T_k$ while remaining
-decoupled from the metric potentials at linear order under $\alpha_i=0$. The
+decoupled from the metric potentials at linear order under the
+$\partial_\mu\phi_0=0$ and $\alpha_i=0$ conditions. The
 term ``spectator'' is used here in the restricted sense of metric-decoupling,
 not full dynamical decoupling: the mode is driven by matter and its kinetic
 stability inherits the phantom-sign caveat of Appendix~11.
@@ -255,9 +260,12 @@ stability inherits the phantom-sign caveat of Appendix~11.
 
 \paragraph{Inherited linear observables.}
 Because both the background expansion and the linear gravitational sector are
-GR-identical, the following are inherited at linear order: primary CMB anisotropies,
-BAO standard ruler, supernova distance measures, and the BBN expansion-rate constraint
-$H(T)$.
+GR-identical in the same-matter-content metric-sector limit, the following are
+inherited at linear order: primary CMB anisotropies, BAO standard ruler,
+supernova distance measures, and the BBN expansion-rate constraint $H(T)$.
+This inheritance statement does not by itself quantify any matter-sector
+backreaction associated with the pressure-history diagnostic
+$\phi_{\mathrm{bg}}(z)$.
 
 
 \paragraph{From a GR-identical FLRW background to MOND in galaxies (sketch).}
@@ -318,12 +326,12 @@ structural consequence of the nonlinear field equations.
 \begin{tabular}{@{}ll@{}}
 \toprule
 Observable & Status in ISPG bi-conformal theory \\ \midrule
-Primary CMB $C_\ell$ & Unchanged (GR-identical linear sector) \\
-BAO scale & Unchanged (same background + linear perturbations) \\
-SNe distances & Unchanged (same background distances) \\
-BBN $H(T)$ & Unchanged (no background scalar contribution) \\
-Linear growth $f\sigma_8$ & Unchanged (GR-identical linear sector) \\
-Lensing potential $(\Phi+\Psi)/2$ & Unchanged at linear order \\
+Primary CMB $C_\ell$ & Unchanged in the metric-sector limit \\
+BAO scale & Unchanged for the same matter content \\
+SNe distances & Unchanged for the same background distances \\
+BBN $H(T)$ & Unchanged in the metric-sector limit \\
+Linear growth $f\sigma_8$ & Unchanged in the metric-sector limit \\
+Lensing potential $(\Phi+\Psi)/2$ & Unchanged at linear order in this limit \\
 \bottomrule
 \end{tabular}
 \end{table}
