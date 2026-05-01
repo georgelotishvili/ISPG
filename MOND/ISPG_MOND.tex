@@ -40,7 +40,7 @@ Thus Eq.~\eqref{eq:action} remains the baseline covariant kernel throughout, whi
 The purpose is to make the MOND chain explicit at two levels:
 \begin{itemize}
 \item \textbf{Qualitative (cosmological origin):} observed cosmic flows in the space substance $\rightarrow$ vortex formation (Kelvin--Helmholtz) $\rightarrow$ central rarefaction $\rightarrow$ extra metric/geodesic acceleration channel $\rightarrow$ MOND phenomenology.  Different vortex topologies (laminar planar, convective poloidal, chaotic) produce different galaxy types (spiral, elliptical, irregular) with the same MOND scale.
-\item \textbf{Quantitative (local closure):} global pressure decrease / coherence damping $\rightarrow$ coherence length $\rightarrow$ Hubble-wavelength-selected critical acceleration $a_0=cH/(2\pi)$ $\rightarrow$ vortex-lag correction $H\!\to\!H_{\rm eff}$ (best-fit recovery of the local observed value) $\rightarrow$ instantaneous vortex equilibrium $\rightarrow$ interpolating function $\mu(x)=x/(1+x)$ $\rightarrow$ BTFR and environment effects.
+\item \textbf{Quantitative (local closure):} global pressure decrease / coherence damping $\rightarrow$ coherence length $\rightarrow$ Hubble-wavelength-selected critical acceleration $a_0=cH/(2\pi)$ $\rightarrow$ vortex-lag correction $H\!\to\!H_{\rm eff}$ (calibrated formation-epoch recovery of the local observed value, with age-dependent $a_0$ as the testable prediction) $\rightarrow$ instantaneous vortex equilibrium $\rightarrow$ interpolating function $\mu(x)=x/(1+x)$ $\rightarrow$ BTFR and environment effects.
 \end{itemize}
 
 \phantomsection
@@ -577,9 +577,9 @@ a_0 = \frac{cH_0}{2\pi}
 Here $H_0=67.4\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ is the fiducial Planck/CMB baseline value adopted in \texttt{MOND/Python/constants.py}. Since $a_0\propto H_0$, using a local-distance-ladder value near $73\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ would rescale the instantaneous estimate upward by about $8\%$.
 The observed value $a_0^{(\rm obs)}\approx 1.2\pm 0.3\times 10^{-10}\;\mathrm{m\,s^{-2}}$ (McGaugh 2011) confirms that the instantaneous formula lands in the correct order of magnitude.  However, for a parameter-free derivation the residual $\sim15\%$ offset still requires a physical explanation rather than being left as a tolerated mismatch.
 
-\subsection{Resolving the 15\% offset: vortex-lag effect}\label{sec:vortex_lag}
+\subsection{Calibrated vortex-lag closure of the 15\% offset}\label{sec:vortex_lag}
 
-The instantaneous formula $a_0 = cH_0/(2\pi) \approx 1.04\times10^{-10}\;\mathrm{m\,s^{-2}}$ under-predicts the observed value $a_0^{(\rm obs)}\approx 1.2\times10^{-10}\;\mathrm{m\,s^{-2}}$ by $\approx 15\%$.  This is not within acceptable tolerance for a parameter-free derivation: the discrepancy must be physically resolved.
+The instantaneous formula $a_0 = cH_0/(2\pi) \approx 1.04\times10^{-10}\;\mathrm{m\,s^{-2}}$ under-predicts the observed value $a_0^{(\rm obs)}\approx 1.2\times10^{-10}\;\mathrm{m\,s^{-2}}$ by $\approx 15\%$.  The vortex-lag mechanism below provides a calibrated closure of this offset: the $H_{\rm eff}$ identity is algebraic for the adopted uniform coordinate-time memory prescription, while the value $z_{\rm form}\approx0.58$ is calibrated to the local observed $a_0$.  The independent prediction is therefore not the numerical match itself, but the induced age dependence of $a_0$ across galaxies.
 
 \paragraph{Origin of the correction.}
 The derivation leading to Eq.~\eqref{eq:a0} assumes the coherence cell is in instantaneous equilibrium with the current $H$.  However, the vortex maturity ODE (Eq.~\eqref{eq:avort_markov_closed}) contains the forgetting rate $\Gamma_{\rm mem}=\Omega_{\rm tr}=a_0/c$, which sets a memory timescale
@@ -592,7 +592,7 @@ H_{\rm eff}
 = \frac{1}{t_0-t_{\rm form}}\int_{t_{\rm form}}^{t_0}H(t)\,dt
 = \frac{\ln(1+z_{\rm form})}{t_{\rm lookback}(z_{\rm form})}\,,
 \end{equation}
-where the second equality follows from the change of variable $dt = dz/[(1+z)H]$ and the identity $\int H\,dt = \int dz/(1+z)$.
+where the second equality follows from the change of variable $dt = dz/[(1+z)H]$ and the identity $\int H\,dt = \int dz/(1+z)$.  This identity is exact for the chosen uniform coordinate-time average; the choice of memory kernel is part of the H.3 closure rather than an independent theorem.
 
 \paragraph{Process-time refinement.}
 Equation~\eqref{eq:Heff} averages $H(t)$ with uniform weight in
@@ -618,9 +618,17 @@ significant only for high-$z$ formation ($z_{\rm form}\gtrsim 2$).
 The quantities $H_{\rm eff}$, $H_{\rm eff,proc}$, and the cumulative
 process-age factor $\mathcal{A}=\tau_{\rm proc}/t_{\rm lookback}$
 are distinct diagnostics and should not be substituted for one another.
+The memory prescription is load-bearing: the exponential-memory
+sensitivity check in \texttt{MOND/Python/heff\_calc.py} gives a much
+larger effective value, so the uniform-lifetime average is retained as
+the calibrated H.3 prescription.  A first-principles derivation of the
+memory kernel is a separate dynamical-refinement problem.
 
 \paragraph{Numerical evaluation.}
-For a standard $\Lambda$CDM background ($\Omega_m=0.315$, $\Omega_\Lambda=0.685$, $H_0=67.4$\,km\,s$^{-1}$\,Mpc$^{-1}$, giving $t_0\approx 13.8$\,Gyr):
+For the standard $\Lambda$CDM observational background used in
+\texttt{MOND/Python/heff\_calc.py} ($\Omega_m=0.315$,
+$\Omega_\Lambda=0.685$, $H_0=67.4$\,km\,s$^{-1}$\,Mpc$^{-1}$,
+giving $t_0\approx 13.8$\,Gyr):
 \begin{center}
 \begin{tabular}{@{}ccccl@{}}
 \toprule
@@ -637,13 +645,22 @@ $1.5$ & $ 4.2$ & $1.39$ & $1.45$ & proto-disk \\
 \bottomrule
 \end{tabular}
 \end{center}
-\noindent The observed $a_0^{(\rm obs)}\approx 1.2$ corresponds to $z_{\rm form}\approx 0.58$, i.e.\ the vortex structure dates from $\sim$5.8~Gyr ago.  This is consistent with the epoch at which the last major merger typically stabilises spiral-disk morphology in the local galaxy population~\cite{Hopkins2010,Stewart2008}.
+\noindent Within this standard-$\Lambda$CDM calibration, the observed
+$a_0^{(\rm obs)}\approx 1.2$ corresponds to
+$z_{\rm form}\approx 0.58$, i.e.\ the vortex structure dates from
+$\sim$5.8~Gyr ago.  This value lies in a plausible late
+disk-settling / last-major-merger window for local spiral morphology
+\cite{Hopkins2010,Stewart2008}, but it is not an independent
+prediction.  Baryons-only ISPG redshift-evolution estimates elsewhere
+in this paper use a different background; a unified H.3 recalibration
+in that background is deferred to a separate cosmology-consistency
+sweep.
 
 \paragraph{Physical interpretation.}
 In ISPG language: the global pressure of the space substance has been decreasing ($H$ falling) throughout cosmic history.  A galactic vortex ``imprints'' the pressure conditions throughout its entire lifetime because $\tau_{\rm mem}\gg t_0$---it cannot forget.  Galaxies whose vortices stabilised earlier carry a higher time-averaged $H$, and therefore exhibit a higher effective $a_0$.  The instantaneous formula $a_0 = cH_0/(2\pi)$ is the correct \emph{asymptotic} result for a vortex in a static universe; the 15\% correction is the finite-age transient.
 
 \paragraph{Falsifiable prediction: age-dependent $a_0$.}
-This resolution generates a unique, testable prediction absent from any other MOND formulation:
+This calibrated closure generates a unique, testable prediction absent from any other MOND formulation:
 \begin{equation}\label{eq:a0_age}
 a_0^{\rm eff}(\text{galaxy})
 = \frac{c}{2\pi}\,\frac{\ln(1+z_{\rm form})}{t_{\rm lookback}(z_{\rm form})}\,.
@@ -654,7 +671,7 @@ At fixed redshift of observation, galaxies with older stabilised disks should sh
   one that settled at $z_{\rm form}\sim 0.3$ predicts $a_0^{\rm eff}\approx 1.10$
   (both in units of $10^{-10}\;\mathrm{m\,s^{-2}}$).
 \item The BTFR scatter should correlate with disk-settling epoch: older disks above the mean relation, younger disks below.
-\item Current SPARC galaxies are predominantly local spirals with $z_{\rm form}\sim 0.5$--$0.7$, qualitatively consistent with both the observed median $a_0\approx 1.2$ and the narrow BTFR scatter (a quantitative verification of the induced dispersion $\sigma(\log v_{\rm flat})=\tfrac14\sigma(\log a_0)=\tfrac14\sigma(\log H_{\rm eff})$ against the SPARC scatter is deferred to a dedicated analysis).
+\item The calibrated $z_{\rm form}\approx0.58$ lies in a plausible late disk-settling window for local spirals, qualitatively consistent with the observed median $a_0\approx 1.2$.  A quantitative verification of the induced dispersion $\sigma(\log v_{\rm flat})=\tfrac14\sigma(\log a_0)=\tfrac14\sigma(\log H_{\rm eff})$ against SPARC residuals and independent disk-age proxies is deferred to a dedicated analysis.
 \end{itemize}
 
 \paragraph{Redshift evolution.}
@@ -672,23 +689,26 @@ which reduces to $cH_0/(2\pi)$ only in the limit $z_{\rm form}\to z_{\rm obs}$ (
 now depends on both the observation epoch \emph{and} the formation epoch, providing a two-parameter test surface rather than a single curve.  DESI/Euclid-era rotation-curve surveys combined with morphological age indicators can map this surface.
 
 \paragraph{Existing observational hints.}
-Several independent data sets are already qualitatively consistent with the vortex-lag prediction:
+Several data sets are suggestive but not yet decisive tests of the
+vortex-lag prediction:
 \begin{enumerate}
 \item \textbf{MIGHTEE-HI (2025).}
-  Villanueva-Domingo et al.~\cite{MIGHTEE2025} report ``the first
-  tentative evidence for redshift evolution in the acceleration
-  scale'' from 19 HI-selected galaxies at $z\leq0.08$.  A
-  redshift-dependent $a_0$ is the direct signature of the
-  vortex-lag mechanism.
+  V{\u a}r{\u a}{\c s}teanu et al.~\cite{MIGHTEE2025} report a
+  tight radial-acceleration relation in 19 H\,{\sc i}-selected
+  galaxies at $z\leq0.08$ and tentative ($2.4\sigma$) evidence for
+  redshift evolution in the acceleration scale.  This is suggestive
+  for H.3, but it is not yet a confirmation; the authors stress that
+  larger, higher-redshift samples are required.
 \item \textbf{Galaxy-to-galaxy $a_0$ scatter (Rodrigues et al.\ 2018).}
   A Bayesian analysis of 193 SPARC/THINGS galaxies rejected
   a universal $a_0$ at $>10\sigma$~\cite{Rodrigues2018}.
   Li \& McGaugh~\cite{LiMcGaugh2018} contested this on
   methodological grounds, and the debate
   remains open~\cite{Desmond2021cautionary}.
-  In the present framework the
-  scatter is \emph{physical}: it encodes the distribution of
-  disk-settling epochs $z_{\rm form}$ across the sample.
+  In the present framework such scatter would be \emph{physical}:
+  it would encode the distribution of disk-settling epochs
+  $z_{\rm form}$ across the sample.  This remains a testable
+  interpretation rather than a confirmed observational result.
 \item \textbf{Best-fit $a_0$ value.}
   Desmond (2023)~\cite{Desmond2023} obtains
   $a_0=(1.19\pm0.04_{\rm stat}\pm0.09_{\rm sys})\times
@@ -698,9 +718,8 @@ Several independent data sets are already qualitatively consistent with the vort
   by construction of the calibration and is not an
   independent prediction.  The non-trivial consistency
   check is that the calibrated value $z_{\rm form}\approx
-  0.58$ falls within the independently determined
-  $z\sim 0.5$--$0.7$ window for last-major-merger
-  stabilisation of local-spiral disk
+  0.58$ falls within a plausible late disk-settling /
+  last-major-merger window for local-spiral disk
   morphology~\cite{Hopkins2010,Stewart2008}.  The genuinely
   falsifiable content is the age-correlation prediction
   (Eq.~\eqref{eq:a0_age}), tested by the following items.
@@ -2700,7 +2719,7 @@ Since $a_0(z) = cH(z)/(2\pi)$ (Eq.~\eqref{eq:a0z}), the BTFR normalization evolv
 v_{\rm flat}(z) \propto [H(z)]^{1/4}.
 \label{eq:btfr_z}
 \end{equation}
-In the baryons-only cosmology natural to this framework ($\Omega_b \approx 0.05$, $\Omega_\Lambda \approx 0.95$), $H(1)/H_0 \approx 1.16$, predicting $(1.16)^{1/4} - 1 \approx 4\%$ higher asymptotic velocities at $z = 1$ at fixed baryonic mass---a falsifiable signature distinguishing this theory from standard MOND with constant $a_0$.  Here again $H(z)$ should be read as the observational proxy for the underlying pressure-history variable.  (For comparison, a $\Lambda$CDM cosmology with $\Omega_m \approx 0.3$ would give $H(1)/H_0 \approx 1.78$ and a $\sim$15\% velocity increase.)
+In the baryons-only cosmology natural to this framework ($\Omega_b \approx 0.05$, $\Omega_\Lambda \approx 0.95$), $H(1)/H_0 \approx 1.16$, predicting $(1.16)^{1/4} - 1 \approx 4\%$ higher asymptotic velocities at $z = 1$ at fixed baryonic mass---a falsifiable signature distinguishing this theory from standard MOND with constant $a_0$.  Here again $H(z)$ should be read as the observational proxy for the underlying pressure-history variable.  (For comparison, a $\Lambda$CDM cosmology with $\Omega_m \approx 0.3$ would give $H(1)/H_0 \approx 1.78$ and a $\sim$15\% velocity increase.)  This baryons-only redshift-evolution table is a comparison background distinct from the standard-$\Lambda$CDM observational background used for the H.3 $H_{\rm eff}$ calibration in Sec.~\ref{sec:vortex_lag}; reconciling the two backgrounds is deferred to a separate cosmology-consistency sweep.
 
 \paragraph{Quantitative targets for observational tests.}
 The following table gives concrete predictions for the ISPG
@@ -3781,8 +3800,9 @@ Distinctions:
   \item \textbf{$a_0$ precision.}  Singh's $a_0=c^2/(\xi\,\ell_{\rm dS})$
     contains an undetermined $O(1)$ factor $\xi$; ISPG selects the
     coefficient $1/(2\pi)$ from the Hubble-wavelength coherence boundary
-    and resolves the remaining 15\% offset via the vortex-lag
-    mechanism (Sec.~\ref{sec:vortex_lag}).
+    and closes the remaining 15\% offset phenomenologically through a
+    calibrated vortex-lag formation epoch; the age dependence of $a_0$ is
+    the testable prediction (Sec.~\ref{sec:vortex_lag}).
   \item \textbf{Interpolating function.}  Singh recovers the AQUAL
     equation in the low-acceleration limit but does not select a
     specific $\mu(x)$; the function remains free.  ISPG derives
@@ -6033,11 +6053,14 @@ the vortex/galactic completion built on top of that local channel.
 
 \noindent With the AQUAL equivalence theorem established, the
 2D residual identified as the standard curl field in disk geometry,
-and the 15\% $a_0$ offset resolved by the vortex-lag effect
+and the 15\% $a_0$ offset closed phenomenologically by the calibrated
+vortex-lag effect
 (Sec.~\ref{sec:vortex_lag}),
 the spiral-galaxy MOND closure chain is complete at the
 constitutive level, with each step either derived, uniquely
-selected by consistency, or observationally constrained.
+selected by consistency, calibrated within the H.3 closure, or
+observationally constrained.  The independent H.3 test is the predicted
+age dependence of $a_0$.
 Two formal reductions remain open (backbone $\to$ $S_{\rm swirl}$
 and MaxEnt linearity from the action); these are technical
 exercises within a framework whose physical content is fully
@@ -6056,11 +6079,7 @@ flows in the space substance (Sec.~\ref{sec:vortex_origin}), and
 (ii)~the \emph{quantitative closure} inside a mature vortex cell.
 
 \textbf{Proved analytically or by exact algebra:} the scaling
-$a_0\propto cH$; the vortex-lag resolution of the 15\%
-coefficient offset via time-averaged $H_{\rm eff}$
-(Sec.~\ref{sec:vortex_lag}), yielding $a_0^{\rm eff}=1.20\times
-10^{-10}\;\mathrm{m\,s^{-2}}$ for $z_{\rm form}\approx 0.58$;
-the Fourier $m=0$ dominance; the Bessel
+$a_0\propto cH$; the Fourier $m=0$ dominance; the Bessel
 eigenvalue; the quadratic identity yielding
 $\mu(x)=x/(1+x)$ once the mature occupied branch is specified;
 $v^4=GMa_0$ in the deep-MOND limit; Newtonian recovery
@@ -6087,6 +6106,16 @@ stiffness);
 $\tau_{\rm rel}=c/g$ (dimensional analysis $+$ universality,
 within the old transport representation,
 Sec.~\ref{sec:closure_derivation}).
+
+\textbf{Calibrated / predicted in H.3:}
+the identity $H_{\rm eff}=\ln(1+z_{\rm form})/
+t_{\rm lookback}(z_{\rm form})$ is algebraic for the adopted uniform
+coordinate-time memory prescription; the value
+$z_{\rm form}\approx0.58$ is calibrated to the local observed
+$a_0$ in the standard-$\Lambda$CDM background used by
+\texttt{heff\_calc.py}; and the falsifiable content is the predicted
+correlation between inferred $a_0$ residuals and disk-settling age
+(Sec.~\ref{sec:vortex_lag}).
 
 \textbf{Proved / derived in the coherence-vortex sector:}
 $\Omega_{\rm tr}=a_0/c$ as the unique stationary transport rate of a
@@ -6152,10 +6181,11 @@ analytic/PDE results.
 a_0=\frac{cH}{2\pi},\quad \mu(x)=\frac{x}{1+x},\quad v^4=GMa_0,\quad
 \delta w_0 = \frac{K\alpha}{3(1+z_f)^\alpha}\,,
 \]
-together with: the vortex-lag resolution
+together with: the calibrated vortex-lag closure
 $a_0^{\rm eff}=cH_{\rm eff}/(2\pi)$ with
-$H_{\rm eff}=\ln(1+z_{\rm form})/t_{\rm lookback}$, predicting
-galaxy-age-dependent $a_0$ and correlated BTFR scatter
+$H_{\rm eff}=\ln(1+z_{\rm form})/t_{\rm lookback}$, where the
+local normalization fixes $z_{\rm form}$ and the genuine prediction is
+galaxy-age-dependent $a_0$ with correlated BTFR scatter
 (Sec.~\ref{sec:vortex_lag});
 a falsifiable redshift drift $a_0(z)\propto H(z)$;
 a MOND-background--dark-energy-sector link testable by DESI/Euclid
@@ -6194,9 +6224,10 @@ K.~R.~Stewart \textit{et al.},
 Astrophys.\ J.\ \textbf{683}, 597 (2008).
 
 \bibitem{MIGHTEE2025}
-P.~Villanueva-Domingo \textit{et al.},
-``The first satisfactory measurement of the baryonic Tully--Fisher relation at $z\sim1$,''
-preprint (2025).
+A.~A.~V{\u a}r{\u a}{\c s}teanu \textit{et al.},
+``MIGHTEE-HI: the radial acceleration relation with resolved stellar mass measurements,''
+Mon.\ Not.\ R.\ Astron.\ Soc.\ \textbf{541}, 2366--2392 (2025),
+doi:10.1093/mnras/staf1079.
 
 \bibitem{Rodrigues2018}
 D.~C.~Rodrigues, V.~Marra, A.~del~Popolo, and Z.~Davari,
