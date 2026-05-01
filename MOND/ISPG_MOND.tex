@@ -508,30 +508,30 @@ k_J = \frac{3aH}{2c},
 \lambda_J \equiv \frac{2\pi a}{k_J} = \frac{4\pi c}{3H}.
 \label{eq:jeans}
 \end{equation}
-Modes with $\lambda \gg \lambda_J$ are overdamped (coherent response), while modes with $\lambda \ll \lambda_J$ oscillate (incoherent response). This defines the coherence length of the scalar response.
+This is an order-Hubble scale.  Modes with $\lambda\ll\lambda_J$ lie in the short-wavelength oscillatory branch of the FLRW equation, while the transition itself lies near the Hubble boundary rather than deep inside the WKB range.  In the MOND closure below, this scale is used as the cosmological coherence-boundary input; it is not a direct Hubble-friction damping proof for kpc-scale galactic modes.
 
 \section{From coherence length to the MOND acceleration scale}\label{sec:a0}
 
 \subsection{Overdamped vs.\ underdamped classification}
 
-The damped oscillator~\eqref{eq:damped} has two qualitative regimes in the sub-Hubble adiabatic range ($kc/a \gg H$), separated by the critical condition $\omega_k = \gamma_H$:
+The homogeneous damped oscillator~\eqref{eq:damped} is best read as a three-regime classifier:
 \begin{itemize}
-\item \textbf{Underdamped} ($\omega_k > \gamma_H$): the mode oscillates with amplitude decay rate $\gamma_H$.  The field can sustain a coherent gradient at the corresponding wavelength and delivers the full Newtonian response.
-\item \textbf{Overdamped} ($\omega_k < \gamma_H$, still sub-Hubble): the mode relaxes without oscillating.  Its approach to equilibrium is controlled by the slow eigenrate
+\item \textbf{Deep WKB / short-wavelength} ($kc/a\gg H$, hence $Q=\omega_k/\gamma_H\gg1$): the mode oscillates with amplitude decay rate $\gamma_H$.  The source-free classification is parametrically controlled here, and the field can sustain a local coherent gradient at the corresponding wavelength.
+\item \textbf{Near-Hubble / order-Hubble boundary} ($kc/a\sim H$, hence $Q=O(1)$): the homogeneous oscillator crosses toward the overdamped branch.  Within this homogeneous classifier its approach to equilibrium is controlled by the slow eigenrate
 \begin{equation}
 \alpha_- = \frac{3H}{2}-\sqrt{\frac{9H^2}{4}-\omega_k^2}
   \;\xrightarrow{\;\omega_k\ll H\;}\;
   \frac{\omega_k^2}{3H}\,,
 \label{eq:alpha_slow}
 \end{equation}
-giving a response timescale $\tau_{\rm resp}=1/\alpha_-\approx 3H/\omega_k^2$ that exceeds the Hubble time for $\omega_k^2 < 3H^2$.  Such modes cannot reach equilibrium within a Hubble epoch; their gravitational gradient is suppressed.
+giving a formal response timescale $\tau_{\rm resp}=1/\alpha_-\approx 3H/\omega_k^2$ that exceeds the Hubble time for $\omega_k^2 < 3H^2$.  This is a near-boundary coherence diagnostic, not a direct local damping law for galaxy-scale perturbations.
 \item \textbf{Frozen} ($kc/a \lesssim H$, super-Hubble): the adiabatic classification breaks down; the mode is frozen on cosmological scales rather than relaxing exponentially, as is standard for cosmological perturbations outside the Hubble radius.
 \end{itemize}
 The transition between the first two regimes defines a characteristic wavenumber $k_J$ (Eq.~\eqref{eq:jeans}) and a corresponding Hubble-damping wavelength $\lambda_J = 4\pi c/(3H)$, both of order $c/H$.  (The symbol $\lambda_J$ is retained for cross-reference continuity; the scale is set by Hubble damping, not by the pressure-gravity balance of the astrophysical Jeans criterion.)
 
 \subsection[Robustness of a0 proportional to cH]{Robustness of $a_0\propto cH$}
 
-The acceleration corresponding to a spatial gradient of length $\ell$ is $a(\ell)=c^2/\ell$.  The Hubble friction suppresses gradients with $\ell$ exceeding the coherence length, which is of order $c/H$ regardless of the precise criterion used:
+The acceleration corresponding to a spatial gradient of length $\ell$ is $a(\ell)=c^2/\ell$.  The FLRW oscillator supplies an order-Hubble coherence scale, and the bound-structure closure uses gradients with $\ell$ exceeding that scale as outside the largest coherent scalar cell.  This is a coherence-boundary identification rather than direct FLRW damping of local kpc-scale gradients; the scale is of order $c/H$ regardless of the precise criterion used:
 \begin{center}
 \begin{tabular}{@{}lcc@{}}
 \toprule
@@ -543,7 +543,7 @@ $k=k_H$ (Hubble) & $2\pi c/H$ & $cH/(2\pi)$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-All three give $a_0 = \mathcal{C}\,cH$ with $\mathcal{C}$ an $O(1)$ coefficient.  The scaling $a_0\propto cH$ is therefore \emph{robust}: it follows from any reasonable demarcation of the overdamped regime.
+All three give $a_0 = \mathcal{C}\,cH$ with $\mathcal{C}$ an $O(1)$ coefficient.  The scaling $a_0\propto cH$ is therefore \emph{robust}: it follows from any reasonable order-Hubble coherence-boundary demarcation.
 
 \subsection{Fixing the coefficient: the Fourier identification}
 
@@ -2881,7 +2881,7 @@ predictions.
 \end{equation}
 
 \paragraph{Corollary 2 (local-channel limit vs. full theory).}
-If the frame-dragging coupling is switched off ($\bm{\omega}_{\rm FD} = 0$), the scalar field reduces to the pure overdamped oscillator of Eq.~\eqref{eq:damped}, giving
+If the frame-dragging coupling is switched off ($\bm{\omega}_{\rm FD} = 0$), the scalar field reduces to the formal Hubble-damped local-channel limit associated with Eq.~\eqref{eq:damped}, not to the full coherence-boundary vortex closure, giving
 \begin{equation}
 \mu_{\rm lin}\simeq x^2/3
 \qquad (x\ll1).

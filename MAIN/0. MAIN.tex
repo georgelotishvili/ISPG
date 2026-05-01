@@ -2046,34 +2046,36 @@ oscillator with natural frequency $\omega_{k} = kc/a$ and
 damping rate $\gamma_{\mathrm{H}} = 3H/2$.  The source
 $(8\pi G/c^{2})\,\delta T$ varies on matter-gravity
 timescales $\sim H^{-1}$, much longer than
-$\omega_{k}^{-1}$ on sub-Hubble scales
-($k \gg aH/c$), so the homogeneous regime-classification
-below is governed by the LHS alone; the full driven
-response is written in~(\ref{eq:scalar_pert}) and analysed
-in App.~9.  The homogeneous form is
+$\omega_{k}^{-1}$ in the deep WKB / short-wavelength
+range $kc/a\gg H$.  In that range the homogeneous equation
+is a controlled regime-classification device.  Near the
+Hubble-scale boundary $kc/a\sim H$, however, this
+source-drop is only a classification approximation; the
+full driven response is written in~(\ref{eq:scalar_pert})
+and analysed in App.~9.  The homogeneous form is
 \begin{equation}\label{eq:damped}
   \ddot{\delta\varphi}_{k}
   + 3H\,\dot{\delta\varphi}_{k}
   + \omega_{k}^{2}\,\delta\varphi_{k} = 0\,.
 \end{equation}
 The ratio $Q \equiv \omega_{k}/\gamma_{\mathrm{H}}
-= 2kc/(3aH)$ determines the regime (valid in the
-sub-Hubble adiabatic range $kc/a \gg H$, where the
-WKB approximation holds):
+= 2kc/(3aH)$ organizes the homogeneous regimes:
 \begin{itemize}
-\item $Q > 1$ (high $k$): oscillatory---the scalar field
-  sustains pressure gradients and provides full inertial
-  response;
-\item $Q < 1$ (low $k$, but still sub-Hubble):
-  overdamped---Hubble friction suppresses the gradient
-  and degrades the inertial response;
+\item $kc/a\gg H$ (deep WKB / short-wavelength range,
+  hence $Q\gg1$): oscillatory---the scalar field sustains
+  pressure gradients and provides full inertial response;
+\item $kc/a\sim H$ (near-Hubble / order-Hubble boundary,
+  hence $Q=O(1)$): the homogeneous oscillator crosses from
+  oscillatory to overdamped behaviour; this identifies an
+  $O(c/H)$ coherence boundary, not a direct Hubble-friction
+  damping of local galactic modes;
 \item $kc/a \lesssim H$ (super-Hubble): the adiabatic
   classification breaks down and the mode is
   \emph{frozen} rather than relaxing exponentially, as
   expected for cosmological perturbations outside the
   Hubble radius.
 \end{itemize}
-The transition between the first two regimes occurs at
+The order-Hubble transition occurs at
 $\omega_{k_{J}} = \gamma_{\mathrm{H}}$, defining a
 Hubble-damping wavelength
 \begin{equation}\label{eq:jeans}
@@ -2094,11 +2096,14 @@ criterion.)
 
 The damped wave equation~(\ref{eq:damped}) contains two
 competing scales: the mode frequency $\omega_{k}$ and the
-Hubble friction $H$.  The scalar field can sustain a
-gradient of characteristic length $\ell$ only if the
-corresponding mode is not overdamped.  The longest
-coherent wavelength is set by the Hubble rate through
-the standard dispersion relation:
+Hubble friction $H$.  As a homogeneous FLRW classification,
+it identifies a longest order-Hubble coherence wavelength;
+galaxy-scale modes with $kc/a\gg H$ are not directly
+overdamped by the FLRW friction term.  The MOND use below
+therefore treats this scale as a global coherence-boundary
+input to the bound-structure closure.  The corresponding
+wavelength is set by the Hubble rate through the standard
+dispersion relation:
 \begin{equation}\label{eq:dispersion}
   \lambda_{H}(t) = \frac{2\pi\,c}{H(t)}\,,
 \end{equation}
@@ -2114,8 +2119,9 @@ Now consider a test particle at acceleration $a$.  The
 gravitational length over which the field must maintain
 its gradient is $\ell(a) = c^{2}/a$.  When
 $\ell > \lambda_{H}$---i.e.\ when the required gradient
-extends beyond the Hubble coherence length---the scalar
-field can no longer provide a full Newtonian response.
+extends beyond the adopted Hubble coherence length---the
+bound-structure closure no longer assigns a full Newtonian
+response to the scalar channel.
 The critical acceleration at which this breakdown occurs
 is defined by the identification $\ell(\azero) = \lambda_{H}$,
 which is a physical linkage between the gravitational
@@ -2128,9 +2134,9 @@ mathematical identity:
     \approx 1.04\times 10^{-10}\;\mathrm{m\,s^{-2}}\,.}
 \end{equation}
 
-\textbf{Demonstrated:} the scaling
+\textbf{Demonstrated at H.1 level:} the scaling
 $\azero \propto cH_{0}$ follows from the
-overdamped/underdamped classification of the damped
+order-Hubble coherence boundary identified by the damped
 oscillator~(\ref{eq:damped}) and is robust up to an
 $O(1)$ coefficient set by the choice of demarcation
 criterion.
