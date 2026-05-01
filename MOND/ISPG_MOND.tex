@@ -40,7 +40,7 @@ Thus Eq.~\eqref{eq:action} remains the baseline covariant kernel throughout, whi
 The purpose is to make the MOND chain explicit at two levels:
 \begin{itemize}
 \item \textbf{Qualitative (cosmological origin):} observed cosmic flows in the space substance $\rightarrow$ vortex formation (Kelvin--Helmholtz) $\rightarrow$ central rarefaction $\rightarrow$ extra metric/geodesic acceleration channel $\rightarrow$ MOND phenomenology.  Different vortex topologies (laminar planar, convective poloidal, chaotic) produce different galaxy types (spiral, elliptical, irregular) with the same MOND scale.
-\item \textbf{Quantitative (local closure):} global pressure decrease / coherence damping $\rightarrow$ coherence length $\rightarrow$ critical acceleration $a_0=cH/(2\pi)$ $\rightarrow$ vortex-lag correction $H\!\to\!H_{\rm eff}$ (best-fit recovery of the local observed value) $\rightarrow$ instantaneous vortex equilibrium $\rightarrow$ interpolating function $\mu(x)=x/(1+x)$ $\rightarrow$ BTFR and environment effects.
+\item \textbf{Quantitative (local closure):} global pressure decrease / coherence damping $\rightarrow$ coherence length $\rightarrow$ Hubble-wavelength-selected critical acceleration $a_0=cH/(2\pi)$ $\rightarrow$ vortex-lag correction $H\!\to\!H_{\rm eff}$ (best-fit recovery of the local observed value) $\rightarrow$ instantaneous vortex equilibrium $\rightarrow$ interpolating function $\mu(x)=x/(1+x)$ $\rightarrow$ BTFR and environment effects.
 \end{itemize}
 
 \phantomsection
@@ -561,10 +561,10 @@ The critical acceleration at which the required gradient length equals the Hubbl
 \boxed{a_0 = \frac{c^2}{\lambda_H}=\frac{cH}{2\pi}\,.}
 \label{eq:a0}
 \end{equation}
-Given the Hubble-wavelength identification, the factor $2\pi$ follows from the standard Fourier relation $k=2\pi/\lambda$ between wavenumber and wavelength; the wavelength-vs-radius choice itself is a physical modeling decision, justified by the coherence structure of the scalar medium and confirmed by the vortex-lag direction constraint below.
+Given the Hubble-wavelength identification, the factor $2\pi$ follows from the standard Fourier relation $k=2\pi/\lambda$ between wavenumber and wavelength; the wavelength-vs-radius choice itself is a physical modeling decision, justified by the coherence structure of the scalar medium and made consistent with the vortex-lag direction constraint below.
 
 \paragraph{Direction constraint from the vortex-lag mechanism.}
-Among the three criteria of the preceding subsection, only the Hubble-wavelength criterion yields an instantaneous value $a_0^{\rm inst}=cH_0/(2\pi)\approx 1.04\times10^{-10}\,\mathrm{m\,s^{-2}}$ \emph{below} the observed $a_0^{(\rm obs)}\approx 1.2\times10^{-10}\,\mathrm{m\,s^{-2}}$.  The vortex-lag mechanism of Sec.~\ref{sec:vortex_lag} enhances $a_0^{\rm inst}$ via past-weighted averaging $H_{\rm eff}>H_0$, and can therefore close the gap only for criteria that \emph{underpredict} the data.  This provides a second, mechanism-level selection principle complementary to the Fourier identification: the two overpredicting criteria ($3cH/(4\pi)$ and $\sqrt{3}\,cH/(2\pi)$) would require a lag correction of the wrong sign and are excluded once the vortex-lag closure is imposed.
+Among the three criteria of the preceding subsection, only the Hubble-wavelength criterion yields an instantaneous value $a_0^{\rm inst}=cH_0/(2\pi)\approx 1.04\times10^{-10}\,\mathrm{m\,s^{-2}}$ \emph{below} the observed $a_0^{(\rm obs)}\approx 1.2\times10^{-10}\,\mathrm{m\,s^{-2}}$.  The vortex-lag mechanism of Sec.~\ref{sec:vortex_lag} enhances $a_0^{\rm inst}$ via past-weighted averaging $H_{\rm eff}>H_0$, and can therefore close the gap only for criteria that \emph{underpredict} the data.  This provides a second, mechanism-level consistency filter complementary to the Fourier identification: the two overpredicting criteria ($3cH/(4\pi)$ and $\sqrt{3}\,cH/(2\pi)$) would require a lag correction of the wrong sign and are inconsistent with the vortex-lag closure.
 
 \subsection{Numerical check and redshift evolution}
 
@@ -574,6 +574,7 @@ a_0 = \frac{cH_0}{2\pi}
   = \frac{3.0\times 10^{8}\times 2.18\times 10^{-18}}{2\pi}
   \approx 1.04\times 10^{-10}\;\mathrm{m\,s^{-2}}\,.
 \end{equation}
+Here $H_0=67.4\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ is the fiducial Planck/CMB baseline value adopted in \texttt{MOND/Python/constants.py}. Since $a_0\propto H_0$, using a local-distance-ladder value near $73\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ would rescale the instantaneous estimate upward by about $8\%$.
 The observed value $a_0^{(\rm obs)}\approx 1.2\pm 0.3\times 10^{-10}\;\mathrm{m\,s^{-2}}$ (McGaugh 2011) confirms that the instantaneous formula lands in the correct order of magnitude.  However, for a parameter-free derivation the residual $\sim15\%$ offset still requires a physical explanation rather than being left as a tolerated mismatch.
 
 \subsection{Resolving the 15\% offset: vortex-lag effect}\label{sec:vortex_lag}
@@ -2691,7 +2692,7 @@ We have obtained the baryonic Tully--Fisher relation:
 \boxed{v_{\rm flat}^4 = a_0 \, G \, M, \qquad v_{\rm flat} = (a_0 GM)^{1/4}.}
 \label{eq:btfr_result}
 \end{equation}
-The normalization $a_0 = cH_0/(2\pi)$ is fixed by the cosmological sector (Sec.~\ref{sec:a0}), so the BTFR emerges with \emph{no galaxy-by-galaxy fit parameters}. The asymptotic velocity depends only on baryonic mass $M$ and the universal constant $a_0$.
+The normalization $a_0 = cH_0/(2\pi)$ is selected by the cosmological coherence boundary (Sec.~\ref{sec:a0}), so the BTFR emerges with \emph{no galaxy-by-galaxy fit parameters}. The asymptotic velocity depends only on baryonic mass $M$ and the universal constant $a_0$.
 
 \paragraph{Corollary (redshift evolution).}
 Since $a_0(z) = cH(z)/(2\pi)$ (Eq.~\eqref{eq:a0z}), the BTFR normalization evolves with redshift:
@@ -2904,7 +2905,7 @@ For circular motion $g=v^2/r$, we obtain
 v^4 = GMa_0,
 \label{eq:btfr}
 \end{equation}
-the baryonic Tully--Fisher relation, with normalization fixed by \eqref{eq:a0} and its redshift drift by \eqref{eq:a0z}. A useful scaling is
+the baryonic Tully--Fisher relation, with normalization selected by \eqref{eq:a0} and its redshift drift by \eqref{eq:a0z}. A useful scaling is
 \begin{equation}
 v_{\rm flat}\propto a_0^{1/4},
 \label{eq:vscale}
@@ -3633,11 +3634,12 @@ scale satisfies $a_0\sim cH_0$ to order of magnitude
 unexplained numerical coincidence: $a_0$ is a free parameter of the
 theory, and its proximity to $cH_0$ has no structural origin.
 
-In ISPG the coincidence is \emph{derived}: the scalar field equation
-on the FLRW background has a Hubble-damped coherence length
+In ISPG the coincidence is structurally explained: the scalar field equation
+on the FLRW background has an order-Hubble coherence length, the
+Hubble-wavelength boundary selects
 $\lambda_H=2\pi c/H$, and the critical acceleration is
 $a_0=c^2/\lambda_H=cH/(2\pi)$ (Sec.~\ref{sec:a0}).  The $2\pi$
-factor is fixed by the Fourier relation, not fitted.  ISPG therefore
+factor is selected by the Fourier relation, not fitted.  ISPG therefore
 provides the structural explanation that standard MOND lacks for
 Milgrom's coincidence.
 
@@ -3656,7 +3658,7 @@ cosmological parameters or selects a specific $\mu(x)$.
 ISPG shares with TeVeS the use of a scalar field as the carrier of
 the MOND effect, but differs in three respects:
 \begin{enumerate}
-  \item $a_0=cH/(2\pi)$ is derived, not a free parameter.
+  \item $a_0=cH/(2\pi)$ is selected by the Hubble-wavelength coherence boundary, not fit as a free parameter.
   \item $\mu(x)=x/(1+x)$ is the unique output of the closure chain
     (Sec.~\ref{sec:closure_alternatives}), not an arbitrary function
     choice.
@@ -3777,8 +3779,8 @@ high-acceleration regime.
 Distinctions:
 \begin{itemize}
   \item \textbf{$a_0$ precision.}  Singh's $a_0=c^2/(\xi\,\ell_{\rm dS})$
-    contains an undetermined $O(1)$ factor $\xi$; ISPG fixes the
-    coefficient to $1/(2\pi)$ from the Hubble coherence boundary
+    contains an undetermined $O(1)$ factor $\xi$; ISPG selects the
+    coefficient $1/(2\pi)$ from the Hubble-wavelength coherence boundary
     and resolves the remaining 15\% offset via the vortex-lag
     mechanism (Sec.~\ref{sec:vortex_lag}).
   \item \textbf{Interpolating function.}  Singh recovers the AQUAL
@@ -5873,9 +5875,9 @@ mature-spiral closure chain:
   & proved \\
 3 & Hubble-damped oscillator $\to$ coherence length
     $\lambda_H=2\pi c/H$
-  & proved \\
+  & selected (coherence boundary) \\
 4 & Critical acceleration $a_0=cH/(2\pi)$
-  & proved \\
+  & selected (coherence boundary) \\
 5 & Rotating-space dynamics $\to$ two-channel decomposition
     $\phi=\phi_N+\phi_h$
   & proved \\

@@ -107,7 +107,7 @@ def print_constants():
     print(f"  r_s      = {r_s:.4e} m")
     print(f"  epsilon  = {eps:.4e}  (= 3*pi*r_s/r_M)")
     print(f"  lambda_H = {lambda_H:.4e} m  = {lambda_H/kpc:.1f} kpc")
-    print(f"  r_H      = {r_H:.4e} m  = {r_H/(1e6*kpc):.0f} Mpc")
+    print(f"  r_H      = {r_H:.4e} m  = {r_H/(1e3*kpc):.0f} Mpc")
 
     print("\n--- V. Timescales ---")
     print(f"  T_H      = {T_H:.4e} s  = {T_H/Gyr:.2f} Gyr")

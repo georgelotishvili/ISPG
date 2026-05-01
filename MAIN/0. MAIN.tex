@@ -142,8 +142,8 @@ the theory simultaneously:
 \item proves the scaling $\azero \propto c\,H_{0}$ from
   the damped-oscillator coherence length, and within the
   mature spiral-galaxy closure of the companion MOND
-  paper~\cite{Lotishvili2026MOND} fixes the
-  normalization $1/(2\pi)$ together with the
+  paper~\cite{Lotishvili2026MOND} selects the
+  Hubble-wavelength normalization $1/(2\pi)$ together with the
   interpolating function $\mu(x) = x/(1+x)$:
   the local Bernoulli pressure-deficit channel plus the
   vortex-transport channel.  The baryonic
@@ -2133,6 +2133,14 @@ mathematical identity:
   \boxed{\azero = \frac{c\,H_{0}}{2\pi}
     \approx 1.04\times 10^{-10}\;\mathrm{m\,s^{-2}}\,.}
 \end{equation}
+Here $H_{0}=67.4\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$
+is the fiducial Planck/CMB baseline value used in
+the numerical estimate and in
+\texttt{MOND/Python/constants.py}.  Since
+$\azero\propto H_{0}$, using a local-distance-ladder
+value near $73\;\mathrm{km\,s^{-1}\,Mpc^{-1}}$ would
+rescale this instantaneous estimate upward by about
+$8\%$.
 
 \textbf{Demonstrated at H.1 level:} the scaling
 $\azero \propto cH_{0}$ follows from the
@@ -2151,9 +2159,9 @@ $\lambda_{H} = 2\pi c/H$ because it is the
 Fourier-space coherence boundary of the scalar medium and,
 in the companion MOND paper~\cite{Lotishvili2026MOND}, it is precisely this scale that closes the
 rotating-space transport sector.  The factor $2\pi$ is
-therefore fixed by the coherence geometry rather than fit
-to data, and the PDE verification therein confirms the
-same normalization.
+therefore selected by the coherence geometry rather than fit
+to data, and the PDE verification therein checks the same
+normalization within the bound-structure closure.
 
 \textbf{Direction constraint from the vortex-lag
 mechanism.}  Among the three criteria above, only the
@@ -2168,12 +2176,11 @@ enhances $\azero^{\rm inst}$
 via past-weighted averaging $H_{\rm eff} > H_{0}$, and
 can therefore close the gap only for criteria that
 \emph{underpredict} the data.  This provides a second,
-mechanism-level selection principle complementary to the
+mechanism-level consistency filter complementary to the
 Fourier identification: the two criteria which
 overpredict ($3cH/(4\pi)$ and $\sqrt{3}\,cH/(2\pi)$)
 would require a lag correction of the wrong sign and
-are therefore excluded once the vortex-lag closure is
-imposed.
+are therefore inconsistent with the vortex-lag closure.
 
 The observed value is
 $\azero^{(\mathrm{obs})} \approx 1.2 \times
@@ -2497,7 +2504,7 @@ same mechanism:
   turbulent micro-vortex mechanism: the isotropic
   velocity dispersion $\sigma$ generates a Reynolds-stress
   analogue in the scalar field, with the transition at
-  $g\sim a_0$ fixed by the cosmological coherence length.
+  $g\sim a_0$ selected by the cosmological coherence length.
   The predicted relation $\sigma^4 = K_\sigma\,GMa_0$
   (baryonic Faber--Jackson) is consistent with observations;
   the companion paper now also makes the normalization
