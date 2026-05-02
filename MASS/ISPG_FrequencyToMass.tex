@@ -24,16 +24,18 @@ the \textbf{note never changes}. Only the amplitude
 (energy) decreases; the frequency is invariant.
 
 The ISPG universe behaves the same way. Space is a
-medium vibrating at a single fundamental frequency
+medium vibrating at a single fundamental carrier frequency
 $\nu_0 \approx 1.91 \times 10^{30}$~Hz---the
-``note'' of the cosmos. This vibration is energy;
+MASS/Mathieu-calibrated ``note'' of the cosmos.
+This vibration is energy;
 its macroscopic manifestation is \emph{pressure}.
 Through nonlinear self-interaction, the vibration
 spontaneously condenses into localized resonances
-(oscillons)---these are particles. Each particle is
-a harmonic of $\nu_0$, just as a guitar string
-produces overtones $2f, 3f, 4f, \ldots$ The
-oscillon, in turn, generates a static gravitational
+(oscillons)---these are particles. The particle
+spectrum is treated as a Mathieu-organized resonance
+ladder built on this carrier; this quantitative ladder is
+not derived by the frequency-invariance theorem alone.
+The oscillon, in turn, generates a static gravitational
 field---the ``sound'' radiated into the surrounding
 medium. The original $\nu_0$-mode vibration
 depletes as it condenses into matter, but the
@@ -61,10 +63,10 @@ fundamental properties of that medium?}
 
 The answer is affirmative. We show that:
 \begin{itemize}
-  \item the medium possesses a single universal vibration frequency
-    $\nu_0$;
-  \item every \emph{massive} particle is an integer harmonic of
-    this frequency; neutrinos are identified as
+  \item the medium possesses a single universal proper-time
+    carrier frequency $\nu_0$;
+  \item the massive-particle spectrum is organized as a
+    Mathieu resonance ladder built on this carrier; neutrinos are identified as
     \emph{polarisation-rotation waves}---helical
     excitations whose oscillation plane rotates as
     they propagate---whose tiny mass reflects the
@@ -98,8 +100,9 @@ are working hypotheses rather than first-principles derivations:
 the Quantum paper to the one-dimensional Mathieu equation used here
 is not formally established and is left as an open calculation
 (\S\ref{sec:q_derivation});
-(ii) the numerical value of $\nu_0$ is fixed by calibration at the
-Planck mass (\S\ref{sec:nu0_computation});
+(ii) the numerical value of $\nu_0$ is a calibrated
+MASS/Mathieu value, while its first-principles origin remains
+open (\S\ref{sec:nu0_computation});
 (iii) the identification of neutrinos as polarisation-rotation waves
 (\S\ref{sec:neutrinos}) and of the $W^\pm/Z^0$ bosons as bridge
 modes (\S\ref{sec:WZ_bosons}) is heuristic, with the Standard-Model
@@ -210,10 +213,15 @@ down possible.}
 \label{sec:freq_inv_theorem}
 
 The logical necessity argument (\S\ref{sec:freq_invariance})
-identified the fundamental frequency $\nu_0$ as the invariant
-element required by the very concept of time dilation.  We now
-promote this from a postulate to a theorem by proving it from the
-structure of the field equations.
+identified a fundamental carrier frequency $\nu_0$ as the invariant
+element required by the very concept of time dilation.  The theorem
+below proves the narrower statement needed here: once a localized
+matter-sector resonator with proper-time frequency $\nu_0$ is given,
+a static background $\phi_{\rm bg}$ does not change that proper-time
+frequency.  The theorem does not derive the existence, uniqueness,
+or numerical value of $\nu_0$; the value used in this paper is the
+separate MASS/Mathieu calibration discussed in
+\S\ref{sec:nu0_computation}.
 
 \medskip
 \textbf{Theorem (frequency invariance).}
@@ -271,11 +279,12 @@ takes, in the $(\tau,\xi)$ chart, exactly its flat-space form:
 \end{equation}
 Equation~\eqref{eq:eom_proper} contains no reference to
 $\phi_{\rm bg}$: its coefficients are the coupling constants
-$M_{\rm Pl}$, $\alpha$, $M$ appearing in $G_2(X)$.  The localized
-oscillon solution therefore has proper-time frequency
-$\omega_0 = 2\pi\nu_0$ determined solely by these constants and
-the substrate's micro-structure---none of which depend on
-$\phi_{\rm bg}$.  $\square$
+$M_{\rm Pl}$, $\alpha$, $M$ appearing in $G_2(X)$.  A localized
+oscillon therefore keeps the same flat-space proper-time
+eigenfrequency $\omega_0 = 2\pi\nu_0$ when placed in a static
+background.  This proves background independence of the local
+proper-time frequency, not a first-principles computation of its
+numerical value.  $\square$
 
 \medskip
 \textit{Coordinate frequency and gravitational redshift.}---In
@@ -301,6 +310,8 @@ $\sim (H_0/\nu_0)^2 \sim 10^{-94}$.  Over the entire Hubble
 time, the cumulative phase drift is
 $\Delta\omega/\omega_0 \sim H_0/(2\pi\nu_0) \sim 10^{-48}$
 ---undetectable by any conceivable experiment.
+This is an adiabatic extension of the static theorem, not an
+independent proof for arbitrary dynamical backgrounds.
 
 \medskip
 \textit{Physical content.}---What changes is not the frequency but
@@ -315,8 +326,9 @@ against which size changes are perceived as ``time dilation.''
 Time is the balance between oscillon size and the medium's
 intrinsic frequency.  This frequency, measured in local proper
 time, is universal---it is the same at every point in space and
-at every cosmological epoch.  Every particle is a harmonic of
-this one frequency.
+is adiabatically stable over cosmological evolution.  The particle
+mass spectrum is then modeled by the Mathieu resonance program
+built on this carrier.
 }}
 \end{center}
 \bigskip
@@ -325,10 +337,10 @@ this one frequency.
   Relativistic Condensate}
 \label{sec:condensate}
 
-The classical proof of \S\ref{sec:freq_inv_theorem}
-established $\nu_0$ invariance from the structure of the
-field equations.  A deeper question remains: \emph{why}
-does the medium oscillate at a single, universal frequency?
+The local proof of \S\ref{sec:freq_inv_theorem}
+established static-background invariance of a given proper-time
+carrier frequency.  A deeper question remains: \emph{why}
+does the medium have a single, universal carrier frequency at all?
 The answer is that the ISPG vacuum is a macroscopic quantum
 coherent state---a relativistic Bose--Einstein condensate
 \cite{PethickSmith2008,Leggett2001} of
@@ -454,6 +466,17 @@ $\nu_{\rm coord} = \nu_0\,e^{\phi_{\rm bg}/2}$
 between proper-time and coordinate frequencies.
 
 \medskip
+\textbf{Active-existence guardrail.}
+The active-existence picture gives an operational reading of
+condensate depletion and measurable-content redistribution: a local
+change in active carrier content is seen by matter standards as a
+change of measured scale, density, or mass.  It does not replace
+the separate MASS/Mathieu calibration of $\nu_0$.  In particular,
+active-existence does not derive $\nu_0$, does not derive
+$1.91\times 10^{30}$~Hz, does not prove the mass ladder, and does
+not close the Mathieu $q$ derivation.
+
+\medskip
 \textbf{Oscillons as condensate excitations.}
 Particles (oscillons) are localized, nonlinear excitations
 on top of the condensate background, analogous to vortices
@@ -512,16 +535,19 @@ condensate, realized here for the ISPG scalar sector.
 
 \subsection{Practical Note: Searching for $\nu_0$}
 
-If $\nu_0$ exists, it is the \emph{common multiple} of known
-particle frequencies. Every particle vibrates at its Compton
-frequency $\nu = mc^2/h$ (de~Broglie, 1924; M\"uller, 2013). If
-these frequencies are harmonics of a single fundamental
-(Section~\ref{sec:harmonic}), then $\nu_0$ must be the least
-common multiple (or a multiple thereof) of these frequencies.
+This subsection gives a search heuristic, not an independent proof.
+Every particle has a Compton frequency
+$\nu_C = mc^2/h$ (de~Broglie, 1924; M\"uller, 2013).  If a single
+carrier frequency underlies the MASS/Mathieu ladder, the observed
+Compton frequencies should display a commensurate pattern when
+expressed through the ladder's dimensionless indices.  The exact
+integer/harmonic status of that pattern belongs to the Mathieu
+analysis, not to the frequency-invariance theorem itself.
 
-Concretely: if particle mass ratios are rational numbers (or very
-good rational approximations), $\nu_0$ is computationally
-determinable from the known mass spectrum.
+Concretely: rational or near-rational mass ratios are evidence for
+a resonant organization of the spectrum and guide the calibration
+of $\nu_0$ in the MASS/Mathieu model.  They do not by themselves
+derive $\nu_0$ from first principles.
 
 \subsection{Guitar String Analogy}
 
@@ -673,7 +699,7 @@ with a small ruler, and we see redshift.
 
 \subsection{Summary: One Postulate Instead of Two}
 
-If fundamental frequency invariance is accepted as a principle,
+If the scoped proper-time frequency invariance above is used,
 then:
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
@@ -727,12 +753,14 @@ quantitative confirmation: muon mass to $< 0.001\%$ accuracy.
 
 \subsection{From One Frequency to Many}
 
-In the previous section a single fundamental frequency $\nu_0$ was
-postulated to be invariant. Yet nature contains different particles
-with different masses---electrons, muons, quarks, bosons. If mass
-and frequency are related ($E = mc^2 = h\nu$), different masses
-imply different frequencies. How is this compatible with a single
-fundamental frequency?
+In the previous section a single proper-time carrier frequency
+$\nu_0$ was identified as invariant under static backgrounds.  This
+does not by itself determine the particle mass ladder.  Nature
+contains different particles with different masses---electrons,
+muons, quarks, bosons. If mass and frequency are related
+($E = mc^2 = h\nu$), different masses imply different Compton
+frequencies. How is this compatible with a single carrier
+frequency?
 
 The answer comes from the same guitar string considered above, but
 now examined more deeply.
@@ -1434,12 +1462,15 @@ behavior (which it already does) but \textbf{explains} their
 all from the resonant structure of a single medium.
 
 %% ==========================================================
-\section{Determination of the Universal Frequency $\nu_0$}
+\section{Calibration and Historical Estimates of the Universal Frequency $\nu_0$}
 \label{sec:nu0_computation}
 %% ==========================================================
 
-Goal: compute $\nu_0$---the fundamental vibration frequency of the
-spatial medium, from whose harmonics every particle arises.
+Goal: separate the historical classical estimate of $\nu_0$ from
+the calibrated MASS/Mathieu value used in the quantitative mass
+spectrum.  The frequency-invariance theorem fixes the background
+independence of a given proper-time carrier frequency; it does not
+by itself compute this numerical value.
 
 \subsection{Bohr--Sommerfeld Condition in the Two-Plate Model}
 
@@ -1527,9 +1558,10 @@ Therefore:
 This general relation links $\nu_0$ to any particle's
 mass $m$ and its classical harmonic number $r$.
 
-\subsection{Computing $\nu_0$ from the Planck Scale}
+\subsection{Historical Planck-Scale Estimate}
 
-The fundamental mode ($r = 1$) corresponds to the
+The following calculation records the older classical estimate.  In
+that classical picture, the fundamental mode ($r = 1$) corresponds to the
 \textbf{maximum mass}. Physically, this is the mass above which
 an oscillon collapses into a black hole---the
 \textbf{Planck mass}:
@@ -1555,7 +1587,7 @@ Numerical value:
   \label{eq:nu0_numerical}
 \end{equation}
 
-\textit{Note.}---This classical estimate
+\textit{Historical status.}---This classical estimate
 $\nu_0^{(\mathrm{cl})}$ is based on the linear
 dispersion $m \propto 1/r$.  The quantum Mathieu model
 (\S\ref{sec:mathieu_numerical}) replaces this with
@@ -1564,7 +1596,7 @@ $\nu_0 = 1.91 \times 10^{30}$~Hz---thirteen orders of
 magnitude lower (Eq.~\ref{eq:nu0_quantum_value}).
 \textbf{Only the quantum value $\nu_0$ is used in all
 subsequent calculations}; $\nu_0^{(\mathrm{cl})}$ serves
-solely as a pedagogical stepping stone.
+solely as a historical/pedagogical stepping stone.
 
 Corresponding period of the classical estimate:
 \begin{equation}
@@ -1579,16 +1611,17 @@ Corresponding wavelength:
   = 5.08 \times 10^{-35}\;\mathrm{m}.
 \end{equation}
 
-\subsection{Particle Harmonic Map}
+\subsection{Classical Particle Harmonic Map}
 
-$r = 1$ fundamental mode $=$ Planck mass.
+In the historical classical map, $r = 1$ fundamental mode
+$=$ Planck mass.
 Each particle's harmonic number:
 \begin{equation}
   r = \frac{m_P}{m}
   \label{eq:r_from_mass}
 \end{equation}
 (follows from \eqref{eq:nu0_from_mass}
-with $\nu_0 = 2m_P c^2/h$.)
+with $\nu_0^{(\mathrm{cl})} = 2m_P c^2/h$.)
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
@@ -1597,7 +1630,7 @@ with $\nu_0 = 2m_P c^2/h$.)
   & \textbf{Mass (MeV/$c^2$)}
   & \textbf{$\nu_C$ (Hz)}
   & \textbf{$r = m_P/m$}
-  & \textbf{$\nu_0/r$ (Hz)} \\[2pt]
+  & \textbf{$\nu_0^{(\mathrm{cl})}/r$ (Hz)} \\[2pt]
 \hline\\[-6pt]
 Top quark
   & $172\,760$
@@ -1679,9 +1712,9 @@ This is particle physics' well-known \textbf{hierarchy problem}:
 why are elementary particles $10^{17}$--$10^{22}$ times lighter
 than the fundamental scale?
 
-In the ISPG framework this means: particles are
-\textbf{extremely high harmonics} of the medium---very slow
-bouncing between very rapidly vibrating plates. Modes close to
+In the historical ISPG map this means: particles are
+\textbf{extremely high classical harmonics} of the medium---very
+slow bouncing between very rapidly vibrating plates. Modes close to
 the fundamental ($r \sim 1$--$10^{10}$) are unstable---they
 cannot maintain resonance outside the Mathieu equation's stability
 zones.
@@ -1692,9 +1725,9 @@ $\nu_0^{(\mathrm{cl})}$.  In the quantum Mathieu model
 (\S\ref{sec:mathieu_numerical}), the relevant quantum
 numbers are $N = 1, 2, 3, \ldots$ with a corrected
 $\nu_0 = 1.91 \times 10^{30}$~Hz.  The physical content
-(discrete spectrum, hierarchy) is the same; only the
-labeling and the numerical value of the fundamental
-frequency change.
+(discrete spectrum, hierarchy) is retained as a qualitative
+motivation, but the final labeling and numerical carrier frequency
+come from the calibrated MASS/Mathieu model.
 
 \subsection{Harmonic Structure of Lepton Masses}
 
@@ -1789,45 +1822,52 @@ dramatically and produce a \emph{complex} mass spectrum---possibly
 explaining why elementary particle masses appear in ``unexpected''
 ratios.
 
-\subsection{Physical Interpretation of $\nu_0$}
+\subsection{Historical Interpretation of $\nu_0^{(\mathrm{cl})}$}
 
 \begin{center}
 \fbox{\parbox{0.88\textwidth}{\centering\large
-$\displaystyle\nu_0 = \frac{\nu_P}{\pi}
+\textbf{Historical classical estimate}\\[3pt]
+$\displaystyle\nu_0^{(\mathrm{cl})} = \frac{\nu_P}{\pi}
 \approx 5.9 \times 10^{42}\;\text{Hz}$
 
 \medskip\normalsize
-This is the frequency at which space itself ``breathes.'' Every
-$\pi\,t_P = 1.7 \times 10^{-43}$ seconds the medium completes
-one full vibration. Every particle is a harmonic of this vibration.
+This is not the current calibrated carrier frequency.  It is the
+older Planck-anchored estimate obtained from the classical
+$m \propto 1/r$ map.  The present paper uses the calibrated
+MASS/Mathieu value $\nu_0 = 1.91\times 10^{30}$~Hz for
+oscillonic physics.
 }}
 \end{center}
 
 \begin{itemize}
-  \item \textbf{Particle $=$ sub-harmonic of the medium.}
+  \item \textbf{Historical particle $=$ sub-harmonic picture.}
     The electron ``bounces'' every
     $r_e \approx 2.4 \times 10^{22}$ medium vibrations. The top
     quark---every $r_t \approx 7 \times 10^{16}$ vibrations.
-    Faster bouncing $=$ greater mass.
-  \item \textbf{Planck limit.} $r = 1$---bouncing on every
+    This is the classical intuition, not the final Mathieu
+    calibration.
+  \item \textbf{Classical Planck limit.} $r = 1$---bouncing on every
     vibration---yields
     $m_P = 1.22 \times 10^{19}$~GeV.
-    A heavier oscillon is physically impossible.
-  \item \textbf{Wavelength $=$
+    A heavier classical oscillon would collapse in this picture.
+  \item \textbf{Classical wavelength $=$
     $\pi\,\ell_P \approx 5 \times 10^{-35}$~m.}
-    This is the medium's ``granularity'' scale.
-    At shorter distances, ``space'' is discrete.
-  \item \textbf{Mass $=$ frequency.} For every particle:
-    $m = \hbar\nu_0 / (\pi r c^2) = m_P / r$.
-    Mass is directly a function of $\nu_0$ and $r$.
+    This belongs to the historical estimate
+    $\lambda_0^{(\mathrm{cl})}=c/\nu_0^{(\mathrm{cl})}$.
+    It should not be read as the wavelength of the calibrated
+    $\nu_0$.
+  \item \textbf{Historical mass-frequency map.}
+    In the classical picture, $m=m_P/r$.  The quantitative
+    particle spectrum used in this paper is instead the calibrated
+    MASS/Mathieu spectrum.
 \end{itemize}
 
 \subsection{Completed Program}
 
-The numerical value of $\nu_0$
+The historical value $\nu_0^{(\mathrm{cl})}$
 \eqref{eq:nu0_numerical} relies on the assumption that
 $r = 1$ corresponds to the Planck mass. The quantum
-model performed a recalibration.
+MASS/Mathieu model performs the recalibration used below.
 The following program has been completed:
 \begin{enumerate}
   \item[\checkmark] \textbf{Derivation of $q$ from ISPG
@@ -2055,14 +2095,18 @@ Numerically:
   \label{eq:nu0_quantum_value}
 \end{equation}
 
-\textbf{This is the definitive value of $\nu_0$ used
-throughout this paper.}  It supersedes the classical
+\textbf{This is the calibrated MASS/Mathieu value of $\nu_0$ used
+throughout this paper.}  It supersedes the historical classical
 estimate $\nu_0^{(\mathrm{cl})} = 5.9 \times 10^{42}$~Hz
 (Eq.~\ref{eq:nu0_numerical}), which is $10^{13}$ times
 larger.  The difference arises because
 the classical model has $m \propto 1/r$, while the quantum
 model has $m \propto N^2 \propto 1/r^2$. The quantum model
-yields \textbf{significantly better} mass ratios (integers!).
+yields \textbf{significantly better} mass ratios.  The
+frequency-invariance theorem does not compute this number; it
+establishes the background independence of the proper-time carrier
+once the carrier is given.  A first-principles derivation of the
+calibrated value remains open.
 
 \medskip
 \textbf{Interesting coincidence:}
@@ -2840,7 +2884,8 @@ predictions:
 
   \item \textbf{Cosmological frequency
     $\nu_0 = 1.91 \times 10^{30}$~Hz.}
-    This is the medium's fundamental vibration frequency.
+    This is the calibrated value of the medium's fundamental
+    proper-time carrier frequency.
     Indirect test:
     \begin{itemize}
       \item Primordial gravitational wave spectrum---
@@ -2886,7 +2931,7 @@ conceptual loop that identifies the fundamental ontology
 of the ISPG framework. The entire construction rests on
 a single empirical input: the fundamental frequency
 $\nu_0 \approx 1.91 \times 10^{30}$~Hz, whose value is
-fixed by fitting the electron mass
+calibrated in the MASS/Mathieu spectrum
 (\S\ref{sec:numerical_results}).
 \emph{What determines $\nu_0$ from first principles}
 remains an open question; it may ultimately follow from
