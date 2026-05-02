@@ -2815,15 +2815,26 @@ tail-power bookkeeping is
 \begin{equation}\label{eq:pressure_history_C}
   \mathcal{C}(z)
   := e^{[\varphi_{\rm bg}(z)-\varphi_{\rm bg}(0)]/2}
+  =
+  \frac{\mathcal N_{\rm act,bg}(z)}
+       {\mathcal N_{\rm act,bg}(0)}
   = \left[
       \frac{P_{\mathrm{stat}}(z)}
            {P_{\mathrm{stat}}(0)}
     \right]^{1/2}.
 \end{equation}
+Here $\mathcal N_{\rm act,bg}$ is an operational active-existence ratio
+attached to the thermodynamic pressure-history diagnostic
+$\varphi_{\rm bg}$, not to a second homogeneous FLRW metric scalar.  It is
+not an independent number-density count and introduces no new directly
+measured observable; it only names the same pressure-scaling ratio already
+carried by $\mathcal C(z)$.
 With this convention the common pressure-history scaling is
 \begin{equation}\label{eq:early_scaling}
 \renewcommand{\arraystretch}{1.4}
 \begin{array}{rcll}
+  \mathcal N_{\rm act,bg}(z)/\mathcal N_{\rm act,bg}(0)
+    &=& \mathcal{C}(z), \\
   m_{\mathrm{eff}}(z)/m_{\mathrm{eff}}(0)
     &=& \mathcal{C}(z), \\
   d\ell(z)/d\ell(0)
