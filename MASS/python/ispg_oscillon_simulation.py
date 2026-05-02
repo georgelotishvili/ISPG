@@ -1,18 +1,20 @@
 """
-ISPG Oscillon Lattice Simulation
-=================================
-First-principles computation of the Mathieu parameter q
+ISPG Oscillon q-Diagnostic
+==========================
+Semi-analytic support for the Mathieu parameter q
 and the particle mass spectrum from the ISPG scalar-metric theory.
 
 Addresses Weakness #1 (circularity in the mass spectrum):
-  The fitted value q = 1.853 is recovered from the theory's
-  G₂(X) = -(M_Pl²/2)X + (α/M²)X² action without external input.
+  The fitted value q_fit = 1.853 is not independently recovered
+  exactly here.  The script computes q_semi ≈ 1.9065 from the
+  G₂(X) = -(M_Pl²/2)X + (α/M²)X² correction bundle, supporting
+  the mechanism while leaving full lattice/PDE closure open.
 
 Structure:
   Part 1 — Oscillon profile via shooting (3D spherical ODE)
   Part 2 — Cavity eigenvalue problem (bound states → mass ratios)
-  Part 3 — δq corrections from the profile (metric + gradient + harmonics)
-  Part 4 — Full Mathieu mass spectrum comparison
+  Part 3 — δq correction estimates (metric + gradient + harmonics)
+  Part 4 — Mathieu mass spectrum comparison at q_semi and q_fit
   Part 5 — Koide formula verification
 
 References:
@@ -221,8 +223,8 @@ def koide_ratio(m1, m2, m3):
 # =====================================================================
 def main():
     print("=" * 72)
-    print("  ISPG OSCILLON LATTICE SIMULATION")
-    print("  First-principles computation of the Mathieu parameter q")
+    print("  ISPG OSCILLON q-DIAGNOSTIC")
+    print("  Semi-analytic support for the Mathieu parameter q")
     print("=" * 72)
 
     # ------------------------------------------------------------------
@@ -300,7 +302,7 @@ def main():
     # ------------------------------------------------------------------
     #  Step 3: Mathieu parameter q
     # ------------------------------------------------------------------
-    print("\n[3] Mathieu parameter q from first principles...")
+    print("\n[3] Mathieu parameter q: leading order plus correction estimates...")
 
     res = compute_q(r, Phi, PHI_C)
 
@@ -357,7 +359,7 @@ def main():
     # ------------------------------------------------------------------
     print("\n[5] Generating figures...")
     fig, axes = plt.subplots(2, 2, figsize=(15, 11))
-    fig.suptitle('ISPG Oscillon Simulation — First-Principles q',
+    fig.suptitle('ISPG Oscillon Diagnostic — Semi-analytic q support',
                  fontsize=15, fontweight='bold')
 
     # (a) oscillon profile
@@ -446,7 +448,7 @@ def main():
     print(f"    δq_harmonics = {res['dq_harmonics']:.6f}")
     dq_total = res['dq_metric'] + res['dq_gradient'] + res['dq_harmonics']
     print(f"    δq_total     = {dq_total:.6f}   (target: 0.853)")
-    print(f"  q_predicted    = {res['q_total']:.6f}")
+    print(f"  q_semi         = {res['q_total']:.6f}")
     print(f"  q_fitted       = {Q_FIT}")
     print(f"  Gap            = {abs(res['q_total'] - Q_FIT):.4f}  "
           f"({abs(res['q_total'] - Q_FIT)/Q_FIT*100:.1f}%)")
