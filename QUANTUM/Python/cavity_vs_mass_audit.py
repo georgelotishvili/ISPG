@@ -135,8 +135,13 @@ def verify_cavity():
                 modes[(ell, n)] = dict(omega2=ω2, R=R, u_end=u_end,
                                         u_profile=evecs[:, n])
                 print(f"   {ell}  {n}   {ω2:.8f}    {u_end:+.3e}       {R:.4f}")
-    print("\n  ✓ shooting u(r_max) ≈ 0 ყველა ბმული მოდისთვის "
-          "⟹ ცდომ. საზღვარი ~10⁻³")
+    max_residual = max(abs(m["u_end"]) for m in modes.values()) if modes else 0.0
+    if max_residual < 1e-2:
+        print("\n  ✓ shooting boundary check passed: "
+              f"max |u(r_max)| = {max_residual:.2e}")
+    else:
+        print(f"\n  i shooting residuals max |u(r_max)| = {max_residual:.2e} "
+              "(see per-mode column above)")
     return r, Phi, Omega_bg, modes
 
 

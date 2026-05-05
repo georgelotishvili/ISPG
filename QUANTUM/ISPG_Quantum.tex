@@ -373,16 +373,16 @@ the quiescent medium, the onset cascade, singularity
 avoidance, and the resolution of the horizon, flatness,
 and monopole problems without inflation.
 
-\textbf{Section~\ref{sec:mass_spectrum}} analyzes the mass spectrum
+\textbf{Section~\ref{sec:mass_spectrum}} analyzes the spectrum
 of three-dimensional resonant modes, formulates the self-consistent
 nonlinear eigenvalue problem in dimensionless form, shows that
 the confining potential is a geometric property of the nonlinear
-wave equation independent of $G$, establishes the
-amplitude--frequency relation and demonstrates that mass ratios
-are determined by the cavity geometry with gravitational
-corrections of order $(m/\Mpl)^2 \sim 10^{-45}$, presents the
-lattice formulation suitable for numerical solution, and connects
-the lepton mass hierarchy to the Koide formula.
+wave equation independent of $G$, establishes the formal
+direct-cavity amplitude--frequency ansatz with gravitational
+self-energy corrections of order $(m/\Mpl)^2 \sim 10^{-45}$,
+presents the lattice formulation suitable for numerical solution,
+and connects the structural cavity sector to the MASS/Mathieu
+lepton ladder and the Koide consistency condition.
 
 \textbf{Section~\ref{sec:higgs}} shows that the Higgs mechanism
 emerges as the electroweak projection of bi-conformal symmetry
@@ -5232,9 +5232,13 @@ The identification of particles as resonant modes of the
 scalar-metric medium (Sec.~\ref{sec:excitations}) raises a
 quantitative question: \emph{why do the charged leptons---electron,
 muon, and tau---have the specific mass ratios they do?}
-In this section we show that the mass hierarchy emerges naturally
-from the eigenvalue spectrum of three-dimensional resonant
-cavities and connects to the empirical Koide formula.
+This section separates three roles: the three-dimensional cavity
+supplies structural mode labels, the companion MASS/Mathieu ladder
+supplies the quantitative charged-lepton mass ratios, and the
+structure-preserving reduction from cavity modes to the Mathieu
+index $N$ remains an open calculation.  The cavity analysis then
+connects this structure to the empirical Koide formula as a
+consistency constraint.
 
 %-------------------------------------------------------------------
 \subsection{Three-dimensional resonance eigenvalue problem}
@@ -5373,8 +5377,8 @@ The mode equation becomes
     - \hat{V}_{\mathrm{eff}}\right]f = 0,
 \end{equation}
 with $\hat{V}_{\mathrm{eff}}$ the dimensionless form
-of~(\ref{eq:Veff_explicit}).  The mass of the $n$-th
-resonance is
+of~(\ref{eq:Veff_explicit}).  Within the formal cavity
+ansatz, the mass of the $n$-th resonance is taken as
 \begin{equation}\label{eq:mass_from_omega}
   m_n = \frac{\hbar\,\Omega_n}{R_c\,c}
   = \tilde{m}\,\Omega_n.
@@ -5398,19 +5402,21 @@ gradient $\varphi_0'$, but the qualitative
 structure persists: a one-parameter family of oscillons
 parametrized by $\Phi_0$ (or equivalently $\Omega$).
 
-\textit{Mass ratios from the cavity spectrum.}---Within
+\textit{Formal cavity mass-ratio ansatz.}---Within
 the self-consistent confining potential, different angular
 channels ($\ell$) and radial overtones ($n$) yield
-distinct eigenfrequencies $\Omega_{n\ell}$.  The mass
-ratios
+distinct eigenfrequencies $\Omega_{n\ell}$.  Under the same
+formal cavity ansatz, the mass ratios are
 \begin{equation}\label{eq:mass_ratios}
   \frac{m_{n_1\ell_1}}{m_{n_2\ell_2}}
   = \frac{\Omega_{n_1\ell_1}}{\Omega_{n_2\ell_2}}
 \end{equation}
-are determined by the geometry of the confining
-potential---they depend on the mode numbers and the
-cavity profile but are independent of $G$, $\hbar$, or
-the absolute mass scale.
+and would be geometric: they depend on the mode numbers
+and the cavity profile but are independent of $G$, $\hbar$,
+or the absolute mass scale.  This relation is retained as
+a diagnostic of the direct-cavity programme; its physical
+status for charged leptons is fixed by the numerical audit
+below.
 
 \textit{Epistemic status of
 Eq.~(\ref{eq:mass_ratios}).}---Direct numerical evaluation
@@ -5424,8 +5430,9 @@ do \emph{not} reproduce the observed charged-lepton
 hierarchy $m_\tau:m_\mu:m_e\approx 3477:207:1$, nor does
 any monotone power of $\Omega$ alone match this hierarchy
 to better than $\sim 20\%$ (verified in the companion
-code \texttt{MASS/python/cavity\_vs\_mass\_audit.py}
-and \texttt{cavity\_quantum\_oscillon.py}).  The identification
+code \texttt{QUANTUM/Python/cavity\_vs\_mass\_audit.py}
+and \texttt{QUANTUM/Python/cavity\_quantum\_oscillon.py}).
+The identification
 of the three charged leptons with the specific $(n,\ell)$
 modes listed above is therefore a \emph{structural}
 labelling of particle modes inherited from the cavity
@@ -5485,10 +5492,14 @@ The resulting eigenfrequency correction is
   \sim \left(\frac{m_n}{\Mpl}\right)^2,
 \end{equation}
 a relative shift of order $10^{-45}$ for the
-electron---utterly negligible.  The mass ratios are
-therefore determined by the cavity geometry alone, with
-gravitational corrections below $10^{-36}$ for every
-known particle.
+electron---utterly negligible.  Within the formal cavity
+ansatz of Eqs.~(\ref{eq:mass_from_omega})--(\ref{eq:mass_ratios}),
+the ratios are geometric and the gravitational self-energy
+correction is therefore negligible.  The physical
+charged-lepton ratios are supplied by the Mathieu mass formula
+of the companion MASS paper~\cite{Lotishvili2026Mass}, as
+recorded in the epistemic-status remark below
+Eq.~(\ref{eq:mass_ratios}).
 
 \textit{Lattice formulation.}---The nonlinear eigenvalue
 problem~(\ref{eq:dimless_mode}) admits a natural lattice
@@ -5670,7 +5681,7 @@ cavity and Mathieu frameworks would coincide.  A
 first-principles derivation of this value directly from
 the cavity eigenvalues of
 Sec.~\ref{sec:mass_determination} is an open calculation
-(numerical audit: \texttt{MASS/python/cavity\_vs\_mass\_audit.py}).
+(numerical audit: \texttt{QUANTUM/Python/cavity\_vs\_mass\_audit.py}).
 The Koide constraint also serves as a powerful independent
 check: any candidate resonance spectrum that does not
 satisfy $Q = 2/3$ can be excluded.

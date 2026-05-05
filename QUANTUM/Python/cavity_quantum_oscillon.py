@@ -30,6 +30,10 @@ OUT.mkdir(exist_ok=True)
 m_e, m_mu, m_tau = 0.5109989461, 105.6583745, 1776.86
 
 
+def safe_sqrt(x):
+    return np.sqrt(x) if x >= 0 else float('nan')
+
+
 def quantum_oscillon_rhs(r, y, omega2):
     """QUANTUM eq (1174):  Φ'' + 2/r·Φ' = (1-ω²)·Φ - Φ²"""
     Phi, dPhi = y
@@ -127,9 +131,9 @@ def test_mass_ratios(results):
     best = (float('inf'), None)
     for Phi_c, Omega2, modes in results:
         if (0, 0) in modes and (0, 1) in modes and (2, 0) in modes:
-            ω_tau = np.sqrt(modes[(0, 0)][0])
-            ω_mu  = np.sqrt(modes[(0, 1)][0])
-            ω_e   = np.sqrt(modes[(2, 0)][0])
+            ω_tau = safe_sqrt(modes[(0, 0)][0])
+            ω_mu  = safe_sqrt(modes[(0, 1)][0])
+            ω_e   = safe_sqrt(modes[(2, 0)][0])
             r_mu = ω_mu / ω_e
             r_tau = ω_tau / ω_e
             err_mu = abs(r_mu - obs_mu) / obs_mu * 100
@@ -172,9 +176,9 @@ def main():
         ω_mu_arr = []
         ω_tau_arr = []
         for _, _, modes in results:
-            ω_e_arr.append(np.sqrt(modes.get((2, 0), (np.nan,))[0]))
-            ω_mu_arr.append(np.sqrt(modes.get((0, 1), (np.nan,))[0]))
-            ω_tau_arr.append(np.sqrt(modes.get((0, 0), (np.nan,))[0]))
+            ω_e_arr.append(safe_sqrt(modes.get((2, 0), (np.nan,))[0]))
+            ω_mu_arr.append(safe_sqrt(modes.get((0, 1), (np.nan,))[0]))
+            ω_tau_arr.append(safe_sqrt(modes.get((0, 0), (np.nan,))[0]))
         ax.plot(Phi_arr, ω_e_arr, 'bo-', label='e ← (ℓ=2, n=0)')
         ax.plot(Phi_arr, ω_mu_arr, 'gs-', label='μ ← (ℓ=0, n=1)')
         ax.plot(Phi_arr, ω_tau_arr, 'r^-', label='τ ← (ℓ=0, n=0)')
