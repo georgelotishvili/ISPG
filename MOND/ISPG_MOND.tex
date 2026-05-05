@@ -2723,7 +2723,7 @@ Define $g_N\equiv\mu(g/a_0)\,g$. Then
 
 \subsection[From mu(x) to the Tully-Fisher relation]{From $\mu(x)$ to the Tully--Fisher relation}
 
-The baryonic Tully--Fisher relation (BTFR) follows directly from the interpolating function $\mu(x)=x/(1+x)$ derived above, without additional assumptions. The derivation chain is:
+The baryonic Tully--Fisher relation (BTFR) follows directly from the interpolating function $\mu(x)=x/(1+x)$ in the isolated, asymptotic, deep-MOND, circular-orbit, finite-baryonic-mass, negligible-EFE, mature vortex-equilibrium ($C_{\rm eff}\simeq 1$) regime. The derivation chain is:
 
 \paragraph{Step 1: deep-MOND limit of $\mu(x)$.}
 For $x = g/a_0 \ll 1$ (accelerations much smaller than the critical scale), the interpolating function \eqref{eq:mu} becomes:
@@ -2762,7 +2762,26 @@ We have obtained the baryonic Tully--Fisher relation:
 \boxed{v_{\rm flat}^4 = a_0 \, G \, M, \qquad v_{\rm flat} = (a_0 GM)^{1/4}.}
 \label{eq:btfr_result}
 \end{equation}
-The normalization $a_0 = cH_0/(2\pi)$ is selected by the cosmological coherence boundary (Sec.~\ref{sec:a0}), so the BTFR emerges with \emph{no galaxy-by-galaxy fit parameters}. The asymptotic velocity depends only on baryonic mass $M$ and the universal constant $a_0$.
+This boxed relation uses the instantaneous/local-equilibrium
+$a_0=cH_0/(2\pi)$.  When the vortex-lag/formation-age
+correction of Sec.~\ref{sec:vortex_lag} is active, the same
+asymptotic relation reads $v_{\rm flat}^4=a_{0,{\rm eff}}\,GM$
+for the relevant galaxy history; this preserves the
+$v^4\propto M$ exponent and absorbs age/history dependence into
+the per-galaxy normalization.  For this instantaneous baseline,
+the normalization $a_0 = cH_0/(2\pi)$ is selected by the
+cosmological coherence boundary (Sec.~\ref{sec:a0}), so the BTFR
+emerges with \emph{no galaxy-by-galaxy fit parameters}.  The
+asymptotic velocity depends only on baryonic mass $M$ and the
+universal constant $a_0$.
+The clean $v^4=GMa_0$ normalization above uses the mature
+instantaneous vortex-equilibrium branch where
+$C_{\rm eff}\simeq1$ (Sec.~\ref{sec:consistency_domain}).  The
+accumulation contrast model
+(\texttt{MOND/Python/ceff\_asymptotics.py}) gives outer-radii
+$C_{\rm eff}<1$ and shifts the per-galaxy normalization by tens of
+percent while preserving the $v^4\propto M$ exponent; that branch
+is not the BTFR baseline of this section.
 
 \paragraph{Corollary (redshift evolution).}
 Since $a_0(z) = cH(z)/(2\pi)$ (Eq.~\eqref{eq:a0z}), the BTFR normalization evolves with redshift:
@@ -2770,7 +2789,22 @@ Since $a_0(z) = cH(z)/(2\pi)$ (Eq.~\eqref{eq:a0z}), the BTFR normalization evolv
 v_{\rm flat}(z) \propto [H(z)]^{1/4}.
 \label{eq:btfr_z}
 \end{equation}
-In the baryons-only cosmology natural to this framework ($\Omega_b \approx 0.05$, $\Omega_\Lambda \approx 0.95$), $H(1)/H_0 \approx 1.16$, predicting $(1.16)^{1/4} - 1 \approx 4\%$ higher asymptotic velocities at $z = 1$ at fixed baryonic mass---a falsifiable signature distinguishing this theory from standard MOND with constant $a_0$.  Here again $H(z)$ should be read as the observational proxy for the underlying pressure-history variable.  (For comparison, a $\Lambda$CDM cosmology with $\Omega_m \approx 0.3$ would give $H(1)/H_0 \approx 1.78$ and a $\sim$15\% velocity increase.)  This baryons-only redshift-evolution table is a comparison background distinct from the standard-$\Lambda$CDM observational background used for the H.3 $H_{\rm eff}$ calibration in Sec.~\ref{sec:vortex_lag}; reconciling the two backgrounds is deferred to a separate cosmology-consistency sweep.
+In the ISPG comparison background---the baryons-only cosmology
+natural to this framework ($\Omega_b \approx 0.05$,
+$\Omega_\Lambda \approx 0.95$)---$H(1)/H_0 \approx 1.16$,
+predicting $(1.16)^{1/4} - 1 \approx 4\%$ higher asymptotic
+velocities at $z = 1$ at fixed baryonic mass---a falsifiable
+signature distinguishing this theory from standard MOND with
+constant $a_0$.  Here again $H(z)$ should be read as the
+observational proxy for the underlying pressure-history variable.
+(For comparison, a $\Lambda$CDM cosmology with
+$\Omega_m \approx 0.3$ would give $H(1)/H_0 \approx 1.78$ and a
+$\sim$15\% velocity increase.)  This baryons-only
+redshift-evolution table is a comparison background distinct from
+the standard-$\Lambda$CDM observational background used for the
+H.3 $H_{\rm eff}$ calibration in Sec.~\ref{sec:vortex_lag};
+reconciling the two backgrounds is deferred to a separate
+cosmology-consistency sweep.
 
 \paragraph{Quantitative targets for observational tests.}
 The following table gives concrete predictions for the ISPG
@@ -2801,7 +2835,10 @@ $5.0$ & $2.10$ & $2.10$ & $1.204$ & JWST/ELT [CII] 158$\mu$m \\
 $+15\%$ (if one na\"{\i}vely used $\Lambda$CDM $H(z)$
 with $\Omega_m=0.3$).  A sample of $\sim\!50$ galaxies with
 rotation-curve quality $\Delta v/v\lesssim5\%$ at $z\sim1$--$2$
-would suffice to distinguish these three scenarios at $>3\sigma$.
+is an order-of-magnitude survey-design forecast in the regime where
+the three scenarios start to separate; an explicit scatter,
+selection, inclination, mass-error, and redshift-bin analysis is
+required to convert this into a formal significance estimate.
 ALMA and JWST are currently assembling such samples.
 
 \subsection{Green's function verification}

@@ -9,8 +9,11 @@ Computes:
   - a0(z) redshift evolution
   - Dimensionless epsilon for the master equation
 
-The time-dependent PDE computation (future work) will replace the
-conjectured transport coefficients with first-principles values.
+The operating MOND amplitude is supplied here by the mature
+vortex-equilibrium / coherence-boundary closure (I.1/I.2). The
+time-dependent PDE computation remains the future theorem-level
+strengthening, with source-kernel/profile realization tracked as the
+I.5 numerical refinement.
 
 Reference: MAIN/12. ISPG_MOND.tex, Secs. 5-8
 """
@@ -168,8 +171,8 @@ if __name__ == "__main__":
     print(f"  (Algebraic self-consistency of the two-channel equation)")
 
     # Bessel-projected transport integrals: instantaneous FD coupling.
-    # The conjectured coefficients encode the CUMULATIVE effect over
-    # cosmological time; the time-dependent PDE is needed to extract them.
+    # These pointwise integrals diagnose the epsilon-suppressed local kernel;
+    # the mature vortex-equilibrium closure supplies the operating MOND branch.
     print(f"\n--- Bessel-projected transport integrals (instantaneous) ---")
     test_radii = [5, 10, 20, 40]
     for r0_kpc in test_radii:
@@ -181,8 +184,11 @@ if __name__ == "__main__":
               f"instantaneous = {product:.2e}, "
               f"required a0/g_N = {a0_over_g:.2e}" if not np.isnan(product)
               else f"  r0 = {r0_kpc:2d} kpc: computation failed")
-    print(f"  => Instantaneous coupling is small; the full MOND effect")
-    print(f"     requires cumulative transport over ~H^-1 (future work).")
+    print(f"  => Pointwise finite-difference / Bessel coupling is")
+    print(f"     epsilon-suppressed; the full MOND amplitude is")
+    print(f"     supplied by the mature vortex-equilibrium operating")
+    print(f"     closure (I.1/I.2). Source-kernel/profile realization")
+    print(f"     refinement remains the I.5 numerical task.")
 
     # --- Rotation curves ---
     v_N, v_MOND, v_flat = rotation_curve_comparison(r_arr, a0_pred)
@@ -195,14 +201,33 @@ if __name__ == "__main__":
         print(f"  {r_arr[idx]/kpc:10.1f}  {v_N[idx]/1e3:12.1f}  {v_MOND[idx]/1e3:14.1f}  "
               f"{mu[idx]:8.4f}  {x[idx]:10.3f}")
 
-    # --- Redshift evolution ---
+    # --- Redshift evolution: dual-background comparison ---
     print(f"\n--- Redshift evolution of a0 ---")
-    z_vals = [0, 0.5, 1.0, 2.0, 3.0]
+    z_vals = [0, 0.5, 1.0, 2.0, 3.0, 5.0]
+
+    print(f"\n  ISPG comparison background"
+          f" (baryons-only manuscript table):")
+    ispg_table = {
+        0.0: 1.00,
+        0.5: 1.07,
+        1.0: 1.16,
+        2.0: 1.39,
+        3.0: 1.63,
+        5.0: 2.10,
+    }
+    for z in z_vals:
+        Hz_over_H0 = ispg_table[z]
+        print(f"    z = {z:.1f}: H(z)/H0 = {Hz_over_H0:.3f}, "
+              f"a0(z)/a0(0) = {Hz_over_H0:.3f}, "
+              f"v_flat shift = {Hz_over_H0**0.25:.3f}")
+
+    print(f"\n  Standard LambdaCDM comparison"
+          f" (Omega_m=0.315, Omega_L=0.685):")
     Omega_m, Omega_L = 0.315, 0.685
     for z in z_vals:
         Hz = H0 * np.sqrt(Omega_m * (1+z)**3 + Omega_L)
         a0z = c * Hz / (2 * np.pi)
-        print(f"  z = {z:.1f}: H(z)/H0 = {Hz/H0:.3f}, "
+        print(f"    z = {z:.1f}: H(z)/H0 = {Hz/H0:.3f}, "
               f"a0(z)/a0(0) = {a0z/a0_pred:.3f}, "
               f"v_flat shift = {(a0z/a0_pred)**0.25:.3f}")
 
