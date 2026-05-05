@@ -105,19 +105,23 @@ pairs at 10~m height separation and effectively instantaneous
 decoherence for macroscopic systems (MAQRO, STE-QUEST);
 (vi)~a topological classification of particle spin $J = n\hbar/2$
 and antimatter as vortices with opposite winding number $n = \pm 1$;
-(vii)~gravitational birefringence from one-loop vacuum polarization,
-with differential phase $\Delta\Phi_{\mathrm{biref}} \sim 10^{-4}$~rad
-for gamma-rays near stellar-mass black holes, detectable by AMEGO
-and e-ASTROGAM; (viii)~anisotropic quantum tunneling enhanced toward
+(vii)~gravitational birefringence from the gradient-squared scalar
+channel, with $\Delta c/c \propto (\nabla\varphi)^2/m_e^2$
+distinct from the GR$+$QED Drummond--Hathrell curvature channel;
+the numerical coefficient and detectability forecast are future
+one-loop calculation targets; (viii)~anisotropic quantum tunneling enhanced toward
 gravitational sources by factor $T_\downarrow/T_\uparrow \sim
 \exp[d\Delta\varphi\sqrt{2m(V_0-E)}/\hbar]$, relevant for nuclear
 reactions in white dwarf interiors; (ix)~a schematic cosmological variation
 of the fine-structure constant $|\Delta\alpha/\alpha| \sim 10^{-7}$--$10^{-6}$
 at $z \sim 1$--$3$, subject to a fixed-scale/renormalization prescription
-and testable by ESPRESSO and ELT-ANDES; (x)~a numerical derivation of the Koide formula $Q = 2/3$ for
-lepton masses from the cavity spectrum of the exponential
-nonlinearity, reproducing $Q$ to $0.009\%$ and the
-$\tau/e$ mass ratio to $0.34\%$; (xi)~a derivation of Newton's second law from the
+and testable by ESPRESSO and ELT-ANDES; (x)~numerical support for the Koide relation
+$Q = 2/3$ from the MASS/Mathieu lepton ladder and the
+E1D/rank-1 cavity analysis, with $Q$ reproduced to
+$0.024\%$ in $N$-space and to $0.009\%$ in the E1D check,
+and with the $3$D-to-$1$D cavity bridge and the
+self-consistent $x = 33+24\sqrt{2}$ selection identified as
+the remaining numerical task; (xi)~a derivation of Newton's second law from the
 retarded potential of an accelerated oscillon, proving that
 $m_{\mathrm{inertial}} \equiv m_{\mathrm{gravitational}}$ as a
 mathematical identity rather than an axiom, and connecting inertia
@@ -399,9 +403,12 @@ classification of particle species: spin as vortex winding
 number, antimatter as opposite-winding vortex, and the Pauli
 exclusion principle from vortex topology.
 
-\textbf{Section~\ref{sec:birefringence}} computes one-loop
-gravitational birefringence and the cosmological variation
-of the fine-structure constant $\alpha$.
+\textbf{Section~\ref{sec:birefringence}} isolates the
+gravitational-birefringence channel and its leading
+$(\nabla\varphi)^2/m_e^2$ scaling, with the numerical
+coefficient deferred to a dedicated one-loop calculation,
+and presents the cosmological variation estimate of the
+fine-structure constant $\alpha$.
 
 \textbf{Section~\ref{sec:predictions}} summarizes all
 quantitative predictions in a unified table and identifies the
@@ -7646,9 +7653,9 @@ the table below, not a separate row inside it.
 
 \begin{table*}[ht]
 \centering
-\caption{Falsifiable predictions of the quantum ISPG
-  framework.  ``GR/SM'' denotes the prediction of general
-  relativity and/or the Standard Model.}
+\caption{Falsifiable predictions and prediction-status ledger
+  of the quantum ISPG framework.  ``GR/SM'' denotes the
+  prediction of general relativity and/or the Standard Model.}
 \label{tab:predictions}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llll}
@@ -7664,7 +7671,8 @@ $w = -1$ exactly &
 DESI, Euclid, Rubin \\
 \addlinespace
 Fine-structure constant $\Delta\alpha/\alpha$ &
-schematic $\sim 10^{-7}$--$10^{-6}$ at $z \sim 1$--$3$ &
+$\Delta\alpha/\alpha \sim 10^{-7}$--$10^{-6}$ at $z \sim 1$--$3$
+(future calculation; ESPRESSO ppm now, $10^{-7}$ ELT--ANDES target) &
 $0$ &
 ESPRESSO, ELT-ANDES \\
 \addlinespace
@@ -7684,12 +7692,13 @@ $T_\downarrow = T_\uparrow$ &
 White dwarf seismology \\
 \addlinespace
 Gravitational birefringence &
-$\Delta c/c \sim 10^{-38}$ (NS), $\propto (\nabla\varphi)^2$ &
+$\Delta c/c \sim 10^{-38}$ (NS scale), $\propto (\nabla\varphi)^2/m_e^2$
+(ISPG channel; coefficient future one-loop calculation) &
 Drummond--Hathrell: $\propto R_{\mu\nu\rho\sigma}/m_e^2$ &
 Beyond current sensitivity \\
 \addlinespace
 Koide relation $Q = 2/3$ &
-$Q = 0.66673$ (numerical)$^{\dagger}$ &
+$Q = 0.66673$ (E1D/rank-1 numerical support; $3$D-to-$1$D bridge open)$^{\dagger}$ &
 Unexplained coincidence &
 $0.009\%$ accuracy \\
 \addlinespace
@@ -7744,8 +7753,9 @@ testable are:
   \item \textbf{Dark-energy evolution} ($w \neq -1$):
     DESI year-3 and Euclid data, expected by 2027.
   \item \textbf{Fine-structure constant variation}:
-    ESPRESSO at the VLT is already collecting data
-    at the required $10^{-7}$ sensitivity.
+    ESPRESSO at the VLT is already operating at ppm
+    precision; the $10^{-7}$ regime targeted here is the
+    future ELT--ANDES-level test.
   \item \textbf{Gravitational decoherence}:
     proposed space missions (MAQRO) could detect the
     predicted rate within the next decade.
@@ -7956,18 +7966,17 @@ results and extensions are:
     numerical problem.
 
   \item \textbf{Mass hierarchy from 3D resonances}
-    (Sec.~\ref{sec:mass_spectrum}).  The charged lepton
-    mass spectrum arises from the eigenvalues of a
-    three-dimensional resonator.  The rank-1 structure
-    of the bi-conformal coupling predicts $Q = 2/3$
-    provided the self-consistent perturbation strength
-    reaches $x \approx 66.9$---a condition whose
-    verification requires numerical solution of the
-    coupled oscillon equations
-    (Sec.~\ref{sec:mass_determination}).  The mass
-    ratios are fixed by the cavity geometry,
-    independently of $G$, with gravitational self-energy
-    corrections of order $(m/\Mpl)^2 \sim 10^{-45}$.
+    (Sec.~\ref{sec:mass_spectrum}).  The charged-lepton
+    mass hierarchy is organized by the MASS/Mathieu ladder
+    and the E1D/rank-1 cavity structure.  In $N$-space the
+    Koide identity holds numerically to $0.024\%$, while the
+    rank-1 perturbation argument selects
+    $x = 33+24\sqrt{2} \approx 66.9$ as the bridge value.
+    A first-principles derivation of this bridge value from
+    the self-consistent $3$D oscillon eigenvalue system
+    (Sec.~\ref{sec:mass_determination}) is the residual
+    numerical task, with gravitational self-energy corrections
+    of order $(m/\Mpl)^2 \sim 10^{-45}$.
 
   \item \textbf{Higgs--gravity unification and electroweak
     spectrum} (Sec.~\ref{sec:higgs}).  The Higgs VEV inherits
@@ -8007,13 +8016,15 @@ results and extensions are:
     winding-number structure of vortex excitations.
 
   \item \textbf{Gravitational birefringence}
-    (Sec.~\ref{sec:birefringence}).  One-loop vacuum
-    polarization in a gravitational gradient produces
-    a polarization-dependent phase shift of order
-    $\Delta c/c \sim 10^{-38}$ near neutron stars---far
-    below current measurement sensitivity, but
-    a distinctive theoretical prediction with no
-    GR analog.
+    (Sec.~\ref{sec:birefringence}).  Vacuum polarization
+    in a gravitational gradient identifies a
+    polarization-dependent ISPG channel with leading scaling
+    $\Delta c/c \propto(\nabla\varphi)^2/m_e^2$ and neutron-star
+    scale $\Delta c/c \sim 10^{-38}$---far below current
+    measurement sensitivity.  This channel is distinct from
+    the GR$+$QED Drummond--Hathrell baseline at the
+    operator/scaling level; its numerical coefficient is the
+    dedicated one-loop calculation target.
 \end{enumerate}
 
 The framework achieves these results without introducing
