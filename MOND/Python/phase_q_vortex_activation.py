@@ -95,7 +95,7 @@ def print_kinetic_derivation():
       u^mu nabla_mu A_vort
       = omega (1 - A_vort) - Gamma_mem A_vort .
 
-  This is the unique first-order Markovian equation built from the two rates
+  This is the minimal bounded two-state Markov law built from the two rates
   (omega, Gamma_mem) that keeps 0 <= A_vort <= 1 and has the correct limits:
 
       omega -> 0        => A_vort decays to 0,

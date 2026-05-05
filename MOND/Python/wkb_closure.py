@@ -425,56 +425,19 @@ def step_4_3_and_4_4():
 
     THE QUESTION: is tau_rel = c/g DERIVED or ASSUMED?
 
-    From the manuscript, tau_rel = c/g comes from:
+    The stale manuscript bridge was:
       1. Bessel eigenvalue: k_r = 2.4048/r_0
-      2. Effective length: l_eff = c/k_r = r_0/2.4048
-      3. Relaxation time: tau_rel = l_eff/c = r_0/(2.4048*c)
-      4. Dimensional identification: g = c^2/r_0 (unproved)
+      2. Bessel cell length: ell_B = 1/k_r = r_0/2.4048
+      3. Bessel crossing time: t_B = ell_B/c = 1/(c*k_r)
+      4. Invalid bridge: identifying c^2/r_0 with the galactic g
 
-    Step 4 is the gap. Let me fill it.
+    Step 4 is rejected.  The Bessel eigenvalue supplies a spatial
+    crossing/adjustment time, not the transport-balance relaxation
+    time tau_rel = c/g.  The latter must be selected by the
+    self-consistent transport ansatz.
 
-    FILLING THE GAP: g = c^2/r_0
-    ==============================
-
-    The mode confinement radius r_0 is where the mode amplitude
-    drops to zero (first Bessel zero). For a mode in a gravitational
-    potential well, the confinement is determined by the potential
-    barrier.
-
-    For the TOTAL potential Phi(r) = Phi_N(r) + Phi_h(r):
-      The mode is confined where Phi(r) > Phi(r_0) - c^2/(2k_r^2)
-      (energy argument for the lowest Bessel mode).
-
-    The "escape" condition at r_0:
-      v_escape^2(r_0) = 2|Phi(r_0)| = 2GM_enc(r_0)/r_0 = 2g(r_0)*r_0
-
-    The Bessel mode with k_r = 2.4/r_0 has "kinetic energy":
-      E_kinetic = c^2 k_r^2 / 2 = (2.4)^2 c^2 / (2 r_0^2)
-
-    The confinement condition: E_kinetic < E_potential
-      c^2 (2.4)^2 / (2 r_0^2) < g(r_0) * r_0 / r_0 = g(r_0)
-      => g(r_0) > 2.88 c^2 / r_0^2
-
-    At the MOND transition g ~ a0: r_0^2 > 2.88 c^2/a0 = 2.88 r_M^2
-    => r_0 > 1.7 r_M. Consistent.
-
-    More precisely: the mode is confined within the radius where
-    g(r) > c^2 k_r^2 / (some factor). This gives:
-
-      r_0 ~ c / sqrt(g(r_0))   ... no, dimensionally wrong.
-
-    Let me use the WKB turning point. The WKB condition for the
-    Bessel mode:
-      k_r^2(r) = k_total^2 - V_eff(r)/c^2 > 0
-
-    where V_eff encodes the gravitational potential. The turning
-    point is where k_r(r_turn) = 0.
-
-    For a spherical Poisson equation in the potential well:
-      k_eff^2(r) = [source / phi_h - something]
-
-    This is getting complicated. Let me try the SELF-CONSISTENCY
-    approach directly.
+    SELF-CONSISTENCY ROUTE FOR tau_rel = c/g
+    ========================================
     """
     sep = "=" * 65
     print(sep)

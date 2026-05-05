@@ -17,7 +17,7 @@ TEST 1 - Centrifugal source vs frame-dragging source
   Both computed in linearized ISPG. Comparison of magnitudes.
 
 TEST 2 - Coherence saturation theorem
-  The UNIQUE galaxy-independent transport rate from dimensional analysis.
+  The coherence-boundary closure transport rate from dimensional analysis.
 
 TEST 3 - MOND exactness with coherence rate
   Full mu(x) verification when Omega_tr = a0/c.
@@ -111,7 +111,7 @@ def test_1_centrifugal_vs_framedragging():
 # =====================================================================
 
 def test_2_coherence_saturation():
-    """The UNIQUE galaxy-independent transport rate."""
+    """The coherence-boundary closure transport rate."""
     print(SEP)
     print("  TEST 2: Coherence Saturation Theorem")
     print(SEP)
@@ -291,7 +291,8 @@ def test_4_universality():
 
     print(f"""
   KEY POINT:
-  - Omega_tr = a0/c is UNIVERSAL: same for ALL galaxies -> same mu(x)
+  - Omega_tr = a0/c is UNIVERSAL within the closure:
+    same rate for the tested mature-branch galaxies -> same mu(x)
   - Frame-dragging Omega_FD is NOT universal: depends on M (~ eps)
   - Only the coherence rate satisfies hypothesis (H3): universality
     """)
@@ -385,11 +386,11 @@ def test_5_tea_cup_argument():
               These are different roles -- the gap is expected, not a problem.
 
   Status of Omega_tr = a0/c:
-  - It is the UNIQUE galaxy-independent rate (TEST 2)
-  - It gives exact MOND mu(x) = x/(1+x) (TEST 3)
-  - It gives universal BTFR for ALL galaxy masses (TEST 4)
+  - It is the coherence-boundary closure rate (TEST 2)
+  - It gives exact MOND mu(x) = x/(1+x) on the mature branch (TEST 3)
+  - It gives the BTFR scaling across the tested mature-branch masses (TEST 4)
   - It is set by the Hubble boundary lambda_H (this test)
-  - It requires NO new postulate beyond the ISPG ontology
+  - It requires no galaxy-tuned scale beyond the Hubble-boundary closure
     """)
 
     print(f"  STATUS: PASS (tea-cup argument consistent)")
@@ -483,9 +484,9 @@ def verdict():
   2. COHERENCE SATURATION: The transported field, once activated by
      rotation (however weak), equilibrates at the Hubble coherence
      rate Omega_tr = a0/c = H/(2*pi). This is:
-     - The UNIQUE galaxy-independent rate (dimensional analysis)
+     - The coherence-boundary closure rate
      - The rate at the Hubble boundary lambda_H = 2*pi*c/H
-     - Gives EXACT mu(x) = x/(1+x) and universal BTFR
+     - Gives exact mu(x) = x/(1+x) on the mature branch and BTFR scaling
 
   3. THREE-MECHANISM TAXONOMY (user's insight):
      - Bernoulli (flow)       -> g_N
@@ -500,36 +501,40 @@ def verdict():
 
   STATUS OF MOND DERIVATION:
 
-  Fully derived:
-    [x] a0 = cH/(2*pi) -- from coherence length
-    [x] mu(x) = x/(1+x) -- from self-consistent transport balance
-    [x] BTFR: M ~ v^4/(G*a0) -- algebraic consequence
+  Scoped closure results:
+    [x] a0 = cH/(2*pi) -- from Hubble-boundary closure
+    [x] mu(x) = x/(1+x) -- on the mature occupied branch
+    [x] BTFR: M ~ v^4/(G*a0) -- deep-MOND algebraic consequence
     [x] Spatial profile validated -- Phase A (tau_sp << tau_secular)
     [x] Universality -- Omega_tr galaxy-independent
 
-  Constitutive identification (not derived from action):
+  Phase-D status (linearized rotation alone):
     [ ] Omega_tr = a0/c
 
-  Physical argument for constitutive identification:
-    [x] Dimensional analysis: UNIQUE galaxy-independent rate
+  Physical argument for the coherence-boundary operating rate:
+    [x] Dimensional analysis: coherence-boundary closure rate
     [x] Hubble boundary: lambda_H sets the coherent scale
     [x] Tea-cup analogy: activation vs operating rate
     [x] Ontological consistency: inertia -> centrifugal -> saturation
 
   OPEN: Deriving Omega_tr = a0/c directly from the ISPG action.
-  The constitutive identification is well-motivated physically
-  but not yet proven as a mathematical theorem from the action.
+  This Phase-D linearized analysis treats it as the operating-rate
+  closure, not as a result of weak-field frame-dragging alone.
+  See phase_e_bifurcation.py for the derivation within the
+  bifurcation/coherence-boundary master-equation closure.
 
   COMPARISON WITH OTHER MOND THEORIES:
   - TeVeS (Bekenstein): introduces a0 as a FREE PARAMETER
   - AQUAL (Milgrom): introduces mu(x) as an ARBITRARY FUNCTION
-  - ISPG: a0 = cH/(2*pi) DERIVED, mu(x) = x/(1+x) DERIVED
-    Only Omega_tr = a0/c is a constitutive identification
-    (supported by dimensional analysis + coherence saturation)
+  - ISPG: a0 from Hubble-boundary closure; mu(x) on mature occupied branch
+    Omega_tr = a0/c is the coherence-boundary operating rate,
+    derived within the bifurcation/master-equation closure
     """)
 
-    print(f"  DERIVATION SCORE: a0 DERIVED, mu(x) DERIVED, BTFR DERIVED")
-    print(f"  AMPLITUDE: constitutive identification + physical argument")
+    print(f"  SCOPED DERIVATION STATUS: a0 derived within Hubble-boundary closure;")
+    print(f"                            mu(x) proved on mature occupied branch;")
+    print(f"                            BTFR follows from deep-MOND limit.")
+    print(f"  AMPLITUDE: activation/operating-rate split; see Phase E closure")
     print(f"  (vs TeVeS/AQUAL: a0 free parameter + mu(x) free function)")
     print(SEP)
 

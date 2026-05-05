@@ -772,12 +772,14 @@ bound rotating structure.  The observed excess support of spiral-galaxy
 rotation curves is therefore read in ISPG as the direct observational
 signature of this second channel, not as an external dark component and
 not as a merely phenomenological correction.
-This is direct evidence, within the ISPG interpretation, that space
-behaves as a gravitating substance whose pressure and transport state
-is encoded in the effective gravitational field: rotation rearranges
-the medium, produces a central rarefaction, and the resulting
-transported channel contributes a genuine second metric/geodesic
-component to the gravitational response.  The mechanism is
+Within ISPG, this rotation-curve support is the direct signature of the
+second channel; ruling out alternative MOND/dark-sector explanations
+requires the full ISPG signature programme (Sec.~\ref{sec:open_programme}).
+In this interpretation, space behaves as a gravitating substance whose
+pressure and transport state is encoded in the effective gravitational
+field: rotation rearranges the medium, produces a central rarefaction,
+and the resulting transported channel contributes a genuine second
+metric/geodesic component to the gravitational response.  The mechanism is
 self-regulating: faster coherent
 galactic rotation deepens the rarefaction and strengthens the
 transported channel only until local vortex equilibrium fixes the MOND
@@ -898,7 +900,7 @@ For the non-axisymmetric modes ($m \neq 0$), the azimuthal derivative $\partial_
 \label{eq:mmode_equation}
 \end{equation}
 
-The $-m^2/r^2$ term acts as a positive effective potential barrier that suppresses these modes relative to $m=0$. The radial eigenvalue for mode $m$ becomes $k_r^{(m)} > k_r^{(0)}$, leading to a shorter relaxation time $\tau_{\rm rel}^{(m)} = c/k_r^{(m)} < \tau_{\rm rel}^{(0)}$.
+The $-m^2/r^2$ term acts as a positive effective potential barrier that suppresses these modes relative to $m=0$. The radial eigenvalue for mode $m$ becomes $k_r^{(m)} > k_r^{(0)}$, giving a shorter Bessel crossing/spatial-adjustment time $t_B^{(m)} = 1/(c\,k_r^{(m)}) < t_B^{(0)}$.
 
 Furthermore, the Hubble damping term $3H \partial_t$ causes exponential decay of time-dependent modes on the Hubble timescale $t_H = 1/H$. For $m \neq 0$ modes, the faster oscillation ($\omega \sim m\Omega \gg H$ for $m \gtrsim 1$) combined with Hubble damping gives rapid suppression:
 \begin{equation}
@@ -906,7 +908,7 @@ Furthermore, the Hubble damping term $3H \partial_t$ causes exponential decay of
 \label{eq:mmode_damping}
 \end{equation}
 
-After several Hubble times ($t \gtrsim 3/H$), the $m \neq 0$ modes are suppressed by $e^{-9} \sim 10^{-4}$ relative to the $m=0$ mode. The steady-state solution is therefore dominated by the axisymmetric component, justifying the focus on $\varphi_0$.
+Source-free non-axisymmetric transients decay under Hubble damping at rate $\sim3H/2$, so over several Hubble times such free modes are exponentially suppressed relative to the $m=0$ envelope. Continuously driven spiral sidebands ($m=\pm1$) are not source-free; they feed the averaged $m=0$ envelope through the sideband-beat mechanism developed in the mode-mixed WKB reduction below. The focus on $\varphi_0$ here is therefore on the averaged $m=0$ mode supplied by sideband beating, not on a trivial absence of $m\neq0$ structure.
 
 \paragraph{Radial eigenvalue problem.}
 The radial Laplacian operator $\mathcal{L}_r = r^{-1}\partial_r(r\partial_r)$ acting on the Bessel function $J_0(k_r r)$ satisfies the eigenvalue equation:
@@ -932,17 +934,30 @@ The radial eigenvalue is therefore:
 \label{eq:eigenvalue_exact}
 \end{equation}
 
-\paragraph{Relaxation time (derived).}
-The gravitational acceleration at radius $r_0$ is
-$g = c^2/r_0$ (dimensional identification).
-The corresponding length scale from the eigenvalue is $\ell_{\rm eff} = c/k_r = r_0/2.4048$. This gives the relaxation time scale:
+\paragraph{Bessel cell length and crossing time.}
+The Bessel eigenvalue $k_r=2.4048/r_0$ sets a cell length
+$\ell_B=1/k_r=r_0/2.4048$ and a Bessel crossing/spatial-adjustment time
+$t_B=\ell_B/c=1/(c\,k_r)=r_0/(2.4048\,c)$, matching the formula used in
+\texttt{MOND/Python/multiscale.py}.
+
+\paragraph{Transport-balance relaxation time.}
+The transport-balance relaxation/decorrelation time
 \begin{equation}
-\tau_{\rm rel} = \frac{\ell_{\rm eff}}{c} = \frac{r_0}{2.4048\,c} = \frac{c}{2.4048\,g} \sim \frac{c}{g},
+\tau_{\rm rel} = \frac{c}{g},
 \label{eq:tau_rel_derived}
 \end{equation}
-where the $O(1)$ factor $1/2.4048 \approx 0.42$ is absorbed.
+is uniquely selected within the rotating-medium transport ansatz by
+dimensional analysis and universality: it is the only galaxy-independent,
+dimensionally consistent choice within the rotating-medium transport
+closure. A direct PDE-level derivation of the transport ansatz remains
+the next theorem-level strengthening.
 
-This identification is \textbf{unique by dimensional analysis}
+\paragraph{Status note on the two times.}
+$t_B$ is a Bessel-eigenvalue spatial-adjustment time and is not the same
+object as the transport-balance relaxation time $\tau_{\rm rel}$ used in
+the master equation below.
+
+This transport-balance time is \textbf{unique by dimensional analysis}
 (Theorem~1 in \nolinkurl{structural_proof.py}):
 $\tau_{\rm rel}$ depends only on $(c,\,g)$ with no
 galaxy-specific length or mass.
@@ -1506,8 +1521,8 @@ P_I:=\frac{N_{\rm inc}}{N},
 P_C+P_I=1.
 \]
 Assume that incoherent packets become coherent at rate $\omega$ while
-coherent packets lose phase memory at rate $\Gamma_{\rm mem}$.  Then the
-unique stationary coherent fraction is
+coherent packets lose phase memory at rate $\Gamma_{\rm mem}$.  Within this
+minimal bounded two-state Markov closure, the stationary coherent fraction is
 \begin{equation}
 P_C
 = \frac{\omega}{\omega+\Gamma_{\rm mem}},
@@ -1552,9 +1567,12 @@ inverse-time scale the theory offers beyond the Hubble rate), but the
 $O(1)$ coefficient is a modeling choice rather than a first-principles
 derivation; we take it to be unity, consistent with the
 coherence-boundary identification $\Omega_{\rm tr}=c/\lambda_H$ used
-earlier in Sec.~\ref{sec:a0}.  The phenomenological success of the
-resulting $\mu(x)=x/(1+x)$ law below is an empirical check on this
-choice.
+earlier in Sec.~\ref{sec:a0}.  This identification is derived within the
+coherence-boundary / bifurcation master-equation closure of
+Secs.~\ref{sec:a0} and~\ref{sec:dimless}; a full microscopic/action-to-PDE
+derivation remains the next theorem-level strengthening.  The phenomenological
+success of the resulting $\mu(x)=x/(1+x)$ law below is an empirical check on
+the unity-coefficient choice.
 Thus in a stationary local vortex cell
 \[
 A_{\rm vort}(\omega)
@@ -1701,7 +1719,7 @@ strongly satisfied spiral-galaxy condition; and because this count uses
 only baryonic emitters, not all entrained fluid elements, it is best read
 as a strict lower bound.
 
-\paragraph{Consistency domain.}
+\paragraph{Consistency domain.}\label{sec:consistency_domain}
 This same audit also clarifies how the activation factor must be interpreted.
 If one were to identify $\omega$ with the Kepler frequency of an arbitrary
 small bound system, then $A_{\rm vort}\simeq1$ would hold even in the Solar
@@ -1918,10 +1936,12 @@ within $\sim3.8\times10^{-2}$ of the already selected static source-side branch,
 within $\sim1.39\times10^{-1}$ of the algebraic target, and within
 $\sim1.20\times10^{-1}$ of the transport-side branch, while the mature-vortex
 activation remains saturated ($\bar A_{\rm ord}\sim9.98\times10^{-1}$ and
-$A_{\rm vort}(r_M,0)\sim9.99\times10^{-1}$).  So the mature spiral-galaxy MOND
-closure is now also closed at the level of a fully coupled time-dependent
-source-formation law: there is no remaining internal PDE-level gap between the
-rotating-medium derivation and the axisymmetric $2+1$D verification.
+$A_{\rm vort}(r_M,0)\sim9.99\times10^{-1}$).  Thus the
+algebraic/transport-side closure gap on the mature branch is closed at high
+precision (RMS $<10^{-3}$); source-side, operator-side, and coupled
+hyperbolic $2+1$D channels are independent positive/convergent realizations
+with quantified residuals at the few-to-10\% level
+(Sec.~\ref{sec:tier_residuals}).
 
 The resolution comes from distinguishing two roles:
 \begin{enumerate}
@@ -1932,9 +1952,10 @@ The resolution comes from distinguishing two roles:
 \item \textbf{Operating rate:} once activated, the transported
   field equilibrates at the Hubble coherence rate
   $\Omega_{\rm tr}=a_0/c=H/(2\pi)$.  This is the
-  \emph{unique stationary} galaxy-independent transport rate
-  allowed by hyperbolic propagation at speed $c$ together
-  with the outer coherence boundary $\lambda_H=2\pi c/H$
+  \emph{unique stationary} galaxy-independent transport rate within the
+  coherence-boundary master-equation closure allowed by hyperbolic propagation
+  at speed $c$ together with the outer coherence boundary
+  $\lambda_H=2\pi c/H$
   (\texttt{phase\_d\_centrifugal.py}, Tests~2 and~4).
 \end{enumerate}
 
@@ -2067,7 +2088,8 @@ term of Eq.~\eqref{eq:damped}, the spatial operator of
 Eq.~\eqref{eq:box_expansion}, and the frame-dragging coupling encoded in
 the dimensionless master equation~\eqref{eq:master}.  In cylindrical
 coordinates, to first order in $(\Phi_N,\omega_{\rm FD})$ and for a thin
-disk, the dimensional PDE can be written as
+disk, the leading-order dimensionally normalized rotating-medium master
+equation used for the WKB/transport analysis below can be written as
 \begin{equation}
 \boxed{
 \ddot{\varphi}
@@ -2092,7 +2114,11 @@ where
 The cross term is written in the normalization that reproduces the
 dimensionless coefficient $\varepsilon\,\delta_{\rm FD}(\xi)$ in
 Eq.~\eqref{eq:master} after the scalings
-\eqref{eq:dimless_coords}--\eqref{eq:dimless_field}.  Equation
+\eqref{eq:dimless_coords}--\eqref{eq:dimless_field}.  The
+$3H\,\Delta_{\rm FD}$ coefficient is this master-equation normalization;
+a direct derivation from the metric cross-term
+$2g^{t\phi}\partial_t\partial_\phi$ belongs to the
+symbolic/rotating-PDE verification programme.  Equation
 \eqref{eq:rotating_full_pde} makes the term structure explicit:
 \begin{itemize}
 \item $\ddot{\varphi}+3H\dot{\varphi}$ is the FLRW Hubble-damped backbone;
@@ -2500,8 +2526,10 @@ function for $\mu=x/(1+x)$, implicitly but \emph{completely}
 determined by the well-posed elliptic BVP~\eqref{eq:aqual_from_ispg}.
 Computing a closed-form expression for this Green function in
 cylindrical geometry remains a useful quantitative refinement
-(Open programme, item~2), but the PDE-to-$\mu$ chain no longer
-contains a conceptual or formal gap.
+(Open programme, item~2).  The PDE-to-$\mu$ chain has no remaining algebraic
+or transport-side closure gap on the mature branch; the Green-kernel/profile
+realization residual at the few-to-10\% level remains the open quantitative
+refinement.
 
 \paragraph{Blind self-calibrated $2$D benchmark.}
 The next objective diagnostic is a genuinely blind axisymmetric solve in
@@ -2868,7 +2896,7 @@ and the interpolating function reconstructed as:
 For the transport-side closure with $\tau_{\rm rel}=c/g$
 and the Hubble-boundary coherence rate $\Omega_{\rm tr}=a_0/c$, the goal is:
 \begin{equation}
-\mu_{\rm obs}(x) = \frac{x}{1+x} + \mathcal{O}(10^{-3}) \quad \text{(target RMS error)},
+\mu_{\rm obs}(x) = \frac{x}{1+x} + \mathcal{O}(10^{-3}) \quad \text{(target RMS error on the algebraic/transport-side benchmark)},
 \label{eq:numerical_prediction}
 \end{equation}
 across the dynamic range $x \in [10^{-2}, 10^{2}]$. The primary challenge is the extreme scale separation between Newtonian ($g_N \sim 10^{-10}$ m/s$^2$ at 100 kpc) and MOND ($a_0 \sim 10^{-10}$ m/s$^2$) accelerations, requiring dimensionless formulations and high-precision arithmetic.
@@ -3209,7 +3237,7 @@ All symbolic calculations are available in the accompanying CoCalc worksheets
 \nolinkurl{2026-02-28-file-1.sagews}, \nolinkurl{file-2.sagews}, and
 \nolinkurl{file-3.sagews}.
 
-\subsection{Numerical PDE verification (status)}
+\subsection{Numerical PDE verification (status)}\label{sec:tier_residuals}
 
 The transport equation and the resulting $\mu(x)=x/(1+x)$ can be verified
 numerically by solving the full scalar field equation
@@ -3218,7 +3246,8 @@ galaxy potential.  The completed implementation uses:
 \begin{itemize}
 \item Adaptive mesh with resolution focused on the MOND transition region
 \item Spectral or finite-difference methods with dimensionless formulation
-\item Target accuracy: RMS error $<10^{-3}$ across $x\in[10^{-2},10^2]$
+\item Target accuracy on the algebraic/transport-side benchmark: RMS error
+  $<10^{-3}$ across $x\in[10^{-2},10^2]$
 \end{itemize}
 
 \noindent\fbox{\parbox{0.95\linewidth}{\centering
@@ -3435,7 +3464,7 @@ Each arrow is classified below:
   $Z_{\rm rot}=(1+\sqrt{y})^{-1}$
   (binary free/load partition $+$ linear loaded-state measure
   $+$ local MaxEnt)
-  \hfill\textbf{MaxEnt-selected}${}^{\dagger}$
+  \hfill\textbf{MaxEnt-selected within binary free/load partition}${}^{\dagger}$
 \item[$\to$] Relaxation time $\tau_{\rm rel}=c/g$
   (unique within the rotating-medium transport ansatz,
   Sec.~\ref{sec:closure_derivation})
@@ -3444,11 +3473,11 @@ Each arrow is classified below:
   ($n=2$ is the only power in the chosen power-law family
   for which $\Upsilon_{\rm rot}$ depends on activation alone,
   not on medium stiffness)
-  \hfill\textbf{Absolutely unique}${}^{\ddagger}$
+  \hfill\textbf{Unique by impedance matching within power-law closure family}${}^{\ddagger}$
 \item[$\to$] Hubble-boundary vortex equilibrium rate $\Omega_{\rm tr}=a_0/c$
   (stationary coherence theorem for the largest coherent cell
   $\lambda_H$; Secs.~\ref{sec:a0}, \ref{sec:dimless})
-  \hfill\textbf{Proved (coherence theorem)}${}^{\P}$
+  \hfill\textbf{Derived within coherence-boundary closure}${}^{\P}$
 \item[$\to$] Mesoscopic activation law
   $A_{\rm vort}=\omega/(\omega+\Omega_{\rm tr})$:
   vortex maturity parameter (laminar $A\!\to\!1$
@@ -3498,14 +3527,19 @@ hyperbolic propagation at speed $c$ and the outer coherence boundary
 $\lambda_H=2\pi c/H$; $A_{\rm vort}$ is then the maturity
 (laminar/turbulent) parameter of that vortex cell.
 These are consequences of the medium's vortex dynamics, not
-free inputs.\\
+free inputs. The derivation is within the rotating-medium
+master-equation/coherence-boundary closure; a full action-to-PDE
+derivation remains the next theorem-level strengthening.\\
 ${}^{\parallel}$Closed on occupied branch: spatial equilibrium
 $\tau_{\rm sp}\ll t_H$ is proved, and once $A_{\rm vort}$ is solved
 self-consistently the mature branch gives
 $C_{\rm eff}=A_{\rm vort}+\mathcal{O}(\delta_{\rm sp},\delta_N)$
 with $C_{\rm eff}\simeq1$ in spirals; the conservative count estimate
 now also gives $N_{\rm cell}\gtrsim3.7\times10^6$ across the scored
-spiral-galaxy window.
+spiral-galaxy window.  Systems without a mature macroscopic vortex
+(Solar System, laboratory) sit on the small effective-activation branch;
+there $A_{\rm vort}$ is not the local orbital-frequency fraction
+(Sec.~\ref{sec:consistency_domain}).
 
 \medskip\noindent
 The chain is therefore not an action-to-$\mu$ theorem in the
@@ -3907,7 +3941,7 @@ Damped-oscillator mode equation \eqref{eq:damped} on FLRW; coherence scale \eqre
 
 \medskip
 \noindent\textbf{Proved / derived in the coherence-vortex sector.}
-Hubble-boundary transport rate $\Omega_{\rm tr}=a_0/c$ proved by the stationary coherence theorem for the largest coherent cell $\lambda_H=2\pi c/H$ (Secs.~\ref{sec:a0}, \ref{sec:dimless}); vortex maturity parameter $A_{\rm vort}=\omega/(\omega+\Omega_{\rm tr})$ from coherent/incoherent tail balance; mature rotating-spiral applicability of the occupied branch.
+Hubble-boundary transport rate $\Omega_{\rm tr}=a_0/c$ derived within the stationary coherence-boundary closure for the largest coherent cell $\lambda_H=2\pi c/H$ (Secs.~\ref{sec:a0}, \ref{sec:dimless}); vortex maturity parameter $A_{\rm vort}=\omega/(\omega+\Omega_{\rm tr})$ from coherent/incoherent tail balance; mature rotating-spiral applicability of the occupied branch.
 
 \medskip
 \noindent\textbf{Physical approximations employed.}
@@ -5941,19 +5975,19 @@ mature-spiral closure chain:
 7 & Load/free law $Z_{\rm rot}=1/(1+\sqrt{y})$
     from a binary free/load partition with linear loaded-state measure
     and local MaxEnt
-  & MaxEnt-selected${}^{\dagger}$ \\
+  & MaxEnt-selected within binary free/load partition${}^{\dagger}$ \\
 8 & Impedance matching ($n=2$ uniquely cancels $K^{-2}$ in $Z'$)
     $\to \hat I=2K^2A_{\rm vort}$
     $\to \Upsilon_{\rm rot}=A_{\rm vort}a_0/g$,
     $C_{\rm eff}=A_{\rm vort}$
-  & absolutely unique${}^{\dagger\dagger}$ \\
+  & unique by impedance matching within power-law closure family${}^{\dagger\dagger}$ \\
 9 & $\tau_{\rm rel}=c/g$: unique within old transport representation
     (dim.\ analysis $+$ universality)
   & uniquely selected${}^{\S}$ \\
 10 & Hubble-boundary vortex equilibrium rate
     $\Omega_{\rm tr}=a_0/c$ (stationary coherence theorem
     for the largest coherent cell, Secs.~\ref{sec:a0}, \ref{sec:dimless})
-  & proved (coherence thm.)${}^{\P}$ \\
+  & derived (coherence-boundary closure)${}^{\P}$ \\
 11 & Vortex maturity parameter
     $A_{\rm vort}=\omega/(\omega+\Omega_{\rm tr})$
     (laminar/turbulent regime)
@@ -5986,7 +6020,13 @@ stationary transport rate fixed by hyperbolic propagation at speed $c$
 and the outer coherence boundary $\lambda_H=2\pi c/H$; in the same
 pre-existing-vortex picture (Sec.~\ref{sec:vortex_origin}),
 $A_{\rm vort}$ follows from the coherent/incoherent occupation balance
-rather than being a free closure input.
+rather than being a free closure input.  The rate derivation is within the
+rotating-medium master-equation/coherence-boundary closure; a full
+microscopic/action-to-PDE derivation remains the next theorem-level
+strengthening.  The saturated value $C_{\rm eff}\simeq1$ applies on the
+mature macroscopic occupied branch ($Q_{\rm occ}\gg1$,
+$\delta_{\rm sp}\ll1$, $N_{\rm cell}\gg1$), not as a universal local
+orbital-frequency rule for non-galactic systems.
 
 %%===================================================================
 
@@ -6031,7 +6071,8 @@ the vortex/galactic completion built on top of that local channel.
   threefold, and a disk-thickness scan confirms monotonic
   dependence on asphericity.  The $\mu$-profile is verified to
   $2$--$5\%$ RMS; the formal PDE-to-$\mu$ chain is closed
-  with no conceptual or numerical gap remaining.\\
+  with the algebraic/transport-side closure gap closed; the
+  Green-kernel/profile residual remains a quantitative refinement.\\
   \textit{Task:} compute the closed-form axisymmetric Green function
   of the AQUAL operator $\nabla\!\cdot\![\mu(|\nabla\Phi|/a_0)
   \nabla(\cdot)]$ for $\mu=x/(1+x)$, and derive explicit inner/outer

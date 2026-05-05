@@ -272,6 +272,8 @@ def run_all():
         chi = A_vort / x_total ;
   - comparison to the loaded-branch algebraic fixed point tests whether the
     radial BVP realizes the same mature-branch closure at the profile level.
+  - profile-realization residual RMS is 0.139 vs analytic x/(1+x);
+    fixed-point residual is 4.2e-08.  This remains an open profile residual.
         """
     )
     return sol, cmp_result

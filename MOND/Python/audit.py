@@ -472,16 +472,22 @@ if ISSUES:
     for name, detail in ISSUES:
         print(f"    - {name}: {detail}")
 else:
-    print(f"\n  NO MATHEMATICAL ERRORS FOUND.")
+    print(f"\n  NO ALGEBRAIC ERRORS FOUND IN THE CHECKED CLOSURE IDENTITIES.")
 
 print(f"""
   VERDICT (Phase 11 + Phase A/B + Phase D revision):
   ====================================================
   The MOND derivation chain is:
-    (a) ALGEBRAICALLY CORRECT: all equations verified to machine precision
-    (b) LOGICALLY SOUND: no circular reasoning detected
-    (c) NUMERICALLY CONVERGED: spectral method validated
-    (d) PHYSICALLY GROUNDED: space-vortex ontology provides each step
+    (a) ALGEBRAICALLY CLOSED on the mature occupied branch:
+        all checked closure identities verified to machine precision
+    (b) NO CIRCULAR REASONING DETECTED in the checked closure identities
+    (c) NUMERICALLY CONVERGED on the algebraic/transport-side benchmark;
+        source-side / operator-side / BVP residuals remain at the
+        few-to-10% level (see tier table)
+    (d) SCOPED to the saturated/mature macroscopic occupied branch
+        (Q_occ >> 1, delta_sp << 1, N_cell >> 1); transport ansatz and
+        continuous-source mechanism remain explicitly bounded by their
+        closure assumptions
 
   Structural status of results:
     Result 1: tau_rel = c/g uniquely selected (within transport ansatz)
@@ -505,16 +511,20 @@ print(f"""
     Centrifugal in linearized theory: eps^2-suppressed (even weaker!)
     RESOLUTION: activation vs operating rate (tea-cup analogy)
       - Frame-dragging ACTIVATES the channel (eps-suppressed, ok)
-      - Hubble coherence SETS the amplitude: Omega_tr = a0/c = H/(2pi)
-      - This is the UNIQUE galaxy-independent rate (dim. analysis)
-      - Gives EXACT mu(x) = x/(1+x) for ALL galaxy masses
-    Omega_tr = a0/c: constitutive identification (not free parameter)
-      supported by: dim. analysis + coherence saturation + tea-cup analogy
+      - Hubble coherence SETS the operating rate within the closure:
+        Omega_tr = a0/c = H/(2pi)
+      - This is the coherence-boundary closure rate, not a full
+        microscopic action-to-PDE theorem
+      - Gives exact mu(x) = x/(1+x) on the mature occupied branch
+    Omega_tr = a0/c: closure-derived operating rate
+      supported by: dimensional analysis + coherence saturation
 
-  DERIVATION SCORE: a0 DERIVED, mu(x) DERIVED, BTFR DERIVED
-    Amplitude: constitutive identification with physical argument
-    (vs TeVeS/AQUAL: a0 free param + mu(x) free function)
-  OVERALL: PASS (no math errors; amplitude identified, not postulated)
+  SCOPED DERIVATION STATUS:
+    a0 derived within Hubble-boundary closure;
+    mu(x) proved on the mature occupied branch;
+    BTFR follows from the deep-MOND limit.
+  OVERALL: PASS for checked algebraic closure identities; open PDE/source
+           assumptions remain explicitly scoped above.
 """)
 
 sys.exit(0 if not ISSUES else 1)

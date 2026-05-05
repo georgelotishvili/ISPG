@@ -647,17 +647,20 @@ def derivation_chain():
   the rotating-medium master equation plus the Hubble coherence
   boundary. This upgrades Ω_tr = a₀/c from "constitutive
   identification" to "derived from boundary-selected transport
-  of the ISPG scalar field on FLRW background."
+  of the ISPG scalar field on FLRW background" within that
+  closure. A full action-to-PDE derivation remains the next
+  theorem-level strengthening.
 
   vs PREVIOUS STATUS:
     Before Phase E: Ω_tr = a₀/c was "constitutive identification"
-    After Phase E:  Ω_tr = a₀/c is DERIVED via bifurcation + boundary selection
+    After Phase E:  Ω_tr = a₀/c is derived within bifurcation
+                    + boundary selection closure
 
   vs OTHER THEORIES:
     TeVeS:  a₀ = free parameter, μ = free function
     AQUAL:  a₀ = free parameter, μ = free function
     ISPG:   a₀ = cH/(2π) DERIVED, μ = x/(1+x) DERIVED,
-            Ω_tr = a₀/c DERIVED (Phase E)
+            Ω_tr = a₀/c derived within Phase-E closure
     """)
 
 
@@ -681,7 +684,8 @@ def verdict(results):
     print(f"""
   CENTRAL RESULT:
 
-  Ω_tr = a₀/c is DERIVED (not assumed) via the following chain:
+  Ω_tr = a₀/c is DERIVED within the bifurcation master-equation /
+  coherence-boundary closure via the following chain:
 
   1. ISPG action → scalar field eq with Hubble damping
   2. Hubble damping → coherence length λ_H = 2πc/H
@@ -689,6 +693,9 @@ def verdict(results):
   4. Nonlinear self-consistency → bifurcation (trivial unstable)
   5. Causal crossing of the Hubble boundary → Ω_tr = c/λ_H = a₀/c
   6. C = 1 → μ(x) = x/(1+x) → BTFR
+
+  Full action-to-PDE derivation of this operating-rate closure remains
+  the next theorem-level strengthening.
 
   The ε-suppression is RESOLVED:
     ε = activation amplitude (frame-dragging, irrelevant for final state)
