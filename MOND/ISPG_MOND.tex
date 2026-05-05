@@ -39,7 +39,7 @@ Accordingly, the main text keeps only the compact regime split and the identific
 Thus Eq.~\eqref{eq:action} remains the baseline covariant kernel throughout, while any $S_{\rm swirl}$ written below should be read as the mesoscopic realization of the same rotating-medium response in the nonlinear galactic regime.
 The purpose is to make the MOND chain explicit at two levels:
 \begin{itemize}
-\item \textbf{Qualitative (cosmological origin):} observed cosmic flows in the space substance $\rightarrow$ vortex formation (Kelvin--Helmholtz) $\rightarrow$ central rarefaction $\rightarrow$ extra metric/geodesic acceleration channel $\rightarrow$ MOND phenomenology.  Different vortex topologies (laminar planar, convective poloidal, chaotic) produce different galaxy types (spiral, elliptical, irregular) with the same MOND scale.
+\item \textbf{Qualitative (cosmological origin):} observed cosmic-flow fields, identified in ISPG with bulk motion of the pressure-carrying substance $\rightarrow$ Kelvin--Helmholtz roll-up under a low-viscosity effective-medium closure $\rightarrow$ central rarefaction $\rightarrow$ extra metric/geodesic acceleration channel $\rightarrow$ MOND phenomenology.  Different vortex topologies (laminar planar, convective poloidal, chaotic) provide a qualitative morphology map onto galaxy types (spiral, elliptical, irregular) at the same MOND scale.
 \item \textbf{Quantitative (local closure):} global pressure decrease / coherence damping $\rightarrow$ coherence length $\rightarrow$ Hubble-wavelength-selected critical acceleration $a_0=cH/(2\pi)$ $\rightarrow$ vortex-lag correction $H\!\to\!H_{\rm eff}$ (calibrated formation-epoch recovery of the local observed value, with age-dependent $a_0$ as the testable prediction) $\rightarrow$ instantaneous vortex equilibrium $\rightarrow$ interpolating function $\mu(x)=x/(1+x)$ $\rightarrow$ BTFR and environment effects.
 \end{itemize}
 
@@ -106,10 +106,12 @@ In the first regime, the theory reduces identically to GR at linear order, as sh
 \section{Origin of galactic vortices: cosmological flows in the space substance}\label{sec:vortex_origin}
 
 In this theory space is a physical substance (a pressure-carrying scalar
-medium), not an empty container.  The observed large-scale cosmic flows
-are therefore bulk motions \emph{of} that substance.  We now show that
-the existence of galactic-scale vortices is a \emph{necessary consequence}
-of this ontology together with well-established observational facts.
+medium), not an empty container.  In the ISPG ontology, the observed
+large-scale cosmic flows are identified with bulk motion \emph{of} that
+substance.  Under a low-viscosity effective-medium closure, the
+existence of galactic-scale vortices is a quantitatively supported
+consequence of this identification together with well-established
+observational facts.
 
 \subsection{Observational basis: cosmic flows}\label{sec:cosmic_flows}
 
@@ -134,10 +136,10 @@ motions driven by gravitational instability.  In the present theory
 they are, more fundamentally, motions of the space substance itself,
 carrying the embedded matter along.
 
-\subsection{From flows to vortices: a fluid-dynamical inevitability}\label{sec:flows_to_vortices}
+\subsection{From flows to vortices: a fluid-dynamical route}\label{sec:flows_to_vortices}
 
-In any real fluid with inhomogeneous flows, vortex formation is
-inevitable:
+In a low-viscosity fluid with inhomogeneous flows, vortex formation is
+the expected outcome:
 \begin{itemize}
   \item Two streams meeting at a nonzero angle generate shear, which
     rolls up into a vortex via the Kelvin--Helmholtz instability.
@@ -146,8 +148,9 @@ inevitable:
     dissipation length.
   \item No external ``spinning agent'' is required: differential
     cooling of the primordial substance produces pressure gradients,
-    gradients drive flows, and flows at different angles inevitably
-    create vortices---precisely as atmospheric temperature differences
+    gradients drive flows, and flows at different angles produce
+    vortices via the standard shear-instability and turbulent-cascade
+    mechanisms---precisely as atmospheric temperature differences
     create cyclones without external torque.
 \end{itemize}
 
@@ -163,10 +166,11 @@ Kelvin--Helmholtz growth rate is
 \end{equation}
 Equation~\eqref{eq:gamma_kh} is the classical inviscid growth rate
 for a locally planar tangential-shear patch~\cite{Chandrasekhar1961};
-the three-dimensional topology of cosmic flows and weak
-compressibility modify the coefficient by $O(1)$ geometric factors
-but not the qualitative result that $\gamma_{\rm KH}^{-1}$ remains
-well below the formation window estimated below.
+we adopt this as the fiducial shear-layer estimate for the effective
+ISPG medium.  Under the same low-viscosity closure, three-dimensional
+topology and weak compressibility are expected to modify the coefficient
+by $O(1)$ geometric factors only, leaving $\gamma_{\rm KH}^{-1}$ well
+below the formation window estimated below.
 Using an observed cosmic-flow shear
 $\Delta V \simeq 600\;\mathrm{km\,s^{-1}}$, one obtains e-folding times
 \begin{equation}
@@ -189,6 +193,10 @@ $37$--$41$ e-foldings, while a $100\;\mathrm{kpc}$ perturbation undergoes
 about $3.7\times10^2$--$4.1\times10^2$ e-foldings.  The instability has
 ample time to roll up the flow into vortical structure.
 
+The Reynolds and Kolmogorov estimates that follow use the
+persistence-bound viscosity ceiling \eqref{eq:nu_bound}; they are
+therefore consistency checks under the persistence closure rather than
+independent derivations of the medium's transport coefficients.
 The turbulent cascade is likewise compatible with galactic scales.
 Using the conservative viscosity ceiling from the persistence bound
 \eqref{eq:nu_bound}, $\nu\lesssim2\times10^{23}\;\mathrm{m^2\,s^{-1}}$,
@@ -208,9 +216,10 @@ Hence the Kolmogorov cutoff scale is at most
   \label{eq:kolmogorov_cutoff}
 \end{equation}
 so the full $10$--$100\;\mathrm{kpc}$ galactic range lies safely inside
-the inertial range.  In other words, once cosmological flows exist, the
-generation of galactic-scale vortices is not merely qualitative rhetoric
-but a quantitatively expected outcome.
+the inertial range.  In other words, under the adopted low-viscosity /
+persistence-bound closure, once cosmological flows are identified with
+motion of the pressure-carrying substance, the generation of
+galactic-scale vortices is a quantitatively supported expectation.
 
 The space substance therefore develops a spectrum of vortices at all
 scales.  The galactic-scale vortices are the ones relevant for the
@@ -219,14 +228,16 @@ MOND sector.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{PDF/fig_mond_vortex_origin.pdf}
-\caption{Quantitative vortex-origin diagnostics from
-\texttt{phase\_ao\_kh\_vortex\_origin.py}. Left: the Kelvin--Helmholtz
-e-fold time stays far below the proper-time-weighted formation window
-across the $10$--$1000\;\mathrm{kpc}$ range, so cosmological shear has
-ample time to roll up into vortices. Right: with the conservative
-viscosity ceiling implied by vortex persistence, the dissipation scale
-lies far below galactic scales, leaving the full $10$--$100\;\mathrm{kpc}$
-band safely inside the inertial range.}
+\caption{Fiducial KH timescale and inertial-range diagnostics from
+\texttt{phase\_ao\_kh\_vortex\_origin.py} under the adopted shear-layer /
+persistence-bound closure. Left: the Kelvin--Helmholtz e-fold time stays
+far below the proper-time-weighted formation window across the
+$10$--$1000\;\mathrm{kpc}$ range. Right: with the persistence viscosity
+ceiling \eqref{eq:nu_bound}, the dissipation scale lies far below
+galactic scales, leaving the full $10$--$100\;\mathrm{kpc}$ band inside
+the inertial range. The figure illustrates timescale and inertial-range
+plausibility under these assumptions, not an independent derivation of
+the medium's transport coefficients.}
 \label{fig:vortex_origin}
 \end{figure}
 
@@ -246,18 +257,20 @@ The causal sequence in this framework is:
   }
   \label{eq:vortex_chain}
 \end{equation}
-Each arrow is either an observed fact or a textbook fluid-dynamical law:
+Each row carries an explicit status under the ISPG identification of
+cosmic flows with bulk motion of the pressure-carrying substance:
 \begin{center}
 \begin{tabular}{@{}ll@{}}
 \toprule
 \textbf{Step} & \textbf{Status} \\
 \midrule
 CMB fluctuations exist & observed (COBE/WMAP/Planck) \\
-Inhomogeneous cooling $\to$ gradients & thermodynamics \\
-Gradients $\to$ flows & fluid mechanics \\
+Inhomogeneous cooling $\to$ pressure gradients & thermodynamics applied to the ISPG medium \\
+Pressure gradients $\to$ flows & fluid mechanics \\
 Cosmic flows exist & observed (Laniakea, cosmic web) \\
-Flows $\to$ vortices & Kelvin--Helmholtz, proved \\
-Vortices trap matter & fluid mechanics \\
+Flows as space-substance motion & ISPG identification \\
+Flows $\to$ vortices & KH timescale support under low-viscosity closure \\
+Vortices trap matter & fluid-mechanical consequence under the same closure \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -271,8 +284,8 @@ collapsing gas (though the latter supplements it).
 \subsection{Galaxy morphology as fluid-dynamical regime}\label{sec:morphology}
 
 Different flow conditions in the primordial substance produce
-different vortex topologies, which map directly onto the Hubble
-sequence:
+different vortex topologies; these provide a qualitative morphology map
+onto the Hubble sequence:
 \begin{center}
 \begin{tabular}{@{}lll@{}}
 \toprule
@@ -288,7 +301,10 @@ Chaotic multi-stream zone & irregular & disordered \\
 In \emph{all} cases the vortex creates a central pressure deficit
 (rarefaction), producing the extra inward gravitational gradient
 that is the MOND effect.  The specific morphology determines the
-\emph{geometry} of the extra support but not its \emph{existence}.
+\emph{geometry} of the extra support but not its \emph{existence}.  A
+quantitative morphology-population prediction and the kinematic
+distinguishability of these regimes remain a later simulation/closure
+task.
 
 \subsection{Enhanced formation time from the global pressure history}\label{sec:formation_time}
 
@@ -6146,13 +6162,15 @@ $A\!\ll\!1$ in systems lacking a coherent vortex).
 
 \textbf{Cosmological vortex origin
 (Sec.~\ref{sec:vortex_origin}):}
-observed cosmic flows (Laniakea, cosmic web, bulk flows) in the
-space substance $\to$ vortex formation (Kelvin--Helmholtz
-instability) $\to$ central rarefaction $\to$ MOND.  Galaxy
-morphology (spiral, elliptical, irregular, dwarf) maps onto
-fluid-dynamical vortex topology (laminar planar, convective
-poloidal, chaotic, small-scale eddy).  The MOND scale $a_0$ is
-common to all types because it is set by the cosmological
+observed cosmic-flow fields (Laniakea, cosmic web, bulk flows),
+identified in ISPG with bulk motion of the pressure-carrying substance,
+undergo Kelvin--Helmholtz roll-up under the adopted low-viscosity
+effective-medium closure $\to$ central rarefaction $\to$ MOND.  Galaxy
+morphology (spiral, elliptical, irregular, dwarf) corresponds to
+fluid-dynamical vortex topology (laminar planar, convective poloidal,
+chaotic, small-scale eddy) as a qualitative model map; the quantitative
+population and kinematic predictions remain a later task.  The MOND
+scale $a_0$ is common to all types because it is set by the cosmological
 coherence boundary, not by galaxy-specific parameters.
 
 \textbf{Closed locally on the mature branch:} $C_{\rm eff}=A_{\rm vort}
