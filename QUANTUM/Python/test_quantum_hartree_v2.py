@@ -5,6 +5,15 @@ physical scenario gives θ₀ = 2/9.
 Key: the l=2 electron mode's 5-fold degeneracy makes its
 zero-point contribution huge. But its OVERLAP with the
 l=0 potential is weighted differently.
+
+Note on η_eff: the η_eff reported here is an ad-hoc
+overlap-weighted first-order Hartree weight (e.g., "tau +
+0.35*mu") used inside Eq.~eq:hartree to drive θ₀ toward
+2/9. This is a different mathematical object from the
+post-convergence channel-separated effective η in
+test_sc_hartree_fock.py (first-order weight vs converged
+self-consistent value). Numerical values (~0.074 here,
+~0.098 there) are not directly comparable.
 """
 import sys
 sys.stdout.reconfigure(line_buffering=True, encoding='utf-8')

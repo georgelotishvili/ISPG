@@ -1,10 +1,23 @@
 """
-Self-Consistent Hartree-Fock for ISPG Cavity Spectrum.
+Self-Consistent Hartree-Fock test for the ISPG cavity spectrum.
 
-Resolves three open problems:
-1. Second-order (iterative) HF → Q=2/3 AND θ₀=2/9 simultaneously
+Tests / explores three candidate features:
+1. Iterative HF with channel separation, to see whether Q=2/3 AND
+   θ₀=2/9 close simultaneously beyond first order
 2. Proper l=2 degeneracy via channel separation (no self-interaction)
-3. Analytical η formula from overlap integrals
+3. An analytical η_eff from overlap integrals after convergence
+
+Current outcome: the run improves θ₀ (toward 2/9) but does NOT
+improve Q (Q goes from bare 0.6667 toward 0.6654, worse than
+the first-order prescription); the lepton mass ratios in E1D
+form remain significantly off (τ/e ≈ 2517 vs 3477, μ/e ≈ 147 vs
+207). Therefore the channel-separated HF scheme does not jointly
+close (Q, θ₀) and the lepton mass ratios; the joint closure
+beyond first order remains an open numerical task. The
+post-convergence η_eff produced here is a different
+mathematical object from the ad-hoc overlap-weighted η_eff
+in test_quantum_hartree_v2.py (first-order weight vs converged
+self-consistent value).
 
 Key physics: channel-separated backreaction (proper HF prescription)
   - l=0 channel sees vacuum fluctuations from l≠0 modes (electron l=2)

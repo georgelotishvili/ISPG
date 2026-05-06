@@ -1,5 +1,6 @@
 """
-Quantum Hartree: compute η from first principles (QFT normalization).
+Quantum Hartree benchmark: compare QFT zero-point estimates of η
+against the empirical target η*=0.074.
 
 The mode expansion of the quantum field gives:
   ⟨δΦ²⟩ = Σ_n (2n_occ + 1)/(2ω_n) × |ψ_n(r)|²/(4π)
@@ -7,8 +8,15 @@ The mode expansion of the quantum field gives:
 For vacuum (n_occ=0) zero-point fluctuations:
   ⟨0|δΦ²|0⟩_tau = 1/(2ω_τ) × |u_τ(r)|²/(r² × 4π × norm_τ)
 
-This gives η_QM = 1/(8πω_τ) which we compare with η*=0.074.
-If they match, θ₀ = 2/9 is a PREDICTION, not a fit!
+The script computes η_τ = 1/(8πω_τ) (single-mode tau vacuum),
+the all-mode naive vacuum sum η_vac, and reports the ratios
+η*/η_τ_vac and η*/η_all_vac. Diagnostic: tau-only is in the
+right ballpark (sign and scale); the naive all-mode vacuum
+overshoots by ~4×. The empirical η*=0.074 remains a fit;
+the QFT estimate η_pred=0.071 (from QUANTUM/ISPG_Quantum.tex
+Eq.~eq:eta_predicted) requires explicit cross-channel
+suppression of the electron's (2ℓ+1)=5 degeneracy, whose
+first-principles derivation is an open task.
 """
 import sys
 sys.stdout.reconfigure(line_buffering=True, encoding='utf-8')
