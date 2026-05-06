@@ -243,22 +243,28 @@ print("\n" + "=" * 72)
 print(" F. დასკვნა")
 print("=" * 72)
 
+N_tau_pred = K * tau_state['deg'] * tau_state['kappa2']
+ratio_pred = N_tau_pred / 5.0
+mu_state = next((s for s in all_states if s['ell'] == 0 and s['n'] == 1), None)
+
 print(f"""
-   პირდაპირი შედეგი:
-   ──────────────────
    ფორმულა:  N_i = (1/κ²_e) × (2ℓ_i+1) × κ²_i
 
-   ელექტრ. (ℓ=2, n=0): N = 5 × 1 = 5 ✓
-   ტაუ    (ℓ=0, n=0): N = {K * tau_state['deg'] * tau_state['kappa2']:.1f}  (ელოდა 295,
-                                   ცდომილება {abs(K * tau_state['deg'] * tau_state['kappa2'] - 295)/295*100:.1f}%)
+   ელექტრ. (ℓ=2, n=0): N = 5 × 1 = 5 ✓ (ნორმალიზაცია)
+   ტაუ    (ℓ=0, n=0): N = {N_tau_pred:.2f}  (selected 295,
+                                   ცდომ. {abs(N_tau_pred - 295)/295*100:.2f}%)
 
-   ეს არის 3D პულსონის ფიზიკური წარმოშობა:
+   3D კავიტიდან მიღებული ფარდობა:
    ──────────────────
-   N = კუთხოვანი დეგენერაცია (2ℓ+1) × რადიალური ბმულობა κ²
+   N_τ/N_e = {N_tau_pred:.2f} / 5 = {ratio_pred:.2f}
+            ≈ 59 (selected ratio 295/5; ცდომილება {abs(ratio_pred - 59)/59*100:.2f}%)
 
-   59 = N_τ/N_e = [κ²_τ × 1] / [κ²_e × 5] · 5 = κ²_τ/κ²_e
-      = {ratio_k2:.2f}
-      ≈ 59 (ცდომილება {abs(ratio_k2 - 59)/59*100:.1f}%)
+   ე.ი. ზუსტი 59 = 295/5 არის selected integer ratio.
+   3D კავიტიდან მისი პირდაპირი გამოყვანა (კერძოდ, ცდომილების
+   0.87%-ის გასწორება) ღია რჩება.
+
+   მიუონი დარჩა გადაუჭრელად:
+     (ℓ=0, n=1) → N = {K * mu_state['deg'] * mu_state['kappa2'] if mu_state else float('nan'):.2f}  (selected 72)
 """)
 
 print("=" * 72)
