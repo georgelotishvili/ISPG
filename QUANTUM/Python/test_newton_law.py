@@ -320,12 +320,16 @@ print(f"""
   Component 1 is the particle's body (internal structure).
   Component 2 is the particle's gravitational influence (extends to ∞ as 1/r).
 
-  Newton's law F = GM₁M₂/d² follows EXACTLY from:
-    - Localized energy → 1/r potential (Gauss theorem / Poisson equation)
-    - Two-body interaction: U = -GM₁M₂/d
-    - Force: F = -dU/dd = GM₁M₂/d²
+  Newtonian shape and mass-product scaling at the Poisson/Gauss stage:
+    - Localized effective trace-dominant source → 1/r potential
+      (Gauss theorem / Poisson equation), once the effective source
+      is supplied
+    - Two-body interaction: U ∝ -M₁M₂/d
+    - Force: F = -dU/dd ∝ M₁M₂/d²
 
-  This is guaranteed by the ISPG field equation structure.
-  The numerical verification above confirms this with <1% accuracy
-  for d > 15 (well beyond oscillon radius).
+  The script verifies the dimensionless shape (1/r falloff and
+  1/d² force law) and mass-product scaling in G_eff=1 units to
+  <1% accuracy for d > 15. Absolute SI normalization
+  (G coefficient) ties to the K.1/K.2 c-conventions and is not
+  fixed by this script alone.
 """)

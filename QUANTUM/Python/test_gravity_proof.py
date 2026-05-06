@@ -395,20 +395,25 @@ print(f"""
     The l=1 mode is the Goldstone boson of broken translation symmetry.
     >>> It is NOT a particle. It carries no excitation energy.
 
-  LEVEL 3 — Gravitational mechanism:
-    The oscillon's energy density E_3D = {E_total:.4f} creates
-    a gravitational potential phi = -2GM/r via Bernoulli mechanism.
-    The l=1 mode shifts the oscillon center by delta:
+  LEVEL 3 — Gravitational mechanism (translation of the dressing):
+    Given the leading effective source supplied by the oscillon's
+    energy density E_3D = {E_total:.4f}, the K.2/K.3 Poisson/Gauss
+    chain produces an exterior gravitational potential
+    phi = -2GM/r. Under a center-of-mass displacement by delta,
+    this dressing transforms as
       phi(r) -> -2GM/|r - delta*z| = -2GM/r + dipole + ...
-    This is exactly how a gravitational source moves in response to forces.
-    >>> The l=1 mode IS the gravitational degree of freedom.
+    which is the standard 1/r dressing of a moved source.
+    The l=1 mode realizes precisely this center-of-mass shift.
+    >>> The l=1 mode IS the gravitational center-of-mass degree of freedom.
 
   CONCLUSION:
     The l=1 cavity mode is NOT a new particle.
     It is the oscillon's center-of-mass mode — the mechanism through which
     the particle's gravitational field follows the particle's motion.
-    This is PROVEN by:
+    This is PROVEN at the level of:
       (a) exact mathematical identity psi = dPhi0/dr,
       (b) Goldstone's theorem (zero excitation energy),
-      (c) explicit Bernoulli mechanism (displaced field -> shifted 1/r potential).
+      (c) translation of the 1/r dressing under displacement
+          (displaced field -> shifted 1/r potential), given the
+          K.3 Poisson/Gauss source-projection of K.2.
 """)
