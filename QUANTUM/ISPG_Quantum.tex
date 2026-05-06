@@ -5551,9 +5551,10 @@ triple of masses would satisfy $Q = 2/3$ with probability
 $\ll 10^{-4}$.  No explanation for this relation exists
 within the Standard Model.
 
-In the ISPG resonance framework, we propose that the
-Koide relation is a \emph{geometric constraint} on the
-eigenvalues of a three-dimensional resonator.  To see
+In the ISPG resonance framework, the Koide relation is an
+\emph{algebraic consistency condition} that any candidate
+3D-resonator eigenvalue spectrum must satisfy if it is to
+match the observed charged-lepton hierarchy.  To see
 this, consider the general eigenvalue problem
 \begin{equation}\label{eq:gen_eigenvalue}
   \hat{H}\,\psi_n = \lambda_n\,\psi_n,
@@ -5641,19 +5642,26 @@ This establishes the physical picture:
     perturbation is approximately rank-1 in the $(e, \mu, \tau)$
     subspace.  Since neither $\alpha$ nor $\lambda_0$ is a free
     parameter---both are fixed by the self-consistent oscillon
-    solution---the theory predicts a definite value of
-    $x \equiv \alpha/\lambda_0$.  The Koide relation $Q = 2/3$
-    is reproduced if and only if
-    $x = 33 + 24\sqrt{2} \approx 66.9$.
+    solution---the theory's self-consistent oscillon problem
+    is required to produce the value
+    $x \equiv \alpha/\lambda_0$ that satisfies $Q = 2/3$.
+    Mathematically this happens if and only if
+    $x = 33 + 24\sqrt{2} \approx 66.9$; deriving this
+    value of $x$ from the self-consistent oscillon problem
+    is the residual numerical task.
 \end{enumerate}
 
 Computing $x$ from first principles requires solving the
 full nonlinear eigenvalue system of
-Sec.~\ref{sec:mass_determination}.  As shown there,
-the mass ratios are determined by the geometry of the
-self-consistent confining potential, independently of
-$G$; gravitational self-energy corrections scale as
-$(m/\Mpl)^2 \sim 10^{-45}$ and are negligible.
+Sec.~\ref{sec:mass_determination}.  As stated there, the
+cavity geometry supplies the structural mode labels and
+the nonlinear eigenvalue problem; the quantitative
+charged-lepton mass ratios are currently carried by the
+MASS/Mathieu ladder of the companion MASS
+paper~\cite{Lotishvili2026Mass}, with the formal 3D-to-1D
+reduction remaining the open numerical task.  Gravitational
+self-energy corrections of order $(m/\Mpl)^2 \sim 10^{-45}$
+are negligible.
 Whether the self-consistent cavity spectrum by itself
 yields $x \approx 66.9$ is a concrete, falsifiable
 prediction of ISPG.  At present the numerical cavity
@@ -5682,9 +5690,10 @@ first-principles derivation of this value directly from
 the cavity eigenvalues of
 Sec.~\ref{sec:mass_determination} is an open calculation
 (numerical audit: \texttt{QUANTUM/Python/cavity\_vs\_mass\_audit.py}).
-The Koide constraint also serves as a powerful independent
-check: any candidate resonance spectrum that does not
-satisfy $Q = 2/3$ can be excluded.
+The Koide constraint also serves as a powerful algebraic
+consistency check: any candidate resonance spectrum that
+does not satisfy $Q = 2/3$ can be excluded, even when the
+spectrum is generated from a different effective formulation.
 
 \textit{Beyond rank-1.}---The pure rank-1 perturbation
 gives $\lambda_2 = \lambda_3$; the physical mass splitting
@@ -5883,10 +5892,17 @@ energy ($3\Omega^2\kappa^3$) to spatial gradient energy
 where the constant $5/3$ cancels in the Koide ratio.
 The Koide ratio evaluates to
 \begin{equation}
-  Q_{\rm cavity} = 0.66674, \qquad
+  Q_{\text{E1D-on-cavity}} = 0.66674, \qquad
   |Q - \tfrac{2}{3}| = 6.8 \times 10^{-5},
 \end{equation}
 reproducing the Koide relation to $0.009\%$ accuracy.
+Here $E_{1D}$ denotes the effective one-dimensional mass
+prescription evaluated on the cavity data; the test
+\texttt{SM/python/test\_e3d\_vs\_e1d\_background.py}
+shows that $\langle H\rangle/E_{1D}$ has coefficient of
+variation $0.82$ over the oscillon family.  Thus $E_{1D}$
+is not a constant multiple of the full 3D oscillon energy,
+and the full 3D-energy reduction remains open.
 
 This formula is singled out by the data: among fourteen
 candidate mass prescriptions---including
@@ -8308,7 +8324,7 @@ physical masses are \emph{not} a pure rank-1 perturbation
 but require lifting the $\lambda_{2} = \lambda_{3}$
 degeneracy.
 
-\textit{Key point: robustness under degeneracy-lifting.}---Now
+\textit{Degeneracy-lifting regime.}---Now
 consider a rank-1 perturbation plus a small
 degeneracy-lifting term:
 $\hat{H} = \lambda_{0}\mathbb{1}
@@ -8326,18 +8342,15 @@ calculation gives
 \end{equation}
 The correction is quadratic in $\epsilon$ and suppressed by
 $\epsilon^{2}/(\lambda_{0}\alpha)$, not by $\alpha/\lambda_{0}$.
+This establishes the perturbative robustness of the rank-1
+Koide constraint in the regime $\epsilon \ll \alpha$.
 For the physical charged leptons, $m_{e} \ll m_{\mu}$ implies
 $\epsilon \approx \lambda_{0}$, placing them outside the
-perturbative regime of this bound; nevertheless, direct
-evaluation of~\eqref{eq:Q_exact} with the measured masses
-gives $|Q - 2/3| \approx 10^{-5}$, confirming the robustness
-of the $Q = 2/3$ constraint far beyond the perturbative estimate.
-
-This establishes that $Q = 2/3$ is a \emph{robust}
-consequence of an approximately rank-1 perturbation of
-a degenerate system, valid for \emph{any} perturbation
-strength $\alpha$, with corrections controlled by
-the secondary splitting $\epsilon$, not by $\alpha$ itself.
+perturbative regime of this bound.  The agreement of the
+measured Koide value with $Q=2/3$ to $0.01\%$ is therefore
+the empirical target that the rank-1/E1D consistency argument
+is intended to explain, not an independent confirmation of
+perturbative robustness in the physical hierarchy.
 \hfill $\square$
 
 %===================================================================

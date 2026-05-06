@@ -185,7 +185,7 @@ for p in np.arange(0.5, 3.01, 0.01):
         print(f"  {p:6.2f} {'kappa^'+f'{p:.2f}'+'*(4w²+1)':>25} {Q:10.6f} {dQ:10.2e}")
 
 print(f"\n  Best p for kappa^p*(4w²+1): p = {best_p2:.3f}, |Q-2/3| = {best_dQ2:.2e}")
-print(f"  The (4*omega^2+1) factor is crucial: it shifts optimal p to exactly 3/2.")
+print(f"  The (4*omega^2+1) factor is crucial: it makes p=3 optimal for this scan.")
 
 # ==================================================================
 # TEST 3: Mathematical analysis — what is special about the eigenvalues?
@@ -280,12 +280,13 @@ print("\n" + "=" * 72)
 print("  CONCLUSIONS ON E_1D FORMULA")
 print("=" * 72)
 print(f"""
-  1. Q=2/3 is NOT generic: only 0.01% of random triples give Q near 2/3
+  1. Q=2/3 is NOT generic: only 0.001% of random triples give Q near 2/3
      with the E_1D formula. The eigenvalue spectrum is special.
 
   2. Pure kappa^p: best p = {best_p:.3f} gives |Q-2/3| = {best_dQ:.2e}
      kappa^p*(4w²+1): best p = {best_p2:.3f} gives |Q-2/3| = {best_dQ2:.2e}
-     The (4*omega^2+1) factor is essential — it makes p=3/2 optimal.
+     The (4*omega^2+1) factor is essential — it makes p=3 optimal
+     for kappa^p*(4*omega^2+1) on this scan.
 
   3. The Koide angle theta_0 = {np.degrees(best_theta):.2f} deg characterizes
      the eigenvalue spacing. It is determined by the cavity potential shape.
@@ -294,11 +295,12 @@ print(f"""
      the electron threshold at Phi0=2.29 is the KEY structural condition.
 
   Physical interpretation:
-    E_1D(omega) = kappa^3 * (4*omega^2 + 1) is the CANONICAL mass formula
-    for an oscillon with internal frequency omega. It captures:
+    E_1D(omega) = kappa^3 * (4*omega^2 + 1) is the effective 1D
+    mass prescription evaluated on the cavity data. It captures:
     - kappa^3: the spatial volume × amplitude² of the localized mode
     - (4*omega^2+1): the kinetic+potential energy ratio
     The formula is the 1D oscillon energy with the exact sech² profile.
-    In 3D, the r² volume factor modifies the absolute scale but not the
-    functional dependence on omega, which is why Q remains near 2/3.
+    In 3D, the test_e3d_vs_e1d_background.py diagnostic shows E_1D is
+    not a constant multiple of the full 3D energy (CV=0.82), so the full
+    3D-energy reduction remains open.
 """)

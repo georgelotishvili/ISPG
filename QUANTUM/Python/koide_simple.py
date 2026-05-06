@@ -111,6 +111,10 @@ Ep = [E(o) for o in p]
 Ep_s = sorted(Ep)
 Q_final = koide(*Ep_s)
 print(f"\nFINAL Q = {Q_final:.12f}")
+print("WARNING: free optimizer can land on unphysical points "
+      "(Omega <= 0, E <= 0, or infinite ratios).")
+print("Q = 2/3 here may correspond to such a point; a "
+      "physical-domain constrained optimizer is the follow-up.")
 print(f"|Q-2/3| = {abs(Q_final - 2/3):.2e}")
 print(f"Omega: {p[0]:.8f}, {p[1]:.8f}, {p[2]:.8f}")
 print(f"E:     {Ep_s[0]:.10f}, {Ep_s[1]:.8f}, {Ep_s[2]:.8f}")
