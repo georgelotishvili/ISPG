@@ -121,13 +121,19 @@ E1D/rank-1 cavity analysis, with $Q$ reproduced to
 $0.024\%$ in $N$-space and to $0.009\%$ in the E1D check,
 and with the $3$D-to-$1$D cavity bridge and the
 self-consistent $x = 33+24\sqrt{2}$ selection identified as
-the remaining numerical task; (xi)~a derivation of Newton's second law from the
-retarded potential of an accelerated oscillon, proving that
-$m_{\mathrm{inertial}} \equiv m_{\mathrm{gravitational}}$ as a
-mathematical identity rather than an axiom, and connecting inertia
-to medium hysteresis via a Klein--Gordon effective field whose
-microscopic tracking stiffness is motivated by the oscillon's
-quasi-normal mode structure;
+the remaining numerical task; (xi)~a perturbative localized-resonance
+derivation of the inertial response
+$\mathbf{F}=-C_{\mathrm{in}}\meff\mathbf{a}$ from the retarded
+potential of an accelerated oscillon, with
+$C_{\mathrm{in}}=1$ at leading order in $a/(c\omega_0)$,
+exhibiting $m_{\mathrm{inertial}}$ and
+$m_{\mathrm{gravitational}}$ as the same
+scalar-profile/Bernoulli-deficit bookkeeping within the
+weak-field, slow-acceleration, spherical equilibrium regime,
+and connecting inertia to medium hysteresis via a
+Klein--Gordon effective field whose microscopic tracking
+stiffness is motivated by the oscillon's quasi-normal mode
+structure;
 (xii)~a structural argument that the scalar sensitivity
 $s = 1/2$ and the suppression of scalar dipole radiation
 are protected at perturbative/EFT precision by a
@@ -351,11 +357,14 @@ the kinetic energy of particle resonances generates the static pressure
 deficit that manifests as the gravitational potential
 $\varphi = -\rs/r$.
 
-\textbf{Section~\ref{sec:inertia}} derives Newton's second law
-$\mathbf{F} = -\meff\,\mathbf{a}$ from the retarded potential of an
-accelerated oscillon, proves the equivalence
-$m_{\mathrm{inertial}} \equiv m_{\mathrm{gravitational}}$ as a
-mathematical identity, connects inertia to medium hysteresis
+\textbf{Section~\ref{sec:inertia}} obtains the inertial response
+$\mathbf{F} = -C_{\mathrm{in}}\,\meff\,\mathbf{a}$
+($C_{\mathrm{in}}=1$ at leading order) from the retarded
+potential of an accelerated oscillon, exhibits
+$m_{\mathrm{inertial}}$ and $m_{\mathrm{gravitational}}$
+as the same scalar-profile/Bernoulli-deficit bookkeeping
+within the weak-field, slow-acceleration, spherical
+equilibrium regime, connects inertia to medium hysteresis
 via a Klein--Gordon field, and provides a microscopic motivation
 for the effective hysteresis action template and its microscopic
 tracking stiffness from the quasi-normal mode structure of the
@@ -3347,6 +3356,15 @@ profile to fully readjust is
   = \frac{1}{\omega_0},
 \end{equation}
 which is the oscillation period of the resonance.
+This $t_{\mathrm{adj}}\sim 1/\omega_0$ is the microscopic
+oscillon-Compton tracking scale of the localized profile.  It is
+distinct from the exterior point-source/self-field light-crossing
+scale $\rs/c$ used in the perturbative test-body calculation of
+the main theory, which governs how rapidly the far-zone scalar
+dressing re-centers on the moving point source.  Both scales
+co-exist as different response channels: microscopic profile
+tracking, exterior light-crossing, and the macroscopic collective
+relaxation treated separately below.
 During acceleration, if the velocity change occurs
 on a timescale shorter than $t_{\mathrm{adj}}$, the
 profile cannot follow instantaneously.
@@ -3369,9 +3387,9 @@ around the resonance:
     backward pull.
 \end{enumerate}
 
-We now compute the net force rigorously by expanding
-the retarded scalar field to first order in the
-acceleration.
+We now organize the leading force calculation by
+expanding the retarded scalar field to first order in
+the acceleration.
 
 \textit{Retarded field of an accelerated source.}---Let
 the oscillon center follow a trajectory
@@ -3390,10 +3408,15 @@ is
   t_{r} = t - \frac{|\mathbf{x}-\mathbf{x}'|}{c}.
 \end{equation}
 For a compact oscillon ($R_{c} \ll r$) the source is
-effectively pointlike:
-$T = Mc^{2}\,\delta^{(3)}(\mathbf{x}'-\mathbf{r}(t))$.
+effectively pointlike, and for nonrelativistic rest mass
+in the $(-,+,+,+)$ signature the trace satisfies
+\begin{equation}\label{eq:T_pointlike}
+  T \simeq -Mc^{2}\,
+  \delta^{(3)}(\mathbf{x}'-\mathbf{r}(t)),
+\end{equation}
+i.e.\ positive rest energy gives a negative trace.
 Performing the spatial integration in
-Eq.~(\ref{eq:retarded_green}) gives
+Eq.~(\ref{eq:retarded_green}) with this sign convention gives
 \begin{equation}\label{eq:phi_point}
   \varphi(\mathbf{x},t)
   = -\frac{r_{s}}{|\mathbf{x} - \mathbf{r}(t_{r})|},
@@ -3430,25 +3453,15 @@ $\varphi_{\mathrm{eq}}(\xi) = -r_{s}/\xi$ is therefore
 with
 \begin{equation}\label{eq:delta_phi_accel}
   \delta\varphi(\mathbf{x},t)
-  = \frac{(\mathbf{a}\cdot\hat{x})\,|\mathbf{x}|}
-         {2c^{2}}\,
-    \varphi_{\mathrm{eq}}^{\prime}(|\mathbf{x}|),
+  = \frac{\rs}{2c^{2}}\,(\hat{x}\cdot\mathbf{a}),
 \end{equation}
 where the factor $1/2$ comes from
 $v(t) = at$ evaluated at the retardation-averaged time
-$t/2$.
-\emph{Notational remark.}---The combination
-$|\mathbf{x}|\,\varphi_{\mathrm{eq}}^{\prime}(|\mathbf{x}|) =
-r_{s}/|\mathbf{x}|$ on the Coulomb profile should be read as
-the dimensionless shorthand for the dipole amplitude of the
-retardation-induced displacement; the directly retarded
-expansion gives $\delta\varphi(\mathbf{x}) =
--r_{s}(\mathbf{a}\cdot\hat{x})/(2c^{2})$ at leading order in
-$a\,|\mathbf{x}|/c^{2}$, and the apparent $|\mathbf{x}|^{-1}$
-factor is reabsorbed by the $4\pi r^{2}\,dr$ measure of the
-subsequent volume integration.  The final inertial force
-law~(\ref{eq:F_ma}) is dimensionally consistent regardless of
-this intermediate convention.
+$t/2$.  This is the leading retarded dipolar perturbation
+in the Coulomb-tail region of the oscillon and matches the
+corresponding expansion in Appendix~17 of the main
+theory~\cite{Lotishvili2026}
+on the same trace-fixed source convention.
 This dipolar perturbation is odd under
 $\hat{x} \to -\hat{x}$: the field is enhanced
 in the direction opposite to $\mathbf{a}$ (trailing
@@ -3475,43 +3488,31 @@ Integration by parts converts the volume integral
 $\int d^{3}x\,\nabla(\delta P)$ into the surface form;
 since $\delta\varphi \propto (\mathbf{a}\cdot\hat{x})$
 is purely $\ell = 1$, only the dipolar harmonic survives.
-Substituting
-Eq.~(\ref{eq:delta_phi_accel}) into
-Eq.~(\ref{eq:P_asymmetry}) gives
-\begin{equation}\label{eq:delta_P_explicit}
-  \delta P
-  = -\frac{e^{\varphi_{\mathrm{eq}}}}{16\pi G}\,
-    \frac{(\mathbf{a}\cdot\hat{x})}{2c^{2}}
-    \Bigl[
-      r\,\bigl(\varphi_{\mathrm{eq}}^{\prime}\bigr)^{2}
-      + r\,\varphi_{\mathrm{eq}}^{\prime}\,
-        \varphi_{\mathrm{eq}}^{\prime\prime}
-      + |\nabla\varphi_{\mathrm{eq}}|^{2}\,
-        r\,\varphi_{\mathrm{eq}}^{\prime}
-    \Bigr],
-\end{equation}
-where all derivatives are evaluated at $r = |\mathbf{x}|$.
+The detailed radial projection depends on the regular
+retarded kernel of the localized oscillon tail.  We denote
+the resulting leading projection coefficient by
+$C_{\mathrm{in}}$ below.
 The angular integration projects
 $(\mathbf{a}\cdot\hat{x})\,\hat{x}$ onto $\mathbf{a}$:
 \begin{equation}\label{eq:F_angular}
   \int d\Omega\;(\mathbf{a}\cdot\hat{x})\,\hat{x}
   = \frac{4\pi}{3}\,\mathbf{a}.
 \end{equation}
-Combining the radial terms (the first two in
-Eq.~(\ref{eq:delta_P_explicit}) add to a total
-derivative $\partial_{r}[r(\varphi_{\mathrm{eq}}')^{2}]$
-whose boundary terms vanish, leaving the third)
-yields
+Combining the radial terms in the leading localized
+projection yields
 \begin{equation}\label{eq:F_radial}
   \mathbf{F}_{\mathrm{inertia}}
-  = -\frac{\mathbf{a}}{c^{2}}
+  = -C_{\mathrm{in}}\,\frac{\mathbf{a}}{c^{2}}
     \int_{0}^{\infty}\!dr\;4\pi r^{2}\,
     \frac{e^{\varphi_{\mathrm{eq}}}}{32\pi G}\,
     \bigl(\varphi_{\mathrm{eq}}^{\prime}\bigr)^{2}
   \equiv
-  -\frac{E_{\varphi}}{c^{2}}\,\mathbf{a},
+  -C_{\mathrm{in}}\,\frac{E_{\varphi}}{c^{2}}\,\mathbf{a},
 \end{equation}
-where
+where $C_{\mathrm{in}}$ is the canonical leading
+projection coefficient for the localized-resonance inertia
+integral ($C_{\mathrm{in}}=1$ at this leading order).
+Here
 \begin{equation}\label{eq:E_phi_def}
   E_{\varphi}
   \equiv \int d^{3}x\,
@@ -3522,24 +3523,33 @@ is the total gradient (kinetic) energy of the
 equilibrium oscillon---precisely the quantity
 identified in Eq.~(\ref{eq:rho_schwarz}) as the
 scalar-field energy density integrated over all space.
+The full coefficient closure is tied to the regular-field
+closure of the MAIN/17 self-force calculation and to the
+Bernoulli normalization of the oscillon energy
+$E_{\varphi}$ identified in
+Sec.~\ref{sec:bernoulli_identity}.
 
-\textit{Identification with effective mass.}---By the
-Bernoulli identity~(\ref{eq:bernoulli_scalar}),
-$E_{\varphi}$ equals the total pressure deficit, which
-is the gravitational binding energy.  From
-Eq.~(\ref{eq:meff_quantum}), $E_{\varphi} = \meff c^{2}$.
-Therefore:
+\textit{Identification with effective mass.}---Under the
+Bernoulli normalization tracked in
+Sec.~\ref{sec:bernoulli_identity}, with the exterior-Coulomb
+integral matched to the localized oscillon energy through
+the same source normalization used in the Newtonian-recovery
+section, the gradient energy $E_{\varphi}$ is identified
+with $\meff c^{2}$ on the spherical equilibrium oscillon
+profile, giving
 \begin{equation}\label{eq:F_ma}
   \boxed{
   \mathbf{F}_{\mathrm{inertia}}
-  = -\meff\,\mathbf{a}
-  = -m_{0}\,e^{\varphi/2}\,\mathbf{a}.
+  = -C_{\mathrm{in}}\,\meff\,\mathbf{a}
+  = -m_{0}\,e^{\varphi/2}\,\mathbf{a}
+  \quad (C_{\mathrm{in}}=1\ \text{at leading order}).
   }
 \end{equation}
 
-This is Newton's second law, derived from the causal
-(retarded) propagation of the scalar field during
-acceleration.  The derivation is perturbative in
+This is the Newtonian inertial response in the weak-field,
+slow-acceleration, spherical-equilibrium regime considered
+here, derived from the causal (retarded) propagation of the
+scalar field during acceleration.  The derivation is perturbative in
 $a/(c\omega_{0}) \ll 1$; at higher orders, one expects
 radiation-reaction corrections of the
 Abraham--Lorentz type by analogy with the standard

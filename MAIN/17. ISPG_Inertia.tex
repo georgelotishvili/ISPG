@@ -121,15 +121,29 @@ source velocity at the retarded time.
 \subsection{Expansion to order $a/c^2$}
 
 For non-relativistic motion ($v_s \ll c$), expand the
-retarded-time condition.  Define
+retarded-time condition from the Lienard--Wiechert form.  Define
 $\mathbf{r} \equiv \mathbf{x} - \mathbf{x}_s(t)$
 (displacement from the \emph{current} position) and
-$r \equiv |\mathbf{r}|$.  To first order in $a$:
+$r \equiv |\mathbf{r}|$.  Keeping first order in $v_s/c$
+and acceleration:
 \begin{equation}\label{eq:tret_expand}
   t - t_{\mathrm{ret}} = \frac{r}{c}
-  + \frac{r^2}{2c^3}\,\hat{\mathbf{r}}\cdot\mathbf{a}
-  + O(a^2)\,.
+  + \frac{r}{c^2}\,\hat{\mathbf{r}}\cdot\mathbf{v}_s
+  - \frac{r^2}{2c^3}\,\hat{\mathbf{r}}\cdot\mathbf{a}
+  + O\!\left(\frac{r v_s^2}{c^3},
+             \frac{r^2 v_s a}{c^4},
+             \frac{r^3 a^2}{c^5}\right)\,.
 \end{equation}
+The velocity term is the standard Lienard--Wiechert
+correction.  In the instantaneous rest frame
+($\mathbf{v}_s=0$), the acceleration term carries the
+negative sign: the retarded position lags the current
+position along the acceleration direction.  The dipolar
+perturbation below must therefore be obtained from the
+full retarded Green function, including the
+Lienard--Wiechert denominator
+$1-\hat{\mathbf{n}}\cdot\mathbf{v}_s/c$, not by changing
+the sign of Eq.~(\ref{eq:tret_expand}) alone.
 
 Substituting into~(\ref{eq:retarded}) and expanding:
 \begin{equation}\label{eq:phi_expand}
@@ -209,13 +223,25 @@ Detweiler--Whiting / matched-asymptotic split:
 \end{equation}
 where the singular part contains the $1/\epsilon$ term and is
 absorbed into mass renormalisation, while the regular part is
-finite on the worldline.  Keeping the next term in the near-zone
-expansion gives
+finite on the worldline.  The angular average above explicitly
+displays only the singular piece
+$\rs a_i/(3c^2\epsilon)$; the finite regular coefficient is
+the central object of the Detweiler--Whiting /
+matched-asymptotic regularisation and is required to give
+the form
 \begin{equation}\label{eq:grad_shell_expand}
   \left\langle \partial_i(\delta\phi)\right\rangle_{\epsilon}
-  = \frac{\rs}{3c^2\,\epsilon}\,a_i + \frac{1}{c^2}\,a_i + O(\epsilon)\,.
+  = \frac{\rs}{3c^2\,\epsilon}\,a_i
+  + C_{\mathrm{reg}}\,\frac{a_i}{c^2}
+  + O(\epsilon)\,.
 \end{equation}
-Therefore the regularised gradient is the finite part:
+The coefficient $C_{\mathrm{reg}}$ is determined by an
+explicit next-order near-zone expansion or by the
+Detweiler--Whiting decomposition: the displayed angular
+average fixes the singular part, while the finite regular
+part is the residual technical input.  With the canonical
+regular-field value $C_{\mathrm{reg}}=1$, the regularised
+gradient is
 \begin{equation}\label{eq:grad_delta}
   \nabla(\delta\phi)\bigg|_{\mathrm{reg}}
   \equiv \lim_{\epsilon\to 0}
@@ -224,7 +250,8 @@ Therefore the regularised gradient is the finite part:
   = \frac{\mathbf{a}}{c^2}\,.
 \end{equation}
 
-Equivalent field-momentum bookkeeping gives the same result.
+In the same regularisation scheme, equivalent field-momentum
+bookkeeping gives the same result.
 The scalar-field momentum within radius $\epsilon$ is
 $\mathbf{P}_{\phi}(\epsilon)=\int_{r<\epsilon}d^3x\,\Pi^i$
 with conjugate momentum $\Pi^i=(c^2/2)\dot{\phi}\partial^i\phi$
@@ -266,20 +293,21 @@ $\Gamma^i_{jk}\,v^j v^k$, which is $O(v^2/c^2)$.
 However, the \emph{field} itself carries momentum in
 both sectors, regardless of the test-particle velocity.
 
-The gravitational field momentum density of the
-scalar-metric system has the form
-$\mathcal{P}^i \propto \dot\phi\,\partial^i\phi$,
-integrated over the spatial volume with the full
-metric weight $\sqrt{-g}$.  Because $\gamma_{\mathrm{PPN}}=1$
-(main theory Sec.~5.1), the spatial perturbation
-$\delta g_{ij}=-\delta\phi\,\delta_{ij}$ carries exactly
-the same gravitational weight as the temporal perturbation
-$\delta g_{00}=\delta\phi$.  When the body accelerates,
-the retardation-induced asymmetry $\delta\phi$
-(Eq.~\ref{eq:delta_phi}) modifies the field momentum
-in both sectors equally.
+The temporal-sector calculation of
+Eq.~(\ref{eq:Pfield_scalar}) yields
+$-m\mathbf{a}/2$.  The remaining
+$-m\mathbf{a}/2$ contribution is supplied by the
+spatial-metric sector: with PPN $\gamma=1$ and equal
+gravitational weight of the temporal and spatial metric
+perturbations, the bi-conformal momentum integral doubles
+the temporal piece structurally.  An explicit
+field-theoretic derivation of the spatial-sector
+contribution from the full bi-conformal Noether momentum
+integral is the residual technical task and is not
+displayed here.
 
-The total field momentum within radius~$\epsilon$ is
+With this bi-conformal temporal-plus-spatial bookkeeping, the
+total field momentum within radius~$\epsilon$ is
 (cf.\ Eq.~\ref{eq:Pfield_scalar} for the scalar part):
 \begin{equation}\label{eq:P_total}
   \mathbf{P}_{\mathrm{field}}(\epsilon)
@@ -297,10 +325,13 @@ field-momentum reaction force is
   = -m\,\mathbf{a}\,.
 \end{equation}
 
-This is Newton's second law: the inertial mass appearing
-in $F = m\,a$ is identically the gravitational mass~$m$
-that sources the field.  The equivalence principle is
-a \textbf{theorem}, not a postulate.
+This is the Newtonian inertial response in the weak-field,
+regularised point-source limit: the inertial mass appearing
+in $F = m\,a$ is the same coupling~$m$ that sources the
+field.  The qualitative mechanism is the one stated in the
+main text: retarded self-field readjustment creates a
+fore--aft asymmetry, and the temporal and spatial metric
+sectors together supply the inertial reaction.
 
 %===================================================================
 \section{Uniform motion: zero drag}\label{sec:zero_drag}
@@ -375,6 +406,11 @@ For a point particle, $R_{\mathrm{eff}} \sim \rs$
 This is far below any observable time scale.  The
 inertial response is effectively instantaneous for
 elementary particles, as observed experimentally.
+This $\rs/c$ estimate is the exterior point-source/self-field
+light-crossing bookkeeping; the microscopic oscillon
+Compton-period tracking scale $1/\omega_0$ discussed in the
+quantum extension~\cite{Lotishvili2026Q} describes a distinct
+profile-readjustment channel.
 
 For a neutron star ($m \sim 1.4\,M_\odot$,
 $\rs \approx 4\;\mathrm{km}$):
@@ -390,44 +426,45 @@ mergers and post-merger oscillations.
 
 %===================================================================
 \section{Identity of gravitational and inertial mass:
-  formal proof}\label{sec:equivalence}
+  perturbative statement}\label{sec:equivalence}
 %===================================================================
 
-The result~(\ref{eq:F_total}) already establishes the
-identity.  Here we state it as a theorem for clarity.
+Within the assumptions used here---weak field, slow
+motion ($v\ll c$), first order in $a/c^2$, and a point
+or compact source treated with the regularisation
+conventions of Sec.~\ref{sec:inertial_force}---the
+bi-conformal action~(\ref{eq:action_app17}) gives the
+same mass parameter in the gravitational and inertial
+responses.  The gravitational mass $m_g$ is the coupling
+in the external-field force law, fixed by the body's
+contribution to the source~$T$ of the field equation.
+The inertial mass $m_i$ is the proportionality constant
+in the retarded self-field response
+$\mathbf{F}_{\mathrm{self}}=-m_i\mathbf{a}$.
+Both enter through the same action and the same scalar
+coupling, so in this perturbative regime the two
+parameters coincide.
 
-\begin{quote}
-\textbf{Theorem (Equivalence principle as a theorem).}
-In the bi-conformal scalar-tensor theory defined by the
-action~(\ref{eq:action_app17}), the inertial mass of any body
-is identically equal to its gravitational mass.
-\end{quote}
+This matches the test-particle/minimal-coupling WEP
+scope of the main theory: matter follows geodesics of
+one physical metric and carries a single mass parameter.
+The exact statement for a matter-filled compact body
+beyond leading order in $a/c^2$ requires the full
+nonlinear ADM/Noether momentum derivation in the
+bi-conformal background and remains an open technical
+task.
 
-\textit{Proof.}---%
-The gravitational mass $m_g$ is defined as the coupling
-constant in the force law
-$\mathbf{F} = -m_g\,\nabla\varphi_{\mathrm{ext}}$, which
-is determined by the body's contribution to the
-source~$T$ of the field equation.  The inertial mass
-$m_i$ is defined as the proportionality constant in
-$\mathbf{F}_{\mathrm{self}} = -m_i\,\mathbf{a}$, which
-arises from the retarded self-field
-(Sec.~\ref{sec:inertial_force}).  Both $m_g$ and $m_i$
-are proportional to $\rs = 2Gm/c^2$, and both receive
-contributions from the same action~(\ref{eq:action_app17})
-through the same coupling.  Hence $m_g = m_i$
-identically, for any body, at any compactness.
-\hfill$\square$
-
-This result is composition-independent: the field
-equation~(\ref{eq:wave}) is universal (the source is
-$T = g^{\mu\nu}T_{\mu\nu}$, not a composition-dependent
-charge).  The E\"otv\"os parameter
+In this perturbative test-body regime the E\"otv\"os parameter
 \begin{equation}\label{eq:eotvos}
   \eta = 2\,\frac{|m_g - m_i|}{m_g + m_i} = 0
 \end{equation}
-vanishes exactly, consistent with the MICROSCOPE bound
-$\eta < 10^{-15}$.
+vanishes.  This is consistent with the MICROSCOPE
+experiment~\cite{MICROSCOPE2022}, which constrains the
+E\"otv\"os parameter at the $10^{-15}$ level, with final
+result
+$\eta(\mathrm{Ti},\mathrm{Pt}) =
+[-1.5 \pm 2.3\,(\mathrm{stat})
+ \pm 1.5\,(\mathrm{syst})]\times10^{-15}$ at $1\sigma$.
 
 %===================================================================
 \section{Comparison with Mach's principle}
@@ -489,24 +526,30 @@ achieved without action at a distance.
   \mathbf{a}$ (Eq.~\ref{eq:delta_phi}).
 
 \item This asymmetry modifies the gravitational field
-  momentum.  The renormalised reaction force is
+  momentum.  With the canonical regular coefficient and
+  the bi-conformal temporal-plus-spatial momentum
+  bookkeeping, the renormalised reaction force is
   $\mathbf{F} = -m\,\mathbf{a}$ (Eq.~\ref{eq:F_total}),
   combining equal contributions from the temporal ($g_{00}$)
   and spatial ($g_{ij}$) sectors of the field momentum
   (the equality follows from $\gamma_{\mathrm{PPN}}=1$).
-  \textbf{This is Newton's second law, derived from the
-  field equations.}
+  The remaining technical task is the explicit
+  Detweiler--Whiting / Noether derivation of the finite
+  regular coefficient and the spatial-sector contribution
+  in the full bi-conformal background.
 
 \item Uniform rectilinear motion produces zero drag
   (Sec.~\ref{sec:zero_drag}): the Lorentz-boosted field
   is symmetric about the body, so the net self-force
   vanishes.
 
-\item The equivalence principle $m_g = m_i$ is a
-  \textbf{theorem}, not a postulate: both masses arise
-  from the same field equation and the same coupling
-  (Sec.~\ref{sec:equivalence}).  The E\"otv\"os parameter
-  vanishes exactly.
+\item In the weak-field, slow-motion, regularised
+  point-source regime used here, $m_g=m_i$ follows from
+  the same field equation and the same coupling
+  (Sec.~\ref{sec:equivalence}).  The corresponding
+  test-body E\"otv\"os parameter vanishes in this regime;
+  the exact matter-filled compact-body statement belongs
+  to the full nonlinear momentum calculation.
 
 \item The relaxation time
   $\tau \sim \rs/c \sim 2Gm/c^3$ is
