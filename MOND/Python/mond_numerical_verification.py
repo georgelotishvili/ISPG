@@ -148,6 +148,8 @@ if __name__ == "__main__":
     print(f"  r_M      = {r_M/kpc:.1f} kpc  (MOND transition radius)")
     print(f"  r_s      = {r_s:.3e} m  (Schwarzschild radius)")
     print(f"  epsilon  = {eps:.3e}  (dimensionless Hubble parameter)")
+    print(f"  Fiducial disk: R_d = 3.5 kpc "
+          f"(MW-like; matches PDF figures in MOND/Python/PDF/)")
 
     print(f"\n--- MOND scale ---")
     print(f"  a0 (predicted) = {a0_pred:.4e} m/s^2")

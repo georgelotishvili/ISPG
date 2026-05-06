@@ -5,9 +5,10 @@ ISPG — ერთი ოსცილონიდან ყველა პრ�
   **ერთი ობიექტი (ოსცილონი) → მრავალი SM პრედიქცია**
 
 ერთი ოსცილონის პროფილიდან φ₀(r) (ერთხელ გამოთვლილი) ვღებულობ:
-  • Mathieu პარამეტრი q (G₂(X)-დან პირველი პრინციპებით)
-  • ლეპტონების მასები (e, μ, τ)
-  • მსუბუქი კვარკების მასები (u, d)
+  • fitted Mathieu პარამეტრის q=1.853 close semi-analytic support
+    (q_computed≈1.9065, gap ≈2.89%)
+  • ლეპტონების მასების ladder check (e, μ anchors; τ post-fit)
+  • მსუბუქი კვარკების mass-convention check (u, d)
   • პრედიქტირებული რეზონანსები N=3, N=4 (კეV)
   • Koide Q = 2/3
   • 3D ცავიტის სპექტრი (n, ℓ)
@@ -19,12 +20,13 @@ ODD Mathieu მახასიათებელი მნიშვნელო�
 
 N-მინიჭებები ქაღალდიდან (MASS §4.3-4.4, ხაზი 1849-1854, 2799):
   e (5), μ (72), τ (295) — ლეპტონები, 0.001-0.2% შეცდომა
-  u (10), d (15) — მსუბუქი კვარკები, <1% შეცდომა
+  u (10), d (15) — მსუბუქი კვარკები; PDG-style scan gives
+  u≈5.62%, d≈1.80%, so the mass convention remains explicit
   N=3 → 186 keV, N=4 → 329 keV — წინასწარ-ნახსენები რეზონანსები
 
-NOTE: ispg_oscillon_simulation.py-ის PARTICLES ლექსიკონი
-შეიცავს არასწორ N-მინიჭებებს (N=18 vs 10, N=312 vs 295).
-აქ გამოყენებულია ქაღალდში ცხადი მნიშვნელობები.
+NOTE: current MASS/python/ispg_oscillon_simulation.py already uses
+the corrected paper assignments. This script keeps the same N-map
+and reports any residuals directly from the live calculation.
 
 არ ცვლის .tex-ს.
 """
@@ -100,7 +102,7 @@ def find_oscillon(Phi_c=PHI_C, alpha=ALPHA_NL, r_max=40.0,
 
 
 # =====================================================================
-#  3. Mathieu q ოსცილონის პროფილიდან (პირველი პრინციპებით)
+#  3. Mathieu q semi-analytic support from the oscillon profile
 # =====================================================================
 
 def compute_q_from_profile(r, Phi_bg, Phi0, alpha=ALPHA_NL):
@@ -173,8 +175,8 @@ def main():
     print(f"    Ω მოსალოდნელი = {OMEGA_EXP}")
     print(f"    შეცდომა = {err_Omega:.4f}%")
 
-    # --- Mathieu q პირველი პრინციპებით ---
-    print("\n[2] Mathieu q ოსცილონის პროფილიდან")
+    # --- Mathieu q semi-analytic support ---
+    print("\n[2] Mathieu q semi-analytic support ოსცილონის პროფილიდან")
     q_comp, dq_m, dq_g, dq_h = compute_q_from_profile(r, Phi, PHI_C)
     print(f"    q₀ (self-consistency)    = 1.000000")
     print(f"    δq_metric                = {dq_m:.6f}")
@@ -264,7 +266,7 @@ def main():
   პრედიქცია                              შეცდომა         სტატუსი
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Ω_oscillon = 0.866                     {err_Omega:>6.3f}%         ✓ სრული
-  q = 1.853 (პირველი პრინციპებით)         {abs(q_comp-Q_FIT)/Q_FIT*100:>6.2f}%         ✓ 2.9%""")
+  q_fit = 1.853 (semi-analytic support)   {abs(q_comp-Q_FIT)/Q_FIT*100:>6.2f}%         ~ 2.9%""")
 
     for name, N, b_N, ratio, obs_ratio, m_pred, err in results:
         err_abs = abs(err)
@@ -285,7 +287,8 @@ def main():
   ერთი ოსცილონის პროფილიდან:
     • ერთი Ω-ს გამოთვლა <0.01% შეცდომით
     • იგივე პროფილიდან q = 1.906 (target 1.853, ~3% შეცდომა)
-    • იგივე q-თი 5 ნაწილაკის მასა <1% (e, μ, u, d) ან <0.2% (τ)
+    • იგივე fitted q-თი e და μ calibration anchors-ია;
+      τ არის 0.177% post-fit check; u=5.624%, d=1.798%
     • ზუსტი N=3, N=4 რეზონანსული პრედიქციები
     • Koide Q = 2/3 ზუსტი (rank-1), 0.1% Mathieu-ში
     • 8 გლუონი რობუსტურად (N ∈ {{8,10}} ბინარული)
@@ -294,17 +297,12 @@ def main():
   ეს არის ISPG-ის გამაერთიანებელი ძალის რიცხვითი დემონსტრაცია.
 
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  აღმოჩენილი ხარვეზი ispg_oscillon_simulation.py-ში:
+  N-map status:
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    PARTICLES ლექსიკონში N-მინიჭებები:
-      N=312 → τ  (არასწორი — ქაღალდი ამბობს N=295, ხაზი 1854)
-      N=18  → u  (არასწორი — ქაღალდი იძლევა m_u=2.04 MeV, რაც N=10-ს შეესაბამება)
-      N=24  → d  (არასწორი — m_d=4.59 MeV შეესაბამება N=15-ს)
-      N=78  → t, N=55 → c, N=65 → b — გაუანგარიშოების გარეშე ვარაუდები
-      N=7,8 → W,Z — ფორმულა m ∝ b_N არ უმარჯვდება ტეტრა-გრამ ბოზონებს
-
-    ეს ხარვეზი .tex-ში არ ჩანს — მხოლოდ Python სკრიპტშია.
-    შესწორება მომავალი სამუშაოა.
+    Current MASS/python/ispg_oscillon_simulation.py already uses the
+    corrected paper assignments for N=3, N=4, e, u, d, μ, τ.
+    The remaining open task is physical N-selection, not correcting
+    that script's PARTICLES dictionary.
 """)
 
 

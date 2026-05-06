@@ -744,8 +744,12 @@ def main():
        2D kernel, and all three closures now sit inside a unified
        cross-verification suite; both undropped fixed-source hyperbolic
        propagation and the coupled evolving-source 2+1D closure are now
-       verified, so no separate internal closure gap remains for the
-       mature spiral-galaxy MOND sector
+       verified.  No algebraic/transport-side closure gap remains;
+       the 2D source-side, operator-side, kernel, and profile
+       realizations are numerically benchmarked with quantified
+       residuals (~10^-1 full-field RMS, a few percent in the
+       mu-profile).  The closed-form Green-kernel/profile refinement
+       at precision level remains the open quantitative task.
 """)
 
     elapsed = time.time() - t0

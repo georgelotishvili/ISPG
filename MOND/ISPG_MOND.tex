@@ -1792,6 +1792,19 @@ axisymmetric completion must use an \emph{adaptive nonlocal kernel}: more
 structured than a simple positive smoothing, but better behaved than the naive
 derivative-source extension.
 
+\paragraph{Mathematical target vs implemented surrogate.}
+The mathematical target of the source-side kernel is the unique AQUAL
+phantom-density / Green-function object for the well-posed elliptic
+BVP~\eqref{eq:aqual_from_ispg}.  The implementation in
+\texttt{MOND/Python/pde\_2d\_swirl\_verify.py} and the blind
+self-calibrated 2D kernel of
+\texttt{phase\_al\_blind\_selfcalibrated\_kernel\_2d.py} uses a
+boundary-normalized, enclosed-mass numerical Green-kernel surrogate
+with explicit regularity-fixed core, asymptotic-annulus matching, and
+Green prefactor; the surrogate approximates the unique mathematical
+object with the quantified residuals reported in
+Sec.~\ref{sec:tier_residuals}.
+
 That next step has now also been explored.  In
 \nolinkurl{phase_x_adaptive_kernel_2d.py}, each radial source shell spreads
 its extra transported source over neighboring radii with a
@@ -3308,6 +3321,14 @@ galaxy potential.  The completed implementation uses:
   $<10^{-3}$ across $x\in[10^{-2},10^2]$
 \end{itemize}
 
+The fiducial disk parameters are labelled per numerical surface:
+\texttt{MOND/Python/mond\_numerical\_verification.py} and its PDF
+figures use a MW-like disk with $R_d=3.5\,{\rm kpc}$, while the
+source-kernel fiducial derivation later in this section uses
+$R_d=10\,{\rm kpc}$.  Both are representative mature-spiral
+fiducials; the larger value is convenient for the kernel-analytic
+limit.
+
 \noindent\fbox{\parbox{0.95\linewidth}{\centering
 \textbf{Verification status (Phase~11)}\\[0.5em]
 The numerical checks fall into four tiers of increasing
@@ -3356,7 +3377,7 @@ algebraic $\mu$ pointwise.\\[0.2em]
   \footnotesize--- &
   \footnotesize$\sim\!14\%$ \\
 \end{tabular}\\[0.2em]
-All six channels converge to the same static branch (mutual RMS
+All six channels converge to the same static branch (mutual field RMS
 $4$--$7\%$).  The $\mu$-profile (the direct observable)
 is consistently $2$--$5\%$; the larger full-field residual is
 discussed in Sec.~\ref{sec:2d_mismatch}.\\[0.3em]
@@ -3386,10 +3407,10 @@ The $\varepsilon$-gap between the perturbative seed and the
 operating rate is resolved by global stability of the activation
 ODE (Sec.~6.4).}}
 
-\subsection{Nature of the residual 2D mismatch (resolved)}\label{sec:2d_mismatch}
+\subsection{Nature of the residual 2D mismatch (curl-field origin identified)}\label{sec:2d_mismatch}
 
 The source-side and operator-side 2D benchmarks consistently show
-$\sim6$--$13\%$ RMS mismatch against the 1D algebraic target
+$\sim6$--$13\%$ field RMS mismatch against the 1D algebraic target
 $\mu=x/(1+x)$.  Two observations constrain the origin
 of this residual, and three diagnostic tests (below) resolve it
 as the standard AQUAL curl field in disk geometry:
@@ -3409,7 +3430,7 @@ as the standard AQUAL curl field in disk geometry:
   The transport-side, source-side, and operator-side benchmarks,
   as well as three independent time-dependent solves (quasi-static,
   hyperbolic, coupled-source), all converge to the same static
-  branch with mutual RMS discrepancies of $\sim4$--$7\%$.  This
+  branch with mutual field RMS discrepancies of $\sim4$--$7\%$.  This
   internal consistency across six independent numerical methods
   strongly suggests that the common branch is the correct 2D
   solution, and the residual against the 1D algebraic target
@@ -3481,11 +3502,13 @@ comparison for rotation-curve predictions is the AQUAL solution itself,
 which is the unique, well-posed output of the
 BVP~\eqref{eq:aqual_from_ispg}.
 
-With the curl-field origin established, the residual is no longer a gap
-in the derivation.  The $\mu$-profile (the direct observable) is
+With the curl-field origin established, the residual is identified
+as a known geometric feature of MOND in disk geometry, not a
+derivation gap.  The $\mu$-profile (the direct observable) is
 verified to $\sim2$--$5\%$ across multiple independent channels and
-galaxy types.  The full-field mismatch is a known geometric effect
-inherent to all MOND theories in disk geometry.
+galaxy types; the full-field mismatch reflects the AQUAL curl in
+disk geometry.  A closed-form Green-kernel realization at precision
+level remains the open quantitative refinement.
 
 \subsection{The complete derivation chain}
 
@@ -3886,8 +3909,9 @@ Distinctions:
     dark-matter phase outside the core.  ISPG addresses cluster
     binding through resonant-tail overlap
     (Sec.~\ref{sec:cluster_binding}), where the required retention
-    time ($\sim\!0.4\,t_{\rm dyn}$) is naturally provided by ICM
-    cold-front scattering; a dedicated 3D cluster solve is in
+    time ($\sim\!0.4\,t_{\rm dyn}$) is a conditional cluster-flow
+    benchmark and ICM cold-front scattering is the proposed
+    retention mechanism; a dedicated 3D cluster solve is in
     preparation.
   \item \textbf{Cosmology.}  Superfluid dark matter modifies the
     matter power spectrum through the dark-matter phonon sector;
@@ -3997,7 +4021,7 @@ prediction---galaxy-age-dependent $a_0$
 \section{Derived vs.\ stated: compact ledger}\label{sec:ledger}
 
 \noindent\textbf{Derived / conditionally selected within the closure.}
-Damped-oscillator mode equation \eqref{eq:damped} on FLRW; coherence scale \eqref{eq:jeans}; robustness of $a_0\propto cH$ (Sec.~\ref{sec:a0}); coefficient $1/(2\pi)$ from \eqref{eq:a0}; metric verified via SageManifolds (Sec.~6.5); Fourier decomposition of scalar field (Sec.~6.4); relaxation time scale $\tau_{\rm rel}\sim c/g$ within the rotating-medium transport ansatz; load/free law $Z_{\rm rot}(y)=1/(1+\sqrt{y})$ MaxEnt-selected from a binary free/load partition with loaded-state measure linear in $\sqrt{y}$; impedance-matched invariant $\hat I=2K_{\rm rot}^2A_{\rm vort}$ within the power-law family; self-consistent derivation of $\mu(x)=x/(1+x)$ on the mature occupied branch (Sec.~6.4); Green's function consistency (Sec.~6.6); deep-MOND BTFR \eqref{eq:btfr}; EFE as an environment discriminator; equatorial disk formation from $g_{t\phi}\propto\sin^2\theta$ anisotropy (Sec.~\ref{sec:disk}).
+Damped-oscillator mode equation \eqref{eq:damped} on FLRW; coherence scale \eqref{eq:jeans}; robustness of $a_0\propto cH$ (Sec.~\ref{sec:a0}); coefficient $1/(2\pi)$ from \eqref{eq:a0}; metric verified via SageManifolds (Sec.~6.5); Fourier decomposition of scalar field (Sec.~6.4); relaxation time scale $\tau_{\rm rel}\sim c/g$ within the rotating-medium transport ansatz; load/free law $Z_{\rm rot}(y)=1/(1+\sqrt{y})$ MaxEnt-selected from a binary free/load partition with loaded-state measure linear in $\sqrt{y}$; impedance-matched invariant $\hat I=2K_{\rm rot}^2A_{\rm vort}$ within the power-law family; self-consistent derivation of $\mu(x)=x/(1+x)$ on the mature occupied branch (Sec.~6.4); Green's function consistency (Sec.~6.6); deep-MOND BTFR \eqref{eq:btfr}; EFE as an environment discriminator; equatorial vertical-confinement contribution from $g_{t\phi}\propto\sin^2\theta$ anisotropy (Sec.~\ref{sec:disk}).
 
 \medskip
 \noindent\textbf{Proved / derived in the coherence-vortex sector.}
@@ -4009,15 +4033,21 @@ Weak-field slow-rotation expansion \eqref{eq:weak_field_rotating}; quasi-station
 
 \medskip
 \noindent\textbf{Verification status.}
-SageManifolds symbolic: metric, connection, and d'Alembertian verified (Sec.~8.1); Bessel eigenvalues computed (Sec.~6.4); Propositions~3--4 proved (Sec.~\ref{sec:dimless}); transport-side algebraic self-consistency of $\mu(x)$ confirmed (Python script) and by Chebyshev spectral collocation ($N=200$) on the self-consistent activation branch; $\tau_{\rm rel}=c/g$ uniquely selected within the old transport representation (Sec.~\ref{sec:closure_derivation}); spatial equilibrium $\tau_{\rm sp}\ll t_H$ at all radii and mature-branch closure $C_{\rm eff}=A_{\rm vort}+\mathcal{O}(\delta_{\rm sp},\delta_N)$ (Sec.~\ref{sec:ceff_profile}); source-side nonlocal 2D kernel with parameters fixed by regularity and outer asymptotics gives $\sim6$--$13\%$ RMS on the compact matched box and $\sim10\%$ on the widened disjoint-annulus benchmark; operator-side 2D AQUAL gives $\sim11\%$ RMS on the compact matched box and $\sim9\%$ on the widened benchmark, with $\mu$ supplied as input; fixed-source and coupled hyperbolic evolutions relax toward the selected static branch; form invariance of $\mu$ under $O(1)$ rescaling of $a_0$; $K\approx 8$ analytically derived (Sec.~\ref{sec:K_analytic}).
+SageManifolds symbolic: metric, connection, and d'Alembertian verified (Sec.~8.1); Bessel eigenvalues computed (Sec.~6.4); Propositions~3--4 proved (Sec.~\ref{sec:dimless}); transport-side algebraic self-consistency of $\mu(x)$ confirmed (Python script) and by Chebyshev spectral collocation ($N=200$) on the self-consistent activation branch; $\tau_{\rm rel}=c/g$ uniquely selected within the old transport representation (Sec.~\ref{sec:closure_derivation}); spatial equilibrium $\tau_{\rm sp}\ll t_H$ at all radii and mature-branch closure $C_{\rm eff}=A_{\rm vort}+\mathcal{O}(\delta_{\rm sp},\delta_N)$ (Sec.~\ref{sec:ceff_profile}); source-side nonlocal 2D kernel with parameters fixed by regularity and outer asymptotics gives $\sim6$--$13\%$ field RMS on the compact matched box and $\sim10\%$ field RMS on the widened disjoint-annulus benchmark; operator-side 2D AQUAL gives $\sim11\%$ field RMS on the compact matched box and $\sim9\%$ field RMS on the widened benchmark, with $\mu$ supplied as input; fixed-source and coupled hyperbolic evolutions relax toward the selected static branch; form invariance of $\mu$ under $O(1)$ rescaling of $a_0$; $K\approx 8$ analytically derived (Sec.~\ref{sec:K_analytic}).
 
 \medskip
 \noindent\textbf{Programme-level tests.}
 $a_0(z)$ drift \eqref{eq:a0z} via high-$z$ BTFR; lensing--dynamics consistency in the bi--conformal weak-field sector; environment dependence in satellites/dwarfs (EFE); disk-thickness--rotation correlation in edge-on LSB galaxies (Sec.~\ref{sec:disk}).
 
-\section{Equatorial concentration: disk formation from rotational anisotropy}\label{sec:disk}
+\section{Equatorial concentration: vertical confinement from rotational anisotropy}\label{sec:disk}
 
-The preceding sections assumed a thin-disk geometry as an \emph{input}. Here we show that the same rotational-sector closure that produces the MOND interpolating function also predicts the \emph{formation} of a disk, by generating a $z$-directed gravitational gradient toward the equatorial plane.
+The preceding sections assumed a thin-disk geometry as an \emph{input}.
+Here we show that the same rotational-sector closure that produces the
+MOND interpolating function also supplies an additional
+$z$-directed restoring gradient toward the equatorial plane.  This is a
+vertical-confinement mechanism for already rotating baryons, not a full
+disk-formation calculation including angular-momentum acquisition, gas
+cooling, feedback, and stability modelling.
 
 \subsection{Angular dependence of the frame-dragging source}
 
@@ -4041,6 +4071,18 @@ The transported (hysteretic) component $\varphi_h$ is driven by the frame-draggi
 \label{eq:phih_theta}
 \end{equation}
 where $\varphi_h^{(\rm eq)}(r)$ is the equatorial value derived in Sec.~\ref{sec:mu}. The total scalar field perturbation is:
+
+\paragraph{Status of the angular extension.}
+The $\sin^2\theta$ factor in \eqref{eq:phih_theta} is inherited from
+the frame-dragging geometry, while the amplitude
+$\varphi_h^{(\rm eq)}$ is the mature coherent-vortex branch derived in
+Sec.~\ref{sec:mu}.  Thus the estimate does not use the
+$\epsilon$-suppressed linear frame-dragging trigger as the MOND
+amplitude.  What is not yet done is a full 3D scalar/vortex PDE solve
+that derives the complete angular profile and disk-settling history
+from first principles.
+
+\noindent The total scalar field perturbation is:
 \begin{equation}
 \delta\varphi(r,\theta) = \varphi_N(r) + \varphi_h^{(\rm eq)}(r)\,\sin^2\theta\,,
 \label{eq:phi_total_theta}
@@ -4100,7 +4142,15 @@ Equation~\eqref{eq:scale_height} predicts a specific correlation between disk th
 In the deep-MOND regime ($g\ll a_0$), the ratio $h/\rho$ decreases---galaxies with lower surface brightness (deeper in the MOND regime) should have \emph{relatively thinner} disks at fixed $\sigma_z/v_{\rm rot}$. This is distinct from the standard prediction where disk thickness is controlled primarily by $\sigma_z/v_{\rm rot}$ alone, and is testable with edge-on galaxy surveys.
 
 \paragraph{Key distinction from standard astrophysics.}
-In the conventional picture, galactic disks form solely through angular momentum conservation during gas collapse; the scalar field plays no role. In the present theory, the rotational anisotropy of the transported scalar sector provides an \emph{additional} vertical confinement mechanism that is absent in GR without dark matter. The two predictions diverge most strongly for low-surface-brightness galaxies deep in the MOND regime, where the rotation-induced contribution to vertical confinement is largest relative to the Newtonian component.
+In standard astrophysics, disk formation depends on angular-momentum
+acquisition, gas cooling, feedback, and stability.  The scalar sector
+does not replace that formation problem.  In the present theory, the
+rotational anisotropy of the transported scalar sector provides an
+\emph{additional} vertical confinement mechanism that is absent in GR
+without dark matter.  The two descriptions diverge most strongly for
+low-surface-brightness galaxies deep in the MOND regime, where the
+rotation-induced contribution to vertical confinement is largest
+relative to the Newtonian component.
 
 %%===================================================================
 \section{Pressure-supported systems: elliptical galaxies and dwarf spheroidals}\label{sec:ellipticals}
@@ -4111,14 +4161,15 @@ coherent frame-dragging from an ordered rotation field.  Elliptical
 galaxies and dwarf spheroidal (dSph) satellites are pressure-supported
 systems with little or no net rotation, yet observations show they
 obey a MOND-like mass--velocity-dispersion relation
-(the Faber--Jackson analogue of the BTFR).  We now show that the
-same medium-response mechanism produces the correct scaling for
-these systems.
+(the Faber--Jackson analogue of the BTFR).  We now separate the
+closed deep-MOND virial scaling from the model-dependent
+medium-response route that would realize the same MOND branch in
+pressure-supported systems.
 
 \subsection{Physical picture: convective circulation cell}\label{sec:convective_cell}
 
 The vortex-origin framework of Sec.~\ref{sec:vortex_origin} provides
-a unified picture of elliptical galaxies that does not depend on
+a qualitative topology map for elliptical galaxies that does not depend on
 individual stellar hysteresis trails.
 
 In a fluid substance, two qualitatively different vortex topologies
@@ -4176,7 +4227,7 @@ motion (standing-wave tails, toroidal rotation, poloidal
 convection, or dipolar retardation), not the mechanism
 producing the pressure deficit.
 
-\paragraph{Why $\mu(x)$ is universal.}
+\paragraph{Why $\mu(x)$ is expected to be universal.}
 This topological invariance extends to the interpolating function
 itself.  The three ingredients that determine $\mu(x)$ in spirals
 are all topology-independent:
@@ -4278,10 +4329,12 @@ relation in the deep regime ($g_N \ll a_0$) is
 \label{eq:deepmond_ell}
 \end{equation}
 where $x = g_{\rm eff}/a_0$, exactly as for spirals.  The $O(1)$
-coefficient (and therefore the exact interpolating function) is
-identical to the spiral case because the Hubble-damping scale
+coefficient is taken to match the spiral branch in the working
+medium-response extension because the Hubble-damping scale
 $a_0 = cH/(2\pi)$ is a \emph{cosmological} parameter, independent of
-the galaxy's internal kinematics.
+the galaxy's internal kinematics.  The exact interpolating function
+away from the deep-MOND limit remains a pressure-supported-system PDE
+check rather than a completed derivation in this subsection.
 
 \subsection{The Faber--Jackson relation from MOND scaling}
 
@@ -4390,10 +4443,11 @@ cleanest test of the turbulent-vortex mechanism because:
   \item The external-field effect (Sec.~\ref{sec:efe}) creates a
     measurable environment dependence absent in dark-matter models.
 \end{enumerate}
-The theory predicts that isolated dSphs obey
+In this working pressure-supported extension, isolated dSphs obey
 \eqref{eq:faber_jackson}, while those embedded in a strong external
 field ($g_{\rm ext} \gtrsim a_0$) show suppressed MOND effects.
-This differential signature is directly testable.
+This differential signature is directly testable, but its detailed
+normalization inherits the convective-cell/PDE status described above.
 
 \subsection{Distinction from the spiral derivation}
 
@@ -4453,10 +4507,11 @@ ingredients---most commonly $\sim\!2\;\mathrm{eV}$ sterile
 neutrinos~\cite{Angus2008}---that are external to the MOND
 framework itself.
 
-In the present framework no such \emph{ad hoc} component is
-needed.  The Bullet morphology emerges in the
-frozen-hysteresis closure obtained by combining the
-effective $\chi$ sector
+In the present framework no new fundamental particle species is
+introduced.  The benchmark instead uses the effective $\chi$ sector
+already present in the macroscopic hysteresis closure.  The Bullet
+morphology emerges in the frozen-hysteresis closure obtained by combining
+this effective sector
 (Secs.~\ref{sec:btfr}--\ref{sec:ellipticals} and the companion
 quantum paper~\cite{Lotishvili2026Q}) with the merger
 timescale hierarchy.  The argument below is therefore not a
@@ -4624,8 +4679,9 @@ hysteresis sector; the Bullet Cluster solve verifies
 internal consistency with them but does not independently
 constrain them.
 
-\textit{Outputs (not tuned).}---Given these inputs, the solve
-yields the following results that were \emph{not} imposed:
+\textit{Outputs for fixed calibrated inputs.}---Given these inputs,
+the solve yields the following results that were not separately imposed
+by the aperture-mass calibration:
 \begin{itemize}
   \item \textbf{Peak locking (structurally forced).}
     Convergence peaks appear at
@@ -4637,21 +4693,22 @@ yields the following results that were \emph{not} imposed:
     the only non-trivial question is whether the $\chi$
     peak survives after adding the baryonic foreground.
     The threshold scan below shows that it does.
-  \item \textbf{Contrast ratio (genuine prediction).}
+  \item \textbf{Contrast ratio (benchmark output).}
     Peak amplitudes are $\kappa_{\rm peak}\simeq1.39$ and
     $1.04$, against $\kappa_{\rm mid}\simeq0.17$ on the
     collision midplane---a contrast of $\sim8{:}1$.
-    Neither the contrast nor the peak-to-peak asymmetry is
-    tuned; they follow from the gas geometry and
-    $f_{\rm hyst}$ alone.
+    Neither the contrast nor the peak-to-peak asymmetry is separately
+    fitted in this run; they follow after the observed gas geometry,
+    aperture masses, $f_{\rm hyst}$, and $L_\chi$ are fixed.
   \item \textbf{Mass budget (non-trivial consistency test).}
     The internal decomposition of each $250\;\mathrm{kpc}$
     aperture into gas, galaxy, and $\chi$ fractions is not
     fixed by the aperture-mass calibration: it depends on
-    the gas widths, $L_\chi$, and $f_{\rm hyst}$, none of
-    which were adjusted to match the decomposition.  The
-    solve yields $f_\chi\simeq0.79$ for the main cluster,
-    compatible with the
+    the gas widths, $L_\chi$, and $f_{\rm hyst}$, which are fixed
+    before checking the decomposition.  The
+    solve yields $f_\chi\simeq0.79$ for the main cluster
+    ($\langle f_\chi\rangle=0.763$ across the two outer
+    apertures), compatible with the
     $\approx80\%\pm6\%$ residual component reported by
     Paraficz et~al.~\cite{Paraficz2016}.
   \item \textbf{Cross-sector consistency.}
@@ -4709,7 +4766,7 @@ bands, without any decomposition fitting.
 observed gas geometry and total aperture masses from
 Paraficz et~al.~\cite{Paraficz2016}; dynamics: Helmholtz
 $\chi$ response with $L_\chi=100\;\mathrm{kpc}$ and
-$f_{\rm hyst}=1.3$.  Predicted output: the total convergence
+$f_{\rm hyst}=1.3$.  Benchmark output: the total convergence
 map (panel~c) develops peaks at $x\simeq\pm715\;\mathrm{kpc}$,
 within $\sim5\;\mathrm{kpc}$ of the galaxy centroids, with an
 $8{:}1$ contrast over the collision midplane (panel~d).}
@@ -4823,16 +4880,15 @@ steps are planned:
     fiducial $L_\chi\sim100\;\mathrm{kpc}$ used here.
 \end{enumerate}
 The present analysis demonstrates that the frozen-hysteresis
-mechanism \emph{necessarily} produces the observed Bullet
-Cluster morphology once the independently derived $\chi$
-dynamics and the freeze hierarchy are accepted.  No additional
-fields, particles, or fine-tuning are required: the same
-$\chi$ sector that produces MOND rotation curves at galactic
-scales, with the same order-unity $f_{\rm hyst}$, automatically
-generates the mass--light separation at cluster-merger scales.
-The Bullet Cluster thus changes from a challenge for
-modified-gravity theories into a \emph{prediction} of the
-present framework.
+mechanism can reproduce the observed Bullet Cluster morphology in a
+calibrated snapshot once the effective $\chi$ sector, the freeze
+hierarchy, the observed baryonic geometry, and the order-unity
+$(f_{\rm hyst},L_\chi)$ benchmark are imposed.  No new fundamental
+field, particle, or external dark-matter species is required, but the
+macroscopic $\chi$ field is an effective collective degree of freedom
+and the current result is a compatibility benchmark rather than a full
+time-dependent merger prediction.  A hydrodynamic $N$-body+$\chi$
+simulation remains the quantitative closure test for the Bullet system.
 
 %%===================================================================
 \section{Galaxy clusters: resonant-tail overlap and additional binding}\label{sec:cluster_binding}
@@ -4846,7 +4902,7 @@ $\sim\!2$ is sometimes attributed to residual hot dark matter
 (e.g.\ sterile neutrinos) or to a failure of MOND at cluster
 scales.
 
-In the present framework, the missing binding has a natural
+In the present framework, the missing binding can have a natural
 origin in the \emph{same mechanism} that produces dark energy
 at cosmological scales in the companion quantum paper~\cite{Lotishvili2026Q}, operating locally at enhanced
 amplitude:
@@ -4993,12 +5049,12 @@ Therefore the needed retention time is
 \boxed{\frac{\tau_{\rm ret}^{(50\%)}}{t_{\rm dyn}}
 \;\approx\; 0.42\,.}
 \end{equation}
-The resonant-tail energy must remain in the cluster for only
-$\sim\!40\%$ of one dynamical time.  In a gravitationally bound
-system, energy retention on the dynamical timescale is not a
-special requirement---it is the \emph{defining property} of
-gravitational binding.  A system that cannot retain energy for
-one $t_{\rm dyn}$ is, by definition, unbound.
+The resonant-tail energy must remain in the cluster for
+$\sim\!40\%$ of one dynamical time.  This is a plausible
+flow-scale residence time in a bound intracluster medium, but it is a
+condition of the benchmark, not yet a theorem: if the long-wavelength
+tail background escapes ballistically on the light-crossing time, the
+cluster residual remains open, exactly as the numerical script reports.
 
 \paragraph{Scattering mechanism: ICM cold fronts.}
 In the diffusion picture, the retention time is
@@ -5024,13 +5080,17 @@ $\ell_{\rm mfp}\sim R/N_{\rm fronts}\sim 70$--$200\;\mathrm{kpc}$
 for geometric scattering, and significantly shorter for modes
 whose wavelength is comparable to the front thickness
 ($\lambda\sim10$--$30\;\mathrm{kpc}$, resonant scattering).
-The required $\ell_{\rm mfp}\approx16\;\mathrm{kpc}$ falls
-squarely within the resonant-scattering range.
+The required $\ell_{\rm mfp}\approx16\;\mathrm{kpc}$ is below the
+simple geometric interface spacing but comparable to the observed
+cold-front thickness scale, making resonant scattering a plausible
+target.  A wave-scattering calculation on observed ICM profiles is
+still needed before this can be promoted from a consistency estimate to
+a derived mean free path.
 
 Additionally, the AQUAL equivalence theorem
 (Sec.~\ref{eq:aqual_from_ispg}) applies to clusters just as to
 spirals: the standard MOND binding enhancement
-($\sim\!50\%$ of the discrepancy) is automatic from
+($\sim\!50\%$ of the discrepancy) follows once the AQUAL BVP is assumed from
 $\nabla\!\cdot\![\mu\nabla\Phi]=4\pi G\rho$ with the cluster's
 observed baryon profile.  The resonant-tail contribution is
 \emph{on top of} this baseline AQUAL binding, and needs to supply
@@ -5061,8 +5121,9 @@ These predictions are testable with combined X-ray (\textit{Chandra},
 (Euclid, Rubin) surveys.
 
 \paragraph{Remaining computation.}
-The feedback-ODE benchmark and the dynamical-time argument
-establish that the binding amplitude is in the correct range.
+The feedback-ODE benchmark and the dynamical-time argument show that
+the binding amplitude can reach the required range if the
+long-wavelength tail background is retained on a cluster flow time.
 A dedicated cluster paper will refine the result by:
 (i)~solving the scalar field equation on a 3D cluster grid
 with realistic ICM profiles (\textit{Chandra}-derived $\beta$-models);
@@ -5071,8 +5132,8 @@ cold-front census and ICM density power spectrum;
 (iii)~extracting the radial profile
 $\rho_{\rm extra}(r)/\rho_{\rm bary}(r)$ for comparison with
 weak-lensing data.
-These are concrete computations within the existing framework,
-not conceptual extensions.
+These are concrete computations within the existing framework and are
+required for quantitative cluster closure.
 
 %%===================================================================
 \section{Dimensionless formulation and asymptotic analysis}
@@ -6142,21 +6203,23 @@ the vortex/galactic completion built on top of that local channel.
 
 \item \textbf{Cluster binding: 3D steady-state solve.}\\
   \textit{Current status:} the feedback-ODE benchmark
-  (Sec.~\ref{sec:cluster_binding}) establishes that the $50\%$
-  binding threshold requires a retention time of only
+  (Sec.~\ref{sec:cluster_binding}) shows that the $50\%$
+  binding threshold can be reached if the tail background is retained for
   $\tau_{\rm ret}\approx0.63\;\mathrm{Gyr}\approx0.42\,t_{\rm dyn}$,
-  well within the natural timescale of any gravitationally bound
-  system.  In the diffusion picture, the corresponding mean free
-  path $\ell_{\rm mfp}\approx16\;\mathrm{kpc}$ is consistent with
-  observed ICM cold-front separations.\\
+  rather than escaping ballistically.  In the diffusion picture, the
+  corresponding mean free path $\ell_{\rm mfp}\approx16\;\mathrm{kpc}$
+  is a plausible resonant-scattering target tied to observed ICM
+  cold-front structure, but it has not yet been derived from a
+  wave-scattering calculation.\\
   \textit{Task:} (a)~solve the scalar field equation on a 3D
   cluster grid with \textit{Chandra}-derived profiles,
   (b)~compute $\ell_{\rm mfp}$ from the observed cold-front
   census and ICM density power spectrum,
   (c)~extract the radial binding profile for comparison with
   weak-lensing data.\\
-  \textit{Output:} parameter-free $\rho_{\rm extra}/\rho_{\rm cl}$
-  profile $+$ prediction for binding--substructure correlation.
+  \textit{Output:} derived $\rho_{\rm extra}/\rho_{\rm cl}$
+  profile replacing the current calibrated benchmark, plus a
+  prediction for binding--substructure correlation.
 
 \item \textbf{Bullet Cluster time-dependent merger simulation.}\\
   \textit{Current status:} frozen-hysteresis snapshot with correct
@@ -6171,17 +6234,20 @@ the vortex/galactic completion built on top of that local channel.
 
 \item \textbf{Elliptical-galaxy convective-cell: explicit PDE check.}\\
   \textit{Current status:} the universality argument of
-  Sec.~\ref{sec:convective_cell} establishes that the
+  Sec.~\ref{sec:convective_cell} motivates the working hypothesis that the
   Bernoulli pressure-deficit mechanism, the coherence boundary
   $\lambda_H$, the forgetting rate $\Gamma_{\rm mem}$, and the
-  Markov activation chain are all topology-independent, so
-  $\mu(x)=x/(1+x)$ carries over from spirals to ellipticals
-  with $\omega\to\sigma/r$.  The Faber--Jackson virial coefficient
-  is derived exactly (Sec.~\ref{sec:ellipticals}).\\
+  Markov activation chain are topology-independent, so the spiral
+  $\mu(x)=x/(1+x)$ branch may carry over to ellipticals with
+  $\omega\to\sigma/r$.  The deep-MOND Faber--Jackson virial
+  coefficient is derived exactly once the deep-MOND force law is
+  assumed (Sec.~\ref{sec:ellipticals}); the convective-cell PDE
+  realization remains open.\\
   \textit{Task:} solve the scalar PDE explicitly in a spherically
   symmetric poloidal-circulation background and verify that the
-  numerical $\mu$ profile agrees with $x/(1+x)$.  This is a
-  \emph{consistency check}, not a gap closure.\\
+  numerical $\mu$ profile agrees with $x/(1+x)$.  This is the
+  required quantitative closure test for the pressure-supported
+  extension, not for the already-closed spiral algebra.\\
   \textit{Output:} $\mu_{\rm ell}(x)$ profile $+$ comparison
   with spiral $\mu=x/(1+x)$.
 
@@ -6224,11 +6290,12 @@ scaling $\mu\propto x$ at $\xi \gg 1$ (Proposition~4);
 the master parameter
 $K_0=\ln[2\pi/(y_1\sqrt{\Omega_b})]+\frac32\ln(1+z_f)$
 (Sec.~\ref{sec:K_analytic}); form invariance of $\mu$
-under $O(1)$ rescaling of $a_0$; the extension to
-pressure-supported systems via the turbulent
-micro-vortex mechanism, yielding the baryonic
-Faber--Jackson relation $\sigma^4 = K_\sigma\,GMa_0$
-(Sec.~\ref{sec:ellipticals}); and the EFE with its
+under $O(1)$ rescaling of $a_0$; the deep-MOND virial
+scaling that yields the baryonic Faber--Jackson relation
+$\sigma^4 = K_\sigma\,GMa_0$ once the MOND force law is
+assumed (Sec.~\ref{sec:ellipticals}); the turbulent/convective
+medium-response realization for pressure-supported systems remains
+a model-dependent extension; and the EFE with its
 three regimes, anisotropy prediction, and wide-binary
 consistency (Sec.~\ref{sec:efe}).
 
@@ -6297,13 +6364,13 @@ machine precision only in the transport-side algebraic
 identity and at the $\sim10^{-3}$ spectral level on the
 self-consistent activation branch; the source-side
 nonlocal 2D kernel with parameters fixed by regularity and outer
-asymptotics, achieving $\sim6$--$13\%$ RMS on the compact
-matched box and $\sim10\%$ on the widened disjoint-annulus
+asymptotics, achieving $\sim6$--$13\%$ field RMS on the compact
+matched box and $\sim10\%$ field RMS on the widened disjoint-annulus
 benchmark; the operator-side AQUAL solve at
-$\sim11\%$ RMS on the compact box and $\sim9\%$ on the widened
+$\sim11\%$ field RMS on the compact box and $\sim9\%$ field RMS on the widened
 benchmark, with $\mu$ supplied as input; universality across
 galaxy parameters; spectral convergence; Poisson-source
-positivity for the occupied branch; and fixed-source/coupled
+grid-verified positivity for the occupied branch; and fixed-source/coupled
 hyperbolic relaxation toward the selected static branch.
 A complete error budget (Sec.~\ref{sec:ceff_profile}) quantifies
 the theoretical uncertainty: the dominant source is the
@@ -6329,7 +6396,7 @@ a falsifiable redshift drift $a_0(z)\propto H(z)$;
 a MOND-background--dark-energy-sector link testable by DESI/Euclid
 as a consistency target rather than a present confirmation;
 an environment signature (EFE, Sec.~\ref{sec:efe});
-a disk-formation mechanism from frame-dragging equatorial
+a vertical-confinement mechanism from frame-dragging equatorial
 anisotropy (Sec.~\ref{sec:disk}); and the Faber--Jackson
 scaling for ellipticals and dwarf spheroidals
 (Sec.~\ref{sec:ellipticals}).
