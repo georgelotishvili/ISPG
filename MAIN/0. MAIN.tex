@@ -2603,7 +2603,11 @@ test particle in an external potential
 $\varphi_{\mathrm{ext}}$ is
 \begin{equation}\label{eq:F_grav}
   \mathbf{F}_{\mathrm{grav}}
-  = -m\,\nabla\varphi_{\mathrm{ext}}\,,
+  = -m\,\tfrac{c^{2}}{2}\,\nabla\varphi_{\mathrm{ext}}
+  = -m\,\nabla\Phi_{N,\mathrm{ext}}\,,
+  \qquad
+  \Phi_{N,\mathrm{ext}}
+  \equiv \tfrac{c^{2}}{2}\,\varphi_{\mathrm{ext}}\,,
 \end{equation}
 where $m$ is the gravitational mass determined by the
 particle's own contribution to the field via
@@ -2612,7 +2616,8 @@ accelerates through its own field, the transient
 asymmetry $\delta\varphi$ creates a backreaction
 \begin{equation}\label{eq:F_inertial}
   \mathbf{F}_{\mathrm{inertial}}
-  = -m\,\nabla(\delta\varphi)\,,
+  = -m\,\tfrac{c^{2}}{2}\,\nabla(\delta\varphi)
+  = -m\,\nabla(\delta\Phi_{N})\,,
 \end{equation}
 with the \emph{same} coupling $m$, since both
 expressions derive from the same
