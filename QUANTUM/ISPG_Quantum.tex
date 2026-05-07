@@ -411,10 +411,10 @@ SM electroweak sector (gauge algebra, couplings, and Higgs
 doublet structure) is supplied.  The absolute value
 $v_0 = 246$~GeV and the first-principles map
 $\Phi_0 \to v_0$ remain open.  This demonstrates that
-all Standard Model mass ratios and dispersion relations are
-preserved locally, with photon masslessness protected
-by $U(1)_{\mathrm{EM}}$ gauge invariance and reinforced
-by the ISPG shift symmetry.
+the standard tree-level electroweak mass ratios and local
+dispersion relations are preserved locally in the conditional
+embedding, with photon masslessness protected by the imported
+exact $U(1)_{\mathrm{EM}}$ Ward identity.
 
 \textbf{Section~\ref{sec:entanglement}} formulates quantum
 entanglement as correlated resonance structure and derives the
@@ -6634,9 +6634,15 @@ The dimensionless mass ratios are $\varphi$-independent:
   \frac{m_W}{m_f} = \frac{g}{y_f\sqrt{2}}.
 \end{equation}
 These are identical to the Standard Model relations, with
-no corrections from the scalar-metric coupling.  Every
-electroweak precision observable measured at LEP, the
-Tevatron, and the LHC is therefore reproduced exactly.
+no tree-level corrections from the uniform scalar-metric
+scaling.  The calculation preserves the standard tree-level
+electroweak mass ratios and local dispersion relations once
+the SM electroweak sector, $g$, $g'$, and $v_0$ are supplied.
+Full electroweak precision observables---including radiative
+corrections, widths, asymmetries, oblique parameters, and
+scheme-dependent weak mixing angles---are inherited from the
+imported SM sector here; they are not derived from the ISPG
+medium in this section.
 
 \textit{Local Lorentz invariance of the gauge sector.}---On
 the bi-conformal background, with the MAIN convention
@@ -6669,29 +6675,32 @@ thus preserves local Lorentz invariance of the gauge sector
 exactly.
 
 \textit{Photon mass protection.}---The masslessness of the
-photon is protected primarily by the unbroken
+photon is protected by the unbroken
 $U(1)_{\mathrm{EM}}$ gauge invariance, which forbids a
-mass term at any loop order (Ward identity).  In ISPG,
-the shift symmetry
+mass term at any loop order, provided the effective/imported
+gauge sector and its regularization preserve the Ward
+identity.  In ISPG, the shift symmetry
 $\varphi \to \varphi + \mathrm{const}$ of the
-action~(\ref{eq:action}) provides a secondary safeguard:
+action~(\ref{eq:action}) provides secondary scalar-sector
+hygiene:
 because $\varphi$ enters the action only through
-derivatives and through the metric, the scalar-metric
-sector cannot generate a St\"uckelberg-type coupling
-$(\partial_\mu\varphi)\,A^\mu$ that would give the photon
-an effective mass while preserving diffeomorphism
-invariance.  The two symmetries are not independent---the
-shift symmetry ensures that the scalar sector does not
-spoil the gauge protection---but their combined effect
-makes $m_\gamma = 0$ robust against all radiative
-corrections from both the Standard Model and the
-gravitational sector.
+derivatives and through the metric, it prevents explicit
+non-derivative scalar terms from being introduced into the
+gauge bookkeeping sector.  This shift symmetry is not an
+independent photon Ward identity; it states that the
+scalar-metric sector does not by itself spoil the imported
+gauge protection.  If the electromagnetic gauge field is to
+be derived as an emergent medium excitation, preservation of
+the exact $U(1)_{\mathrm{EM}}$ Ward identity remains part of
+the future gauge-completion programme.
 
 \textit{Gauge couplings as input parameters.}---The
 couplings $g$, $g'$, and the strong coupling $g_s$ are
-dimensionless and therefore $\varphi$-independent by the
-bi-conformal symmetry of dimensionless constants.  In the
-present analysis, their values are empirical inputs:
+empirical dimensionless inputs at a fixed local
+renormalization convention and scale.  The classical
+bi-conformal unit scaling does not change such dimensionless
+inputs, so the tree-level mass-ratio algebra treats them as
+$\varphi$-independent:
 \begin{equation}\label{eq:gauge_couplings}
   g \approx 0.653, \quad
   g' \approx 0.350, \quad
@@ -6702,45 +6711,47 @@ internal structure---specifically, why $g/g'$ takes
 its observed value---requires solving the nonlinear
 resonance equations for the vector perturbation modes
 (Sec.~\ref{sec:internal_dof}) and is the subject of
-future work.  The ISPG framework ensures that whatever
-values the couplings take, they are universal constants
-(field-independent), in agreement with precision
-electroweak data.
+future work.  Running, trace-anomaly feedback, and
+cosmological effective comparisons of these couplings are the
+separate questions flagged in Sec.~\ref{sec:ew_scope}; they
+are not fixed by the tree-level mass-matrix calculation.
 
-\textit{Status of the gauge completion.}---The derivation
-achieved here is therefore precise but two-tiered.  What is
-\emph{derived here} is the full broken-phase electroweak mass
-matrix on the bi-conformal background, the local Lorentzian
-dispersion relations, the field-independence of the gauge
-couplings, and the radiative protection of the photon mass.
-What is \emph{not yet derived from the medium itself} is the
-microscopic origin of the internal gauge algebra
-$SU(2)_L \times U(1)_Y$, the multiplicity of its generators,
-and the numerical values of $g$ and $g'$.  In that sense the
-remaining open step is group-theoretic, not propagational.
+\textit{Status of the gauge completion.}---The calculation
+achieved here is therefore conditional and two-tiered.  What
+is \emph{verified here} is the standard broken-phase
+electroweak mass-matrix algebra and the local
+dispersion/scaling on the bi-conformal background, given the
+effective SM electroweak sector.  What is \emph{imported
+here} is the gauge algebra, representations, exact gauge
+redundancy and Ward identity, and the numerical values of
+$g$ and $g'$.  What is \emph{not yet derived from the medium
+itself} is the microscopic origin of the Yang--Mills vector
+fields, their exact gauge symmetry, their couplings, and the
+multiplicity of the electroweak generators.
 
 \textit{Minimal medium interpretation.}---Within the
 resonance framework of Sec.~\ref{sec:internal_dof}, the
-scalar-metric medium supplies the local spin-1 carrier through
-its vector perturbation sector, while the broken Higgs sector
-supplies the standard longitudinal polarization for each broken
-generator.  The local polarization content is therefore the
-usual one:
+scalar-metric vector-perturbation sector is the candidate
+medium channel for a future derivation of the spin-1 carriers.
+In the calculation above, however, the standard polarization
+content follows from the imported Higgsed gauge sector:
 \begin{equation}\label{eq:gauge_polarization_count}
   N_{\mathrm{pol}}(W^\pm)=N_{\mathrm{pol}}(Z)=3,\qquad
   N_{\mathrm{pol}}(\gamma)=2.
 \end{equation}
-Thus the bi-conformal background already closes the kinematics
-and mass structure of the electroweak gauge sector once the
-internal gauge algebra is specified, while the deeper question
-of why the medium realizes precisely that algebra remains
-future work.
+Thus the bi-conformal background closes the conditional
+kinematics and mass scaling of the electroweak gauge sector
+once the internal gauge algebra is specified, while the deeper
+question of why the medium realizes Yang--Mills spin-1
+carriers with precisely that algebra remains future work.
 
-The massive gauge bosons ($W$, $Z$) are therefore interpreted
-as localized spin-1 resonances whose masses are fixed by the
-Higgs VEV through the standard Higgs mechanism, now
-understood as the electroweak projection of bi-conformal
-symmetry breaking (Sec.~\ref{sec:conformal_higgs}).
+The massive gauge bosons ($W$, $Z$) are therefore described
+here as the standard broken-phase spin-1 modes of the
+effective electroweak sector.  Their possible realization as
+localized ISPG resonances belongs to the future
+gauge-completion programme; their masses scale with the
+effective Higgs VEV through the conditional bi-conformal
+law of Sec.~\ref{sec:conformal_higgs}.
 
 The massless photon is the unbroken $U(1)_{\mathrm{EM}}$
 vector mode.  Its identification with the surviving
@@ -8188,15 +8199,17 @@ results and extensions are:
   \item \textbf{Higgs--gravity unification and electroweak
     spectrum} (Sec.~\ref{sec:higgs}).  The Higgs VEV inherits
     the bi-conformal factor
-    $v(\varphi) = v_0\,e^{\varphi/2}$, identifying
-    electroweak symmetry breaking as the electroweak
-    projection of conformal symmetry breaking.  Given the
-    experimentally fixed electroweak gauge algebra, the
+    $v(\varphi) = v_0\,e^{\varphi/2}$ for an effective
+    electroweak sector.  Given the experimentally fixed
+    electroweak gauge algebra, the
     broken-phase gauge-boson mass matrix
-    (Sec.~\ref{sec:gauge_spectrum}) reproduces all Standard
-    Model mass ratios exactly, with photon masslessness
-    protected by $U(1)_{\mathrm{EM}}$ and reinforced by
-    the shift symmetry.
+    (Sec.~\ref{sec:gauge_spectrum}) preserves the standard
+    tree-level mass ratios and local dispersion relations,
+    with photon masslessness protected by the imported exact
+    $U(1)_{\mathrm{EM}}$ Ward identity; the scalar shift
+    symmetry is a compatibility condition for the
+    scalar-metric sector, not a separate photon-mass Ward
+    identity.
 
   \item \textbf{Scalar sensitivity (structural argument)}
     (Sec.~\ref{sec:scalar_sensitivity}).  The shift-symmetry
@@ -8286,17 +8299,17 @@ forthcoming data from DESI, Euclid, ESPRESSO, and
 space-based quantum experiments.
 
 The electroweak gauge boson spectrum ($W^{\pm}$, $Z$,
-$\gamma$) has been derived on the bi-conformal background
-(Sec.~\ref{sec:gauge_spectrum}) once the internal
-electroweak gauge algebra is specified, confirming that all
-Standard Model mass ratios and dispersion relations
-are preserved locally, with photon masslessness protected
-by $U(1)_{\mathrm{EM}}$ and reinforced by the ISPG shift
-symmetry.  The derivation of the gauge couplings
-themselves ($g$, $g'$, $g_s$) and the origin of the
-$SU(3)_c$ colour group from the medium's internal
-excitation structure remain open problems for future
-work.
+$\gamma$) has been treated as a conditional embedding on the
+bi-conformal background (Sec.~\ref{sec:gauge_spectrum}):
+once the effective SM electroweak gauge algebra, $g$, $g'$,
+and $v_0$ are supplied, the standard broken-phase mass matrix
+and local dispersion relations are preserved.  Photon
+masslessness is protected by the imported exact
+$U(1)_{\mathrm{EM}}$ Ward identity.  The derivation of the
+gauge couplings themselves ($g$, $g'$, $g_s$), the exact
+Ward identity from the medium, and the origin of the
+$SU(3)_c$ colour group from the medium's internal excitation
+structure remain open problems for future work.
 
 The scalar sensitivity $s = 1/2$ and the vanishing of the
 excess sensitivity $s_{\mathrm{excess}} = 0$ have been
