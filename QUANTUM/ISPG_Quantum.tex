@@ -7737,7 +7737,7 @@ tree level).  At the quantum level, however, vacuum
 polarization by virtual particle--antiparticle
 pairs introduces a polarization-dependent correction to the
 photon propagation speed in the presence of a gravitational
-gradient.  The one-loop effect computed in this section
+gradient.  The one-loop-motivated channel estimated in this section
 lies beyond the tree-level regime of Appendix~5 and
 therefore does not contradict its conclusions.  The
 precise comparison to the curvature-coupled GR$+$QED
@@ -7763,11 +7763,11 @@ GR$+$QED effect of
 Drummond--Hathrell~\cite{DrummondHathrell1980}; see
 \S\ref{sec:biref_distinction} for a detailed comparison.
 
-The one-loop vacuum polarization tensor in the presence of
-a slowly varying $\varphi$-field acquires a
-$\nabla\varphi$-dependent correction.  For a photon with
-four-momentum $k^\mu$ and polarization $\epsilon^\mu$,
-the leading correction to the dispersion relation is
+The leading EFT correction expected from a slowly varying
+$\varphi$-field can be parametrized as a
+$\nabla\varphi$-dependent contribution to photon propagation.
+For a photon with four-momentum $k^\mu$ and polarization
+$\epsilon^\mu$, the leading dispersion ansatz is
 \begin{equation}\label{eq:dispersion_biref}
   \omega^{2} = |\mathbf{k}|^{2}\,c^{2}\left[1
     + \frac{\alpha_{\mathrm{EM}}}{45\pi}\,
@@ -7798,16 +7798,21 @@ specified by the action of the main
 theory~\cite{Lotishvili2026}; this derivation is a
 self-contained technical task that is the topic of a separate
 work.  The present section should be read as a
-\emph{parametric} estimate: only the scaling
-$(\nabla\varphi)^2/m_e^2$ and the existence of
-polarization-dependent propagation are stated here as ISPG
-consequences; the precise numerical coefficients remain an
-open derivation target.
+\emph{parametric} estimate: the scalar-gradient operator
+channel and the leading scaling $(\nabla\varphi)^2/m_e^2$
+are identified here, while the existence and sign of a
+nonzero birefringent coefficient, its precise numerical value,
+and the full angular tensor require the dedicated one-loop
+calculation and remain open derivation targets.
 
 \textit{Scope of the two-case parametrization.}---Equation~\eqref{eq:eta_factor}
 records only the two \emph{extreme} polarization geometries
 (electric field exactly parallel or exactly perpendicular to
-$\hat{\nabla}\varphi$).  For a generic propagation direction
+$\hat{\nabla}\varphi$).  The parallel case is a physical
+photon polarization only when the propagation direction
+$\hat k$ is perpendicular to $\hat{\nabla}\varphi$, since
+physical photon polarizations obey $\epsilon\cdot k=0$.
+For a generic propagation direction
 $\hat k$ and generic linear polarization, the one-loop effective
 action produces an angular dependence that interpolates between
 the two extremes and also involves the relative orientation
@@ -7884,10 +7889,16 @@ below any conceivable measurement sensitivity.
 
 \textit{Regime caveat.}---For the BH estimate,
 $|\nabla\varphi|\,\rs \sim 1$, so the weak-field linearization
-underlying Eq.~\eqref{eq:dispersion_biref} ceases to be rigorously
-controlled: higher-order terms in $\nabla\varphi/(m_e c/\hbar)^{-1}$
-and curvature corrections to the photon self-energy are no longer
-formally suppressed.  In this regime the number
+of the scalar-metric background underlying
+Eq.~\eqref{eq:dispersion_biref} ceases to be rigorously
+controlled.  The electron-Compton derivative parameter,
+$|\nabla\varphi|/(m_e c/\hbar)
+= |\nabla\varphi|\,\hbar/(m_e c)$, remains extremely small
+for $\rs\sim 10$~km, of order $4\times 10^{-17}$; the
+limitation is therefore not a breakdown of electron-Compton
+suppression, but the absence of a full curved-background
+one-loop self-energy including the nonlinear metric and
+curvature-coupled terms.  In this regime the number
 $\Delta\Phi_{\mathrm{biref}}\sim 10^{-21}$ should therefore be read
 as a parametric extrapolation of the weak-field formula to its
 boundary of validity rather than a rigorous prediction; the
@@ -7912,7 +7923,13 @@ proposed sources:
     scales as $B^{2}/B_{\mathrm{cr}}^{2}$.
     ISPG birefringence requires a \emph{gravitational}
     gradient; it scales as $(\nabla\varphi)^{2}$.
-    The two effects are orthogonal and additive.
+    At the operator level the magnetic-field QED channel
+    and the scalar-gradient ISPG channel are distinct.  In
+    real neutron-star or magnetar polarimetry, however,
+    magnetic-QED, plasma, and magnetospheric propagation
+    effects would dominate any $\sim 10^{-38}$ gravitational
+    contribution; isolating the ISPG term would require a
+    dedicated background model.
   \item \textbf{Lorentz-violation birefringence}
     (Standard Model Extension~\cite{Colladay1998}):
     produces birefringence that is direction-dependent
