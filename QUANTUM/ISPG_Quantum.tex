@@ -143,10 +143,13 @@ matter-filled bodies; the exact non-perturbative
 matter-coupled cancellation remains an open task per
 MAIN/16), supporting a perturbatively controlled strong
 equivalence statement in the scalar sector;
-(xiii)~a singularity-free cosmological onset in which the
-first excitations nucleate quantum-mechanically from the
-quiescent medium, resolving the horizon, flatness, and
-monopole problems without inflation.
+(xiii)~a homogeneous-background no-inflation scenario in
+which the first excitations nucleate quantum-mechanically
+from the quiescent medium, addressing the horizon,
+flatness, and topological-defect issues at the
+background-consistency level, while the primordial
+perturbation spectrum and superhorizon correlations
+remain open numerical work.
 The central result---closed on the static spherically symmetric
 exterior branch and at leading zero-frequency for time-periodic
 oscillons---is the oscillon $\to$ Bernoulli pressure-deficit
@@ -381,8 +384,12 @@ as a falsifiable test target rather than a current DESI confirmation,
 and addresses the earliest-epoch
 dynamics: quantum nucleation of the first oscillons from
 the quiescent medium, the onset cascade, singularity
-avoidance, and the resolution of the horizon, flatness,
-and monopole problems without inflation.
+avoidance, and a homogeneous-background no-inflation
+scenario in which the horizon, flatness, and
+topological-defect issues are addressed at the
+background-consistency level while the primordial
+perturbation spectrum and superhorizon correlations
+remain open numerical work.
 
 \textbf{Section~\ref{sec:mass_spectrum}} analyzes the spectrum
 of three-dimensional resonant modes, formulates the self-consistent
@@ -3279,10 +3286,12 @@ justification apply:
     self-consistently by the resonance itself, and the
     full coupled system (metric $g_{\mu\nu}$ + scalar
     $\varphi$ + excitation $\Phi$) transforms covariantly
-    under Lorentz boosts, because the ISPG action is
-    diffeomorphism-invariant.  The boosted oscillon
-    \emph{together with its boosted $\varphi_{0}$} is
-    therefore an \emph{exact} solution.
+    under Lorentz boosts of the full field+source
+    configuration, because the asymptotic spacetime
+    admits the global Poincar\'e symmetry of flat space
+    and the ISPG action is invariant under that symmetry.
+    The boosted oscillon \emph{together with its boosted
+    $\varphi_{0}$} is therefore an \emph{exact} solution.
   \item \textit{Particle in an external field.}---When
     $\varphi_{0}(\mathbf{x})$ is sourced by other masses,
     the background breaks global Lorentz symmetry.
@@ -3298,8 +3307,13 @@ justification apply:
     order $(R_{c}/L_{\varphi})^{2} \ll 1$.
 \end{enumerate}
 
-In both cases, no net force acts on the resonance during
-uniform motion.
+In the isolated case, no net self-force acts on the
+resonance during uniform motion.  In the external-field
+case, no additional velocity-proportional self-drag
+arises in the local freely falling frame, but ordinary
+external gravitational acceleration along the
+$\nabla\varphi_{0}$ gradient and tidal/WKB corrections of
+order $(R_c/L_\varphi)^2$ remain allowed.
 
 \textit{Physical interpretation: motion as pattern
 propagation.}---An oscillon is not a rigid body
@@ -3325,12 +3339,18 @@ displace the medium, it \emph{is} the medium.  This is
 the superfluid property of the scalar-metric medium.
 
 The maximum propagation speed of any pattern is set by
-the speed at which the medium transmits information:
-$c_{\mathrm{coord}} = c\,e^{\varphi_{0}}$.  No
-oscillon can outrun its own field, so
-$|\mathbf{v}| < c_{\mathrm{coord}}$ is automatic---the
-relativistic speed limit is not imposed externally but
-follows from the medium's finite response rate.
+the speed at which the medium transmits information.
+In local tetrad units the bound is the locally measured
+$|v_{\mathrm{local}}| < c$, with the same $v$ that
+enters the Lorentz factor $\gamma = (1 -
+v_{\mathrm{local}}^2/c^2)^{-1/2}$.  In coordinate units
+the corresponding bound on the coordinate velocity
+$|d\mathbf{x}/dt|$ is
+$|d\mathbf{x}/dt| < c_{\mathrm{coord}}$ with
+$c_{\mathrm{coord}} = c\,e^{\varphi_{0}}$.  No oscillon
+can outrun its own field; the relativistic speed limit
+is not imposed externally but follows from the medium's
+finite response rate.
 
 %-------------------------------------------------------------------
 \subsection{Accelerated resonance: the origin of inertia}
@@ -4166,10 +4186,13 @@ resonance--medium coupling:
   \item \textbf{Pressure} ($\nabla\varphi \neq 0$
     around matter): the Bernoulli deficit that produces
     gravity (Sec.~\ref{sec:bernoulli_identity}).
-  \item \textbf{Zero drag at constant velocity}:
-    Lorentz invariance of the wave equation ensures
-    that uniformly moving resonances experience no
-    friction (Sec.~\ref{sec:uniform_motion}).
+  \item \textbf{Zero self-drag at constant velocity}:
+    Lorentz invariance of the covariant field+source
+    equation ensures that isolated uniformly moving
+    resonances experience no velocity-proportional
+    self-friction (Sec.~\ref{sec:uniform_motion});
+    external gravitational and tidal forces are
+    separate.
   \item \textbf{Memory} (hysteresis): the finite
     readjustment time of the oscillon profile during
     acceleration produces inertia and, on macroscopic
@@ -4937,8 +4960,8 @@ $\varepsilon(t)$ of Eq.~(\ref{eq:epsilon_late}),
 rather than by a cosmological constant.
 
 \textit{Particle horizon = tail front.}---In FLRW
-cosmology, the comoving particle horizon at cosmic
-time $t$ is
+cosmology, the proper (physical) particle-horizon
+distance at cosmic time $t$ is
 \begin{equation}\label{eq:particle_horizon}
   d_H(t) = a(t)\int_0^{t}\frac{c\,dt'}{a(t')}.
 \end{equation}
@@ -4955,7 +4978,14 @@ $d_H(t)$.  Therefore,
 \end{equation}
 The tail-propagation boundary and the standard
 particle horizon are not merely analogous;
-they are \emph{mathematically identical}.  The
+they are \emph{mathematically identical}.  This identity
+recasts the standard particle horizon in ISPG language;
+the horizon problem itself---the observed superhorizon
+CMB correlations across causally disconnected regions---
+is not solved by this identity alone, and is addressed
+below at the homogeneous-background level via universal
+independent nucleation plus the open primordial-
+perturbation calculation.  The
 observable universe is exactly the causal domain
 of resonant-tail propagation.
 
@@ -5048,15 +5078,16 @@ quantum tunneling event, analogous to Schwinger pair
 production in QED or Coleman--De~Luccia bubble
 nucleation.
 
-The tunneling amplitude can be estimated semiclassically.
-The Euclidean instanton describing oscillon nucleation
-is a localized, $O(4)$-symmetric field configuration
+The tunneling amplitude can be estimated at the
+semiclassical dimensional-estimate level.  A controlled
+Euclidean instanton for oscillon nucleation would be a
+localized, $O(4)$-symmetric field configuration
 $\varphi_{\mathrm{inst}}(\rho)$ (with
 $\rho = \sqrt{\tau^2 + |\mathbf{x}|^2}$) that
 interpolates between the quiescent state
 $\varphi = \mathrm{const}$ at $\rho \to \infty$
 and the oscillon core profile at $\rho = 0$.  The
-Euclidean action of this instanton is
+Euclidean action of this candidate bounce is
 \begin{equation}\label{eq:S_nucleation}
   S_E
   = \int d^4x_E\,\sqrt{g_E}\left[
@@ -5064,33 +5095,40 @@ Euclidean action of this instanton is
     + \frac{1}{2}(\nabla_E\varphi)^2
   \right]_{\mathrm{inst}}.
 \end{equation}
-Dimensional analysis fixes
+Dimensional analysis gives
 $S_E \sim (R_c/\ell_{\mathrm{Pl}})^2$, where
 $R_c = \hbar/(m_0 c)$ is the oscillon radius and
 $\ell_{\mathrm{Pl}} = \sqrt{\hbar G/c^3}$ the Planck
 length.  For Planck-mass oscillons
 ($m_0 \sim \Mpl$, $R_c \sim \ell_{\mathrm{Pl}}$),
-$S_E \sim \order{1}$ and the nucleation rate per Planck
-four-volume is unsuppressed:
+$S_E \sim \order{1}$ at this estimate level and the
+nucleation rate per Planck four-volume is unsuppressed:
 $\Gamma_{\mathrm{nucl}} \sim
 \ell_{\mathrm{Pl}}^{-4}\,e^{-S_E}
 \sim \ell_{\mathrm{Pl}}^{-4}$.
 For lighter oscillons ($m_0 \ll \Mpl$,
 $R_c \gg \ell_{\mathrm{Pl}}$), $S_E \gg 1$ and the
 rate is exponentially suppressed; the first excitations
-are therefore generically Planck-scale.
+are therefore generically Planck-scale in this
+dimensional estimate.  An explicit Euclidean bounce
+solution and a controlled treatment of the
+phantom-sign/conformal-factor structure of the Euclidean
+path integral remain open technical tasks before this
+estimate becomes a derived rate.
 
 Since the quiescent medium is spatially infinite,
 nucleation occurs independently at every point---not
 as a single event but as a spatially uniform process.
 The resulting ensemble of Planck-mass oscillons is
 statistically homogeneous and isotropic by construction:
-every nucleation event involves the same instanton, in
-the same quiescent background, with no preferred
+every nucleation event uses the same local onset channel
+in the same quiescent background, with no preferred
 direction or location.  This \emph{universal nucleation}
-replaces the single-bubble picture and directly
-explains the observed large-scale homogeneity of the
-CMB.
+replaces the single-bubble picture and supplies
+statistically homogeneous background initial data; the
+observed large-scale CMB correlations require the
+separate primordial-perturbation calculation identified
+below.
 
 \textit{Energy density at the onset.}---The first
 oscillons form with Planck-scale energy densities:
@@ -5130,11 +5168,16 @@ where the nucleation source is
 \begin{equation}\label{eq:onset_nucleation_source}
   \mathcal{J}_{\mathrm{nucl}}
   \sim \Gamma_{\mathrm{nucl}}
-  \sim \ell_{\mathrm{Pl}}^{-4}e^{-S_E}
-  \sim \ell_{\mathrm{Pl}}^{-4}
+  \sim
+  \begin{cases}
+    \ell_{\mathrm{Pl}}^{-4}e^{-S_E}, & c=1,\\
+    c\,\ell_{\mathrm{Pl}}^{-4}e^{-S_E}, & \mathrm{SI},
+  \end{cases}
 \end{equation}
 for the unsuppressed Planck-scale instantons with
-$S_E = \order{1}$.  The overlap interaction of neighboring
+$S_E = \order{1}$.  The SI form has dimensions
+$1/(\mathrm{m}^{3}\,\mathrm{s})$ for the number-density
+rate equation.  The overlap interaction of neighboring
 Planckian cores is geometric, so the scattering cross section
 is
 \begin{equation}\label{eq:onset_cross_section}
@@ -5183,6 +5226,16 @@ background on that scale is
   \sim N_L^{-1/2}
   \sim \left(\frac{\ell_{\mathrm{Pl}}}{L}\right)^{3/2}.
 \end{equation}
+This central-limit suppression makes the homogeneous
+background extraordinarily smooth on cosmological scales,
+far below the observed primordial amplitude
+$\delta\rho/\rho \sim 10^{-5}$ and its measured
+near-scale-invariant red-tilted spectrum
+($n_s \simeq 0.965$).  The observed primordial
+perturbation amplitude and spectrum therefore require a
+separate generation mechanism not supplied by
+central-limit smoothing alone; this remains open
+numerical work.
 The corresponding curvature contribution obeys the same
 parametric suppression,
 \begin{equation}\label{eq:onset_curvature_suppression}
@@ -5223,34 +5276,39 @@ apply, for two independent reasons:
   $a \to 0$ (zero scale factor) without encountering
   a singular boundary.
 \end{enumerate}
-The ``Big Bang'' in ISPG is therefore not a singularity
-but a smooth quantum transition from the quiescent state
-to the excited (expanding) state.
+The ``Big Bang'' in ISPG is therefore modeled as a
+quantum transition from the quiescent state to the
+excited (expanding) state, rather than as a classical
+singular boundary.  These two structures evade the
+assumptions of the standard singularity theorems; a
+complete geodesic-completeness and regularity proof for
+the bi-conformal onset geometry remains open.
 
 \textit{Standard cosmological puzzles.}---The
-tail-front onset addresses the puzzles traditionally
-solved by inflation:
+tail-front onset addresses several puzzles traditionally
+associated with inflation at the homogeneous-background
+level:
 \begin{enumerate}
-\item \textit{Horizon problem.}---The uniformity of the
-  CMB follows from the universality of the nucleation
-  mechanism: every point in the quiescent medium
-  nucleates through the same instanton, in the same
-  background, producing statistically identical initial
-  conditions.  On a smoothing scale $L$, the residual
-  inhomogeneity is already suppressed by
-  Eq.~(\ref{eq:onset_density_fluctuation}).  The tail-front identity
+\item \textit{Horizon problem.}---The homogeneous
+  background is supplied by the universality of the
+  nucleation mechanism: every point in the quiescent
+  medium nucleates through the same local onset channel,
+  in the same background, producing statistically
+  identical background initial data.  On a smoothing
+  scale $L$, the residual background inhomogeneity is
+  suppressed by Eq.~(\ref{eq:onset_density_fluctuation}).
+  The tail-front identity
   $d_{\mathrm{tail\;front}} = d_H$
-  (Eq.~\ref{eq:tail_horizon}) then ensures that the
-  observable universe is the causal domain within
-  which these identical seeds have had time to
-  thermalize.  Homogeneity at last scattering is
-  therefore a consequence of the universality of
-  quantum nucleation, not a fine-tuned coincidence.
+  (Eq.~\ref{eq:tail_horizon}) identifies the causal
+  domain of subsequent tail propagation.  The observed
+  superhorizon CMB correlation structure and the
+  primordial two-point spectrum remain part of the
+  separate perturbation-generation calculation.
 \item \textit{Flatness problem.}---The quiescent state is
   exactly flat ($k = 0$): a spatially infinite,
   homogeneous medium admits no intrinsic curvature.
-  Nucleation is spatially uniform (same instanton
-  everywhere), so it cannot generate a preferred
+  Nucleation is spatially uniform (the same local onset
+  channel everywhere), so it cannot generate a preferred
   curvature scale.  Perturbations of the spatial
   geometry are localized within each oscillon's Compton
   radius $R_c \ll d_H$ and average to zero on
@@ -5259,28 +5317,29 @@ solved by inflation:
   $|k_{\mathrm{eff}}|/(a^2H^2)
   = \order{(\ell_{\mathrm{Pl}}/L)^{3/2}} \ll 1$ on every
   macroscopic scale.  The resulting
-  Friedmann evolution therefore inherits $k = 0$ as an
-  \emph{exact} initial condition, not one that must be
-  fine-tuned.
+  Friedmann evolution therefore inherits $k = 0$ as a
+  structural initial condition of the no-inflation
+  scenario.  A dynamical attractor or quantum-selection
+  argument for the exact flatness of the quiescent
+  medium remains open future work.
 \item \textit{Monopole problem.}---ISPG contains a single
   scalar field with an Abelian shift symmetry and no
   spontaneous breaking of a non-Abelian gauge group.
-  The theory therefore produces no topological defects
-  (monopoles, domain walls, cosmic strings) at any
-  epoch.
+  No topological defects arise in the present
+  single-scalar onset sector; if a later high-energy
+  non-Abelian gauge-breaking transition is added in the
+  full Standard-Model embedding, defect formation must be
+  analyzed separately for that sector.
 \item \textit{Primordial perturbations.}---The quantum
   fluctuations of the nucleation epoch provide the seeds
   for large-scale structure.  The spectrum is determined
   by the nonlinear dynamics of the oscillon--tail
   interaction at the Planck epoch; its detailed form
   requires numerical simulation of the coupled
-  scalar-metric system.  We note, however, that the
-  analytic closure above concerns the homogeneous
-  background only.  The feedback mechanism still provides
-  a natural tilt: modes
-  that enter the horizon later experience a slightly
-  different feedback suppression, generically producing
-  a nearly scale-invariant but not exactly flat spectrum.
+  scalar-metric system.  The analytic closure above
+  concerns the homogeneous background only.  Whether the
+  feedback mechanism produces the observed amplitude and
+  red tilt remains open numerical work.
 \end{enumerate}
 
 \textit{Summary.}---The ISPG framework provides a
@@ -5289,17 +5348,21 @@ epoch: the
 quiescent medium undergoes spatially uniform quantum
 nucleation of Planck-mass oscillons; the overlapping
 tails thermalize to produce the hot Big Bang; the
-singularity is avoided by the effective-source NEC violation
-(canonical $\tau_{\mu\nu}$ satisfies the energy conditions; the
+NEC-violating Bernoulli pressure deficit (canonical
+$\tau_{\mu\nu}$ satisfies the energy conditions; the
 $\kappa=-1/2$ coupling flips the sign of the source-side
-contraction, cf.\ the energy-conditions section of the main
-theory~\cite{Lotishvili2026}) and the hyperbolic WDW equation; and the standard cosmological
-puzzles are addressed by the universality of the
-nucleation mechanism and the geometric inheritance of
-$k = 0$.  The quantitative prediction of the primordial
-perturbation spectrum requires numerical simulation of
-the Planck-epoch dynamics---a task identified for future
-lattice work.
+contraction, cf.\ the energy-conditions section of the
+main theory~\cite{Lotishvili2026}) and the hyperbolic WDW
+equation together evade the assumptions of the standard
+singularity theorems.  A complete
+geodesic-completeness/regularity proof for the
+bi-conformal onset geometry remains open.  The standard
+cosmological puzzles are addressed at the
+homogeneous-background level by universal nucleation and
+the geometric inheritance of $k = 0$; the primordial
+spectrum, superhorizon correlations, instanton bounce,
+and geodesic-completeness proof remain open numerical
+and analytical tasks.
 
 %===================================================================
 \section{Mass spectrum of three-dimensional resonances}
@@ -8067,22 +8130,26 @@ results and extensions are:
 
   \item \textbf{Earliest-epoch dynamics without inflation}
     (Sec.~\ref{sec:early_epoch}).  Planck-mass oscillons
-    nucleate uniformly from the quiescent medium via
-    $O(4)$-symmetric instantons with $S_E \sim \order{1}$;
+    nucleate uniformly from the quiescent medium in the
+    semiclassical dimensional-estimate picture, where a
+    candidate Planck-scale bounce has
+    $S_E \sim \order{1}$;
     their overlapping tails thermalize to produce the
-    hot Big Bang.  The initial singularity is avoided by
-    the effective-source NEC violation (canonical $\tau_{\mu\nu}$
-    satisfies the energy conditions; the $\kappa=-1/2$ coupling
-    flips the sign of the source-side contraction, cf.\ the
-    energy-conditions section of the main theory~\cite{Lotishvili2026})
-    and the hyperbolic WDW equation.
-    The horizon and flatness problems are resolved by
-    the universality of the nucleation mechanism and
-    the geometric inheritance of $k = 0$, without
-    invoking an inflaton field.  The homogeneous
-    background closes analytically, while the detailed
-    primordial perturbation spectrum remains a separate
-    numerical problem.
+    hot Big Bang.  The effective-source NEC violation
+    (canonical $\tau_{\mu\nu}$ satisfies the energy
+    conditions; the $\kappa=-1/2$ coupling flips the sign
+    of the source-side contraction, cf.\ the
+    energy-conditions section of the main
+    theory~\cite{Lotishvili2026}) and the hyperbolic WDW
+    equation evade the assumptions of the standard
+    singularity theorems.  The horizon and flatness
+    problems are addressed at the homogeneous-background
+    level by universal nucleation and the geometric
+    inheritance of $k = 0$, without invoking an inflaton
+    field.  The primordial spectrum, superhorizon
+    correlations, instanton bounce, and geodesic-
+    completeness proof remain open numerical and
+    analytical tasks.
 
   \item \textbf{Mass hierarchy from 3D resonances}
     (Sec.~\ref{sec:mass_spectrum}).  The charged-lepton

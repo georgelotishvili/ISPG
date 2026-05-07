@@ -96,8 +96,20 @@ $\mathbf{a}$ starting at $t = 0$.  Its trajectory is
   \qquad (t > 0)\,.
 \end{equation}
 
-The scalar field equation in the weak-field limit is
-the wave equation with source:
+The covariant scalar field equation with a
+point-particle source on the worldline
+$x^\mu=X^\mu(\tau)$ reads
+\begin{equation}\label{eq:wave_covariant}
+  \Box_g\,\phi
+  = \frac{8\pi Gm}{c^2}\!\int d\tau\,
+    \frac{\delta^4(x-X(\tau))}{\sqrt{-g}}\,,
+\end{equation}
+which is manifestly Lorentz-covariant and reduces, on
+flat space and to leading nonrelativistic order
+(integrating out $\tau$ via $d\tau=dt/u^0$ and
+neglecting $u^0-1=\mathcal{O}(v^2/c^2)$), to the
+weak-field, slow-motion form used below for the
+retarded expansion:
 \begin{equation}\label{eq:wave}
   \Box\,\phi \equiv
   \left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}
@@ -338,14 +350,19 @@ sectors together supply the inertial reaction.
 %===================================================================
 
 The absence of drag for uniform rectilinear motion
-follows from Lorentz covariance of the field equation.
+follows from Lorentz covariance of the covariant
+field+source system~(\ref{eq:wave_covariant}).
 
 \subsection{Lorentz-boosted solution}
 
 For a body moving with constant velocity $\mathbf{v}$,
-the exact solution of the wave equation~(\ref{eq:wave})
-is obtained by Lorentz-boosting the static
-solution~(\ref{eq:phi_static_app17}).  Define
+the exact solution of the covariant field
+equation~(\ref{eq:wave_covariant}) is obtained by
+Lorentz-boosting the static
+solution~(\ref{eq:phi_static_app17}); the
+nonrelativistic Eq.~(\ref{eq:wave}) is the weak-field
+display of the same exact solution to leading order
+in $v/c$.  Define
 $\gamma = (1 - v^2/c^2)^{-1/2}$ and the boosted
 coordinates:
 \begin{equation}\label{eq:boost}
@@ -377,9 +394,13 @@ This is the field-theoretic realisation of the
 philosophical argument (FILOSOFY, Sec.~12): a body
 moving at constant velocity has already adapted to its
 environment---its ``consumption'' of field energy
-matches the field's ability to replenish---so no net
-resistance appears.  Resistance arises \emph{only}
-when this balance is broken, i.e.\ during acceleration.
+matches the field's ability to replenish---so no
+isolated scalar self-drag arises.  Isolated scalar
+self-drag/resistance arises \emph{only} when the
+co-moving self-field balance is broken, e.g.\ during
+acceleration; ordinary external gravitational forces
+and tidal effects are separate from this isolated
+self-drag statement.
 
 %===================================================================
 \section{Relaxation time scale}\label{sec:relaxation}
