@@ -1055,44 +1055,50 @@ measured by local instruments.  A local spectroscopist
 obtains the same spectrum regardless of the value
 of $\varphi_0$.
 
-\textit{Compton wavelength.}---The Compton wavelength
-$\lambda_C = h/(m c)$ scales as
+\textit{Compton wavelength.}---In the local tetrad,
+the locally measured rest mass is $m_{0}$ and the
+locally measured speed of light is $c$
+(Eq.~\ref{eq:c_local}).  The Compton wavelength
+measured against local rulers is therefore
 \begin{equation}
   \lambda_{C,\mathrm{local}}
-  = \frac{h}{\meff\,c}
-  \cdot e^{-\varphi_0/2}
-  = \frac{h}{m_0\,c}\cdot
-    \frac{e^{-\varphi_0/2}}{e^{\varphi_0/2}}
-  = \frac{h}{m_0 c}\,e^{-\varphi_0}.
+  = \frac{h}{m_{0}\,c},
 \end{equation}
-But the local ruler also scales: proper length
-$\ell_{\mathrm{local}} = e^{-\varphi_0/2}\,\ell_{\mathrm{coord}}$.
-The Compton wavelength measured in local ruler units is
+which is the standard position-independent value.
+The coordinate representation follows from
+$\ell_{\mathrm{coord}}=e^{\varphi_0/2}
+\ell_{\mathrm{local}}$:
 \begin{equation}
-  \frac{\lambda_{C,\mathrm{coord}}}
-       {e^{-\varphi_0/2}}
-  = \frac{h/(m_0\,c\,e^{\varphi_0/2})}
-         {e^{-\varphi_0/2}}
-  = \frac{h}{m_0\,c},
+  \lambda_{C,\mathrm{coord}}
+  = e^{\varphi_0/2}\,\lambda_{C,\mathrm{local}}
+  = \frac{h}{m_{0}c}\,e^{\varphi_0/2}
+  = \frac{h}{\meff\,c}.
 \end{equation}
-which is the standard, position-independent result.
+The bi-conformal scaling moves $\lambda_C$ in coordinate
+units; the local Compton wavelength is unchanged.
 
-\textit{De Broglie wavelength.}---A particle with
-local momentum $p_{\mathrm{local}}$ has de Broglie
-wavelength $\lambda_{\mathrm{dB}} = h/p_{\mathrm{local}}$.
-Since momentum transforms as
-$p_{\mathrm{local}} = p_{\mathrm{coord}}\,e^{\varphi_0/2}$
-and the ruler transforms as $e^{-\varphi_0/2}$, the
-locally measured wavelength is
+\textit{De Broglie wavelength.}---In the local tetrad,
+a particle with locally measured momentum
+$p_{\mathrm{local}}$ has de Broglie wavelength
 \begin{equation}
   \lambda_{\mathrm{dB,local}}
-  = \frac{h}{p_{\mathrm{local}}}
-    \cdot \frac{1}{e^{-\varphi_0/2}}
-  = \frac{h}{p_0}
+  = \frac{h}{p_{\mathrm{local}}},
 \end{equation}
-(where $p_0$ is the bare momentum), confirming that
-the de~Broglie relation $\lambda = h/p$ holds
-locally with no $\varphi$-dependent corrections.
+the standard relation in local units, with no position
+dependence.  The coordinate representation follows by
+converting both momentum and length:
+$p_{\mathrm{local}}=e^{\varphi_0/2}p_{\mathrm{coord}}$
+and
+$\lambda_{\mathrm{coord}}=e^{\varphi_0/2}
+\lambda_{\mathrm{local}}$, so
+\begin{equation}
+  \lambda_{\mathrm{dB,coord}}
+  = e^{\varphi_0/2}\,\lambda_{\mathrm{dB,local}}
+  = \frac{h}{p_{\mathrm{local}}\,e^{-\varphi_0/2}}
+  = \frac{h}{p_{\mathrm{coord}}}.
+\end{equation}
+Thus the de~Broglie relation $\lambda=h/p$ holds
+separately in the local tetrad and in the coordinate chart.
 
 \textit{General theorem.}---All dimensionless quantum
 observables (branching ratios, coupling constants,
@@ -3564,10 +3570,12 @@ the third-derivative term within the ISPG retarded
 expansion is left to future work.
 
 For the localized resonance in the weak-field regime considered here,
-the inertial mass $m_{\mathrm{inertial}} = m_{0}\,e^{\varphi/2}$
-and the gravitational mass assignment
-(Eq.~\ref{eq:meff_quantum}) are tied to the same scalar profile and
-Bernoulli pressure-deficit bookkeeping.
+the leading inertial coefficient and the gravitational mass
+assignment are tied to the same scalar profile and Bernoulli
+pressure-deficit bookkeeping, with the effective redshifted mass
+$m_{\mathrm{eff}}=m_{0}\,e^{\varphi/2}$
+(Eq.~\ref{eq:meff_quantum}) entering through the
+Bernoulli normalization stated below.
 
 %-------------------------------------------------------------------
 \subsection{The test-particle equivalence principle as an identity}
@@ -3583,32 +3591,55 @@ $g_{\mu\nu}[\varphi]$.  Within the localized resonance
 bookkeeping used here, the same equality is also reflected in the
 unified scalar-field mechanism: under the identifications
 established earlier in this section---namely that the
-gravitational mass is the Bernoulli pressure-deficit
-integral~(\ref{eq:meff_quantum}) and that the inertial
+gravitational mass is identified with the
+Bernoulli-normalized gradient energy $E_{\varphi}/c^{2}$
+via the integral Eq.~(\ref{eq:E_phi_def}) (under the
+Bernoulli normalization tracked in
+Sec.~\ref{sec:bernoulli_identity}, distinct from the
+redshift/frequency effective mass
+$m_{\mathrm{eff}}=m_{0}e^{\varphi/2}$ of
+Eq.~(\ref{eq:meff_quantum})), and that the inertial
 force takes the form~(\ref{eq:F_radial}) with the same
-integrand---both masses reduce to the single quantity
+integrand under the leading projection
+$C_{\mathrm{in}}=1$---the two mass assignments reduce to
+the same Bernoulli-normalized quantity at leading order:
 \begin{equation}\label{eq:equivalence}
-  m_{\mathrm{grav}} = \frac{E_{\mathrm{Bernoulli}}}{c^2}
+  m_{\mathrm{grav}} = \frac{E_{\varphi}}{c^2}
   = \frac{1}{c^2}\int d^3x\,
     \frac{e^{\varphi}}{32\pi G}\,|\nabla\varphi|^2
-  = m_{\mathrm{inertial}}.
+  \,,\qquad
+  m_{\mathrm{inertial}}
+  = C_{\mathrm{in}}\,m_{\mathrm{grav}}
+  \quad (C_{\mathrm{in}}=1\ \text{at leading order}).
 \end{equation}
 The equality is therefore not an independent postulate
 within this approximation: once the gravitational and inertial
 identifications above are accepted, both rely on the same
-Bernoulli integral over the same equilibrium field configuration.
+Bernoulli-normalized gradient-energy integral over the same
+equilibrium field configuration, with the inertial side carrying
+the leading projection coefficient $C_{\mathrm{in}}$ introduced in
+Eq.~(\ref{eq:F_radial}).
 The actual equation of motion for test matter remains the
 geodesic equation of the metric defined by this profile; the
-Bernoulli integral supplies the pressure-deficit interpretation
-of why that profile is gravitational.  Inertia is the dynamic
-manifestation of the same profile bookkeeping, through resistance
-to profile readjustment during acceleration.
+Bernoulli-normalized gradient energy supplies the
+pressure-deficit interpretation of why that profile is
+gravitational.  Inertia is the dynamic manifestation of the same
+profile bookkeeping, through resistance to profile readjustment
+during acceleration.
 \emph{Status.}---Derived here under the assumptions of
 weak field, slow acceleration $a \ll c\omega_{0}$, and
-spherical equilibrium oscillon profile; the
-\emph{logical} status is that of a structural identity
-within these approximations, not of an exact theorem
-of the full nonlinear theory.
+spherical equilibrium oscillon profile, with
+$C_{\mathrm{in}}=1$ at leading order.  The full coefficient
+closure depends on the regular-field closure of the
+perturbative test-body calculation in the main theory
+(the $C_{\mathrm{reg}}$ residual technical input) and on the
+Bernoulli normalization identifying $E_{\varphi}$ with
+$m_{\mathrm{eff}}c^{2}$ on the spherical equilibrium profile
+(Sec.~\ref{sec:bernoulli_identity}).  The
+\emph{logical} status is therefore that of a structural identity
+within these approximations, conditional on those two open
+numerical tasks, and not of an exact theorem of the full nonlinear
+theory.
 
 \textit{Connection to the MOND transition: a common
 dynamical mechanism.}---The inertial mechanism derived
@@ -4150,12 +4181,16 @@ resonance--medium coupling:
 
 These three properties---pressure without friction,
 combined with memory---characterize a unique physical
-medium: a \emph{superfluid with hysteresis}.  The
-equivalence principle is not an axiom but the
-inevitable consequence of the fact that gravity and
-inertia are the static and dynamic aspects of a
-single quantity: the Bernoulli pressure deficit of a
-resonant excitation.
+medium: a \emph{superfluid with hysteresis}.  Within the
+weak-field, slow-acceleration, spherical-equilibrium regime
+considered here and under the leading-order projection
+$C_{\mathrm{in}}=1$ of Eq.~(\ref{eq:equivalence}), the
+equivalence principle becomes a structural consequence of the
+fact that gravity and inertia are the static and dynamic aspects
+of the same Bernoulli-normalized gradient-energy bookkeeping of a
+resonant excitation; the exact non-perturbative statement remains
+tied to the open coefficient and normalization tasks recorded
+above.
 
 %===================================================================
 \section{Entropy, self-regulation, and dark energy}\label{sec:entropy}
@@ -4710,23 +4745,40 @@ are expected to discriminate between these scenarios
 within the current decade.
 
 \paragraph{Cumulative process-time and the process age of the universe.}
-The clock-rate postulate $d\tau = e^{\varphi_0/2}\,dt$
-(Sec.~\ref{sec:excitations}, Eq.~\ref{eq:c_local}) implies that the total process
-duration accumulated by pressure-controlled matter-sector processes since redshift
-$z_f$ exceeds the coordinate lookback time whenever past pressure
-was higher than present pressure:
+The local clock-rate response derived from the bi-conformal
+metric (Sec.~\ref{sec:excitations}, Eq.~\ref{eq:c_local},
+$d\tau=e^{\varphi/2}\,dt$ with the local metric scalar
+$\varphi$), when applied as a constitutive pressure-ontology
+postulate to the coarse-grained cosmological pressure-history
+diagnostic $\varphi_{\mathrm{bg}}(z)$ of the main theory
+(rather than to the homogeneous FLRW metric scalar
+$\varphi_0=0$), implies that the total process duration
+accumulated by pressure-controlled matter-sector processes
+since redshift $z_f$ exceeds the coordinate lookback time
+whenever past coarse-grained pressure was higher than present
+coarse-grained pressure:
 \begin{equation}\label{eq:tau_proc_q}
   \tau_{\mathrm{proc}}(z_f)
   = \int_0^{z_f}
-    \left[\frac{P_{\mathrm{stat}}(z)}{P_{\mathrm{stat}}(0)}\right]^{1/2}
+    \left[
+      \frac{\langle P_{\mathrm{stat}}\rangle_V(z)}
+           {\langle P_{\mathrm{stat}}\rangle_V(0)}
+    \right]^{1/2}
     \frac{dz}{(1+z)\,H(z)}\,.
 \end{equation}
-The pressure ratio is fully determined by the feedback ODE
+Here $\langle P_{\mathrm{stat}}\rangle_V$ is the
+volume-averaged static pressure of the medium at the
+indicated epoch, in the process-time notation of the
+main theory~\cite{Lotishvili2026}.  The pressure ratio
+is fully determined by the feedback ODE
 \eqref{eq:feedback_ode} and the dark-energy parametrisation
-\eqref{eq:w_prediction}: $P_{\mathrm{stat}}(z)/P_{\mathrm{stat}}(0)
-= [e^{2\varphi(z)}/e^{2\varphi(0)}]^{1/2}$, with the ratio supplied
-by the self-consistent cosmological solution.  Here $\alpha$
-parametrises the cosmological evolution of the per-particle
+\eqref{eq:w_prediction}:
+$\langle P_{\mathrm{stat}}\rangle_V(z)/
+\langle P_{\mathrm{stat}}\rangle_V(0)
+= [e^{2\varphi_{\mathrm{bg}}(z)}/
+e^{2\varphi_{\mathrm{bg}}(0)}]^{1/2}$, with the ratio
+supplied by the self-consistent cosmological solution.
+Here $\alpha$ parametrises the cosmological evolution of the per-particle
 tail power
 $\mathcal{P}_{\mathrm{tail}}(z)
 = \mathcal{P}_{\mathrm{tail},0}(1+z)^{\alpha}$ entering
@@ -7953,7 +8005,11 @@ results and extensions are:
     admits quasi-localized oscillatory solutions whose
     energy reproduces the effective mass formula
     $\meff = m_0\,e^{\varphi/2}$.  Local undetectability
-    extends to all quantum observables.
+    extends to all dimensionless local quantum observables
+    under a uniform bi-conformal background rescaling with
+    fixed dimensionless couplings; gradient-dependent effects,
+    loop-threshold effects, and cross-epoch comparisons require
+    separate treatment.
 
   \item \textbf{Bernoulli mechanism for gravity}
     (Sec.~\ref{sec:bernoulli_identity}).  The kinetic energy of
