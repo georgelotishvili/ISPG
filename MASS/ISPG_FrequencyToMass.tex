@@ -2151,9 +2151,11 @@ The geometric mean $\sqrt{m_P\,m_e}
 \approx 79$~GeV is very close to the electroweak scale
 ($v_{\mathrm{EW}} = 246$~GeV, $m_W = 80$~GeV).
 This is not accidental: the electroweak scale is
-\textbf{determined by} the vibration amplitude $\Phi_0$,
-which shares a common origin with $m_e$ and $m_P$
-through $\nu_0$ and $G_2(X)$
+expected, in the ISPG completion, to be fixed by the
+same oscillon-amplitude normalization that determines
+$\Phi_0$; the explicit coarse-graining map from the
+dimensionless amplitude $\Phi_0$ to the imported energy
+scale $v_{\mathrm{EW}}=246$~GeV remains open
 (\S\ref{sec:higgs}).
 
 \subsection{Numerical Solution of the Mathieu Equation}
@@ -3417,11 +3419,12 @@ $\ell=0$ (scalar) $+$ $\ell=2$ (tensor)
 coexistence; 1D substrate $\to$ 3D by
 vibrational necessity
 (Sec.~\ref{sec:dimensions}).\\
-Higgs VEV $=$ vibration amplitude $\Phi_0$;
-Higgs boson $=$ amplitude fluctuation
-(Sec.~\ref{sec:higgs}); formal derivation
-$v(\varphi) = v_0\,e^{\varphi/2}$ with full
-electroweak spectrum in ISPG\_Quantum, Sec.~8.
+Conditional Higgs scaling:
+$v(\varphi)=v_0\,e^{\varphi/2}$; the oscillon
+amplitude $\Phi_0$ is the candidate ISPG order
+parameter, with the $\Phi_0\to v_{\mathrm{EW}}$
+normalization left open (Sec.~\ref{sec:higgs};
+ISPG\_Quantum, Sec.~8).
 }}
 \end{center}
 
@@ -5867,17 +5870,18 @@ fluctuation}
 \label{sec:higgs}
 %-------------------------------------------------------------------
 
-The formal derivation of the Higgs mechanism
+The companion paper gives the bi-conformal scaling of an
+effective electroweak VEV
 \cite{Higgs1964,EnglertBrout1964,Guralnik1964,Goldstone1961,ColemanWeinberg1973}
 as conformal symmetry breaking---showing that
 $v(\varphi) = v_0\,e^{\varphi/2}$, recovering
-the full electroweak gauge boson spectrum
-($W^{\pm}$, $Z$, $\gamma$), and predicting
+the broken-phase electroweak gauge-boson mass matrix
+once the SM electroweak sector is supplied, and recording
 the gravitational correction
 $\delta m_H^2 \sim 10^{-34}\,m_H^2$---is given
 in the companion paper \cite{Lotishvili2026Q} (ISPG\_Quantum, Sec.~8).
 Here we present the oscillon-level picture that
-underlies the same mechanism.
+motivates the candidate ISPG replacement.
 
 \medskip
 Throughout this paper a single theme recurs:
@@ -5886,11 +5890,11 @@ An oscillon's mass is its harmonic number $N$;
 $m_N = m_1\,b_N(q)$ is, at its core, a
 statement about how vigorously the
 $\nu_0$-string vibrates in the trapped region.
-This theme identifies the Higgs mechanism
-unambiguously.
+This theme identifies the target that a Higgs-replacement
+mechanism must reproduce.
 
-\textit{The Higgs field is the vibration
-amplitude $\Phi_0$.}---The $\nu_0$-string
+\textit{The oscillon amplitude as candidate order
+parameter.}---The $\nu_0$-string
 vibrates everywhere with amplitude $\Phi_0$:
 \begin{equation}\label{eq:higgs_vev}
   \phi(x,t) \;\sim\;
@@ -5903,25 +5907,29 @@ and every excitation propagates as a massless
 wave.  The moment $\Phi_0 \neq 0$, the
 nonlinear term $\alpha X^2/M^2$ activates,
 oscillons condense, and particles acquire mass.
-This is \emph{precisely} what the Standard
-Model's Higgs vacuum expectation value $v$
-does: with $v = 0$ all fermions and gauge
-bosons are massless; with $v \neq 0$ they
-acquire mass proportional to their coupling.
+This is the ISPG analogue of the role played by the
+Standard Model's Higgs vacuum expectation value $v$:
+with $v = 0$ the SM fermions and gauge bosons are
+massless; with $v \neq 0$ they acquire mass
+proportional to their coupling.
 
-The identification is:
+The normalization target is:
 \begin{equation}\label{eq:higgs_map}
 \boxed{
   \Phi_0
-  \;\longleftrightarrow\;
+  \;\longrightarrow\;
   v_{\mathrm{EW}} = 246\;\text{GeV}
   \qquad
-  \text{(Higgs VEV)}.
+  \text{(open coarse-graining map)}.
 }
 \end{equation}
+\noindent
+Here $\Phi_0$ is dimensionless oscillon-profile data,
+whereas $v_{\mathrm{EW}}$ is an imported electroweak
+energy scale until the normalization map is derived.
 
-\textit{Spontaneous symmetry breaking.}---The
-$G_2(X)$ action determines the equilibrium
+\textit{Effective amplitude symmetry breaking.}---The
+$G_2(X)$ kinetic structure suggests an equilibrium
 amplitude $\Phi_0$
 (Eq.~\ref{eq:amplitude_constraint}).
 The linear term
@@ -5941,12 +5949,16 @@ at $\Phi_0 \neq 0$:
 \]
 where $\mu^2$ and $\lambda$ are determined by
 $\alpha$, $M$, $M_{\mathrm{Pl}}$, and
-$\omega_0$.  This is the
-\textbf{Mexican-hat potential}---not postulated,
-but derived from the $G_2(X)$ action.
+$\omega_0$ in the effective amplitude description.
+This is the \textbf{Mexican-hat analogy}: the
+$G_2(X)$ kinetic structure suggests an effective
+amplitude potential in the broken-phase regime, but a
+genuine non-derivative SU(2)-doublet Higgs potential is
+not derived here.
 The string ``chooses'' to vibrate at $\Phi_0
 \neq 0$ rather than remaining at rest:
-this is spontaneous symmetry breaking.
+this is the candidate ISPG analogue of spontaneous
+symmetry breaking.
 
 \textit{The Higgs boson.}---A localised
 perturbation in which the vibration amplitude
@@ -5954,11 +5966,14 @@ deviates from its equilibrium value,
 $\Phi_0 \to \Phi_0 + h(x,t)$,
 oscillates around the potential minimum.
 The frequency of this oscillation is the
-\textbf{Higgs boson mass}:
+\textbf{candidate amplitude-mode Higgs mass}:
 \begin{equation}\label{eq:higgs_mass}
-  m_H \;=\; \sqrt{V_{\mathrm{eff}}''(\Phi_0)}
-  \;=\; 125\;\text{GeV}.
+  m_H^{(\mathrm{amp})}
+  \;=\; \sqrt{V_{\mathrm{eff}}''(\Phi_0)}.
 \end{equation}
+The observed value $m_H=125$~GeV is currently a
+target/ladder hit, not a first-principles prediction
+from this effective amplitude potential.
 In signal-processing language: the
 $\nu_0$-vibration is the \textbf{carrier wave};
 the Higgs boson is its
@@ -5973,12 +5988,15 @@ $h(x,t)$ therefore affects heavy oscillons more
 than light ones:
 \begin{equation}
   g_{Hff} \;\propto\; \frac{\partial m_N}
-  {\partial \Phi_0}
-  \;\propto\; m_N,
+  {\partial \Phi_0},
 \end{equation}
-reproducing the Standard Model result that the
-Higgs couples to each particle in proportion to
-its mass.
+which must be tested by explicitly differentiating the
+Mathieu law $m_N=m_1 b_N(q(\Phi_0))$.  SM-like
+proportionality to $m_N$ is not automatic; it requires
+verifying that
+$(\partial b_N/\partial q)(\partial q/\partial\Phi_0)$
+reproduces the Yukawa coupling pattern.  This derivative
+test is open future work.
 
 \textit{Goldstone bosons and $W/Z$ masses.}---The
 field $\phi$ is a single \emph{real} scalar,
@@ -6024,9 +6042,9 @@ electron mass is
 $\sqrt{m_P\,m_e} \approx 79$~GeV, remarkably
 close to $m_W = 80$~GeV
 (\S\ref{sec:mathieu_numerical}).
-In the ISPG picture this is not a coincidence:
-the electroweak scale $v_{\mathrm{EW}}$ is
-determined by $\Phi_0$, which is fixed by
+In the ISPG picture this points to a common structural
+origin: the electroweak scale $v_{\mathrm{EW}}$ is an
+open normalization target for $\Phi_0$, which is fixed by
 $\omega_0 = 2\pi\nu_0$ and the $G_2(X)$
 parameters
 (Eq.~\ref{eq:amplitude_constraint})---the same
@@ -6034,18 +6052,17 @@ quantities that determine $m_e$ (the first
 stable harmonic) and $m_P$ (the Planck scale).
 All three scales share a common origin.
 
-\textit{Future work.}---Deriving the numerical
-value $m_H = 125$~GeV from
-$V_{\mathrm{eff}}''(\Phi_0)$ requires
-$\alpha/M^2$, which will be determined by
-the lattice simulation of k-oscillons
-(Eq.~\ref{eq:amplitude_constraint}).
-Once $\alpha$ and $M$ are fixed independently,
-$m_H$ becomes a first-principles prediction.
-The precise mapping between $\Phi_0$ and
-$v_{\mathrm{EW}} = 246$~GeV through the
-bi-conformal normalisation conventions is
-a natural part of that calculation.
+\textit{Future work.}---The Higgs mass would be obtained
+from $\sqrt{V_{\mathrm{eff}}''(\Phi_0)}$ once the
+effective amplitude potential, the
+$\Phi_0\to v_{\mathrm{EW}}$ normalization, and the
+$\Phi_0$-dependence of the Mathieu coefficient
+$b_N(q(\Phi_0))$ are derived.  The observed
+$m_H=125$~GeV is currently a target/ladder hit, not a
+first-principles prediction.  The precise mapping
+between $\Phi_0$ and $v_{\mathrm{EW}} = 246$~GeV
+through the bi-conformal normalisation conventions is a
+natural part of that calculation.
 
 %-------------------------------------------------------------------
 \subsection{Summary}
@@ -6089,19 +6106,23 @@ $=$ inherent chirality of torsion
 modes} of one string: longitudinal (gravity),
 transverse (EM), torsional (weak), membrane
 (strong).\\[2pt]
-11.\ Higgs VEV $=$ vibration amplitude $\Phi_0$;
-Higgs boson $=$ amplitude fluctuation $h(x,t)$;
-Mexican hat $=$ $G_2(X)$ effective potential
-(\S\ref{sec:higgs}).\\[6pt]
+11.\ Conditional scaling:
+$v(\varphi)=v_0\,e^{\varphi/2}$; the oscillon
+amplitude $\Phi_0$ is the candidate ISPG analogue
+of the Higgs order parameter, with
+$\Phi_0\to v_{\mathrm{EW}}$ an open normalization
+target.  $G_2(X)$ suggests an effective amplitude
+potential; a non-derivative SU(2)-doublet potential
+is not derived here (\S\ref{sec:higgs}).\\[6pt]
 \textit{Established in the companion paper
 (ISPG\_Quantum):}\\[2pt]
 12.\ Spin-1/2 $=$ vortex winding number,
 $J = n\hbar/2$; Fermi--Dirac statistics from
 Berry phase (Sec.~10).\\[2pt]
-13.\ Higgs mechanism $=$ conformal symmetry
-breaking, $v(\varphi) = v_0\,e^{\varphi/2}$;
-full electroweak spectrum recovered
-(Sec.~8).\\[2pt]
+13.\ Effective Higgs-sector scaling:
+$v(\varphi) = v_0\,e^{\varphi/2}$; the broken-phase
+mass matrix is recovered once the SM electroweak
+sector and imported $v_0$ are supplied (Sec.~8).\\[2pt]
 14.\ Koide formula $Q = 2/3$: numerical support
 from the E1D/rank-1 cavity analysis on the MASS/Mathieu
 lepton ladder, $0.009\%$ accuracy; the 3D-to-1D bridge
@@ -6169,12 +6190,12 @@ groups) is a goal for future work.
     vortex winding; Berry phase $= \pm\pi$
     for $n = \pm 1$ exchange; Pauli exclusion from
     vortex topology (Sec.~10).
-  \item[\checkmark] \textbf{Higgs mechanism}:
-    $v(\varphi) = v_0\,e^{\varphi/2}$ as
-    conformal symmetry breaking; full electroweak
-    gauge boson spectrum recovered; gravitational
-    correction $\delta m_H^2 \sim 10^{-34}\,m_H^2$
-    predicted (Sec.~8).
+  \item[$\triangleright$] \textbf{Effective Higgs-sector scaling}:
+    $v(\varphi) = v_0\,e^{\varphi/2}$ as conditional
+    conformal scaling of an imported electroweak scale;
+    the $\Phi_0\to v_{\mathrm{EW}}$ normalization and
+    first-principles Higgs-mass derivation remain open
+    (Sec.~8).
   \item[\checkmark] \textbf{Koide formula}:
     $Q = 2/3$ numerical support via rank-1
     perturbation and Hartree analysis on the MASS/Mathieu
@@ -6259,10 +6280,11 @@ to predictions}
     verify $W/Z$ masses from
     $(R_\perp / \lambda_0)$ suppression
     (\S\ref{sec:neutrinos}, \S\ref{sec:charge}).
-  \item \textbf{Higgs mass from first principles}:
-    derive $m_H = 125$~GeV from
-    $V_{\mathrm{eff}}''(\Phi_0)$ using $\alpha$
-    and $M$ from the lattice simulation
+  \item \textbf{Higgs-mass programme}:
+    build the first-principles amplitude-potential
+    calculation of $V_{\mathrm{eff}}''(\Phi_0)$ using
+    $\alpha$ and $M$ from the lattice simulation, and test
+    whether it reproduces the $m_H=125$~GeV target
     (\S\ref{sec:higgs}).
   \item \textbf{Electric charge and
     $\alpha \approx 1/137$}: derive from the
