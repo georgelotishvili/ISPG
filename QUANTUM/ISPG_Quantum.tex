@@ -98,21 +98,27 @@ $w(z) = -1 - \delta w_0\,(1+z)^3/E(z)$ with
 $\delta w_0 \sim 10^{-2}$--$10^{-1}$ (source-driven phantom,
 no ghost instability), whose magnitude remains conditional on the
 tail-power normalization and whose DESI DR2 CPL comparison is mixed
-(same sign of $w_a$, opposite sign of $w_0+1$); (v)~gravitational decoherence of
-entangled particles with rate $\Gamma_{\mathrm{dec}} = 2m_0|\Delta\Phi_N|/h$,
-predicting $\Gamma_{\mathrm{dec}} \sim 0.5$~Hz for eV-scale photon
-pairs at 10~m height separation and effectively instantaneous
-decoherence for macroscopic systems (MAQRO, STE-QUEST);
+(same sign of $w_a$, opposite sign of $w_0+1$); (v)~a coherent
+gravitational phase/dephasing rate for entangled particles,
+$\Gamma_{\varphi} = 2m_0|\Delta\Phi_N|/h$, which reproduces the
+GR/COW redshift baseline at leading post-Newtonian order, while the
+irreversible decoherence channel associated with resonant tails and
+scalar fluctuations remains conditional on a dedicated correlator
+derivation; the formal eV-photon coefficient at 10~m is
+$\sim 0.5$~Hz but is not a clean flight-geometry test;
 (vi)~a candidate topological route to the fermion spin projection
 and matter--antimatter winding labels $n = \pm 1$;
 (vii)~gravitational birefringence from the gradient-squared scalar
 channel, with $\Delta c/c \propto (\nabla\varphi)^2/m_e^2$
 distinct from the GR$+$QED Drummond--Hathrell curvature channel;
 the numerical coefficient and detectability forecast are future
-one-loop calculation targets; (viii)~anisotropic quantum tunneling enhanced toward
-gravitational sources by factor $T_\downarrow/T_\uparrow \sim
-\exp[d\Delta\varphi\sqrt{2m(V_0-E)}/\hbar]$, relevant for nuclear
-reactions in white dwarf interiors; (ix)~a schematic cosmological variation
+one-loop calculation targets; (viii)~a candidate
+profile-dependent WKB tunneling effect in inhomogeneous
+$\varphi(x)$ backgrounds, with any nonreciprocal
+$T_\downarrow/T_\uparrow$ channel tied to a future
+resonant-tail/anchoring boundary-condition calculation and any
+macroscopic or cumulative astrophysical relevance left to
+dedicated modelling; (ix)~a schematic cosmological variation
 of the fine-structure constant $|\Delta\alpha/\alpha| \sim 10^{-7}$--$10^{-6}$
 at $z \sim 1$--$3$, subject to a fixed-scale/renormalization prescription
 and testable by ESPRESSO and ELT-ANDES; (x)~numerical support for the Koide relation
@@ -6903,16 +6909,21 @@ where entanglement is encoded in the Fock-space structure
 rather than in local hidden variables.
 
 %-------------------------------------------------------------------
-\subsection{Gravitational decoherence rate}
+\subsection{Gravitational phase rate and conditional decoherence}
 \label{sec:decoherence}
 %-------------------------------------------------------------------
 
-The ISPG framework predicts a specific decoherence mechanism
-absent in standard quantum mechanics: when entangled particles
-are placed at different gravitational potentials
-(different values of $\varphi$), the bi-conformal rescaling
-introduces a differential phase evolution that degrades the
-entangled state.
+The ISPG framework predicts a specific coherent gravitational
+phase channel: when entangled particles are placed at different
+gravitational potentials (different values of $\varphi$), the
+bi-conformal rescaling introduces a differential phase evolution
+between the two local resonance clocks.  At leading
+post-Newtonian order this phase channel reproduces the
+standard GR redshift/COW baseline.  The stronger claim of
+genuine irreversible decoherence requires an additional
+unobserved channel, supplied in ISPG by resonant-tail emission
+or stochastic scalar fluctuations, and is therefore stated below
+as a conditional extension of the coherent phase result.
 
 Consider two entangled particles $A$ and $B$ at positions with
 scalar-field values $\varphi_A$ and $\varphi_B$, respectively.
@@ -6923,29 +6934,29 @@ Their local frequencies are (Eq.~\ref{eq:omega_local}):
 \end{equation}
 where $\omega_0$ is the coordinate frequency at production.
 
-The differential phase accumulated over coordinate time $t$ is
+The coherent differential phase accumulated over coordinate time $t$ is
 \begin{equation}\label{eq:diff_phase}
-  \Delta\Phi(t) = (\omega_A - \omega_B)\,t
+  \Delta\theta(t) = (\omega_A - \omega_B)\,t
   = \omega_0\,t\,
     \left(e^{-\varphi_A/2} - e^{-\varphi_B/2}\right).
 \end{equation}
 For $|\Delta\varphi| \equiv |\varphi_A - \varphi_B| \ll 1$:
 \begin{equation}\label{eq:diff_phase_weak}
-  \Delta\Phi(t) \approx \frac{\omega_0\,t}{2}\,\Delta\varphi.
+  \Delta\theta(t) \approx \frac{\omega_0\,t}{2}\,\Delta\varphi.
 \end{equation}
 
-When the differential phase reaches $\Delta\Phi \sim \pi$,
+When the differential phase reaches $\Delta\theta \sim \pi$,
 the entangled state has evolved to an orthogonal (distinguishable)
-configuration, and the quantum correlations are lost.  The
-decoherence time is therefore
+configuration.  This defines a coherent dephasing or
+orthogonalization time,
 \begin{equation}\label{eq:t_dec}
-  t_{\mathrm{dec}} \sim \frac{2\pi}{\omega_0\,|\Delta\varphi|}
+  t_{\varphi} \sim \frac{2\pi}{\omega_0\,|\Delta\varphi|}
   = \frac{h}{m_0 c^{2}\,|\Delta\varphi|},
 \end{equation}
-and the decoherence rate is
+and the corresponding leading phase/dephasing rate is
 \begin{equation}\label{eq:Gamma_dec}
   \boxed{
-  \Gamma_{\mathrm{dec}}
+  \Gamma_{\varphi}
   = \frac{m_0 c^{2}\,|\Delta\varphi|}{h}
   = \frac{m_0 c^{2}}{h}\,\frac{2|\Delta\Phi_N|}{c^{2}}
   = \frac{2m_0\,|\Delta\Phi_N|}{h},
@@ -6959,8 +6970,10 @@ follows from $\varphi = 2\Phi_N/c^2$.
 describes a differential phase evolution, which in isolation
 would be reversible \emph{dephasing}: if the two particles
 were brought back to the same potential, the relative phase
-could be undone.  In ISPG, however, the process becomes
-genuine (irreversible) \emph{decoherence} for two reasons:
+could be undone.  In ISPG this coherent channel can become
+genuine (irreversible) \emph{decoherence} only if one of the
+following unobserved channels is active and its correlation
+structure is derived:
 
 \begin{enumerate}
   \item \textit{Resonant-tail emission.}---Each oscillon
@@ -6978,36 +6991,39 @@ genuine (irreversible) \emph{decoherence} for two reasons:
     field $\varphi$ undergoes vacuum fluctuations
     $\langle\delta\varphi^{2}\rangle \neq 0$.  These
     fluctuations randomly modulate the differential phase
-    $\Delta\Phi(t)$, converting the deterministic
+    $\Delta\theta(t)$, converting the deterministic
     dephasing into a stochastic process.  For Gaussian
     fluctuations the ensemble average of the phase
     factor evaluates to
-    $\langle e^{i\Delta\Phi(t)}\rangle
-    = \exp\!\left[-\tfrac12\langle\Delta\Phi(t)^{2}\rangle
+    $\langle e^{i\Delta\theta(t)}\rangle
+    = \exp\!\left[-\tfrac12\langle\Delta\theta(t)^{2}\rangle
     \right]$.  In the Markovian limit, in which the
     correlation time $\tau_{c}$ of $\varphi$-fluctuations
     is much shorter than the observation time
     ($\tau_{c}\ll t$), this reduces to the exponential
     form
-    $\langle e^{i\Delta\Phi(t)}\rangle
+    $\langle e^{i\Delta\theta(t)}\rangle
     \simeq e^{-\Gamma_{\mathrm{dec}}\,t}$,
-    and Eq.~(\ref{eq:Gamma_dec}) gives the rate.  When
+    with $\Gamma_{\mathrm{dec}}\simeq\Gamma_{\varphi}$
+    only after the scalar-noise or tail-emission kernel is
+    shown to supply the required Markovian coefficient.  When
     the Markovian condition is not satisfied, the
     exponential form is replaced by the Gaussian form
-    $\exp[-\tfrac12\sigma^{2}t^{2}]$ with the same
-    leading coefficient.
+    $\exp[-\tfrac12\sigma^{2}t^{2}]$, and no universal
+    exponential decoherence rate follows from the coherent
+    phase calculation alone.
 \end{enumerate}
 
-The rate~(\ref{eq:Gamma_dec}) thus represents the
-\emph{leading-order} decoherence rate in the Markovian
-regime; the two mechanisms above ensure irreversibility
-while fixing the leading coefficient.  A detailed
-derivation of the correlation time $\tau_{c}$ and the
-fluctuation spectrum of $\delta\varphi$, which is needed
-to confirm that the Markovian limit applies to the
-experimental regimes considered below, is deferred to
-dedicated work.  At this leading
-post-Newtonian order, the rate coincides with the
+The closed result in this section is therefore the
+leading-order coherent rate $\Gamma_{\varphi}$.  The
+identification $\Gamma_{\mathrm{dec}}\simeq\Gamma_{\varphi}$
+is a conditional ISPG decoherence channel, not an additional
+completed leading-order derivation.  A detailed derivation of
+the correlation time $\tau_{c}$ and the fluctuation spectrum
+of $\delta\varphi$, which is needed to confirm that the
+Markovian limit applies to any proposed experimental regime,
+is deferred to dedicated work.  At this leading
+post-Newtonian order, $\Gamma_{\varphi}$ coincides with the
 gravitational dephasing predicted by GR through the
 redshift--COW correspondence
 $\varphi \simeq 2\Phi_N/c^2$; both depend on the
@@ -7021,7 +7037,7 @@ quantifies the leading-order rate with the understanding
 that it reproduces the GR baseline at that order.
 
 \textit{Numerical estimates.}---For relativistic particles
-such as photons, the rate formula \eqref{eq:Gamma_dec}
+such as photons, the coherent rate formula \eqref{eq:Gamma_dec}
 admits a formal evaluation but is of limited practical
 use.  A photon of energy $E = 1$~eV in a gradient with
 $|\Delta\varphi| = 2g\,\Delta h/c^{2} \approx
@@ -7029,7 +7045,7 @@ $|\Delta\varphi| = 2g\,\Delta h/c^{2} \approx
 Earth's field, $g = 9.8\;\mathrm{m/s^2}$) yields the formal
 rate
 \begin{equation}
-  \Gamma_{\mathrm{dec}}
+  \Gamma_{\varphi}
   \sim \frac{E\,|\Delta\varphi|}{h}
   \approx 0.5\;\mathrm{Hz}.
 \end{equation}
@@ -7037,16 +7053,15 @@ However, the photon spends only
 $t_{\mathrm{flight}} \sim \Delta h/c \sim 33$~ns in the
 gradient region, so the accumulated coherent phase
 contribution from the bi-conformal factor is
-$\Delta\Phi_{\mathrm{geom}} =
+$\Delta\theta_{\mathrm{geom}} =
 E\,|\Delta\varphi|\,t_{\mathrm{flight}}/\hbar
-\sim 10^{-24}$~rad---far below any foreseeable
-polarimetric or interferometric sensitivity.  The
-decoherence rate \eqref{eq:Gamma_dec} is therefore
-physically meaningful only for particles confined in the
-gradient region on timescales
-$t \gtrsim \Gamma_{\mathrm{dec}}^{-1}$; in practice this
-restricts testable cases to nonrelativistic massive
-particles (treated below).
+\sim 1.1\times 10^{-7}$~rad.  The formal $0.5$~Hz
+coefficient is therefore not a clean direct test in this
+simple flight geometry.  It is physically meaningful as an
+accumulation rate only for systems confined in the gradient
+region on timescales $t \gtrsim \Gamma_{\varphi}^{-1}$; in
+practice this shifts attention to nonrelativistic massive
+systems and to the still-conditional irreversible channel.
 
 For massive particles the rate scales with the rest
 energy $m_0 c^2$.  Taking a laboratory-scale
@@ -7055,34 +7070,36 @@ $\Delta h \sim 1$~m in Earth's field gives
 $\Delta\Phi_N/c^{2}\sim 10^{-16}$.  For an
 optomechanical mass $m\sim 10^{-14}$~kg,
 \begin{equation}
-  \Gamma_{\mathrm{dec}}
+  \Gamma_{\varphi}
   = \frac{m c^{2}\cdot 2|\Delta\Phi_N|/c^{2}}{h}
   \sim \frac{9\times 10^{2}\;\mathrm{J}\cdot
     2\times 10^{-16}}{6.6\times 10^{-34}\;\mathrm{J\cdot s}}
   \sim 3\times 10^{20}\;\mathrm{Hz},
 \end{equation}
-i.e.\ decoherence is effectively instantaneous on any
-accessible timescale.  For nanospheres
+i.e.\ the leading coherent dephasing timescale is far shorter
+than any accessible storage time.  For nanospheres
 ($m\sim 10^{-20}$~kg, $\sim 10^{7}$~amu) at
 $\Delta\Phi_N/c^{2}\sim 10^{-16}$ the rate drops to
 $\sim 3\times 10^{14}$~Hz---still far beyond any
-plausible coherence time, but the scaling
-$\Gamma\propto m$ means that mesoscopic masses in the
-$10^{-22}$--$10^{-23}$~kg range (proposed in
-MAQRO~\cite{Kaltenbaek2012} and STE-QUEST) begin to
-enter the kHz--MHz regime where experimental
-coherence times are already achievable.  This is the
-parameter window in which the rate formula becomes a
-falsifiable prediction rather than a consistency
-check.
+plausible coherence time.  The scaling
+$\Gamma_{\varphi}\propto m$ gives
+$\Gamma_{\varphi}\sim 3\times 10^{12}$--$3\times 10^{11}$~Hz
+for $m=10^{-22}$--$10^{-23}$~kg at the same meter-scale
+Earth-gradient benchmark.  Thus this benchmark does not place
+MAQRO~\cite{Kaltenbaek2012} or STE-QUEST masses in a
+kHz--MHz window.  Identifying a viable low-frequency
+mesoscopic window requires a separate scan over mass,
+separation, storage time, and the still-open
+irreversible-channel correlator.
 
 %-------------------------------------------------------------------
 \subsection{Comparison with Penrose--Di\'osi models}
 \label{sec:penrose_comparison}
 %-------------------------------------------------------------------
 
-The prediction~(\ref{eq:Gamma_dec}) is structurally similar
-to the gravitational decoherence rates proposed by
+The conditional decoherence channel associated with
+Eq.~(\ref{eq:Gamma_dec}) is structurally similar to the
+gravitational decoherence rates proposed by
 Penrose~\cite{Penrose1996} and
 Di\'osi~\cite{Diosi1987}:
 \begin{equation}
@@ -7097,21 +7114,25 @@ is a spatial superposition size.  The key differences are:
 \begin{enumerate}
   \item \textbf{Origin.}  Penrose and Di\'osi postulate
     gravitational decoherence as a fundamental modification
-    of quantum mechanics.  In ISPG, it is a \emph{consequence}
-    of the bi-conformal structure: it arises from the
-    $\varphi$-dependent rescaling of quantum frequencies,
-    without modifying the Schr\"odinger equation.
+    of quantum mechanics.  In ISPG, the completed leading
+    result is the $\varphi$-dependent coherent phase rate;
+    irreversible decoherence follows only after the resonant-tail
+    or scalar-noise channel is derived, without modifying the
+    Schr\"odinger equation.
   \item \textbf{Mechanism.}  In Penrose's model, the
     decoherence comes from the ``ill-definedness'' of time
     in a superposition of different geometries.  In ISPG,
-    it comes from the concrete, calculable differential
-    phase evolution in an inhomogeneous $\varphi$-field.
+    the calculable part is differential phase evolution in
+    an inhomogeneous $\varphi$-field; the irreversible part
+    depends on the conditional tail/noise correlator.
   \item \textbf{Testability.}  ISPG predicts a specific
-    \emph{directional} dependence: the decoherence rate
+    \emph{directional} dependence: the phase/decoherence rate
     depends on the orientation of the entangled pair
     relative to the gravitational gradient $\nabla\varphi$.
-    This anisotropy is absent in the Penrose--Di\'osi models
-    and constitutes a unique experimental signature.
+    At leading order this reproduces the GR redshift baseline;
+    a unique ISPG signature requires either the 2PN
+    bi-conformal response or the completed irreversible
+    tail/noise channel.
 \end{enumerate}
 
 %-------------------------------------------------------------------
@@ -7119,52 +7140,90 @@ is a spatial superposition size.  The key differences are:
 \label{sec:tunneling}
 %-------------------------------------------------------------------
 
-The resonance picture also modifies quantum tunneling.
+The resonance picture suggests a possible modification of
+quantum tunneling.
 A particle's resonant tail extends beyond the classically
 forbidden region (the potential barrier).  If the medium
 on the far side of the barrier has favorable conditions
 (e.g., a local minimum in the effective potential),
 the tail ``anchors'' there and the resonance core
-transitions through the barrier.
+transitions through the barrier.  This tail-anchoring
+picture is retained as the candidate route to a
+non-Hermitian or resonant-scattering boundary condition;
+the controlled WKB statement below is more limited.
 
 In an inhomogeneous $\varphi$-field, the tunneling
-probability acquires a directional dependence.  The
-WKB tunneling amplitude through a barrier of height $V_0$
-and width $d$ is modified to
+exponent depends on the scalar profile across the forbidden
+region.  We use $x$ as the coordinate along a local static
+barrier, $x_2-x_1=d$ as the coordinate width, and $E$ and
+$V_0(x)$ as local-tetrad energy and barrier-height data held
+fixed by the apparatus.  With these conventions the WKB
+amplitude is
 \begin{equation}\label{eq:tunnel_aniso}
-  T \propto \exp\!\left[
-    -\frac{2d}{\hbar}\sqrt{2m_0\,e^{\varphi/2}\,(V_0 - E)}
-  \right],
+  T \propto e^{-B_{\varphi}}, \qquad
+  B_{\varphi}
+  = \frac{2}{\hbar}
+    \int_{x_1}^{x_2}
+    \sqrt{2m_0\,e^{\varphi(x)/2}\,[V_0(x)-E]}\,dx .
 \end{equation}
-where $\varphi = \varphi(\mathbf{x})$ varies across the
-barrier.  If $\varphi$ decreases in the tunneling direction
-(toward a mass), $e^{\varphi/2}$ decreases, the effective
-barrier is lowered, and tunneling is \emph{enhanced}.
-In the opposite direction, tunneling is suppressed.
+For a locally constant $\varphi$ and a rectangular barrier,
+this reduces to
+\begin{equation}
+  T \propto
+  \exp\!\left[
+    -\frac{2d}{\hbar}
+    \sqrt{2m_0\,e^{\varphi/2}\,(V_0-E)}
+  \right].
+\end{equation}
+
+Equation~(\ref{eq:tunnel_aniso}) is profile dependent, but
+it is not by itself direction-nonreciprocal.  For the same
+real, static, Hermitian barrier, reversing the traversal
+direction leaves the forbidden-region action unchanged; the
+flux-normalized WKB transmission is reciprocal.  A true
+directional ratio therefore requires additional structure:
+different boundary energies, a driven or dissipative medium,
+time-reversal breaking, or the ISPG-specific resonant-tail
+anchoring channel sketched above.
 
 \begin{equation}\label{eq:tunnel_prediction}
   \boxed{
-  \frac{T_{\downarrow}}{T_{\uparrow}}
+  \left(\frac{T_{\downarrow}}{T_{\uparrow}}\right)_{\mathrm{tail}}
   = \exp\!\left[
-    \frac{d\,\Delta\varphi}{\hbar}\,
+    \mathcal{C}_{\mathrm{tail}}\,
+    \frac{d\,\Delta\varphi_{\mathrm{barrier}}}{\hbar}\,
     \sqrt{2m_0(V_0 - E)}
-  \right] > 1,
+  \right],
   }
 \end{equation}
-where $T_{\downarrow}$ and $T_{\uparrow}$ denote tunneling
-rates toward and away from the gravitational source,
-respectively.
+where $T_{\downarrow}$ and $T_{\uparrow}$ denote candidate
+tail-assisted tunneling rates toward and away from the
+gravitational source.  The coefficient
+$\mathcal{C}_{\mathrm{tail}}$ and its sign are not fixed by
+the Hermitian WKB integral; they require a dedicated
+resonant-scattering calculation of the tail-anchoring
+boundary condition.  The earlier choice
+$\mathcal{C}_{\mathrm{tail}}=1$ should therefore be read only
+as a parametrization of the candidate channel, not as a
+derived coefficient.
 
-This \textbf{anisotropic tunneling} is a distinctive
-ISPG prediction with no analog in standard quantum
-mechanics, where tunneling is isotropic in a uniform
-barrier.  The relevant quantity in
-Eq.~(\ref{eq:tunnel_prediction}) is the change of
-$\varphi$ \emph{across the barrier width} $d$, not
-across the host system's size.  For nuclear barriers
-the barrier width is of order a femtometre, and the
-gravitational gradient varies over macroscopic
-distances, so the across-barrier shift is
+The distinctive ISPG claim is therefore not that ordinary
+Hermitian WKB tunneling is nonreciprocal.  It is the more
+specific proposal that the scalar-gradient background and the
+resonant-tail anchoring channel can supply the extra boundary
+structure needed for a directional asymmetry.  Standard
+quantum mechanics can also generate directional-looking
+effects when comparable extra structure is present
+(absorption, driving, unequal asymptotic potentials, or
+time-reversal breaking); the ISPG novelty is the proposed
+geometric origin of such structure.
+
+The relevant quantity in the candidate directional term is the
+change of $\varphi$ \emph{across the barrier width} $d$, not
+across the host system's size.  For nuclear barriers the
+barrier width is of order a femtometre, and the gravitational
+gradient varies over macroscopic distances, so the
+across-barrier shift is
 $\Delta\varphi_{\mathrm{barrier}}
 \sim (d/L)\,\Delta\varphi_{\mathrm{system}}$ where $L$
 is the gradient scale length.  For a white-dwarf
@@ -7178,11 +7237,11 @@ macroscopic tunneling experiments in trapped cold
 atoms) or a cumulative effect integrated over many
 events; quantitative feasibility study of these
 channels is left for dedicated work.  The conservative
-statement retained here is that the anisotropy is
-\emph{formally non-zero and directionally signed}; its
-amplitude in any concrete experimental context has to
-be estimated with the correct barrier-scale
-$\Delta\varphi_{\mathrm{barrier}}$, not with the
+statement retained here is that the WKB exponent is
+profile dependent, while nonreciprocal anisotropy and its
+amplitude in any concrete experimental context require the
+resonant-tail boundary calculation and the correct
+barrier-scale $\Delta\varphi_{\mathrm{barrier}}$, not the
 system-scale value.
 
 %===================================================================
@@ -7926,20 +7985,27 @@ $\Delta\alpha/\alpha \sim 10^{-7}$--$10^{-6}$ at $z \sim 1$--$3$
 $0$ &
 ESPRESSO, ELT-ANDES \\
 \addlinespace
-Gravitational decoherence rate &
-$\Gamma = 2m|\Delta\Phi_N|/h$ &
-$0$ (no mechanism) &
-MAQRO, STE-QUEST \\
+Coherent gravitational phase/dephasing &
+$\Gamma_{\varphi} = 2m|\Delta\Phi_N|/h$ (1PN GR/COW baseline) &
+Nonzero redshift/COW phase &
+Neutron and atom interferometry \\
+\addlinespace
+Irreversible gravitational decoherence &
+Conditional $\Gamma_{\mathrm{dec}}\simeq\Gamma_{\varphi}$
+after tail/noise correlator &
+$0$ in unitary GR+QM without environment &
+MAQRO, STE-QUEST parameter scan \\
 \addlinespace
 Decoherence anisotropy &
-Directional ($\propto \nabla\varphi$) &
-Absent &
+Conditional directional tail/noise channel ($\propto \nabla\varphi$) &
+Environment-dependent &
 Space quantum links \\
 \addlinespace
-Anisotropic tunneling &
-$T_\downarrow/T_\uparrow > 1$ &
-$T_\downarrow = T_\uparrow$ &
-White dwarf seismology \\
+Profile-dependent tunneling / anisotropy candidate &
+WKB exponent depends on $\varphi(x)$;
+nonreciprocity conditional on tail anchoring &
+Static Hermitian barriers reciprocal &
+Long-barrier tests; cumulative modelling \\
 \addlinespace
 Gravitational birefringence &
 $\Delta c/c \sim 10^{-38}$ (NS scale), $\propto (\nabla\varphi)^2/m_e^2$
@@ -8006,9 +8072,12 @@ testable are:
     ESPRESSO at the VLT is already operating at ppm
     precision; the $10^{-7}$ regime targeted here is the
     future ELT--ANDES-level test.
-  \item \textbf{Gravitational decoherence}:
-    proposed space missions (MAQRO) could detect the
-    predicted rate within the next decade.
+  \item \textbf{Conditional gravitational decoherence}:
+    proposed space missions (MAQRO, STE-QUEST class) can
+    constrain the ISPG tail/noise channel once its
+    correlation spectrum and viable parameter window are
+    derived; the leading coherent phase rate itself is the
+    GR/COW baseline at 1PN order.
 \end{enumerate}
 
 %===================================================================
@@ -8266,9 +8335,12 @@ results and extensions are:
   \item \textbf{Gravitational decoherence}
     (Sec.~\ref{sec:entanglement}).  Entangled particles
     in inhomogeneous $\varphi$-fields undergo differential
-    phase evolution, producing a calculable decoherence
-    rate $\Gamma = 2m|\Delta\Phi_N|/h$ with a unique
-    directional signature.
+    phase evolution, producing a calculable coherent
+    dephasing rate $\Gamma_{\varphi} = 2m|\Delta\Phi_N|/h$
+    that matches the GR/COW baseline at 1PN order.  The
+    irreversible decoherence and directional-discriminator
+    claims are conditional on the resonant-tail or scalar-noise
+    correlator derived in future work.
 
   \item \textbf{Topological particle classification}
     (Sec.~\ref{sec:topology}).  Fermion spin projection,
