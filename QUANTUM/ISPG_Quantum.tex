@@ -4862,8 +4862,11 @@ At the quantum level, virtual particle loops contribute
 corrections to electromagnetic vertices.  Since virtual
 particles have effective masses $\meff = m_0\,e^{\varphi/2}$
 that depend on the background pressure, these loop corrections
-introduce a residual $\varphi$-dependence in the
-\emph{effective} fine-structure constant:
+can be parametrized as a candidate residual
+$\varphi$-dependence in the \emph{effective} fine-structure
+constant.  The following expression is a schematic
+fixed-reference-scale ansatz, not yet a renormalized ISPG
+one-loop prediction:
 \begin{equation}\label{eq:alpha_eff}
   \alpha_{\mathrm{eff}}(\varphi)
   = \alpha_0\left[1
@@ -4871,34 +4874,38 @@ introduce a residual $\varphi$-dependence in the
     + \order{\alpha_0^{2}\varphi^{2}}\right],
 \end{equation}
 where $\alpha_0 = 1/137.036$ is the present-day value
-and the leading correction comes from the electron
-vacuum-polarization loop (Uehling term) with a
-$\varphi$-dependent electron mass.
+and the displayed coefficient and sign are placeholders
+motivated by the electron vacuum-polarization threshold
+(Uehling) analogy with a $\varphi$-dependent electron mass.
+A complete prediction requires the renormalization prescription
+and the held-fixed comparison scale.
 
 For the cosmological variation over a lookback time
 corresponding to redshift $z$, the scalar field shift
-$\Delta\varphi \sim \order{H_0 t_{\mathrm{lookback}}}$
-yields
+$\Delta\varphi \sim \order{H_0 t_{\mathrm{lookback}}}$,
+if supplied by a cosmological $\varphi(z)$ solution, gives the
+schematic target scale
 \begin{equation}\label{eq:delta_alpha}
-  \boxed{
-  \frac{\Delta\alpha}{\alpha}
+  \left.\frac{\Delta\alpha}{\alpha}\right|_{\mathrm{schem}}
   \sim \frac{2\alpha_0}{3\pi}\,\Delta\varphi
   \sim 10^{-7}\text{--}10^{-6}
   \quad (z \sim 1\text{--}3).
-  }
 \end{equation}
 Equation~\eqref{eq:delta_alpha} should be read as a
-schematic loop estimate until the renormalization prescription,
-comparison scale, and sign are fixed.  This caveat is essential
+target-scale loop estimate until the renormalization
+prescription, comparison scale, sign, and redshift profile are
+fixed.  This caveat is essential
 because local dimensionless observables cancel under a uniform
 bi-conformal scaling; cosmological comparisons of
 $\alpha_{\mathrm{eff}}(\varphi)$ must specify what reference
-scale is held fixed across epochs.  Current low-systematics
-quasar constraints are already at sub-ppm precision, so a
-generic $10^{-7}$--$10^{-6}$ signal is close to existing
-sensitivity rather than an observed effect.  The sharp test is
-therefore a sign and redshift profile for ESPRESSO and
-ELT-ANDES, not only an order-of-magnitude estimate.
+scale is held fixed across epochs.  The same $\varphi(z)$ model
+must also suppress the present-day slope enough to satisfy
+atomic-clock drift bounds.  Current low-systematics quasar
+constraints are already at ppm-level precision, so a generic
+$10^{-7}$--$10^{-6}$ signal is close to existing sensitivity
+rather than an observed effect.  The sharp test is therefore a
+sign and redshift profile for ESPRESSO and ELT-ANDES, not only
+an order-of-magnitude estimate.
 
 %-------------------------------------------------------------------
 \subsection{Cosmological expansion as resonant-tail propagation}
@@ -7455,11 +7462,13 @@ the spin-$1/2$ behaviour of Rauch~\cite{Rauch1975} once
 the Berry-exchange / spin-statistics step is closed.
 
 \textit{Bosons.}---Excitations with $n = 0$ (no vortex
-structure) are bosons.  Photons, for example, are
-transverse tensor perturbations $h_{ij}^{TT}$ with no
-rotational topology; their spin-1 character comes from
-the two independent transverse polarizations, not from
-a vortex winding.
+structure) are bosons.  In the present bookkeeping the
+photon belongs to the imported/effective
+$U(1)_{\mathrm{EM}}$ gauge sector, not to the scalar
+vortex topology.  Its two physical helicities come from
+the spin-1 gauge field.  The transverse-traceless tensor
+polarizations $h_{+},h_{\times}$ remain reserved for the
+spin-2 gravitational-wave sector.
 
 \paragraph{Scope of the vortex picture for spin.}
 Subject to the scalar-phase $\to$ gravitomagnetic-slot
@@ -7470,10 +7479,15 @@ $n=\pm 1$.  It is therefore not yet a complete derivation
 of the full fermion spin representation.
 For bosonic species the angular-momentum content comes
 from a different part of the perturbation spectrum:
-photons from the transverse tensor polarizations of
-$\delta g_{ij}^{TT}$, and massive gauge bosons from the
-vector sector $\delta g_{0i}$ combined with the Higgs
-Goldstone mode.  The pair-exchange phases computed in
+photons as spin-1 modes of the imported/effective
+$U(1)_{\mathrm{EM}}$ gauge sector
+(Sec.~\ref{sec:gauge_spectrum}), and massive gauge
+bosons from the vector sector $\delta g_{0i}$ combined
+with the Higgs Goldstone mode.  A medium derivation of
+the photon from vector/helicoidal/transverse channels is
+future work; the tensor perturbations
+$\delta g_{ij}^{TT}$ remain the spin-2 gravitational-wave
+sector.  The pair-exchange phases computed in
 Sec.~\ref{sec:pauli} for $n = 0, \pm 1, \pm 2$ are
 therefore offered as an \emph{illustrative} pattern that
 the spin-statistics correspondence is compatible with
@@ -7999,7 +8013,7 @@ DESI, Euclid, Rubin \\
 Fine-structure constant $\Delta\alpha/\alpha$ &
 $\Delta\alpha/\alpha \sim 10^{-7}$--$10^{-6}$ at $z \sim 1$--$3$
 (future calculation; ESPRESSO ppm now, $10^{-7}$ ELT--ANDES target) &
-$0$ &
+No spacetime variation in minimal SM/GR &
 ESPRESSO, ELT-ANDES \\
 \addlinespace
 Coherent gravitational phase/dephasing &
@@ -8828,8 +8842,8 @@ perturbative robustness in the physical hierarchy.
 
 \bibitem{Kotus2017}
   S.~M.~Kotus, M.~T.~Murphy, and R.~F.~Carswell,
-  ``A sub-ppm measurement of the deuterium abundance at
-  $z_{\mathrm{abs}}=3.572$,''
+  ``High-precision limit on variations in the fine-structure
+  constant from a single quasar absorption system,''
   Mon.\ Not.\ R.\ Astron.\ Soc.\ \textbf{464}, 3679 (2017).
 
 \bibitem{Koide1983}

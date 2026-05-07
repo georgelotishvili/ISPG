@@ -2265,8 +2265,10 @@ of the two-plate model.  In the ISPG framework, neutrinos
 are identified as \textbf{polarisation-rotation waves}---%
 helical excitations whose oscillation plane progressively
 rotates---a fundamentally different vibration mode whose
-suppressed torsional rigidity naturally yields sub-eV masses
-(\S\ref{sec:neutrinos}).
+suppressed torsional rigidity supplies a partial mass
+suppression; reaching the sub-eV scale additionally requires
+the open trapping factor $\eta_T$ derived in
+\S\ref{sec:neutrinos}.
 
 %% ==========================================================
 \subsection{Derivation of $q$ from the ISPG Action:
@@ -3561,9 +3563,10 @@ neutrino}
 \label{sec:torsion_neutrino}
 %-------------------------------------------------------------------
 
-The polarisation-rotation mode accounts for every
-distinctive property of neutrinos that the Standard
-Model treats as independent postulates:
+The polarisation-rotation mode supplies a
+structural candidate for several distinctive
+neutrino properties that the Standard Model treats
+as independent inputs:
 
 \begin{enumerate}
   \item \textbf{Intrinsic chirality.}\;
@@ -3572,12 +3575,13 @@ Model treats as independent postulates:
     counterclockwise as the wave advances.
     This is a \emph{geometric} property of the
     helical wave itself, not an imposed quantum
-    number.  Neutrinos are left-handed and
-    antineutrinos right-handed because
-    polarisation rotation \emph{is} chirality.
-    No other perturbation mode possesses this
-    property, explaining why only the weak
-    interaction violates parity.
+    number.  This gives a candidate geometric
+    route to the observed chiral bias of weak
+    neutrino interactions.  For massive neutrinos
+    the chirality/helicity distinction remains
+    essential, and the precise map to the SM
+    left-handed weak current is part of the open
+    weak-sector derivation.
 
   \item \textbf{Electrical neutrality.}\;
     Polarisation rotation is symmetric in the
@@ -3610,8 +3614,12 @@ Model treats as independent postulates:
     and $\lambda_0 = c/\nu_0$.  The torsional
     mode frequency (and hence mass via
     $m = h\nu/c^2$) is suppressed by the same
-    ratio, naturally placing neutrino masses in
-    the sub-eV range without fine-tuning.
+    ratio.  This supplies only a partial
+    suppression; placing neutrino masses in the
+    sub-eV range also requires the weak-trapping
+    factor $\eta_T$ in Eq.~\eqref{eq:trapping_fraction},
+    whose first-principles value remains a future
+    calculation.
 
   \item \textbf{Extremely weak coupling.}\;
     Polarisation rotation neither compresses the
@@ -3626,10 +3634,14 @@ Model treats as independent postulates:
     These couplings are suppressed by
     $(R_\perp/\lambda_0)^2$, the same small
     parameter that suppresses the mass.
-    This is the \textbf{weak interaction}:
-    a nonlinear coupling between the
-    polarisation-rotation sector and the
-    scalar/vector sectors.
+    This is a candidate \textbf{weak-sector}
+    coupling vocabulary: a nonlinear coupling
+    between the polarisation-rotation sector and
+    the scalar/vector sectors.  The full
+    V--A current, $G_F$, lepton-number rules,
+    beta spectra, and parity-violation amplitudes
+    remain part of the open weak-interaction
+    derivation.
 
   \item \textbf{Three flavours (consistency check,
     not prediction).}\;
@@ -3687,9 +3699,11 @@ Model treats as independent postulates:
     leptons (flavour eigenstates), because the
     coupling occurs at the oscillon core where
     the $G_2(X)$ nonlinearity is strongest.
-    The mismatch produces the PMNS mixing matrix
-    and oscillation between flavours during
-    propagation, exactly as observed.
+    The mismatch is a candidate route to the PMNS
+    mixing matrix and flavour oscillation.  Deriving
+    the oscillation Hamiltonian, mass-squared
+    splittings, mixing angles, and CP phase remains
+    future work.
 
   \item \textbf{Parity violation of the weak
     interaction.}\;
@@ -3848,6 +3862,10 @@ this introduces the ratio
 \end{equation}
 where $\lambda_0 = c/\nu_0
 = \pi\ell_P \approx 5\times 10^{-35}$~m
+in the historical carrier-wavelength convention
+(superseded for the torsional suppression by
+$\lambda_{\mathrm{osc}}$ in Eq.~\eqref{eq:Rperp_corrected}
+below)
 and $R_c = \hbar/(m_e c)
 = 3.86\times 10^{-13}$~m is the electron
 Compton radius.
@@ -3966,10 +3984,16 @@ charged fermion):
 \end{equation}
 The mass suppression from the aspect ratio alone is
 $(R_\perp/\lambda_{\mathrm{osc}})^2
-\sim 1/(2\pi)^2 \approx 0.025$, which accounts for
-roughly four orders of magnitude of the
-$m_\nu/m_e \sim 10^{-7}$ hierarchy.  The remaining
-suppression arises because the torsional mode,
+\sim 1/(2\pi)^2 \approx 0.025$.  Acting on the
+electron scale this gives
+$m_e/(2\pi)^2 \simeq 13~\mathrm{keV}$, i.e.\ about
+1.6 orders of magnitude of suppression, not the
+full $m_\nu/m_e \sim 10^{-7}$ hierarchy.  Reaching
+the sub-eV regime requires the trapping fraction
+to provide the dominant remaining suppression,
+typically $\eta_T \sim m_\nu/(13~\mathrm{keV})
+\sim 10^{-6}$ for the observed neutrino scale.
+This remaining suppression arises because the torsional mode,
 unlike the longitudinal mode, is not self-trapped:
 it propagates \emph{away} from the oscillon core,
 so the effective cavity size is not $R_c$ but
@@ -4063,13 +4087,15 @@ polarisation ($n = +1$) and right-circular
 ($n = -1$) are topologically distinct: one cannot
 be continuously deformed into the other without
 unwinding the vortex.  This topological protection
-is why chirality is an exact quantum number for
-massless neutrinos.  For massive neutrinos, the
+is a candidate route to an exact chirality label
+in the massless limit.  For massive neutrinos,
+chirality and helicity must be distinguished: the
 small mass term $\Omega_T$ in
-Eq.~\eqref{eq:torsion_equation} allows mixing
-between $n = +1$ and $n = -1$ at a rate
-$\propto m_\nu/E$---exactly the helicity-flip
-suppression observed experimentally.
+Eq.~\eqref{eq:torsion_equation} would allow mixing
+between $n = +1$ and $n = -1$ with the standard
+$m_\nu/E$ helicity-flip suppression.  A full
+Weyl/Dirac spinor derivation remains part of the
+open weak-sector programme.
 
 %-------------------------------------------------------------------
 \subsection{Beta decay in the torsional picture}
@@ -4096,14 +4122,14 @@ $d \to u$) emits the difference as an
 \textbf{electron}: a transverse-mode oscillon
 carrying the released $\ell = 1$ asymmetry.
 
-The $W$ boson is the \textbf{massive mediator of
-the torsion--transverse coupling}: a nonlinear
-excitation that temporarily converts
-polarisation-rotation energy into transverse
+In this candidate picture, the $W$ boson is the
+\textbf{massive mediator of the torsion--transverse
+coupling}: a nonlinear excitation that temporarily
+converts polarisation-rotation energy into transverse
 energy and vice versa.  Its large mass
 ($m_W \approx 80$~GeV) reflects the suppressed
 coupling between these sectors.  The $Z$ boson
-is the neutral analogue: a
+is treated as the neutral analogue: a
 torsion--longitudinal coupling excitation.
 
 %-------------------------------------------------------------------
@@ -4293,18 +4319,21 @@ work}
     $m_\nu/m_e \sim 10^{-7}$; the first-principles
     derivation of $\eta_T$ is left to future work.
   \item Spin-$\frac{1}{2}$, Fermi--Dirac
-    statistics, and chirality follow from the
-    vortex topology
+    statistics, and chirality have a candidate
+    structural route through vortex topology
     (\S\ref{sec:neutrino_vortex};
-    ISPG\_Quantum, Sec.~10).
-  \item The SU(2) doublet structure arises from
-    the two-component circular-polarisation space
-    coupled by $G_2(X)$
+    ISPG\_Quantum, Sec.~10); the full
+    Fock-space/spinor and massive-neutrino
+    chirality derivations remain open.
+  \item The two-component circular-polarisation
+    space coupled by $G_2(X)$ supplies a candidate
+    route toward the weak doublet structure
     (\S\ref{sec:WZ_bosons}).
-  \item The SU(2) global symmetry is promoted to
-    local via the spatial dependence of $\Phi_0(r)$
-    (\S\ref{sec:WZ_bosons}); formal Yang--Mills
-    derivation: future work.
+  \item The promotion of this candidate SU(2)-like
+    structure to the SM local $\mathrm{SU}(2)_L$
+    gauge theory via the spatial dependence of
+    $\Phi_0(r)$ remains a future formal
+    Yang--Mills derivation.
 \end{itemize}
 
 \textit{Quantitative predictions requiring
@@ -4322,12 +4351,14 @@ lattice or numerical computation:}
     (Eq.~\ref{eq:trapping_fraction}) is defined
     through the nonlinear scattering cross-section
     of torsional modes on the $\nu_0$-background.
-    The evaluation of $\eta_T$ from $G_2(X)$
+    The evaluation of $\eta_T$ from $G_2(X)$,
+    together with the relevant boundary/profile data,
     requires a dedicated lattice computation and is
-    the topic of a separate work; once $\eta_T$ is
-    obtained, the three neutrino masses follow from
-    the parametric form with no further free
-    parameters.
+    the topic of a separate work.  Before that
+    calculation the three neutrino masses are not
+    independently predicted; after it, the parametric
+    form can be tested without adding an extra
+    phenomenological mass factor.
 
   \item \textbf{PMNS matrix.}\;
     The overlap integrals between the three
@@ -4479,6 +4510,14 @@ present oscillon/frequency-to-mass picture is
 deferred to a companion paper.}
 
 \medskip
+Two statuses are kept distinct in this section:
+(i) the imported standard photon field $A_\mu$
+used for present electromagnetic propagation
+calculations, and (ii) the future programme of
+deriving an emergent helicoidal/transverse-vector
+medium mode that would reproduce that photon.
+Only the first status is used below.
+
 No additional fields or symmetry postulates
 are introduced.  The four categories exhaust the
 perturbation content of the bi-conformal metric
@@ -4669,9 +4708,12 @@ the strong interaction:
     because the $\nu_0$-background extinguishes
     any transverse mode not in resonance with it.
     Photons \emph{can} propagate freely because,
-    as metric perturbations of the exterior
-    medium, they are already at the medium's
-    native frequency.
+    in the present treatment, they are described
+    as the imported $U(1)_{\mathrm{EM}}$ gauge
+    mode $A_\mu$ rather than as localized resonant
+    excitations; a direct medium-mode
+    identification (helicoidal/Kelvin/vector-mode
+    candidate) remains future work.
 
   \item \textbf{Flux tube and linear potential.}\;
     When two quarks (sub-structures within the
@@ -4967,9 +5009,11 @@ vibration-mode classification:
     (\S\ref{sec:neutrinos}):
     polarisation-rotation wave (helical vortex
     with $n = \pm 1$)
-    $\to$ inherent chirality, $m_\nu \ll m_e$;
-    the weak interaction is the nonlinear coupling
-    between torsional and other modes.
+    $\to$ candidate chirality route and
+    $m_\nu \ll m_e$ after the open $\eta_T$
+    suppression; the weak-sector coupling is
+    modeled as nonlinear coupling between
+    torsional and other modes.
   \item \textbf{Gravitational waves}
     (\S\ref{sec:photon}):
     tensor, free $\to$ propagating
@@ -5872,16 +5916,21 @@ to close two quantitative gaps:
   from $G_2(X)$.
 
 \item \textbf{Fine-structure constant.}\;
-  $\alpha$ should emerge as the ratio of the
+  $\alpha_{\mathrm{EM}}$ should emerge as the ratio of the
   $\ell = 1$ dipole amplitude to the $\ell = 0$
   monopole amplitude:
   \begin{equation}\label{eq:alpha_target}
-    \alpha
+    \alpha_{\mathrm{EM}}
     = \frac{|\Phi_{\ell=1}|^2}
            {|\Phi_{\ell=0}|^2}
     \;\stackrel{?}{=}\;
     \frac{1}{137.036}\,.
   \end{equation}
+  Current exploratory scans in
+  \texttt{SM/python/scan\_alpha\_*.py} do not yet obtain
+  the observed value; deriving the dipole-to-monopole
+  amplitude ratio that yields
+  $\alpha_{\mathrm{EM}}\simeq 1/137$ remains future work.
   This ratio is computable from the same lattice
   simulation that determines $q$ and $\eta_T$.
   It constitutes the decisive quantitative test
@@ -6126,9 +6175,10 @@ freedom of the 2D transverse plane
 (\S\ref{sec:charge}).\\[2pt]
 9.\ Neutrino $=$ polarisation-rotation wave
 (helical vortex, $n = \pm 1$);
-weak force $=$ nonlinear
+weak-sector candidate $=$ nonlinear
 torsion--transverse coupling; parity violation
-$=$ inherent chirality of torsion
+has a candidate geometric source in torsional
+chirality
 (\S\ref{sec:neutrinos}).\\[2pt]
 10.\ \textbf{Four forces $=$ four vibration
 modes} of one string: longitudinal (gravity),
