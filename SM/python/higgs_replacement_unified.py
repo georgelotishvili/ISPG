@@ -95,22 +95,22 @@ def main():
           f"({len(results)} ნაწილაკი)")
 
     # ────────────────────────────────────────────────────────
-    #  სპეციალური სტრუქტურული ტესტები
+    #  Compatibility tests / SM mass-ratio checks
     # ────────────────────────────────────────────────────────
     print("\n" + "=" * 78)
-    print("  სტრუქტურული ტესტები (SM ფუნდამენტური თანაფარდობები)")
+    print("  Compatibility tests (SM mass-ratio checks)")
     print("=" * 78)
 
     # Test 1: Weinberg კუთხე
-    # m ∝ N² → m_W/m_Z = (N_W/N_Z)², და SM-ში m_W/m_Z = cos θ_W
-    # ე.ი. (N_W/N_Z)² = cos θ_W (არა cos²θ_W)
+    # m ∝ N² → m_W/m_Z = (N_W/N_Z)², და on-shell კონვენციაში
+    # m_W/m_Z = cos θ_W^os; ე.ი. (N_W/N_Z)² = cos θ_W^os (არა cos²θ_W)
     N_W = 1986; N_Z = 2115
     mW_over_mZ_ISPG = (N_W / N_Z) ** 2
-    cos_theta_PDG = 80.369 / 91.188
-    err = abs(mW_over_mZ_ISPG - cos_theta_PDG) / cos_theta_PDG * 100
-    print(f"\n  m_W/m_Z = cos θ_W (SM-ის იდენტობა):")
+    cos_theta_os = 80.369 / 91.188
+    err = abs(mW_over_mZ_ISPG - cos_theta_os) / cos_theta_os * 100
+    print(f"\n  m_W/m_Z = cos θ_W^os (on-shell mass-ratio convention):")
     print(f"    ISPG  (N_W/N_Z)²  = {mW_over_mZ_ISPG:.6f}")
-    print(f"    PDG   m_W/m_Z     = {cos_theta_PDG:.6f}")
+    print(f"    PDG   m_W/m_Z     = {cos_theta_os:.6f}")
     print(f"    ცდომილება         = {err:.4f}%")
 
     # Test 2: Koide formula — ფრთხილად
@@ -180,7 +180,7 @@ def main():
     • {len(results)} SM ნაწილაკი დაფარულია
     • მაქს. ცდომილება: {overall_max:.2f}% (up-კვარკი — current mass neto)
     • საშ. ცდომილება:  {overall_mean:.2f}%
-    • m_W/m_Z = cos θ_W: ცდომილება {err:.4f}% (compatibility diagnostic)
+    • m_W/m_Z = cos θ_W^os: ცდომილება {err:.4f}% (compatibility diagnostic)
 
   → ISPG-ის მასების ცხრილი ფუნდამენტურად ერთი სტრუქტურიდან მოდის
     (Mathieu-ლადერი), რაც აჩვენებს candidate replacement-ის

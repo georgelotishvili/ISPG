@@ -39,11 +39,13 @@ is not independently derived from the cavity dynamics in this
 work;
 (ii) the integer cavity labels $N_W,N_Z$ individually fit
 $m_W,m_Z$ to $\leq 0.31\%$; their ratio $(N_W/N_Z)^2=0.8817$
-matches $\cos\theta_W=0.8815$ to $0.03\%$—an
+matches the on-shell mass-ratio convention
+$\cos\theta_W^{\rm os}\equiv m_W/m_Z\simeq0.8815$ to
+$0.03\%$---an
 \emph{internal consistency check}, not an independent
-prediction of $\cos\theta_W$, since the two indices are
+prediction of the Weinberg angle, since the two indices are
 themselves fits to the masses whose ratio defines
-$\cos\theta_W$ at SM tree level;
+$\cos\theta_W^{\rm os}$ at SM tree level;
 (iii) the ISPG action contains no $\Phi^4$ term, so a SM-type
 Higgs mechanism is ruled out at the fundamental level; the
 specific replacement dynamics for gauge-boson mass generation
@@ -250,12 +252,19 @@ indices:
 Particle & $m$ (GeV) & $N$ & $m_{\text{pred}}=(N/5)^2 m_e$ &
   error \\
 \midrule
-$W^\pm$ & $80.369$ & $1986$ & $80.12$\,GeV & $0.31\%$ \\
+$W^\pm$ & $80.369$ & $1986$ & $80.62$\,GeV & $0.31\%$ \\
 $Z^0$  & $91.188$ & $2115$ & $91.44$\,GeV & $0.27\%$ \\
 $H^0$  & $125.250$& $2479$ & $125.61$\,GeV& $0.29\%$ \\
 \bottomrule
 \end{tabular}
 \end{center}
+\noindent
+This table uses the rough large-$N$ estimate
+$m_N=(N/5)^2m_e$.  The full Mathieu normalization gives a
+separate precision diagnostic
+($W\simeq80.389$~GeV, $Z\simeq91.172$~GeV,
+$H\simeq125.254$~GeV), but it still does not derive the
+labels $(N_W,N_Z,N_H)$.
 \numerical\ The ratio
 \begin{equation}
   \label{eq:cosThetaW}
@@ -263,7 +272,8 @@ $H^0$  & $125.250$& $2479$ & $125.61$\,GeV& $0.29\%$ \\
   \;=\;\left(\frac{1986}{2115}\right)^{\!2}
   \;=\;0.8817,
 \end{equation}
-is to be compared with $\cos\theta_W=0.8815$
+is to be compared with the on-shell mass-ratio convention
+$\cos\theta_W^{\rm os}\equiv m_W/m_Z\simeq0.8815$
 \cite{PDG2024} and with the observed
 $m_W/m_Z=0.8814$: a $\leq 0.03\%$ agreement in each case.
 
@@ -273,8 +283,9 @@ Since $N_W$ and $N_Z$ were themselves fit to $m_W$ and $m_Z$
 individually (to $0.31\%$ and $0.27\%$ respectively), their
 ratio \emph{automatically} matches $m_W/m_Z$ within the
 combined fit residuals. The ratio test therefore does not
-constitute an independent prediction of $\cos\theta_W$; at SM
-tree level $m_W/m_Z=\cos\theta_W$ holds identically and any
+constitute an independent prediction of the Weinberg angle; at SM
+tree level in the on-shell convention
+$m_W/m_Z=\cos\theta_W^{\rm os}$ holds identically and any
 theory that reproduces the two masses to high accuracy will
 reproduce this ratio. The non-trivial content of
 \eqref{eq:cosThetaW} is that the \emph{discrete integer}
@@ -300,7 +311,7 @@ Lie-algebra structure is deferred (E6). Yellow on
 $\mathrm{SU}(2)\times\mathrm{U}(1)_Y$: the Mathieu ladder
 accommodates $W,Z,H$ with sub-percent residuals, but the
 electroweak test is internal consistency rather than an
-independent prediction of $\cos\theta_W$. The derivation of the
+independent prediction of the Weinberg angle. The derivation of the
 specific labels $(N_W,N_Z)$ is deferred (E1). No contradiction
 with ISPG's single-scalar action is introduced by either step.
 
@@ -507,13 +518,15 @@ Two immediate consequences:
   extrapolation); it is not itself a particle.
 \end{itemize}
 
-\subsection{Consistency check: $m_W/m_Z=\cos\theta_W$}
+\subsection{Consistency check:
+$m_W/m_Z=\cos\theta_W^{\rm os}$}
 
 \numerical\ As discussed in \S\ref{sec:phaseA_ew}, the
-ratio~\eqref{eq:cosThetaW} matches $\cos\theta_W$ to
-$0.03\%$. This is a self-consistency check of the Mathieu
+ratio~\eqref{eq:cosThetaW} matches the on-shell mass-ratio
+convention $\cos\theta_W^{\rm os}$ to $0.03\%$. This is a
+self-consistency check of the Mathieu
 ansatz (the same integer ladder hosts both bosons), not an
-independent prediction of $\cos\theta_W$, since the individual
+independent prediction of the Weinberg angle, since the individual
 indices $N_W,N_Z$ are themselves fits to $m_W,m_Z$. What is
 genuinely non-trivial is that a \emph{discrete} ladder can
 host two particles of such close but distinct masses
@@ -724,8 +737,8 @@ As a further consistency check on the same ladder, the ratio
   \quad\text{vs.}\quad
   \left(\frac{m_W}{m_Z}\right)_{\text{PDG}}=0.88135,
 \]
-i.e.\ $0.04\%$ agreement with the SM identity
-$m_W/m_Z=\cos\theta_W$; this is
+i.e.\ $0.04\%$ agreement with the SM on-shell identity
+$m_W/m_Z=\cos\theta_W^{\rm os}$; this is
 Eq.~\eqref{eq:cosThetaW} re-evaluated on the full table.
 
 \paragraph{Status of this table: compatibility, not derivation.}
@@ -833,10 +846,13 @@ extensions, each tied to an identifiable computational or
 theoretical task.
 
 \paragraph{E1. Individual cavity labels $N_W, N_Z$.}
-The ratio $N_W/N_Z$ is already derived (\S\ref{sec:phaseA_ew});
-the individual values require diagonalizing the vector Laplacian
-on the 3D archion background. A plausible attribution (to be
-tested numerically) is $N_W$ to the $\ell=1$ triplet with a
+The ratio consistency check is already recorded in
+\S\ref{sec:phaseA_ew}; it becomes an independent prediction
+only if the individual labels $N_W$ and $N_Z$ are derived
+from the vector-cavity spectrum.  That derivation requires
+diagonalizing the vector Laplacian on the 3D archion
+background. A plausible attribution (to be tested numerically)
+is $N_W$ to the $\ell=1$ triplet with a
 specific radial quantum number and $N_Z$ to a radial excitation
 obtained by orthogonalization against a hypercharge-like $\ell=0$
 mode. This is a finite-dimensional numerical task.
@@ -952,7 +968,7 @@ The embedding is however \emph{partial}: the $\mathrm{SU}(3)$
 Lie algebra beyond the count (E6), the archion-interior mass
 mechanism replacing the SM Higgs (E7), the individual cavity
 labels $N_W,N_Z$ (E1), and the cavity origin of chirality (E2)
-are all outstanding. The $\cos\theta_W$ test of
+are all outstanding. The $\cos\theta_W^{\rm os}$ test of
 \S\ref{sec:phaseA_ew} is a self-consistency check rather than
 a derivation.
 
@@ -979,7 +995,7 @@ All scripts are self-contained and run from
 Script & Purpose & Phase \\
 \midrule
 \texttt{phase\_a\_gauge\_sector.py}
-  & EW boson Mathieu indices; $\cos\theta_W$ ratio test
+  & EW boson Mathieu indices; on-shell $\cos\theta_W$ ratio test
   & A \\
 \texttt{phase\_c\_quantum\_number\_map.py}
   & Gen-1 formula $N=5[1+N_c(1-|Q|)]$ on $(e,\nu_e,u,d)$

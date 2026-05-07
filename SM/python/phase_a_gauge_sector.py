@@ -41,17 +41,17 @@ for name, m_MeV, N, Q, l in ew_bosons:
 
 print()
 print("=" * 78)
-print("ბინარული გადამოწმება: cos θ_W")
+print("ბინარული გადამოწმება: cos θ_W^os (on-shell mass-ratio convention)")
 print("=" * 78)
 N_W, N_Z = 1986, 2115
 cos_th_W_pred = (N_W / N_Z) ** 2
 cos_th_W_obs = 80369 / 91188  # m_W/m_Z
-cos_th_W_PDG = 0.8815  # PDG
+cos_th_W_os = 0.8815  # on-shell mass-ratio convention
 print(f"(N_W/N_Z)²      = ({N_W}/{N_Z})² = {cos_th_W_pred:.6f}")
 print(f"m_W/m_Z (გაზომ.) = {cos_th_W_obs:.6f}")
-print(f"cos θ_W (PDG)   = {cos_th_W_PDG:.4f}")
-err = 100 * abs(cos_th_W_pred - cos_th_W_PDG) / cos_th_W_PDG
-print(f"ცდომილება (N² vs PDG): {err:.3f}%")
+print(f"cos θ_W^os       = {cos_th_W_os:.4f}")
+err = 100 * abs(cos_th_W_pred - cos_th_W_os) / cos_th_W_os
+print(f"ცდომილება (N² vs on-shell): {err:.3f}%")
 
 print()
 print("=" * 78)
@@ -87,7 +87,8 @@ print("""
   2. m_Z = 91.2 GeV, N=2115 (Mathieu ფიტი)
   3. γ მასალოა → Mathieu-ზე პირდაპირი ადგილი არ აქვს
   4. H = 125 GeV, N=2479 (სკალარი, Phase D)
-  5. **m_W/m_Z = cos θ_W 0.01% ცდომ.-ით** (სტრუქტურული!)
+  5. **m_W/m_Z = cos θ_W 0.027% ცდომ.-ით**
+     (compatibility / consistency diagnostic)
 
 ⏳ დარჩენილი კითხვები:
   (a) რატომ ზუსტად N=1986 W-სთვის? რა კავიტ-მოდი?
@@ -100,11 +101,13 @@ print("""
      სხვადასხვა რადიალური n-ით
   2. B (hypercharge-ბოზონი) = ℓ=0 რადიალური აღგზნება
   3. Z, γ = W³ და B-ს ორთოგონალური კომბინაცია
-     (EW შერევა, Weinberg კუთხე გამოდის N_W, N_Z-დან)
+     (EW შერევა; Weinberg კუთხის დამოუკიდებელი derivation
+      მოითხოვს N_W, N_Z-ის კავიტიდან გამოყვანას)
 
    თუ N_W და N_Z **გეომეტრიულად** დაფიქსირებულია კავიტ-სპექტრით,
    მაშინ cos θ_W = (N_W/N_Z)² არის **პრედიქცია** (არა ფიტი).
-   მიმდინარე ცდომ. 0.01% სტრუქტურულ სცენარს მხარს უჭერს.
+   მიმდინარე ცდომ. რიცხვით თავსებადობას აჩვენებს, მაგრამ derivation
+   არ არის, სანამ N_W და N_Z დამოუკიდებლად არ გამოვა.
 """)
 
 print("=" * 78)
@@ -113,13 +116,14 @@ print("=" * 78)
 print("""
 ✅ SU(3): სრულად გამოყვანილი (gluon_eight.py + robustness)
 🟡 SU(2): N_W, N_Z ცნობილია Mathieu-ზე; cos θ_W-ის რიცხვითი
-          დადასტურება (0.01%) მიანიშნებს სტრუქტურულ წარმოშობაზე;
+          თავსებადობა (0.027%) არის consistency diagnostic;
           ფუნდამენტური "რატომ" — ღია
 ⏳ U(1): γ მასალო → საჭიროა ცალკე მიდგომა (არა Mathieu)
 
 **Phase A-ს სტატუსი:**
-  გეიჯური სექტორი **ნახევრად-გამოყვანილი**. SU(3) მყარი. SU(2)×U(1)
-  რიცხვითად **კონსისტენტურია**, მაგრამ "რატომ N_W=1986" საჭიროებს
+  SU(3) მყარია count/robustness დონეზე. SU(2)×U(1)
+  რიცხვითად **კონსისტენტურია**, მაგრამ derived სტატუსი არ აქვს:
+  "რატომ N_W=1986" საჭიროებს
   3D კავიტის სრული ვექტორული სპექტრის გაანგარიშებას — ეს არის
   მომდევნო რიცხვითი ამოცანა.
 
