@@ -9,6 +9,10 @@ leaving 5 (odd) + 3 (even) = 8 confined tensor modes = 8 gluons.
 
 Physical criterion: modes with large scalar admixture
 leak energy through the exterior → short lifetime → not confined.
+
+Q.3 audit status: toy resonance model at chosen (g₀, V, leak
+criterion). It is a structural octet-count clue, not yet a
+first-principles G₂(X) prediction of SU(3)c.
 """
 
 import numpy as np
@@ -60,6 +64,8 @@ def main():
     print("=" * 65)
     print("  GLUON EIGHT:  D₃ SYMMETRY BREAKING → 10 → 8 ?")
     print("=" * 65)
+    print("  STATUS: toy resonance model at chosen (g₀, V, leak threshold);")
+    print("          not a first-principles G₂(X) SU(3)c derivation.\n")
 
     E_S1 = (1 * PI)**2   # scalar n=1
     E_S2 = (2 * PI)**2   # scalar n=2
@@ -228,7 +234,7 @@ def main():
     • Required deformation: ~{delta/E_T*100:.0f}% (3-quark scale)
     • Lifetime ratio: confined/deconfined ≈ {tau_dn/tau_up:.0f}×
     • Glueball ratio j₂₁/π = 1.835 vs M(0++)/M(p) = 1.823
-      → 0.66% agreement (parameter-free)
+      → 0.66% agreement as an external proton-anchor consistency check
 """)
 
 

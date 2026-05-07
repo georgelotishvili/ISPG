@@ -246,10 +246,11 @@ def main():
     print("FINAL SUMMARY")
     print("=" * 65)
     print(f"""
-  PROVEN (exact mathematical results):
+  EXACT / STRUCTURAL RESULTS:
     1. j₀ zeros / π ∈ ℤ  (scalar = harmonic)         → Theorem
     2. j₂ zeros / π ∉ ℤ  (tensor = inharmonic)       → Theorem
-    3. Confinement: ω_gluon/ν₀ ∉ ℤ                   → Corollary
+    3. Confinement criterion: ω_gluon/ν₀ ∉ ℤ         → structural candidate;
+       exterior band-gap / boundary calculation pending
     4. j₂₁/π = 1.835 ≈ M(0++)/M(p) = 1.823          → 0.66%
     5. 4/6 glueball states match within ≤2%           → Numerical
     6. D₃ decomposition: 5 → A₁(1) + E(2) + E(2)    → Group theory

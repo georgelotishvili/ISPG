@@ -8,8 +8,12 @@ gluon_eight.py აჩვენებს, რომ (g₀=2, V=Δ) ფიქს�
 ტესტი: 2D პარამეტრული სკანი (g₀, V) სივრცეში.
 კრიტერიუმი: მოდი "confined" თუ scalar leak < 40%.
 
-თუ N=8 რეგიონი ფართოა → მტკიცე SU(3) პრედიქცია.
-თუ მხოლოდ ვიწრო ზოლია → fine-tuning, სუსტი პრედიქცია.
+თუ N=8 რეგიონი ფართოა → ძლიერი octet-count მინიშნება.
+თუ მხოლოდ ვიწრო ზოლია → fine-tuning, სუსტი მინიშნება.
+
+Q.3 audit status: toy parameter scan at chosen leak threshold.
+It tests partial robustness of the octet count; it is not a
+first-principles G₂(X) prediction of SU(3)c.
 """
 
 import numpy as np
@@ -59,6 +63,8 @@ def main():
     print("=" * 68)
     print("  8-გლუონის პრედიქციის მტკიცეობის ტესტი")
     print("=" * 68)
+    print(" STATUS: toy scan at chosen leak threshold; partial octet-count robustness,")
+    print("         not a first-principles G₂(X) SU(3)c derivation.\n")
 
     # --- სკანი ---
     g0_range = np.linspace(0.1, 8.0, 160)

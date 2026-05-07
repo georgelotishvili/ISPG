@@ -1439,7 +1439,7 @@ fractions of one fundamental rhythm.
 Particle interactions are the chord's \emph{consonance}. Consonance
 (stable binding) occurs when frequency ratios form simple rational
 fractions. Dissonance (instability, decay) occurs when the ratio is
-irrational or very complex.
+non-integer, highly incommensurate, or very complex.
 
 For a musician this is intuitive: a fifth ($3{:}2$) is harmonious;
 a tritone ($\sqrt{2}{:}1$) is dissonant. Perhaps nature also
@@ -4428,7 +4428,7 @@ inside this framework is a separate geometric
 question whose full development is the topic of a
 companion paper.  The confined counterpart of the
 free transverse mode is identified with the gluon,
-and the confinement mechanism is derived below.
+and the structural confinement mechanism is developed below.
 
 %-------------------------------------------------------------------
 \subsection{Four modes of a single medium}
@@ -4595,20 +4595,19 @@ encounters a medium whose background vibration
 is $\nu_0$---a fundamentally different rhythm.
 
 \textit{Confinement by frequency incompatibility.}---
-The $\nu_0$-background acts as a dispersive
+The $\nu_0$-background suggests a dispersive
 medium for transverse modes tuned to
 $\nu_N \neq \nu_0$.  Because the $G_2(X)$
 nonlinearity couples all oscillation modes to
 the background, a tensor wave whose frequency is
-not commensurate with $\nu_0$ falls inside a
-\textbf{band gap}: it cannot propagate as a
-travelling wave and instead decays
-exponentially outside the core
-(evanescent wave).  The gluon is therefore
-confined not by a material wall but by
-\emph{frequency mismatch}---the exterior
-medium's $\nu_0$-rhythm destructively interferes
-with any wave tuned to the interior $\nu_N$.
+not commensurate with $\nu_0$ is a natural
+candidate for a non-propagating or evanescent
+exterior mode.  The inharmonicity criterion
+therefore supplies a structural route to gluon
+confinement by \emph{frequency mismatch}.  A
+complete proof of the band gap and decay length
+requires the exterior $G_2(X)$ dispersion relation
+and boundary matching problem to be solved.
 
 \textit{Why scalar modes are $\nu_0$-harmonic
 but tensor modes are not.}---This is the crucial
@@ -4654,19 +4653,21 @@ momentum constraints:
       \approx 1.835,
       \label{eq:inharmonic_ratio}
     \end{equation}
-    an irrational number.  The tensor modes form
+    a non-integer ratio.  The tensor modes form
     an \textbf{inharmonic series}---analogous to
     the overtones of a drum, which are not integer
     multiples of the fundamental (unlike a string).
 \end{itemize}
 
-This is the mathematical origin of confinement:
+This is the mathematical origin of the
+confinement criterion:
 scalar modes (matter) and free transverse-traceless
 modes (gravitational waves) live in an
 integer-harmonic tower built on $\nu_0$ and
 propagate freely through the $\nu_0$-background.
 Tensor cavity modes (gluons) have frequencies
-that are \emph{incommensurate} with $\nu_0$:
+that are \emph{incommensurate} with the integer
+harmonic tower:
 \begin{equation}
   \boxed{
   \frac{\omega_{\mathrm{gluon}}}{\nu_0}
@@ -4677,8 +4678,11 @@ that are \emph{incommensurate} with $\nu_0$:
   \label{eq:confinement_criterion}
 \end{equation}
 A wave whose frequency is not a $\nu_0$-harmonic
-cannot sustain coherent propagation in the
-$\nu_0$-background and decays evanescently.
+is expected to couple poorly to coherent
+propagation in the $\nu_0$-background; whether it
+decays evanescently, and with what decay length,
+is the exterior band-gap calculation left for
+future work.
 A useful acoustic analogy: the $\nu_0$-background
 is a \emph{guitar string}---a one-dimensional
 resonator whose overtones are exact integer
@@ -4693,20 +4697,22 @@ harmonic series are incommensurate.  This
 ``string--membrane asymmetry''
 ($j_{0,n}/\pi \in \mathbb{Z}$ vs.\
 $j_{\ell \geq 2,\,n}/\pi \notin \mathbb{Z}$)
-is a theorem of Bessel function theory, not an
-assumption---confinement follows from the
-\textbf{geometry of the cavity}, specifically
-from the fact that spin-2 modes require
-$\ell \geq 2$.
+is a theorem of Bessel function theory.  The
+identification of this asymmetry with physical
+confinement is a structural mechanism: it becomes
+a derivation only after the exterior propagation
+problem for the full medium is closed.
 
 This immediately explains two key features of
 the strong interaction:
 
 \begin{enumerate}
   \item \textbf{Confinement.}\;
-    A single gluon cannot exist in free space
-    because the $\nu_0$-background extinguishes
-    any transverse mode not in resonance with it.
+    In this candidate mechanism, a single gluon
+    cannot exist in free space because the
+    $\nu_0$-background does not support coherent
+    propagation of the inharmonic tensor-cavity
+    mode.
     Photons \emph{can} propagate freely because,
     in the present treatment, they are described
     as the imported $U(1)_{\mathrm{EM}}$ gauge
@@ -4729,11 +4735,13 @@ the strong interaction:
       \frac{G_2''(X_0)\,\nu_N^2}{c^2}\,
       R_{\mathrm{core}}^2,
     \end{equation}
-    reproducing the linear confining potential
-    observed in lattice QCD.  When $V(L)$
-    exceeds $2m_q c^2$, the tube breaks and a new
-    quark--antiquark pair materializes---string
-    breaking, as observed experimentally.
+    giving a route to the linear confining
+    potential used in lattice QCD.  If this
+    flux-tube picture is dynamically realized,
+    then when $V(L)$ exceeds $2m_q c^2$, the tube
+    breaks and a new quark--antiquark pair
+    materializes---the analogue of QCD string
+    breaking.
 \end{enumerate}
 
 \textit{Physical picture.}---The oscillon interior
@@ -4750,7 +4758,7 @@ inharmonicity criterion was verified numerically
 (see \texttt{python/gluon\_modes.py}).
 The glueball spectrum predicted by the Bessel-zero
 ratios $j_{\ell,n}/j_{2,1}$ can be compared
-directly with lattice QCD glueball masses
+directly with lattice-QCD glueball benchmarks
 (Morningstar \& Peardon 1999; Chen et al.\ 2006):
 \begin{equation}\label{eq:glueball_comparison}
 \begin{array}{lcccc}
@@ -4782,17 +4790,19 @@ The fundamental ratio
   = 1.835
   \qquad (\Delta = 0.66\%),
 \end{equation}
-provides a striking numerical coincidence.
+provides a suggestive numerical consistency check.
 
-\textit{Scope of ``parameter-free''.}---%
+\textit{Scope of the ratio comparison.}---%
 The internal ratios of the glueball spectrum
 are fixed entirely by the Bessel-zero ratios
 $j_{\ell,n}/j_{2,1}$ once the
 $(\ell,n)\leftrightarrow J^{PC}$ assignments of
 Eq.~\eqref{eq:glueball_comparison} are accepted;
-in that sense the four-state fit is free of
-tunable coefficients.  Two caveats must be
-stated honestly, however.  (i)~The
+in that limited sense the four-state comparison
+uses no additional tunable coefficient.  It is not
+a standalone experimental confirmation of QCD
+glueballs.  Two caveats must be stated
+honestly.  (i)~The
 $(\ell,n)\leftrightarrow J^{PC}$ assignment is
 itself an educated identification of
 spherical-cavity modes with lattice-QCD
@@ -4803,9 +4813,10 @@ Eq.~\eqref{eq:fundamental_ratio} uses
 $M(p) = 938$~MeV as an external
 dimensionful input---the proton mass is not
 derived in this section; it is only being used
-to set the absolute scale.  The genuinely
-parameter-free content is therefore the set of
-internal glueball ratios; the proton-anchor
+to set the absolute scale.  The internal
+glueball-ratio pattern is therefore a
+coefficient-free lattice-benchmark comparison
+under the chosen assignments, while the proton-anchor
 agreement in
 Eq.~\eqref{eq:fundamental_ratio} is a
 \emph{consistency check} against that anchor,
@@ -4881,46 +4892,34 @@ the gap is $\Delta = 6.26$.  The Gaunt eigenvalue
 spread is $0.492$, so resonance occurs at
 $\varepsilon \approx \Delta / 0.492 \approx 13$.
 A perturbative estimate gives
-$\varepsilon_{\text{pert}} \approx 0.5$; the full
-nonperturbative value was obtained by direct 2D
-Helmholtz simulation comparing a circular cavity
-with a $D_3$-deformed (rounded-triangle) cavity
-of the same area
-(see \texttt{python/gluon\_epsilon.py}).
-At $25\%$ triangular deformation (matching the
-proton's quark geometry $d = R/\sqrt{3}$), the 2D
-simulation yields
-$\varepsilon_{\text{2D}} \approx 6.8$.
-In three dimensions the radial overlap of the
-$\ell = 2$ Bessel profile contributes an additional
-factor $j_{2,1}/\pi = 1.835$, giving
-\begin{equation}\label{eq:eps_3D}
-  \varepsilon_{\text{3D}}
-  \;\approx\;
-  \varepsilon_{\text{2D}}
-  \times \frac{j_{2,1}}{\pi}
-  \;\approx\;
-  6.8 \times 1.835
-  \;\approx\; 12.5,
-\end{equation}
-consistent with the required
-$\varepsilon \approx 13$ to within $4\%$.
+$\varepsilon_{\text{pert}} \approx 0.5$, so the
+required value lies in a genuinely nonperturbative
+regime.  An exploratory script
+\texttt{python/gluon\_epsilon.py} was intended to
+estimate this scale by comparing circular and
+$D_3$-deformed two-dimensional cavities, but its
+current circular-cavity benchmark is not calibrated:
+it does not reproduce the expected low-lying Bessel
+spectrum before the triangular deformation is added.
+Consequently its previously quoted
+$\varepsilon_{\text{2D}}$ and dressed
+$\varepsilon_{\text{3D}}$ values are not used as
+evidence here.  The reliable quantitative target is
+the analytic requirement
+$\varepsilon \approx \Delta/0.492 \approx 13$;
+deriving whether the real 3D oscillon reaches this
+target requires a corrected finite-element or
+spectral eigenproblem.
 
 \textit{Non-independence note.}---%
-The ratio $j_{2,1}/\pi = 1.835$ entering
-Eq.~\eqref{eq:eps_3D} is the \emph{same}
-Bessel-zero ratio that fixes the
-glueball-to-proton ratio in
-Eq.~\eqref{eq:fundamental_ratio}.  The two
-agreements therefore share a single structural
-input---the first Bessel zero of $J_2$---rather
-than constituting two logically independent
-predictions; the combined claim is that one
-geometric quantity, $j_{2,1}$, controls both
-the $0^{++}$-to-proton ratio and the
-2D$\to$3D dressing of the triangular-cavity
-eigenvalue problem, not that two separate
-quantitative hits have been scored.
+If a future 2D-to-3D dressing calculation uses
+$j_{2,1}/\pi = 1.835$, it will share the same
+Bessel-zero input that appears in
+Eq.~\eqref{eq:fundamental_ratio}.  Such a result
+should therefore be counted as a single structural
+thread, not as an independent second numerical
+prediction, until the full 3D eigenproblem is
+solved directly.
 
 At resonance the upper $E$ pair acquires
 $\sim 50\%$ scalar admixture and radiates
@@ -4984,12 +4983,12 @@ coupled perturbation equation
 \end{equation}
 inside a three-dimensional three-body oscillon
 with evanescent exterior boundary conditions.
-This 3D finite-element calculation will sharpen
-the estimate~\eqref{eq:eps_3D} and determine
-whether the eight surviving modes' coupling
-algebra reproduces SU(3).  If so, the colour
-gauge group emerges geometrically from the
-oscillon's $D_3$ cavity structure.
+This 3D finite-element calculation will determine
+the required nonperturbative splitting directly
+and test whether the eight surviving modes'
+coupling algebra reproduces SU(3).  If so, the
+colour gauge group would emerge geometrically
+from the oscillon's $D_3$ cavity structure.
 
 %-------------------------------------------------------------------
 \subsection{Summary and future programme}
@@ -6253,9 +6252,12 @@ groups) is a goal for future work.
   \item[\checkmark] $q$ is universal---
     sector-specific $q$ is excluded
     by the electron stability condition.
-  \item[\checkmark] Glueball mass ratios from
-    Bessel-function zeros: $\leq 2\%$ for four
-    states, parameter-free
+  \item[\checkmark] Glueball mass-ratio pattern
+    from Bessel-function zeros: $\leq 2\%$ for
+    four lattice-benchmark assignments, with no
+    additional coefficient once the assignments are
+    chosen; proton anchoring remains an external
+    scale check
     (\S\ref{sec:gluon}).
   \item[\checkmark] Bekenstein--Hawking entropy
     matching: $S_{\mathrm{ent}} = \mathcal{A}

@@ -78,7 +78,7 @@ def section_inharmonicity(all_zeros):
     print(f"     Nearest integer = {round(r0)}  →  "
           f"deviation = {abs(r0 - round(r0)):.8f}")
     print(f"     → {abs(r0 - round(r0)) / round(r0) * 100:.4f}% "
-          f"from nearest harmonic  ⇒  IRRATIONAL\n")
+          f"from nearest harmonic  ⇒  INCOMMENSURATE (non-integer)\n")
 
     return r0
 
@@ -267,6 +267,8 @@ def section_string_tension(all_zeros):
     print(f"  (Compare:  proton charge radius = 0.84 fm,")
     print(f"             1/3 proton ~ 0.28 fm,")
     print(f"             constituent quark radius ~ 0.3–0.5 fm)")
+    print("  Status: external scale-fit / order check; relation to")
+    print("          constituent-quark scale requires a flux-tube radius derivation.")
     print()
 
     # Table for several R values
@@ -393,10 +395,10 @@ def section_summary(pred_ratio, obs_ratio, R_pred):
     print("SUMMARY")
     print("=" * 65)
     print(f"""
-  1. INHARMONICITY  —  PROVEN  (Bessel function theorem)
+  1. INHARMONICITY  —  STRUCTURAL FACT  (Bessel function theorem)
      j_{{0,n}} / π  ∈  ℤ      scalar modes ARE  ν₀-harmonic
      j_{{ℓ≥2,n}} / π  ∉  ℤ    tensor modes NOT  ν₀-harmonic
-     ⇒  Confinement criterion:  ω_gluon / ν₀ ∉ ℤ   ✓
+     ⇒  Structural confinement criterion; exterior boundary calculation pending
 
   2. FUNDAMENTAL RATIO
      Predicted:  j_{{2,1}} / π  = {pred_ratio:.5f}
@@ -410,10 +412,10 @@ def section_summary(pred_ratio, obs_ratio, R_pred):
 
   4. STRING TENSION
      R_core = {R_pred:.3f} fm  matches  √σ = 440 MeV
-     (constituent-quark scale: 0.3–0.5 fm  →  consistent)
+     This is an external scale-fit; 0.3–0.5 fm would give GeV-scale √σ.
 
   5. GLUEBALL SPECTRUM
-     Bessel-zero ratios qualitatively reproduce lattice ordering
+     Bessel-zero ratios suggest lattice-benchmark ordering
      Quantitative agreement requires coupled-equation solution
 """)
 

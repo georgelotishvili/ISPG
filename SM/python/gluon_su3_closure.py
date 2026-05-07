@@ -8,8 +8,16 @@ E6 გადასამოწმებელი: 3-ღერძიანი ფ
 გარდაქმნები (SU(3)) ქმნიან 8 გენერატორს, რომლებიც იხურებიან სტანდარტული
 Lie-ალგებრით [T_a, T_b] = i·f_abc·T_c.
 
-თუ textbook f_abc ზუსტად აღდგება, მაშინ `gluon_eight.py`-ს 8 მოდი
-**ნამდვილად** არის SU(3) ოქტეტი, არა უბრალოდ "8 ცალი".
+თუ textbook f_abc ზუსტად აღდგება, მაშინ 3-ღერძიანი ფერის სივრცე
+თავსებადია SU(3) target-algebra-სთან; ეს ჯერ არ ამტკიცებს, რომ
+`gluon_eight.py`-ს 8 confined mode დინამიკურად იგივე გენერატორებია.
+
+Q.3 audit status:
+  This is a target-algebra consistency check under an assumed
+  three-axis color-space basis. It does NOT map the confined
+  cavity modes to generators and does NOT extract f_abc from
+  G₂(X) cavity-mode commutators. E6 remains open until that
+  dynamical extraction is done.
 
 მეთოდი:
   1. ავაგოთ Gell-Mann-ის 8 მატრიცა 3-ფერი (3×3) სივრცეში
@@ -78,6 +86,9 @@ FABC_REFERENCE = {
 
 
 def main():
+    print("STATUS: target-algebra consistency check only;")
+    print("        dynamic f_abc extraction from ISPG cavity modes remains open.\n")
+
     print("=" * 68)
     print("  E6  —  SU(3) Lie-ალგებრის დახურვა 3-ღერძიანი ოსცილონიდან")
     print("=" * 68)
@@ -227,16 +238,19 @@ def main():
     ✓ Jacobi-ს იდენტობა შესრულებულია
     ✓ რანდი = 2 (Cartan ქვე-ალგებრა {T_3, T_8})
 
-  ე.ი. `gluon_eight.py`-ის 8 შემოსაზღვრული ტენზორული მოდი
-  ნამდვილად არის SU(3) oქტეტი — არა უბრალო "8 ცალი", არამედ
-  ზუსტი SU(3) ადჯოინტი, რომელიც იხურება სტანდარტული f_abc-ებით.
+  ეს ადასტურებს, რომ ნავარაუდევი 3-ღერძიანი ფერ-სივრცის
+  textbook გენერატორები ზუსტად იხურება SU(3)-ზე. ეს არის
+  target-algebra consistency check, არა იმის დინამიკური
+  მტკიცებულება, რომ `gluon_eight.py`-ის confined cavity modes
+  უკვე იმავე გენერატორებს წარმოადგენენ.
 
   კავშირი: SM-ში ფერი არის "შიდა" (internal) სიმეტრია.
            ISPG-ში იგივე SU(3) ამოდის **სივრცული 3-ღერძიანი**
            სტრუქტურიდან — ანუ "ფერი" არ არის დამოუკიდებელი
            თავისუფლების ხარისხი, არამედ 3D სივრცის თვისება.
 
-  E6 დასრულდა.
+  E6 არ არის დასრულებული: საჭიროა confined cavity modes-ის
+  generator-map და f_abc-ის ამოღება G₂(X)-ის trilinear vertices-დან.
 """)
 
 

@@ -55,7 +55,7 @@ print(f"ცდომილება (N² vs on-shell): {err:.3f}%")
 
 print()
 print("=" * 78)
-print("SU(3) გლუონების სტრუქტურა (უკვე დამტკიცებული)")
+print("SU(3) გლუონების სტრუქტურა (octet-count clue; full derivation open)")
 print("=" * 78)
 print("""
 სკრიპტი: MASS/python/gluon_eight_robustness.py
@@ -68,14 +68,12 @@ print("""
   N_confined ∈ {8, 10}; 5, 6, 7, 9 — არასოდეს
   N = 8 რეგიონი: g₀ ∈ [0.1, 8.0], V ∈ [3.0, 9.5] (V=Δ≈6.26 ცენტრი)
 
-ფიზიკური მიზეზი:
-  V = Δ — რეზონანსული დეფორმაცია = ოსცილონის ზომის ფიზიკური
-  მახასიათებელი, არა ხელით არჩეული პარამეტრი.
-
-ეს არის **სრულფასოვანი** გამოყვანა, რადგან:
-  - g₀ ფართო დიაპაზონი (fine-tuning არა)
-  - D₃ სიმეტრია = 3 სივრცული ღერძი (ფუნდამენტურად ISPG-ში)
-  - V=Δ = ოსცილონის ინფრასტრუქტურიდან გამომდინარე
+ფიზიკური სტატუსი:
+  V = Δ — რეზონანსული დეფორმაციის სამიზნეა toy model-ში.
+  ეს არის octet-count compatibility clue, არა completed derivation:
+  - g₀ ფართო დიაპაზონში მუშაობს ამ toy scan-ში
+  - D₃ სიმეტრია იძლევა ბინარულ 8/10 count-ს
+  - V=Δ, leak threshold, algebra/vertices და G₂(X) დინამიკა ღიაა
 """)
 
 print("=" * 78)
@@ -114,14 +112,16 @@ print("=" * 78)
 print("Phase A — დასკვნები")
 print("=" * 78)
 print("""
-✅ SU(3): სრულად გამოყვანილი (gluon_eight.py + robustness)
+🟡 SU(3): octet-count partial robustness (gluon_eight.py + robustness);
+          algebra/vertices and G₂(X) parameters remain open
 🟡 SU(2): N_W, N_Z ცნობილია Mathieu-ზე; cos θ_W-ის რიცხვითი
           თავსებადობა (0.027%) არის consistency diagnostic;
           ფუნდამენტური "რატომ" — ღია
 ⏳ U(1): γ მასალო → საჭიროა ცალკე მიდგომა (არა Mathieu)
 
 **Phase A-ს სტატუსი:**
-  SU(3) მყარია count/robustness დონეზე. SU(2)×U(1)
+  SU(3) მყარია count-compatibility დონეზე, მაგრამ full
+  SU(3)c derivation საჭიროებს algebra/vertices-ს. SU(2)×U(1)
   რიცხვითად **კონსისტენტურია**, მაგრამ derived სტატუსი არ აქვს:
   "რატომ N_W=1986" საჭიროებს
   3D კავიტის სრული ვექტორული სპექტრის გაანგარიშებას — ეს არის

@@ -5,6 +5,12 @@ Instead of perturbation theory, directly compute eigenvalues of:
   (A) Circular disk  (spherical oscillon)
   (B) Reuleaux triangle / rounded-triangle disk (3-quark oscillon)
 and measure the D₃ splitting from the difference.
+
+STATUS (Q.3 audit): EXPLORATORY ONLY.
+The current circular-disk benchmark is not calibrated
+(it returns kR ≈ 104 for the first modes instead of π, 4.493, 5.763).
+Do not use this script as evidence for ε₂D, ε₃D, or the 8-gluon claim
+until the disk Bessel spectrum is reproduced.
 """
 
 import numpy as np
@@ -93,6 +99,8 @@ def main():
     print("▓" * 65)
     print("  ISPG: CIRCULAR vs TRIANGULAR CAVITY → ε DIRECT")
     print("▓" * 65)
+    print("  STATUS: EXPLORATORY / CALIBRATION FAILS / NOT VALID FOR Q.3 ε CLAIMS")
+    print("          Disk benchmark must reproduce π, 4.493, 5.763 before use.\n")
 
     R = 1.0
     N = 121
@@ -282,7 +290,7 @@ def main():
     #  FINAL
     # ════════════════════════════════════════════════════════
     print("\n" + "=" * 65)
-    print("FINAL RESULT")
+    print("FINAL RESULT (EXPLORATORY - NOT VALID FOR Q.3 CLAIMS)")
     print("=" * 65)
 
     if all_eps:
@@ -292,16 +300,18 @@ def main():
   Maximum computed ε = {best_eps:.1f} at {best_deform*100:.0f}% deformation.
   Required ε for 8 gluons ≈ 13.
 
-  The 3-quark (D₃) deformation of a baryon oscillon
-  {"PROVIDES" if best_eps >= 10 else "approaches"} sufficient splitting
-  for the 10→8 gluon mechanism.
+  This run is exploratory only because the circular reference
+  cavity does not reproduce the expected disk Bessel spectrum.
 
-  Chain of proof:
-    1. Confinement:     j₂₁/π ∉ ℤ             → THEOREM
-    2. D₃ structure:    1+2+2                  → THEOREM  
-    3. Resonance:       E↑ → scalar n=2        → DEMONSTRATED
-    4. ε sufficient:    ε = {best_eps:.0f} {"≥" if best_eps >= 13 else "~"} 13                  → {"CONFIRMED" if best_eps >= 13 else "CONSISTENT"}
-    5. Mode count:      5+2+1 = 8 = SU(3)     → {"PROVEN" if best_eps >= 13 else "DEMONSTRATED"}
+  Useful analytic targets preserved elsewhere:
+    1. j₂₁/π is non-integer relative to the scalar harmonic tower.
+    2. D₃ structure gives 1+2+2 at the Gaunt-matrix level.
+    3. The required nonperturbative splitting target is ε ≈ 13.
+
+  Not established by this script:
+    - ε₂D or ε₃D for the physical baryon oscillon
+    - a calibrated 10→8 mode count from a disk/3D eigenproblem
+    - a proof that the confined modes realize SU(3)
 """)
 
 

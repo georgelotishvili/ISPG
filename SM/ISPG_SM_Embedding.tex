@@ -210,12 +210,13 @@ asymptotically.
 \subsection{$\mathrm{SU}(3)$: eight confined gluons from $D_3$}
 \label{sec:phaseA_su3}
 
-\derived\ (count only; documented in the robustness analysis,
-supplementary notes on file with the author; summarized here).
+\numerical\ (octet-count clue; documented in the robustness
+analysis, supplementary notes on file with the author; summarized
+here).
 The $D_3$-deformed three-dimensional oscillon carries a tensor
 perturbation spectrum with ten modes at leading order; exactly
-eight are confined (lie below the continuum threshold) across a
-broad region of parameter space
+eight are confined (lie below the chosen leak threshold) across a
+nonzero, threshold-sensitive region of parameter space
 \begin{equation}
   g_0 \in [0.1, 8.0], \qquad V \in [3.0, 9.5],
 \end{equation}
@@ -223,8 +224,12 @@ with the central value $V=\Delta\approx 6.26$ identified as the
 resonant deformation. The confined multiplicity is
 \emph{discrete-binary} in $\{8,10\}$: the values $\{5,6,7,9\}$
 never appear. This matches the dimension of the
-$\mathrm{SU}(3)$ adjoint representation ($\dim=8$) without fine
-tuning.
+$\mathrm{SU}(3)$ adjoint representation ($\dim=8$) as a structural
+compatibility clue. The robustness analysis gives an $N=8$ region
+of $13.23\%$ at the default $40\%$ leak threshold, $6.50\%$ at
+$45\%$, and $0\%$ at $50\%$; the physical threshold and the
+parameters $g_0,V$ must still be derived from the full
+$G_2(X)$ dynamics.
 
 \paragraph{Caveat: count versus algebra.}
 \deferred\ The count of eight confined modes is a necessary but
@@ -305,9 +310,10 @@ of the Weinberg angle.
 
 \subsection{Phase A verdict}
 
-Green on the gluon count: the $D_3$-deformed oscillon reproduces
-$\dim\mathrm{SU}(3)_{\mathrm{adj}}=8$ robustly, though the full
-Lie-algebra structure is deferred (E6). Yellow on
+Yellow on the gluon count: the $D_3$-deformed oscillon gives an
+octet-count compatibility clue, with partial numerical robustness
+and threshold sensitivity, while the full Lie-algebra structure is
+deferred (E6). Yellow on
 $\mathrm{SU}(2)\times\mathrm{U}(1)_Y$: the Mathieu ladder
 accommodates $W,Z,H$ with sub-percent residuals, but the
 electroweak test is internal consistency rather than an
@@ -766,7 +772,7 @@ Combining phases A--F:
 Phase & Content & Status \\
 \midrule
 A & gauge sector $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
-  & SU(3) full; EW numerical \\
+  & SU(3) octet count; E6 algebra/vertices deferred; EW numerical \\
 B/C & Gen-1 fermion quantum numbers $(Q,T_3,Y,N_c)$ & full \\
 D & EW breaking without Higgs & structural candidate (E7 open) \\
 E & five gauge anomalies                            & full \\
@@ -794,12 +800,16 @@ is fit}
 
 \begin{itemize}
   \item \derived\ (structurally, from ISPG substrate):
-    the \emph{count} of eight confined modes of the
-    $D_3$-deformed oscillon; the Mathieu mass law
-    $m\propto N^2$ (from the companion MASS paper);
+    the Mathieu mass law $m\propto N^2$ (from the companion
+    MASS paper);
     the linearity of gauge anomalies in $n_{\rm gen}$;
     the integrality of $Y\,N_c$ as a necessary (not
     sufficient) condition.
+  \item \numerical\ (partial compatibility clue):
+    the \emph{octet count} of confined modes in the
+    $D_3$-deformed oscillon toy/robustness analysis; the
+    full $\mathrm{SU}(3)_c$ algebra, vertices, and
+    $G_2(X)$ parameters remain deferred to E6.
   \item \numerical/fit\ (diagnostic, not predictive):
     the generation-1 formula~\eqref{eq:gen1formula} (three
     ingredients vs three data points); the individual
@@ -1013,9 +1023,10 @@ Script & Purpose & Phase \\
   & Structural identity of Gen 1,2,3; anomaly linearity in $n_{\rm gen}$
   & F \\
 \texttt{gluon\_su3\_closure.py}
-  & $\mathrm{SU}(3)$ Lie-algebra closure on the three colour axes;
-    $f^{abc}$ matched to textbook to $\leq 2\times 10^{-16}$; Jacobi identity
-  & A/E6 \\
+  & Target-algebra compatibility on assumed three colour axes;
+    textbook $f^{abc}$ matched to $\leq 2\times 10^{-16}$, but no
+    dynamic extraction from confined modes
+  & A compatibility; E6 target only \\
 \texttt{higgs\_replacement\_unified.py}
   & Unified compatibility table $m=(N/N_e)^2 m_e$ across 12 SM particles
     (leptons, quarks, $W,Z,H$); mean residual $0.85\%$
