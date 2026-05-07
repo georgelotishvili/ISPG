@@ -95,8 +95,10 @@ The answer is affirmative. We show that:
   \item the integer-harmonic structure of the scalar sector
     ($j_0$ zeros $= n\pi$) is the spectral signature of a
     one-dimensional substrate; the requirement for tensor
-    ($\ell \geq 2$) modes to exist uniquely selects three
-    spatial dimensions (\S\ref{sec:dimensions}).
+    ($\ell \geq 2$) modes to propagate selects $d=3$ as the
+    minimal spatial dimension, while exact $d=3$ rather than
+    $d>3$ requires the minimality/empirical input stated in
+    \S\ref{sec:dimensions}.
 \end{itemize}
 
 \medskip
@@ -5172,8 +5174,8 @@ dimension:
   In spherical harmonics this is the azimuthal
   angle $\varphi$ and corresponds to
   $\ell = 2$ (quadrupole, tensor) modes.
-  These are exactly the \textbf{gluons}
-  of Section~\ref{sec:gluon}.
+  These are the \textbf{gluon-candidate tensor
+  modes} discussed in Section~\ref{sec:gluon}.
 \end{enumerate}
 
 The chain is
@@ -5181,32 +5183,34 @@ The chain is
   \boxed{
   \underbrace{1\text{D}}_{\text{string}\;(\ell=0)}
   \;\xrightarrow{\;\text{transverse vibration}\;}
-  \underbrace{2\text{D}}_{\text{membrane}\;(\ell \leq 1)}
+  \underbrace{2\text{D}}_{\text{membrane-like transverse sector}}
   \;\xrightarrow{\;\text{tensor vibration}\;}
-  \underbrace{3\text{D}}_{\text{cavity}\;(\ell \leq 2)}
+  \underbrace{3\text{D}}_{\text{cavity}\;(\ell \geq 2\;\text{admissible})}
   }
 \end{equation}
 
-No further dimension is generated because no
-new vibration type is needed: with three spatial
-dimensions the angular spectrum is complete
-($\theta, \varphi$ exhaust the unit sphere).
-A hypothetical fourth spatial dimension would
-require a new angular coordinate---but $S^2$
-has no room for one.
+The present construction uses the angular sphere
+$S^2$ of ordinary three-dimensional space, with
+coordinates $(\theta,\varphi)$.  A hypothetical
+$d$-dimensional construction would instead use
+$S^{d-1}$, and the angular argument alone does
+not exclude $d>3$.  Restricting the construction
+to exactly $d=3$ therefore requires the
+minimality/empirical input stated below, or a
+future stability/graph-reconstruction argument.
 
 \textit{Why exactly $3$ and not $2$ or $4$?}---
-A purely two-dimensional universe ($\ell \leq 1$
-only) cannot support \emph{tensor} modes:
-transverse-traceless perturbations require
-$\ell \geq 2$, which demands the two angular
-coordinates $(\theta, \varphi)$ of a
-three-dimensional space.  In $(2+1)$-dimensional
-general relativity, gravitational waves carry
-no propagating degrees of freedom---a well-known
-result.  Three spatial dimensions is therefore
-the \textbf{minimum} in which both scalar and
-tensor modes coexist:
+A purely $(2+1)$-dimensional universe has no
+local propagating spin-2/tensor degrees of
+freedom in the standard gravitational
+degree-count; the transverse-traceless
+polarizations vanish at two spatial dimensions.
+This is a gauge/dynamical obstruction, not a
+harmonic-existence obstruction: harmonics on
+$S^1$ exist for arbitrary integer winding.
+Three spatial dimensions is therefore the
+\textbf{minimum} in which both the scalar sector
+and propagating tensor degrees of freedom coexist:
 
 \begin{equation}\label{eq:dim_argument}
   d = 3
@@ -5220,14 +5224,18 @@ tensor modes coexist:
 
 The number of spatial dimensions is constrained
 from below by the requirement that the substrate
-support tensor vibrations: the ``gluon''
-($\ell = 2$ tensor mode) \emph{is} the
-vibration that opens the third dimension, so
-$d\geq 3$ is forced.  Confinement---the
-inability of $\ell \geq 2$ modes to propagate
-in the $\ell = 0$ background---then receives a
-second interpretation: it is the mismatch
-between a 2D membrane vibration and a 1D string
+support tensor vibrations.  In the present
+interpretive picture, the $\ell=2$ tensor
+sector---and, in the strong-sector application,
+the gluon-candidate sector of
+Section~\ref{sec:gluon}---is the structure that
+motivates the third spatial dimension.  The full
+gluon/confinement dynamics, however, remain open
+until the exterior band-gap problem and the
+dynamic $\mathrm{SU}(3)_c$ vertices are derived.
+The confinement criterion then receives a second
+interpretation: it is the mismatch between a
+2D membrane-like vibration and a 1D string
 background, precisely the
 ``string--membrane asymmetry'' of
 Section~\ref{sec:gluon}.
@@ -5235,12 +5243,12 @@ Section~\ref{sec:gluon}.
 \textit{Lower bound vs.\ unique selection.}---%
 Eq.~\eqref{eq:dim_argument} is strictly a
 \emph{lower bound}: $d=3$ is the smallest
-integer for which $\ell\geq 2$ modes are
-angularly admissible on $S^{d-1}$.  Larger
+integer for which the propagating transverse-
+traceless spin-2 sector is available in the
+usual gravitational degree count.  Larger
 spatial dimensions ($d=4, 5, \ldots$) also
-support $\ell\geq 2$ tensor modes on their
-angular sphere and therefore pass the same
-structural test.  The argument above does not
+support propagating tensor modes and therefore
+pass the same structural test.  The argument above does not
 by itself exclude $d>3$; the selection of
 exactly $d=3$ over $d>3$ requires an
 additional principle---an Occam-style
@@ -5342,8 +5350,9 @@ interacting fields alike.  In ISPG the role of
 $\ell_{\mathrm{eff}}$ is played by the oscillon
 core radius $R \sim c / \nu_0$.
 
-\textit{Step~2: entanglement area $=$ geometric
-area (Ryu--Takayanagi \cite{RyuTakayanagi2006,NishiokaTakayanagi2009}).}---In holographic
+\textit{Step~2: entanglement area as a route to
+geometric area (Ryu--Takayanagi
+\cite{RyuTakayanagi2006,NishiokaTakayanagi2009}).}---In holographic
 theories \cite{Maldacena1998} the entanglement entropy of a boundary
 region $A$ equals the area of the minimal
 surface in the bulk that is homologous to $A$:
@@ -5353,20 +5362,22 @@ surface in the bulk that is homologous to $A$:
 \end{equation}
 where $\gamma_A$ is the Ryu--Takayanagi surface
 and $G_N$ is Newton's constant.
-This means the \emph{geometry itself}---distances,
-angles, curvature---is encoded in, and can be
-reconstructed from, the entanglement pattern of
-the underlying quantum state.  The ER\,=\,EPR
-conjecture \cite{MaldacenaSusskind2013}
-sharpens this: every entanglement link is a
-microscopic wormhole; geometry \emph{is}
-entanglement.
+This is a guide rather than a theorem already
+proved for an arbitrary $G_2(X)$ scalar vacuum:
+the ISPG-specific tensor-network/MERA
+reconstruction of distances, angles and curvature
+from $|\Omega\rangle_\phi$ remains a future
+calculation.  The ER\,=\,EPR conjecture
+\cite{MaldacenaSusskind2013} is therefore used
+here as geometric intuition, not as a completed
+derivation.
 
 \textit{Step~3 (ISPG-specific).}---The single
 field $\phi$, vibrating at $\nu_0$ with the
 $G_2(X)$ nonlinearity, produces a vacuum state
 $|\Omega\rangle$ whose entanglement structure
-satisfies three conditions.  We verify each:
+satisfies three consistency conditions.  We check
+each as scaffolding for the future reconstruction:
 
 \begin{enumerate}
 \item \textbf{Bekenstein--Hawking matching.}\;
@@ -5588,7 +5599,7 @@ quantum correlations that weave the spatial
 fabric.
 \end{enumerate}
 
-\textit{The proof chain (schematic).}---Steps
+\textit{The reconstruction chain (schematic).}---Steps
 1--3, taken together with the RT reconstruction
 step that \emph{remains to be carried out}
 (below), would establish that the three spatial
@@ -6230,13 +6241,16 @@ identities, gravitational-wave counting in
 $d$ dimensions, the spherical-cavity
 decomposition---are all standard results.
 The new content is the \emph{chain of inference}:
-from $j_0(x) = \sin(x)/x$ to the emergence
-of exactly three spatial dimensions and the
-confinement of tensor modes.  The quantitative
-programme (proving that the one-dimensional
-substrate generates exactly the observed
-3+1-dimensional spacetime with its symmetry
-groups) is a goal for future work.
+from $j_0(x) = \sin(x)/x$ to a
+lower-bound/minimality route to the observed
+three spatial dimensions and to a structural
+confinement criterion for tensor modes.  The
+quantitative programme---proving that the
+one-dimensional radial/Mathieu mass ladder and
+the full 3D cavity dynamics reduce to one
+another, with an explicit $N\leftrightarrow
+(n,\ell)$ map and the observed 3+1-dimensional
+spacetime---is a goal for future work.
 
 \section{Future Directions}
 

@@ -1,18 +1,18 @@
 """
 entanglement_proof.py
 =====================
-Mathematical demonstration that the ISPG vacuum state |Ω⟩
-produces an entanglement structure consistent with
-(3+1)-dimensional geometry.
+Exploratory/scaffold checks for whether the ISPG vacuum state |Ω⟩
+could support an entanglement route toward (3+1)-dimensional
+geometry.  This script does not complete the RT/MERA reconstruction.
 
 Sections
 --------
 1. ν₀^(cl) = ν_P/π  ↔  λ₀ = πℓ_P  (numerical verification)
 2. Srednicki entanglement entropy — area law
 3. Scalar vs tensor two-point correlators
-4. Dimensional selection theorem: d = 3
+4. Dimensional lower-bound check: d >= 3
 5. G₂(X) enhancement of entanglement coefficient
-6. Full proof chain summary
+6. Status-chain summary
 """
 
 import numpy as np
@@ -145,6 +145,9 @@ def section_2(N=300):
     p3 = np.polyfit(np.log(R_3D), np.log(S_3D), 1)
     print(f"\n  3D angular sum:  S ∝ R^{p3[0]:.3f}")
     print(f"  expected area law:  S ∝ R^2.0")
+    print("  STATUS: this angular-sum toy does not currently verify the")
+    print("          area law because the displayed exponent is not 2.0.")
+    print("          A proper boundary-cut entanglement calculation remains open.")
     print(f"\n  {'R':>6s}  {'S_ent':>10s}  {'S/R²':>10s}")
     for R, S in zip(R_3D_vals, S_3D_vals):
         print(f"  {R:6d}  {S:10.2f}  {S/R**2:10.5f}")
@@ -187,19 +190,20 @@ def section_3():
 
 
 # ================================================================
-#  SECTION 4 — dimensional selection theorem
+#  SECTION 4 — dimensional lower-bound check
 # ================================================================
 def section_4():
     print("\n" + "=" * 64)
-    print("  SECTION 4 :  Dimensional Selection  —  d = 3")
+    print("  SECTION 4 :  Dimensional Lower Bound  —  d ≥ 3")
     print("=" * 64)
 
     print("""
-  THEOREM.  d = 3 is the unique minimum spatial dimension
-  in which BOTH scalar (ℓ = 0) and tensor (ℓ ≥ 2) propagating
-  modes exist.
+  OBSERVATION (lower-bound).  d = 3 is the minimum spatial
+  dimension consistent with BOTH scalar (ℓ = 0) modes and
+  propagating tensor/spin-2 degrees of freedom.  The present
+  argument does not exclude d > 3.
 
-  PROOF.
+  CHECK.
 
   (A)  Scalar modes (ℓ = 0) exist for any d ≥ 1.
        The radial equation u'' + k²u = 0 always has
@@ -216,25 +220,28 @@ def section_4():
         print(f"       d = {d}:  N_TT = {ntt:2d}  {ok}")
 
     print("""
-  (C)  Angular-momentum argument:
-       Spherical harmonics Y_{ℓm} with ℓ = 2 require
-       two angular coordinates (θ, φ), available only for d ≥ 3.
-       In d = 2 the unit sphere S¹ carries only ℓ ≤ 1.
+  (C)  Harmonic vs degree-count distinction:
+       Harmonics on S¹ exist for arbitrary integer winding m.
+       The obstruction in 2+1 dimensions is not harmonic
+       existence; it is the absence of local propagating
+       spin-2/TT degrees of freedom in the standard GR count.
 """)
 
     for d in range(1, 6):
         na    = d - 1
         has2  = "✓" if d >= 3 else "✗"
         print(f"       d = {d}:  S^{d-1} has {na} angle(s), "
-              f"ℓ = 2 exists: {has2}")
+              f"propagating spin-2 allowed: {has2}")
 
     print("""
   CONCLUSION:
-       min{ d : ℓ = 0 and ℓ = 2 both propagate } = 3.
+       min{ d : scalar sector and propagating spin-2 sector coexist } = 3.
+       Exact d=3 rather than d>3 needs minimality/empirical input
+       or a future pre-geometric reconstruction.
 
        d = 1 (longitudinal, scalar)
          + 2 (transverse, tensor)
-         = 3.                                            QED
+         = 3.                                            lower-bound mnemonic
 """)
 
 
@@ -288,11 +295,11 @@ def section_5():
 
 
 # ================================================================
-#  SECTION 6 — complete proof chain
+#  SECTION 6 — status-chain summary
 # ================================================================
 def section_6():
     print("\n" + "=" * 64)
-    print("  SECTION 6 :  Complete proof chain")
+    print("  SECTION 6 :  Status-chain summary")
     print("=" * 64)
 
     print("""
@@ -316,36 +323,38 @@ def section_6():
                    │
                    ▼
   ┌──────────────────────────────────────────────────┐
-  │  RYU–TAKAYANAGI                                  │
+  │  RYU–TAKAYANAGI ROUTE                            │
   │  S = Area(γ) / (4 G_N)                           │
-  │  ⟹  metric g_μν encoded in entanglement    ✓    │
+  │  ⟹  metric reconstruction target, not done here  │
   └────────────────┬─────────────────────────────────┘
                    │
                    ▼
   ┌──────────────────────────────────────────────────┐
-  │  DIMENSIONAL SELECTION                           │
+  │  DIMENSIONAL LOWER BOUND                         │
   │  ℓ=0  (scalar)  ⟹  d ≥ 1                       │
   │  ℓ=2  (tensor)  ⟹  d ≥ 3                       │
-  │  minimum d = 3                              ✓    │
+  │  minimum d = 3; d>3 not excluded here            │
   └────────────────┬─────────────────────────────────┘
                    │
                    ▼
   ┌──────────────────────────────────────────────────┐
-  │  CONFINEMENT                                     │
+  │  CONFINEMENT CANDIDATE                           │
   │  scalar:  G(r) ∝ 1/r²  (power law, free)        │
-  │  tensor:  G(r) ∝ e^{-κr}/r  (confined)          │
-  │  κ = 2π√(ν_N² − ν₀²)/c                     ✓    │
+  │  tensor:  G(r) ∝ e^{-κr}/r  (toy evanescent)    │
+  │  full exterior band-gap calculation open         │
   └──────────────────────────────────────────────────┘
 
   SUMMARY OF STATUS:
   ──────────────────
-  ✓  PROVED:   1D substrate (j₀ zeros = nπ)
-  ✓  PROVED:   d = 3 minimum for scalar + tensor
-  ✓  PROVED:   Area law (Srednicki 1993)
-  ✓  PROVED:   Scalar long-range / tensor confined
-  ✓  PROVED:   λ₀^(cl) = πℓ_P  (connects ν₀ to Planck)
+  ✓  STRUCTURAL CHECK:  j₀ zeros = nπ in the scalar radial sector
+  ✓  LOWER-BOUND:       d = 3 is the minimum for scalar + spin-2 sectors
+  ~  TOY CHECK:          current angular-sum exponent is not R²;
+                         area-law verification needs a boundary-cut calculation
+  ~  CANDIDATE:          scalar long-range / tensor evanescence mechanism
+                         awaits the Q.3 exterior band-gap calculation
+  ✓  NUMERICAL CHECK:    λ₀^(cl) = πℓ_P  (connects ν₀ to Planck)
 
-  ~  DEMONSTRATED:  G₂(X) enhancement → S_ent = S_BH
+  ~  CANDIDATE SCAFFOLD:  G₂(X) enhancement → S_ent = S_BH
      (mechanism: c_s < c  ×  Mathieu-band sum;
       exact coefficient requires lattice calculation)
 
@@ -388,9 +397,9 @@ def make_plots(r, Gs, Gt, kappa, R1, S1, R3, S3):
     Rf = np.linspace(R3[0], R3[-1], 100)
     cf = S3[3] / R3[3]**2
     ax.loglog(Rf, cf * Rf**2, 'b--', lw=1,
-              label=r'$S \propto R^2$ (area law)')
+              label=r'$S \propto R^2$ target')
     ax.set_xlabel(r'$R / a$'); ax.set_ylabel(r'$S_{\rm ent}$')
-    ax.set_title('3D area law from angular summation')
+    ax.set_title('3D angular-sum toy (not area-law verified)')
     ax.legend(); ax.grid(True, alpha=0.3)
 
     # ---- dimensional selection ----
@@ -407,7 +416,7 @@ def make_plots(r, Gs, Gt, kappa, R1, S1, R3, S3):
     for d, n in zip(dims, ntt):
         ax.text(d, max(n, 0.15), f'{int(n)}' if n > 0 else '0',
                 ha='center', va='bottom', fontweight='bold')
-    ax.annotate('d = 3: first with\ntensor modes',
+    ax.annotate('d = 3: minimum with\npropagating spin-2',
                 xy=(3, 2.1), xytext=(4.2, 4),
                 arrowprops=dict(arrowstyle='->', color='blue'),
                 color='blue', fontweight='bold')
