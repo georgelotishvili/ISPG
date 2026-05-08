@@ -687,12 +687,12 @@ $T_{\mathrm{int}}$ denote cumulative process time
 $\tau_{\mathrm{proc}}=\int\mathcal{C}(t)\,dt$.  For the past and
 future half-lines:
 \begin{align}
-  T_{\mathrm{ext,\,past}} &= t_0 \simeq 14.7\;\mathrm{Gyr}
+  T_{\mathrm{ext,\,past}} &= t_0 \simeq 13.8\;\mathrm{Gyr}
     &&(\text{finite}),
   \label{eq:Text_past}\\[4pt]
   T_{\mathrm{int,\,past}} &:\;
     \text{operationally undefined (quiescent medium, no resonant clock)}
-    &&(\text{unbounded}),
+    &&(\text{not a measured duration}),
   \label{eq:Tint_past}\\[4pt]
   T_{\mathrm{ext,\,future}} &= \int_{t_0}^{\infty}dt = \infty
     &&(\text{de~Sitter}),
@@ -713,7 +713,7 @@ the process-time column split into its ``mathematical'' and
 \toprule
   & External (coordinate) & Process time (math.\ integral) & Process time (operational) \\
 \midrule
-Past   & finite ($t_0\simeq 14.7$ Gyr)
+Past   & finite ($t_0\simeq 13.8$ Gyr)
        & finite ($\approx 20$ Gyr)$^{\flat}$
        & undefined$^{*}$ \\
 Future & unbounded ($\infty$)
@@ -854,25 +854,30 @@ $\mathcal{C}(t_0)=1$, so process time $\approx$ coordinate time and
 \end{equation}
 The full transition from $\mathcal{C}=1$ to the asymptotic floor
 occupies a few $e$-folding times, so the total active-phase
-duration is of order $H_0^{-1}\simeq t_0\simeq 14.5\;\mathrm{Gyr}$.
+duration is of order $H_0^{-1}$, with $H_0^{-1}\simeq
+14.5\;\mathrm{Gyr}$ for the fiducial background (distinct from the
+corresponding coordinate age $t_0\simeq 13.8\;\mathrm{Gyr}$).
 After that, $\mathcal{C}$ is effectively frozen and no further
 pressure depletion occurs: coordinate time continues but process
 time accumulates at a constant, residual rate.
 
 The coordinate age $t_0$ and the active-phase process-time budget
-are therefore set by the same physical scale $H^{-1}$, confirming
-the anti-diagonal structure of the duality table on purely
-dynamical grounds.
+are therefore of the same order-Hubble scale, confirming the
+anti-diagonal structure of the duality table on purely dynamical
+grounds without identifying $t_0$ with $H_0^{-1}$.
 
 \paragraph{Physical reading.}
-If the duality is exact, the universe has no absolute beginning and
-no absolute end: it has a finite coordinate past that is an
-unbounded process past (no operational clock before resonances), and
-an unbounded coordinate future that is a finite process-time future
-(asymptotically vanishing activity).  The ``Big Bang'' and the
-``heat death'' are not terminal events but transitions between the
-two temporal regimes, and the present epoch is the symmetric midpoint
-where both descriptions agree.
+If the duality conjecture is exact, the universe has no operational
+time before the first resonant clocks and no finite-time terminal
+shutdown.  The past has a finite coordinate age and, under the
+fiducial closure, a finite mathematical process-time integral; the
+pre-resonance regime is clockless rather than an infinite measured
+past.  The future has unbounded coordinate time, while the remaining
+process-time budget is finite only if the convergence condition above
+is satisfied.  The ``Big Bang'' and the ``heat death'' are therefore
+read here as transitions between temporal regimes, not as completed
+derivations of an infinite proper-time past or a finite terminal
+future.
 
 \paragraph{Two-observer comparison.}
 Every physical observable in the bi-conformal framework can be
@@ -946,9 +951,10 @@ rescaling $e^{\phi/2}$.
   (de~Sitter dilution).  The observer has infinite coordinate time
   ahead but with progressively less content per process-time unit.
 \item \textbf{Coordinate view of the past}: process clocks were fast,
-  masses were larger, emission was stronger.  An unbounded amount of
-  resonant-sector activity is compressed into the finite coordinate interval
-  $t_0$.
+  masses were larger, emission was stronger.  The amount of
+  resonant-sector activity is the closure-dependent process duration
+  accumulated over the finite coordinate interval $t_0$; under the
+  fiducial benchmark this mathematical past integral is finite.
 \item \textbf{Local-process view of the past}: all local measurements were
   ``normal,'' but the universe was denser, hotter, and richer in
   events per process-time unit.  Looking back, the local observer
