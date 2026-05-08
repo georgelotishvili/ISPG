@@ -2,7 +2,8 @@
 Phase A — SU(3) × SU(2) × U(1) გეიჯური სექტორი ISPG-ში
 
 მდგომარეობა:
-  ✅ SU(3): 8 გლუონი (D₃-ს ტენზორული დეფორმაცია, gluon_eight.py)
+  🟡 SU(3): octet-count clue (D₃-ს ტენზორული დეფორმაცია, gluon_eight.py);
+     full Lie algebra / vertices / couplings open (Q.3 closure)
      - N ∈ {8, 10} ბინარული არჩევა
      - V = Δ (რეზონანსული დეფორმაცია), g₀ ფართო დიაპაზონი
      - არა fine-tuning
@@ -58,7 +59,7 @@ print("=" * 78)
 print("SU(3) გლუონების სტრუქტურა (octet-count clue; full derivation open)")
 print("=" * 78)
 print("""
-სკრიპტი: MASS/python/gluon_eight_robustness.py
+სკრიპტი: SM/python/gluon_eight_robustness.py
 
 მიდგომა:
   3D ოსცილონი + D₃-სიმეტრიული დეფორმაცია (3 კვარკი ტრიანგულზე)

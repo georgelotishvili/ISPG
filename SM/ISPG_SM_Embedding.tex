@@ -51,8 +51,8 @@ Higgs mechanism is ruled out at the fundamental level; the
 specific replacement dynamics for gauge-boson mass generation
 is not derived here and is listed as an extension item;
 (iv) the hypercharge pattern $Y\cdot N_c\in\mathbb{Z}$ is a
-\emph{necessary} condition for anomaly cancellation that the
-ISPG cavity labels naturally enforce; the \emph{sufficient}
+compatibility and integer-grading clue respected by the imported
+SM assignment; it is not independently derived here, and the
 SM-specific hypercharge values are imported via the
 generation-1 fitting formula plus Gell-Mann--Nishijima;
 (v) the three generations are interpreted (under a
@@ -327,13 +327,13 @@ with ISPG's single-scalar action is introduced by either step.
 \paragraph{Scripts.} \texttt{python/phase\_c\_quantum\_number\_map.py},
 \texttt{python/phase\_c\_step2\_T3\_Y\_map.py}.
 
-\subsection{Generation-1 cavity-to-SM map}
+\subsection{Generation-1 SM-to-cavity compatibility map}
 \label{sec:phaseC_gen1}
 
-\numerical\ We look for a map
-$(\text{cavity labels})\to(Q,N_c)$ that reproduces the
-generation-1 Mathieu indices for the massive charged fermions
-$(e,u,d)$. An ansatz using only cavity-native quantities
+\numerical\ We test whether the imported SM labels $(Q,N_c)$
+can be used to assign cavity-compatible generation-1 Mathieu
+indices for the massive charged fermions $(e,u,d)$. An ansatz
+using these imported labels
 \begin{equation}
   \label{eq:gen1formula}
   N \;=\; 5\bigl[\,1 + N_c\bigl(1 - |Q|\bigr)\bigr]
@@ -343,7 +343,9 @@ reproduces the three observed indices. The implied structure is
   3|Q| \;\in\;\{0,1,2,3\},
 \end{equation}
 i.e. $Q$ takes only values whose triple is an integer: this is a
-$\mathbb{Z}_3$ quantum number natively expressible on the cavity.
+third-integer charge grading. Interpreting this grading as a
+$\mathbb{Z}_3$ or $D_3$ representation requires a separate
+representation map and is left open.
 
 \paragraph{Status: fit, not prediction.}
 The formula~\eqref{eq:gen1formula} has three free ingredients
@@ -352,9 +354,9 @@ the choice of functional form $1-|Q|$) and is fit to three data
 points $(N_e,N_u,N_d)$. A perfect match is therefore guaranteed
 by parameter counting and is not by itself predictive. The
 structural content that \emph{does} survive parameter counting
-is the \emph{shape}: that a formula built only from
-cavity-native quantities $(Q,N_c)$, anchored on the electron
-and returning integer multiples of $5$, exists at all. A
+is the \emph{shape}: that a formula built from the imported SM
+labels $(Q,N_c)$, anchored on the electron and returning
+cavity-compatible integer multiples of $5$, exists at all. A
 genuine prediction from~\eqref{eq:gen1formula} would require
 either (i) a fourth data point that the formula was not fit to,
 or (ii) an independent derivation of the coefficients from the
@@ -423,26 +425,24 @@ $d_L^c$    & $+\tfrac13$ & $0$         & $+\tfrac23$ & $3$ & $+2$ & OK\\
 \end{tabular}
 \end{table}
 
-\paragraph{Integer hypercharge-times-color.} \derived\ A direct
+\paragraph{Integer hypercharge-times-color.} \fromSM\ \numerical\ A direct
 reading of the last-but-one column gives
 \begin{equation}
   \label{eq:YNc_integer}
   Y\cdot N_c \;\in\; \{-4,\,-2,\,-1,\,+1,\,+2\}\;\subset\;\mathbb{Z}
 \end{equation}
-for every field (including both chiralities). This
-integrality is a \emph{necessary} condition for the SM gauge
-anomalies to cancel (\S\ref{sec:phaseE}): any assignment with
-a non-integer $Y\,N_c$ would fail at least one anomaly sum. It
-is \emph{not} sufficient: the anomalies require the specific
-set $\{-4,-2,-1,+1,+2\}$ with the specific multiplicities shown,
-not merely arbitrary integers. The ISPG cavity framework
-provides the necessary integrality automatically---because
-$Y$ and $N_c$ are both cavity labels and their product respects
-the integer-grading of the cavity spectrum---but the specific
-values are imported through the Gen-1 formula
-\eqref{eq:gen1formula} combined with Gell-Mann--Nishijima;
-they are not independently derived from archion dynamics in
-this work. The integrality is also a hallmark of
+for every field (including both chiralities). This integrality
+is an observed compatibility clue: the imported SM assignment
+respects an integer grading when hypercharge is multiplied by
+color multiplicity. It is not, by itself, a derivation of the
+hypercharges or of anomaly cancellation. The anomaly equations
+require the specific set $\{-4,-2,-1,+1,+2\}$ with the specific
+multiplicities shown, not merely arbitrary integers. In this
+work the $Y$ values are imported through the Gen-1 formula
+\eqref{eq:gen1formula} combined with Gell-Mann--Nishijima; the
+product $Y\,N_c$ is therefore a checked compatibility pattern,
+not an automatic consequence of independently derived cavity
+labels. The integrality is also a hallmark of
 Pati--Salam-type unifications
 (J.\,C.~Pati and A.~Salam, \emph{Phys.\ Rev.\ D} \textbf{10},
 275 (1974)), reached here through a different route.
@@ -457,15 +457,15 @@ boundary conditions is a separate open problem
 
 For the massive charged generation-1 fermions $(e,u,d)$ the
 indices $(N_e,N_u,N_d)$ are accommodated by a three-ingredient
-fit formula~\eqref{eq:gen1formula} built from cavity-native
-quantities $(Q,N_c)$; the fit is exact on the three data
+fit formula~\eqref{eq:gen1formula} built from imported SM
+labels $(Q,N_c)$; the fit is exact on the three data
 points by parameter counting and is not yet predictive.
 Neutrinos are excluded from the formula by construction
 (\S\ref{sec:neutrinos_exclusion}). Gell-Mann--Nishijima holds
 exactly for every entry in Table~\ref{tab:gen1} because the
 $T_3,Y$ assignments are imported from the SM consistent with
-it. The integer structure $Y\,N_c\in\mathbb{Z}$ is a necessary
-condition naturally respected by cavity labels.
+it. The integer structure $Y\,N_c\in\mathbb{Z}$ is a checked
+compatibility pattern respected by the imported SM assignment.
 
 \section{Phase D --- Electroweak symmetry breaking without Higgs}
 \label{sec:phaseD}
@@ -773,10 +773,13 @@ Phase & Content & Status \\
 \midrule
 A & gauge sector $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
   & SU(3) octet count; E6 algebra/vertices deferred; EW numerical \\
-B/C & Gen-1 fermion quantum numbers $(Q,T_3,Y,N_c)$ & full \\
+B/C & Gen-1 fermion quantum numbers $(Q,T_3,Y,N_c)$
+  & imported-SM compatibility \\
 D & EW breaking without Higgs & structural candidate (E7 open) \\
-E & five gauge anomalies                            & full \\
-F & three generations as three axes                 & full (model-dep.)\\
+E & five gauge anomalies
+  & exact imported-hypercharge check \\
+F & three generations as three axes
+  & compatibility (model-dep.)\\
 \bottomrule
 \end{tabular}
 \end{center}

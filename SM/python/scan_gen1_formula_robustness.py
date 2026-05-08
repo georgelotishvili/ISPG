@@ -89,7 +89,7 @@ for N0 in [1, 5, 10, 100, 1000]:
     print(f"  N0={N0:>5}:  N_e={Ne:>6.0f}, N_u={Nu:>6.0f}, (N_u/N_e)^2 = {ratio:.4f}")
 
 print("\n  conclusion: N0 absolutely arbitrary (any positive). choosing N0=5 is a CONVENTION.")
-print("              what's REAL is N_c = 3 (number of colors).")
+print("              the tested fit is sensitive to the imported N_c = 3 color count.")
 
 print("\n" + "=" * 76)
 print("  Test 4: is N_c = 3 essential?")
@@ -107,8 +107,8 @@ for Nc in [1, 2, 3, 4, 5, 2.5, 3.14, 3.5]:
     print(f"    Nc={Nc:>5}:  m_u={mu_pred:>8.3f} (err {err_u:>5.1f}%)   "
           f"m_d={md_pred:>8.3f} (err {err_d:>5.1f}%)")
 
-print("\n  conclusion: Nc=3 is uniquely picked by gen-1 mass fit.")
-print("              this is where the '3 colors' of QCD enter structurally.")
+print("\n  conclusion: Nc=3 is the best among tested integer color counts in this fit.")
+print("              this is where the imported QCD color count enters structurally.")
 
 print("\n" + "=" * 76)
 print("  DEEP QUESTION: why does ISPG formula contain Nc = 3?")
@@ -123,8 +123,9 @@ print("""
     2. quark = oscillon with 3-fold spatial excitation.
     3. lepton = oscillon without spatial breakup (Nc*0 = 0 term).
 
-  this would DERIVE N_c = 3 from 3D space dimensionality
-  without postulating color as separate gauge group.
+  this would be a possible route to explain N_c = 3 from
+  3D space dimensionality, without postulating color as a
+  separate gauge group.
 
-  OPEN: prove this in ISPG Lagrangian. not done in MASS paper.
+  OPEN: derive this in ISPG Lagrangian. not done in MASS paper.
 """)
