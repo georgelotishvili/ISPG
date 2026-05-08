@@ -602,26 +602,33 @@ arithmetic in the script).
 
 \subsection{What this tells us and what it does not}
 
-\derived\ The anomaly conditions are conditions on the
-\emph{precise} hypercharge assignment: any other
-$(Y_{L_L},Y_{Q_L},Y_{e^c},Y_{u^c},Y_{d^c})$ choice reactivates
-at least one anomaly. The ISPG cavity framework must therefore
-support \emph{exactly} these $Y$ values. Phase~C furnishes the
-integrality~\eqref{eq:YNc_integer}, which is a
-\emph{necessary gate-keeper}: it rules out any non-integer
-cavity assignment. The \emph{sufficient} SM-specific values
+\fromSM\ \numerical\ The anomaly conditions are exact
+consistency checks on the imported left-Weyl SM hypercharge
+assignment. With the SM representation content and the standard
+hypercharge normalization fixed, changing an individual entry in
+$(Y_{L_L},Y_{Q_L},Y_{e^c},Y_{u^c},Y_{d^c})$ generically
+reactivates at least one anomaly. The specific SM values
 $(Y_{L_L},Y_{Q_L},Y_{e^c},Y_{u^c},Y_{d^c})
 =(-1,+\tfrac13,+2,-\tfrac43,+\tfrac23)$ are imported through
 the Gen-1 formula \eqref{eq:gen1formula} combined with
 Gell-Mann--Nishijima; they are not independently derived from
-archion dynamics in this paper. What Phase E therefore
-establishes is: the SM hypercharge assignment, once imported
-onto the ISPG cavity labels through the Gen-1 map, passes all
-five standard anomaly tests. In the Pati--Salam unification it
-is known that $Y$ and $N_c$ are linked so that $Y\,N_c$ is
-integer; ISPG reaches the same integrality through a different
-route (single-scalar cavity labels), without postulating a
-larger unifying gauge group.
+archion dynamics in this paper.
+
+The integer pattern~\eqref{eq:YNc_integer} is therefore a
+parallel charge-quantization / integer-grading clue, not the
+theorem that cancels anomalies. The five anomaly equations above
+are what cancel for the imported assignment. In particular,
+the anomaly sums are homogeneous in the hypercharges, so a common
+rescaling can preserve cancellation while changing the integer
+normalization of $Y\,N_c$; conversely, an arbitrary integer
+$Y\,N_c$ pattern need not satisfy the five sums. What Phase E
+therefore establishes is: the SM hypercharge assignment, once
+imported onto the ISPG generation-1 content through the Gen-1
+map, passes all five standard anomaly tests. In the Pati--Salam
+unification it is known that $Y$ and $N_c$ are linked so that
+$Y\,N_c$ is integer; ISPG sees the same integrality as a
+compatibility clue, without postulating a larger unifying gauge
+group.
 
 \subsection{Phase E verdict}
 
@@ -652,7 +659,7 @@ generation count: if $A_i^{(1)}=0$ on generation 1, then
 $A_i^{(n)}=n\,A_i^{(1)}=0$ for any $n\geq 1$. The script
 verifies this explicitly for $n=1,2,3$.
 
-\subsection{The number three: geometric, not empirical}
+\subsection{The number three: three-axis hypothesis}
 
 \modeldep\ The SM takes the number of generations as an empirical
 input (the LEP measurement $N_\nu=2.984\pm 0.008$ from the
@@ -661,9 +668,9 @@ reading:
 \begin{itemize}
   \item space is three-dimensional;
   \item a 3D archion admits three orthogonal vibration axes;
-  \item each axis supports an independent family of
-    cavity modes;
-  \item therefore there are three generations.
+  \item each axis can host one observed family of cavity modes;
+  \item the observed three generations can therefore be mapped
+    to the three axes.
 \end{itemize}
 Under this reading, the correspondence
 \begin{equation}
@@ -671,12 +678,16 @@ Under this reading, the correspondence
   \text{Gen-2}\leftrightarrow\hat{y},\quad
   \text{Gen-3}\leftrightarrow\hat{z}
 \end{equation}
-ties each generation to one spatial axis. The three-axis
-hypothesis is model-dependent (it assumes that the archion's
-axial anisotropy is the source of generation multiplicity), but
-its numerical predictions for the charged leptons (Koide,
-Sargent, absolute $\tau$) have been verified to sub-percent
-accuracy in the companion MASS work (\S\ref{sec:prereq}).
+ties each observed generation to one spatial axis. The exact
+result in this phase is the quantum-number replication; the
+three-axis origin of $n_{\rm gen}=3$ remains model-dependent
+until the cavity dynamics also exclude additional family-like
+modes. In the companion MASS work (\S\ref{sec:prereq}), the
+charged-lepton Koide geometry and Sargent-type weak-decay
+scaling show strong numerical compatibility with this reading,
+whereas the individual labels $N_\mu=72$, $N_\tau=295$, and the
+ratio $N_\tau/N_e=59$ remain selected labels whose exact
+3D-cavity derivation is still open.
 
 \subsection{Fermion count}
 
@@ -691,10 +702,14 @@ satisfies~\eqref{eq:GMN}.
 
 \subsection{Phase F verdict}
 
-The three generations are a structural replica of generation 1
-across three orthogonal spatial axes. Anomaly cancellation is
-automatic for any number of generations. The question ``why
-three'' becomes geometric (3D space) rather than empirical.
+The three generations exactly replicate generation 1 at the
+level of imported SM quantum numbers. If the three-axis
+hypothesis is adopted, this replica structure can be assigned
+to the three orthogonal spatial axes. Anomaly cancellation is
+automatic for any number of replicated generations. Thus Phase
+F closes the generation-replication bookkeeping, while the
+claim that spatial dimensionality dynamically fixes
+$n_{\rm gen}=3$ remains a model-dependent open step.
 
 \section{Synthesis}
 \label{sec:synthesis}
@@ -703,9 +718,10 @@ three'' becomes geometric (3D space) rather than empirical.
 \label{sec:unified}
 
 \numerical\ Applying the large-$N$ form
-$m_N=(N/N_e)^{2}\,m_e$ with $N_e=5$ uniformly across all twelve
-massive Standard-Model states (three charged leptons, six
-quarks, $W$, $Z$, $H$) yields the following compatibility table.
+$m_N=(N/N_e)^{2}\,m_e$ with $N_e=5$ uniformly across the twelve
+listed non-neutrino massive Standard-Model states (three
+charged leptons, six quarks, $W$, $Z$, $H$) yields the
+following compatibility table.
 Script: \texttt{python/higgs\_replacement\_unified.py}.
 
 \begin{center}
@@ -745,21 +761,27 @@ As a further consistency check on the same ladder, the ratio
 \]
 i.e.\ $0.04\%$ agreement with the SM on-shell identity
 $m_W/m_Z=\cos\theta_W^{\rm os}$; this is
-Eq.~\eqref{eq:cosThetaW} re-evaluated on the full table.
+Eq.~\eqref{eq:cosThetaW} re-evaluated on the full table. The
+$W$ mass used here is the PDG 2025 average; the newer CMS 2026
+value $m_W=80\,360.2\pm 9.9\,\mathrm{MeV}$ does not materially
+change the compatibility status.
 
 \paragraph{Status of this table: compatibility, not derivation.}
 Every $N_f$ is fit individually to the observed mass through
 \eqref{eq:massN}; the table is therefore a demonstration that a
 single integer ladder with a single anchor $(N_e=5,\,m_e)$
-accommodates all twelve massive SM states within sub-percent
-residuals across the heavy sector. The structural content that
-survives parameter counting is the \emph{uniformity}: one
-formula, one anchor, one ladder, twelve particles across four
-sectors, no Yukawa coupling, no scalar VEV, no sector-specific
-coupling constant. Promotion from fit to derivation requires
+accommodates the twelve listed non-neutrino massive SM states
+within sub-percent residuals across the heavy sector. Neutrino
+masses are not included in this ladder table and remain a
+separate open sector. The structural content that survives
+parameter counting is the \emph{uniformity}: one formula, one
+anchor, one ladder, twelve listed particles across four sectors,
+no Yukawa coupling, no scalar VEV, no sector-specific coupling
+constant. Promotion from fit to derivation requires
 producing the $N_f$ themselves from cavity dynamics (items E1
 and E5 of \S\ref{sec:extension}); the partial 3D-cavity result
-for $N_e=5$ and for $N_\tau^{\,2}/N_e^{\,2}$ recorded under E5
+for $N_e=5$ and for
+$\kappa_\tau^{2}/\kappa_e^{2}\simeq N_\tau$ recorded under E5
 is the first step of that programme.
 
 \subsection{MVP closure}
@@ -805,14 +827,14 @@ is fit}
   \item \derived\ (structurally, from ISPG substrate):
     the Mathieu mass law $m\propto N^2$ (from the companion
     MASS paper);
-    the linearity of gauge anomalies in $n_{\rm gen}$;
-    the integrality of $Y\,N_c$ as a necessary (not
-    sufficient) condition.
+    the linearity of gauge anomalies in $n_{\rm gen}$.
   \item \numerical\ (partial compatibility clue):
     the \emph{octet count} of confined modes in the
     $D_3$-deformed oscillon toy/robustness analysis; the
     full $\mathrm{SU}(3)_c$ algebra, vertices, and
-    $G_2(X)$ parameters remain deferred to E6.
+    $G_2(X)$ parameters remain deferred to E6; the checked
+    integer pattern $Y\,N_c\in\mathbb{Z}$ in the imported SM
+    assignment.
   \item \numerical/fit\ (diagnostic, not predictive):
     the generation-1 formula~\eqref{eq:gen1formula} (three
     ingredients vs three data points); the individual
@@ -872,24 +894,37 @@ mode. This is a finite-dimensional numerical task.
 
 \paragraph{E2. Chirality from the cavity.}
 The left/right distinction is currently imported from the Dirac
-structure of $S_m$. A cavity origin would require identifying a
-parity-breaking boundary condition or a topological mode that
-distinguishes left- from right-handed solutions. This is a
-conceptually distinct task from the embedding itself.
+structure of $S_m$. A cavity origin would require posing the
+chiral eigenvalue problem on the archion background: identify a
+parity-breaking boundary condition or a topological invariant
+that splits the spectrum into left-handed weak doublets and
+right-handed weak singlets with the imported SM quantum numbers.
+The success criterion is to recover the SM chirality assignment
+without postulating it. This is a conceptually distinct task from
+the embedding itself.
 
 \paragraph{E3. CKM and PMNS matrices.}
-Under the three-axis hypothesis, the mixing matrices describe
-small non-orthogonality of the three oscillation axes. A
-principled derivation would map the Wolfenstein parameters to
-cavity quantities; at present this is an open target.
+Under the three-axis hypothesis the three generations are assigned
+to a spatial basis, but the quark and lepton mixing sectors are
+not the same problem. The small CKM mixing could be represented by
+perturbative non-orthogonality of the quark axes, while the large
+PMNS mixing requires a separate dynamical mechanism in the
+neutrino sector. A first-principles derivation must recover the
+CKM Wolfenstein parameters, the PMNS angles, the CKM and PMNS CP
+phases, the neutrino mass ordering, and the Majorana/Dirac
+character of neutrinos from cavity quantities. At present these
+are open targets.
 
-\paragraph{E4. $\alpha$ and $\Phi_c$.}
-The ISPG Lagrangian contains two dimensionful scales ($\alpha$
-for the self-interaction, $\Phi_c$ for the archion amplitude) that
+\paragraph{E4. $\alpha_{\rm NL}$ and $\Phi_c$.}
+The ISPG Lagrangian contains two dimensionful scales
+($\alpha_{\rm NL}$ for the nonlinear self-interaction, $\Phi_c$
+for the archion amplitude) that
 are currently fit. A first-principles derivation would proceed
 via the nonlinear archion profile at fixed cosmological
 background; recent work identifies this as a BVP in the
-stationary $\Phi$ equation.
+stationary $\Phi$ equation. The notation $\alpha_{\rm NL}$ is used
+to keep this nonlinear ISPG scale distinct from the fine-structure
+constant $\alpha_{\rm EM}$.
 
 \paragraph{E5. Exact mass hierarchy.}
 The charged-lepton hierarchy ($m_e,m_\mu,m_\tau$) is numerically
@@ -905,11 +940,15 @@ anchor label itself: the electron index $N_e=5$ matches the
 $\ell=2$ degeneracy count of the 3D spherical cavity (five
 independent spherical harmonics $Y_2^{m}$, $m=-2,\ldots,+2$).
 In the same 3D cavity analysis the ratio $N_\tau^{\,2}/N_e^{\,2}$
-is reproduced by the ratio of squared radial wavenumbers of the
-corresponding cavity modes to within $0.9\%$. These results fix
-the kinematic skeleton of the three-axis ansatz (dimensionality
-of the mode space, radial wavenumber ratios) at the
-cavity-geometry level.
+is not reproduced. The actual partial result is
+$\kappa_\tau^{2}/\kappa_e^{2}\simeq 292.43$, which matches the
+selected label $N_\tau=295$ to within $0.9\%$; equivalently,
+$\kappa_\tau^{2}/(5\kappa_e^{2})\simeq 58.49$ is close to the
+selected ratio $N_\tau/N_e=59$. These results fix part of the
+kinematic skeleton of the three-axis ansatz (dimensionality of
+the mode space, radial wavenumber ratios) at the
+cavity-geometry level, but they do not yet derive the exact
+integer labels.
 
 \deferred\ Extending the partial result to absorb the $0.9\%$
 residual requires a Floquet treatment of the periodic archion:
@@ -946,11 +985,18 @@ gauge field minimally coupled to the archion acquires a mass
 matrix matching $(M_W,M_Z)$ while leaving the photon massless.
 This is the concrete replacement for the SM Higgs mechanism
 that the ISPG action forbids; its absence is the single largest
-dynamical gap in the present paper. Plausible route: expand
-the gauge kinetic term around the radially varying archion
-profile $\Phi(r)$ and show that the volume integrals yield the
-observed mass pattern when combined with the cavity labels
-from E1.
+dynamical gap in the present paper. The operational target is:
+write the imported $\mathrm{SU}(2)_L\times\mathrm{U}(1)_Y$ gauge
+action on the archion background, specify its coupling to
+$\Phi(r)$, derive the mass matrix in the $(W^1,W^2,W^3,B)$ basis,
+show that one eigenvalue remains exactly zero (the photon mode),
+and check the gauge-consistency conditions needed for current
+conservation and unitarity. Only then can the observed $M_W$,
+$M_Z$, and the E1 cavity labels be treated as derived rather than
+fit. Plausible route: expand the gauge kinetic term around the
+radially varying archion profile $\Phi(r)$ and show that the
+volume integrals yield the observed mass pattern when combined
+with the cavity labels from E1.
 
 \medskip
 None of these items conflicts with the compatibility
@@ -1031,8 +1077,9 @@ Script & Purpose & Phase \\
     dynamic extraction from confined modes
   & A compatibility; E6 target only \\
 \texttt{higgs\_replacement\_unified.py}
-  & Unified compatibility table $m=(N/N_e)^2 m_e$ across 12 SM particles
-    (leptons, quarks, $W,Z,H$); mean residual $0.85\%$
+  & Unified compatibility table $m=(N/N_e)^2 m_e$ across the 12 listed
+    non-neutrino massive SM states (charged leptons, quarks, $W,Z,H$);
+    mean residual $0.85\%$
   & A--D \\
 \bottomrule
 \end{tabular}

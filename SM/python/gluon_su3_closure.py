@@ -1,6 +1,6 @@
 """
-ISPG E6 — SU(3) Lie-ალგებრის დახურვა 3-ღერძიანი ოსცილონიდან
-============================================================
+ISPG E6 — SU(3) target-algebra closure check 3-ღერძიან ფერის-სივრცეში
+=====================================================================
 
 §19-ის ჰიპოთეზა: 3 ფერი = 3 სივრცული ღერძი (R=x, G=y, B=z).
 
@@ -90,7 +90,7 @@ def main():
     print("        dynamic f_abc extraction from ISPG cavity modes remains open.\n")
 
     print("=" * 68)
-    print("  E6  —  SU(3) Lie-ალგებრის დახურვა 3-ღერძიანი ოსცილონიდან")
+    print("  E6  —  SU(3) target-algebra closure check 3-ღერძიან ფერის-სივრცეში")
     print("=" * 68)
 
     λ = gell_mann()

@@ -4,7 +4,7 @@ SM ნაწილაკებისთვის ოპტიმალური 
 m_N = m_1 · b_N(q),   q = 1.853,   m_e = m_1 · b_5(q)
   →  b_N/b_5  =  m_particle / m_e
 
-ყოველი SM ნაწილაკისთვის:
+ყოველი ჩამოთვლილი non-neutrino massive SM ნაწილაკისთვის:
   1. target  = (m_obs / m_e) · b_5(q)
   2. optimal N  = argmin |b_N(q) − target|
   3. ფიტის ცდომილება  =  |b_N − target| / target
@@ -28,7 +28,8 @@ Q_FIT = 1.853
 N_MAX = 5000   # ძიების ზედა ზღვარი
 
 # ----------------------------------------------------------------------
-#  SM ნაწილაკების დაკვირვებადი მასები (MeV, PDG 2024)
+#  ჩამოთვლილი non-neutrino massive SM ნაწილაკების დაკვირვებადი მასები
+#  (MeV, PDG 2024/2025 inputs used by this scan)
 # ----------------------------------------------------------------------
 PARTICLES = [
     # (სახელი, მასა MeV, კომენტარი)
@@ -115,7 +116,10 @@ def main():
 
     # ---- სტატისტიკა ----
     errs = np.array([r[5] for r in results])
-    sigs = np.array([r[6] for r in results[1:]])  # e გამოვაკლოთ (ანკერია)
+    sigs_e_excluded = np.array([r[6] for r in results[1:]])  # e გამოვაკლოთ (მასის ანკერია)
+    sigs_calibration_excluded = np.array(
+        [r[6] for r in results if r[0] not in ("e", "μ")]
+    )
     good = np.sum(errs < 0.01)
     ok = np.sum(errs < 0.05)
     bad = np.sum(errs >= 0.05)
@@ -125,11 +129,16 @@ def main():
     print(f"    ვერ ფიტდება (≥5%): {bad}/{len(results)}")
     print(f"    საშ. ცდომილება:     {np.mean(errs) * 100:.2f}%")
     print(f"    მაქს. ცდომილება:    {np.max(errs) * 100:.2f}%")
-    print(f"\n  სიგნიფიკანტობა (ანკერის გარეშე):")
-    print(f"    სიგნიფ. > 10x (არატრივიალური):  {np.sum(sigs > 10)}/{len(sigs)}")
-    print(f"    სიგნიფ. > 3x (შესამჩნევი):       {np.sum(sigs > 3)}/{len(sigs)}")
-    print(f"    სიგნიფ. < 1x (ტრივიალური):       {np.sum(sigs < 1)}/{len(sigs)}")
-    print(f"    გეომ. საშ. სიგნიფ.:              {np.exp(np.mean(np.log(sigs[sigs > 0]))):.2f}x")
+    print(f"\n  სიგნიფიკანტობა (e mass anchor excluded; μ calibration still included):")
+    print(f"    სიგნიფ. > 10x (არატრივიალური):  {np.sum(sigs_e_excluded > 10)}/{len(sigs_e_excluded)}")
+    print(f"    სიგნიფ. > 3x (შესამჩნევი):       {np.sum(sigs_e_excluded > 3)}/{len(sigs_e_excluded)}")
+    print(f"    სიგნიფ. < 1x (ტრივიალური):       {np.sum(sigs_e_excluded < 1)}/{len(sigs_e_excluded)}")
+    print(f"    გეომ. საშ. სიგნიფ.:              {np.exp(np.mean(np.log(sigs_e_excluded[sigs_e_excluded > 0]))):.2f}x")
+
+    print(f"\n  დამოუკიდებელი სიგნიფიკანტობა (e + μ calibration excluded):")
+    print(f"    სიგნიფ. > 10x:                  {np.sum(sigs_calibration_excluded > 10)}/{len(sigs_calibration_excluded)}")
+    print(f"    სიგნიფ. > 3x:                   {np.sum(sigs_calibration_excluded > 3)}/{len(sigs_calibration_excluded)}")
+    print(f"    გეომ. საშ. სიგნიფ.:              {np.exp(np.mean(np.log(sigs_calibration_excluded[sigs_calibration_excluded > 0]))):.2f}x")
 
     # ---- N სპექტრის სტრუქტურა ----
     print(f"\n  N-ის სტრუქტურა:")
@@ -137,7 +146,7 @@ def main():
     print(f"    {N_vals}")
     print(f"\n  ინტერპრეტაცია:")
     print(f"    • ანკერები (e=5):                                  ზუსტი კონსტრუქციით")
-    print(f"    • მეორე ანკერი (μ=72):                              q ფიქსირდება აქ")
+    print(f"    • calibration point (μ=72):                         q ფიქსირდება აქ")
     print(f"    • დაბალი N პრედიქცია (τ=295, d=15, s=68):           ცდ. < 2%")
     print(f"    • მაღალი N (b, t, W, Z, H > 450):                  ლადერი ძალიან ხშირი")
     print(f"    • პრობლემატური: u (PDG 2.16 vs პაპერი 2.04)")
@@ -183,7 +192,7 @@ def main():
     print("  დასკვნა")
     print("=" * 76)
     if bad == 0:
-        print("  ყველა SM ნაწილაკი მოთავსებულია Mathieu ლადერზე < 5% ცდომ.-ით")
+        print("  ყველა ჩამოთვლილი non-neutrino massive SM state მოთავსებულია Mathieu ლადერზე < 5% ცდომ.-ით")
     elif bad <= 3:
         print(f"  {bad} ნაწილაკი ვერ ფიტდება — ლადერის საზღვრები")
     else:

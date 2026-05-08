@@ -3,9 +3,10 @@ ISPG E7 — Higgs-ის ჩამნაცვლებელი მექან
 ===================================================================
 
 Phase D-მ აჩვენა რომ ISPG-ს ფუნდამენტურად არ აქვს V(φ) = μ²φ² + λφ⁴.
-ამ სკრიპტის მიზანია ერთ ცხრილში ვაჩვენო, რომ **SM ნაწილაკების მასები**
-— ლეპტონები, კვარკები, გეიჯ ბოზონები, თვით Higgs — თავსდება **ერთი**
-უნივერსალური ფორმულიდან:
+ამ სკრიპტის მიზანია ერთ ცხრილში ვაჩვენო, რომ **12 listed
+non-neutrino massive SM state** — ლეპტონები, კვარკები, გეიჯ
+ბოზონები, თვით Higgs — თავსდება **ერთი** universal large-N
+compatibility formula-ით:
 
         m = (N / N_e)² · m_e
 
@@ -26,8 +27,10 @@ import numpy as np
 m_e = 0.5109989461  # MeV (ანკერი)
 N_e = 5             # ელექტრონის Mathieu-ინდექსი
 
-# SM ნაწილაკები (PDG 2024), MeV-ში
-# N მნიშვნელობები ISPG_SM_Particle_Scan.md-დან (empirical scan)
+# Listed non-neutrino massive SM states (PDG 2024/2025 inputs), MeV-ში.
+# N მნიშვნელობები ამ large-N diagnostic table-ის ოპტიმუმებია.
+# Full-Mathieu scan at q=1.853 gives slightly different optima for
+# c,b,t: 250,453,2910; here large-N labels are 249,452,2906.
 particles = [
     # სახელი        PDG მასა (MeV)     ISPG N      სექტორი
     ("electron",          0.5109989,        5,     "lepton"),
@@ -53,7 +56,8 @@ def isps_mass(N):
 def main():
     print("=" * 78)
     print("  E7 — Higgs-ის ჩამნაცვლებელი მექანიზმი")
-    print("        უნიფიცირებული სატესტო: m = (N/5)² · m_e ყველა SM-ზე")
+    print("        mass-ladder diagnostic: m = (N/5)² · m_e")
+    print("        12 listed non-neutrino massive SM states")
     print("=" * 78)
 
     print(f"\n  ანკერი:   N_e = {N_e},   m_e = {m_e} MeV")
@@ -93,6 +97,10 @@ def main():
     print(f"  {'სულ':<10}  მაქს. |ცდ.| = {overall_max:6.3f}%    "
           f"საშ. = {overall_mean:6.3f}%    "
           f"({len(results)} ნაწილაკი)")
+    print("\n  შენიშვნა:")
+    print("    ეს არის large-N diagnostic table. Full-Mathieu scan at q=1.853")
+    print("    იძლევა ოდნავ განსხვავებულ optima-ს c,b,t-სთვის: 250,453,2910;")
+    print("    აქ გამოყენებულია large-N ცხრილის labels: 249,452,2906.")
 
     # ────────────────────────────────────────────────────────
     #  Compatibility tests / SM mass-ratio checks
@@ -133,10 +141,10 @@ def main():
     print(f"    (scan_three_axes_hypothesis.py → 0.0006%).")
 
     # ────────────────────────────────────────────────────────
-    #  კონცეპტუალური დახურვა
+    #  კონცეპტუალური სტატუსი
     # ────────────────────────────────────────────────────────
     print("\n" + "=" * 78)
-    print("  კონცეპტუალური დახურვა")
+    print("  კონცეპტუალური სტატუსი")
     print("=" * 78)
     print("""
   SM-ის Higgs-ის მექანიზმის ISPG ჩანაცვლების კანდიდატი:
@@ -177,14 +185,14 @@ def main():
     print("=" * 78)
     print(f"""
   ერთი უნივერსალური ფორმულა m = (N/N_e)² · m_e-ით:
-    • {len(results)} SM ნაწილაკი დაფარულია
+    • {len(results)} listed non-neutrino massive SM state დაფარულია
     • მაქს. ცდომილება: {overall_max:.2f}% (up-კვარკი — current mass neto)
     • საშ. ცდომილება:  {overall_mean:.2f}%
     • m_W/m_Z = cos θ_W^os: ცდომილება {err:.4f}% (compatibility diagnostic)
 
-  → ISPG-ის მასების ცხრილი ფუნდამენტურად ერთი სტრუქტურიდან მოდის
-    (Mathieu-ლადერი), რაც აჩვენებს candidate replacement-ის
-    რიცხვით თავსებადობას. Yukawa/VEV დინამიკური derivation ღიაა.
+  → მასების ეს ცხრილი შეიძლება ერთ fitted Mathieu/large-N ladder-ზე
+    იყოს ორგანიზებული. ეს აჩვენებს candidate replacement-ის რიცხვით
+    თავსებადობას; N_f-ების წარმოშობა და Yukawa/VEV/EW dynamics ღიაა.
 
   E7 იღებს რიცხვით მხარდაჭერას, მაგრამ დინამიკური derivation ღიაა.
 """)
