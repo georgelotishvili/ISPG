@@ -1,20 +1,26 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 1
+% Internal core draft, version 1.1
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
 % BASE-MEDIUM
 % PHANTOM-FREE
 % ADM-GR-FIXED-POINT
+% RMG-STATUS-MAP
+% RMG-OPEN-THEOREM
+% RMG-PASS-FAIL
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[margin=1in]{geometry}
 
-\newtheorem{axiom}{Axiom}
-\newtheorem{gate}{Gate}
+\newtheorem{postulate}{Primitive Postulate}
+\newtheorem{assumption}{Working Assumption}
 \newtheorem{result}{Result}
+\newtheorem{target}{Low-Energy Target}
+\newtheorem{openthm}{Open Theorem}
+\newtheorem{gate}{Gate}
 
 \begin{document}
 
@@ -23,48 +29,59 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 1\\
+Internal core draft, version 1.1\\
 2026-05-10
 \end{center}
 
 \section*{Purpose}
 
-RMG is the phantom-free rebuild of the previous ISPG line.
+RMG is the phantom-free rebuild of the previous gravitational line.
 
-Core idea:
+Core sentence:
 \[
 \boxed{
-\text{particles, rods, clocks and geometry are relational modes of one base-medium.}
+\text{gravity is the low-energy relational geometry of a stable base-medium.}
 }
 \]
 
-Gravity is not introduced as a fundamental phantom scalar field.
-Instead:
+ქართული:
 \[
 \boxed{
-\text{GR/ADM is the low-energy fixed point of the base-medium's relational dynamics.}
+\text{გრავიტაცია არის სტაბილური ფუძე-მედიუმის low-energy რელაციური გეომეტრია.}
 }
 \]
 
-\section*{Logical status labels}
+RMG does not start from a fundamental phantom scalar field.  It starts from a
+base-medium $\mathcal M$ and treats the tested GR/ADM structure as the
+low-energy fixed point that must emerge.
 
-RMG-1 separates four kinds of statements:
+\section*{Status labels}
+
+Every statement in RMG-1 must have a status:
 \[
-\boxed{\text{Axiom}}
+\boxed{\text{Primitive Postulate}}
 \]
 minimal starting property of the base-medium;
 \[
-\boxed{\text{Derived in RMG-1}}
+\boxed{\text{Working Assumption}}
 \]
-result obtained inside this file after accepting the stated assumptions;
+temporary bridge used inside RMG-1, still requiring deeper derivation;
 \[
-\boxed{\text{Target}}
+\boxed{\text{Result}}
 \]
-structure required by observation and used as the low-energy goal;
+statement derived from the listed assumptions;
 \[
-\boxed{\text{Open theorem}}
+\boxed{\text{Low-Energy Target}}
 \]
-statement still to be proven from microscopic base-medium dynamics.
+structure required by observation and used as the safe fixed point;
+\[
+\boxed{\text{Open Theorem}}
+\]
+claim still to be proven from $\mathcal M$;
+\[
+\boxed{\text{Failure Gate}}
+\]
+condition whose failure damages the core theory.
 
 \section{Definition}
 
@@ -83,24 +100,32 @@ statement still to be proven from microscopic base-medium dynamics.
 
 Working definition:
 
-RMG is a gravitational framework in which a single base-medium $\mathcal M$ gives rise to matter modes, clocks, rods, signals and operational geometry. The tested GR/ADM structure is treated as the low-energy fixed point of this medium, while the deeper task is to explain why that structure emerges.
+RMG is a gravitational framework in which a single base-medium $\mathcal M$
+gives rise to matter modes, rods, clocks, signals and operational geometry.  The
+deeper task is to explain why the universal low-energy geometry is the ADM/GR
+fixed point.
 
-\section{Core terms}
+\section{Core Terms}
 
 \[
 \mathcal M
 \]
-is the base-medium. It is not assumed to be an ordinary scalar field.
-
-\[
-u
-\]
-is the compression/lapse potential. It is not a free phantom particle.
+is the base-medium.  It is not assumed to be an ordinary scalar field.
 
 \[
 s(x)
 \]
-is the universal local operational factor for clocks and rods.
+is the local operational factor shared by clocks, rods and signals in the
+weak-sector bridge description.
+
+\[
+u
+\]
+is the compression/lapse potential:
+\[
+s=e^{-u}.
+\]
+It is not a free phantom particle.
 
 \[
 g_{\mu\nu}^{\rm eff}
@@ -108,150 +133,154 @@ g_{\mu\nu}^{\rm eff}
 is the effective metric seen by low-energy matter modes.
 
 \[
-N,\quad N^i,\quad h_{ij}
+N,\qquad N^i,\qquad h_{ij}
 \]
-are the ADM lapse, shift and spatial metric variables in the low-energy fixed-point description.
+are the ADM lapse, shift and spatial metric variables in the low-energy target.
 
 \[
 h_{ij}^{TT}
 \]
-is the propagating tensor/shear gravitational-wave sector.
+is the transverse-traceless tensor/shear radiation sector.
 
-\section{Minimal axioms}
+\section{Primitive Postulates}
 
-\begin{axiom}[One base-medium]
-All low-energy matter modes, rods, clocks, signals and geometric excitations are collective modes of one base-medium $\mathcal M$.
-\end{axiom}
+\begin{postulate}[One base-medium]
+All low-energy matter modes, rods, clocks, signals and geometric excitations are
+collective modes of one base-medium $\mathcal M$.
+\end{postulate}
 
-\begin{axiom}[Positive physical energy]
+\begin{postulate}[Positive physical energy]
 Physical excitations of $\mathcal M$ have Hamiltonian bounded below:
 \[
 H-H_{\rm vac}\ge0.
 \]
 There is no fundamental phantom degree of freedom.
-\end{axiom}
+\end{postulate}
 
-\begin{axiom}[Operational relational invariance]
-Coordinate labels are not observables. Only relations between physical modes are observables.
-\end{axiom}
+\begin{postulate}[Relational observability]
+Coordinate labels are not observables.  Only relations between physical modes
+are observables.
+\end{postulate}
 
-\begin{axiom}[Universal operational response]
-In a slowly varying compression state, all stable low-energy matter modes share one local clock/rod factor:
+\begin{postulate}[Stable low-energy phase]
+The base-medium has a stable low-energy phase in which particles, rods, clocks
+and signals are well-defined operational objects.
+\end{postulate}
+
+\section{Operational Bridge}
+
+This section is not the microscopic derivation.  It is the minimal bridge needed
+to recover the weak gravitational sector.
+
+\begin{assumption}[Universal operational factor]
+In the slowly varying low-energy regime, all stable matter modes share one local
+operational factor:
 \[
 s=s(x).
 \]
-Thus all matter sees one effective metric.
-\end{axiom}
+Equivalently, all matter modes see one effective metric
+$g_{\mu\nu}^{\rm eff}$.
+\end{assumption}
 
-\begin{axiom}[Square signal law]
-Coordinate signal speed obeys:
+Status:
 \[
-\frac{c_{\rm coord}}{c}=s^2.
+\boxed{
+\text{working assumption in RMG-1; open theorem from }\mathcal M.
+}
 \]
-\end{axiom}
 
-\begin{axiom}[Multiplicative layering]
-If weak compression potentials add,
+\begin{assumption}[Reciprocal clock/rod response]
+Local clocks and rods respond as:
 \[
-u=u_1+u_2,
+d\tau=sdt,
+\qquad
+d\ell=s^{-1}dx.
 \]
-then process factors multiply:
-\[
-A(u_1+u_2)=A(u_1)A(u_2).
-\]
-With weak-field normalization, this gives:
-\[
-A=e^{-u}.
-\]
-\end{axiom}
+\end{assumption}
 
-\begin{axiom}[Total Hamiltonian source]
-The compression/Hamiltonian constraint is sourced by total Hamiltonian density:
+\begin{result}[Square signal law]
+If the local physical signal speed is $c=d\ell/d\tau$, then:
 \[
-\mathcal H_{\rm total}.
-\]
-\end{axiom}
-
-\begin{axiom}[No local preferred frame]
-The base-medium may define a cosmological state, but no local low-energy experiment may detect an absolute medium rest frame beyond observational bounds.
-\end{axiom}
-
-\begin{axiom}[Constrained scalar/vector sectors]
-The scalar compression variable and the vector flow variable are constraint/near-zone variables at low energy, not independent observable radiation modes.
-\end{axiom}
-
-\begin{axiom}[Tensor radiation]
-The only propagating vacuum gravitational modes at low energy are transverse-traceless tensor modes:
-\[
-h_+,\qquad h_\times,
-\]
-with positive energy and propagation speed $c$.
-\end{axiom}
-
-\begin{axiom}[Constraint closure]
-The low-energy constraints close under Poisson brackets:
-\[
-\{\mathcal C_A,\mathcal C_B\}
+c
 =
-f_{AB}^{\;\;C}\mathcal C_C.
+\frac{s^{-1}dx}{sdt}
+=
+s^{-2}\frac{dx}{dt}.
 \]
-The target realization is the ADM hypersurface deformation algebra.
-\end{axiom}
-
-\section{Core logical chain}
-
-The intended chain is:
+Therefore:
 \[
 \boxed{
-\text{base-medium axioms}
-\Rightarrow
-\text{universal operational metric}
-\Rightarrow
-\text{ADM/GR fixed point}
-\Rightarrow
-\text{tested gravity}.
+\frac{c_{\rm coord}}{c}=s^2.
 }
 \]
+\end{result}
 
-RMG-1 explicitly checks only the weak-field middle part:
+\begin{assumption}[Additive compression and multiplicative response]
+Weak compression potentials add:
 \[
-\text{Hamiltonian source}
-\Rightarrow
-u=GM/(rc^2)
-\Rightarrow
-\gamma=\beta=1.
+u_{12}=u_1+u_2.
 \]
+Process factors multiply:
+\[
+s_{12}=s_1s_2.
+\]
+\end{assumption}
 
-The deepest step remains open:
+\begin{result}[Exponential layering]
+The continuous solution with weak-field normalization is:
 \[
 \boxed{
-\text{base-medium axioms}
-\Rightarrow
-\text{ADM/GR fixed point}.
+s=e^{-u}.
 }
 \]
+\end{result}
 
-\section{Static weak-field recovery}
+\begin{result}[Weak operational metric]
+The bridge metric is:
+\[
+\boxed{
+ds^2=-e^{-2u}c^2dt^2+e^{2u}\delta_{ij}dx^idx^j.
+}
+\]
+\end{result}
 
-Let one localized matter mode have positive total energy density:
+\section{Static Weak-Field Sector}
+
+\begin{assumption}[Hamiltonian source]
+In the weak static regime, the compression/lapse constraint is sourced by total
+physical energy density $\rho_E$:
 \[
 \rho_E(\mathbf x)\ge0.
 \]
+\end{assumption}
 
-Its inertial mass is:
+The inertial mass of a localized source is:
 \[
 M
 =
 \frac{1}{c^2}\int d^3x\,\rho_E(\mathbf x).
 \]
 
-RMG weak Hamiltonian constraint:
+Use the static energy functional:
 \[
+\mathcal E[u]
+=
+\frac{c^4}{8\pi G}\int d^3x\,|\nabla u|^2
+-
+\int d^3x\,\rho_Eu.
+\]
+
+\begin{result}[Static source equation]
+Varying $u$ gives:
+\[
+\boxed{
 \nabla^2u
 =
 -
 \frac{4\pi G}{c^4}\rho_E.
+}
 \]
+\end{result}
 
 With $u(\infty)=0$:
 \[
@@ -262,93 +291,69 @@ u(\mathbf x)
 \frac{\rho_E(\mathbf x')}{|\mathbf x-\mathbf x'|}.
 \]
 
-Far field:
+Far from the source:
 \[
 \boxed{
 u(r)=\frac{GM}{rc^2}+O(r^{-2}).
 }
 \]
 
-Thus the gravitational charge is inertial mass because the source is total energy.
+Thus the gravitational charge is inertial mass because the source is total
+energy.
 
-\section{Operational metric}
+\section{PPN Weak-Field Check}
 
-The weak-field operational metric target is:
-\[
-\boxed{
-ds^2=-e^{-2u}c^2dt^2+e^{2u}\delta_{ij}dx^idx^j.
-}
-\]
-
-Here:
-\[
-A=e^{-u},
-\qquad
-B=e^{u}.
-\]
-
-For $u\ll1$:
-\[
-g_{00}=-1+2u-2u^2+O(u^3),
-\]
-\[
-g_{ij}=(1+2u+O(u^2))\delta_{ij}.
-\]
-
-Since:
+Using:
 \[
 U=c^2u,
+\qquad
+U(r)=\frac{GM}{r},
 \]
-we get:
+the metric gives:
 \[
-U(r)=\frac{GM}{r}.
+g_{00}
+=
+-e^{-2u}
+=
+-1+2u-2u^2+O(u^3),
+\]
+\[
+g_{ij}
+=
+e^{2u}\delta_{ij}
+=
+(1+2u+O(u^2))\delta_{ij}.
 \]
 
 Therefore:
 \[
 \boxed{
-\gamma=1,\qquad \beta=1.
-}
-\]
-
-\section{Signal speed}
-
-For radial null propagation:
-\[
-0=-e^{-2u}c^2dt^2+e^{2u}dr^2.
-\]
-
-So:
-\[
-\frac{c_{\rm coord}}{c}=e^{-2u}=A^2.
-\]
-
-This realizes:
-\[
-\boxed{
-c_{\rm coord}\propto L_{\rm oper}^2.
+\gamma=1,
+\qquad
+\beta=1.
 }
 \]
 
 Status:
 \[
 \boxed{
-\text{Derived in RMG-1 from the operational metric map.}
+\text{derived in the static weak-field bridge sector.}
 }
 \]
 
-\section{Linear dynamic split}
+\section{Constraint And Radiation Targets}
 
-ADM variables:
+The low-energy dynamic description must be expressible in ADM variables:
 \[
 ds^2
 =
--N^2c^2dt^2+h_{ij}(dx^i+N^idt)(dx^j+N^jdt).
+-N^2c^2dt^2
++h_{ij}(dx^i+N^idt)(dx^j+N^jdt).
 \]
 
 Weak split:
 \[
-N=1-u+O(u^2),
+N=1-u+O(2),
 \]
 \[
 h_{ij}=(1+2u)\delta_{ij}+h_{ij}^{TT}+O(2),
@@ -357,12 +362,16 @@ h_{ij}=(1+2u)\delta_{ij}+h_{ij}^{TT}+O(2),
 N_i=\mathcal A_i+O(2).
 \]
 
-Scalar/compression constraint:
-\[
-\nabla^2u=-4\pi G\rho/c^2.
-\]
+\begin{target}[Scalar and vector sectors]
+The scalar/compression variable and the vector/flow variable must be
+constraint or near-zone variables at low energy, not independent vacuum
+radiation modes.
+\end{target}
 
-Vector/flow constraint:
+Target form:
+\[
+\nabla^2u=-4\pi G\rho/c^2,
+\]
 \[
 \nabla^2\mathcal A_i
 =
@@ -370,7 +379,20 @@ Vector/flow constraint:
 \kappa_VG\mathcal P_i^T/c^3.
 \]
 
-Tensor/shear radiation:
+\begin{target}[Tensor/shear radiation]
+The only propagating vacuum gravitational modes at low energy must be:
+\[
+h_+,
+\qquad
+h_\times.
+\]
+They must have positive energy and propagation speed:
+\[
+c_{\rm GW}=c.
+\]
+\end{target}
+
+Target wave equation:
 \[
 \left(
 \frac{1}{c^2}\partial_t^2-\nabla^2
@@ -379,22 +401,17 @@ Tensor/shear radiation:
 \kappa_TGT_{ij}^{TT}/c^4.
 \]
 
-Vacuum propagation:
+Vacuum:
 \[
 \left(
 \frac{1}{c^2}\partial_t^2-\nabla^2
 \right)h_{ij}^{TT}=0.
 \]
 
-Only:
-\[
-h_+,\qquad h_\times
-\]
-propagate in vacuum.
+\section{ADM/EH Fixed Point}
 
-\section{Nonlinear completion}
-
-The safe nonlinear completion is the Einstein-Hilbert/ADM fixed point:
+\begin{target}[Safe nonlinear completion]
+The safe nonlinear low-energy fixed point is:
 \[
 \boxed{
 S_{\rm low}
@@ -405,6 +422,7 @@ S_{\rm low}
 S_{\rm matter}[g,\Psi].
 }
 \]
+\end{target}
 
 ADM form:
 \[
@@ -420,112 +438,132 @@ N^i\mathcal H_i
 \right).
 \]
 
-Hamiltonian constraint:
+Hamiltonian and momentum constraints:
 \[
-\mathcal H\approx0.
-\]
-
-Momentum constraints:
-\[
+\mathcal H\approx0,
+\qquad
 \mathcal H_i\approx0.
 \]
 
-RMG interpretation:
+The target constraint algebra includes:
 \[
-N=e^{-u}
-\quad\text{is the local process/lapse factor},
-\]
-\[
-N^i
-\quad\text{is the flow/frame-dragging variable},
-\]
-\[
-h_{ij}
-\quad\text{is the operational spatial metric}.
+\{H[N],H[M]\}
+=
+D\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right].
 \]
 
-Status:
+\begin{openthm}[Main closure theorem]
+Derive from the base-medium:
 \[
 \boxed{
-\text{Target / safe fixed point, not yet derived from }\mathcal M.
+\mathcal M
+\Rightarrow
+\text{universal principal symbol}
+\Rightarrow
+\text{ADM constraint closure}
+\Rightarrow
+S_{\rm EH}+S_{\rm matter}.
+}
+\]
+\end{openthm}
+
+This is the central theorem of RMG.  It is not yet proven in RMG-1.
+
+\section{Allowed Deviation Windows}
+
+RMG may develop extra sectors only if they do not break the local GR core.
+
+Allowed windows:
+\[
+\text{MOND-like low-acceleration response},
+\]
+\[
+\text{cosmological background state of the medium},
+\]
+\[
+\text{matter-sector emergence},
+\]
+\[
+\text{high-energy corrections}.
+\]
+
+Rule:
+\[
+\boxed{
+\text{deviations must not spoil the local universal metric, }\gamma=\beta=1,
+\text{ or }c_{\rm GW}=c.
 }
 \]
 
-\section{What is new}
-
-RMG does not try to replace GR in tested regimes.
-
-It tries to explain:
-\[
-\boxed{
-\text{why GR/ADM emerges from the base-medium.}
-}
-\]
-
-The old scalar pressure idea survives only as:
-\[
-\boxed{
-\text{compression/lapse interpretation of the Hamiltonian constraint.}
-}
-\]
-
-It is not a free phantom scalar field.
-
-\section{Statement status map}
+\section{Statement Status Map}
 
 \[
 \begin{array}{c|c}
 \text{Statement} & \text{Status} \\
 \hline
-\text{one base-medium }\mathcal M & \text{Axiom} \\
-\text{positive physical energy} & \text{Axiom} \\
-\text{universal operational factor }s & \text{Axiom / open microscopic derivation} \\
-c_{\rm coord}/c=s^2 & \text{Axiom / observationally motivated} \\
-A=e^{-u} & \text{Derived from multiplicative layering} \\
-u(r)=GM/(rc^2) & \text{Derived from Hamiltonian source} \\
+\text{one base-medium }\mathcal M & \text{Primitive postulate} \\
+\text{positive physical energy} & \text{Primitive postulate} \\
+\text{relational observability} & \text{Primitive postulate} \\
+\text{stable low-energy phase} & \text{Primitive postulate} \\
+\text{universal operational factor }s & \text{Working assumption / open theorem} \\
+\text{reciprocal clock/rod response} & \text{Working assumption} \\
+c_{\rm coord}/c=s^2 & \text{Derived result} \\
+s=e^{-u} & \text{Derived from layering} \\
+u(r)=GM/(rc^2) & \text{Derived in weak static sector} \\
 \gamma=1,\ \beta=1 & \text{Derived in weak field} \\
-\text{only two tensor GW modes} & \text{Target axiom / observational gate} \\
-\text{ADM/EH low-energy fixed point} & \text{Target / open theorem} \\
-\text{derivation from }\mathcal M & \text{Main open theorem}
+\text{only two tensor GW modes} & \text{Low-energy target / open from }\mathcal M \\
+\text{ADM constraint closure} & \text{Main open theorem} \\
+\text{EH low-energy fixed point} & \text{Target / open from }\mathcal M
 \end{array}
 \]
 
-\section{What is not yet proven}
+\section{What Is Not Yet Proven}
 
-RMG-1 is not a complete theory.
+RMG-1 is not a closed theory yet.
 
 Still open:
-\[
-\text{derive ADM/Einstein-Hilbert from the base-medium axioms},
-\]
 \[
 \text{derive universal matter coupling from microscopic modes},
 \]
 \[
-\text{derive tensor/shear sector from medium mechanics},
+\text{derive reciprocal clock/rod scaling from }\mathcal M,
+\]
+\[
+\text{derive the Hamiltonian source coefficient }G,
+\]
+\[
+\text{derive scalar/vector constraints and tensor/shear radiation},
+\]
+\[
+\text{derive ADM closure and Einstein-Hilbert fixed point},
 \]
 \[
 \text{control preferred-frame effects},
 \]
 \[
-\text{rebuild MOND/cosmology/particle sectors without phantom foundation}.
+\text{rebuild MOND, cosmology and matter sectors without a phantom foundation}.
 \]
 
-\section{Pass/fail gates}
+\section{Pass/Fail Gates}
 
 \begin{gate}[Core pass]
-RMG-1 passes as a core framework if it can derive:
+RMG passes as a core framework if it derives:
 \[
 S_{\rm EH}+S_{\rm matter}
 \]
-as the low-energy fixed point of $\mathcal M$, with positive physical Hamiltonian and only two vacuum tensor gravitational degrees of freedom.
+as the low-energy fixed point of $\mathcal M$, with positive physical
+Hamiltonian, universal metric coupling, and only two vacuum tensor
+gravitational degrees of freedom.
 \end{gate}
 
 \begin{gate}[Core fail]
-RMG-1 fails if the base-medium produces an observable preferred frame, species-dependent metric coupling, extra scalar/vector radiation, or a wrong-sign physical mode.
+RMG fails if the base-medium produces an observable local preferred frame,
+species-dependent metric coupling, extra scalar/vector radiation, wrong
+gravitational-wave speed, negative-energy physical modes, or non-closing ADM
+constraints.
 \end{gate}
 
-\section*{Current status}
+\section*{Current Status}
 
 \[
 \boxed{
@@ -536,7 +574,7 @@ RMG-1 fails if the base-medium produces an observable preferred frame, species-d
 Main theorem to prove:
 \[
 \boxed{
-\text{base-medium relational axioms}
+\mathcal M
 \Rightarrow
 \text{ADM/Einstein-Hilbert low-energy fixed point}.
 }
