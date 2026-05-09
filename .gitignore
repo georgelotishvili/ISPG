@@ -4,29 +4,41 @@
 # Keep this ignore file visible in the repository.
 !/.gitignore
 
-# Publish only selected source/result file types from the core research folders.
-!/MAIN/
-!/MAIN/**/
-!/MAIN/**/*.tex
-!/MAIN/**/*.py
-!/MAIN/**/*.pdf
-!/MASS/
-!/MASS/**/
-!/MASS/**/*.tex
-!/MASS/**/*.py
-!/MASS/**/*.pdf
-!/MOND/
-!/MOND/**/
-!/MOND/**/*.tex
-!/MOND/**/*.py
-!/MOND/**/*.pdf
-!/QUANTUM/
-!/QUANTUM/**/
-!/QUANTUM/**/*.tex
-!/QUANTUM/**/*.py
-!/QUANTUM/**/*.pdf
-!/SM/
-!/SM/**/
-!/SM/**/*.tex
-!/SM/**/*.py
-!/SM/**/*.pdf
+# Local archive / old theory copies.
+/old/
+
+# RMG theory: publish only source/result files that matter.
+!/RMG/
+!/RMG/**/
+!/RMG/**/*.tex
+!/RMG/**/*.bib
+!/RMG/**/*.pdf
+!/RMG/**/*.py
+!/RMG/**/*.md
+!/RMG/**/*.txt
+!/RMG/**/*.csv
+!/RMG/**/*.json
+!/RMG/**/*.png
+!/RMG/**/*.jpg
+!/RMG/**/*.jpeg
+!/RMG/**/*.svg
+
+# Same rules if the folder is renamed to "RMG Theory".
+!/RMG Theory/
+!/RMG Theory/**/
+!/RMG Theory/**/*.tex
+!/RMG Theory/**/*.bib
+!/RMG Theory/**/*.pdf
+!/RMG Theory/**/*.py
+!/RMG Theory/**/*.md
+!/RMG Theory/**/*.txt
+!/RMG Theory/**/*.csv
+!/RMG Theory/**/*.json
+!/RMG Theory/**/*.png
+!/RMG Theory/**/*.jpg
+!/RMG Theory/**/*.jpeg
+!/RMG Theory/**/*.svg
+
+# Internal RMG development story; keep local only.
+/RMG/story/
+/RMG/story/**
