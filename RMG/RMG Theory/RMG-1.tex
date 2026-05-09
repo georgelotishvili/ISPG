@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 1.1
+% Internal core draft, version 1.2
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -10,6 +10,8 @@
 % RMG-STATUS-MAP
 % RMG-OPEN-THEOREM
 % RMG-PASS-FAIL
+% RMG-OPERATIONAL-RELATIONAL-COVARIANCE
+% RMG-ORC
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -29,7 +31,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 1.1\\
+Internal core draft, version 1.2\\
 2026-05-10
 \end{center}
 
@@ -55,6 +57,9 @@ RMG does not start from a fundamental phantom scalar field.  It starts from a
 base-medium $\mathcal M$ and treats the tested GR/ADM structure as the
 low-energy fixed point that must emerge.
 
+The protected low-energy phase admits only operational relational observables,
+not a separate local medium-frame field.
+
 \section*{Status labels}
 
 Every statement in RMG-1 must have a status:
@@ -62,6 +67,10 @@ Every statement in RMG-1 must have a status:
 \boxed{\text{Primitive Postulate}}
 \]
 minimal starting property of the base-medium;
+\[
+\boxed{\text{Primitive Protection Principle}}
+\]
+low-energy relational rule that forbids dangerous operators;
 \[
 \boxed{\text{Working Assumption}}
 \]
@@ -113,6 +122,16 @@ fixed point.
 is the base-medium.  It is not assumed to be an ordinary scalar field.
 
 \[
+\mathcal W
+\]
+is the relational medium-history.
+
+\[
+X_F
+\]
+is a foliation or embedding description of the same history $\mathcal W$.
+
+\[
 s(x)
 \]
 is the local operational factor shared by clocks, rods and signals in the
@@ -142,11 +161,37 @@ h_{ij}^{TT}
 \]
 is the transverse-traceless tensor/shear radiation sector.
 
+\[
+u^\mu_{\mathcal M}
+\]
+denotes a would-be independent local medium-frame field.  It must not appear as
+an independent physical field in the tested RMG core.
+
 \section{Primitive Postulates}
 
 \begin{postulate}[One base-medium]
 All low-energy matter modes, rods, clocks, signals and geometric excitations are
 collective modes of one base-medium $\mathcal M$.
+\end{postulate}
+
+\begin{postulate}[Stable low-energy phase]
+The base-medium has a stable low-energy phase in which matter modes, rods,
+clocks, signals and operational geometry are well-defined.
+\end{postulate}
+
+\begin{postulate}[Operational Relational Covariance]
+Local low-energy observables are invariant under re-embedding of the same
+relational medium-history:
+\[
+\mathcal W
+\sim
+X_F(\mathbb R\times\Sigma)
+\sim
+X_{F'}(\mathbb R\times\Sigma).
+\]
+Thus coordinates, slicings and internal clock choices are descriptions, not
+extra physical structures.  In particular, no independent local preferred-frame
+field $u^\mu_{\mathcal M}$ appears in the tested core.
 \end{postulate}
 
 \begin{postulate}[Positive physical energy]
@@ -155,22 +200,32 @@ Physical excitations of $\mathcal M$ have Hamiltonian bounded below:
 H-H_{\rm vac}\ge0.
 \]
 There is no fundamental phantom degree of freedom.
+The DeWitt trace sign is not a propagating phantom because the volume direction
+is constrained.
 \end{postulate}
 
-\begin{postulate}[Relational observability]
-Coordinate labels are not observables.  Only relations between physical modes
-are observables.
-\end{postulate}
-
-\begin{postulate}[Stable low-energy phase]
-The base-medium has a stable low-energy phase in which particles, rods, clocks
-and signals are well-defined operational objects.
+\begin{postulate}[Local effective hierarchy]
+The low-energy theory is local and organized by a derivative or scale expansion:
+\[
+\mathcal L_{\rm eff}
+=
+\mathcal L_{\rm core}
++\ell^2\mathcal L_4
++\ell^4\mathcal L_6
++\cdots.
+\]
+Corrections may exist, but they must be suppressed or forbidden in tested local
+regimes.
 \end{postulate}
 
 \section{Operational Bridge}
 
 This section is not the microscopic derivation.  It is the minimal bridge needed
 to recover the weak gravitational sector.
+
+The universal factor $s(x)$ is not primitive.  It is a bridge variable whose
+deeper origin should be the universal principal symbol of all low-energy matter
+modes.
 
 \begin{assumption}[Universal operational factor]
 In the slowly varying low-energy regime, all stable matter modes share one local
@@ -368,6 +423,9 @@ constraint or near-zone variables at low energy, not independent vacuum
 radiation modes.
 \end{target}
 
+The absence of scalar/vector radiation is protected only if lapse and shift
+remain non-propagating constraint variables.
+
 Target form:
 \[
 \nabla^2u=-4\pi G\rho/c^2,
@@ -452,6 +510,9 @@ The target constraint algebra includes:
 D\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right].
 \]
 
+Operational Relational Covariance makes ADM closure plausible, but it does not
+replace the proof.
+
 \begin{openthm}[Main closure theorem]
 Derive from the base-medium:
 \[
@@ -495,6 +556,9 @@ Rule:
 }
 \]
 
+They also must not introduce an independent local $u^\mu_{\mathcal M}$ into the
+tested core.
+
 \section{Statement Status Map}
 
 \[
@@ -502,15 +566,18 @@ Rule:
 \text{Statement} & \text{Status} \\
 \hline
 \text{one base-medium }\mathcal M & \text{Primitive postulate} \\
-\text{positive physical energy} & \text{Primitive postulate} \\
-\text{relational observability} & \text{Primitive postulate} \\
 \text{stable low-energy phase} & \text{Primitive postulate} \\
+\text{Operational Relational Covariance} & \text{Primitive protection principle} \\
+\text{positive physical energy} & \text{Primitive postulate} \\
+\text{local effective hierarchy} & \text{Primitive EFT condition} \\
+\text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
 \text{universal operational factor }s & \text{Working assumption / open theorem} \\
 \text{reciprocal clock/rod response} & \text{Working assumption} \\
 c_{\rm coord}/c=s^2 & \text{Derived result} \\
 s=e^{-u} & \text{Derived from layering} \\
 u(r)=GM/(rc^2) & \text{Derived in weak static sector} \\
 \gamma=1,\ \beta=1 & \text{Derived in weak field} \\
+\lambda=1/2 & \text{Closure-selected result in work notes} \\
 \text{only two tensor GW modes} & \text{Low-energy target / open from }\mathcal M \\
 \text{ADM constraint closure} & \text{Main open theorem} \\
 \text{EH low-energy fixed point} & \text{Target / open from }\mathcal M
@@ -523,6 +590,12 @@ RMG-1 is not a closed theory yet.
 
 Still open:
 \[
+\text{derive Operational Relational Covariance from microscopic }\mathcal M,
+\]
+\[
+\text{prove forbidden preferred-frame operators are not generated},
+\]
+\[
 \text{derive universal matter coupling from microscopic modes},
 \]
 \[
@@ -533,6 +606,9 @@ Still open:
 \]
 \[
 \text{derive scalar/vector constraints and tensor/shear radiation},
+\]
+\[
+\text{derive the DeWitt coefficient }\lambda=1/2\text{ from the protected phase},
 \]
 \[
 \text{derive ADM closure and Einstein-Hilbert fixed point},
@@ -561,6 +637,11 @@ RMG fails if the base-medium produces an observable local preferred frame,
 species-dependent metric coupling, extra scalar/vector radiation, wrong
 gravitational-wave speed, negative-energy physical modes, or non-closing ADM
 constraints.
+\end{gate}
+
+\begin{gate}[Preferred-frame fail]
+RMG fails in the tested local core if an independent $u^\mu_{\mathcal M}$ enters
+local operators, or if lapse/shift acquire low-energy kinetic terms.
 \end{gate}
 
 \section*{Current Status}
