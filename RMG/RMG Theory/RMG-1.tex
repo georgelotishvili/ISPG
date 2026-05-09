@@ -46,6 +46,26 @@ Instead:
 }
 \]
 
+\section*{Logical status labels}
+
+RMG-1 separates four kinds of statements:
+\[
+\boxed{\text{Axiom}}
+\]
+minimal starting property of the base-medium;
+\[
+\boxed{\text{Derived in RMG-1}}
+\]
+result obtained inside this file after accepting the stated assumptions;
+\[
+\boxed{\text{Target}}
+\]
+structure required by observation and used as the low-energy goal;
+\[
+\boxed{\text{Open theorem}}
+\]
+statement still to be proven from microscopic base-medium dynamics.
+
 \section{Definition}
 
 \[
@@ -64,6 +84,38 @@ Instead:
 Working definition:
 
 RMG is a gravitational framework in which a single base-medium $\mathcal M$ gives rise to matter modes, clocks, rods, signals and operational geometry. The tested GR/ADM structure is treated as the low-energy fixed point of this medium, while the deeper task is to explain why that structure emerges.
+
+\section{Core terms}
+
+\[
+\mathcal M
+\]
+is the base-medium. It is not assumed to be an ordinary scalar field.
+
+\[
+u
+\]
+is the compression/lapse potential. It is not a free phantom particle.
+
+\[
+s(x)
+\]
+is the universal local operational factor for clocks and rods.
+
+\[
+g_{\mu\nu}^{\rm eff}
+\]
+is the effective metric seen by low-energy matter modes.
+
+\[
+N,\quad N^i,\quad h_{ij}
+\]
+are the ADM lapse, shift and spatial metric variables in the low-energy fixed-point description.
+
+\[
+h_{ij}^{TT}
+\]
+is the propagating tensor/shear gravitational-wave sector.
 
 \section{Minimal axioms}
 
@@ -145,6 +197,39 @@ f_{AB}^{\;\;C}\mathcal C_C.
 \]
 The target realization is the ADM hypersurface deformation algebra.
 \end{axiom}
+
+\section{Core logical chain}
+
+The intended chain is:
+\[
+\boxed{
+\text{base-medium axioms}
+\Rightarrow
+\text{universal operational metric}
+\Rightarrow
+\text{ADM/GR fixed point}
+\Rightarrow
+\text{tested gravity}.
+}
+\]
+
+RMG-1 explicitly checks only the weak-field middle part:
+\[
+\text{Hamiltonian source}
+\Rightarrow
+u=GM/(rc^2)
+\Rightarrow
+\gamma=\beta=1.
+\]
+
+The deepest step remains open:
+\[
+\boxed{
+\text{base-medium axioms}
+\Rightarrow
+\text{ADM/GR fixed point}.
+}
+\]
 
 \section{Static weak-field recovery}
 
@@ -242,6 +327,13 @@ This realizes:
 \[
 \boxed{
 c_{\rm coord}\propto L_{\rm oper}^2.
+}
+\]
+
+Status:
+\[
+\boxed{
+\text{Derived in RMG-1 from the operational metric map.}
 }
 \]
 
@@ -352,6 +444,13 @@ h_{ij}
 \quad\text{is the operational spatial metric}.
 \]
 
+Status:
+\[
+\boxed{
+\text{Target / safe fixed point, not yet derived from }\mathcal M.
+}
+\]
+
 \section{What is new}
 
 RMG does not try to replace GR in tested regimes.
@@ -371,6 +470,25 @@ The old scalar pressure idea survives only as:
 \]
 
 It is not a free phantom scalar field.
+
+\section{Statement status map}
+
+\[
+\begin{array}{c|c}
+\text{Statement} & \text{Status} \\
+\hline
+\text{one base-medium }\mathcal M & \text{Axiom} \\
+\text{positive physical energy} & \text{Axiom} \\
+\text{universal operational factor }s & \text{Axiom / open microscopic derivation} \\
+c_{\rm coord}/c=s^2 & \text{Axiom / observationally motivated} \\
+A=e^{-u} & \text{Derived from multiplicative layering} \\
+u(r)=GM/(rc^2) & \text{Derived from Hamiltonian source} \\
+\gamma=1,\ \beta=1 & \text{Derived in weak field} \\
+\text{only two tensor GW modes} & \text{Target axiom / observational gate} \\
+\text{ADM/EH low-energy fixed point} & \text{Target / open theorem} \\
+\text{derivation from }\mathcal M & \text{Main open theorem}
+\end{array}
+\]
 
 \section{What is not yet proven}
 
@@ -425,4 +543,3 @@ Main theorem to prove:
 \]
 
 \end{document}
-

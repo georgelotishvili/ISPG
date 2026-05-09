@@ -14,7 +14,6 @@
 !/RMG/**/*.bib
 !/RMG/**/*.pdf
 !/RMG/**/*.py
-!/RMG/**/*.md
 !/RMG/**/*.txt
 !/RMG/**/*.csv
 !/RMG/**/*.json
@@ -30,7 +29,6 @@
 !/RMG Theory/**/*.bib
 !/RMG Theory/**/*.pdf
 !/RMG Theory/**/*.py
-!/RMG Theory/**/*.md
 !/RMG Theory/**/*.txt
 !/RMG Theory/**/*.csv
 !/RMG Theory/**/*.json
@@ -42,3 +40,7 @@
 # Internal RMG development story; keep local only.
 /RMG/story/
 /RMG/story/**
+
+# Internal RMG working notes; keep local only.
+/RMG/work/
+/RMG/work/**
