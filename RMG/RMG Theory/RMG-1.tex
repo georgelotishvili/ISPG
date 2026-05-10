@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 2.4
+% Internal core draft, version 2.6
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -25,6 +25,8 @@
 % RMG-ADM-LAPSE-SOURCE-CHECK
 % RMG-LAPSE-BRIDGE
 % RMG-UNIVERSAL-S-GATE
+% RMG-NO-BIREFRINGENCE-FACTOR
+% RMG-RECORD-SECTOR-NO-BIREFRINGENCE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -44,7 +46,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 2.4\\
+Internal core draft, version 2.6\\
 2026-05-10
 \end{center}
 
@@ -375,6 +377,12 @@ response:
 \[
 Q_{AB}^{\mu\nu}.
 \]
+For a covector \(k_\mu\), define the principal symbol:
+\[
+\boxed{
+P_{AB}(k)=Q_{AB}^{\mu\nu}k_\mu k_\nu.
+}
+\]
 
 \begin{openthm}[Factorization gate]
 Derive from the protected base-medium phase:
@@ -391,6 +399,78 @@ Then all physical low-energy modes share one principal metric:
 G^{\mu\nu}=g_{\rm eff}^{\mu\nu}.
 }
 \]
+\end{openthm}
+
+Common characteristic cones alone are not enough.  The physical principal
+symbol must also have no unsuppressed species or polarization birefringence.
+One base-medium alone is also not enough: one medium can support many internal
+or confined modes.  The RMG claim is narrower:
+\[
+\boxed{
+\text{one stable record-forming low-energy phase}
+\Rightarrow
+\text{one operational spacetime cone for records}.
+}
+\]
+Modes outside the record sector may have different internal dispersions, but
+they must not define separate external rods, clocks, signals or spacetime
+metrics.
+The sharpened pass condition is:
+\[
+\boxed{
+P_{AB}^{\rm phys}(k)
+=
+\left(G^{\mu\nu}k_\mu k_\nu\right)K_{AB}.
+}
+\]
+Allowed remainders are gauge directions, constraint variables, internal
+algebra, lower-derivative terms or suppressed corrections.  The local core
+fails if the physical principal symbol contains:
+\[
+\boxed{
+P_{AB}^{\rm phys}(k)
+=
+\left(G^{\mu\nu}k_\mu k_\nu\right)K_{AB}
++
+B_{AB}(k),
+\qquad
+B_{AB}(k)\neq0,
+}
+\]
+where \(B_{AB}\) produces an observable species-private cone, polarization
+splitting, preferred-frame tensor or clock-dependent redshift.
+
+\begin{openthm}[Record-sector no-birefringence principle]
+All stable modes that can form local records, rods, clocks and exchanged
+signals must belong to one operational record sector.  In that sector:
+\[
+\boxed{
+B_{AB}^{\rm phys}(k)=0
+}
+\]
+for unsuppressed principal spacetime response.  Internal differences may remain
+in \(K_{AB}\), masses, charges, spin, color, topology, phase and tail geometry;
+they must not appear as separate external spacetime cones.  This is a
+protection principle in RMG-1 and still requires derivation from
+\(\mathcal M\).
+\end{openthm}
+
+\begin{openthm}[Record-phase route to factorization]
+Derive the chain:
+\[
+\boxed{
+\text{stable record phase}
+\Rightarrow
+\text{common operational records}
+\Rightarrow
+\text{no observable species-private spacetime cone}
+\Rightarrow
+\text{no physical birefringence}
+\Rightarrow
+Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}.
+}
+\]
+This is the central local-core theorem still required from \(\mathcal M\).
 \end{openthm}
 
 \begin{openthm}[Universal operational factor from one cone]
@@ -918,6 +998,8 @@ tested core.
 \text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
 \text{diverse tails in one base-medium} & \text{Allowed internal/species structure} \\
 \text{common carrier/principal cone for record-forming tails} & \text{Open theorem / core gate} \\
+\text{record-sector no-birefringence} & \text{Protection principle / open from }\mathcal M \\
+\text{no physical low-energy birefringence} & \text{Open theorem / factorization gate} \\
 \text{one cone }\Rightarrow\text{ one }s & \text{Open theorem / clock-universality gate} \\
 \text{tail projection }\Pi_{\rm grav}(T_A)=q_A\mathcal G & \text{Open theorem / projection gate} \\
 q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
@@ -956,6 +1038,12 @@ Still open:
 \]
 \[
 \text{derive the factorization gate }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB},
+\]
+\[
+\text{prove no physical low-energy birefringence in the record phase},
+\]
+\[
+\text{derive record-sector no-birefringence from one stable record phase},
 \]
 \[
 \text{derive one-cone clock universality }s_A/s_B=\text{constant},
