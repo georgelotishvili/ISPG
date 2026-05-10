@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 3.6
+% Internal core draft, version 4.1
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -49,6 +49,19 @@
 % RMG-MATTER-COUPLED-CLOSURE
 % RMG-SPECIES-PRIVATE-SOURCE-GATE
 % RMG-INTERNAL-ENERGY-EFFACEMENT
+% RMG-ROOT-GATE-REDUCTION
+% RMG-LOCAL-GRAVITY-CLOSURE-PACKAGE
+% RMG-ROOT-A-SPECTRAL-RESONANCE-PROGRAM
+% RMG-ONE-GAPLESS-RECORD-BRANCH
+% RMG-ROOT-B-EMBEDDING-CLOSURE-PROGRAM
+% RMG-RECORD-HISTORY-EQUIVALENCE
+% RMG-SYMPLECTIC-NULL-CONSTRAINTS
+% RMG-HDA-STRUCTURE-FUNCTION
+% RMG-ROOT-B-SUFFICIENT-CONDITIONS
+% RMG-ROOT-B-ANOMALY-GATE
+% RMG-LAPSE-SHIFT-NO-KINETIC-VERIFICATION
+% RMG-ROOT-B-INTUITION-AUDIT
+% RMG-RECORD-PHASE-SPACE-NEXT
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -68,7 +81,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 3.6\\
+Internal core draft, version 4.1\\
 2026-05-10
 \end{center}
 
@@ -1244,6 +1257,284 @@ low-energy fixed point is \(S_{\rm EH}+S_{\rm matter}\) up to suppressed
 corrections.
 \end{openthm}
 
+\section{Local Gravity Closure Package}
+
+The many open local-core gates reduce to three root theorems.
+
+\begin{openthm}[Root A: one external record carrier]
+Derive from the base-medium stable record phase:
+\[
+\boxed{
+\text{stable external record-forming mode}
+\Rightarrow
+\text{one common gapless long-tail carrier}.
+}
+\]
+All non-common branches must be internal, confined, gapped, damped,
+constrained, gauge or unstable.  If Root A closes, it gives one operational
+principal cone, no low-energy birefringence and the factorization
+\[
+\boxed{
+Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}
+}
+\]
+on physical record modes.
+\end{openthm}
+
+\begin{openthm}[Root A spectral/resonance closure]
+Root A must be proven by a spectral statement around the stable record phase
+\(\mathcal M_0\).  Linearize the base-medium dynamics:
+\[
+\boxed{
+\delta{\cal E}[\mathcal M_0]
+=
+{\cal L}_{\mathcal M_0}\delta\Phi+\cdots.
+}
+\]
+The required split is:
+\[
+\boxed{
+\mathrm{Spec}({\cal L}_{\mathcal M_0})
+=
+{\cal B}_{\rm rec}
+\cup
+{\cal B}_{\rm int},
+\qquad
+\dim{\cal B}_{\rm rec}^{\rm gapless}=1
+}
+\]
+as an external record carrier.  Stable record-forming tails must phase-lock to
+the base-medium rhythm \(\nu_0\) or its allowed harmonic channel:
+\[
+\boxed{
+\Pi_{\rm rec}T_A^{\rm long}
+=
+Z_A\mathcal C+\hbox{internal/lower-order details},
+\qquad
+\operatorname{principal}(\mathcal C)
+=
+G^{\mu\nu}k_\mu k_\nu.
+}
+\]
+All other branches must be internal, confined, gapped, damped, constrained,
+gauge, unstable, high-energy suppressed or large-scale-only.  This is the
+microscopic calculation still needed for Root A.
+\end{openthm}
+
+\begin{openthm}[Root B: record-embedding ADM closure]
+Derive that changes of slicing, labels and record parametrization are gauge
+redundancies of the same physical record history.  These redundancies must
+generate first-class constraints:
+\[
+\boxed{
+\mathcal H\approx0,
+\qquad
+\mathcal H_i\approx0,
+}
+\]
+with the ADM hypersurface-deformation algebra.  If Root B closes, local
+scalar/vector gravitational sectors are constrained, flow is shift-like in the
+tested core, only \(h_+,h_\times\) propagate, \(\lambda=1/2\) is selected and
+the two-derivative fixed point is \(S_{\rm EH}\).
+\end{openthm}
+
+\begin{openthm}[Root B embedding/symplectic closure]
+The precise Root B burden is to show that the physical object is a relational
+record history \(W_{\mathcal R}\), while a foliation/embedding \(X_F\) is only
+a description of that history:
+\[
+\boxed{
+X_F\sim X'_F,
+\qquad
+\Gamma_{\rm phys}=\Gamma_{\mathcal R}/\mathcal G_{\rm emb}.
+}
+\]
+This equivalence must be a true gauge degeneracy of the record symplectic
+structure:
+\[
+\boxed{
+\iota_{\delta_\xi}\Omega_{\mathcal R}\approx0.
+}
+\]
+Then the embedding generators must take the ADM form
+\[
+\boxed{
+G[\xi]=D[N^i]+H[N],
+\qquad
+D[N^i]=\int d^3x\,N^i\mathcal H_i,
+\qquad
+H[N]=\int d^3x\,N\mathcal H,
+}
+\]
+with
+\[
+\boxed{
+\mathcal H_i\approx0,
+\qquad
+\mathcal H\approx0.
+}
+\]
+The composition of two embedding changes must be the hypersurface-deformation
+algebra:
+\[
+\boxed{
+\{D[N^i],D[M^i]\}=D[[N,M]^i],
+}
+\]
+\[
+\boxed{
+\{H[N],D[M^i]\}=H[\mathcal L_MN],
+}
+\]
+\[
+\boxed{
+\{H[N],H[M]\}
+=
+D\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right],
+}
+\]
+where the structure function \(h^{ij}\) is the same inverse spatial metric
+seen by the record sector.  Lapse and shift are then embedding multipliers,
+not extra physical medium particles:
+\[
+\boxed{
+S_{\rm loc}
+=
+\int dt\,d^3x\,
+\left(\pi^{ij}\dot h_{ij}-N\mathcal H-N^i\mathcal H_i\right),
+\qquad
+\dot N^2=\dot N_i\dot N^i=0.
+}
+\]
+If this theorem closes, the scalar and vector gravitational sectors are
+constraints/near-zone bookkeeping, local flow is shift-like, only two tensor
+modes propagate, the DeWitt value \(\lambda=1/2\) is selected and the
+two-derivative local fixed point is \(S_{\rm EH}\).
+\end{openthm}
+
+\begin{openthm}[Root B finite sufficiency checklist]
+Root B is reduced to five sufficient conditions on the low-energy record
+sector:
+\[
+\boxed{
+\begin{array}{ll}
+B1 & \text{no observable absolute record time},\\
+B2 & \text{one record geometry }h_{ij},\\
+B3 & \text{embedding changes are presymplectic null directions},\\
+B4 & \text{null directions have local generators }D[N^i],H[N],\\
+B5 & \text{generator composition is anomaly-free}.
+\end{array}
+}
+\]
+The algebraic danger is a residual anomaly in the normal-normal bracket:
+\[
+\boxed{
+\{H[N],H[M]\}
+=
+D\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right]
++A[N,M].
+}
+\]
+Root B requires
+\[
+\boxed{
+A[N,M]=0
+}
+\]
+on the local tested record sector.  If \(A\neq0\), then at least one hidden
+preferred-frame, scalar, vector or non-record tensor structure has survived.
+Equivalently, lapse/shift or local flow has become physical rather than
+embedding bookkeeping.  The action-level check is:
+\[
+\boxed{
+\dot N^2,\quad \dot N_i\dot N^i,\quad
+\text{unsuppressed independent scalar/vector kinetic terms}
+\quad\text{are absent}.
+}
+\]
+Thus Root B is not an aesthetic GR assumption.  It is the finite test:
+\[
+\boxed{
+B1+B2+B3+B4+B5
+\Rightarrow
+\text{ADM local closure}.
+}
+\]
+\end{openthm}
+
+\begin{openthm}[Root B intuition audit]
+The base-medium intuition supports Root B in a graded way:
+\[
+\boxed{
+\begin{array}{c|c}
+\text{condition} & \text{intuition audit status}\\
+\hline
+B1 & \text{strong support: time/measurement are operational and relational}\\
+B2 & \text{partial: requires Root A one-carrier closure}\\
+B3 & \text{open: requires a record presymplectic form }\Omega_{\mathcal R}\\
+B4 & \text{open: requires local moment-map generators }D,H\\
+B5 & \text{open: requires anomaly cancellation }A[N,M]=0
+\end{array}
+}
+\]
+The intuitive file says that a single undivided base medium has no inner ruler,
+delay or comparison until it self-differentiates into distinguishable
+record-forming nodes.  This strongly supports the absence of an observable
+absolute record time.  It does not by itself prove the canonical statement
+\[
+\boxed{
+\iota_{\delta_\xi}\Omega_{\mathcal R}\approx0
+\quad\Rightarrow\quad
+G[\xi]=D[N^i]+H[N].
+}
+\]
+Therefore the next exact Root B burden is to construct the low-energy record
+phase space \(\Gamma_{\mathcal R}\), its presymplectic form
+\(\Omega_{\mathcal R}\), the embedding-variation vector fields
+\(\delta_\xi\), and the local generators \(D,H\).  The pass condition remains
+\[
+\boxed{
+\{H[N],H[M]\}
+-
+D\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right]
+=0
+}
+\]
+in the tested local record sector.
+\end{openthm}
+
+\begin{openthm}[Root C: total-energy source projection]
+Derive the far-tail/source theorem:
+\[
+\boxed{
+Q_A^{(0)}=\eta E_A/c^2,
+\qquad
+S_u=\rho_E,
+}
+\]
+where \(E_A\) includes rest, kinetic, binding and internal/confined energy.
+No unsuppressed species-private source may remain.  If Root C closes, the
+equivalence-principle source gate and compact internal-energy effacement gate
+close.
+\end{openthm}
+
+\begin{openthm}[Local gravity core closure]
+If Root A, Root B and Root C are derived from \(\mathcal M\), then the local
+RMG gravity core is closed:
+\[
+\boxed{
+\text{one operational spacetime}
+\quad+\quad
+S_{\rm EH}+S_{\rm matter}
+\quad+\quad
+\text{universal total-energy source}.
+}
+\]
+The remaining sectors -- strong-field compact interiors, MOND reentry,
+cosmology and detailed matter emergence -- then become extension windows, not
+loose foundations of the local gravitational core.
+\end{openthm}
+
 This is the central theorem of RMG.  It is not yet proven in RMG-1.
 
 \section{Allowed Deviation Windows}
@@ -1454,6 +1745,14 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{diverse tails in one base-medium} & \text{Allowed internal/species structure} \\
 \mathcal R\text{ record sector} & \text{Definition / projection still open from }\mathcal M \\
 \mathcal I\text{ internal sector} & \text{Definition; contributes energy, not external cone} \\
+\text{Root A: one external record carrier} & \text{Root open theorem} \\
+\text{Root A spectral/resonance closure} & \text{Open calculation; one gapless branch} \\
+\text{Root B: record-embedding ADM closure} & \text{Root open theorem} \\
+\text{Root B embedding/symplectic closure} & \text{Open calculation; null directions }\Rightarrow\text{ HDA} \\
+\text{Root B finite sufficiency checklist} & \text{Reduced to B1--B5 plus }A[N,M]=0 \\
+\text{Root B intuition audit} & \text{B1 strong; B2 depends on Root A; B3--B5 open} \\
+\text{Root C: total-energy source projection} & \text{Root open theorem} \\
+\text{local gravity core closure package} & \text{Conditional on Roots A--C} \\
 \text{constraint protection route} & \text{Open theorem; scalar/vector no-radiation route} \\
 \text{two tensor gravitational DOF} & \text{Target if first-class constraints close} \\
 \text{hypersurface-deformation closure filter} & \text{Open ADM algebra gate} \\
@@ -1505,6 +1804,48 @@ u(r)=GM/(rc^2) & \text{Derived in weak static sector} \\
 RMG-1 is not a closed theory yet.
 
 Still open:
+\[
+\text{prove Root A: one common external record carrier from the stable phase},
+\]
+\[
+\text{compute }\mathrm{Spec}({\cal L}_{\mathcal M_0})\text{ and prove one gapless record branch},
+\]
+\[
+\text{derive phase locking of stable tails to }\nu_0\text{ or its harmonic channel},
+\]
+\[
+\text{prove Root B: record-embedding first-class ADM closure},
+\]
+\[
+\text{derive record-history equivalence as a true symplectic gauge redundancy},
+\]
+\[
+\text{prove embedding-composition HDA with the same }h^{ij}\text{ as record geometry},
+\]
+\[
+\text{derive lapse/shift multiplier status from base-medium embedding redundancy},
+\]
+\[
+\text{verify B1--B5 for Root B in the base-medium record sector},
+\]
+\[
+\text{prove the Root B anomaly gate }A[N,M]=0,
+\]
+\[
+\text{exclude unsuppressed lapse/shift scalar-vector kinetic terms in the tested core},
+\]
+\[
+\text{construct the low-energy record phase space }\Gamma_{\mathcal R},
+\]
+\[
+\text{construct the record presymplectic form }\Omega_{\mathcal R},
+\]
+\[
+\text{derive embedding vector fields }\delta_\xi\text{ and their local generators }D,H,
+\]
+\[
+\text{prove Root C: total-energy source projection and far-tail Gauss law},
+\]
 \[
 \text{derive Operational Relational Covariance from microscopic }\mathcal M,
 \]
