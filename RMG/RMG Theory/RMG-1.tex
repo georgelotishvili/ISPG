@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 2.9
+% Internal core draft, version 3.1
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -33,6 +33,10 @@
 % RMG-MOND-SAFE-REENTRY
 % RMG-STRONG-FIELD-CONTRACT
 % RMG-COMPACT-PROJECTION-GATE
+% RMG-MASTER-GATE
+% RMG-STABLE-TAIL-COMMON-CARRIER
+% RMG-ONE-TENSOR-FACTORIZATION
+% RMG-NONCOMMON-MODE-ELIMINATION
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -52,7 +56,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 2.8\\
+Internal core draft, version 3.1\\
 2026-05-10
 \end{center}
 
@@ -501,6 +505,80 @@ Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}.
 }
 \]
 This is the central local-core theorem still required from \(\mathcal M\).
+\end{openthm}
+
+\begin{openthm}[One-tensor factorization lemma]
+For any candidate common record tensor \(G^{\mu\nu}\), decompose the
+principal kinetic matrix as:
+\[
+\boxed{
+Q_{AB}^{\mu\nu}
+=
+G^{\mu\nu}K_{AB}
++
+B_{AB}^{\mu\nu}.
+}
+\]
+If the stable record phase contains only one observable rank-two spacetime
+principal tensor, then the non-factorizing part \(B_{AB}^{\mu\nu}\) has no
+unsuppressed physical projection on external record-forming modes:
+\[
+\boxed{
+\Pi_{\mathcal R}B_{AB}^{\mu\nu}\Pi_{\mathcal R}=0
+}
+\]
+up to gauge, confined, gapped, damped, unstable or high-energy suppressed
+pieces.  Otherwise \(B_{AB}^{\mu\nu}\) would define a second observable cone,
+anisotropy, preferred-frame tensor or species-private clock response.  This is
+an open lemma: RMG must still derive the one-observable-tensor premise from the
+base medium.
+\end{openthm}
+
+\begin{openthm}[Master gate: no-birefringent record carrier]
+The master local-core gate is:
+\[
+\boxed{
+\text{all low-energy record-forming tails project onto one common carrier}
+}
+\]
+so that the physical record-sector principal symbol has no unsuppressed
+species or polarization birefringence:
+\[
+\boxed{
+P_{AB}^{\rm phys}(k)
+=
+\left(G^{\mu\nu}k_\mu k_\nu\right)K_{AB}.
+}
+\]
+If this gate closes, then one operational cone, one universal clock factor
+\(s(x)\), the ADM lapse bridge \(N=s=e^{-u}\), the total-energy source gate
+and the compact internal-energy/no-external-cone split become linked
+consequences of the same record-sector protection.
+\end{openthm}
+
+\begin{openthm}[Stable-tail common-carrier route]
+For every stable record-forming oscillon or matter mode \(A\), decompose its
+long tail as:
+\[
+\boxed{
+T_A=\Pi_{\rm common}T_A+\Pi_{\rm internal}T_A.
+}
+\]
+The theorem target is:
+\[
+\boxed{
+\operatorname{principal}(\Pi_{\rm common}T_A)
+=
+G^{\mu\nu}k_\mu k_\nu
+\quad
+\text{for all record-forming }A,
+}
+\]
+while \(\Pi_{\rm internal}T_A\) may carry species-specific frequency, phase,
+spin, charge, topology, multipoles and short-range structure, but must not
+define a separate external spacetime cone.  Modes whose tails cannot project
+onto the common carrier are internal, confined, gapped, constrained or
+non-record-forming.
 \end{openthm}
 
 \begin{openthm}[Universal operational factor from one cone]
@@ -1163,10 +1241,13 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{MOND-safe reentry} & \text{Open large-scale correction gate} \\
 \text{strong-field compact-object branch} & \text{Open contract; branch not selected} \\
 \text{hybrid compact projection} & \text{Open theorem / strongest current program} \\
-\text{common carrier/principal cone for record-forming tails} & \text{Open theorem / core gate} \\
-\text{record-sector no-birefringence} & \text{Protection principle / open from }\mathcal M \\
-\text{no physical low-energy birefringence} & \text{Open theorem / factorization gate} \\
-\text{one cone }\Rightarrow\text{ one }s & \text{Open theorem / clock-universality gate} \\
+\text{common carrier/principal cone for record-forming tails} & \text{Master open theorem / core gate} \\
+\text{stable-tail common-carrier route} & \text{Open proof route from oscillon stability} \\
+\text{one-tensor factorization lemma} & \text{Open lemma / exact proof target} \\
+\text{non-common mode elimination} & \text{Required projection/confinement theorem} \\
+\text{record-sector no-birefringence} & \text{Master protection principle / open from }\mathcal M \\
+\text{no physical low-energy birefringence} & \text{Master open theorem / factorization gate} \\
+\text{one cone }\Rightarrow\text{ one }s & \text{Consequence if master gate closes} \\
 \text{tail projection }\Pi_{\rm grav}(T_A)=q_A\mathcal G & \text{Open theorem / projection gate} \\
 q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
 \text{far-tail monopole }Q_A^{(0)}=\eta E_A/c^2 & \text{Open theorem / source gate} \\
@@ -1209,7 +1290,16 @@ Still open:
 \text{derive the factorization gate }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB},
 \]
 \[
+\text{prove the stable record phase has only one observable principal tensor},
+\]
+\[
+\text{derive non-common mode elimination: confined/gapped/damped/gauge/unstable},
+\]
+\[
 \text{prove no physical low-energy birefringence in the record phase},
+\]
+\[
+\text{derive the stable-tail common-carrier theorem for record-forming oscillons},
 \]
 \[
 \text{derive record-sector no-birefringence from one stable record phase},
