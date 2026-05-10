@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 2.8
+% Internal core draft, version 2.9
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -31,6 +31,8 @@
 % RMG-INTERNAL-SECTOR
 % RMG-FLOW-VORTICITY-SPLIT
 % RMG-MOND-SAFE-REENTRY
+% RMG-STRONG-FIELD-CONTRACT
+% RMG-COMPACT-PROJECTION-GATE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -1071,6 +1073,77 @@ with:
 The exact function \(\mathcal F\) is not fixed in RMG-1.
 \end{openthm}
 
+\section{Strong-Field Compact-Object Contract}
+
+RMG-1 does not yet select the strong-field compact-object branch.  The branch
+must be derived from the base-medium equilibrium law and the record/internal
+projection, not imported from the old ISPG bi-conformal scalar construction.
+
+The currently allowed branches are:
+\[
+\boxed{
+\text{GR/Kerr-like exterior},
+\qquad
+\text{old-like exponential branch},
+\qquad
+\text{hybrid branch},
+\qquad
+\text{or a new branch}.
+}
+\]
+
+Old ISPG strong-field results, such as horizonless static exteriors,
+exponential freezing, curvature-soft deep boundaries, shifted ISCOs and
+breathing-mode tests, are retained only as candidate targets.  They are not
+RMG-1 predictions unless they are rederived from \(\mathcal M\) without a
+fundamental phantom scalar.
+
+\begin{gate}[Strong-field compact projection]
+For compact objects, the internal sector may dominate bound medium structure
+and contribute to total energy:
+\[
+\boxed{
+E_{\rm total}=E_{\mathcal R}+E_{\mathcal I}+E_{\rm bind}.
+}
+\]
+However, the external observable cone must be defined by the record projection:
+\[
+\boxed{
+\Pi_{\mathcal R}P_{\rm full}(k)\Pi_{\mathcal R}
+=
+\left(G^{\mu\nu}k_\mu k_\nu\right)K_{\mathcal R},
+}
+\]
+while internal compact modes may enter the gravitational source only through
+conserved total charges such as energy, angular momentum and allowed gauge
+charges.  They must not define an independent external spacetime cone.
+\end{gate}
+
+\begin{openthm}[Hybrid compact-object program]
+Derive, or rule out, the hybrid strong-field branch:
+\[
+\boxed{
+\text{external record geometry is GR/Kerr-like to current precision}
+}
+\]
+while
+\[
+\boxed{
+\text{deep internal base-medium structure may freeze, soften or store energy.}
+}
+\]
+The required proof is:
+\[
+\boxed{
+\Pi_{\mathcal I}\text{ contributes to }H_{\rm phys}
+\quad\text{but}\quad
+\Pi_{\mathcal I}\text{ does not create a separate external cone.}
+}
+\]
+If this fails, RMG must either reduce to a fully GR-like strong-field branch or
+derive and observationally confront an old-like/new strong-field branch.
+\end{openthm}
+
 \section{Statement Status Map}
 
 \[
@@ -1088,6 +1161,8 @@ The exact function \(\mathcal F\) is not fixed in RMG-1.
 \mathcal I\text{ internal sector} & \text{Definition; contributes energy, not external cone} \\
 \text{flow/vorticity local role} & \text{Constraint/near-zone only in tested core} \\
 \text{MOND-safe reentry} & \text{Open large-scale correction gate} \\
+\text{strong-field compact-object branch} & \text{Open contract; branch not selected} \\
+\text{hybrid compact projection} & \text{Open theorem / strongest current program} \\
 \text{common carrier/principal cone for record-forming tails} & \text{Open theorem / core gate} \\
 \text{record-sector no-birefringence} & \text{Protection principle / open from }\mathcal M \\
 \text{no physical low-energy birefringence} & \text{Open theorem / factorization gate} \\
@@ -1182,6 +1257,9 @@ Still open:
 \text{derive the flow/vorticity gate and MOND-safe reentry function }\mathcal F,
 \]
 \[
+\text{derive the compact-object branch and strong-field projection gate},
+\]
+\[
 \text{rebuild MOND, cosmology and matter sectors without a phantom foundation}.
 \]
 
@@ -1233,6 +1311,14 @@ RMG fails if the MOND-like medium correction remains unsuppressed in
 solar-system, binary-pulsar or gravitational-wave local tests, or if it changes
 \(\gamma=1\), \(\beta=1\), \(c_{\rm GW}=c\), universal free fall, or the
 two-tensor-mode vacuum sector.
+\end{gate}
+
+\begin{gate}[Strong-field compact fail]
+RMG fails in the compact-object sector if internal medium modes hide energy
+from gravity, create an unsuppressed breathing/scalar radiation channel, define
+a species-private external cone, alter \(c_{\rm GW}=c\), or force shadow,
+ringdown, binary-pulsar or strong-field lensing deviations already excluded by
+observations.
 \end{gate}
 
 \section*{Current Status}
