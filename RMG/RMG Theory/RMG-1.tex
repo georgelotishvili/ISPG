@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 2.6
+% Internal core draft, version 2.8
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -27,6 +27,10 @@
 % RMG-UNIVERSAL-S-GATE
 % RMG-NO-BIREFRINGENCE-FACTOR
 % RMG-RECORD-SECTOR-NO-BIREFRINGENCE
+% RMG-RECORD-SECTOR-DEFINITION
+% RMG-INTERNAL-SECTOR
+% RMG-FLOW-VORTICITY-SPLIT
+% RMG-MOND-SAFE-REENTRY
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -46,7 +50,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 2.6\\
+Internal core draft, version 2.8\\
 2026-05-10
 \end{center}
 
@@ -372,6 +376,28 @@ ds^2=-e^{-2u}c^2dt^2+e^{2u}\delta_{ij}dx^idx^j.
 The universal matter metric must ultimately come from a common highest-derivative
 kinetic kernel.
 
+\[
+\boxed{
+\mathcal R
+}
+\]
+is the record sector: low-energy modes that can participate in operational
+measurement as rods, clocks, detector components, memory/record components,
+exchanged signals or stable external matter excitations.
+
+\[
+\boxed{
+\mathcal I
+}
+\]
+is the internal sector: confined internal modes, gauge directions, constraint
+variables, off-shell auxiliary modes, short-range internal responses and
+high-energy modes outside the tested local regime.
+
+Internal modes may contribute to mass, binding energy, charge, spin, color,
+tail shape, effective couplings and total energy.  They must not define a
+separate external spacetime cone in the tested local core.
+
 For low-energy perturbations $\delta\Phi^A$, define the principal kinetic
 response:
 \[
@@ -383,6 +409,8 @@ For a covector \(k_\mu\), define the principal symbol:
 P_{AB}(k)=Q_{AB}^{\mu\nu}k_\mu k_\nu.
 }
 \]
+Let \(\Pi_{\mathcal R}\) project onto the physical record subspace after
+gauge and constraint directions are removed.
 
 \begin{openthm}[Factorization gate]
 Derive from the protected base-medium phase:
@@ -418,9 +446,9 @@ metrics.
 The sharpened pass condition is:
 \[
 \boxed{
-P_{AB}^{\rm phys}(k)
+\Pi_{\mathcal R}P(k)\Pi_{\mathcal R}
 =
-\left(G^{\mu\nu}k_\mu k_\nu\right)K_{AB}.
+\left(G^{\mu\nu}k_\mu k_\nu\right)K_{\mathcal R}.
 }
 \]
 Allowed remainders are gauge directions, constraint variables, internal
@@ -984,6 +1012,65 @@ Rule:
 They also must not introduce an independent local $u^\mu_{\mathcal M}$ into the
 tested core.
 
+\begin{gate}[Flow/vorticity split]
+Medium flow and vorticity are allowed only in two protected roles.
+In the tested local regime they must be hidden inside ADM constraint variables
+or near-zone fields:
+\[
+\boxed{
+\mathcal A_i,\ u
+\quad\text{constraint/near-zone only, not independent vacuum radiation.}
+}
+\]
+In large-scale or low-acceleration regimes they may re-enter as an effective
+medium correction:
+\[
+\boxed{
+\mathbf a
+=
+\mathbf a_{\rm GR}
++
+\mathbf a_{\rm med}.
+}
+\]
+The correction must satisfy:
+\[
+\boxed{
+\mathbf a_{\rm med}\to0
+\quad
+\text{in local tested high-acceleration regimes},
+}
+\]
+while it may become nonzero in galactic low-acceleration or cosmological
+background regimes.
+\end{gate}
+
+\begin{openthm}[MOND-safe reentry]
+Derive a scale or acceleration gate:
+\[
+\boxed{
+\mathbf a_{\rm med}
+=
+\mathcal F\!\left(
+\frac{|\nabla\Phi|}{a_0},
+\frac{L}{L_{\rm bg}},
+\omega_{\rm flow}
+\right)\mathbf a_{\rm flow},
+}
+\]
+with:
+\[
+\boxed{
+\mathcal F\to0
+\quad\text{in local tested regimes},
+\qquad
+\mathcal F\neq0
+\quad\text{in galactic low-acceleration regimes}.
+}
+\]
+The exact function \(\mathcal F\) is not fixed in RMG-1.
+\end{openthm}
+
 \section{Statement Status Map}
 
 \[
@@ -997,6 +1084,10 @@ tested core.
 \text{local effective hierarchy} & \text{Primitive EFT condition} \\
 \text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
 \text{diverse tails in one base-medium} & \text{Allowed internal/species structure} \\
+\mathcal R\text{ record sector} & \text{Definition / projection still open from }\mathcal M \\
+\mathcal I\text{ internal sector} & \text{Definition; contributes energy, not external cone} \\
+\text{flow/vorticity local role} & \text{Constraint/near-zone only in tested core} \\
+\text{MOND-safe reentry} & \text{Open large-scale correction gate} \\
 \text{common carrier/principal cone for record-forming tails} & \text{Open theorem / core gate} \\
 \text{record-sector no-birefringence} & \text{Protection principle / open from }\mathcal M \\
 \text{no physical low-energy birefringence} & \text{Open theorem / factorization gate} \\
@@ -1032,6 +1123,9 @@ RMG-1 is not a closed theory yet.
 Still open:
 \[
 \text{derive Operational Relational Covariance from microscopic }\mathcal M,
+\]
+\[
+\text{derive the record/internal projection }\Pi_{\mathcal R}\text{ from }\mathcal M,
 \]
 \[
 \text{prove forbidden preferred-frame operators are not generated},
@@ -1085,6 +1179,9 @@ Still open:
 \text{control preferred-frame effects},
 \]
 \[
+\text{derive the flow/vorticity gate and MOND-safe reentry function }\mathcal F,
+\]
+\[
 \text{rebuild MOND, cosmology and matter sectors without a phantom foundation}.
 \]
 
@@ -1129,6 +1226,13 @@ different long-range spacetime carriers.
 RMG fails in the tested local core if $\Delta_{\mathcal M}$ leaves an
 unsuppressed preferred-frame term, extra operational tensor, non-ADM constraint
 bracket, or low-energy scalar/vector propagating degree of freedom.
+\end{gate}
+
+\begin{gate}[MOND-window fail]
+RMG fails if the MOND-like medium correction remains unsuppressed in
+solar-system, binary-pulsar or gravitational-wave local tests, or if it changes
+\(\gamma=1\), \(\beta=1\), \(c_{\rm GW}=c\), universal free fall, or the
+two-tensor-mode vacuum sector.
 \end{gate}
 
 \section*{Current Status}
