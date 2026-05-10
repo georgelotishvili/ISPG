@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 6.0
+% Internal core draft, version 6.1
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -93,6 +93,10 @@
 % RMG-SPIN2-EMERGENCE-GATE
 % RMG-GW-DETECTION-GATE
 % RMG-TENSOR-CLOSURE-REDUCTION
+% RMG-RELATIONAL-BASE-ACTION
+% RMG-LEADING-ORDER-CORE-DERIVATION
+% RMG-LOOP-DEFECT-CURVATURE
+% RMG-DEWITT-KINETIC-DERIVATION
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -112,7 +116,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 6.0\\
+Internal core draft, version 6.1\\
 2026-05-10
 \end{center}
 
@@ -2077,6 +2081,154 @@ form, universal matter metric coupling and no explicit species-private
 \(u\)-coupling.  This is the next exact derivation target.
 \end{openthm}
 
+\section{Leading-Order Relational Base Derivation}
+
+The strongest current internal result is a leading-order derivation of the
+tested local gravity core from a relational base-medium action candidate.  It
+is not yet the final microscopic theory, because the exact coefficients,
+matter spectrum, MOND scale and strong-field branch remain to be computed.
+
+\begin{result}[Relational base action candidate]
+The base-medium is represented without external rods, clocks or background
+space by relational variables
+\[
+\boxed{
+R_{ab},\qquad \vartheta_{ab},\qquad K_{ab}.
+}
+\]
+Here \(R_{ab}\) denotes adjacency/separation records, \(\vartheta_{ab}\) the
+common rhythm/phase records, and \(K_{ab}\) internal coupling/shape records.
+The candidate base action has Jacobi/constraint form
+\[
+\boxed{
+S_{\mathcal M}^{\rm rel}
+=
+\int d\lambda\,
+\left[
+\Theta_{\mathcal M}
+(R,\vartheta,K;\dot R,\dot\vartheta,\dot K)
+-
+\alpha C_0
+-
+\beta^a C_a
+-
+\gamma C_\nu
+\right].
+}
+\]
+\(\lambda\) is only a bookkeeping parameter, not physical time.  The
+constraints have the intended meanings
+\[
+\boxed{
+C_0=\text{common process constraint},\qquad
+C_a=\text{relabel/re-embedding constraint},\qquad
+C_\nu=\text{one-rhythm/harmonic selection constraint}.
+}
+\]
+Thus the base does not begin with spacetime.  Spacetime variables are allowed
+only as coarse-grained record variables.
+\end{result}
+
+\begin{result}[Continuum core route]
+Under smooth coarse-graining, local isotropy, one common record carrier and no
+physical background-label leak, the continuum record variables are
+\[
+\boxed{
+h_{ij}=h_{ij}[R,\vartheta,K],
+\qquad
+\pi^{ij}=\pi^{ij}[R,\vartheta,K].
+}
+\]
+Relabel/re-embedding redundancy gives the momentum constraint:
+\[
+\boxed{
+C_a\ \longrightarrow\ H_i.
+}
+\]
+Small relational loop defects give curvature:
+\[
+\boxed{
+\Omega_{\rm loop}-1\ \longrightarrow\ R^i{}_{jkl}(h),
+\qquad
+V_{\rm loop}\ \longrightarrow\ \int d^3x\,\sqrt h\,(R(h)-2\Lambda).
+}
+\]
+The relational kinetic term decomposes into physical shear plus constrained
+volume/gauge directions.  In the protected continuum limit this gives the
+DeWitt kinetic form
+\[
+\boxed{
+T_{\rm rec}
+\longrightarrow
+\frac{1}{\sqrt h}
+\left(
+\pi_{ij}\pi^{ij}
+-\frac12\pi^2
+\right).
+}
+\]
+Therefore the leading-order local record Hamiltonian is
+\[
+\boxed{
+H
+=
+\frac{1}{\sqrt h}
+\left(
+\pi_{ij}\pi^{ij}
+-\frac12\pi^2
+\right)
+-\sqrt h\,(R(h)-2\Lambda)
++H_{\rm matter}.
+}
+\]
+Together with \(H_i\), this is the ADM/Einstein-Hilbert local fixed point at
+leading order.
+\end{result}
+
+\begin{result}[Radiation and source consequence]
+The metric perturbation splits operationally as
+\[
+\boxed{
+\delta h_{ij}
+=
+s_{ij}
++\frac13 h_{ij}b
++\text{gauge/constraint pieces}.
+}
+\]
+The common breathing variable \(b\) is not a separate free radiation field in
+the tested local sector; it is hidden by common-mode self-calibration and by
+the Hamiltonian constraint.  The observable radiation is the shear sector
+\[
+\boxed{
+s_{ij}=h_{ij}^{TT},
+}
+\]
+which carries two tensor modes.  Matter couples to the same record metric, so
+the local source is total energy rather than a species-private tail charge.
+\end{result}
+
+\begin{gate}[Leading-order status]
+RMG currently has a conditional leading-order route
+\[
+\boxed{
+\mathcal M_{\rm rel}
+\Rightarrow
+\text{record geometry}
+\Rightarrow
+\text{ADM/EH local core}
+\Rightarrow
+\text{two tensor GW modes}
+\Rightarrow
+\text{total-energy source}.
+}
+\]
+This is the strongest present core result.  It becomes a full derivation only
+after the exact coarse-graining map, constants \(G,\Lambda\), stable spectrum,
+matter couplings, MOND reentry scale and strong-field branch are computed from
+the base-medium rather than inserted as targets.
+\end{gate}
+
 \begin{openthm}[\(S_{\rm eff}^{\rm rec}\) derivation pipeline]
 Start from a base-medium action/evolution functional
 \[
@@ -2706,6 +2858,10 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{no explicit species-private }u\text{-coupling} & \text{Metric-exhaustion / fifth-force gate} \\
 \text{non-circular proof order} & \text{Root A }\Rightarrow\text{ Root B }\Rightarrow\text{ EH }\Rightarrow\text{ Root C} \\
 \text{\(S_{\rm eff}^{\rm rec}\) derivation pipeline} & \text{Base-medium }\Rightarrow\text{ record action target} \\
+\text{relational base action candidate} & \text{Leading-order core route under explicit conditions} \\
+\text{loop-defect curvature route} & \text{Leading-order } \Omega_{\rm loop}\Rightarrow R(h) \\
+\text{DeWitt kinetic route} & \text{Leading-order shear/constraint split} \\
+\text{local ADM/EH core from }\mathcal M_{\rm rel} & \text{Conditional leading-order result} \\
 \text{minimal base-medium input package }\mathcal D_{\mathcal M} & \text{Required before microscopic proof} \\
 \text{candidate base-medium order parameter }\sqrt n e^{i\theta}\chi & \text{Test ansatz; not proof} \\
 \text{candidate stable-phase spectrum audit} & \text{Phase cone candidate; tensor gravity still Root B} \\
@@ -2766,7 +2922,10 @@ RMG-1 is not a closed theory yet.
 
 Still open:
 \[
-\text{construct }S_{\rm eff}^{\rm rec}[\mathcal M_0]\text{ from the stable base-medium phase},
+\text{upgrade the leading-order relational core route into an exact microscopic derivation},
+\]
+\[
+\text{construct the exact }S_{\rm eff}^{\rm rec}[\mathcal M_0]\text{ from the stable base-medium phase},
 \]
 \[
 \text{specify the input package }\mathcal D_{\mathcal M}=(\Phi_{\mathcal M},S_{\mathcal M},\mathcal M_0,\Omega_{\mathcal M},\mathcal G_{\rm int},\mathcal O_{\rm rec}),
@@ -3077,7 +3236,7 @@ observations.
 
 \[
 \boxed{
-\text{RMG-1 is a strong phantom-free core direction, not yet a closed theory.}
+\text{RMG-1 has a conditional leading-order local GR core, not yet a closed theory.}
 }
 \]
 
