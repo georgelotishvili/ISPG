@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 1.9
+% Internal core draft, version 2.1
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -20,6 +20,8 @@
 % RMG-DIVERSE-TAILS-ONE-MEDIUM
 % RMG-TAIL-SUPERPOSITION-GATE
 % RMG-TOTAL-ENERGY-SOURCE-GATE
+% RMG-FAR-TAIL-MONOPOLE-GATE
+% RMG-LAPSE-COMPRESSION-SOURCE-GATE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -39,7 +41,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 1.9\\
+Internal core draft, version 2.1\\
 2026-05-10
 \end{center}
 
@@ -447,6 +449,46 @@ u(\mathbf x)=\sum_i u_i(\mathbf x),
 in the weak-field regime, and the same $u$ determines the effective geometry.
 \end{openthm}
 
+Equivalently, the far long-range pressure tail must have an energy monopole:
+\[
+\boxed{
+u_A(r,\Omega)
+=
+\frac{Q_A^{(0)}}{r}
++O(r^{-2}),
+\qquad
+Q_A^{(0)}=\eta\,E_A/c^2.
+}
+\]
+The theorem target is that the common pressure source density equals total
+physical energy density in mass units:
+\[
+\boxed{
+\sigma_{\rm grav}
+=
+\alpha_E\,\rho_E/c^2.
+}
+\]
+This is expected because the long common pressure channel should couple to the
+conserved scalar generator of stable medium evolution, namely total energy.
+
+The sharper source theorem target is:
+\[
+\boxed{
+S_u(x)
+:=
+-\frac{1}{\sqrt h}\frac{\delta S_{\rm eff}}{\delta u(x)}
+=
+\chi\,\rho_E(x)
++\hbox{suppressed corrections}.
+}
+\]
+Here \(S_u\) is the source seen by the compression/lapse variable \(u\).
+The reason is that \(u\) changes the local operational process rate, and the
+generator of local process-rate change is the Hamiltonian density.  Thus the
+common pressure channel should read \(\rho_E=\mathcal H_{\rm phys}\), not a
+species-private tail detail.
+
 Species-specific tail structure may remain in $K_{AB}$ or internal sectors:
 \[
 \boxed{
@@ -461,6 +503,23 @@ Status:
 \text{open theorem / projection gate, not yet derived from oscillon dynamics.}
 }
 \]
+
+\begin{openthm}[Lapse/compression source theorem]
+Derive from the base-medium effective action that the universal source of
+the compression/lapse variable \(u\) is the physical Hamiltonian density:
+\[
+\boxed{
+-\frac{1}{\sqrt h}\frac{\delta S_{\rm eff}}{\delta u(x)}
+=
+\chi\,\mathcal H_{\rm phys}(x)
+=
+\chi\,\rho_E(x)
+}
+\]
+up to gauge terms, internal divergences or suppressed corrections.  If an
+unsuppressed species-private source term remains, the equivalence-principle
+source gate fails.
+\end{openthm}
 
 \section{Delta-M Candidate Theorem}
 
@@ -774,6 +833,9 @@ tested core.
 \text{common carrier/principal cone for record-forming tails} & \text{Open theorem / core gate} \\
 \text{tail projection }\Pi_{\rm grav}(T_A)=q_A\mathcal G & \text{Open theorem / projection gate} \\
 q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
+\text{far-tail monopole }Q_A^{(0)}=\eta E_A/c^2 & \text{Open theorem / source gate} \\
+\sigma_{\rm grav}\propto\rho_E/c^2 & \text{Open theorem / source density} \\
+\text{lapse source }-\delta S_{\rm eff}/\delta u\propto\rho_E & \text{Open theorem / Hamiltonian source gate} \\
 \text{internal/binding energy sources the composite tail} & \text{Required source universality} \\
 \text{factorization }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB} & \text{Open theorem / core gate} \\
 \text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{Required; protection still to prove} \\
@@ -814,6 +876,12 @@ Still open:
 \]
 \[
 \text{derive the universal gravitational tail projection }q_A\propto E_A/c^2,
+\]
+\[
+\text{derive the far-tail monopole/source density }Q_A^{(0)}=\eta E_A/c^2,
+\]
+\[
+\text{derive the lapse/compression source }-\delta S_{\rm eff}/\delta u\propto\rho_E,
 \]
 \[
 \text{derive reciprocal clock/rod scaling from }\mathcal M,
