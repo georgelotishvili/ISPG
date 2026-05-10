@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 1.3
+% Internal core draft, version 1.4
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -14,6 +14,7 @@
 % RMG-ORC
 % RMG-FACTORIZATION-GATE
 % RMG-ONE-KINETIC-KERNEL
+% RMG-DELTA-M-GATE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -33,7 +34,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 1.3\\
+Internal core draft, version 1.4\\
 2026-05-10
 \end{center}
 
@@ -194,6 +195,13 @@ B_{AB}^{\mu\nu}
 \]
 is the non-factorizing failure matrix.  It must vanish on physical low-energy
 principal modes, up to gauge, internal or suppressed correction terms.
+
+\[
+\Delta_{\mathcal M}
+\]
+is the residual medium contribution to the low-energy Hamiltonian/constraint
+algebra after the ADM/EH target terms are separated.  The tested core requires
+$\Delta_{\mathcal M}=0$, or suppression outside all tested regimes.
 
 \section{Primitive Postulates}
 
@@ -653,6 +661,7 @@ tested core.
 \text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
 \text{factorization }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB} & \text{Open theorem / core gate} \\
 \text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{Required; protection still to prove} \\
+\Delta_{\mathcal M}=0 & \text{Required ADM/EH closure gate; open from }\mathcal M \\
 \text{universal operational factor }s & \text{Working assumption / open theorem} \\
 \text{reciprocal clock/rod response} & \text{Working assumption} \\
 c_{\rm coord}/c=s^2 & \text{Derived result} \\
@@ -691,6 +700,9 @@ Still open:
 \]
 \[
 \text{derive the Hamiltonian source coefficient }G,
+\]
+\[
+\text{prove the residual medium term }\Delta_{\mathcal M}\text{ vanishes or is suppressed},
 \]
 \[
 \text{derive scalar/vector constraints and tensor/shear radiation},
@@ -739,6 +751,12 @@ $B_{AB}^{\mu\nu}$ produces species-dependent cones, a preferred-frame tensor, or
 a geometry cone different from the matter cone.
 \end{gate}
 
+\begin{gate}[Medium-residue fail]
+RMG fails in the tested local core if $\Delta_{\mathcal M}$ leaves an
+unsuppressed preferred-frame term, extra operational tensor, non-ADM constraint
+bracket, or low-energy scalar/vector propagating degree of freedom.
+\end{gate}
+
 \section*{Current Status}
 
 \[
@@ -755,6 +773,8 @@ Main theorem to prove:
 \text{exact ORC/no-extra-tensor}
 \Rightarrow
 Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}
+\Rightarrow
+\Delta_{\mathcal M}=0
 \Rightarrow
 \text{ADM/Einstein-Hilbert low-energy fixed point}.
 }
