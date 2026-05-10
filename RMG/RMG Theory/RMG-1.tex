@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 3.1
+% Internal core draft, version 3.6
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -37,6 +37,18 @@
 % RMG-STABLE-TAIL-COMMON-CARRIER
 % RMG-ONE-TENSOR-FACTORIZATION
 % RMG-NONCOMMON-MODE-ELIMINATION
+% RMG-OBSERVABLE-TENSOR-BASIS
+% RMG-PREFERRED-FRAME-TENSOR-GATE
+% RMG-LOCAL-FLOW-DECOUPLING
+% RMG-PPN-PREFERRED-FRAME-NULL
+% RMG-CONSTRAINT-PROTECTION
+% RMG-TWO-TENSOR-DOF
+% RMG-HYPERSURFACE-DEFORMATION-CLOSURE
+% RMG-DEWITT-LAMBDA-GATE
+% RMG-EH-FIXED-POINT-CONDITIONAL
+% RMG-MATTER-COUPLED-CLOSURE
+% RMG-SPECIES-PRIVATE-SOURCE-GATE
+% RMG-INTERNAL-ENERGY-EFFACEMENT
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -56,7 +68,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 3.1\\
+Internal core draft, version 3.6\\
 2026-05-10
 \end{center}
 
@@ -534,6 +546,43 @@ an open lemma: RMG must still derive the one-observable-tensor premise from the
 base medium.
 \end{openthm}
 
+\begin{gate}[Observable tensor basis gate]
+In the tested local record core, the physical principal symbol must contain no
+unsuppressed observable rank-two tensor other than the common record tensor
+\(G^{\mu\nu}\).  Equivalently, any decomposition
+\[
+\boxed{
+Q_{AB}^{\mu\nu}
+=
+G^{\mu\nu}K_{AB}
++
+B_{AB}^{\mu\nu}
+}
+\]
+must satisfy
+\[
+\boxed{
+\Pi_{\mathcal R}B_{AB}^{\mu\nu}\Pi_{\mathcal R}=0
+}
+\]
+at leading principal order, except for gauge, constraint, internal/confined,
+gapped, damped, unstable, high-energy suppressed or explicitly large-scale
+correction sectors.  Forbidden local-core pieces include unsuppressed
+\[
+\boxed{
+U^\mu U^\nu,\quad
+v^\mu v^\nu,\quad
+\sigma^{\mu\nu},\quad
+\omega^\mu{}_\alpha\omega^{\alpha\nu},\quad
+\nabla^\mu u\nabla^\nu u,\quad
+S_A^{\mu\nu}.
+}
+\]
+If any such tensor survives in physical record propagation, RMG predicts a
+preferred frame, anisotropic cone, species-private metric or birefringence.
+This gate is open from \(\mathcal M\).
+\end{gate}
+
 \begin{openthm}[Master gate: no-birefringent record carrier]
 The master local-core gate is:
 \[
@@ -763,6 +812,57 @@ the compression/lapse variable \(u\) is the physical Hamiltonian density:
 up to gauge terms, internal divergences or suppressed corrections.  If an
 unsuppressed species-private source term remains, the equivalence-principle
 source gate fails.
+\end{openthm}
+
+\begin{openthm}[Matter-coupled closure and source universality]
+Vacuum ADM closure is not enough.  The matter-coupled constraints must close:
+\[
+\boxed{
+\mathcal H_{\rm tot}
+=
+\mathcal H_{\rm grav}
++
+\mathcal H_{\rm matter}
+\approx0,
+\qquad
+\mathcal H_{i,\rm tot}
+=
+\mathcal H_{i,\rm grav}
++
+\mathcal H_{i,\rm matter}
+\approx0.
+}
+\]
+The closure target is:
+\[
+\boxed{
+\{H_{\rm tot}[N],H_{\rm tot}[M]\}
+=
+D_{\rm tot}\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right].
+}
+\]
+This requires stable matter families to use the same record metric and the
+same total-energy source:
+\[
+\boxed{
+S_{\rm matter}=S_{\rm matter}[g,\Psi],
+\qquad
+S_u=\rho_E.
+}
+\]
+No unsuppressed species-private gravitational source may remain:
+\[
+\boxed{
+\rho_{\rm grav}
+\neq
+\rho_E+\sigma_{\rm species}
+\quad
+\text{with }\sigma_{\rm species}\text{ physical and unsuppressed}.
+}
+\]
+Internal/confined modes, including binding and gluon-like internal energy,
+must contribute to \(E_{\rm total}\) while not defining an independent external
+spacetime carrier.  This gate is open from \(\mathcal M\).
 \end{openthm}
 
 For the ADM matter action
@@ -999,6 +1099,46 @@ Vacuum:
 \right)h_{ij}^{TT}=0.
 \]
 
+\begin{openthm}[Constraint protection route]
+Derive from the base-medium that the local low-energy variables enter in
+ADM-like form:
+\[
+\boxed{
+S_{\rm local}
+=
+\int dt\,d^3x
+\left(
+\pi^{ij}\dot h_{ij}
+-
+N\mathcal H
+-
+N^i\mathcal H_i
+\right)
+}
+\]
+with no independent low-energy kinetic terms
+\[
+\boxed{
+\dot N^2,\qquad
+\dot N_i\dot N^i,\qquad
+\dot u^2,\qquad
+\dot{\mathcal A}_i\dot{\mathcal A}^i
+}
+\]
+for physical scalar/vector gravitational variables.  If \(N\) and \(N^i\)
+impose first-class Hamiltonian and momentum constraints which close under time
+evolution, then \(u\) and local flow/shift variables are constraint/gauge or
+near-zone variables, not independent radiation.  The vacuum gravitational
+record sector then has only
+\[
+\boxed{
+h_+,\qquad h_\times
+}
+\]
+as physical propagating modes.  This is the local mechanism behind flow
+decoupling and the preferred-frame null target.
+\end{openthm}
+
 \section{ADM/EH Fixed Point}
 
 \begin{target}[Safe nonlinear completion]
@@ -1059,6 +1199,49 @@ Derive from the base-medium:
 S_{\rm EH}+S_{\rm matter}.
 }
 \]
+\end{openthm}
+
+\begin{openthm}[Hypersurface-deformation closure filter]
+The local Hamiltonian constraint must pass the ADM deformation-algebra filter.
+For the two-derivative ansatz
+\[
+\boxed{
+\mathcal H
+=
+\frac{1}{\sqrt h}
+\left(
+\pi^{ij}\pi_{ij}-\lambda\pi^2
+\right)
+-
+\sqrt h(\alpha R-2\Lambda)
++
+\Delta_{\mathcal M},
+}
+\]
+the target bracket is:
+\[
+\boxed{
+\{H[N],H[M]\}
+=
+D\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right].
+}
+\]
+This filter requires, in the protected local core:
+\[
+\boxed{
+\lambda=\frac12,
+\qquad
+\Delta_{\mathcal M}=0
+\quad
+\text{or constrained/gauge/suppressed},
+}
+\]
+and no unsuppressed higher-derivative curvature terms at the tested
+two-derivative fixed point.  If this closure filter is derived from
+\(\mathcal M\), then the trace/volume sign in the DeWitt supermetric is a
+constraint direction, not a propagating phantom scalar, and the safe
+low-energy fixed point is \(S_{\rm EH}+S_{\rm matter}\) up to suppressed
+corrections.
 \end{openthm}
 
 This is the central theorem of RMG.  It is not yet proven in RMG-1.
@@ -1123,6 +1306,40 @@ The correction must satisfy:
 \]
 while it may become nonzero in galactic low-acceleration or cosmological
 background regimes.
+\end{gate}
+
+\begin{gate}[Local flow decoupling]
+In the tested local core, medium flow and vorticity may enter only as
+constraint, shift, near-zone or lower-order transport data.  They must not
+modify the physical record-sector principal tensor:
+\[
+\boxed{
+\Delta P_A^{\rm local}(k)
+\not\supset
+\alpha_A v^\mu v^\nu k_\mu k_\nu
+\quad
+\text{for external record-forming }A.
+}
+\]
+Equivalently, the preferred-frame PPN target is:
+\[
+\boxed{
+\alpha_1=\alpha_2=\alpha_3=0
+\quad
+\text{at the GR/local fixed point}.
+}
+\]
+Large-scale medium corrections are allowed only through a reentry function
+\(\mathcal F\) satisfying:
+\[
+\boxed{
+\mathcal F\to0
+\quad
+\text{in lab, Solar-System, binary-pulsar and local GW regimes}.
+}
+\]
+This gate is open from \(\mathcal M\); if it fails, flow/vorticity becomes an
+observable preferred frame.
 \end{gate}
 
 \begin{openthm}[MOND-safe reentry]
@@ -1237,7 +1454,16 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{diverse tails in one base-medium} & \text{Allowed internal/species structure} \\
 \mathcal R\text{ record sector} & \text{Definition / projection still open from }\mathcal M \\
 \mathcal I\text{ internal sector} & \text{Definition; contributes energy, not external cone} \\
+\text{constraint protection route} & \text{Open theorem; scalar/vector no-radiation route} \\
+\text{two tensor gravitational DOF} & \text{Target if first-class constraints close} \\
+\text{hypersurface-deformation closure filter} & \text{Open ADM algebra gate} \\
+\text{DeWitt }\lambda=1/2 & \text{Selected by closure filter; open from }\mathcal M \\
+\text{EH fixed point} & \text{Conditional if ADM closure closes} \\
+\text{matter-coupled closure} & \text{Open theorem; equivalence-principle gate} \\
+\text{species-private source }\sigma_{\rm species}=0 & \text{Required source universality} \\
+\text{internal energy effacement} & \text{Required; energy gravitates without extra cone} \\
 \text{flow/vorticity local role} & \text{Constraint/near-zone only in tested core} \\
+\text{local flow decoupling} & \text{Open gate; preferred-frame null target} \\
 \text{MOND-safe reentry} & \text{Open large-scale correction gate} \\
 \text{strong-field compact-object branch} & \text{Open contract; branch not selected} \\
 \text{hybrid compact projection} & \text{Open theorem / strongest current program} \\
@@ -1245,6 +1471,8 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{stable-tail common-carrier route} & \text{Open proof route from oscillon stability} \\
 \text{one-tensor factorization lemma} & \text{Open lemma / exact proof target} \\
 \text{non-common mode elimination} & \text{Required projection/confinement theorem} \\
+\text{observable tensor basis} & \text{Open gate; forbid extra local principal tensors} \\
+\text{preferred-frame tensor elimination} & \text{Required local-core protection} \\
 \text{record-sector no-birefringence} & \text{Master protection principle / open from }\mathcal M \\
 \text{no physical low-energy birefringence} & \text{Master open theorem / factorization gate} \\
 \text{one cone }\Rightarrow\text{ one }s & \text{Consequence if master gate closes} \\
@@ -1265,7 +1493,7 @@ c_{\rm coord}/c=s^2 & \text{Derived result} \\
 s=e^{-u} & \text{Derived from layering} \\
 u(r)=GM/(rc^2) & \text{Derived in weak static sector} \\
 \gamma=1,\ \beta=1 & \text{Derived in weak field} \\
-\lambda=1/2 & \text{Closure-selected result in work notes} \\
+\lambda=1/2 & \text{Closure-selected; not yet derived from }\mathcal M \\
 \text{only two tensor GW modes} & \text{Low-energy target / open from }\mathcal M \\
 \text{ADM constraint closure} & \text{Main open theorem} \\
 \text{EH low-energy fixed point} & \text{Target / open from }\mathcal M
@@ -1296,6 +1524,15 @@ Still open:
 \text{derive non-common mode elimination: confined/gapped/damped/gauge/unstable},
 \]
 \[
+\text{prove the observable tensor basis gate in the tested local core},
+\]
+\[
+\text{eliminate unsuppressed }U^\mu U^\nu\text{ and flow/vorticity tensors locally},
+\]
+\[
+\text{derive local flow decoupling and preferred-frame PPN null behavior},
+\]
+\[
 \text{prove no physical low-energy birefringence in the record phase},
 \]
 \[
@@ -1312,6 +1549,15 @@ Still open:
 \]
 \[
 \text{derive universal matter coupling from microscopic modes},
+\]
+\[
+\text{derive matter-coupled ADM closure and }\nabla_\mu T^{\mu\nu}=0,
+\]
+\[
+\text{prove no unsuppressed species-private gravitational source remains},
+\]
+\[
+\text{prove internal/binding energy effaces into total energy and multipoles},
 \]
 \[
 \text{derive the universal gravitational tail projection }q_A\propto E_A/c^2,
@@ -1335,7 +1581,19 @@ Still open:
 \text{derive scalar/vector constraints and tensor/shear radiation},
 \]
 \[
+\text{derive lapse/shift no-kinetic structure from }\mathcal M,
+\]
+\[
+\text{prove first-class constraint closure removes scalar/vector radiation},
+\]
+\[
+\text{derive the hypersurface-deformation algebra from record embeddings},
+\]
+\[
 \text{derive the DeWitt coefficient }\lambda=1/2\text{ from the protected phase},
+\]
+\[
+\text{prove }\Delta_{\mathcal M}=0\text{ or constrained/gauge/suppressed in the closure filter},
 \]
 \[
 \text{derive ADM closure and Einstein-Hilbert fixed point},
