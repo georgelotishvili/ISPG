@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 5.2
+% Internal core draft, version 6.0
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -89,6 +89,10 @@
 % RMG-CANDIDATE-SM-FUNCTIONAL
 % RMG-CANDIDATE-SPECTRUM-AUDIT
 % RMG-TENSOR-GRAVITY-NOT-PHONON
+% RMG-COMPOSITE-RECORD-METRIC-MAP
+% RMG-SPIN2-EMERGENCE-GATE
+% RMG-GW-DETECTION-GATE
+% RMG-TENSOR-CLOSURE-REDUCTION
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -108,7 +112,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 5.2\\
+Internal core draft, version 6.0\\
 2026-05-10
 \end{center}
 
@@ -643,6 +647,11 @@ If this gate closes, then one operational cone, one universal clock factor
 \(s(x)\), the ADM lapse bridge \(N=s=e^{-u}\), the total-energy source gate
 and the compact internal-energy/no-external-cone split become linked
 consequences of the same record-sector protection.
+
+Here ``one common carrier'' means one shared base-medium vibration channel, not
+one elementary scalar field and not one tail substance per particle.  Different
+sources may imprint different local patterns on the same medium; the tested
+local core allows only one external record carrier/cone.
 \end{openthm}
 
 \begin{openthm}[Stable-tail common-carrier route]
@@ -663,11 +672,12 @@ G^{\mu\nu}k_\mu k_\nu
 \text{for all record-forming }A,
 }
 \]
-while \(\Pi_{\rm internal}T_A\) may carry species-specific frequency, phase,
+while \(\Pi_{\rm internal}T_A\) may carry source-specific frequency, phase,
 spin, charge, topology, multipoles and short-range structure, but must not
-define a separate external spacetime cone.  Modes whose tails cannot project
-onto the common carrier are internal, confined, gapped, constrained or
-non-record-forming.
+define a separate external spacetime cone.  \(T_A\) is a source imprint in the
+same base-medium vibration, not a separate long-range field assigned to species
+\(A\).  Modes whose tails cannot project onto the common carrier are internal,
+confined, gapped, constrained or non-record-forming.
 \end{openthm}
 
 \begin{openthm}[Universal operational factor from one cone]
@@ -706,13 +716,14 @@ up to suppressed corrections.  If this fails, the failure is the clock-level
 version of a nonzero \(B_{AB}^{\mu\nu}\).
 \end{openthm}
 
-This does not mean all particle tails are identical.  Different oscillons may
-produce different tail frequencies, phases, polarizations and internal
-geometries.  The factorization requirement says only that the spacetime carrier
-of their record-forming long tails is the same base-medium channel:
+This does not mean all particle tail imprints are identical.  Different
+oscillons may excite the same base-medium with different local frequencies,
+phases, polarizations and internal geometries.  The factorization requirement
+says only that the external record carrier of their long-range tails is the
+same base-medium vibration channel:
 \[
 \boxed{
-\text{diverse tails, one base-medium, one operational principal cone}.
+\text{diverse local imprints, one base-medium, one operational principal cone}.
 }
 \]
 
@@ -742,15 +753,18 @@ Status:
 
 \section{Tail Superposition And Projection Gate}
 
-Different oscillons may produce different long tails.  Gravity does not read
-the full microscopic tail.  It reads the common pressure/refraction projection:
+Different oscillons may produce different local tail imprints in the same
+base-medium.  Gravity does not read the full microscopic imprint.  It reads the
+common pressure/refraction projection:
 \[
 \boxed{
 \Pi_{\rm grav}(T_A)=q_A\mathcal G.
 }
 \]
-Here $T_A$ is the tail of particle family $A$, $\mathcal G$ is the common
-base-medium pressure carrier, and $q_A$ is the pressure-deficit strength.
+Here $T_A$ is the source imprint associated with particle family $A$,
+\(\mathcal G\) is the common base-medium pressure carrier, and \(q_A\) is the
+pressure-deficit strength.  \(T_A\) must not be read as a separate long-range
+field or separate spacetime channel.
 
 \begin{openthm}[Universal gravitational projection]
 For all stable low-energy record-forming matter modes, derive:
@@ -1139,6 +1153,42 @@ Vacuum:
 \right)h_{ij}^{TT}=0.
 \]
 
+\begin{gate}[GW detection: common-mode cancellation versus shear signal]
+The scalar/compression channel \(u\) is not automatically an interferometer
+signal.  A uniform or adiabatic compression/breathing of the local record
+system rescales the apparatus, clock, ruler and light standard together.
+Therefore the local Michelson-like difference channel must project out the
+pure common-mode part:
+\[
+\boxed{
+\Pi_{\rm det}\,\delta g_{\rm common}=0.
+}
+\]
+
+The detector-visible gravitational-wave channel must instead be a differential
+record deformation:
+\[
+\boxed{
+\Pi_{\rm det}\,\delta g_{\rm rec}
+=
+\Pi_{TT}\,\delta g_{\rm rec}
++
+\Pi_{\mathrm{shear/defect}}\,\delta u_{\rm noncommon}.
+}
+\]
+The first term is the protected tensor/shear sector \(h_{ij}^{TT}\).  The
+second term is allowed only as a controlled conversion of breathing/compression
+into detector-visible shear, tidal or symmetry-defect response.  It must not
+survive as an unsuppressed local scalar radiation mode.
+
+This gate is the RMG version of the Michelson--Morley lesson: a local apparatus
+cannot detect a pure uniform rescaling of the same medium from which it is
+made, but it can detect anisotropic or differential record deformation.  Thus
+RMG must explain observed gravitational-wave signals through protected
+TT/shear response, or through a suppressed noncommon conversion channel, never
+through a pure common-mode scalar breathing alone.
+\end{gate}
+
 \begin{openthm}[Constraint protection route]
 Derive from the base-medium that the local low-energy variables enter in
 ADM-like form:
@@ -1294,7 +1344,7 @@ Derive from the base-medium stable record phase:
 \boxed{
 \text{stable external record-forming mode}
 \Rightarrow
-\text{one common gapless long-tail carrier}.
+\text{one common external long-tail carrier channel}.
 }
 \]
 All non-common branches must be internal, confined, gapped, damped,
@@ -1327,11 +1377,14 @@ The required split is:
 \cup
 {\cal B}_{\rm int},
 \qquad
-\dim{\cal B}_{\rm rec}^{\rm gapless}=1
+N_{\rm cone}({\cal B}_{\rm rec}^{\rm gapless})=1
 }
 \]
-as an external record carrier.  Stable record-forming tails must phase-lock to
-the base-medium rhythm \(\nu_0\) or its allowed harmonic channel:
+as one external record carrier channel.  This is a one-common-carrier condition,
+not a one-scalar-mode condition.  The common channel may contain shared
+polarization, shear or tensor patterns, but it must not split into
+species-private external carriers.  Stable record-forming tail imprints must
+phase-lock to the base-medium rhythm \(\nu_0\) or its allowed harmonic channel:
 \[
 \boxed{
 \Pi_{\rm rec}T_A^{\rm long}
@@ -2146,10 +2199,10 @@ The spectral target is
 =
 \mathcal B_{\rm rec}\cup\mathcal B_{\rm int},
 \qquad
-\dim\mathcal B_{\rm rec}^{\rm gapless}=1
+N_{\rm cone}(\mathcal B_{\rm rec}^{\rm gapless})=1
 }
 \]
-as the external record branch.  The projectors must be built from
+as one external record carrier/cone, not one scalar field.  The projectors must be built from
 observability and spectrum, not by assuming GR:
 \[
 \boxed{
@@ -2247,11 +2300,13 @@ n=n_0+\delta n,
 The Root A spectral target is still
 \[
 \boxed{
-\dim\mathcal B_{\rm rec}^{\rm gapless}=1.
+N_{\rm cone}(\mathcal B_{\rm rec}^{\rm gapless})=1.
 }
 \]
-The bookkeeping parameter \(\tau\), any preferred flow, and any extra gapless
-branch must not survive as local observables in \(S_{\rm eff}^{\rm rec}\).
+This means one observable external carrier/cone, not one scalar excitation.
+The bookkeeping parameter \(\tau\), any preferred flow, and any extra observable
+carrier branch must not survive as local observables in
+\(S_{\rm eff}^{\rm rec}\).
 The long compression variable \(u\) should arise from a pressure/density
 deficit, for example \(u\sim-\delta\ln n\), and its weak static equation must be
 constraint-like:
@@ -2300,8 +2355,8 @@ The desired Root A pattern is:
 \text{sector} & \text{required low-energy status}\\
 \hline
 \eta & \text{gapped, constrained, near-zone or suppressed}\\
-\vartheta & \text{one gapless phase/acoustic record-cone candidate}\\
-\xi & \text{internal/confined/gauge/gapped/suppressed or shared-cone matter}\\
+\vartheta & \text{common rhythm/cone variable, not by itself the graviton}\\
+\xi & \text{internal/confined/gauge/gapped/suppressed or shared-cone shear/matter}\\
 S_{\rm mix} & \text{renormalization only; no extra cone}
 \end{array}
 }
@@ -2339,6 +2394,92 @@ mode is not a long-range scalar gravity mode, internal modes do not leak extra
 cones, the acoustic cone is universal for record matter, and the tensor sector
 is derived by Root B rather than assumed.
 \end{openthm}
+
+\begin{openthm}[Composite record metric and spin-2 emergence gate]
+The record metric must be a composite response of the base medium:
+\[
+\boxed{
+g_{\rm rec}^{\mu\nu}
+=
+{\cal G}^{\mu\nu}[\Phi_{\mathcal M}],
+\qquad
+g_{\rm rec}^{\mu\nu}
+=
+\bar g^{\mu\nu}+\delta g_{\rm rec}^{\mu\nu}.
+}
+\]
+The phase/acoustic branch may define the common cone, but the gravitational
+field is the low-energy dynamics of the composite record geometry, not simply
+the scalar phase \(\vartheta\):
+\[
+\boxed{
+\delta g_{\rm rec}^{\mu\nu}
+=
+\frac{\delta{\cal G}^{\mu\nu}}{\delta\Phi_{\mathcal M}}
+\delta\Phi_{\mathcal M}
++\cdots.
+}
+\]
+In spatial language,
+\[
+\boxed{
+\delta h_{ij}
+=
+h_{ij}^{TT}
++\partial_iV_j+\partial_jV_i
++\left(\partial_i\partial_j-\frac13\delta_{ij}\nabla^2\right)B
++\frac13\delta_{ij}H.
+}
+\]
+Root B must make the scalar and vector pieces constraint, gauge or near-zone,
+leaving only
+\[
+\boxed{
+h_{ij}^{TT}
+}
+\]
+as propagating vacuum gravitational data:
+\[
+\boxed{
+\#({\rm propagating\ vacuum\ gravitational\ DOF})=2.
+}
+\]
+Possible microscopic sources of this tensor/shear sector are anisotropic
+stress/strain of \(\chi\), collective deformation of the record propagation
+kernel \(G^{\mu\nu}\), topological/oscillon-network elasticity, or emergent
+embedding geometry after quotienting record histories.  None may create a
+second long-range matter cone or private spacetime.  Thus:
+\[
+\boxed{
+\text{acoustic cone = kinematics},
+\qquad
+\text{ADM closure = gravitational dynamics}.
+}
+\]
+If the candidate supplies only a scalar acoustic mode, it fails the spin-2
+gate.
+\end{openthm}
+
+\begin{gate}[Tensor-closure reduction]
+The spin-2 issue is not closed in RMG-1.  It is reduced to a finite
+calculation on the candidate record action.  The candidate may pass only if the
+record-visible \(\chi\)-strain has a transverse-traceless projection and its
+quadratic kinetic matrix has exactly two positive, luminal, common-cone
+radiative modes.  Equivalently:
+\[
+\boxed{
+\text{candidate tensor closure}
+\Longleftrightarrow
+\mathrm{rank}\,K_{\chi{\rm -strain}}=2
+\text{ on the physical record sector}.
+}
+\]
+Rank zero means no tensor gravity; rank greater than two means extra local
+shear/scalar/vector radiation; a wrong sign, mass term, or different cone also
+fails.  The detailed proof attempt and projector algebra belong in the work
+dossier, not in the core file, until the kinetic-rank test is actually
+derived from \(S_{\mathcal M}\) or \(S_{\rm eff}^{\rm rec}\).
+\end{gate}
 
 This is the central theorem of RMG.  It is not yet proven in RMG-1.
 
@@ -2547,10 +2688,10 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{positive physical energy} & \text{Primitive postulate} \\
 \text{local effective hierarchy} & \text{Primitive EFT condition} \\
 \text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
-\text{diverse tails in one base-medium} & \text{Allowed internal/species structure} \\
+\text{diverse local tail imprints in one base-medium} & \text{Allowed internal/species structure} \\
 \mathcal R\text{ record sector} & \text{Definition / projection still open from }\mathcal M \\
 \mathcal I\text{ internal sector} & \text{Definition; contributes energy, not external cone} \\
-\text{Root A: one external record carrier} & \text{Root open theorem} \\
+\text{Root A: one external record carrier channel} & \text{Root open theorem} \\
 \text{Root A spectral/resonance closure} & \text{Open calculation; one gapless branch} \\
 \text{Root B: record-embedding ADM closure} & \text{Root open theorem} \\
 \text{Root B embedding/symplectic closure} & \text{Open calculation; null directions }\Rightarrow\text{ HDA} \\
@@ -2568,9 +2709,13 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{minimal base-medium input package }\mathcal D_{\mathcal M} & \text{Required before microscopic proof} \\
 \text{candidate base-medium order parameter }\sqrt n e^{i\theta}\chi & \text{Test ansatz; not proof} \\
 \text{candidate stable-phase spectrum audit} & \text{Phase cone candidate; tensor gravity still Root B} \\
+\text{composite record metric/spin-2 gate} & \text{Requires }\delta g_{\rm rec}\text{ with protected TT sector} \\
+\text{tensor-closure reduction} & \text{Open finite test: }\mathrm{rank}\,K_{\chi{\rm -strain}}=2 \\
 \text{local gravity core closure package} & \text{Conditional on Roots A--C} \\
 \text{constraint protection route} & \text{Open theorem; scalar/vector no-radiation route} \\
 \text{two tensor gravitational DOF} & \text{Target if first-class constraints close} \\
+\text{GW common-mode self-calibration} & \text{Protection principle / Michelson--Morley analogue} \\
+\text{GW detector-signal gate} & \text{Open theorem; observable signal must be TT/shear/defect} \\
 \text{hypersurface-deformation closure filter} & \text{Open ADM algebra gate} \\
 \text{DeWitt }\lambda=1/2 & \text{Selected by closure filter; open from }\mathcal M \\
 \text{EH fixed point} & \text{Conditional if ADM closure closes} \\
@@ -2582,7 +2727,7 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{MOND-safe reentry} & \text{Open large-scale correction gate} \\
 \text{strong-field compact-object branch} & \text{Open contract; branch not selected} \\
 \text{hybrid compact projection} & \text{Open theorem / strongest current program} \\
-\text{common carrier/principal cone for record-forming tails} & \text{Master open theorem / core gate} \\
+\text{common carrier/principal cone for record-forming imprints} & \text{Master open theorem / core gate} \\
 \text{stable-tail common-carrier route} & \text{Open proof route from oscillon stability} \\
 \text{one-tensor factorization lemma} & \text{Open lemma / exact proof target} \\
 \text{non-common mode elimination} & \text{Required projection/confinement theorem} \\
@@ -2634,6 +2779,15 @@ Still open:
 \]
 \[
 \text{prove the phase/acoustic branch gives only the common cone, not a scalar graviton},
+\]
+\[
+\text{derive the composite map }g_{\rm rec}^{\mu\nu}={\cal G}^{\mu\nu}[\Phi_{\mathcal M}],
+\]
+\[
+\text{prove }\delta g_{\rm rec}\text{ contains a protected }h_{ij}^{TT}\text{ sector},
+\]
+\[
+\text{close the tensor kinetic-rank test: exactly two positive luminal TT modes and no extra tensor/scalar/vector radiation},
 \]
 \[
 \text{prove amplitude/internal modes are gapped, constrained, gauge, confined or suppressed},
@@ -2813,6 +2967,12 @@ Still open:
 \text{derive lapse/shift no-kinetic structure from }\mathcal M,
 \]
 \[
+\text{prove pure common-mode breathing is locally self-calibrated and detector-null},
+\]
+\[
+\text{derive the detector-visible TT/shear or defect projection for GW signals},
+\]
+\[
 \text{prove first-class constraint closure removes scalar/vector radiation},
 \]
 \[
@@ -2857,6 +3017,21 @@ RMG fails if the base-medium produces an observable local preferred frame,
 species-dependent metric coupling, extra scalar/vector radiation, wrong
 gravitational-wave speed, negative-energy physical modes, or non-closing ADM
 constraints.
+\end{gate}
+
+\begin{gate}[GW detection fail]
+RMG fails in the tested local gravitational-wave sector if observed
+interferometer signals are explained only by a pure common-mode scalar
+breathing that should be self-calibrated away, if an unsuppressed
+breathing/scalar polarization survives local polarization tests, or if no
+protected differential TT/shear record signal is produced.
+\end{gate}
+
+\begin{gate}[Tensor-closure fail]
+RMG fails in the tested local tensor sector if the candidate record dynamics
+does not produce exactly two positive, luminal, common-cone TT modes, or if it
+leaves an unsuppressed scalar/vector, massive spin-2, negative-energy, or
+extra shear radiation channel.
 \end{gate}
 
 \begin{gate}[Preferred-frame fail]
