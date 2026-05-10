@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 2.1
+% Internal core draft, version 2.4
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -22,6 +22,9 @@
 % RMG-TOTAL-ENERGY-SOURCE-GATE
 % RMG-FAR-TAIL-MONOPOLE-GATE
 % RMG-LAPSE-COMPRESSION-SOURCE-GATE
+% RMG-ADM-LAPSE-SOURCE-CHECK
+% RMG-LAPSE-BRIDGE
+% RMG-UNIVERSAL-S-GATE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -41,7 +44,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 2.1\\
+Internal core draft, version 2.4\\
 2026-05-10
 \end{center}
 
@@ -334,6 +337,25 @@ s=e^{-u}.
 \]
 \end{result}
 
+\begin{result}[ADM lapse identification]
+For a normal ADM observer with zero shift displacement,
+\[
+d\tau=Ndt.
+\]
+The RMG bridge clock response gives:
+\[
+d\tau=sdt.
+\]
+Therefore, inside the operational bridge,
+\[
+\boxed{
+N=s=e^{-u}.
+}
+\]
+The remaining microscopic burden is to derive the universal factor \(s\) and
+the exponential layering from \(\mathcal M\).
+\end{result}
+
 \begin{result}[Weak operational metric]
 The bridge metric is:
 \[
@@ -369,6 +391,42 @@ Then all physical low-energy modes share one principal metric:
 G^{\mu\nu}=g_{\rm eff}^{\mu\nu}.
 }
 \]
+\end{openthm}
+
+\begin{openthm}[Universal operational factor from one cone]
+For a clock family \(A\), write:
+\[
+d\tau_A=s_A(x)dt.
+\]
+If the one-kernel factorization gate holds, then all record-forming clock
+families read the same spacetime kernel \(G^{\mu\nu}\).  Hence:
+\[
+\boxed{
+s_A(x)=C_A\,s(x)\,[1+\epsilon_A(x)].
+}
+\]
+Here \(C_A\) is a constant internal clock calibration, while
+\(\epsilon_A(x)\) is the dangerous species-dependent environmental response.
+The tested core requires:
+\[
+\boxed{
+\epsilon_A(x)=0
+}
+\]
+or suppression outside tested regimes.  After constant calibration,
+\[
+\boxed{
+s_A(x)=s_B(x)=s(x).
+}
+\]
+Equivalently,
+\[
+\boxed{
+\nabla_\mu\ln\frac{s_A}{s_B}=0
+}
+\]
+up to suppressed corrections.  If this fails, the failure is the clock-level
+version of a nonzero \(B_{AB}^{\mu\nu}\).
 \end{openthm}
 
 This does not mean all particle tails are identical.  Different oscillons may
@@ -477,9 +535,9 @@ The sharper source theorem target is:
 \boxed{
 S_u(x)
 :=
--\frac{1}{\sqrt h}\frac{\delta S_{\rm eff}}{\delta u(x)}
+\frac{1}{N\sqrt h}\frac{\delta S_{\rm m}}{\delta u(x)}
 =
-\chi\,\rho_E(x)
+\rho_E(x)
 +\hbox{suppressed corrections}.
 }
 \]
@@ -509,17 +567,46 @@ Derive from the base-medium effective action that the universal source of
 the compression/lapse variable \(u\) is the physical Hamiltonian density:
 \[
 \boxed{
--\frac{1}{\sqrt h}\frac{\delta S_{\rm eff}}{\delta u(x)}
+\frac{1}{N\sqrt h}\frac{\delta S_{\rm m}}{\delta u(x)}
 =
-\chi\,\mathcal H_{\rm phys}(x)
-=
-\chi\,\rho_E(x)
+\rho_E(x)
 }
 \]
 up to gauge terms, internal divergences or suppressed corrections.  If an
 unsuppressed species-private source term remains, the equivalence-principle
 source gate fails.
 \end{openthm}
+
+For the ADM matter action
+\[
+\boxed{
+S_{\rm m}
+=
+\int dt\,d^3x\,
+\left(
+\pi_A\dot\psi_A
+-N\mathcal H_{\rm m}
+-N^i\mathcal H_i
+\right),
+\qquad
+N=e^{-u},
+}
+\]
+variation at fixed \(h_{ij}\) gives
+\[
+\boxed{
+\delta_u S_{\rm m}
+=
+\int dt\,d^3x\,N\mathcal H_{\rm m}\,\delta u,
+\qquad
+\frac{1}{N\sqrt h}\frac{\delta S_{\rm m}}{\delta u}
+=
+\rho_E.
+}
+\]
+Thus the low-energy ADM bridge already identifies the \(u\)-source with the
+Hamiltonian density.  The remaining RMG burden is to derive \(N=e^{-u}\) and
+the universal ADM bridge from the base-medium.
 
 \section{Delta-M Candidate Theorem}
 
@@ -831,11 +918,13 @@ tested core.
 \text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
 \text{diverse tails in one base-medium} & \text{Allowed internal/species structure} \\
 \text{common carrier/principal cone for record-forming tails} & \text{Open theorem / core gate} \\
+\text{one cone }\Rightarrow\text{ one }s & \text{Open theorem / clock-universality gate} \\
 \text{tail projection }\Pi_{\rm grav}(T_A)=q_A\mathcal G & \text{Open theorem / projection gate} \\
 q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
 \text{far-tail monopole }Q_A^{(0)}=\eta E_A/c^2 & \text{Open theorem / source gate} \\
 \sigma_{\rm grav}\propto\rho_E/c^2 & \text{Open theorem / source density} \\
-\text{lapse source }-\delta S_{\rm eff}/\delta u\propto\rho_E & \text{Open theorem / Hamiltonian source gate} \\
+\text{ADM lapse bridge }N=s=e^{-u} & \text{Derived inside bridge; }s\text{ open from }\mathcal M \\
+\text{lapse source }\delta S_{\rm m}/\delta u\propto\rho_E & \text{ADM bridge result; }s\text{ open from }\mathcal M \\
 \text{internal/binding energy sources the composite tail} & \text{Required source universality} \\
 \text{factorization }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB} & \text{Open theorem / core gate} \\
 \text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{Required; protection still to prove} \\
@@ -869,6 +958,9 @@ Still open:
 \text{derive the factorization gate }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB},
 \]
 \[
+\text{derive one-cone clock universality }s_A/s_B=\text{constant},
+\]
+\[
 \text{prove the failure matrix }B_{AB}^{\mu\nu}\text{ vanishes on physical principal modes},
 \]
 \[
@@ -881,7 +973,7 @@ Still open:
 \text{derive the far-tail monopole/source density }Q_A^{(0)}=\eta E_A/c^2,
 \]
 \[
-\text{derive the lapse/compression source }-\delta S_{\rm eff}/\delta u\propto\rho_E,
+\text{derive the universal operational factor }s\text{ from }\mathcal M,
 \]
 \[
 \text{derive reciprocal clock/rod scaling from }\mathcal M,
