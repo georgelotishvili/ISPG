@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 1.7
+% Internal core draft, version 1.8
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -18,6 +18,7 @@
 % RMG-DELTA-M-CANDIDATE-THEOREM
 % RMG-UNIVERSAL-PRINCIPAL-RESPONSE
 % RMG-DIVERSE-TAILS-ONE-MEDIUM
+% RMG-TAIL-SUPERPOSITION-GATE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -37,7 +38,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 1.7\\
+Internal core draft, version 1.8\\
 2026-05-10
 \end{center}
 
@@ -401,6 +402,51 @@ Status:
 }
 \]
 
+\section{Tail Superposition And Projection Gate}
+
+Different oscillons may produce different long tails.  Gravity does not read
+the full microscopic tail.  It reads the common pressure/refraction projection:
+\[
+\boxed{
+\Pi_{\rm grav}(T_A)=q_A\mathcal G.
+}
+\]
+Here $T_A$ is the tail of particle family $A$, $\mathcal G$ is the common
+base-medium pressure carrier, and $q_A$ is the pressure-deficit strength.
+
+\begin{openthm}[Universal gravitational projection]
+For all stable low-energy record-forming matter modes, derive:
+\[
+\boxed{
+q_A\propto E_A/c^2.
+}
+\]
+Then many different tails source one pressure profile:
+\[
+\boxed{
+u(\mathbf x)=\sum_i u_i(\mathbf x),
+\qquad
+\nabla^2u\sim-\rho_E
+}
+\]
+in the weak-field regime, and the same $u$ determines the effective geometry.
+\end{openthm}
+
+Species-specific tail structure may remain in $K_{AB}$ or internal sectors:
+\[
+\boxed{
+\text{spin, charge, color, phase, polarization, topology}.
+}
+\]
+It must not create a second long-range spacetime carrier.
+
+Status:
+\[
+\boxed{
+\text{open theorem / projection gate, not yet derived from oscillon dynamics.}
+}
+\]
+
 \section{Delta-M Candidate Theorem}
 
 \begin{openthm}[Conditional Delta-M theorem]
@@ -711,6 +757,8 @@ tested core.
 \text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
 \text{diverse tails in one base-medium} & \text{Allowed internal/species structure} \\
 \text{common carrier/principal cone for record-forming tails} & \text{Open theorem / core gate} \\
+\text{tail projection }\Pi_{\rm grav}(T_A)=q_A\mathcal G & \text{Open theorem / projection gate} \\
+q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
 \text{factorization }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB} & \text{Open theorem / core gate} \\
 \text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{Required; protection still to prove} \\
 \Delta_{\mathcal M}=0 & \text{Required ADM/EH closure gate; open from }\mathcal M \\
@@ -747,6 +795,9 @@ Still open:
 \]
 \[
 \text{derive universal matter coupling from microscopic modes},
+\]
+\[
+\text{derive the universal gravitational tail projection }q_A\propto E_A/c^2,
 \]
 \[
 \text{derive reciprocal clock/rod scaling from }\mathcal M,
@@ -802,6 +853,12 @@ RMG fails in the tested local core if physical low-energy principal operators do
 not factorize through one $G^{\mu\nu}$, or if the failure matrix
 $B_{AB}^{\mu\nu}$ produces species-dependent cones, a preferred-frame tensor, or
 a geometry cone different from the matter cone.
+\end{gate}
+
+\begin{gate}[Tail-projection fail]
+RMG fails in the tested local core if stable low-energy particles have different
+gravitational projection ratios $q_A/(E_A/c^2)$, or if their long tails require
+different long-range spacetime carriers.
 \end{gate}
 
 \begin{gate}[Medium-residue fail]
