@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 4.7
+% Internal core draft, version 5.2
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -77,6 +77,18 @@
 % RMG-NO-EXPLICIT-U-COUPLING-GATE
 % RMG-METRIC-EXHAUSTION-U-COUPLING
 % RMG-SPECIES-FIFTH-FORCE-GATE
+% RMG-NONCIRCULAR-PROOF-ORDER
+% RMG-CLOSURE-DEPENDENCY-GRAPH
+% RMG-SEFF-REC-DERIVATION-PIPELINE
+% RMG-MODE-PROJECTORS-RECORD-INTERNAL
+% RMG-INTERNAL-INTEGRATION-NO-LEAK
+% RMG-MINIMAL-BASE-MEDIUM-INPUT-DATA
+% RMG-STABLE-PHASE-SPECTRAL-INPUT
+% RMG-INTERNAL-INTEGRATION-SCHUR-GATE
+% RMG-CANDIDATE-BASE-MEDIUM-ORDER-PARAMETER
+% RMG-CANDIDATE-SM-FUNCTIONAL
+% RMG-CANDIDATE-SPECTRUM-AUDIT
+% RMG-TENSOR-GRAVITY-NOT-PHONON
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -96,7 +108,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 4.7\\
+Internal core draft, version 5.2\\
 2026-05-10
 \end{center}
 
@@ -1960,6 +1972,374 @@ cosmology and detailed matter emergence -- then become extension windows, not
 loose foundations of the local gravitational core.
 \end{openthm}
 
+\begin{openthm}[Non-circular local-core proof order]
+The local gravity proof must close in the following order:
+\[
+\boxed{
+\mathcal M_{\rm stable}
+\Rightarrow
+\text{Root A}
+\Rightarrow
+g_{\rm rec}
+\Rightarrow
+\text{Root B}
+\Rightarrow
+S_{\rm EH}+S_{\rm matter}
+\Rightarrow
+\text{Root C}
+\Rightarrow
+S_u=\rho_E.
+}
+\]
+Equivalently:
+\[
+\boxed{
+\begin{array}{rcl}
+\text{Root A} &:& \text{one common external record carrier/metric},\\
+\text{Root B} &:& \text{record re-embedding gauge }\Rightarrow\text{ ADM/EH},\\
+\text{Root C} &:& \text{metric/lapse matter coupling }\Rightarrow\text{ total-energy source}.
+\end{array}
+}
+\]
+The proof must obey the no-circularity rules:
+\[
+\boxed{
+\begin{array}{l}
+\text{do not assume ADM to prove Root A},\\
+\text{do not assume Einstein equations to prove Root B},\\
+\text{do not assume the equivalence principle to prove Root C},\\
+\text{do not use MOND/cosmology to repair a local-core failure}.
+\end{array}
+}
+\]
+The microscopic object still needed from the base medium is an effective record
+action
+\[
+\boxed{
+S_{\rm eff}^{\rm rec}[\mathcal M_0]
+}
+\]
+with one record metric, no local background leak, a covariant presymplectic
+form, universal matter metric coupling and no explicit species-private
+\(u\)-coupling.  This is the next exact derivation target.
+\end{openthm}
+
+\begin{openthm}[\(S_{\rm eff}^{\rm rec}\) derivation pipeline]
+Start from a base-medium action/evolution functional
+\[
+\boxed{
+S_{\mathcal M}[\Phi_{\mathcal M}],
+\qquad
+\Phi_{\mathcal M}=\Phi_0+\delta\Phi,
+}
+\]
+around a stable phase \(\mathcal M_0\).  Linearization gives
+\[
+\boxed{
+\delta^2S_{\mathcal M}
+=
+\frac12
+\langle\delta\Phi,\mathcal L_{\mathcal M_0}\delta\Phi\rangle.
+}
+\]
+The fluctuation space must split into record and internal sectors:
+\[
+\boxed{
+\delta\Phi=R+I,
+\qquad
+R=\Pi_{\mathcal R}\delta\Phi,
+\qquad
+I=\Pi_{\mathcal I}\delta\Phi,
+}
+\]
+with
+\[
+\boxed{
+\Pi_{\mathcal R}+\Pi_{\mathcal I}=1,
+\qquad
+\Pi_{\mathcal R}\Pi_{\mathcal I}=0.
+}
+\]
+The record effective action is then the low-energy functional
+\[
+\boxed{
+e^{iS_{\rm eff}^{\rm rec}[R]}
+=
+\int{\cal D}I\,e^{iS_{\mathcal M}[R,I]}.
+}
+\]
+Equivalently,
+\[
+\boxed{
+S_{\rm eff}^{\rm rec}[R]
+=
+-i\log\int{\cal D}I\,e^{iS_{\mathcal M}[R,I]}.
+}
+\]
+The record-sector principal kernel must factorize:
+\[
+\boxed{
+S_{\mathcal R}^{(2)}
+\sim
+\int R_A\,Q_{AB}^{\mu\nu}\partial_\mu\partial_\nu R_B,
+\qquad
+Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB},
+}
+\]
+so that one record metric is defined by \(g_{\rm rec}^{\mu\nu}\sim
+G^{\mu\nu}\).  The internal integration may renormalize constants, add binding
+energy, multipoles, finite-size terms, high-energy suppressed operators or
+large-scale-only corrections.  It must not leave local unsuppressed
+\[
+\boxed{
+U^\mu_{\mathcal M},\quad
+v^\mu v^\nu,\quad
+\text{species-private metric},\quad
+\text{explicit species-private }u\text{-coupling},\quad
+\dot N^2,\quad
+\dot N_i\dot N^i,\quad
+\text{extra record cone}.
+}
+\]
+If this pipeline succeeds, the same microscopic object supplies the raw
+material for Root A, Root B and Root C.  If it fails, the failure is localized
+as either non-factorization, background leak, or source anomaly.
+\end{openthm}
+
+\begin{openthm}[Minimal base-medium input package]
+To compute \(S_{\rm eff}^{\rm rec}\), the base-medium model must provide the
+input package
+\[
+\boxed{
+\mathcal D_{\mathcal M}
+=
+\left(
+\Phi_{\mathcal M},
+S_{\mathcal M},
+\mathcal M_0,
+\Omega_{\mathcal M},
+\mathcal G_{\rm int},
+\mathcal O_{\rm rec}
+\right).
+}
+\]
+Here \(\Phi_{\mathcal M}\) denotes the microscopic/collective medium variables,
+\(S_{\mathcal M}\) the action or evolution functional, \(\mathcal M_0\) the
+stable low-energy phase, \(\Omega_{\mathcal M}\) the symplectic or
+presymplectic structure, \(\mathcal G_{\rm int}\) the internal redundancy
+group, and \(\mathcal O_{\rm rec}\) the operational record observables.  Around
+\(\mathcal M_0\),
+\[
+\boxed{
+\Phi_{\mathcal M}=\Phi_0+\delta\Phi,
+\qquad
+\delta^2S_{\mathcal M}
+=
+\frac12
+\langle\delta\Phi,\mathcal L_{\mathcal M_0}\delta\Phi\rangle.
+}
+\]
+The spectral target is
+\[
+\boxed{
+\mathrm{Spec}(\mathcal L_{\mathcal M_0})
+=
+\mathcal B_{\rm rec}\cup\mathcal B_{\rm int},
+\qquad
+\dim\mathcal B_{\rm rec}^{\rm gapless}=1
+}
+\]
+as the external record branch.  The projectors must be built from
+observability and spectrum, not by assuming GR:
+\[
+\boxed{
+\Pi_{\mathcal R}+\Pi_{\mathcal I}=1,
+\qquad
+\Pi_{\mathcal R}\Pi_{\mathcal I}=0.
+}
+\]
+At quadratic order, internal integration has the block form
+\[
+\boxed{
+S^{(2)}
+=
+\frac12
+\begin{pmatrix}R&I\end{pmatrix}
+\begin{pmatrix}
+L_{RR} & L_{RI}\\
+L_{IR} & L_{II}
+\end{pmatrix}
+\begin{pmatrix}R\\I\end{pmatrix},
+\qquad
+L_{\rm eff}=L_{RR}-L_{RI}L_{II}^{-1}L_{IR}.
+}
+\]
+The Schur-complement correction may renormalize the record kernel, binding
+energy, multipoles or suppressed operators.  It must not generate an extra
+cone, local preferred-frame tensor, species-private metric, explicit
+species-private \(u\)-coupling or lapse/shift kinetic terms.  Without this
+input package, RMG-1 has a sharp proof target but not yet a microscopic proof.
+\end{openthm}
+
+\begin{openthm}[Candidate base-medium order-parameter ansatz]
+A first calculable microscopic target is a single base-medium order parameter,
+not many independent fundamental substances:
+\[
+\boxed{
+\Phi_{\mathcal M}
+=
+\Psi_{\mathcal M}
+=
+\sqrt n\,e^{i\theta}\chi.
+}
+\]
+Here \(n\) is local node-density/pressure amplitude, \(\theta\) is phase or
+medium rhythm, and \(\chi\) denotes internal shape/orientation data of the same
+medium.  This ansatz is allowed only if \(\chi\) does not become an independent
+long-range spacetime carrier.  It must be internal, confined, gauge,
+constrained, suppressed, or part of record matter sharing the same carrier.
+
+A minimal positive-energy candidate functional is
+\[
+\boxed{
+E_{\mathcal M}
+=
+\int d^3X
+\left[
+\frac{\kappa_n}{2}(\nabla n)^2
++\frac{\kappa_\theta}{2}n(\nabla\theta)^2
++V(n)
++E_{\rm int}(n,\theta,\chi,\nabla\chi)
+\right],
+}
+\]
+with a stable phase
+\[
+\boxed{
+V'(n_0)=0,
+\qquad
+V''(n_0)>0.
+}
+\]
+Schematically,
+\[
+\boxed{
+S_{\mathcal M}
+=
+\int d\tau
+\left[
+\Theta_{\mathcal M}(\Phi_{\mathcal M},\dot\Phi_{\mathcal M})
+-E_{\mathcal M}[\Phi_{\mathcal M}]
+\right],
+}
+\]
+where \(\Theta_{\mathcal M}\) defines the symplectic structure.  The stable
+phase expansion is
+\[
+\boxed{
+n=n_0+\delta n,
+\qquad
+\theta=\nu_0\tau+\delta\theta,
+\qquad
+\chi=\chi_0+\delta\chi.
+}
+\]
+The Root A spectral target is still
+\[
+\boxed{
+\dim\mathcal B_{\rm rec}^{\rm gapless}=1.
+}
+\]
+The bookkeeping parameter \(\tau\), any preferred flow, and any extra gapless
+branch must not survive as local observables in \(S_{\rm eff}^{\rm rec}\).
+The long compression variable \(u\) should arise from a pressure/density
+deficit, for example \(u\sim-\delta\ln n\), and its weak static equation must be
+constraint-like:
+\[
+\boxed{
+\nabla^2u=-\kappa\rho_E+\text{allowed corrections},
+}
+\]
+not a propagating phantom scalar.  This ansatz is a test model, not a proof:
+if it leaves a physical medium time, preferred frame or extra cone, it must be
+constrained or replaced.
+\end{openthm}
+
+\begin{openthm}[Candidate stable-phase spectrum audit]
+For the candidate
+\[
+\boxed{
+\Phi_{\mathcal M}=\sqrt n\,e^{i\theta}\chi,
+}
+\]
+write
+\[
+\boxed{
+n=n_0+\eta,
+\qquad
+\theta=\nu_0\tau+\vartheta,
+\qquad
+\chi=\chi_0+\xi.
+}
+\]
+The quadratic spectrum should split schematically as
+\[
+\boxed{
+\delta^2S_{\mathcal M}
+=
+S_{\eta\eta}^{(2)}
++S_{\vartheta\vartheta}^{(2)}
++S_{\xi\xi}^{(2)}
++S_{\rm mix}^{(2)}.
+}
+\]
+The desired Root A pattern is:
+\[
+\boxed{
+\begin{array}{c|c}
+\text{sector} & \text{required low-energy status}\\
+\hline
+\eta & \text{gapped, constrained, near-zone or suppressed}\\
+\vartheta & \text{one gapless phase/acoustic record-cone candidate}\\
+\xi & \text{internal/confined/gauge/gapped/suppressed or shared-cone matter}\\
+S_{\rm mix} & \text{renormalization only; no extra cone}
+\end{array}
+}
+\]
+The phase branch may have
+\[
+\boxed{
+\omega^2=c_{\rm rec}^2k^2+O(k^4),
+\qquad
+G^{\mu\nu}k_\mu k_\nu=0,
+}
+\]
+and can serve as the candidate common record cone.  But this is only Root A
+input.  It does not by itself prove gravitational dynamics:
+\[
+\boxed{
+\text{one cone}\neq\text{two tensor gravitons}.
+}
+\]
+If RMG identifies the phase/acoustic branch itself with the graviton, it risks
+collapsing into a scalar acoustic-gravity model.  The correct local-GR route is
+\[
+\boxed{
+\text{one common record cone}
+\xRightarrow{\text{Root B}}
+\text{ADM constraints}
+\xRightarrow{\text{two-derivative fixed point}}
+S_{\rm EH}
+\Rightarrow
+\text{two tensor gravitational modes}.
+}
+\]
+Therefore this candidate passes the first spectrum audit only if the amplitude
+mode is not a long-range scalar gravity mode, internal modes do not leak extra
+cones, the acoustic cone is universal for record matter, and the tensor sector
+is derived by Root B rather than assumed.
+\end{openthm}
+
 This is the central theorem of RMG.  It is not yet proven in RMG-1.
 
 \section{Allowed Deviation Windows}
@@ -2183,6 +2563,11 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{Root C finite source chain} & \text{Reduced to C1--C5; source anomaly gate} \\
 \text{C3 lapse-variation source theorem} & \text{Conditional proof of }S_u=\rho_E \\
 \text{no explicit species-private }u\text{-coupling} & \text{Metric-exhaustion / fifth-force gate} \\
+\text{non-circular proof order} & \text{Root A }\Rightarrow\text{ Root B }\Rightarrow\text{ EH }\Rightarrow\text{ Root C} \\
+\text{\(S_{\rm eff}^{\rm rec}\) derivation pipeline} & \text{Base-medium }\Rightarrow\text{ record action target} \\
+\text{minimal base-medium input package }\mathcal D_{\mathcal M} & \text{Required before microscopic proof} \\
+\text{candidate base-medium order parameter }\sqrt n e^{i\theta}\chi & \text{Test ansatz; not proof} \\
+\text{candidate stable-phase spectrum audit} & \text{Phase cone candidate; tensor gravity still Root B} \\
 \text{local gravity core closure package} & \text{Conditional on Roots A--C} \\
 \text{constraint protection route} & \text{Open theorem; scalar/vector no-radiation route} \\
 \text{two tensor gravitational DOF} & \text{Target if first-class constraints close} \\
@@ -2235,6 +2620,39 @@ u(r)=GM/(rc^2) & \text{Derived in weak static sector} \\
 RMG-1 is not a closed theory yet.
 
 Still open:
+\[
+\text{construct }S_{\rm eff}^{\rm rec}[\mathcal M_0]\text{ from the stable base-medium phase},
+\]
+\[
+\text{specify the input package }\mathcal D_{\mathcal M}=(\Phi_{\mathcal M},S_{\mathcal M},\mathcal M_0,\Omega_{\mathcal M},\mathcal G_{\rm int},\mathcal O_{\rm rec}),
+\]
+\[
+\text{test the candidate order parameter }\Phi_{\mathcal M}=\sqrt n e^{i\theta}\chi\text{ against Roots A--C},
+\]
+\[
+\text{compute the stable-phase spectrum of the candidate }S_{\mathcal M},
+\]
+\[
+\text{prove the phase/acoustic branch gives only the common cone, not a scalar graviton},
+\]
+\[
+\text{prove amplitude/internal modes are gapped, constrained, gauge, confined or suppressed},
+\]
+\[
+\text{define projectors }\Pi_{\mathcal R},\Pi_{\mathcal I}\text{ and derive the record/internal split},
+\]
+\[
+\text{prove the stable-phase spectrum has exactly one external gapless record branch},
+\]
+\[
+\text{integrate out }I\text{ and prove no local background leak remains in }S_{\rm eff}^{\rm rec},
+\]
+\[
+\text{derive }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}\text{ from the record kinetic kernel},
+\]
+\[
+\text{prove the roots in the non-circular order: A }\Rightarrow\text{ B }\Rightarrow\text{ EH }\Rightarrow\text{ C},
+\]
 \[
 \text{prove Root A: one common external record carrier from the stable phase},
 \]
