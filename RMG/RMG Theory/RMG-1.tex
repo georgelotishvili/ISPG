@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 4.1
+% Internal core draft, version 4.7
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -62,6 +62,21 @@
 % RMG-LAPSE-SHIFT-NO-KINETIC-VERIFICATION
 % RMG-ROOT-B-INTUITION-AUDIT
 % RMG-RECORD-PHASE-SPACE-NEXT
+% RMG-RECORD-PHASE-SPACE
+% RMG-COVARIANT-PRESYMPLECTIC-FORM
+% RMG-NOETHER-MOMENT-MAP-CONSTRAINTS
+% RMG-NOETHER-SPLIT-GATE
+% RMG-BACKGROUND-FREE-RECORD-ACTION
+% RMG-NOETHER-ANOMALY-SOURCES
+% RMG-LOCAL-RECORD-ACTION-EFT-BASIS
+% RMG-EH-TWO-DERIVATIVE-FIXED-POINT
+% RMG-ROOT-C-SOURCE-CHAIN
+% RMG-SPECIES-PRIVATE-SOURCE-ANOMALY
+% RMG-FAR-TAIL-GAUSS-LAW
+% RMG-C3-LAPSE-VARIATION-SOURCE
+% RMG-NO-EXPLICIT-U-COUPLING-GATE
+% RMG-METRIC-EXHAUSTION-U-COUPLING
+% RMG-SPECIES-FIFTH-FORCE-GATE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -81,7 +96,7 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 4.1\\
+Internal core draft, version 4.7\\
 2026-05-10
 \end{center}
 
@@ -1503,6 +1518,235 @@ D\!\left[h^{ij}(N\partial_jM-M\partial_jN)\right]
 in the tested local record sector.
 \end{openthm}
 
+\begin{openthm}[Record phase space and presymplectic Root B construction]
+The non-circular Root B construction starts from the covariant record phase
+space
+\[
+\boxed{
+\Gamma_{\mathcal R}
+=
+\{\Phi_{\mathcal R}\ {\rm solving\ the\ record\ equations}\}/\mathcal G_{\rm int},
+\qquad
+\Phi_{\mathcal R}=(g_{\rm rec},\Psi_{\rm rec}),
+}
+\]
+where \(\mathcal G_{\rm int}\) removes internal/non-record redundancies but
+does not yet quotient embedding freedom.  Let the low-energy record action
+satisfy
+\[
+\boxed{
+\delta L_{\mathcal R}
+=
+E_{\mathcal R}\delta\Phi_{\mathcal R}
++
+d\theta_{\mathcal R}(\delta\Phi_{\mathcal R}).
+}
+\]
+Define the covariant presymplectic current
+\[
+\boxed{
+\omega_{\mathcal R}(\delta_1\Phi,\delta_2\Phi)
+=
+\delta_1\theta_{\mathcal R}(\delta_2\Phi)
+-
+\delta_2\theta_{\mathcal R}(\delta_1\Phi)
+}
+\]
+and the slice form
+\[
+\boxed{
+\Omega_{\mathcal R,\Sigma}
+=
+\int_\Sigma \omega_{\mathcal R}.
+}
+\]
+On shell and without boundary flux, \(d\omega_{\mathcal R}=0\), so
+\[
+\boxed{
+\Omega_{\mathcal R,\Sigma}
+=
+\Omega_{\mathcal R,\Sigma'}.
+}
+\]
+This is the formal version of one record history described by different
+slices.  An embedding deformation acts as
+\[
+\boxed{
+\delta_\xi\Phi_{\mathcal R}
+=
+\mathcal L_\xi\Phi_{\mathcal R}
+\quad
+\text{up to internal gauge compensation}.
+}
+\]
+Root B requires this direction to be presymplectically null:
+\[
+\boxed{
+\Omega_{\mathcal R}(\delta\Phi,\delta_\xi\Phi)\approx0.
+}
+\]
+Equivalently, the Noether current
+\[
+\boxed{
+J_\xi
+=
+\theta_{\mathcal R}(\mathcal L_\xi\Phi_{\mathcal R})
+-
+\xi\cdot L_{\mathcal R}
+}
+\]
+must split as
+\[
+\boxed{
+J_\xi=C_\xi+dQ_\xi,
+\qquad
+\int_\Sigma C_\xi=H[N]+D[N^i],
+\qquad
+\xi=Nn+N^ie_i.
+}
+\]
+The pass condition is therefore
+\[
+\boxed{
+\Omega_{\mathcal R}(\delta\Phi,\mathcal L_\xi\Phi)
+=
+\delta\!\left(H[N]+D[N^i]\right)
+}
+\]
+with \(H\approx0\) and \(D\approx0\) in the tested local record sector.  Any
+bulk remainder that is not a constraint or boundary charge is the Root B
+preferred-frame/scalar/vector anomaly.
+\end{openthm}
+
+\begin{openthm}[Noether split and background-free record-action gate]
+The Noether split required by Root B follows if the local tested record action
+is background-free:
+\[
+\boxed{
+L_{\mathcal R}^{\rm local}
+=
+L_{\mathcal R}[g_{\rm rec},\Psi_{\rm rec}]
+}
+\]
+up to constraints, gauge choices, boundary terms, integrated-out internal
+contributions, high-energy suppressed corrections and large-scale-only
+flow/MOND terms.  In that case an embedding deformation is a record
+diffeomorphism:
+\[
+\boxed{
+\delta_\xi L_{\mathcal R}
+=
+\mathcal L_\xi L_{\mathcal R}
+=
+d(\xi\cdot L_{\mathcal R}),
+}
+\]
+and the Noether current can be written as
+\[
+\boxed{
+J_\xi=C_\xi+dQ_\xi,
+\qquad
+C_\xi=N\mathcal H+N^i\mathcal H_i.
+}
+\]
+The forbidden local failure is a non-record background structure \(B\):
+\[
+\boxed{
+L_{\mathcal R}^{\rm local}
+=
+L_{\mathcal R}[\Phi_{\mathcal R};B].
+}
+\]
+If \(B\) is not a gauge, constraint, boundary, integrated-out, suppressed or
+large-scale-only object, then the embedding variation leaves a bulk anomaly:
+\[
+\boxed{
+\mathcal A_\xi
+\sim
+\frac{\delta L_{\mathcal R}}{\delta B}\mathcal L_\xi B.
+}
+\]
+The local-core forbidden \(B\)'s are:
+\[
+\boxed{
+T_{\mathcal M},\quad
+U^\mu_{\mathcal M},\quad
+v^\mu v^\nu,\quad
+\text{species-private metric/clock},\quad
+\dot N^2,\quad
+\dot N_i\dot N^i,\quad
+\text{extra record cone}.
+}
+\]
+Every bulk remainder in \(J_\xi\) must therefore be classified as exactly one
+of:
+\[
+\boxed{
+\text{constraint/gauge/boundary/internal/suppressed/large-scale-only/anomaly}.
+}
+\]
+Root B requires the final class to vanish in the local tested sector:
+\[
+\boxed{
+\mathcal A_\xi^{\rm local}=0
+\quad\Longleftrightarrow\quad
+A[N,M]=0.
+}
+\]
+\end{openthm}
+
+\begin{openthm}[Background-free two-derivative record-action fixed point]
+If Root A supplies one record metric \(g_{\rm rec}\), Root B removes all
+local non-record background structures, and the tested local regime admits a
+two-derivative effective hierarchy, then the local record action has the form
+\[
+\boxed{
+L_{\mathcal R}^{\rm local}
+=
+\sqrt{-g_{\rm rec}}
+\left[
+\alpha R[g_{\rm rec}]
+-2\Lambda
++L_{\rm m}(g_{\rm rec},\Psi_{\rm rec})
+\right]
++dB
++O(\partial^4/M_*^2).
+}
+\]
+At the two-derivative fixed point this is
+\[
+\boxed{
+S_{\rm EH}+S_{\rm matter}
+}
+\]
+up to normalization, cosmological term, boundary terms and suppressed
+higher-derivative corrections.  The forbidden local background leaks are:
+\[
+\boxed{
+U^\mu_{\mathcal M}U^\nu_{\mathcal M}\nabla_\mu\Psi\nabla_\nu\Psi,\quad
+v^\mu v^\nu R_{\mu\nu},\quad
+\dot N^2,\quad
+\dot N_i\dot N^i,\quad
+g_A^{\mu\nu}\partial_\mu\Psi_A\partial_\nu\Psi_A,
+\quad
+C^{\mu\nu}k_\mu k_\nu\not\propto g_{\rm rec}^{\mu\nu}k_\mu k_\nu.
+}
+\]
+Each such term must be absent, constrained, gauge, boundary-only,
+integrated-out/internal, high-energy suppressed or large-scale-only.  Otherwise
+the two-derivative fixed point is not GR and Root B fails in the local tested
+core.  Thus the local closure chain is
+\[
+\boxed{
+\text{one record metric}
++\text{background-free action}
++\text{two-derivative hierarchy}
+\Rightarrow
+S_{\rm EH}+S_{\rm matter}.
+}
+\]
+\end{openthm}
+
 \begin{openthm}[Root C: total-energy source projection]
 Derive the far-tail/source theorem:
 \[
@@ -1516,6 +1760,187 @@ where \(E_A\) includes rest, kinetic, binding and internal/confined energy.
 No unsuppressed species-private source may remain.  If Root C closes, the
 equivalence-principle source gate and compact internal-energy effacement gate
 close.
+\end{openthm}
+
+\begin{openthm}[Root C finite source chain]
+Root C reduces to five source conditions:
+\[
+\boxed{
+\begin{array}{ll}
+C1 & S_{\rm m}=S_{\rm m}[g_{\rm rec},\Psi]\quad\text{universal matter action},\\
+C2 & N=e^{-u}\quad\text{or equivalent compression/lapse bridge},\\
+C3 & S_u=(N\sqrt h)^{-1}\delta S_{\rm m}/\delta u=\rho_E,\\
+C4 & \nabla^2u=-\kappa\rho_E\quad\text{far-tail Gauss law},\\
+C5 & \sigma_{\rm species}^{\rm long,local}=0.
+\end{array}
+}
+\]
+Then an isolated source obeys
+\[
+\boxed{
+\oint_{\partial B_R}\nabla u\cdot dS
+=
+-\kappa\int_{B_R}\rho_E\,d^3x,
+\qquad
+u(r)=\frac{Q^{(0)}}{r}+O(r^{-2}),
+}
+\]
+and therefore
+\[
+\boxed{
+Q^{(0)}=\eta\,E_{\rm total}/c^2.
+}
+\]
+Thus the hard part of Root C is not the far \(1/r\) integral.  The hard part
+is proving that the compression/lapse source is total physical energy for all
+stable record matter:
+\[
+\boxed{
+S_u=\rho_E
+}
+\]
+with no unsuppressed species-private remainder:
+\[
+\boxed{
+S_u\neq\rho_E+\sigma_{\rm species}
+\quad
+\text{for physical long-range local }\sigma_{\rm species}.
+}
+\]
+Species-specific structure is allowed only if it is an internal divergence,
+gauge, boundary multipole, high-energy suppressed, short-range/confined or
+already included in \(\rho_E\).  Internal, binding, gluon-like and confined
+energy must contribute to \(E_{\rm total}\) while not producing an independent
+external cone:
+\[
+\boxed{
+E_{\rm total}
+=
+E_{\rm rest}+E_{\rm kinetic}+E_{\rm binding}+E_{\rm internal}.
+}
+\]
+\end{openthm}
+
+\begin{openthm}[C3 lapse-variation source theorem]
+Assume the stable record matter sector satisfies
+\[
+\boxed{
+S_{\rm m}=S_{\rm m}[g_{\rm rec},\Psi],
+\qquad
+N=e^{-u},
+}
+\]
+and has no unsuppressed explicit species-private \(u\)-coupling outside the
+record metric.  In canonical form,
+\[
+\boxed{
+S_{\rm m}
+=
+\int dt\,d^3x\,
+\left(
+\pi_A\dot\psi_A
+-N\mathcal H_{\rm m}
+-N^i\mathcal H_{i,\rm m}
+\right).
+}
+\]
+At fixed \(h_{ij},N^i,\psi_A,\pi_A\),
+\[
+\boxed{
+\delta N=-N\delta u,
+\qquad
+\delta_uS_{\rm m}
+=
+\int dt\,d^3x\,N\mathcal H_{\rm m}\delta u.
+}
+\]
+Therefore
+\[
+\boxed{
+S_u
+=
+\frac{1}{N\sqrt h}\frac{\delta S_{\rm m}}{\delta u}
+=
+\frac{\mathcal H_{\rm m}}{\sqrt h}
+=
+\rho_E.
+}
+\]
+This is the precise Root C bridge: changing compression/lapse changes the
+local process rate, and the generator of local process-time translation is the
+Hamiltonian density.  Internal, binding, gluon-like and confined energy are
+included because
+\[
+\boxed{
+\mathcal H_{\rm m}
+=
+\mathcal H_{\rm rest}
++\mathcal H_{\rm kinetic}
++\mathcal H_{\rm binding}
++\mathcal H_{\rm internal}.
+}
+\]
+Root C fails only if a physical long-range local remainder survives:
+\[
+\boxed{
+S_u=\rho_E+\sigma_{\rm species}^{\rm long,local},
+\qquad
+\sigma_{\rm species}^{\rm long,local}\neq0.
+}
+\]
+Thus the C3 gate is: all stable record matter must see \(u\) only through the
+same record metric/lapse, except for gauge, constrained, boundary, internal,
+short-range or suppressed terms already accounted for in \(\rho_E\).
+\end{openthm}
+
+\begin{openthm}[Metric-exhaustion and no species-private \(u\)-coupling]
+If the stable local matter sector is exhausted by one record metric,
+\[
+\boxed{
+S_{\rm m}=S_{\rm m}[g_{\rm rec},\Psi],
+}
+\]
+then all allowed local \(u\)-dependence is metric/lapse dependence.  Species
+labels may appear in masses, charges, spin, internal Hamiltonians, confined
+sectors, kinetic matrices, multipoles and finite-size corrections, but not as
+a separate long-range local term
+\[
+\boxed{
+\Delta S_A
+=
+\int d^4x\,N\sqrt h\,F_A(u,\Psi_A).
+}
+\]
+If such a term is physical and unsuppressed, then
+\[
+\boxed{
+S_u=\rho_E+\sigma_A,
+}
+\]
+so \(u\) becomes a species-readable scalar background rather than just the
+record lapse/compression variable.  This is a fifth-force/source anomaly: two
+systems with the same total energy but different composition would source or
+fall differently.  Therefore the local Root C gate is
+\[
+\boxed{
+F_A^{\rm long,local}=0
+\quad\Longleftrightarrow\quad
+\sigma_{\rm species}^{\rm long,local}=0,
+}
+\]
+unless the term is already included in \(\rho_E\), or is gauge, constrained,
+boundary, internal, short-range/confined or high-energy suppressed.  In the
+common pressure projection language,
+\[
+\boxed{
+\Pi_{\rm grav}(T_A)=q_A\mathcal G,
+\qquad
+q_A=\eta E_A/c^2
+}
+\]
+must hold at monopole order; species-specific tail data may survive only as
+spin, charge, color, phase, multipole, internal, short-range or suppressed
+structure.
 \end{openthm}
 
 \begin{openthm}[Local gravity core closure]
@@ -1751,7 +2176,13 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{Root B embedding/symplectic closure} & \text{Open calculation; null directions }\Rightarrow\text{ HDA} \\
 \text{Root B finite sufficiency checklist} & \text{Reduced to B1--B5 plus }A[N,M]=0 \\
 \text{Root B intuition audit} & \text{B1 strong; B2 depends on Root A; B3--B5 open} \\
+\text{record phase space }\Gamma_{\mathcal R}\text{ and }\Omega_{\mathcal R} & \text{Construction program; Noether moment-map route} \\
+\text{background-free record-action gate} & \text{Noether split pass/fail test} \\
+\text{two-derivative record-action fixed point} & \text{EH if one metric and no background leak} \\
 \text{Root C: total-energy source projection} & \text{Root open theorem} \\
+\text{Root C finite source chain} & \text{Reduced to C1--C5; source anomaly gate} \\
+\text{C3 lapse-variation source theorem} & \text{Conditional proof of }S_u=\rho_E \\
+\text{no explicit species-private }u\text{-coupling} & \text{Metric-exhaustion / fifth-force gate} \\
 \text{local gravity core closure package} & \text{Conditional on Roots A--C} \\
 \text{constraint protection route} & \text{Open theorem; scalar/vector no-radiation route} \\
 \text{two tensor gravitational DOF} & \text{Target if first-class constraints close} \\
@@ -1844,7 +2275,46 @@ Still open:
 \text{derive embedding vector fields }\delta_\xi\text{ and their local generators }D,H,
 \]
 \[
+\text{derive the Noether split }J_\xi=C_\xi+dQ_\xi\text{ for the record action},
+\]
+\[
+\text{show every bulk part of }C_\xi\text{ is a constraint, not a physical charge},
+\]
+\[
+\text{prove the local record action is background-free: }L_{\mathcal R}^{\rm local}=L[g_{\rm rec},\Psi_{\rm rec}],
+\]
+\[
+\text{classify every Noether bulk remainder and prove }\mathcal A_\xi^{\rm local}=0,
+\]
+\[
+\text{derive the two-derivative record-action EFT basis from }\mathcal M,
+\]
+\[
+\text{prove every local background-leak operator is absent/constrained/gauge/suppressed},
+\]
+\[
 \text{prove Root C: total-energy source projection and far-tail Gauss law},
+\]
+\[
+\text{verify C1--C5 for Root C in the base-medium matter sector},
+\]
+\[
+\text{prove }S_u=\rho_E\text{ for every stable record matter family},
+\]
+\[
+\text{prove stable matter has no explicit unsuppressed species-private }u\text{-coupling},
+\]
+\[
+\text{derive metric-exhaustion of local }u\text{-dependence from stable matter construction},
+\]
+\[
+\text{show any }F_A(u,\Psi_A)\text{ is absent, suppressed, internal, gauge or already in }\rho_E,
+\]
+\[
+\text{prove internal/binding/confined energy is included in }\mathcal H_{\rm m},
+\]
+\[
+\text{prove }\sigma_{\rm species}^{\rm long,local}=0,
 \]
 \[
 \text{derive Operational Relational Covariance from microscopic }\mathcal M,
