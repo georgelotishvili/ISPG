@@ -1,6 +1,6 @@
 % RMG-1
 % Relational Medium Gravity
-% Internal core draft, version 6.1
+% Internal core draft, version 6.2
 % SEARCH TAGS:
 % RMG-CORE
 % RELATIONAL-MEDIUM-GRAVITY
@@ -97,6 +97,8 @@
 % RMG-LEADING-ORDER-CORE-DERIVATION
 % RMG-LOOP-DEFECT-CURVATURE
 % RMG-DEWITT-KINETIC-DERIVATION
+% RMG-MINIMAL-OPERATIONAL-NODE
+% RMG-G-FROM-BASE-NODE-SCALE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -116,8 +118,8 @@
 \vspace{0.4em}
 {\large რელაციური მედიუმის გრავიტაცია}\\
 \vspace{0.4em}
-Internal core draft, version 6.1\\
-2026-05-10
+Internal core draft, version 6.2\\
+2026-05-11
 \end{center}
 
 \section*{Purpose}
@@ -296,6 +298,25 @@ collective modes of one base-medium $\mathcal M$.
 \begin{postulate}[Stable low-energy phase]
 The base-medium has a stable low-energy phase in which matter modes, rods,
 clocks, signals and operational geometry are well-defined.
+\end{postulate}
+
+\begin{postulate}[Minimal operational node scale]
+The base-medium as one ontological object has no ordinary microscopic radius.
+A length becomes physical only when the base-medium is distinguishable as
+recordable nodes.  The first distinguishable node/record scale is denoted
+\[
+\ell_*.
+\]
+Below \(\ell_*\), two nodes are not yet separate operational objects: there is
+no independent distance, delay, clock comparison or mass comparison.  Above
+\(\ell_*\), medium dilution also rescales rods, clocks and the visible node
+scale.  Thus \(\ell_*\) is an operational closure scale, not the radius of a
+mechanical particle.
+
+In the present RMG-1 core, \(\ell_*\) is identified with the observed
+Planck-order minimal record scale.  This is not a second medium and not a
+species-dependent parameter; it is the universal first readable separation of
+the one base-medium.
 \end{postulate}
 
 \begin{postulate}[Operational Relational Covariance]
@@ -1007,11 +1028,37 @@ M
 \frac{1}{c^2}\int d^3x\,\rho_E(\mathbf x).
 \]
 
+\begin{assumption}[Base-node calibration of \(G\)]
+The source coefficient in the weak static sector is fixed by the minimal
+operational node scale:
+\[
+\boxed{
+G_{\rm RMG}
+=
+\frac{c^3\ell_*^2}{\hbar}.
+}
+\]
+Equivalently, the gravitational stiffness is
+\[
+\boxed{
+\frac{c^4}{4\pi G_{\rm RMG}}
+=
+\frac{\hbar c}{4\pi\ell_*^2}.
+}
+\]
+When the universal operational node scale is identified with the observed
+Planck-order length, \(G_{\rm RMG}\) equals the measured Newton constant.  The
+remaining deeper task is not to choose a smaller length, but to derive
+\(\ell_*\) itself from the stable base-medium record dynamics.
+\end{assumption}
+
+Below, \(G\) denotes this calibrated \(G_{\rm RMG}\) unless explicitly stated.
+
 Use the static energy functional:
 \[
 \mathcal E[u]
 =
-\frac{c^4}{8\pi G}\int d^3x\,|\nabla u|^2
+\frac{c^4}{8\pi G_{\rm RMG}}\int d^3x\,|\nabla u|^2
 -
 \int d^3x\,\rho_Eu.
 \]
@@ -1023,7 +1070,7 @@ Varying $u$ gives:
 \nabla^2u
 =
 -
-\frac{4\pi G}{c^4}\rho_E.
+\frac{4\pi G_{\rm RMG}}{c^4}\rho_E.
 }
 \]
 \end{result}
@@ -1032,7 +1079,7 @@ With $u(\infty)=0$:
 \[
 u(\mathbf x)
 =
-\frac{G}{c^4}
+\frac{G_{\rm RMG}}{c^4}
 \int d^3x'\,
 \frac{\rho_E(\mathbf x')}{|\mathbf x-\mathbf x'|}.
 \]
@@ -1040,7 +1087,7 @@ u(\mathbf x)
 Far from the source:
 \[
 \boxed{
-u(r)=\frac{GM}{rc^2}+O(r^{-2}).
+u(r)=\frac{G_{\rm RMG}M}{rc^2}+O(r^{-2}).
 }
 \]
 
@@ -1053,7 +1100,7 @@ Using:
 \[
 U=c^2u,
 \qquad
-U(r)=\frac{GM}{r},
+U(r)=\frac{G_{\rm RMG}M}{r},
 \]
 the metric gives:
 \[
@@ -2322,6 +2369,7 @@ input package
 \Phi_{\mathcal M},
 S_{\mathcal M},
 \mathcal M_0,
+\ell_*,
 \Omega_{\mathcal M},
 \mathcal G_{\rm int},
 \mathcal O_{\rm rec}
@@ -2330,7 +2378,8 @@ S_{\mathcal M},
 \]
 Here \(\Phi_{\mathcal M}\) denotes the microscopic/collective medium variables,
 \(S_{\mathcal M}\) the action or evolution functional, \(\mathcal M_0\) the
-stable low-energy phase, \(\Omega_{\mathcal M}\) the symplectic or
+stable low-energy phase, \(\ell_*\) the minimal operational node scale,
+\(\Omega_{\mathcal M}\) the symplectic or
 presymplectic structure, \(\mathcal G_{\rm int}\) the internal redundancy
 group, and \(\mathcal O_{\rm rec}\) the operational record observables.  Around
 \(\mathcal M_0\),
@@ -2836,6 +2885,7 @@ derive and observationally confront an old-like/new strong-field branch.
 \hline
 \text{one base-medium }\mathcal M & \text{Primitive postulate} \\
 \text{stable low-energy phase} & \text{Primitive postulate} \\
+\text{minimal operational node scale }\ell_* & \text{Primitive postulate / Planck-order calibration} \\
 \text{Operational Relational Covariance} & \text{Primitive protection principle} \\
 \text{positive physical energy} & \text{Primitive postulate} \\
 \text{local effective hierarchy} & \text{Primitive EFT condition} \\
@@ -2907,7 +2957,7 @@ q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
 \text{reciprocal clock/rod response} & \text{Working assumption} \\
 c_{\rm coord}/c=s^2 & \text{Derived result} \\
 s=e^{-u} & \text{Derived from layering} \\
-u(r)=GM/(rc^2) & \text{Derived in weak static sector} \\
+u(r)=G_{\rm RMG}M/(rc^2) & \text{Derived in weak static sector} \\
 \gamma=1,\ \beta=1 & \text{Derived in weak field} \\
 \lambda=1/2 & \text{Closure-selected; not yet derived from }\mathcal M \\
 \text{only two tensor GW modes} & \text{Low-energy target / open from }\mathcal M \\
@@ -2928,7 +2978,7 @@ Still open:
 \text{construct the exact }S_{\rm eff}^{\rm rec}[\mathcal M_0]\text{ from the stable base-medium phase},
 \]
 \[
-\text{specify the input package }\mathcal D_{\mathcal M}=(\Phi_{\mathcal M},S_{\mathcal M},\mathcal M_0,\Omega_{\mathcal M},\mathcal G_{\rm int},\mathcal O_{\rm rec}),
+\text{specify the input package }\mathcal D_{\mathcal M}=(\Phi_{\mathcal M},S_{\mathcal M},\mathcal M_0,\ell_*,\Omega_{\mathcal M},\mathcal G_{\rm int},\mathcal O_{\rm rec}),
 \]
 \[
 \text{test the candidate order parameter }\Phi_{\mathcal M}=\sqrt n e^{i\theta}\chi\text{ against Roots A--C},
@@ -3114,7 +3164,7 @@ Still open:
 \text{derive reciprocal clock/rod scaling from }\mathcal M,
 \]
 \[
-\text{derive the Hamiltonian source coefficient }G,
+\text{derive }\ell_*\text{ from the stable base-medium record dynamics or keep it as primitive calibration},
 \]
 \[
 \text{prove the residual medium term }\Delta_{\mathcal M}\text{ vanishes or is suppressed},
