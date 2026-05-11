@@ -320,6 +320,33 @@ extra physical structures.  In particular, no independent local preferred-frame
 field $u^\mu_{\mathcal M}$ appears in the tested core.
 \end{postulate}
 
+\medskip\noindent\textbf{Remark (operational content of ORC).}
+The re-embedding statement above has three explicit operational consequences
+that load the closure of the gravitational core:
+\begin{enumerate}
+\item Substrate-internal variables that do not enter operational record
+  comparisons are gauge / bookkeeping, not physical observables.  In
+  particular, no hidden substrate clock, no preferred rest frame, and no
+  naked label distinguish records.
+\item All stable record-forming matter reads the same local operational
+  geometry.  No substrate-internal mode produces a distinguishable second
+  operational time, second operational length, or second principal cone.
+\item Background uniform substrate states (e.g.\ the uniform phase advance
+  $\langle\theta\rangle=\nu_0 t$ on the stable phase $\mathcal M_0$) are
+  operationally hidden; only the fluctuations on top of such backgrounds
+  are physical.  This is the relational counterpart of Galilean / Lorentz
+  invariance and of the Michelson--Morley null result.
+\end{enumerate}
+ORC is the load-bearing axiom that closes the three local-gravity roots
+(Root~A: one carrier; Root~B: ADM/EH closure; Root~C: total-energy source)
+into derived results.  The closure proofs are written out in
+\texttt{RMG/work/011\_root\_A\_closure\_under\_ORC.md},
+\texttt{012\_root\_B\_closure\_under\_ORC.md},
+\texttt{013\_root\_C\_closure\_under\_ORC.md} and assembled in
+\texttt{014\_gravity\_core\_full\_closure.md}.  ORC itself is taken here as a
+primitive postulate; its derivation from a deeper micro principle (Route~1
+of \texttt{RMG/story/RMG-263}) remains a long-term research target.
+
 \begin{postulate}[Positive physical energy]
 Physical excitations of $\mathcal M$ have Hamiltonian bounded below:
 \[
@@ -1491,6 +1518,24 @@ gauge, unstable, high-energy suppressed or large-scale-only.  This is the
 microscopic calculation still needed for Root A.
 \end{openthm}
 
+\medskip\noindent\textbf{Remark (Root A closure status under ORC).}
+Conditional on the Operational Relational Covariance postulate of
+Section~``Primitive Postulates'', the Root~A open theorem closes as a
+derived Result.  The argument proceeds in three steps:
+(i)~Goldstone--Bogoliubov spectral counting on the stable phase
+$\mathcal M_0$ with broken $U(1)_\nu$ rhythm yields one type-I scalar
+Goldstone (the phonon) plus two transverse-traceless tensor modes;
+(ii)~the ``one operational geometry'' clause of ORC forces
+$c_{\rm phase}=c_{\rm graviton}$, so all gapless record modes share the
+single principal symbol $G^{\mu\nu}k_\mu k_\nu$;
+(iii)~stable record-forming oscillons project on this single channel with
+species-dependent amplitudes $Z_A$ but a common cone.  The full proof is
+in \texttt{RMG/work/011\_root\_A\_closure\_under\_ORC.md}.  The same file
+records that without ORC the closure remains open (audit
+\texttt{RMG/work/006}; four-route catalog \texttt{RMG/work/007--009}).
+The microscopic derivation of ORC itself (Route~1 of
+\texttt{RMG/story/RMG-263}) is left as the deeper open program.
+
 \begin{openthm}[Root B: record-embedding ADM closure]
 Derive that changes of slicing, labels and record parametrization are gauge
 redundancies of the same physical record history.  These redundancies must
@@ -1902,6 +1947,26 @@ S_{\rm EH}+S_{\rm matter}.
 \]
 \end{openthm}
 
+\medskip\noindent\textbf{Remark (Root B closure status under ORC).}
+Conditional on the Operational Relational Covariance postulate of
+Section~``Primitive Postulates'', the Root~B open theorem closes as a
+derived Result.  The chain is:
+(i)~ORC's ``slicing/labels/parametrization are descriptions, not extra
+physical structures'' forces lapse $N$ and shift $N^i$ into the role of
+Lagrange multipliers, so $\delta S/\delta N=0$ and $\delta S/\delta N^i=0$
+yield $\mathcal H\approx 0$, $\mathcal H_i\approx 0$;
+(ii)~ORC's ``no naked substrate handles'' clause forbids the anomaly
+$A[N,M]$, so the hypersurface-deformation algebra closes;
+(iii)~by Kuchar--Teitelboim's ``geometrodynamics regained'' theorem (1976),
+the unique safe local two-derivative Hamiltonian with first-class HDA
+closure and Riemannian configuration space is Einstein--Hilbert plus
+minimally coupled matter, with DeWitt coefficient $\lambda=1/2$;
+(iv)~at the linearized level, $h_+,h_\times$ are the only propagating
+gravitational modes; scalar/vector/breathing sectors are constrained.  The
+full proof is in \texttt{RMG/work/012\_root\_B\_closure\_under\_ORC.md},
+with the prior first-class bracket calculation written out in
+\texttt{RMG/work/003\_RMG302\_constraint\_algebra\_first\_class.md}.
+
 \begin{openthm}[Root C: total-energy source projection]
 Derive the far-tail/source theorem:
 \[
@@ -2098,6 +2163,28 @@ spin, charge, color, phase, multipole, internal, short-range or suppressed
 structure.
 \end{openthm}
 
+\medskip\noindent\textbf{Remark (Root C closure status under ORC).}
+Conditional on the Operational Relational Covariance postulate, the Root~C
+open theorems close as derived Results once Root~A and Root~B are in place.
+The argument is:
+(i)~Root~A under ORC yields a single record metric $g_{\rm rec}^{\mu\nu}$;
+Root~B under ORC yields $S=S_{\rm EH}[g_{\rm rec}]+S_{\rm matter}[g_{\rm rec},\Psi]$;
+(ii)~the variational stress-energy tensor
+$T^{\mu\nu}=(2/\sqrt{-g})\,\delta S_{\rm matter}/\delta g_{\mu\nu}$ is the
+unique gravitational source compatible with the diffeomorphism invariance of
+$S_{\rm matter}$ and contains rest, kinetic, binding, internal/confined and
+field energies of every stable matter species;
+(iii)~ORC's ``one operational geometry for every observer'' clause forbids
+species-private cones and species-private $u$-coupling, so $C5$
+($\sigma_{\rm species}^{\rm long,local}=0$) is automatic;
+(iv)~$\nabla^2u=-\kappa\rho_E$ and $Q^{(0)}=\eta E_{\rm total}/c^2$ then
+follow from the linearized Einstein equation in the weak static limit.
+The full proof is in \texttt{RMG/work/013\_root\_C\_closure\_under\_ORC.md}.
+Residual quantitative items (the numerical value of $G$, the smallness of
+$\Lambda$, and Standard-Model species-by-species verification of the
+universal coupling) remain open as part of the broader G-closure and
+matter-emergence programs (cf.\ \texttt{RMG/story/RMG-316--353}).
+
 \begin{openthm}[Local gravity core closure]
 If Root A, Root B and Root C are derived from \(\mathcal M\), then the local
 RMG gravity core is closed:
@@ -2114,6 +2201,46 @@ The remaining sectors -- strong-field compact interiors, MOND reentry,
 cosmology and detailed matter emergence -- then become extension windows, not
 loose foundations of the local gravitational core.
 \end{openthm}
+
+\medskip\noindent\textbf{Remark (full gravity-core closure under ORC).}
+Conditional on the Operational Relational Covariance postulate, the three
+roots close as derived Results (remarks above on Root~A, Root~B, Root~C),
+and therefore so does this ``Local gravity core closure'' openthm.  The
+unified statement is: under ORC plus the minimal RMG structural
+commitments (one base medium $\mathcal M$ with stable phase $\mathcal M_0$;
+locality and two-derivative low-energy hierarchy), the low-energy
+operational sector is exactly
+\[
+\boxed{
+S_{\rm low}
+=
+\frac{c^4}{16\pi G}\!\int d^4x\,\sqrt{-g}\,(R-2\Lambda)
++
+S_{\rm matter}[g,\Psi]
++
+\text{suppressed corrections},
+}
+\]
+with one record cone, two TT graviton modes at $c_{\rm GW}=c$, no scalar
+or vector gravity waves, no preferred frame, universal free fall, and
+gravitational source equal to the total physical energy-momentum.  This is
+the tested local GR core.  Synthesis and step-by-step assembly are in
+\texttt{RMG/work/014\_gravity\_core\_full\_closure.md}, with the full
+audit cycle preserved in \texttt{RMG/work/001--010}.
+\smallskip
+
+\noindent\textbf{Status note (Route~1 long-term target).}
+The ORC postulate is the single load-bearing axiom of this closure; its
+microscopic derivation from a deeper relational substrate (Route~1 of
+\texttt{RMG/story/RMG-263}: ``derive ORC from $S_M$'') remains the
+central long-term research program.  Candidate routes include emergent
+gauge redundancy from a UV principle, ORC as an IR fixed point of a
+nonlinear relational substrate, and consistency arguments showing that
+ORC-violating theories produce internal pathologies.  No such derivation
+has yet been completed.  Until then, RMG sits in Route~2 of
+\texttt{RMG/story/RMG-263} (``framework with explicit foundational
+axiom''), where the gravitational core is closed conditional on ORC and
+not on a deeper micro derivation.
 
 \begin{openthm}[Non-circular local-core proof order]
 The local gravity proof must close in the following order:
