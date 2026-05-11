@@ -116,7 +116,7 @@
 \begin{center}
 {\Large RMG-1: Relational Medium Gravity}\\
 \vspace{0.4em}
-{\large რელაციური მედიუმის გრავიტაცია}\\
+{\large Phantom-free relational gravity from a stable base-medium}\\
 \vspace{0.4em}
 Internal core draft, version 6.2\\
 2026-05-11
@@ -130,13 +130,6 @@ Core sentence:
 \[
 \boxed{
 \text{gravity is the low-energy relational geometry of a stable base-medium.}
-}
-\]
-
-ქართული:
-\[
-\boxed{
-\text{გრავიტაცია არის სტაბილური ფუძე-მედიუმის low-energy რელაციური გეომეტრია.}
 }
 \]
 
@@ -187,13 +180,6 @@ condition whose failure damages the core theory.
 \[
 \boxed{
 \text{RMG = Relational Medium Gravity.}
-}
-\]
-
-ქართული:
-\[
-\boxed{
-\text{რელაციური მედიუმის გრავიტაცია.}
 }
 \]
 
@@ -380,7 +366,9 @@ $g_{\mu\nu}^{\rm eff}$.
 Status:
 \[
 \boxed{
-\text{working assumption in RMG-1; open theorem from }\mathcal M.
+\text{bridge assumption; derived below inside the coherent stable-record completion,}
+\quad
+\text{full universal closure still open from }\mathcal M.
 }
 \]
 
@@ -406,6 +394,57 @@ Therefore:
 \[
 \boxed{
 \frac{c_{\rm coord}}{c}=s^2.
+}
+\]
+\end{result}
+
+\begin{result}[Coherent endpoint-counting route to the square law]
+The reciprocal clock/rod bridge is not produced by a longer courier path.  A
+longer path at fixed carrier speed gives only a linear delay.  A square response
+is obtained when the stable record sector is controlled by one coherent
+base-medium amplitude
+\[
+\boxed{
+\rho:=|\Phi_{\mathcal M}|=\sqrt n
+}
+\]
+and the local record coefficients scale as
+\[
+\boxed{
+C_t:C_0:C_x=1:\rho:\rho^2.
+}
+\]
+Here \(C_t\) is the common-rhythm time coefficient, \(C_0\) is the local stable
+gap coefficient and \(C_x\) is the spatial link-stiffness coefficient.  Define
+\[
+\boxed{
+s:=\rho^{1/2}=n^{1/4}.
+}
+\]
+Then
+\[
+C_t:C_0:C_x=1:s^2:s^4.
+\]
+For a stable quadratic record mode,
+\[
+\omega_0\propto\sqrt{\frac{C_0}{C_t}}=s,
+\qquad
+\ell_{\rm coord}\propto\sqrt{\frac{C_x}{C_0}}=s,
+\qquad
+c_{\rm coord}\propto\sqrt{\frac{C_x}{C_t}}=s^2c.
+\]
+Thus the coherent endpoint-counting completion derives
+\[
+\boxed{
+d\tau=sdt,\qquad d\ell=s^{-1}dx,\qquad \frac{c_{\rm coord}}{c}=s^2.
+}
+\]
+The exponent origin is:
+\[
+\boxed{
+\text{site/local gap} \sim \rho,
+\qquad
+\text{link/spatial stiffness} \sim \rho_a\rho_b\to\rho^2.
 }
 \]
 \end{result}
@@ -2521,6 +2560,113 @@ if it leaves a physical medium time, preferred frame or extra cone, it must be
 constrained or replaced.
 \end{openthm}
 
+\begin{result}[Stable-record coherent amplitude completion]
+The ansatz \(\Phi_{\mathcal M}=\sqrt n e^{i\theta}\chi\) by itself is not yet
+a microscopic proof of the square law.  The square law is derived if the
+projected long-range stable record sector has the coherent endpoint-counting
+completion
+\[
+\boxed{
+\rho:=|\Phi_{\mathcal M}|=\sqrt n
+}
+\]
+and the first-order record action
+\[
+\boxed{
+S_{\rm rec}
+=
+\int d\lambda\,d^3q
+\left[
+P_A\dot R_A
+-\alpha\,{\cal C}_{\rm rec}
+\right],
+}
+\]
+with
+\[
+\boxed{
+{\cal C}_{\rm rec}
+=
+\frac12
+\left[
+K^{AB}P_AP_B
++K_{AB}
+\left(
+c^2\rho^2\nabla_{\rm rec}R_A\nabla_{\rm rec}R_B
++m_A^2\rho R_AR_B
+\right)
+\right].
+}
+\]
+The multiplier \(\alpha\) is the common process multiplier, not an external
+time.  In local common-rhythm proper gauge, \(d\tau=\alpha d\lambda\), the
+momenta eliminate to
+\[
+\boxed{
+S_{\rm rec}^{(2)}
+=
+\frac12
+\int d\tau\,d^3q\,
+K_{AB}
+\left[
+\partial_\tau R_A\partial_\tau R_B
+-c^2\rho^2\nabla_{\rm rec}R_A\nabla_{\rm rec}R_B
+-m_A^2\rho R_AR_B
+\right].
+}
+\]
+Therefore
+\[
+\boxed{
+C_t=1,\qquad C_0=\rho,\qquad C_x=\rho^2.
+}
+\]
+The local dispersion relation is
+\[
+\boxed{
+\omega^2=c^2\rho^2k^2+m_A^2\rho.
+}
+\]
+Consequently, with \(s=\rho^{1/2}=n^{1/4}\),
+\[
+\boxed{
+\omega_0\sim s,\qquad
+\ell_{\rm coord}\sim s,\qquad
+c_{\rm coord}=cs^2.
+}
+\]
+This is the precise stable-record completion behind the reciprocal
+clock/rod response.  It does not claim that the order parameter alone proves
+the result; the endpoint-counting record completion is the added calculable
+structure.
+\end{result}
+
+\begin{result}[Endpoint-counting exponent selection]
+The powers in the coherent completion have a relational node-link origin.  A
+local gap term has one active endpoint; hence its leading coherent amplitude
+weight is
+\[
+\boxed{
+L_a\propto \rho_a.
+}
+\]
+A spatial link has two active endpoints and must vanish if either endpoint is
+inactive.  Endpoint symmetry and minimal coherent order then give
+\[
+\boxed{
+J_{ab}\propto \rho_a\rho_b.
+}
+\]
+In a smooth patch, \(\rho_a,\rho_b\to\rho\), so the stable record sector has
+\[
+\boxed{
+\text{gap}\sim\rho,\qquad \text{link stiffness}\sim\rho^2.
+}
+\]
+This selects \(C_t:C_0:C_x=1:\rho:\rho^2\), and therefore the square law
+\(c_{\rm coord}/c=s^2\) with \(s=\rho^{1/2}\).
+\end{result}
+
 \begin{openthm}[Candidate stable-phase spectrum audit]
 For the candidate
 \[
@@ -2582,9 +2728,9 @@ collapsing into a scalar acoustic-gravity model.  The correct local-GR route is
 \[
 \boxed{
 \text{one common record cone}
-\xRightarrow{\text{Root B}}
+\xrightarrow{\text{Root B}}
 \text{ADM constraints}
-\xRightarrow{\text{two-derivative fixed point}}
+\xrightarrow{\text{two-derivative fixed point}}
 S_{\rm EH}
 \Rightarrow
 \text{two tensor gravitational modes}.
@@ -2913,7 +3059,9 @@ derive and observationally confront an old-like/new strong-field branch.
 \text{DeWitt kinetic route} & \text{Leading-order shear/constraint split} \\
 \text{local ADM/EH core from }\mathcal M_{\rm rel} & \text{Conditional leading-order result} \\
 \text{minimal base-medium input package }\mathcal D_{\mathcal M} & \text{Required before microscopic proof} \\
-\text{candidate base-medium order parameter }\sqrt n e^{i\theta}\chi & \text{Test ansatz; not proof} \\
+\text{candidate base-medium order parameter }\sqrt n e^{i\theta}\chi & \text{Test ansatz; needs record completion} \\
+\text{coherent endpoint-counting square-law route} & \text{Completion theorem for stable record sector} \\
+\text{stable-record coefficients }C_t:C_0:C_x=1:\rho:\rho^2 & \text{Explicit completion result} \\
 \text{candidate stable-phase spectrum audit} & \text{Phase cone candidate; tensor gravity still Root B} \\
 \text{composite record metric/spin-2 gate} & \text{Requires }\delta g_{\rm rec}\text{ with protected TT sector} \\
 \text{tensor-closure reduction} & \text{Open finite test: }\mathrm{rank}\,K_{\chi{\rm -strain}}=2 \\
@@ -2953,9 +3101,9 @@ q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
 \text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{Required; protection still to prove} \\
 \Delta_{\mathcal M}=0 & \text{Required ADM/EH closure gate; open from }\mathcal M \\
 \text{Delta-M candidate theorem} & \text{Conditional; premises still open from }\mathcal M \\
-\text{universal operational factor }s & \text{Working assumption / open theorem} \\
-\text{reciprocal clock/rod response} & \text{Working assumption} \\
-c_{\rm coord}/c=s^2 & \text{Derived result} \\
+\text{universal operational factor }s & \text{Bridge variable; }s=\rho^{1/2}\text{ in the coherent completion} \\
+\text{reciprocal clock/rod response} & \text{Derived inside coherent endpoint-counting completion} \\
+c_{\rm coord}/c=s^2 & \text{Derived result; square-law completion theorem} \\
 s=e^{-u} & \text{Derived from layering} \\
 u(r)=G_{\rm RMG}M/(rc^2) & \text{Derived in weak static sector} \\
 \gamma=1,\ \beta=1 & \text{Derived in weak field} \\
@@ -2985,6 +3133,9 @@ Still open:
 \]
 \[
 \text{compute the stable-phase spectrum of the candidate }S_{\mathcal M},
+\]
+\[
+\text{prove every long-range stable record family uses the coherent endpoint-counting coefficients }C_t:C_0:C_x=1:\rho:\rho^2,
 \]
 \[
 \text{prove the phase/acoustic branch gives only the common cone, not a scalar graviton},
@@ -3158,10 +3309,10 @@ Still open:
 \text{derive the far-tail monopole/source density }Q_A^{(0)}=\eta E_A/c^2,
 \]
 \[
-\text{derive the universal operational factor }s\text{ from }\mathcal M,
+\text{derive the universal operational factor }s\text{ for the full stable spectrum from }\mathcal M,
 \]
 \[
-\text{derive reciprocal clock/rod scaling from }\mathcal M,
+\text{derive the coherent endpoint-counting record completion uniquely from the pre-continuum node dynamics},
 \]
 \[
 \text{derive }\ell_*\text{ from the stable base-medium record dynamics or keep it as primitive calibration},
