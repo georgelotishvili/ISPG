@@ -1,104 +1,5 @@
-% RMG-1
-% Relational Medium Gravity
+% RMG-1: Relational Medium Gravity
 % Internal core draft, version 6.2
-% SEARCH TAGS:
-% RMG-CORE
-% RELATIONAL-MEDIUM-GRAVITY
-% BASE-MEDIUM
-% POSITIVE-ENERGY-CORE
-% ADM-GR-FIXED-POINT
-% RMG-STATUS-MAP
-% RMG-OPEN-THEOREM
-% RMG-PASS-FAIL
-% RMG-OPERATIONAL-RELATIONAL-COVARIANCE
-% RMG-ORC
-% RMG-FACTORIZATION-GATE
-% RMG-ONE-KINETIC-KERNEL
-% RMG-DELTA-M-GATE
-% RMG-DELTA-M-CANDIDATE-THEOREM
-% RMG-UNIVERSAL-PRINCIPAL-RESPONSE
-% RMG-DIVERSE-TAILS-ONE-MEDIUM
-% RMG-TAIL-SUPERPOSITION-GATE
-% RMG-TOTAL-ENERGY-SOURCE-GATE
-% RMG-FAR-TAIL-MONOPOLE-GATE
-% RMG-LAPSE-COMPRESSION-SOURCE-GATE
-% RMG-ADM-LAPSE-SOURCE-CHECK
-% RMG-LAPSE-BRIDGE
-% RMG-UNIVERSAL-S-GATE
-% RMG-NO-BIREFRINGENCE-FACTOR
-% RMG-RECORD-SECTOR-NO-BIREFRINGENCE
-% RMG-RECORD-SECTOR-DEFINITION
-% RMG-INTERNAL-SECTOR
-% RMG-FLOW-VORTICITY-SPLIT
-% RMG-MOND-SAFE-REENTRY
-% RMG-STRONG-FIELD-CONTRACT
-% RMG-COMPACT-PROJECTION-GATE
-% RMG-MASTER-GATE
-% RMG-STABLE-TAIL-COMMON-CARRIER
-% RMG-ONE-TENSOR-FACTORIZATION
-% RMG-NONCOMMON-MODE-ELIMINATION
-% RMG-OBSERVABLE-TENSOR-BASIS
-% RMG-PREFERRED-FRAME-TENSOR-GATE
-% RMG-LOCAL-FLOW-DECOUPLING
-% RMG-PPN-PREFERRED-FRAME-NULL
-% RMG-CONSTRAINT-PROTECTION
-% RMG-TWO-TENSOR-DOF
-% RMG-HYPERSURFACE-DEFORMATION-CLOSURE
-% RMG-DEWITT-LAMBDA-GATE
-% RMG-EH-FIXED-POINT-CONDITIONAL
-% RMG-MATTER-COUPLED-CLOSURE
-% RMG-SPECIES-PRIVATE-SOURCE-GATE
-% RMG-INTERNAL-ENERGY-EFFACEMENT
-% RMG-ROOT-GATE-REDUCTION
-% RMG-LOCAL-GRAVITY-CLOSURE-PACKAGE
-% RMG-ROOT-A-SPECTRAL-RESONANCE-PROGRAM
-% RMG-ONE-GAPLESS-RECORD-BRANCH
-% RMG-ROOT-B-EMBEDDING-CLOSURE-PROGRAM
-% RMG-RECORD-HISTORY-EQUIVALENCE
-% RMG-SYMPLECTIC-NULL-CONSTRAINTS
-% RMG-HDA-STRUCTURE-FUNCTION
-% RMG-ROOT-B-SUFFICIENT-CONDITIONS
-% RMG-ROOT-B-ANOMALY-GATE
-% RMG-LAPSE-SHIFT-NO-KINETIC-VERIFICATION
-% RMG-ROOT-B-INTUITION-AUDIT
-% RMG-RECORD-PHASE-SPACE-NEXT
-% RMG-RECORD-PHASE-SPACE
-% RMG-COVARIANT-PRESYMPLECTIC-FORM
-% RMG-NOETHER-MOMENT-MAP-CONSTRAINTS
-% RMG-NOETHER-SPLIT-GATE
-% RMG-BACKGROUND-FREE-RECORD-ACTION
-% RMG-NOETHER-ANOMALY-SOURCES
-% RMG-LOCAL-RECORD-ACTION-EFT-BASIS
-% RMG-EH-TWO-DERIVATIVE-FIXED-POINT
-% RMG-ROOT-C-SOURCE-CHAIN
-% RMG-SPECIES-PRIVATE-SOURCE-ANOMALY
-% RMG-FAR-TAIL-GAUSS-LAW
-% RMG-C3-LAPSE-VARIATION-SOURCE
-% RMG-NO-EXPLICIT-U-COUPLING-GATE
-% RMG-METRIC-EXHAUSTION-U-COUPLING
-% RMG-SPECIES-FIFTH-FORCE-GATE
-% RMG-NONCIRCULAR-PROOF-ORDER
-% RMG-CLOSURE-DEPENDENCY-GRAPH
-% RMG-SEFF-REC-DERIVATION-PIPELINE
-% RMG-MODE-PROJECTORS-RECORD-INTERNAL
-% RMG-INTERNAL-INTEGRATION-NO-LEAK
-% RMG-MINIMAL-BASE-MEDIUM-INPUT-DATA
-% RMG-STABLE-PHASE-SPECTRAL-INPUT
-% RMG-INTERNAL-INTEGRATION-SCHUR-GATE
-% RMG-CANDIDATE-BASE-MEDIUM-ORDER-PARAMETER
-% RMG-CANDIDATE-SM-FUNCTIONAL
-% RMG-CANDIDATE-SPECTRUM-AUDIT
-% RMG-TENSOR-GRAVITY-NOT-PHONON
-% RMG-COMPOSITE-RECORD-METRIC-MAP
-% RMG-SPIN2-EMERGENCE-GATE
-% RMG-GW-DETECTION-GATE
-% RMG-TENSOR-CLOSURE-REDUCTION
-% RMG-RELATIONAL-BASE-ACTION
-% RMG-LEADING-ORDER-CORE-DERIVATION
-% RMG-LOOP-DEFECT-CURVATURE
-% RMG-DEWITT-KINETIC-DERIVATION
-% RMG-MINIMAL-OPERATIONAL-NODE
-% RMG-G-FROM-BASE-NODE-SCALE
 
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
@@ -146,135 +47,63 @@ one kinetic metric kernel.
 
 \section*{Status labels}
 
-Every statement in RMG-1 must have a status:
-\[
-\boxed{\text{Primitive Postulate}}
-\]
-minimal starting property of the base-medium;
-\[
-\boxed{\text{Primitive Protection Principle}}
-\]
-low-energy relational rule that excludes operators violating the protection requirements;
-\[
-\boxed{\text{Working Assumption}}
-\]
-temporary bridge used inside RMG-1, still requiring deeper derivation;
-\[
-\boxed{\text{Result}}
-\]
-statement derived from the listed assumptions;
-\[
-\boxed{\text{Low-Energy Target}}
-\]
-structure required by observation and adopted as the low-energy fixed point;
-\[
-\boxed{\text{Open Theorem}}
-\]
-claim still to be proven from $\mathcal M$;
-\[
-\boxed{\text{Failure Gate}}
-\]
-condition whose failure invalidates the local core.
-
-\section{Definition}
-
-\[
-\boxed{
-\text{RMG = Relational Medium Gravity.}
-}
-\]
-
-Working definition:
-
-RMG is a gravitational framework in which a single base-medium $\mathcal M$
-gives rise to matter modes, rods, clocks, signals and operational geometry.  The
-deeper task is to explain why the universal low-energy geometry is the ADM/GR
-fixed point.
+Every statement in RMG-1 carries one of the following labels:
+\textit{Primitive Postulate} (minimal starting property of the base-medium);
+\textit{Primitive Protection Principle} (low-energy relational rule excluding
+operators that violate the protection requirements);
+\textit{Working Assumption} (temporary bridge requiring deeper derivation);
+\textit{Result} (statement derived from listed assumptions);
+\textit{Low-Energy Target} (structure required by observation and adopted as
+the low-energy fixed point);
+\textit{Open Theorem} (claim still to be proven from $\mathcal M$);
+\textit{Failure Gate} (condition whose failure invalidates the local core).
 
 \section{Core Terms}
 
-\[
-\mathcal M
-\]
-is the base-medium.  It is not assumed to be an ordinary scalar field.
+RMG (Relational Medium Gravity) is a gravitational framework in which a single
+base-medium $\mathcal M$ gives rise to matter modes, rods, clocks, signals and
+operational geometry.  The deeper task is to explain why the universal
+low-energy geometry is the ADM/GR fixed point.
 
-\[
-\mathcal W
-\]
-is the relational medium-history.
+$\mathcal M$ is the base-medium; it is not assumed to be an ordinary scalar
+field.  $\mathcal W$ is the relational medium-history.  $X_F$ is a foliation
+or embedding description of the same history $\mathcal W$.
 
-\[
-X_F
-\]
-is a foliation or embedding description of the same history $\mathcal W$.
+$s(x)$ is the local operational factor shared by clocks, rods and signals in
+the weak-sector bridge description.  $u$ is the compression/lapse potential,
+with $s=e^{-u}$; it enters the action as a constraint multiplier, not as an
+independent propagating field.
 
-\[
-s(x)
-\]
-is the local operational factor shared by clocks, rods and signals in the
-weak-sector bridge description.
+$g_{\mu\nu}^{\rm eff}$ is the effective metric seen by low-energy matter
+modes.  $N,N^i,h_{ij}$ are the ADM lapse, shift and spatial metric variables
+in the low-energy target, and $h_{ij}^{TT}$ is the transverse-traceless
+tensor/shear radiation sector.  $u^\mu_{\mathcal M}$ denotes a putative
+independent local medium-frame field; it must not appear as an independent
+physical field in the tested RMG core.
 
-\[
-u
-\]
-is the compression/lapse potential:
-\[
-s=e^{-u}.
-\]
-It enters the action as a constraint multiplier, not as an independent
-propagating field.
-
-\[
-g_{\mu\nu}^{\rm eff}
-\]
-is the effective metric seen by low-energy matter modes.
-
-\[
-N,\qquad N^i,\qquad h_{ij}
-\]
-are the ADM lapse, shift and spatial metric variables in the low-energy target.
-
-\[
-h_{ij}^{TT}
-\]
-is the transverse-traceless tensor/shear radiation sector.
-
-\[
-u^\mu_{\mathcal M}
-\]
-denotes a putative independent local medium-frame field.  It must not appear
-as an independent physical field in the tested RMG core.
-
-\[
-Q_{AB}^{\mu\nu}
-\]
-is the highest-derivative low-energy kinetic response matrix for perturbations
-of matter and geometry modes.
-
-\[
-G^{\mu\nu}
-\]
-is the common principal metric kernel, identified with $g_{\rm eff}^{\mu\nu}$ if
-the factorization gate succeeds.
-
-\[
-K_{AB}
-\]
-is an internal/species kinetic matrix.  It carries allowed differences between
-particle families, tail shapes, polarizations, phases and internal geometries.
-
-\[
-B_{AB}^{\mu\nu}
-\]
-is the non-factorizing failure matrix.  It must vanish on physical low-energy
+$Q_{AB}^{\mu\nu}$ is the highest-derivative low-energy kinetic response matrix
+for perturbations of matter and geometry modes.  $G^{\mu\nu}$ is the common
+principal metric kernel, identified with $g_{\rm eff}^{\mu\nu}$ if the
+factorization gate succeeds.  $K_{AB}$ is an internal/species kinetic matrix:
+it carries allowed differences between particle families, tail shapes,
+polarizations, phases and internal geometries.  $B_{AB}^{\mu\nu}$ is the
+non-factorizing failure matrix; it must vanish on physical low-energy
 principal modes, up to gauge, internal or suppressed correction terms.
 
-\[
-\Delta_{\mathcal M}
-\]
-is the residual medium contribution to the low-energy Hamiltonian/constraint
-algebra after the ADM/EH target terms are separated.  The tested core requires
-$\Delta_{\mathcal M}=0$, or suppression outside all tested regimes.
+$\Delta_{\mathcal M}$ is the residual medium contribution to the low-energy
+Hamiltonian/constraint algebra after the ADM/EH target terms are separated;
+the tested core requires $\Delta_{\mathcal M}=0$, or suppression outside all
+tested regimes.
+
+$\mathcal R$ is the record sector: low-energy modes that can participate in
+operational measurement as rods, clocks, detector components, memory or
+record components, exchanged signals or stable external matter excitations.
+$\mathcal I$ is the internal sector: confined internal modes, gauge
+directions, constraint variables, off-shell auxiliary modes, short-range
+internal responses and high-energy modes outside the tested local regime.
+Internal modes may contribute to mass, binding energy, charge, spin, colour,
+tail shape, effective couplings and total energy, but must not define a
+separate external spacetime cone in the tested local core.
 
 \section{Primitive Postulates}
 
@@ -341,13 +170,8 @@ that load the closure of the gravitational core:
 \end{enumerate}
 ORC is the principal axiom that closes the three local-gravity roots
 (Root~A: one carrier; Root~B: ADM/EH closure; Root~C: total-energy source)
-into derived results.  The closure proofs are written out in
-\texttt{RMG/work/011\_root\_A\_closure\_under\_ORC.md},
-\texttt{012\_root\_B\_closure\_under\_ORC.md},
-\texttt{013\_root\_C\_closure\_under\_ORC.md} and assembled in
-\texttt{014\_gravity\_core\_full\_closure.md}.  ORC itself is taken here as a
-primitive postulate; its derivation from a deeper micro principle (Route~1
-of \texttt{RMG/story/RMG-263}) remains a long-term research target.
+into derived results.  ORC itself is taken here as a primitive postulate; its
+derivation from a deeper micro principle remains a long-term research target.
 
 \begin{postulate}[Positive physical energy]
 Physical excitations of $\mathcal M$ have Hamiltonian bounded below:
@@ -390,15 +214,6 @@ s=s(x).
 Equivalently, all matter modes see one effective metric
 $g_{\mu\nu}^{\rm eff}$.
 \end{assumption}
-
-Status:
-\[
-\boxed{
-\text{bridge assumption; derived below inside the coherent stable-record completion,}
-\quad
-\text{full universal closure still open from }\mathcal M.
-}
-\]
 
 \begin{assumption}[Reciprocal clock/rod response]
 Local clocks and rods respond as:
@@ -528,36 +343,9 @@ ds^2=-e^{-2u}c^2dt^2+e^{2u}\delta_{ij}dx^idx^j.
 \section{One-Kernel Factorization Gate}
 
 The universal matter metric must derive from a common highest-derivative
-kinetic kernel.
-
-\[
-\boxed{
-\mathcal R
-}
-\]
-is the record sector: low-energy modes that can participate in operational
-measurement as rods, clocks, detector components, memory/record components,
-exchanged signals or stable external matter excitations.
-
-\[
-\boxed{
-\mathcal I
-}
-\]
-is the internal sector: confined internal modes, gauge directions, constraint
-variables, off-shell auxiliary modes, short-range internal responses and
-high-energy modes outside the tested local regime.
-
-Internal modes may contribute to mass, binding energy, charge, spin, color,
-tail shape, effective couplings and total energy.  They must not define a
-separate external spacetime cone in the tested local core.
-
-For low-energy perturbations $\delta\Phi^A$, define the principal kinetic
-response:
-\[
-Q_{AB}^{\mu\nu}.
-\]
-For a covector \(k_\mu\), define the principal symbol:
+kinetic kernel.  For low-energy perturbations $\delta\Phi^A$, denote by
+$Q_{AB}^{\mu\nu}$ the principal kinetic response.  For a covector $k_\mu$,
+define the principal symbol:
 \[
 \boxed{
 P_{AB}(k)=Q_{AB}^{\mu\nu}k_\mu k_\nu.
@@ -836,13 +624,6 @@ In the tested core, $B_{AB}^{\mu\nu}$ must not contain an independent
 preferred-frame tensor, species-private metric, or geometry-sector cone
 different from the matter cone.
 
-Status:
-\[
-\boxed{
-\text{open theorem / core gate, not yet derived from }\mathcal M.
-}
-\]
-
 \section{Tail Superposition And Projection Gate}
 
 Different oscillons may produce different local tail imprints in the same
@@ -930,38 +711,13 @@ generator of local process-rate change is the Hamiltonian density.  Thus the
 common pressure channel should read \(\rho_E=\mathcal H_{\rm phys}\), not a
 species-private tail detail.
 
-Species-specific tail structure may remain in $K_{AB}$ or internal sectors:
-\[
-\boxed{
-\text{spin, charge, color, phase, polarization, topology}.
-}
-\]
-It must not create a second long-range spacetime carrier.
-
-Status:
-\[
-\boxed{
-\text{open theorem / projection gate, not yet derived from oscillon dynamics.}
-}
-\]
-
-\begin{openthm}[Lapse/compression source theorem]
-Derive from the base-medium effective action that the universal source of
-the compression/lapse variable \(u\) is the physical Hamiltonian density:
-\[
-\boxed{
-\frac{1}{N\sqrt h}\frac{\delta S_{\rm m}}{\delta u(x)}
-=
-\rho_E(x)
-}
-\]
-up to gauge terms, internal divergences or suppressed corrections.  If an
-unsuppressed species-private source term remains, the equivalence-principle
-source gate fails.
-\end{openthm}
+Species-specific tail structure may remain in $K_{AB}$ or in internal sectors
+(spin, charge, colour, phase, polarization, topology), but must not create a
+second long-range spacetime carrier.  If an unsuppressed species-private
+source term remains in $S_u$, the equivalence-principle source gate fails.
 
 \begin{openthm}[Matter-coupled closure and source universality]
-Vacuum ADM closure is not enough.  The matter-coupled constraints must close:
+Beyond vacuum ADM closure, the matter-coupled constraints must close as well:
 \[
 \boxed{
 \mathcal H_{\rm tot}
@@ -1070,13 +826,6 @@ unsuppressed independent medium residue:
 \]
 up to suppressed high-energy or large-scale correction windows.
 \end{openthm}
-
-Status:
-\[
-\boxed{
-\text{conditional theorem; its premises are still open from }\mathcal M.
-}
-\]
 
 \section{Static Weak-Field Sector}
 
@@ -1191,13 +940,6 @@ Therefore:
 \gamma=1,
 \qquad
 \beta=1.
-}
-\]
-
-Status:
-\[
-\boxed{
-\text{derived in the static weak-field bridge sector.}
 }
 \]
 
@@ -1530,12 +1272,9 @@ Goldstone (the phonon) plus two transverse-traceless tensor modes;
 $c_{\rm phase}=c_{\rm graviton}$, so all gapless record modes share the
 single principal symbol $G^{\mu\nu}k_\mu k_\nu$;
 (iii)~stable record-forming oscillons project on this single channel with
-species-dependent amplitudes $Z_A$ but a common cone.  The full proof is
-in \texttt{RMG/work/011\_root\_A\_closure\_under\_ORC.md}.  The same file
-records that without ORC the closure remains open (audit
-\texttt{RMG/work/006}; four-route catalog \texttt{RMG/work/007--009}).
-The microscopic derivation of ORC itself (Route~1 of
-\texttt{RMG/story/RMG-263}) is left as the deeper open program.
+species-dependent amplitudes $Z_A$ but a common cone.  Without ORC the
+closure remains open; the microscopic derivation of ORC itself is left as
+the deeper open program.
 
 \begin{openthm}[Root B: record-embedding ADM closure]
 Derive that changes of slicing, labels and record parametrization are gauge
@@ -1963,10 +1702,7 @@ the unique local two-derivative Hamiltonian with first-class HDA
 closure and Riemannian configuration space is Einstein--Hilbert plus
 minimally coupled matter, with DeWitt coefficient $\lambda=1/2$;
 (iv)~at the linearized level, $h_+,h_\times$ are the only propagating
-gravitational modes; scalar/vector/breathing sectors are constrained.  The
-full proof is in \texttt{RMG/work/012\_root\_B\_closure\_under\_ORC.md},
-with the prior first-class bracket calculation written out in
-\texttt{RMG/work/003\_RMG302\_constraint\_algebra\_first\_class.md}.
+gravitational modes; scalar/vector/breathing sectors are constrained.
 
 \begin{openthm}[Root C: total-energy source projection]
 Derive the far-tail/source theorem:
@@ -2180,11 +1916,10 @@ species-private cones and species-private $u$-coupling, so $C5$
 ($\sigma_{\rm species}^{\rm long,local}=0$) is automatic;
 (iv)~$\nabla^2u=-\kappa\rho_E$ and $Q^{(0)}=\eta E_{\rm total}/c^2$ then
 follow from the linearized Einstein equation in the weak static limit.
-The full proof is in \texttt{RMG/work/013\_root\_C\_closure\_under\_ORC.md}.
-Residual quantitative items (the numerical value of $G$, the smallness of
+Residual quantitative items --- the numerical value of $G$, the smallness of
 $\Lambda$, and Standard-Model species-by-species verification of the
-universal coupling) remain open as part of the broader G-closure and
-matter-emergence programs (cf.\ \texttt{RMG/story/RMG-316--353}).
+universal coupling --- remain open as part of the broader G-closure and
+matter-emergence programs.
 
 \begin{openthm}[Local gravity core closure]
 If Root A, Root B and Root C are derived from \(\mathcal M\), then the local
@@ -2225,23 +1960,18 @@ S_{\rm matter}[g,\Psi]
 with one record cone, two TT graviton modes at $c_{\rm GW}=c$, no scalar
 or vector gravity waves, no preferred frame, universal free fall, and
 gravitational source equal to the total physical energy-momentum.  This is
-the tested local GR core.  Synthesis and step-by-step assembly are in
-\texttt{RMG/work/014\_gravity\_core\_full\_closure.md}, with the full
-audit cycle preserved in \texttt{RMG/work/001--010}.
+the tested local GR core.
 \smallskip
 
-\noindent\textbf{Status note (Route~1 long-term target).}
+\noindent\textbf{Status note.}
 The ORC postulate is the single controlling axiom of this closure; its
-microscopic derivation from a deeper relational substrate (Route~1 of
-\texttt{RMG/story/RMG-263}: ``derive ORC from $S_M$'') remains the
+microscopic derivation from a deeper relational substrate remains the
 central long-term research program.  Candidate routes include emergent
 gauge redundancy from a UV principle, ORC as an IR fixed point of a
 nonlinear relational substrate, and consistency arguments showing that
 ORC-violating theories produce internal pathologies.  No such derivation
-has yet been completed.  Until then, RMG sits in Route~2 of
-\texttt{RMG/story/RMG-263} (``framework with explicit foundational
-axiom''), where the gravitational core is closed conditional on ORC and
-not on a deeper micro derivation.
+has yet been completed.  Until then, the gravitational core is closed
+conditional on ORC.
 
 \begin{openthm}[Non-circular local-core proof order]
 The local gravity proof must close in the following order:
@@ -3156,409 +2886,187 @@ derive and observationally confront an alternative strong-field branch.
 \section{Statement Status Map}
 
 \[
-\begin{array}{c|c}
+\begin{array}{l|l}
 \text{Statement} & \text{Status} \\
 \hline
-\text{one base-medium }\mathcal M & \text{Primitive postulate} \\
-\text{stable low-energy phase} & \text{Primitive postulate} \\
-\text{minimal operational node scale }\ell_* & \text{Primitive postulate / Planck-order calibration} \\
-\text{Operational Relational Covariance} & \text{Primitive protection principle} \\
-\text{positive physical energy} & \text{Primitive postulate} \\
-\text{local effective hierarchy} & \text{Primitive EFT condition} \\
-\text{no independent }u^\mu_{\mathcal M} & \text{Protected core requirement} \\
-\text{diverse local tail imprints in one base-medium} & \text{Allowed internal/species structure} \\
-\mathcal R\text{ record sector} & \text{Definition / projection still open from }\mathcal M \\
-\mathcal I\text{ internal sector} & \text{Definition; contributes energy, not external cone} \\
-\text{Root A: one external record carrier channel} & \text{Root open theorem} \\
-\text{Root A spectral/resonance closure} & \text{Open calculation; one gapless branch} \\
-\text{Root B: record-embedding ADM closure} & \text{Root open theorem} \\
-\text{Root B embedding/symplectic closure} & \text{Open calculation; null directions }\Rightarrow\text{ HDA} \\
-\text{Root B finite sufficiency checklist} & \text{Reduced to B1--B5 plus }A[N,M]=0 \\
-\text{Root B physical motivation status} & \text{B1 strong; B2 depends on Root A; B3--B5 open} \\
-\text{record phase space }\Gamma_{\mathcal R}\text{ and }\Omega_{\mathcal R} & \text{Construction program; Noether moment-map route} \\
-\text{background-free record-action gate} & \text{Noether split pass/fail test} \\
-\text{two-derivative record-action fixed point} & \text{EH if one metric and no background leak} \\
-\text{Root C: total-energy source projection} & \text{Root open theorem} \\
-\text{Root C finite source chain} & \text{Reduced to C1--C5; source anomaly gate} \\
-\text{C3 lapse-variation source theorem} & \text{Conditional proof of }S_u=\rho_E \\
-\text{no explicit species-private }u\text{-coupling} & \text{Metric-exhaustion / fifth-force gate} \\
-\text{non-circular proof order} & \text{Root A }\Rightarrow\text{ Root B }\Rightarrow\text{ EH }\Rightarrow\text{ Root C} \\
-\text{\(S_{\rm eff}^{\rm rec}\) derivation pipeline} & \text{Base-medium }\Rightarrow\text{ record action target} \\
-\text{relational base action candidate} & \text{Leading-order core route under explicit conditions} \\
-\text{loop-defect curvature route} & \text{Leading-order } \Omega_{\rm loop}\Rightarrow R(h) \\
-\text{DeWitt kinetic route} & \text{Leading-order shear/constraint split} \\
-\text{local ADM/EH core from }\mathcal M_{\rm rel} & \text{Conditional leading-order result} \\
-\text{minimal base-medium input package }\mathcal D_{\mathcal M} & \text{Required before microscopic proof} \\
-\text{candidate base-medium order parameter }\sqrt n e^{i\theta}\chi & \text{Test ansatz; needs record completion} \\
-\text{coherent endpoint-counting square-law route} & \text{Completion theorem for stable record sector} \\
-\text{stable-record coefficients }C_t:C_0:C_x=1:\rho:\rho^2 & \text{Explicit completion result} \\
-\text{candidate stable-phase spectrum audit} & \text{Phase cone candidate; tensor gravity still Root B} \\
-\text{composite record metric/spin-2 gate} & \text{Requires }\delta g_{\rm rec}\text{ with protected TT sector} \\
-\text{tensor-closure reduction} & \text{Open finite test: }\mathrm{rank}\,K_{\chi{\rm -strain}}=2 \\
-\text{local gravity core closure package} & \text{Conditional on Roots A--C} \\
-\text{constraint protection route} & \text{Open theorem; scalar/vector no-radiation route} \\
-\text{two tensor gravitational DOF} & \text{Target if first-class constraints close} \\
-\text{GW common-mode self-calibration} & \text{Protection principle / common-mode rejection} \\
-\text{GW detector-signal gate} & \text{Open theorem; observable signal must be TT/shear/defect} \\
-\text{hypersurface-deformation closure filter} & \text{Open ADM algebra gate} \\
-\text{DeWitt }\lambda=1/2 & \text{Selected by closure filter; open from }\mathcal M \\
-\text{EH fixed point} & \text{Conditional if ADM closure closes} \\
-\text{matter-coupled closure} & \text{Open theorem; equivalence-principle gate} \\
-\text{species-private source }\sigma_{\rm species}=0 & \text{Required source universality} \\
-\text{internal energy effacement} & \text{Required; energy gravitates without extra cone} \\
-\text{flow/vorticity local role} & \text{Constraint/near-zone only in tested core} \\
-\text{local flow decoupling} & \text{Open gate; preferred-frame null target} \\
-\text{MOND-safe reentry} & \text{Open large-scale correction gate} \\
-\text{strong-field compact-object branch} & \text{Open contract; branch not selected} \\
-\text{hybrid compact projection} & \text{Open theorem / current program target} \\
-\text{common carrier/principal cone for record-forming imprints} & \text{Master open theorem / core gate} \\
-\text{stable-tail common-carrier route} & \text{Open proof route from oscillon stability} \\
-\text{one-tensor factorization lemma} & \text{Open lemma / exact proof target} \\
-\text{non-common mode elimination} & \text{Required projection/confinement theorem} \\
-\text{observable tensor basis} & \text{Open gate; forbid extra local principal tensors} \\
-\text{preferred-frame tensor elimination} & \text{Required local-core protection} \\
-\text{record-sector no-birefringence} & \text{Master protection principle / open from }\mathcal M \\
-\text{no physical low-energy birefringence} & \text{Master open theorem / factorization gate} \\
-\text{one cone }\Rightarrow\text{ one }s & \text{Consequence if master gate closes} \\
-\text{tail projection }\Pi_{\rm grav}(T_A)=q_A\mathcal G & \text{Open theorem / projection gate} \\
-q_A\propto E_A/c^2 & \text{Equivalence-principle source gate} \\
-\text{far-tail monopole }Q_A^{(0)}=\eta E_A/c^2 & \text{Open theorem / source gate} \\
-\sigma_{\rm grav}\propto\rho_E/c^2 & \text{Open theorem / source density} \\
-\text{ADM lapse bridge }N=s=e^{-u} & \text{Derived inside bridge; }s\text{ open from }\mathcal M \\
-\text{lapse source }\delta S_{\rm m}/\delta u\propto\rho_E & \text{ADM bridge result; }s\text{ open from }\mathcal M \\
-\text{internal/binding energy sources the composite tail} & \text{Required source universality} \\
-\text{factorization }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB} & \text{Open theorem / core gate} \\
-\text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{Required; protection still to prove} \\
-\Delta_{\mathcal M}=0 & \text{Required ADM/EH closure gate; open from }\mathcal M \\
-\text{Delta-M candidate theorem} & \text{Conditional; premises still open from }\mathcal M \\
-\text{universal operational factor }s & \text{Bridge variable; }s=\rho^{1/2}\text{ in the coherent completion} \\
-\text{reciprocal clock/rod response} & \text{Derived inside coherent endpoint-counting completion} \\
-c_{\rm coord}/c=s^2 & \text{Derived result; square-law completion theorem} \\
-s=e^{-u} & \text{Derived from layering} \\
-u(r)=G_{\rm RMG}M/(rc^2) & \text{Derived in weak static sector} \\
-\gamma=1,\ \beta=1 & \text{Derived in weak field} \\
-\lambda=1/2 & \text{Closure-selected; not yet derived from }\mathcal M \\
-\text{only two tensor GW modes} & \text{Low-energy target / open from }\mathcal M \\
-\text{ADM constraint closure} & \text{Main open theorem} \\
-\text{EH low-energy fixed point} & \text{Target / open from }\mathcal M
+\multicolumn{2}{c}{\textit{Primitive postulates}}\\
+\hline
+\text{one base-medium }\mathcal M & \text{postulate} \\
+\text{stable low-energy phase} & \text{postulate} \\
+\text{minimal operational node scale }\ell_* & \text{postulate / Planck-order calibration} \\
+\text{Operational Relational Covariance} & \text{protection principle} \\
+\text{positive physical energy} & \text{postulate} \\
+\text{local effective hierarchy} & \text{EFT condition} \\
+\hline
+\multicolumn{2}{c}{\textit{Derived in RMG-1}}\\
+\hline
+\text{stable-record coefficients }C_t:C_0:C_x=1:\rho:\rho^2 & \text{completion result} \\
+c_{\rm coord}/c=s^2 & \text{square-law completion theorem} \\
+s=e^{-u} & \text{derived from layering} \\
+\text{ADM lapse bridge }N=s=e^{-u} & \text{derived in operational bridge} \\
+\text{C3 lapse-variation source theorem} & \text{conditional proof of }S_u=\rho_E \\
+u(r)=G_{\rm RMG}M/(rc^2) & \text{derived in weak static sector} \\
+\gamma=1,\ \beta=1 & \text{derived in weak field} \\
+\text{leading-order ADM/EH core from }\mathcal M_{\rm rel} & \text{conditional leading-order result} \\
+\hline
+\multicolumn{2}{c}{\textit{Open root theorems}}\\
+\hline
+\text{Root A: one external record carrier} & \text{root open theorem / spectral one-cone target} \\
+\text{Root B: record-embedding ADM closure} & \text{root open theorem / B1--B5 plus }A[N,M]=0 \\
+\text{Root C: total-energy source projection} & \text{root open theorem / C1--C5} \\
+\text{non-circular proof order} & \text{A }\Rightarrow\text{ B }\Rightarrow\text{ EH }\Rightarrow\text{ C} \\
+\hline
+\multicolumn{2}{c}{\textit{Local-core gates}}\\
+\hline
+\text{factorization }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB} & \text{core gate} \\
+\text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{required protection} \\
+\text{record-sector no-birefringence} & \text{master protection principle} \\
+\text{observable tensor basis} & \text{forbid extra principal tensors} \\
+\text{local flow decoupling / preferred-frame PPN null} & \text{open gate} \\
+\Delta_{\mathcal M}=0 & \text{required ADM/EH closure gate} \\
+\text{hypersurface-deformation closure filter} & \text{ADM algebra gate} \\
+\text{DeWitt }\lambda=1/2 & \text{selected by closure filter; open from }\mathcal M \\
+\text{ADM constraint closure / EH fixed point} & \text{conditional on Roots A--C} \\
+\text{only two tensor GW modes }(h_+,h_\times) & \text{target; requires first-class closure} \\
+\text{GW detector signal: TT/shear/defect projection} & \text{open theorem} \\
+\text{tensor-closure reduction} & \text{open finite test: }\mathrm{rank}\,K_{\chi{\rm -strain}}=2 \\
+\hline
+\multicolumn{2}{c}{\textit{Source universality}}\\
+\hline
+q_A\propto E_A/c^2 & \text{equivalence-principle source gate} \\
+\text{far-tail monopole }Q_A^{(0)}=\eta E_A/c^2 & \text{open theorem} \\
+\sigma_{\rm grav}\propto\rho_E/c^2 & \text{open theorem} \\
+\text{species-private source }\sigma_{\rm species}=0 & \text{required source universality} \\
+\text{internal/binding energy effacement} & \text{required; energy gravitates without extra cone} \\
+\text{no species-private }u\text{-coupling} & \text{metric-exhaustion / fifth-force gate} \\
+\text{matter-coupled ADM closure} & \text{open theorem} \\
+\hline
+\multicolumn{2}{c}{\textit{Microscopic program}}\\
+\hline
+S_{\rm eff}^{\rm rec}[\mathcal M_0]\text{ from }\mathcal M & \text{record-action target} \\
+\text{minimal input package }\mathcal D_{\mathcal M} & \text{required before microscopic proof} \\
+\text{candidate order parameter }\sqrt n e^{i\theta}\chi & \text{test ansatz} \\
+\text{composite record metric }g_{\rm rec}^{\mu\nu}=\mathcal G^{\mu\nu}[\Phi_{\mathcal M}] & \text{requires protected TT sector} \\
+\hline
+\multicolumn{2}{c}{\textit{Extension windows}}\\
+\hline
+\text{MOND reentry} & \text{open large-scale correction gate} \\
+\text{strong-field compact-object branch} & \text{open contract; branch not selected} \\
+\text{hybrid compact projection} & \text{open theorem / current program target} \\
 \end{array}
 \]
 
 \section{Open Items}
 
-RMG-1 is not yet a closed theory.  The following items remain open:
-\[
-\text{upgrade the leading-order relational core route into an exact microscopic derivation},
-\]
-\[
-\text{construct the exact }S_{\rm eff}^{\rm rec}[\mathcal M_0]\text{ from the stable base-medium phase},
-\]
-\[
-\text{specify the input package }\mathcal D_{\mathcal M}=(\Phi_{\mathcal M},S_{\mathcal M},\mathcal M_0,\ell_*,\Omega_{\mathcal M},\mathcal G_{\rm int},\mathcal O_{\rm rec}),
-\]
-\[
-\text{test the candidate order parameter }\Phi_{\mathcal M}=\sqrt n e^{i\theta}\chi\text{ against Roots A--C},
-\]
-\[
-\text{compute the stable-phase spectrum of the candidate }S_{\mathcal M},
-\]
-\[
-\text{prove every long-range stable record family uses the coherent endpoint-counting coefficients }C_t:C_0:C_x=1:\rho:\rho^2,
-\]
-\[
-\text{prove the phase/acoustic branch gives only the common cone, not a scalar graviton},
-\]
-\[
-\text{derive the composite map }g_{\rm rec}^{\mu\nu}={\cal G}^{\mu\nu}[\Phi_{\mathcal M}],
-\]
-\[
-\text{prove }\delta g_{\rm rec}\text{ contains a protected }h_{ij}^{TT}\text{ sector},
-\]
-\[
-\text{close the tensor kinetic-rank test: exactly two positive luminal TT modes and no extra tensor/scalar/vector radiation},
-\]
-\[
-\text{prove amplitude/internal modes are gapped, constrained, gauge, confined or suppressed},
-\]
-\[
-\text{define projectors }\Pi_{\mathcal R},\Pi_{\mathcal I}\text{ and derive the record/internal split},
-\]
-\[
-\text{prove the stable-phase spectrum has exactly one external gapless record branch},
-\]
-\[
-\text{integrate out }I\text{ and prove no local background leak remains in }S_{\rm eff}^{\rm rec},
-\]
-\[
-\text{derive }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}\text{ from the record kinetic kernel},
-\]
-\[
-\text{prove the roots in the non-circular order: A }\Rightarrow\text{ B }\Rightarrow\text{ EH }\Rightarrow\text{ C},
-\]
-\[
-\text{prove Root A: one common external record carrier from the stable phase},
-\]
-\[
-\text{compute }\mathrm{Spec}({\cal L}_{\mathcal M_0})\text{ and prove one gapless record branch},
-\]
-\[
-\text{derive phase locking of stable tails to }\nu_0\text{ or its harmonic channel},
-\]
-\[
-\text{prove Root B: record-embedding first-class ADM closure},
-\]
-\[
-\text{derive record-history equivalence as a true symplectic gauge redundancy},
-\]
-\[
-\text{prove embedding-composition HDA with the same }h^{ij}\text{ as record geometry},
-\]
-\[
-\text{derive lapse/shift multiplier status from base-medium embedding redundancy},
-\]
-\[
-\text{verify B1--B5 for Root B in the base-medium record sector},
-\]
-\[
-\text{prove the Root B anomaly gate }A[N,M]=0,
-\]
-\[
-\text{exclude unsuppressed lapse/shift scalar-vector kinetic terms in the tested core},
-\]
-\[
-\text{construct the low-energy record phase space }\Gamma_{\mathcal R},
-\]
-\[
-\text{construct the record presymplectic form }\Omega_{\mathcal R},
-\]
-\[
-\text{derive embedding vector fields }\delta_\xi\text{ and their local generators }D,H,
-\]
-\[
-\text{derive the Noether split }J_\xi=C_\xi+dQ_\xi\text{ for the record action},
-\]
-\[
-\text{show every bulk part of }C_\xi\text{ is a constraint, not a physical charge},
-\]
-\[
-\text{prove the local record action is background-free: }L_{\mathcal R}^{\rm local}=L[g_{\rm rec},\Psi_{\rm rec}],
-\]
-\[
-\text{classify every Noether bulk remainder and prove }\mathcal A_\xi^{\rm local}=0,
-\]
-\[
-\text{derive the two-derivative record-action EFT basis from }\mathcal M,
-\]
-\[
-\text{prove every local background-leak operator is absent/constrained/gauge/suppressed},
-\]
-\[
-\text{prove Root C: total-energy source projection and far-tail Gauss law},
-\]
-\[
-\text{verify C1--C5 for Root C in the base-medium matter sector},
-\]
-\[
-\text{prove }S_u=\rho_E\text{ for every stable record matter family},
-\]
-\[
-\text{prove stable matter has no explicit unsuppressed species-private }u\text{-coupling},
-\]
-\[
-\text{derive metric-exhaustion of local }u\text{-dependence from stable matter construction},
-\]
-\[
-\text{show any }F_A(u,\Psi_A)\text{ is absent, suppressed, internal, gauge or already in }\rho_E,
-\]
-\[
-\text{prove internal/binding/confined energy is included in }\mathcal H_{\rm m},
-\]
-\[
-\text{prove }\sigma_{\rm species}^{\rm long,local}=0,
-\]
-\[
-\text{derive Operational Relational Covariance from microscopic }\mathcal M,
-\]
-\[
-\text{derive the record/internal projection }\Pi_{\mathcal R}\text{ from }\mathcal M,
-\]
-\[
-\text{prove forbidden preferred-frame operators are not generated},
-\]
-\[
-\text{derive the factorization gate }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB},
-\]
-\[
-\text{prove the stable record phase has only one observable principal tensor},
-\]
-\[
-\text{derive non-common mode elimination: confined/gapped/damped/gauge/unstable},
-\]
-\[
-\text{prove the observable tensor basis gate in the tested local core},
-\]
-\[
-\text{eliminate unsuppressed }U^\mu U^\nu\text{ and flow/vorticity tensors locally},
-\]
-\[
-\text{derive local flow decoupling and preferred-frame PPN null behavior},
-\]
-\[
-\text{prove no physical low-energy birefringence in the record phase},
-\]
-\[
-\text{derive the stable-tail common-carrier theorem for record-forming oscillons},
-\]
-\[
-\text{derive record-sector no-birefringence from one stable record phase},
-\]
-\[
-\text{derive one-cone clock universality }s_A/s_B=\text{constant},
-\]
-\[
-\text{prove the failure matrix }B_{AB}^{\mu\nu}\text{ vanishes on physical principal modes},
-\]
-\[
-\text{derive universal matter coupling from microscopic modes},
-\]
-\[
-\text{derive matter-coupled ADM closure and }\nabla_\mu T^{\mu\nu}=0,
-\]
-\[
-\text{prove no unsuppressed species-private gravitational source remains},
-\]
-\[
-\text{prove internal/binding energy effaces into total energy and multipoles},
-\]
-\[
-\text{derive the universal gravitational tail projection }q_A\propto E_A/c^2,
-\]
-\[
-\text{derive the far-tail monopole/source density }Q_A^{(0)}=\eta E_A/c^2,
-\]
-\[
-\text{derive the universal operational factor }s\text{ for the full stable spectrum from }\mathcal M,
-\]
-\[
-\text{derive the coherent endpoint-counting record completion uniquely from the pre-continuum node dynamics},
-\]
-\[
-\text{derive }\ell_*\text{ from the stable base-medium record dynamics or keep it as primitive calibration},
-\]
-\[
-\text{prove the residual medium term }\Delta_{\mathcal M}\text{ vanishes or is suppressed},
-\]
-\[
-\text{derive scalar/vector constraints and tensor/shear radiation},
-\]
-\[
-\text{derive lapse/shift no-kinetic structure from }\mathcal M,
-\]
-\[
-\text{prove pure common-mode breathing is locally self-calibrated and detector-null},
-\]
-\[
-\text{derive the detector-visible TT/shear or defect projection for GW signals},
-\]
-\[
-\text{prove first-class constraint closure removes scalar/vector radiation},
-\]
-\[
-\text{derive the hypersurface-deformation algebra from record embeddings},
-\]
-\[
-\text{derive the DeWitt coefficient }\lambda=1/2\text{ from the protected phase},
-\]
-\[
-\text{prove }\Delta_{\mathcal M}=0\text{ or constrained/gauge/suppressed in the closure filter},
-\]
-\[
-\text{derive ADM closure and Einstein-Hilbert fixed point},
-\]
-\[
-\text{control preferred-frame effects},
-\]
-\[
-\text{derive the flow/vorticity gate and MOND-safe reentry function }\mathcal F,
-\]
-\[
-\text{derive the compact-object branch and strong-field projection gate},
-\]
-\[
-\text{derive the MOND, cosmological and matter sectors from }\mathcal M.
-\]
+RMG-1 is not yet a closed theory.  The open items group into the following
+programs.
+
+\medskip\noindent\textit{Microscopic foundation.}
+Derive $S_{\rm eff}^{\rm rec}[\mathcal M_0]$ from the stable base-medium phase;
+specify the input package
+$\mathcal D_{\mathcal M}=(\Phi_{\mathcal M},S_{\mathcal M},\mathcal M_0,\ell_*,
+\Omega_{\mathcal M},\mathcal G_{\rm int},\mathcal O_{\rm rec})$; test the
+candidate order parameter $\Phi_{\mathcal M}=\sqrt n e^{i\theta}\chi$ against
+Roots A--C; compute the stable-phase spectrum; integrate out the internal
+sector and verify the absence of background leaks; derive
+$\ell_*$ from the base-medium record dynamics.
+
+\medskip\noindent\textit{Root A.}
+Derive one common external record carrier from the stable phase; compute
+$\mathrm{Spec}(\mathcal L_{\mathcal M_0})$ and prove one gapless record
+branch; derive phase locking of stable tails to $\nu_0$; prove the
+phase/acoustic branch gives only the common cone, not a scalar graviton;
+prove every long-range stable record family uses the coefficients
+$C_t:C_0:C_x=1:\rho:\rho^2$.
+
+\medskip\noindent\textit{Root B.}
+Derive record-embedding first-class ADM closure; construct $\Gamma_{\mathcal R}$
+and the presymplectic form $\Omega_{\mathcal R}$; derive the embedding vector
+fields $\delta_\xi$ and the local generators $D,H$; derive the Noether split
+$J_\xi=C_\xi+dQ_\xi$; verify B1--B5 and prove the anomaly gate $A[N,M]=0$;
+exclude unsuppressed lapse/shift scalar-vector kinetic terms; derive the
+hypersurface-deformation algebra; derive the DeWitt coefficient $\lambda=1/2$;
+prove $\Delta_{\mathcal M}=0$ or suppressed.
+
+\medskip\noindent\textit{Root C.}
+Verify C1--C5 in the base-medium matter sector; prove $S_u=\rho_E$ for every
+stable record matter family; prove metric-exhaustion of local $u$-dependence;
+prove the absence of explicit species-private $u$-coupling; prove
+$\sigma_{\rm species}^{\rm long,local}=0$; derive the universal gravitational
+tail projection $q_A\propto E_A/c^2$ and the far-tail monopole
+$Q_A^{(0)}=\eta E_A/c^2$.
+
+\medskip\noindent\textit{Factorization and protection.}
+Derive $Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}$ from the record kinetic kernel;
+prove the stable record phase has only one observable principal tensor; derive
+non-common mode elimination; prove the observable tensor basis gate; eliminate
+unsuppressed $U^\mu U^\nu$ and flow/vorticity tensors; derive local flow
+decoupling and the preferred-frame PPN null target; prove no physical
+low-energy birefringence; derive one-cone clock universality; prove the
+failure matrix $B_{AB}^{\mu\nu}$ vanishes on physical principal modes.
+
+\medskip\noindent\textit{Composite metric and tensor sector.}
+Derive the composite map $g_{\rm rec}^{\mu\nu}=\mathcal G^{\mu\nu}[\Phi_{\mathcal M}]$;
+prove $\delta g_{\rm rec}$ contains a protected $h_{ij}^{TT}$ sector; close the
+tensor kinetic-rank test (exactly two positive luminal TT modes and no extra
+tensor/scalar/vector radiation); prove amplitude and internal modes are
+gapped, constrained, gauge, confined or suppressed.
+
+\medskip\noindent\textit{Radiation and detection.}
+Derive scalar/vector constraints and tensor/shear radiation; derive
+lapse/shift no-kinetic structure from $\mathcal M$; prove first-class
+constraint closure removes scalar/vector radiation; prove pure common-mode
+breathing is locally self-calibrated and detector-null; derive the
+detector-visible TT/shear or defect projection for GW signals.
+
+\medskip\noindent\textit{Foundational and extension programs.}
+Derive Operational Relational Covariance from microscopic $\mathcal M$; derive
+the record/internal projection $\Pi_{\mathcal R}$ from $\mathcal M$; derive
+the flow/vorticity gate and the MOND reentry function $\mathcal F$; derive
+the compact-object branch and the strong-field projection gate; derive the
+cosmological background state and the matter sector from $\mathcal M$.
 
 \section{Pass/Fail Gates}
 
-\begin{gate}[Core pass]
-RMG passes as a core framework if it derives:
-\[
-S_{\rm EH}+S_{\rm matter}
-\]
-as the low-energy fixed point of $\mathcal M$, with positive physical
-Hamiltonian, universal metric coupling, and only two vacuum tensor
-gravitational degrees of freedom.
+\begin{gate}[Pass condition]
+The framework passes if $\mathcal M$ derives $S_{\rm EH}+S_{\rm matter}$ as
+the low-energy fixed point, with positive physical Hamiltonian, universal
+metric coupling, and exactly two vacuum tensor gravitational degrees of
+freedom.
 \end{gate}
 
-\begin{gate}[Core fail]
-RMG fails if the base-medium produces an observable local preferred frame,
-species-dependent metric coupling, extra scalar/vector radiation, wrong
-gravitational-wave speed, negative-energy physical modes, or non-closing ADM
-constraints.
-\end{gate}
-
-\begin{gate}[GW detection fail]
-RMG fails in the tested local gravitational-wave sector if observed
-interferometer signals are explained only by a pure common-mode scalar
-breathing that should be self-calibrated away, if an unsuppressed
-breathing/scalar polarization survives local polarization tests, or if no
-protected differential TT/shear record signal is produced.
-\end{gate}
-
-\begin{gate}[Tensor-closure fail]
-RMG fails in the tested local tensor sector if the candidate record dynamics
-does not produce exactly two positive, luminal, common-cone TT modes, or if it
-leaves an unsuppressed scalar/vector, massive spin-2, negative-energy, or
-extra shear radiation channel.
-\end{gate}
-
-\begin{gate}[Preferred-frame fail]
-RMG fails in the tested local core if an independent $u^\mu_{\mathcal M}$ enters
-local operators, or if lapse/shift acquire low-energy kinetic terms.
-\end{gate}
-
-\begin{gate}[Factorization fail]
-RMG fails in the tested local core if physical low-energy principal operators do
-not factorize through one $G^{\mu\nu}$, or if the failure matrix
-$B_{AB}^{\mu\nu}$ produces species-dependent cones, a preferred-frame tensor, or
-a geometry cone different from the matter cone.
-\end{gate}
-
-\begin{gate}[Tail-projection fail]
-RMG fails in the tested local core if stable low-energy particles have different
-gravitational projection ratios $q_A/(E_A/c^2)$, or if their long tails require
-different long-range spacetime carriers.
-\end{gate}
-
-\begin{gate}[Medium-residue fail]
-RMG fails in the tested local core if $\Delta_{\mathcal M}$ leaves an
-unsuppressed preferred-frame term, extra operational tensor, non-ADM constraint
-bracket, or low-energy scalar/vector propagating degree of freedom.
-\end{gate}
-
-\begin{gate}[MOND-window fail]
-RMG fails if the MOND-like medium correction remains unsuppressed in
-solar-system, binary-pulsar or gravitational-wave local tests, or if it changes
-\(\gamma=1\), \(\beta=1\), \(c_{\rm GW}=c\), universal free fall, or the
-two-tensor-mode vacuum sector.
-\end{gate}
-
-\begin{gate}[Strong-field compact fail]
-RMG fails in the compact-object sector if internal medium modes hide energy
-from gravity, create an unsuppressed breathing/scalar radiation channel, define
-a species-private external cone, alter \(c_{\rm GW}=c\), or force shadow,
-ringdown, binary-pulsar or strong-field lensing deviations already excluded by
-observations.
+\begin{gate}[Fail conditions]
+The framework fails in the tested local sector if any of the following
+occurs:
+\begin{itemize}
+\item observable preferred frame, species-dependent metric coupling, extra
+  scalar/vector radiation, wrong gravitational-wave speed, negative-energy
+  physical modes, or non-closing ADM constraints;
+\item factorization failure $Q_{AB}^{\mu\nu}\neq G^{\mu\nu}K_{AB}$, with the
+  failure matrix $B_{AB}^{\mu\nu}$ producing species-dependent cones, a
+  preferred-frame tensor, or a geometry cone distinct from the matter cone;
+\item composition-dependent gravitational projection $q_A/(E_A/c^2)$, or
+  long-range tails requiring distinct spacetime carriers;
+\item independent $u^\mu_{\mathcal M}$ in local operators, or low-energy
+  kinetic terms for lapse or shift;
+\item residue $\Delta_{\mathcal M}$ leaving an unsuppressed preferred-frame
+  term, extra operational tensor, non-ADM constraint bracket, or scalar/vector
+  propagating mode;
+\item observed interferometer signal explained only by pure common-mode
+  breathing that should be self-calibrated, or unsuppressed breathing/scalar
+  polarization in local polarization tests;
+\item record dynamics that do not yield exactly two positive, luminal,
+  common-cone TT modes, or that leave an unsuppressed scalar/vector,
+  massive spin-2, negative-energy or extra shear channel;
+\item unsuppressed MOND-type correction in solar-system, binary-pulsar or
+  local GW tests, or modification of $\gamma=1$, $\beta=1$, $c_{\rm GW}=c$,
+  universal free fall, or the two-tensor-mode vacuum sector;
+\item compact-object sector hiding energy from gravity, creating an
+  unsuppressed breathing/scalar radiation channel, defining a species-private
+  external cone, altering $c_{\rm GW}=c$, or forcing shadow, ringdown,
+  binary-pulsar or strong-field lensing deviations already excluded by
+  observation.
+\end{itemize}
 \end{gate}
 
 \section*{Current Status}
