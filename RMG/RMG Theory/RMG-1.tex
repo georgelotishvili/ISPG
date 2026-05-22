@@ -4491,6 +4491,251 @@ The pass target is \(A[N,M]=0\) or a controlled boundary/gauge term,
 positive TT modes, record-cone propagation and matter-coupled constraint
 preservation.
 
+\medskip\noindent\textbf{Root B linearized ADM MVP scaffold.}
+The linearized Root~B MVP is an execution scaffold, not a completed proof.  It
+starts from the conditional \(S_{\mathcal R}^{\rm bridge}\) and asks whether
+the local record sector can support a linearized ADM phase space with
+non-kinetic lapse/shift, first-class constraints, exactly two positive TT
+modes, the K1 record cone and no local scalar/vector/preferred-frame leakage.
+The current status is:
+\[
+\boxed{
+\begin{gathered}
+B0\ \text{bridge imported conditionally},\qquad
+\Theta_{\mathcal R},\Omega_{\mathcal R}\ \text{not yet derived},\\
+\text{no kinetic lapse/shift: first hard check},\qquad
+\text{two TT modes: conditional/fail-risk},\\
+\text{ADM bracket closure and EH fixed point: open.}
+\end{gathered}
+}
+\]
+
+The local background is the K1 background
+\[
+\boxed{\bar g=\eta,\qquad \eta^{\mu\nu}=\operatorname{diag}(-1,1,1,1).}
+\]
+This is more than notation: the linearized principal operator must be
+Lorentz-covariant under \(x^\mu\mapsto\Lambda^\mu{}_\nu x^\nu\).  The K1
+choice \(Z_\eta=Z_\theta=Z_Q=1\) gives the common principal symbol
+\(-\omega^2+k^2\), and the branch dispersions
+\(\omega^2=k^2+m^2\) are Lorentz-covariant at the principal-symbol level.  A
+sector-dependent leading \(Z\) would create a preferred cone and would prevent
+\(\bar g=\eta\) from serving as the common local background.
+
+The conditional ADM perturbations are
+\[
+\boxed{
+N=1+n,\qquad N^i=n^i,\qquad h_{ij}=\delta_{ij}+\gamma_{ij},\qquad
+\pi^{ij}\ \text{conjugate to }\gamma_{ij}.
+}
+\]
+The spatial perturbation is decomposed as
+\[
+\boxed{
+\gamma_{ij}
+=\gamma_{ij}^{TT}
++\partial_iV_j^T+\partial_jV_i^T
++\left(\partial_i\partial_j-\frac13\delta_{ij}\partial^2\right)\sigma
++\frac13\delta_{ij}\gamma,
+}
+\]
+with
+\[
+\boxed{
+\partial^i\gamma_{ij}^{TT}=0,\qquad
+\delta^{ij}\gamma_{ij}^{TT}=0,\qquad
+\partial^iV_i^T=0.
+}
+\]
+The target mode assignment is: \(\gamma_{ij}^{TT}\) supplies two propagating
+modes; \(V_i^T,\sigma,\gamma\) are constrained, gauge or near-zone; and
+\(n,n^i\) are multipliers with no physical kinetic energy.  Any
+unsuppressed scalar, vector, lapse, shift, massive spin-2, second metric or
+preferred-frame branch is a local Root~B failure.
+
+The conditional quadratic action to audit is
+\[
+\boxed{
+S_{\mathcal R}^{(2)}
+=\int dt\,d^3x\,
+\left[
+\pi^{ij}\dot\gamma_{ij}
++\pi_\vartheta\dot\vartheta
+-n\mathcal H^{(1)}
+-n^i\mathcal H_i^{(1)}
+-\mathcal H_{\rm phys}^{(2)}
+-\Delta_{\mathcal M}^{(2)}
+\right].
+}
+\]
+This is an audit target, not an assumed action.  The primary constraints
+\[
+\boxed{\pi_n\approx0,\qquad \pi_i\approx0}
+\]
+must arise from the record action itself.  The target linear constraints are
+\[
+\boxed{
+\mathcal H_i^{(1)}=-2\partial_j\pi^j{}_i,\qquad
+\mathcal H^{(1)}=-\partial^i\partial^j\gamma_{ij}+\partial^2\gamma.
+}
+\]
+The sign convention is
+\[
+\boxed{
+R^{(1)}=\partial^i\partial^j\gamma_{ij}-\partial^2\gamma,\qquad
+\mathcal H^{(1)}=-R^{(1)}
+}
+\]
+up to the overall sign convention for \(H[N]\), normalization and boundary
+terms.  Momentum-squared ADM terms are quadratic around the zero-momentum
+background and enter the quadratic consistency and bracket audit, not the
+first-order scalar constraint.
+
+Possible sources of \(\Delta_{\mathcal M}^{(2)}\) are: \(\eta\)-geometry
+mixing after integrating out the gapped amplitude branch; \(q_{ij}\)-geometry
+mixing after integrating out the gapped strain branch; higher-derivative
+operators suppressed by \(\ell_*\); or residual preferred-frame/medium-flow
+terms left by an incomplete projection.  The conservative local target is
+\[
+\boxed{\Delta_{\mathcal M}^{(2)}=0}
+\]
+after gapped/internal fields are integrated out, or else every surviving piece
+must carry a suppression scale and an observation range.
+
+The B1 presymplectic extraction must compute
+\[
+\boxed{
+\delta L_{\mathcal R}=E_{\mathcal R}\delta\Phi_{\mathcal R}
+d\Theta_{\mathcal R}(\delta\Phi_{\mathcal R}),\qquad
+\Omega_{\mathcal R}=\int_\Sigma\delta\Theta_{\mathcal R}.
+}
+\]
+The comparison target is the canonical form
+\[
+\boxed{
+\Theta_{\mathcal R}
+=\int d^3x\,\left(\pi^{ij}\delta\gamma_{ij}
++\pi_\vartheta\delta\vartheta\right)
++\text{boundary/constraint/internal terms}.
+}
+\]
+This form must be derived from
+\[
+\boxed{\mathcal D_{\mathcal M}\to S_{\mathcal R}^{\rm bridge}
+\to\Theta_{\mathcal R}\to\Omega_{\mathcal R}.}
+\]
+If \(\Theta_{\mathcal R}\) contains an unsuppressed
+\(\pi_n\delta n\) or \(\pi_i\delta n^i\) physical kinetic sector, Root~B fails
+before the bracket audit.
+
+The B2--B4 constraint audit follows the Dirac algorithm:
+\begin{enumerate}
+\item derive primary constraints from velocity-momentum relations;
+\item preserve \(\pi_n\) and \(\pi_i\) in time, producing
+  \(\mathcal H\approx0\) and \(\mathcal H_i\approx0\);
+\item iterate preservation of \(\mathcal H,\mathcal H_i\);
+\item classify all constraints as first class or second class;
+\item pass to Dirac brackets if second-class constraints appear;
+\item verify that no step creates a propagating lapse, shift, scalar, vector
+  or preferred-frame medium mode.
+\end{enumerate}
+The abelianized linear check is
+\[
+\boxed{
+\{D[L],D[M]\}\ \text{closes on }D,\qquad
+\{H[N],D[M]\}\ \text{closes on }H,\qquad
+\{H[N],H[M]\}=0
+}
+\]
+at flat linear order.  This is not a full Root~B pass.  The quadratic
+consistency check must include the first nonlinear corrections in
+\(h_{ij}=\delta_{ij}+\gamma_{ij}\) and verify
+\[
+\boxed{
+\{H[N],H[M]\}
+-D[h^{ij}(N\partial_jM-M\partial_jN)]
+=A[N,M]
+}
+\]
+with \(A[N,M]=0\) or a controlled boundary/gauge/constraint term.
+
+The B5 filter tests
+\[
+\boxed{\lambda=\frac12,\qquad \alpha=1,\qquad \Delta_{\mathcal M}=0}
+\]
+or a controlled \(\Delta_{\mathcal M}\).  \(\lambda\ne1/2\) leaves a scalar
+gravitational mode; \(\alpha\ne1\) after measured-\(G\) normalization gives
+the wrong curvature response; and an unsuppressed preferred-frame,
+scalar/vector, massive-tensor, second-metric or non-ADM operator fails the
+local core.
+
+The B6 hyperbolicity certificate must prove
+\[
+\boxed{
+\operatorname{rank}K_{TT}=2,\qquad
+\text{positive kinetic sign},\qquad
+\text{positive gradient sign},\qquad
+P_{TT}=-\omega^2+k^2,
+}
+\]
+with no scalar/vector leakage, no massive spin-2 leakage and no second
+metric.  The comparison action is
+\[
+\boxed{
+S_{TT}^{(2)}
+=\frac12\int dt\,d^3x\,
+\left[
+\dot\gamma_{ij}^{TT}\dot\gamma_{ij}^{TT}
+-(\partial_k\gamma_{ij}^{TT})(\partial_k\gamma_{ij}^{TT})
+\right].
+}
+\]
+This is not a proof unless the TT projector and its positive conjugate
+momentum are derived from \(S_{\mathcal R}^{\rm bridge}\).  The possible TT
+routes are: identify \(\gamma_{ij}^{TT}\) with a TT projection of \(q_{ij}\)
+(blocked in the conservative route because \(q_{ij}\) is gapped); build it as
+a composite from \(\phi,\theta\) gradients or other record data; keep it as a
+new conditional record-geometry variable; or revise the input freeze toward a
+gapless TT-candidate \(Q\)-route.
+
+The B7 matter-preservation check does not prove Root~C, but it must not make
+Root~C impossible.  It must test
+\[
+\boxed{\dot{\mathcal H}\approx0,\qquad \dot{\mathcal H}_i\approx0}
+\]
+for the matter sectors used in the MVP: massive test bodies, photons/EM field,
+bound systems, composite macroscopic bodies and, only after the local audit is
+safe, compact-body effective variables.  Matter must not require a private
+lapse, private shift, species-private metric, nonzero local \(A[N,M]\), or
+explicit species-private \(\theta\)-charge.
+
+The canonical degree-of-freedom count must include lapse/shift momenta:
+\[
+\boxed{
+6(\gamma_{ij})+6(\pi^{ij})+1(n)+1(\pi_n)+3(n^i)+3(\pi_i)=20
+}
+\]
+phase-space variables.  The standard ADM pattern has four primary constraints
+\(\pi_n,\pi_i\) and four secondary constraints
+\(\mathcal H,\mathcal H_i\).  If all eight are first class, they remove
+sixteen phase-space degrees of freedom:
+\[
+\boxed{20-8\times2=4}
+\]
+leaving two propagating configuration modes, \(\gamma_{ij}^{TT}\) and its
+conjugate momentum.  This count is valid only if B1--B4 actually produce the
+required first-class constraints.
+
+The next calculation is triggered only when: \(S_{\mathcal R}^{\rm bridge}\)
+is documented; \(\Phi_{\mathcal R}\) is fixed; \(\bar g=\eta\) is locked; the
+K1 block \(Z_\eta=Z_\theta=Z_Q=1\) is specified; conditional bridges are
+listed; \(\Delta_{\mathcal M}^{(2)}\) sources are enumerated; and the B1 output
+format is fixed.  B1 must output an explicit \(\Theta_{\mathcal R}\), an
+explicit \(\Omega_{\mathcal R}\), a yes/no decision on \(\pi_n\delta n\) and
+\(\pi_i\delta n^i\), a phase-space dimension count and a stop/continue
+decision.  If B1 is unclear, the scaffold must be revised before starting the
+bracket calculation.
+
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
 are used and with what status.  It must verify universal matter action
