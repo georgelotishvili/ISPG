@@ -4606,7 +4606,7 @@ The B1 presymplectic extraction must compute
 \[
 \boxed{
 \delta L_{\mathcal R}=E_{\mathcal R}\delta\Phi_{\mathcal R}
-d\Theta_{\mathcal R}(\delta\Phi_{\mathcal R}),\qquad
++d\Theta_{\mathcal R}(\delta\Phi_{\mathcal R}),\qquad
 \Omega_{\mathcal R}=\int_\Sigma\delta\Theta_{\mathcal R}.
 }
 \]
@@ -4735,6 +4735,206 @@ explicit \(\Omega_{\mathcal R}\), a yes/no decision on \(\pi_n\delta n\) and
 \(\pi_i\delta n^i\), a phase-space dimension count and a stop/continue
 decision.  If B1 is unclear, the scaffold must be revised before starting the
 bracket calculation.
+
+\medskip\noindent\textbf{Root B B1 presymplectic extraction.}
+B1 is the first Root~B calculation checkpoint.  Its central question is:
+\[
+\boxed{
+\text{Does }S_{\mathcal R}^{(2)}\text{ produce }
+\Theta_{\mathcal R}\text{ and }\Omega_{\mathcal R}
+\text{ with no }\pi_n\delta n\text{ or }\pi_i\delta n^i\text{ sector?}
+}
+\]
+The answer is a conditional yes under the no-dot rule for
+\(\Delta_{\mathcal M}^{(2)}\):
+\[
+\boxed{
+\begin{gathered}
+\Theta_{\mathcal R}\ \text{derived from }S_{\mathcal R}^{(2)}:
+\text{ yes, conditional},\\
+\Omega_{\mathcal R}\ \text{derived}: \text{ yes, conditional},\\
+\pi_n\delta n,\ \pi_i\delta n^i:\text{ absent in the conditional action},\\
+\pi_n\approx0,\quad \pi_i\approx0:\text{ primary constraints},\\
+B1:\text{ conditional pass; Root~B proof not passed.}
+\end{gathered}
+}
+\]
+
+The conditional nature of the action is essential:
+\[
+\boxed{
+\text{IF }S_{\mathcal R}^{\rm bridge}\text{ produces the no-dot quadratic
+form, THEN }\pi_n=0,\ \pi_i=0\text{ at B1 order.}
+}
+\]
+B1 does not prove
+\[
+\boxed{\mathcal D_{\mathcal M}\to S_{\mathcal R}^{\rm bridge}
+\to\text{ no-dot lapse/shift action}.}
+\]
+If the eventual medium-derived action contains physical \(\dot n\) or
+\(\dot n^i\) terms, the B1 conditional pass is revoked.
+
+For B1 the remainder is split as
+\[
+\boxed{
+\Delta_{\mathcal M}^{(2)}
+=\Delta_{\rm no-dot}^{(2)}
++\Delta_{\rm lapse-dot}^{(2)}
++\Delta_{\rm shift-dot}^{(2)}
++\Delta_{\rm mixed-dot}^{(2)}.
+}
+\]
+B1 requires
+\[
+\boxed{
+\Delta_{\rm lapse-dot}^{(2)}=
+\Delta_{\rm shift-dot}^{(2)}=
+\Delta_{\rm mixed-dot}^{(2)}=0
+}
+\]
+or these pieces must be pure boundary/gauge degeneracies with an explicit
+generator.  The conservative conditional branch keeps only
+\(\Delta_{\rm no-dot}^{(2)}\) at this stage.  Candidate no-dot sources include
+\(\eta\)-geometry mixing, suppressed by \(m_\eta=\ell_*^{-1}\);
+\(q_{ij}\)-geometry mixing, suppressed by \(m_Q=2\ell_*^{-1}\);
+higher-derivative spatial operators suppressed by \(\ell_*\); and possible
+\(\vartheta\)-geometry or preferred-flow terms, which remain open until the
+B2--B7 and Root~C audits.
+
+The variation uses \(\delta\) as the field-space exterior derivative and
+\(d_t\) as the time derivative.  For the metric canonical pair,
+\[
+\boxed{
+\delta(\pi^{ij}\dot\gamma_{ij})
+=\dot\gamma_{ij}\delta\pi^{ij}
+-\dot\pi^{ij}\delta\gamma_{ij}
++d_t(\pi^{ij}\delta\gamma_{ij}).
+}
+\]
+For the record phase pair,
+\[
+\boxed{
+\delta(\pi_\vartheta\dot\vartheta)
+=\dot\vartheta\,\delta\pi_\vartheta
+-\dot\pi_\vartheta\,\delta\vartheta
++d_t(\pi_\vartheta\delta\vartheta).
+}
+\]
+For lapse and shift,
+\[
+\boxed{
+\delta(-n\mathcal H^{(1)})
+=-\mathcal H^{(1)}\delta n-n\delta\mathcal H^{(1)},\qquad
+\delta(-n^i\mathcal H_i^{(1)})
+=-\mathcal H_i^{(1)}\delta n^i-n^i\delta\mathcal H_i^{(1)}.
+}
+\]
+There is no term \(d_t(\pi_n\delta n)\) or
+\(d_t(\pi_i\delta n^i)\), because \(n\) and \(n^i\) have no time derivatives
+in the conditional B1 action.
+
+Collecting time-boundary terms gives
+\[
+\boxed{
+\Theta_{\mathcal R}
+=\int d^3x\,
+\left(
+\pi^{ij}\delta\gamma_{ij}
++\pi_\vartheta\delta\vartheta
+\right)
++\Theta_{\rm boundary}
++\Theta_{\rm internal}
++\Theta_{\Delta{\rm no-dot}}.
+}
+\]
+In the no-dot branch,
+\[
+\boxed{
+\operatorname{coeff}_{\delta n}\Theta_{\mathcal R}=0,\qquad
+\operatorname{coeff}_{\delta n^i}\Theta_{\mathcal R}=0,
+}
+\]
+so
+\[
+\boxed{\pi_n=0,\qquad \pi_i=0}
+\]
+as primary constraints.  Boundary terms may contribute boundary charges,
+internal terms may contribute gapped/internal symplectic blocks, and
+\(\Theta_{\Delta{\rm no-dot}}\) may contribute classified no-dot corrections;
+none may generate a local physical \(\delta n\) or \(\delta n^i\) kinetic
+coefficient.
+
+The field-space derivative yields
+\[
+\boxed{
+\Omega_{\mathcal R}
+=\int_\Sigma d^3x\,
+\left(
+\delta\pi^{ij}\wedge\delta\gamma_{ij}
++\delta\pi_\vartheta\wedge\delta\vartheta
+\right)
++\Omega_{\rm boundary}
++\Omega_{\rm internal}
++\Omega_{\Delta{\rm no-dot}}.
+}
+\]
+No physical lapse/shift symplectic block appears:
+\[
+\boxed{
+\delta\pi_n\wedge\delta n\ \text{absent},\qquad
+\delta\pi_i\wedge\delta n^i\ \text{absent}.
+}
+\]
+Thus \(n\) and \(n^i\) are candidate multiplier variables at B1 order.  This
+is not yet a proof that they generate the ADM constraints; B2/B3 must still
+show embedding gauge and the secondary constraints
+\(\mathcal H\approx0,\mathcal H_i\approx0\).
+
+The B1 bookkeeping has
+\[
+\boxed{
+20\ \text{metric/lapse/shift phase-space variables}
++2\ \text{record-phase variables }(\vartheta,\pi_\vartheta)=22.
+}
+\]
+B1 does not decide whether \(\vartheta\) is a clock variable, gauge direction,
+constrained variable, decoupled phase, or a dangerous scalar gravitational
+mode.  If B2/B3 do not reduce or decouple it, \(\vartheta\) remains a gapless
+scalar-like local mode, and B6/Root~C must show that it does not mediate a
+species-dependent fifth force.
+
+B1 must be revoked if a later derivation of \(S_{\mathcal R}^{\rm bridge}\)
+produces an unsuppressed term of the form
+\[
+\boxed{
+\dot n^2,\quad
+\dot n_i\dot n^i,\quad
+\dot n\,\dot\gamma,\quad
+\dot n^i\dot\gamma_{ij},\quad
+\dot n\,\dot\vartheta,\quad
+\dot n^i\partial_i\vartheta,\quad
+\dot n^i n_i
+}
+\]
+unless the term is proven to be pure boundary or gauge-degenerate and absent
+from \(\Omega_{\mathcal R}\) on physical observables.
+
+The critical forward tests inherited from B1 are:
+\begin{itemize}
+\item B2/B4 must verify that \(\Delta_{\rm no-dot}^{(2)}\) hides no
+  lapse/shift kinetic sector;
+\item B2/B3 and Root~C must decide whether \(\vartheta\) is gauge, constrained
+  or decoupled from fifth-force sourcing;
+\item B7 and Root~C must show that no-dot remainders stay safe under matter
+  coupling;
+\item B3 must derive \(\mathcal H,\mathcal H_i\) rather than merely use their
+  target forms;
+\item B4 must close \(\{H,H\}\) beyond the abelian linear check;
+\item B6 must make the TT origin compatible with the same presymplectic form.
+\end{itemize}
+If any of these tests fails, the corresponding part of the B1 conditional pass
+fails retroactively.
 
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
