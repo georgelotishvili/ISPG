@@ -5115,6 +5115,359 @@ The next Root~B step is B3:
 If B3 fails, the B2 candidate generators do not become constraints and the
 route stops before ADM closure.
 
+\medskip\noindent\textbf{Root B B3 constraint generators.}
+B3 uses the B1 primary lapse/shift constraints and the B2 candidate
+generators to run the first Dirac consistency step.  The central question is
+whether
+\[
+\boxed{\pi_n\approx0,\qquad \pi_i\approx0}
+\]
+generate the secondary constraints
+\[
+\boxed{{\cal H}\approx0,\qquad {\cal H}_i\approx0}
+\]
+rather than turning lapse and shift into physical or auxiliary variables.  The
+B3 verdict is conditional: the secondary constraints are obtained under the
+no-algebraic-lapse/shift rule, but first-class status and ADM closure are not
+yet proven.
+
+B3 imports from B1
+\[
+\boxed{\pi_n\approx0,\qquad \pi_i\approx0}
+\]
+and
+\[
+\boxed{
+\Omega_{\mathcal R}
+=\int d^3x\left(
+\delta\pi^{ij}\wedge\delta\gamma_{ij}
++\delta\pi_\vartheta\wedge\delta\vartheta
+\right)+\text{classified remainders}.
+}
+\]
+It imports from B2
+\[
+\boxed{
+{\cal H}_i^{(1)}=-2\partial_j\pi^j{}_i,\qquad
+{\cal H}^{(1)}=-\partial^i\partial^j\gamma_{ij}+\partial^2\gamma,
+}
+\]
+and
+\[
+\boxed{
+D[M^i]=\int d^3x\,M^i{\cal H}_i^{(1)},\qquad
+H[N]=\int d^3x\,N{\cal H}^{(1)}.
+}
+\]
+All of these imports remain conditional on \(S_{\mathcal R}^{\rm bridge}\)
+and on the B1/B2 no-dot and no-hidden-lapse rules.
+
+The B3 total Hamiltonian is
+\[
+\boxed{
+H_T=\int d^3x\left[
+n{\cal H}^{(1)}
++n^i{\cal H}_i^{(1)}
++H_{\rm phys}^{(2)}
++\Delta_{\rm no-dot}^{(2)}
++u\pi_n+u^i\pi_i
+\right],
+}
+\]
+where \(u,u^i\) are arbitrary multipliers for the primary constraints.  The
+no-dot remainder is split as
+\[
+\boxed{
+\Delta_{\rm no-dot}^{(2)}
+=\Delta_{\rm safe}^{(2)}
++\Delta_{\rm alg-lapse}^{(2)}
++\Delta_{\rm alg-shift}^{(2)}
++\Delta_{\rm alg-mixed}^{(2)}.
+}
+\]
+B3 passes only if
+\[
+\boxed{
+\Delta_{\rm alg-lapse}^{(2)}
+=\Delta_{\rm alg-shift}^{(2)}
+=\Delta_{\rm alg-mixed}^{(2)}=0
+}
+\]
+up to pure boundary or gauge degeneracies.  This is stricter than B1: B1
+forbids \(\dot n\) and \(\dot n^i\), whereas B3 forbids algebraic terms such
+as \(n^2\), \(n_in^i\), \(nn^i\), or \(n\) times a local field, whenever they
+solve for lapse/shift instead of producing constraints.
+
+For example, if
+\[
+\boxed{\Delta_{\rm no-dot}^{(2)}\supset \frac{m_n^2}{2}n^2,}
+\]
+then preservation of \(\pi_n\) gives
+\[
+\boxed{{\cal H}^{(1)}+m_n^2n\approx0,}
+\]
+which solves for \(n\) rather than producing the Hamiltonian constraint.  This
+is a B3 failure.  Physically, an algebraic lapse mass is a local
+massive/non-ADM gravity sector; B3 forbids it because the local MVP target is
+a massless ADM core.
+
+The circularity is explicit.  B3 is internally consistent if the
+no-algebraic-lapse/shift rules hold, but it does not prove that the microscopic
+medium produces a Hamiltonian obeying those rules.  Therefore the B3 result is
+\[
+\boxed{
+\begin{minipage}{0.86\linewidth}
+If \(S_{\mathcal R}^{\rm bridge}\) has the conditional Hamiltonian form above,
+and if \(\Delta_{\rm no-dot}^{(2)}\) has no algebraic lapse/shift pieces, then
+the primary constraints generate the secondary ADM candidates.
+\end{minipage}}
+\]
+
+The B3 canonical brackets are
+\[
+\boxed{
+\{\gamma_{ij}(x),\pi^{kl}(y)\}
+=\delta_{(i}^{\,k}\delta_{j)}^{\,l}\delta^3(x-y),
+\qquad
+\{\vartheta(x),\pi_\vartheta(y)\}=\delta^3(x-y),
+}
+\]
+and
+\[
+\boxed{
+\{n(x),\pi_n(y)\}=\delta^3(x-y),\qquad
+\{n^i(x),\pi_j(y)\}=\delta^i{}_j\delta^3(x-y).
+}
+\]
+The sign convention is the standard Hamilton equation
+\(\dot p=-\partial H/\partial q\):
+\[
+\boxed{
+\dot\pi_n=\{\pi_n,H_T\}=-\frac{\delta H_T}{\delta n},
+\qquad
+\dot\pi_i=\{\pi_i,H_T\}=-\frac{\delta H_T}{\delta n^i}.
+}
+\]
+
+For the lapse primary constraint,
+\[
+\begin{aligned}
+\dot\pi_n
+&=\{\pi_n,H_T\}
+=-\frac{\delta H_T}{\delta n}\\
+&=-{\cal H}^{(1)}
+-\frac{\delta\Delta_{\rm no-dot}^{(2)}}{\delta n}.
+\end{aligned}
+\]
+Under the B3 no-algebraic-lapse rule,
+\[
+\boxed{\frac{\delta\Delta_{\rm no-dot}^{(2)}}{\delta n}=0}
+\]
+up to boundary/gauge terms, so
+\[
+\boxed{\dot\pi_n\approx0\quad\Rightarrow\quad
+{\cal H}^{(1)}\approx0.}
+\]
+Thus
+\[
+\boxed{
+{\cal H}^{(1)}
+=-\partial^i\partial^j\gamma_{ij}+\partial^2\gamma\approx0.
+}
+\]
+For compactly supported lapse variations, boundary terms vanish.  For lapse
+choices nonzero at spatial infinity, the boundary piece belongs to later
+ADM-charge bookkeeping, not to the local MVP constraint test.
+
+For the shift primary constraint,
+\[
+\begin{aligned}
+\dot\pi_i
+&=\{\pi_i,H_T\}
+=-\frac{\delta H_T}{\delta n^i}\\
+&=-{\cal H}_i^{(1)}
+-\frac{\delta\Delta_{\rm no-dot}^{(2)}}{\delta n^i}.
+\end{aligned}
+\]
+Under the B3 no-algebraic-shift rule,
+\[
+\boxed{\frac{\delta\Delta_{\rm no-dot}^{(2)}}{\delta n^i}=0}
+\]
+up to boundary/gauge terms, so
+\[
+\boxed{\dot\pi_i\approx0\quad\Rightarrow\quad
+{\cal H}_i^{(1)}\approx0.}
+\]
+Thus
+\[
+\boxed{{\cal H}_i^{(1)}=-2\partial_j\pi^j{}_i\approx0.}
+\]
+For compactly supported shift variations, boundary terms vanish.  For shifts
+nonzero at spatial infinity, the boundary piece belongs to later ADM momentum
+bookkeeping.
+
+After B3 the conditional constraint set is
+\[
+\boxed{
+\pi_n\approx0,\quad \pi_i\approx0,\quad
+{\cal H}^{(1)}\approx0,\quad {\cal H}_i^{(1)}\approx0.
+}
+\]
+This is \(4\) primary plus \(4\) secondary constraint functions.  B3 has not
+proven that all eight are first class.  That requires B4:
+\[
+\boxed{\{D,D\},\qquad \{H,D\},\qquad \{H,H\}.}
+\]
+If B4 proves all eight constraints first class, the local phase-space count is
+\[
+\boxed{
+22\ \text{starting variables}
+-8\times2
+=6\ \text{remaining phase-space variables}.
+}
+\]
+The interpretation is
+\[
+\boxed{
+4\ \text{variables}=2\ \text{TT metric modes with momenta},\qquad
+2\ \text{variables}=(\vartheta,\pi_\vartheta).
+}
+\]
+Therefore, if the final MVP target is exactly two radiative tensor modes, the
+record phase must later be shown to be gauge, decoupled, or non-radiative in
+the gravitational sector.  Otherwise the local sector contains two TT modes
+plus one long-range record-phase mode.
+
+At B3, \(\vartheta\) remains a conditional canonical pair:
+\[
+\boxed{\vartheta,\pi_\vartheta.}
+\]
+It does not enter the lapse/shift preservation equations unless
+\(\Delta_{\rm no-dot}^{(2)}\) contains an algebraic phase coupling.  The B3
+safety check is
+\[
+\boxed{
+\Delta_{\rm no-dot}^{(2)}\ \text{contains no}\ n\vartheta
+\ \text{and no}\ n^i\partial_i\vartheta\ \text{algebraic coupling}.
+}
+\]
+The protected route is the shift symmetry
+\[
+\boxed{\theta\mapsto\theta+\text{constant},}
+\]
+which forbids explicit \(\theta\)-charge in the local Hamiltonian.  Derivative
+couplings are not automatically forbidden; they must be classified as gauge,
+decoupled, suppressed, or part of the allowed record structure.  B3 therefore
+does not prove that \(\vartheta\) is harmless.  That remains a later
+scalar-leakage and matter-coupling question for B6 and Root~C.
+
+The B3 pass/fail ledger is:
+\[
+\boxed{
+\begin{array}{lll}
+\text{B1 primary constraints} &:& \text{conditional pass},\\
+\text{B2 generators }{\cal H},{\cal H}_i &:& \text{conditional pass},\\
+H_T\ \text{with primary multipliers} &:& \text{conditional pass},\\
+\dot\pi_n\to{\cal H}^{(1)}\approx0 &:& \text{conditional pass},\\
+\dot\pi_i\to{\cal H}_i^{(1)}\approx0 &:& \text{conditional pass},\\
+\text{first-class status} &:& \text{open until B4},\\
+\vartheta\ \text{safety} &:& \text{open},\\
+\text{TT origin} &:& \text{open/fail-risk until B6}.
+\end{array}}
+\]
+B3 proves only that, within the conditional Hamiltonian and the
+no-algebraic-lapse/shift rule, preserving the primary lapse/shift constraints
+produces the secondary candidates.  It does not prove first-class closure,
+the hypersurface-deformation algebra, \(\lambda=1/2\), the EH fixed point, two
+TT modes, matter preservation of constraints, or derivation of the bridge from
+the microscopic input.
+
+The forwarding map is:
+\[
+\boxed{
+\begin{array}{lll}
+\text{first-class constraints} &\to& \text{B4 bracket calculation},\\
+\text{hypersurface-deformation closure} &\to& \text{B4 anomaly test }A[N,M]=0,\\
+\text{nonlinear }\{H,H\}\text{ structure} &\to& \text{B4 quadratic consistency},\\
+\lambda=1/2 &\to& \text{B5 EH fixed-point filter},\\
+\text{two TT modes} &\to& \text{B6 hyperbolicity certificate},\\
+\vartheta\text{ under matter coupling} &\to& \text{B6 and Root~C},\\
+S_{\mathcal R}^{\rm bridge}\text{ from medium} &\to&
+\text{deferred medium-to-bridge derivation}.
+\end{array}}
+\]
+
+B3 must stop, or be marked failed, if the conditional Hamiltonian contains
+\begin{itemize}
+\item \(n^2\) or \(n_in^i\) terms that solve for lapse/shift;
+\item \(nn^i\) terms that make lapse/shift auxiliary physical variables;
+\item \(n\vartheta\) or \(n^i\partial_i\vartheta\) terms that create a scalar
+  fifth-force constraint failure;
+\item algebraic preferred-frame terms that make the embedding generator
+  background-dependent;
+\item a remainder variation that changes \({\cal H}^{(1)}\) or
+  \({\cal H}_i^{(1)}\) by an unsuppressed local operator.
+\end{itemize}
+Here ``unsuppressed'' means that the operator contributes at the local MVP test
+scale.  Acceptable suppression must be explicit, for example
+\[
+\boxed{
+\begin{gathered}
+(E/\Lambda_{\rm UV})^2<10^{-5}
+\quad\text{for Solar-System scale checks,}\\
+m>1/r_{\rm test}
+\quad\text{for the relevant propagation scale.}
+\end{gathered}
+}
+\]
+
+The B3 reviewer stance is to accept the conditional pass with the
+no-algebraic-lapse/shift rule explicit.  B3 is a canonical consistency
+calculation, not the derivation of \(\Delta_{\rm no-dot}^{(2)}\) from the
+medium.  The stricter alternative is to stop B3 until that derivation is
+complete; the MVP instead keeps the conditional bridge visible.
+
+The cumulative bridge audit after B3 is:
+\[
+\boxed{
+\begin{array}{llll}
+\text{Rule} & \text{Source} & \text{Statement} & \text{Status}\\
+\text{R-B1-1} & \text{B1} &
+\Delta_{\mathcal M}^{(2)}\ \text{has no }\dot n X & \text{conditional}\\
+\text{R-B1-2} & \text{B1} &
+\Delta_{\mathcal M}^{(2)}\ \text{has no }\dot n^i X & \text{conditional}\\
+\text{R-B1-3} & \text{B1} &
+\Delta_{\mathcal M}^{(2)}\ \text{has no }\dot n\,\dot\gamma & \text{conditional}\\
+\text{R-B2-1} & \text{B2} &
+\text{re-embedding is on-constraint null} & \text{proven mod constraints}\\
+\text{R-B2-2} & \text{B2} &
+\vartheta\ \text{uses fixed-background convention} & \text{locked}\\
+\text{R-B3-1} & \text{B3} &
+\Delta_{\rm no-dot}\ \text{has no algebraic }n^2,n_in^i & \text{conditional}\\
+\text{R-B3-2} & \text{B3} &
+\Delta_{\rm no-dot}\ \text{has no algebraic }nn^i & \text{conditional}\\
+\text{R-B3-3} & \text{B3} &
+\Delta_{\rm no-dot}\ \text{has no }n\vartheta & \text{conditional under shift}\\
+\text{R-B3-4} & \text{B3} &
+\Delta_{\rm no-dot}\ \text{has no preferred-frame operator} & \text{conditional}.
+\end{array}}
+\]
+The B1 and B3 conditional rules must be verified by the deferred
+medium-to-bridge derivation.  R-B2-1 is tested by B4 brackets.  R-B2-2 remains
+the locked MVP convention.  If any rule fails when the microscopic input is
+derived concretely, the corresponding B step must be revisited and its
+conditional pass cannot be counted.
+
+The next Root~B artifact is B4:
+\[
+\boxed{
+\text{compute }\{D,D\},\ \{H,D\},\ \{H,H\}
+\text{ from the B1--B3 canonical structure.}
+}
+\]
+If B4 fails, the B3 secondary constraints do not form the ADM first-class
+system and Root~B fails in the local MVP.
+
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
 are used and with what status.  It must verify universal matter action
