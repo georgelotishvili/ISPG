@@ -4018,6 +4018,237 @@ The next calculation must output:
 A clean failure is acceptable if it identifies which part of
 \(\mathcal D_{\mathcal M}\) must be changed.
 
+\medskip\noindent\textbf{First Root A MVP spectrum result.}
+With
+\[
+\phi=1+\eta,\qquad \theta=\nu_0\tau+\vartheta,\qquad Q_{ij}=q_{ij},
+\]
+the frozen conservative toy gives the spatial quadratic Hessian
+\[
+\boxed{
+\delta^2E_{\rm toy}
+=\frac12\eta[-\nabla^2+1]\eta
++\frac12\vartheta[-\nabla^2]\vartheta
++\frac12q_{ij}[-\nabla^2+4]q_{ij}.
+}
+\]
+The amplitude expansion is
+\[
+\frac18(\phi^2-1)^2
+=\frac12\eta^2+\frac12\eta^3+\frac18\eta^4,
+\]
+so \(m_\eta^2=1\).  The \(Q\)-sector has
+\(m_Q^2=\mu_Q^2+g_Qv^2=4\).  Since \(g_Q=0\), there is no \(\phi\)-\(Q\)
+quadratic mixing; any \(\eta q_{ij}q_{ij}\) term would be cubic and is outside
+the first Hessian audit.
+
+In Fourier space,
+\[
+\boxed{
+\lambda_\eta(k)=k^2+1,\qquad
+\lambda_\vartheta(k)=k^2,\qquad
+\lambda_Q(k)=k^2+4
+}
+\]
+with five \(Q\)-components.  The first projector candidate is
+\[
+\boxed{
+\Pi_{\mathcal R}(\eta,\vartheta,q_{ij})=(0,\vartheta,0),\qquad
+\Pi_{\mathcal I}(\eta,\vartheta,q_{ij})=(\eta,0,q_{ij}),
+}
+\]
+which satisfies
+\[
+\Pi_{\mathcal R}+\Pi_{\mathcal I}=1,\qquad
+\Pi_{\mathcal R}\Pi_{\mathcal I}=0,\qquad
+\Pi_{\mathcal R}^2=\Pi_{\mathcal R},\qquad
+\Pi_{\mathcal I}^2=\Pi_{\mathcal I}.
+\]
+Thus the conservative toy has
+\[
+\boxed{
+B_{\rm rec}^{\rm gapless}=\{\vartheta\},\qquad
+N_{\rm gapless}^{\rm spatial}(B_{\rm rec})=1.
+}
+\]
+This is an A4 pass: one gapless branch in the spatial Hessian.  It is not yet
+an A5 pass, because a full cone count requires the temporal kinetic/principal
+symbol.
+
+\medskip\noindent\textbf{Temporal completion target.}
+The recommended next completion is the second-order kinetic test
+\[
+\delta^2L_{\rm kin}
+=\frac12 Z_\eta\dot\eta^2
++\frac12 Z_\theta\dot\vartheta^2
++\frac12 Z_Q\dot q_{ij}\dot q_{ij}.
+\]
+The canonical first test is
+\[
+\boxed{Z_\eta=Z_\theta=Z_Q=1,}
+\]
+which would give
+\[
+\boxed{
+\omega_\eta^2=k^2+1,\qquad
+\omega_\vartheta^2=k^2,\qquad
+\omega_Q^2=k^2+4,\qquad
+c_\eta^2=c_{\rm record}^2=c_Q^2=1.
+}
+\]
+If \(Z_\eta\), \(Z_\theta\) and \(Z_Q\) differ in the leading local regime,
+the sectors have different high-frequency cones; that is a Root~A one-cone
+failure unless the non-record branch is demonstrably absent from
+\(\mathcal O_{\rm rec}\) and cannot form external clocks, signals or detector
+records.  At this stage the temporal completion is a conditional bridge, not
+a derived result.
+
+K1 status is therefore:
+\[
+\boxed{
+\text{specified for the MVP: yes,\qquad derived from }\mathcal D_{\mathcal M}:
+\text{ no.}
+}
+\]
+To remove this conditionality, a later derivation must construct the medium
+Lagrangian density from \(\mathcal D_{\mathcal M}\) and show that the leading
+kinetic block is sector-universal:
+\[
+\boxed{Z_\eta=Z_\theta=Z_Q.}
+\]
+If the medium gives sector-dependent \(Z\)-coefficients in the leading local
+regime, the one-cone K1 result fails.
+
+With K1 the branch operators are
+\[
+\boxed{
+P_\eta=-\omega^2+k^2+1,\qquad
+P_\vartheta=-\omega^2+k^2,\qquad
+P_Q=-\omega^2+k^2+4.
+}
+\]
+The principal symbol is meant in the PDE sense: only the highest-derivative
+terms define the principal cone.  The mass terms \(1\) and \(4\) are
+lower-order terms; they change low-energy dispersion but not the causal
+principal cone.  Thus every branch has
+\[
+\boxed{
+P_{\rm principal}(\omega,k)=-\omega^2+k^2.
+}
+\]
+For gapped branches the phase velocity may exceed one at low momentum,
+\[
+v_{\rm phase}=\frac{\omega}{k}=\sqrt{1+\frac{m^2}{k^2}}>1,
+\]
+but the information-carrying group velocity is
+\[
+v_{\rm group}=\frac{d\omega}{dk}=\frac{k}{\sqrt{k^2+m^2}}\le 1.
+\]
+So the massive-mode phase velocity is not a superluminal signal.  The
+normalization \(c_{\rm record}=1\) is the canonical K1 unit choice; matching it
+to the measured speed of light belongs to the later static/radiative
+normalization bridge.
+
+The K1 quadratic Hamiltonian is positive semidefinite:
+\[
+\begin{aligned}
+H_\eta&=\frac12\pi_\eta^2+\frac12(\nabla\eta)^2+\frac12\eta^2,\\
+H_\vartheta&=\frac12\pi_\vartheta^2+\frac12(\nabla\vartheta)^2,\\
+H_Q&=\frac12\pi_Q^{ij}\pi_Q^{ij}
+  +\frac12(\nabla q_{ij})(\nabla q_{ij})+2q_{ij}q_{ij}.
+\end{aligned}
+\]
+The only flat direction is the constant phase mode of \(\vartheta\), the
+expected shift/phase zero mode.
+
+\medskip\noindent\textbf{Root A MVP verdict.}
+The conservative toy passes the static/spatial Hessian and gap audit:
+\(\eta\) is gapped with \(m_\eta=1\,\ell_*^{-1}\), \(q_{ij}\) is gapped with
+\(m_Q=2\,\ell_*^{-1}\), and \(\vartheta\) is the only spatial gapless record
+candidate.  If \(\ell_*\) is microscopic, these gapped branches decouple from
+lab, Solar-System and binary propagation; the physical interpretation of that
+decoupling remains conditional on the final scale assignment.
+
+The single-branch spatial factorization is trivial:
+\[
+\Pi_{\mathcal R}L_{\rm spatial}(k)\Pi_{\mathcal R}=k^2,
+\qquad K_{\mathcal R}=1.
+\]
+With K1 the full projected operator is
+\[
+\boxed{
+\Pi_{\mathcal R}P(\omega,k)\Pi_{\mathcal R}=-\omega^2+k^2,
+}
+\]
+equivalently
+\[
+P(\omega,k)=
+\operatorname{diag}(-\omega^2+k^2+1,\,-\omega^2+k^2,\,-\omega^2+k^2+4),
+\]
+and
+\[
+\Pi_{\mathcal R}P\Pi_{\mathcal R}
+=\operatorname{diag}(0,\,-\omega^2+k^2,\,0).
+\]
+This does not prove all-species factorization, because photons, atoms, rods,
+clocks and detector matter are not included as separate matter families in the
+toy.  That part must be audited in Root~C when the matter Hamiltonian and
+record observables are included, and in Root~B when the record action is
+constructed.
+
+Operational consequences of the K1 one-cone result are limited but concrete:
+\begin{itemize}
+\item record signals built from the \(\vartheta\) branch propagate with
+  \(c=1\) in canonical units;
+\item \(\eta\) and \(q_{ij}\) are gapped, with ranges of order \(1/m_\eta\)
+  and \(1/m_Q\);
+\item at distances much larger than those ranges, only the gapless
+  \(\vartheta\) branch remains in the conservative toy;
+\item the one-branch record sector has no low-energy birefringence;
+\item the isotropic background \(Q_{ij}=0\) introduces no local preferred
+  spatial direction.
+\end{itemize}
+Open operational tests remain: matter species must be shown to couple through
+the same record structure; light bending and clock comparison require matter
+and clock probes; nonlinear weak-field coefficients require Root~B; and GW
+speed/tensor modes require the tensor route, which the conservative \(Q\)
+branch does not provide.
+
+Operationally, \(\vartheta=\theta-\nu_0\tau\) is a Goldstone-like
+clock/phase fluctuation of the record medium, not yet a metric perturbation by
+itself.  A gapless phase mode would be a fifth-force risk if it coupled
+directly to matter as a private scalar.  The MVP must later show that
+\(\vartheta\) enters matter only through the common record metric/clock
+structure, or that a shift/record symmetry forbids species-private matter
+coupling.
+The most likely conservative-MVP route is the shift/record symmetry
+\[
+\boxed{\theta\to\theta+\text{constant}.}
+\]
+Root~C must test that the matter Hamiltonian may depend on derivatives or
+record-metric combinations of \(\theta\), but not on a species-private explicit
+\(\theta\)-charge.  Such a private explicit phase coupling would fail the
+fifth-force gate.
+
+The \(C_0,C_a\) constraint caveat remains open.  Root~B must compute
+\[
+\boxed{
+\{C_0,C_0\},\qquad \{C_0,C_a\},\qquad \{C_a,C_b\},
+}
+\]
+verify closure on the constraint surface, verify that \(\vartheta\) is not
+removed as the record branch, verify that no extra scalar/vector propagating
+mode is introduced, and verify that the record principal symbol is preserved.
+
+Root~B may proceed only conditionally.  It may import that \(\vartheta\) is the
+record candidate and that \(\eta,q_{ij}\) are gapped in the conservative pass,
+but it may not claim two tensor modes from the conservative \(Q\)-sector, full
+ADM/EH closure, all-species one-cone universality, or a derived
+\(g_{\rm rec}\) with both temporal and spatial components.  The recommended
+next artifact is the conditional Root~B record-action bridge; deriving K1 from
+\(\mathcal D_{\mathcal M}\) first is stricter, but may not rescue the local
+core if the Root~B bridge fails even under K1.
+
 \medskip\noindent\textbf{Root A execution tasks.}
 Root~A begins only after the medium choice is locked by MVP-0.  The MVP-A
 calculation must verify that the selected \(\mathcal D_{\mathcal M}\) provides
