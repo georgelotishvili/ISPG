@@ -1418,6 +1418,29 @@ tested core, only \(h_+,h_\times\) propagate, \(\lambda=1/2\) is selected and
 the two-derivative fixed point is \(S_{\rm EH}\).
 \end{openthm}
 
+\begin{openthm}[Root B record-action construction bridge]
+Root B may audit a projected record action, but it cannot treat that action as
+a magic input.  The medium package must supply the chain
+\[
+\boxed{
+\mathcal D_{\mathcal M}
+\longrightarrow
+S_{\rm eff}^{\rm rec}
+\longrightarrow
+S_{\mathcal R}[g_{\rm rec},\Psi_{\rm rec}]
++\text{controlled remainders}.
+}
+\]
+The object delivered to Root B must be local up to controlled nonlocal tails,
+have a well-defined two-derivative truncation, match the projected record
+spectrum \(({\cal L}_{\mathcal M_0},\Pi_{\mathcal R},\Pi_{\mathcal I})\), give
+declared tensor or density type to every record variable, remove visible
+preferred-frame leaks through \(\mathcal G_{\rm int}\), and introduce matter
+through record observables rather than a private lapse, shift, source or
+metric.  If this bridge is missing, Root B remains a target audit rather than
+a medium-derived ADM closure proof.
+\end{openthm}
+
 \begin{openthm}[Root B embedding/symplectic closure]
 Root B requires showing that the physical object is a relational record
 history \(W_{\mathcal R}\), while a foliation/embedding \(X_F\) is only a
@@ -1486,6 +1509,12 @@ S_{\rm loc}
 \dot N^2=\dot N_i\dot N^i=0.
 }
 \]
+This no-kinetic lapse/shift structure is a target output, not a starting
+assumption.  It must follow from the projected record action and its
+presymplectic form: the momenta conjugate to \(N\) and \(N^i\) must be primary
+constraints, and the Dirac algorithm must preserve them without making lapse
+or shift physical.  It may not be imposed merely by choosing an ADM-looking
+gauge.
 If this theorem closes, the scalar and vector gravitational sectors are
 constraints/near-zone bookkeeping, local flow is shift-like, only two tensor
 modes propagate, the DeWitt value \(\lambda=1/2\) is selected and the
@@ -1533,6 +1562,8 @@ embedding bookkeeping.  The action-level check is:
 \quad\text{are absent}.
 }
 \]
+Again, this is a derived condition: lapse/shift no-kinetic status must be
+obtained from the presymplectic/Dirac audit, not inserted as a gauge choice.
 Thus Root B is not an aesthetic GR assumption.  It is the finite test:
 \[
 \boxed{
@@ -1644,6 +1675,19 @@ slices.  An embedding deformation acts as
 \text{up to internal gauge compensation}.
 }
 \]
+This statement must be evaluated field by field:
+\[
+\boxed{
+\begin{array}{rcl}
+\delta_\xi g_{\rm rec} &=& {\cal L}_\xi g_{\rm rec},\\
+\delta_\xi \varphi &=& \xi^\mu\partial_\mu\varphi,\\
+\delta_\xi T &=& {\cal L}_\xi T\quad\text{for its declared tensor type},\\
+\delta_\xi \rho &=& {\cal L}_\xi \rho\quad\text{including density weight}.
+\end{array}
+}
+\]
+If a record variable has no declared tensor or density type, the embedding
+audit is not yet computable.
 Root B requires this direction to be presymplectically null:
 \[
 \boxed{
@@ -1681,6 +1725,14 @@ The pass condition is therefore
 with \(H\approx0\) and \(D\approx0\) in the tested local record sector.  Any
 bulk remainder that is not a constraint or boundary charge is the Root B
 preferred-frame/scalar/vector anomaly.
+
+\medskip\noindent
+The brackets must be computed from \(\Omega_{\mathcal R}\), not copied from the
+target algebra.  Canonical variables and momenta are read from
+\(\theta_{\mathcal R}\); second-class constraints require the Dirac bracket;
+auxiliary fields must be eliminated before the physical mode count; and
+boundary terms must be separated before any bulk anomaly \(A[N,M]\) is
+declared.
 \end{openthm}
 
 \begin{openthm}[Noether split and background-free record-action gate]
@@ -1747,7 +1799,7 @@ Every bulk remainder in \(J_\xi\) must therefore be classified as exactly one
 of:
 \[
 \boxed{
-\text{constraint/gauge/boundary/internal/suppressed/large-scale-only/anomaly}.
+\text{constraint/gauge/boundary/internal/gapped/damped/suppressed/large-scale-only/anomaly}.
 }
 \]
 Root B requires the final class to vanish in the local tested sector:
@@ -1758,6 +1810,13 @@ Root B requires the final class to vanish in the local tested sector:
 A[N,M]=0.
 }
 \]
+The allowed classes require a structural or scale test.  High-energy
+remainders must scale below the relevant observation row, for example as
+\((E_{\rm test}/\Lambda_{\rm UV})^2\) or
+\((k_{\rm test}/\Lambda_{\rm UV})^2\); local PPN-sensitive terms need at least
+the corresponding weak-field bound.  Large-scale-only terms must activate only
+outside Solar-System, binary-pulsar and local GW regimes; gapped or damped
+terms must lack coherent long-range propagation through the tested baseline.
 \end{openthm}
 
 \begin{openthm}[Background-free two-derivative record-action fixed point]
@@ -1785,7 +1844,13 @@ S_{\rm EH}+S_{\rm matter}
 }
 \]
 up to normalization, cosmological term, boundary terms and suppressed
-higher-derivative corrections.  The forbidden local background leaks are:
+higher-derivative corrections.  The two-derivative ansatz is itself part of
+the audit: higher-derivative operators such as \(R^2\),
+\(R_{\mu\nu}R^{\mu\nu}\), Weyl-squared terms or preferred-frame curvature
+combinations must be suppressed by the hierarchy scale, not used to repair a
+failed ADM bracket.  The leading curvature operator must be the EH operator,
+with \(\alpha\) absorbed into the measured \(G\) or identified as a
+deviation/failure.  The forbidden local background leaks are:
 \[
 \boxed{
 U^\mu_{\mathcal M}U^\nu_{\mathcal M}\nabla_\mu\Psi\nabla_\nu\Psi,\quad
@@ -3340,6 +3405,23 @@ large-scale correction must not leak into the local core.
 \item \textbf{OBS-011} cosmological background: checks RMG-046.
 \end{itemize}
 
+For OBS-004 the chain must be explicit:
+\[
+\boxed{
+\lambda=\frac12
+\Rightarrow
+\text{first-class ADM closure}
+\Rightarrow
+\text{EH two-derivative local fixed point}
+\Rightarrow
+\text{nonlinear weak-field expansion}
+\Rightarrow
+\beta=1.
+}
+\]
+If any arrow is imported rather than derived or audited, the corresponding
+observation row remains conditional.
+
 \medskip\noindent\textbf{Medium-to-target verification interface.}
 The microscopic input package must be tested against the low-energy target by
 explicit checks: compute \(\mathrm{Spec}(\mathcal L_{\mathcal M_0})\) and count
@@ -3350,15 +3432,27 @@ Schur-complement correction from internal integration and verify that it does
 not alter the local principal tensor or ADM bracket; compute the tensor
 kinetic rank, sign, mass and cone; and vary the lapse/metric to check that
 rest, kinetic, binding, internal/confined and field energy enter the same
-source.
+source.  In particular, the chain
+\[
+\boxed{
+\mathcal D_{\mathcal M}\to S_{\rm eff}^{\rm rec}\to
+S_{\mathcal R}[g_{\rm rec},\Psi_{\rm rec}]
+}
+\]
+must be explicit enough to run the Root~B presymplectic, bracket and
+hyperbolicity audits.
 
 \medskip\noindent\textbf{MVP linearization scope.}
-The first local-gravity MVP is linearized around a Minkowski local core; FLRW
-belongs to the cosmology window.  The first pass requires the quadratic action
-in metric perturbations, the linearized constraints and their relevant
+The first local-gravity MVP starts with a Minkowski local core for the
+principal-symbol, mode-count and hyperbolicity tests; a weak static local
+background is then used for the PPN/nonlinear-coefficient check; FLRW belongs
+to the cosmology window.  The first pass requires the quadratic action in
+metric perturbations, the linearized constraints and their relevant
 quadratic-order closure, leading weak-field matter coupling, exactly two TT
-propagating modes, and a leading tensor-emission audit.  Higher
-post-Newtonian terms and full nonlinear closure remain later targets.
+propagating modes, and a leading tensor-emission audit.  Gauge fixing, such as
+harmonic gauge, may be chosen only after constraints are derived and may not
+hide kinetic lapse/shift or scalar/vector modes.  Higher post-Newtonian terms
+and full nonlinear closure remain later targets.
 
 \medskip\noindent\textbf{RMG-distinctive observables.}
 The protected local core is deliberately GR-like.  RMG becomes observationally
@@ -3413,12 +3507,16 @@ Derive record-embedding first-class ADM closure; construct $\Gamma_{\mathcal R}$
 and the presymplectic form $\Omega_{\mathcal R}$; derive the embedding vector
 fields $\delta_\xi$ and the local generators $D,H$; derive the Noether split
 $J_\xi=C_\xi+dQ_\xi$; verify B1--B5 and prove the anomaly gate $A[N,M]=0$;
-exclude unsuppressed lapse/shift scalar-vector kinetic terms; derive the
+derive the construction bridge
+$\mathcal D_{\mathcal M}\to S_{\rm eff}^{\rm rec}\to S_{\mathcal R}$;
+exclude unsuppressed lapse/shift scalar-vector kinetic terms as a derived
+Dirac result rather than as a gauge assumption; compute brackets from
+$\Omega_{\mathcal R}$ with Dirac brackets where needed; derive the
 hypersurface-deformation algebra; derive the DeWitt coefficient $\lambda=1/2$;
-prove $\Delta_{\mathcal M}=0$ or suppressed; give a linearized hyperbolicity
-certificate, match the principal symbol to the record cone, and exclude
-ghost/gradient instabilities; verify constraint preservation under evolution
-and matter-coupled Dirac closure.
+prove $\Delta_{\mathcal M}=0$ or suppressed with explicit structural or scale
+tests; give a linearized hyperbolicity certificate, match the principal symbol
+to the record cone, and exclude ghost/gradient instabilities; verify
+constraint preservation under evolution and matter-coupled Dirac closure.
 
 \medskip\noindent\textit{Root C.}
 Verify C1--C5 in the base-medium matter sector; prove $S_u=\rho_E$ for every
