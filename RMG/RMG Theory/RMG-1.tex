@@ -379,6 +379,25 @@ P_{AB}(k)=Q_{AB}^{\mu\nu}k_\mu k_\nu.
 Let \(\Pi_{\mathcal R}\) project onto the physical record subspace after
 gauge and constraint directions are removed.
 
+The labels \(A,B\) range over every stable record-forming excitation relevant
+to the local core: elementary medium excitations, effective matter modes,
+photons/signals, composite records such as atoms, rods and clocks, and
+detector components.  Modes outside this class may be internal or confined,
+but they must not act as external spacetime carriers.
+
+The principal symbol is extracted in the relevant low-energy effective regime,
+on the physical on-shell branch after gauge and constrained directions are
+removed.  It is not a blind UV limit outside the record theory:
+\[
+\boxed{
+k\ll\Lambda_{\rm UV},
+\qquad
+\delta\Phi\in\Pi_{\mathcal R},
+\qquad
+\text{dispersion evaluated on a physical record branch}.
+}
+\]
+
 \begin{openthm}[Factorization gate]
 Derive from the protected base-medium phase:
 \[
@@ -434,6 +453,13 @@ B_{AB}(k)\neq0,
 \]
 where \(B_{AB}\) produces an observable species-private cone, polarization
 splitting, preferred-frame tensor or clock-dependent redshift.
+
+\medskip\noindent\textbf{Why this is non-trivial in RMG.}
+In GR, one metric for all matter is usually imposed by minimal coupling.  Root
+A is not allowed to assume that result.  It must derive why all stable
+record-forming modes read one external cone from the base-medium spectrum and
+record projection.  If this fails, later ADM closure or source universality
+cannot repair the local core.
 
 \begin{openthm}[Record-sector no-birefringence principle]
 All stable modes that can form local records, rods, clocks and exchanged
@@ -620,6 +646,11 @@ Equivalently,
 \]
 up to suppressed corrections.  If this fails, the failure is the clock-level
 version of a nonzero \(B_{AB}^{\mu\nu}\).
+
+The exact target is \(\epsilon_A=0\).  If a candidate leaves a residual
+\(\epsilon_A\), it must be bounded against clock-comparison, redshift,
+composition-dependence and species-dependent signal-cone tests; it cannot
+remain an unconstrained symbolic remainder.
 \end{openthm}
 
 Different oscillons may excite the same base-medium with different local
@@ -1326,7 +1357,34 @@ G^{\mu\nu}k_\mu k_\nu.
 All other branches must be internal, confined, gapped, damped, constrained,
 gauge, unstable, high-energy suppressed or large-scale-only.  This is the
 microscopic calculation still needed for Root A.
+
+\medskip\noindent\textbf{Suppression catalogue.}
+These escape categories are not free passes.  Each requires a structural or
+quantitative reason why it is absent from local record observables:
+\begin{itemize}
+\item high-energy suppressed: corrections scale with \(E/\Lambda_{\rm UV}\) or
+  \(k/\Lambda_{\rm UV}\) and are below laboratory, Solar-System and GW bounds;
+\item large-scale-only: the term activates only outside the local tested
+  regime and does not affect Solar-System, binary-pulsar or local GW tests;
+\item confined or internal: the mode cannot propagate as an external rod,
+  clock, signal or detector record;
+\item gapped or damped: the mode has no coherent long-range low-energy
+  propagation in the tested regime;
+\item gauge or constrained: the mode is removed by \(\Omega_{\mathcal M}\),
+  a first-class generator or an elliptic/near-zone constraint;
+\item unstable: the branch is excluded from the stable phase or decays before
+  record formation.
+\end{itemize}
+If no such suppression or removal test is available, the branch remains a
+Root~A fail-risk rather than an allowed remainder.
 \end{openthm}
+
+\medskip\noindent\textbf{Root A--Root B compatibility.}
+Root A must not assume ADM closure, but its record/internal projectors and the
+gauge/constraint reduction induced by \(\Omega_{\mathcal M}\) must remain
+compatible with the canonical analysis needed in Root~B.  A one-cone spectrum
+obtained by a projection that destroys the later ADM phase space is not a
+valid Root~A pass.
 
 \medskip\noindent\textbf{Remark (Root A closure status under ORC).}
 Conditional on the Operational Relational Covariance postulate of
@@ -2641,8 +2699,26 @@ m_Q^2=\mu_Q^2+g_Qv^2.
 The conservative spectrum reading is: \(\eta\) is gapped if \(m_\eta^2>0\);
 \(\vartheta\) is the candidate common phase/cone branch but not the graviton;
 \(q_{ij}\) is gapped if \(m_Q^2>0\); and \(L_{\rm mix}^{(2)}\) must not change
-the principal cone.  This version may help Root~A while still failing to
-produce tensor gravity.
+the principal cone.  For the conservative Root~A toy, \(m_Q^2>0\) is required
+unless the \(Q\)-sector is explicitly being tested as the shared-cone TT
+candidate.  An unintended massless \(Q_{ij}\) branch carries five
+symmetric-traceless components and can create extra long-range branches,
+threatening \(N_{\rm cone}=1\).  This version may help Root~A while still
+failing to produce tensor gravity.
+
+Allowed toy mixing terms must be derivative-order and symmetry controlled, for
+example
+\[
+\boxed{
+a_1\eta(\nabla\vartheta)^2,\quad
+a_2\eta Q_{ij}Q_{ij},\quad
+a_3Q_{ij}\partial_i\vartheta\,\partial_j\vartheta,\quad
+a_4\eta\,\partial_kQ_{ij}\partial_kQ_{ij}.
+}
+\]
+They are allowed only if, after expansion and internal integration, they do
+not split the record cone, introduce a preferred tensor or create a long-range
+species-private source.
 
 To test the tensor gate, decompose
 \[
