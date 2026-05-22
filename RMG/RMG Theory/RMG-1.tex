@@ -1909,6 +1909,22 @@ equivalence-principle source gate and compact internal-energy effacement gate
 close.
 \end{openthm}
 
+\medskip\noindent\textbf{Root C inheritance from Roots A and B.}
+Root C uses, but does not re-prove, the previous root outputs:
+\[
+\boxed{
+\begin{array}{lll}
+\text{one record metric }g_{\rm rec} &\to& C1\text{ matter action target},\\
+N=e^{-u}\text{ or equivalent bridge} &\to& C2\text{ lapse variation},\\
+\text{ADM matter form with }N\text{ multiplier} &\to& C3\text{ source theorem},\\
+\text{no scalar/vector vacuum radiation} &\to& C5\text{ anomaly control},\\
+\Pi_{\mathcal R}\text{ record/internal split} &\to& \text{internal energy accounting}.
+\end{array}
+}
+\]
+The equivalence principle, \(q_A\propto E_A/c^2\), and
+\(\sigma_{\rm species}=0\) are outputs of Root~C, not inputs.
+
 \begin{openthm}[Root C finite source chain]
 Root C reduces to five source conditions:
 \[
@@ -1922,6 +1938,11 @@ C5 & \sigma_{\rm species}^{\rm long,local}=0.
 \end{array}
 }
 \]
+The bridge in \(C2\) must come from the Root~B handoff: \(N\) is the
+operational lapse of the record metric, expressed through the compression
+variable \(u\).  An ``equivalent'' bridge means a redefinition that produces
+the same shared lapse variation for every stable matter family; it cannot hide
+a species-dependent lapse.
 Then an isolated source obeys
 \[
 \boxed{
@@ -1938,6 +1959,10 @@ and therefore
 Q^{(0)}=\eta\,E_{\rm total}/c^2.
 }
 \]
+This far-tail regime means \(r\gg R_{\rm source}\), \(r\gg\ell_*\), and a
+convergent multipole expansion with higher multipoles suppressed by the
+relevant powers of \(R_{\rm source}/r\).  A fitted \(1/r\) tail may not be used
+backwards to infer the local source theorem.
 The substantive content of Root C is not the far \(1/r\) integral but the
 requirement that the compression/lapse source equals the total physical energy
 for all stable record matter:
@@ -1946,6 +1971,15 @@ for all stable record matter:
 S_u=\rho_E
 }
 \]
+where the source density in the ADM theorem is measured by the lapse normal,
+\[
+\boxed{
+\rho_E=T_{\mu\nu}n^\mu n^\nu,
+}
+\]
+with \(n^\mu\) the ADM unit normal in the record metric.  For radiation and
+other traceless fields, the source is this energy density, not the trace
+\(T^\mu{}_\mu\).
 with no unsuppressed species-private remainder:
 \[
 \boxed{
@@ -1971,6 +2005,13 @@ audit.  Self-gravitating bodies must not fall differently merely because a
 different fraction of their total mass is stored as gravitational binding
 energy.  In local tests this is the Nordtvedt-type failure mode; in compact
 binaries it appears as a sensitivity/dipole-radiation audit.
+
+Self-gravitational binding is not assumed to be an ordinary local matter
+density.  Root C treats it through the canonical total energy or quasi-local
+charge appropriate to the record metric and through compact-object
+sensitivities.  The pass condition is that this binding changes the external
+monopole only through \(E_{\rm total}\), not through an extra
+composition-readable source charge.
 \end{openthm}
 
 \begin{openthm}[C3 lapse-variation source theorem]
@@ -1996,7 +2037,8 @@ S_{\rm m}
 \right).
 }
 \]
-At fixed \(h_{ij},N^i,\psi_A,\pi_A\),
+At fixed \(h_{ij},N^i,\psi_A,\pi_A\), treating \(u\) as the independent
+compression variable and \(N\) as fixed by the bridge \(N=e^{-u}\),
 \[
 \boxed{
 \delta N=-N\delta u,
@@ -2032,6 +2074,11 @@ included because
 +\mathcal H_{\rm internal}.
 }
 \]
+For quantum matter, \(\mathcal H_{\rm m}\) means the expectation value of the
+matter Hamiltonian density in the relevant matter state.  Vacuum subtractions
+must be handled consistently with the cosmological term in the target action;
+vacuum energy cannot be silently counted in local source tests and then
+removed in the cosmology window.
 Root C fails only if a physical long-range local remainder survives:
 \[
 \boxed{
@@ -2093,6 +2140,37 @@ q_A=\eta E_A/c^2
 must hold at monopole order; species-specific tail data may survive only as
 spin, charge, color, phase, multipole, internal, short-range or suppressed
 structure.
+
+The allowed classifications are not labels of convenience.  A candidate
+\(\sigma_{\rm species}\) term must either be part of the physical Hamiltonian
+density \(\rho_E\), vanish on reduced observables, be a boundary/multipole
+term rather than a local monopole source, be internal/confined with no
+external \(u\)-tail, be short-range, or be suppressed below the relevant
+equivalence-principle, fifth-force, Solar-System or binary-pulsar gate.  If no
+such test is supplied, the term remains a Root~C anomaly.
+\end{openthm}
+
+\begin{openthm}[Root C matter-family and sensitivity audit]
+Root C must be checked for pointlike massive matter, photons and fields, bound
+systems, internal/confined sectors, composite macroscopic bodies,
+self-gravitating bodies and compact objects.  Photons and other traceless
+fields source \(u\) through \(T_{\mu\nu}n^\mu n^\nu\), not through a trace
+coupling.  Bound, internal, confined and field energy must enter
+\(\mathcal H_{\rm m}\) and hence \(\rho_E\), while not creating a private
+external cone or private \(u\)-source.
+
+For compact binaries define the long-range source charge per unit total
+energy
+\[
+\boxed{
+\alpha_A=\frac{q_A}{E_A/c^2}.
+}
+\]
+The Root~C target is \(\alpha_A=\alpha_B\) for all stable compact sources, or
+else \(\alpha_A-\alpha_B\) must be gauge, constrained, short-range, gapped,
+damped or below binary-pulsar and waveform bounds.  Otherwise the binary loses
+energy through a leading scalar dipole or monopole channel rather than through
+the protected tensor emission channel.
 \end{openthm}
 
 \medskip\noindent\textbf{Remark (Root C closure status under ORC).}
@@ -3520,13 +3598,19 @@ constraint preservation under evolution and matter-coupled Dirac closure.
 
 \medskip\noindent\textit{Root C.}
 Verify C1--C5 in the base-medium matter sector; prove $S_u=\rho_E$ for every
-stable record matter family; prove metric-exhaustion of local $u$-dependence;
-prove the absence of explicit species-private $u$-coupling; prove
+stable record matter family with \(\rho_E=T_{\mu\nu}n^\mu n^\nu\) in the ADM
+normal frame; prove metric-exhaustion of local $u$-dependence; prove the
+absence of explicit species-private $u$-coupling; prove
 $\sigma_{\rm species}^{\rm long,local}=0$; derive the universal gravitational
 tail projection $q_A\propto E_A/c^2$ and the far-tail monopole
-$Q_A^{(0)}=\eta E_A/c^2$; audit compact-object sensitivities so that no
-leading scalar dipole loss appears in binary-pulsar systems; include
-self-gravitational binding energy in the strong-equivalence/Nordtvedt audit.
+$Q_A^{(0)}=\eta E_A/c^2$ in the regime \(r\gg R_{\rm source}\) and
+\(r\gg\ell_*\); verify that photons and traceless fields source through energy
+density rather than trace; handle quantum matter Hamiltonian expectation
+values and vacuum subtractions consistently with the cosmological term; audit
+compact-object sensitivities using
+\(\alpha_A=q_A/(E_A/c^2)\) so that no leading scalar dipole loss appears in
+binary-pulsar systems; include self-gravitational binding energy in the
+strong-equivalence/Nordtvedt audit.
 
 \medskip\noindent\textit{Factorization and protection.}
 Derive $Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}$ from the record kinetic kernel;
