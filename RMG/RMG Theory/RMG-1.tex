@@ -2910,76 +2910,137 @@ derive and observationally confront an alternative strong-field branch.
 
 \section{Statement Status Map}
 
+This section is the integrated WP0 audit map.  It is not a proof.  It records
+which statements are postulates, which are conditional bridges, which are open
+theorems, and which gates block the first local-gravity MVP.
+
+The sortable audit status vocabulary is restricted to
 \[
-\begin{array}{l|l}
-\text{Statement} & \text{Status} \\
-\hline
-\multicolumn{2}{c}{\textit{Primitive postulates}}\\
-\hline
-\text{one base-medium }\mathcal M & \text{postulate} \\
-\text{stable low-energy phase} & \text{postulate} \\
-\text{minimal operational node scale }\ell_* & \text{postulate / Planck-order calibration} \\
-\text{Operational Relational Covariance} & \text{protection principle} \\
-\text{positive physical energy} & \text{postulate} \\
-\text{local effective hierarchy} & \text{EFT condition} \\
-\hline
-\multicolumn{2}{c}{\textit{Derived in RMG-1}}\\
-\hline
-\text{stable-record coefficients }C_t:C_0:C_x=1:\rho:\rho^2 & \text{completion result} \\
-c_{\rm coord}/c=s^2 & \text{square-law completion theorem} \\
-s=e^{-u} & \text{derived from layering} \\
-\text{ADM lapse bridge }N=s=e^{-u} & \text{derived in operational bridge} \\
-\text{C3 lapse-variation source theorem} & \text{conditional proof of }S_u=\rho_E \\
-u(r)=G_{\rm RMG}M/(rc^2) & \text{derived in weak static sector} \\
-\gamma=1,\ \beta=1 & \text{derived in weak field} \\
-\text{leading-order ADM/EH core from }\mathcal M_{\rm rel} & \text{conditional leading-order result} \\
-\hline
-\multicolumn{2}{c}{\textit{Open root theorems}}\\
-\hline
-\text{Root A: one external record carrier} & \text{root open theorem / spectral one-cone target} \\
-\text{Root B: record-embedding ADM closure} & \text{root open theorem / B1--B5 plus }A[N,M]=0 \\
-\text{Root C: total-energy source projection} & \text{root open theorem / C1--C5} \\
-\text{non-circular proof order} & \text{A }\Rightarrow\text{ B }\Rightarrow\text{ EH }\Rightarrow\text{ C} \\
-\hline
-\multicolumn{2}{c}{\textit{Local-core gates}}\\
-\hline
-\text{factorization }Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB} & \text{core gate} \\
-\text{failure matrix }B_{AB}^{\mu\nu}=0 & \text{required protection} \\
-\text{record-sector no-birefringence} & \text{master protection principle} \\
-\text{observable tensor basis} & \text{forbid extra principal tensors} \\
-\text{local flow decoupling / preferred-frame PPN null} & \text{open gate} \\
-\Delta_{\mathcal M}=0 & \text{required ADM/EH closure gate} \\
-\text{hypersurface-deformation closure filter} & \text{ADM algebra gate} \\
-\text{DeWitt }\lambda=1/2 & \text{selected by closure filter; open from }\mathcal M \\
-\text{ADM constraint closure / EH fixed point} & \text{conditional on Roots A--C} \\
-\text{only two tensor GW modes }(h_+,h_\times) & \text{target; requires first-class closure} \\
-\text{GW detector signal: TT/shear/defect projection} & \text{open theorem} \\
-\text{tensor-closure reduction} & \text{open finite test: }\mathrm{rank}\,K_{\chi{\rm -strain}}=2 \\
-\hline
-\multicolumn{2}{c}{\textit{Source universality}}\\
-\hline
-q_A\propto E_A/c^2 & \text{equivalence-principle source gate} \\
-\text{far-tail monopole }Q_A^{(0)}=\eta E_A/c^2 & \text{open theorem} \\
-\sigma_{\rm grav}\propto\rho_E/c^2 & \text{open theorem} \\
-\text{species-private source }\sigma_{\rm species}=0 & \text{required source universality} \\
-\text{internal/binding energy effacement} & \text{required; energy gravitates without extra cone} \\
-\text{no species-private }u\text{-coupling} & \text{metric-exhaustion / fifth-force gate} \\
-\text{matter-coupled ADM closure} & \text{open theorem} \\
-\hline
-\multicolumn{2}{c}{\textit{Microscopic program}}\\
-\hline
-S_{\rm eff}^{\rm rec}[\mathcal M_0]\text{ from }\mathcal M & \text{record-action target} \\
-\text{minimal input package }\mathcal D_{\mathcal M} & \text{required before microscopic proof} \\
-\text{candidate order parameter }\sqrt n e^{i\theta}\chi & \text{test ansatz} \\
-\text{composite record metric }g_{\rm rec}^{\mu\nu}=\mathcal G^{\mu\nu}[\Phi_{\mathcal M}] & \text{requires protected TT sector} \\
-\hline
-\multicolumn{2}{c}{\textit{Extension windows}}\\
-\hline
-\text{MOND reentry} & \text{open large-scale correction gate} \\
-\text{strong-field compact-object branch} & \text{open contract; branch not selected} \\
-\text{hybrid compact projection} & \text{open theorem / current program target} \\
-\end{array}
+\boxed{
+\text{postulate, conditional result, derived result, target, open theorem, fail-risk}.
+}
 \]
+Free-form context belongs in notes, not in the status label.  Priority is used
+only for proof management:
+\[
+\boxed{
+P0=\text{MVP blocker},\quad
+P1=\text{first local package},\quad
+P2=\text{important later item},\quad
+P3=\text{extension window}.
+}
+\]
+
+\medskip\noindent\textbf{Foundation and local bridge.}
+\begin{itemize}
+\item \textbf{RMG-001} one base-medium \(\mathcal M\): postulate.
+\item \textbf{RMG-002} stable low-energy phase: P0 target.  It is introduced
+as a primitive requirement, but the audit treats its physical realization as a
+condition to verify before Root A can be calculated.
+\item \textbf{RMG-004} Operational Relational Covariance: P0 target.  It must
+be derived from microscopic record equivalence or replaced by a more explicit
+protection theorem.
+\item \textbf{RMG-005} positive physical energy: P0 target.  It is introduced
+as a primitive requirement, but physical propagating modes still require a
+ghost/gradient-stability audit.
+\item \textbf{RMG-007--RMG-014} operational and weak-field bridge: conditional
+or derived local results.  The weak bridge gives \(u(r)=G_{\rm RMG}M/(rc^2)\)
+and \(\gamma=\beta=1\), but their final status remains conditional on Roots
+A--C.
+\end{itemize}
+
+\medskip\noindent\textbf{Root blockers.}
+\begin{itemize}
+\item \textbf{RMG-015} Root A: derive one external record carrier/cone from the
+stable phase.  Blocks factorization, no-birefringence, the composite metric,
+and the one-cone part of Root B and Root C.
+\item \textbf{RMG-016} Root B: derive record-embedding ADM closure, including
+\(\Gamma_{\mathcal R}\), \(\Omega_{\mathcal R}\), embedding generators,
+ADM brackets, hyperbolicity and no ghost/extra-mode leakage.  Blocks the
+ADM/EH fixed point and the two-TT-mode statement.
+\item \textbf{RMG-017} Root C: derive the total-energy source projection for
+all stable record matter.  Blocks equivalence-principle source universality,
+compact-binary source tests and the no-fifth-force gate.
+\item \textbf{RMG-018} non-circular proof order: proof discipline target.  Do
+not assume ADM to prove Root A, do not assume Einstein equations to prove
+Root B, and do not assume the equivalence principle to prove Root C.
+\end{itemize}
+
+\medskip\noindent\textbf{Local-core gate clusters.}
+\begin{itemize}
+\item \textbf{RMG-A-Factorization: RMG-019--RMG-023.}  Prove
+\(Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}\), eliminate the failure matrix
+\(B_{AB}^{\mu\nu}\), forbid low-energy birefringence, remove extra observable
+rank-two tensors, and decouple local flow/vorticity from the tested PPN core.
+\item \textbf{RMG-B-ADM: RMG-024--RMG-027.}  Prove
+\(\Delta_{\mathcal M}=0\) or suppression, close the hypersurface-deformation
+algebra, derive \(\lambda=1/2\), and obtain the ADM/EH fixed point.
+\item \textbf{RMG-GW-Tensor: RMG-028--RMG-030.}  Prove exactly two positive,
+luminal transverse-traceless tensor modes and a detector-visible TT/shear
+response; forbid scalar/vector, massive spin-2, negative-energy or extra shear
+radiation in the tested local sector.
+\item \textbf{RMG-C-Source: RMG-031--RMG-037.}  Prove
+\(q_A\propto E_A/c^2\), the far-tail energy monopole, local
+\(\sigma_{\rm grav}\propto\rho_E/c^2\), no species-private source, internal
+and binding-energy effacement, no species-private \(u\)-coupling, and
+matter-coupled ADM closure.
+\item \textbf{RMG-Micro: RMG-038--RMG-041.}  Specify the microscopic input
+package, test the candidate order parameter \(\sqrt n e^{i\theta}\chi\),
+derive \(S_{\rm eff}^{\rm rec}[\mathcal M_0]\), and construct the composite
+record metric \(g_{\rm rec}^{\mu\nu}=\mathcal G^{\mu\nu}[\Phi_{\mathcal M}]\).
+\end{itemize}
+
+\medskip\noindent\textbf{Coverage rows added by the audit.}
+The following rows are now tracked explicitly, even where the body of RMG-1 has
+not yet promoted them to standalone theorems:
+\begin{itemize}
+\item \textbf{RMG-045} GW emission and radiation reaction: derive tensor
+quadrupole energy loss, radiation reaction and compact-binary waveform phase
+from the same record metric and total-energy source.  Propagation alone is not
+enough.
+\item \textbf{RMG-046} cosmological background reduction: specify the
+large-scale background state, expansion law and any dark-energy-like sector
+without using cosmology to cover a local-core failure.
+\item \textbf{RMG-047} finite strong-field tests: identify the ISCO, shadow,
+ringdown, strong-lensing and late-inspiral observables that must remain
+GR/Kerr-like or become explicit falsification targets.
+\item \textbf{RMG-048} quantum-extension boundary: state whether quantum
+claims are outside the MVP, imported as targets or derived later from the
+base-medium record action.
+\item \textbf{RMG-049} concrete Solar-System observation map: connect
+Newtonian limit, redshift, light bending, Shapiro delay, perihelion/ranging
+and frame-dragging tests to explicit RMG gates.
+\end{itemize}
+
+\medskip\noindent\textbf{Observational sub-items.}
+\begin{itemize}
+\item \textbf{OBS-001} Newtonian/orbital limit: checks RMG-012 and
+RMG-031--RMG-033.
+\item \textbf{OBS-002} gravitational redshift: checks RMG-009, RMG-010 and
+RMG-013.
+\item \textbf{OBS-003} light bending and Shapiro delay: checks RMG-008,
+RMG-013 and RMG-049.
+\item \textbf{OBS-004} perihelion, ranging and PPN \(\beta\): checks RMG-013,
+RMG-027 and RMG-049.
+\item \textbf{OBS-005} frame dragging and preferred-frame null tests: check
+RMG-016, RMG-023, RMG-027 and RMG-049.
+\item \textbf{OBS-006} binary-pulsar orbital decay: checks RMG-017, RMG-031,
+RMG-035 and RMG-045; no leading scalar dipole loss is allowed.
+\item \textbf{OBS-007} GW propagation: checks RMG-028 and RMG-030; requires
+\(c_{\rm GW}=c\) and exactly two tensor polarizations.
+\item \textbf{OBS-008} compact-binary waveform phase: checks RMG-028--RMG-030
+and RMG-045; propagation and emission must be consistent.
+\item \textbf{OBS-009} strong-field finite tests: checks RMG-043, RMG-044 and
+RMG-047.
+\item \textbf{OBS-010} MOND transition: checks RMG-023 and RMG-042; any
+large-scale correction must not leak into the local core.
+\item \textbf{OBS-011} cosmological background: checks RMG-046.
+\end{itemize}
+
+The immediate P0 blockers are therefore the stable phase, relational
+covariance/protection, positive-energy physical modes, the local effective
+hierarchy, Roots A--C, factorization, \(\Delta_{\mathcal M}=0\), ADM/EH
+closure, total-energy source universality, and the microscopic input package.
 
 \section{Open Items}
 
@@ -2994,7 +3055,8 @@ $\mathcal D_{\mathcal M}=(\Phi_{\mathcal M},S_{\mathcal M},\mathcal M_0,\ell_*,
 candidate order parameter $\Phi_{\mathcal M}=\sqrt n e^{i\theta}\chi$ against
 Roots A--C; compute the stable-phase spectrum; integrate out the internal
 sector and verify the absence of background leaks; derive
-$\ell_*$ from the base-medium record dynamics.
+$\ell_*$ from the base-medium record dynamics; verify that the stable phase
+contains no negative-energy physical branch.
 
 \medskip\noindent\textit{Root A.}
 Derive one common external record carrier from the stable phase; compute
@@ -3011,7 +3073,9 @@ fields $\delta_\xi$ and the local generators $D,H$; derive the Noether split
 $J_\xi=C_\xi+dQ_\xi$; verify B1--B5 and prove the anomaly gate $A[N,M]=0$;
 exclude unsuppressed lapse/shift scalar-vector kinetic terms; derive the
 hypersurface-deformation algebra; derive the DeWitt coefficient $\lambda=1/2$;
-prove $\Delta_{\mathcal M}=0$ or suppressed.
+prove $\Delta_{\mathcal M}=0$ or suppressed; give a linearized hyperbolicity
+certificate, match the principal symbol to the record cone, and exclude
+ghost/gradient instabilities.
 
 \medskip\noindent\textit{Root C.}
 Verify C1--C5 in the base-medium matter sector; prove $S_u=\rho_E$ for every
@@ -3019,7 +3083,8 @@ stable record matter family; prove metric-exhaustion of local $u$-dependence;
 prove the absence of explicit species-private $u$-coupling; prove
 $\sigma_{\rm species}^{\rm long,local}=0$; derive the universal gravitational
 tail projection $q_A\propto E_A/c^2$ and the far-tail monopole
-$Q_A^{(0)}=\eta E_A/c^2$.
+$Q_A^{(0)}=\eta E_A/c^2$; audit compact-object sensitivities so that no
+leading scalar dipole loss appears in binary-pulsar systems.
 
 \medskip\noindent\textit{Factorization and protection.}
 Derive $Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}$ from the record kinetic kernel;
@@ -3038,18 +3103,32 @@ tensor/scalar/vector radiation); prove amplitude and internal modes are
 gapped, constrained, gauge, confined or suppressed.
 
 \medskip\noindent\textit{Radiation and detection.}
-Derive scalar/vector constraints and tensor/shear radiation; derive
-lapse/shift no-kinetic structure from $\mathcal M$; prove first-class
-constraint closure removes scalar/vector radiation; prove pure common-mode
-breathing is locally self-calibrated and detector-null; derive the
-detector-visible TT/shear or defect projection for GW signals.
+Separate propagation from emission.  For propagation, derive scalar/vector
+constraints and tensor/shear radiation; derive lapse/shift no-kinetic
+structure from $\mathcal M$; prove first-class constraint closure removes
+scalar/vector radiation; prove pure common-mode breathing is locally
+self-calibrated and detector-null; derive the detector-visible TT/shear or
+defect projection for GW signals.  For emission, derive tensor quadrupole
+energy loss, radiation reaction and compact-binary waveform phase from the
+same record metric and total-energy source.
+
+\medskip\noindent\textit{Observational audit package.}
+Map each local observable to a gate: Newtonian/orbital limit; gravitational
+redshift; light bending and Shapiro delay; perihelion, ranging and PPN
+\(\beta\); frame dragging and preferred-frame null tests; binary-pulsar
+orbital decay; GW propagation; compact-binary waveform phase; and finite
+strong-field tests such as ISCO, shadow, ringdown, strong lensing and
+late-inspiral behavior.
 
 \medskip\noindent\textit{Foundational and extension programs.}
 Derive Operational Relational Covariance from microscopic $\mathcal M$; derive
 the record/internal projection $\Pi_{\mathcal R}$ from $\mathcal M$; derive
 the flow/vorticity gate and the MOND reentry function $\mathcal F$; derive
 the compact-object branch and the strong-field projection gate; derive the
-cosmological background state and the matter sector from $\mathcal M$.
+cosmological background state and the matter sector from $\mathcal M$; state
+the quantum-extension boundary, namely which quantum claims are outside the
+local-gravity MVP and which must be derived later from the base-medium record
+action.
 
 \section{Pass/Fail Gates}
 
@@ -3083,6 +3162,9 @@ occurs:
 \item record dynamics that do not yield exactly two positive, luminal,
   common-cone TT modes, or that leave an unsuppressed scalar/vector,
   massive spin-2, negative-energy or extra shear channel;
+\item binary-pulsar timing or compact-binary waveforms requiring an
+  energy-loss law different from the protected tensor channel, or requiring
+  an unsuppressed scalar dipole/monopole radiation channel;
 \item unsuppressed MOND-type correction in solar-system, binary-pulsar or
   local GW tests, or modification of $\gamma=1$, $\beta=1$, $c_{\rm GW}=c$,
   universal free fall, or the two-tensor-mode vacuum sector;
