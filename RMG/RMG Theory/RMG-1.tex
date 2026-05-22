@@ -1077,6 +1077,120 @@ tested local sector.  Propagation alone is not sufficient: compact-binary
 emission must use the same protected tensor channel, with no leading
 scalar-dipole or scalar-monopole excess in binary-pulsar or waveform tests.
 
+\begin{openthm}[GW emission and radiation-reaction audit]
+Propagation and emission are separate gates.  The local TT channel must not
+only propagate on the record cone; it must also carry the outgoing energy flux
+emitted by compact binaries.  The sourced radiative target is
+\[
+\boxed{
+\left(\frac{1}{c^2}\partial_t^2-\nabla^2\right)h_{ij}^{TT}
+=
+\Pi_{TT}\,{\cal S}_{ij}[g_{\rm rec},T_{\mu\nu}]
++\hbox{suppressed corrections},
+}
+\]
+where \(T_{\mu\nu}\) comes from \(S_{\rm m}[g_{\rm rec},\Psi]\) and
+\(\rho_E=T_{\mu\nu}n^\mu n^\nu\).  The static and radiative constants must be
+the same:
+\[
+\boxed{
+G_{\rm Newton}=G_{\rm radiation}=G_{\rm record},
+\qquad
+c_{\rm matter}=c_{\rm GW}=c_{\rm record}.
+}
+\]
+A mismatch between the Newtonian coupling, the conservative near-zone coupling
+and the radiative flux normalization is a GW-emission failure.
+
+The emission audit proceeds in the local asymptotically flat binary regime:
+\[
+\boxed{
+r\gg R_{\rm source},\qquad r>\lambda_{\rm GW},\qquad
+\lambda_{\rm GW}=c/f_{\rm GW}.
+}
+\]
+The weak-field near zone must be matched to the wave zone; leading tensor
+radiation reaction is the first dissipative correction, while full high-PN
+waveform templates, merger and ringdown are deferred.
+
+The leading multipole hierarchy must be derived rather than inserted:
+\[
+\boxed{
+\text{monopole conserved},\qquad
+\text{dipole removed by center-of-energy/sensitivity universality},\qquad
+\text{quadrupole first radiative TT source}.
+}
+\]
+The dipole-zero condition inherits Root~C:
+\[
+\boxed{
+\alpha_A=\frac{q_A}{E_A/c^2},
+\qquad
+\alpha_A=\alpha_B
+}
+\]
+or a bound/suppression on \(\alpha_A-\alpha_B\).  Without this, scalar-like
+dipole radiation is not excluded.
+
+The outgoing tensor flux must be positive and must equal the loss of near-zone
+mechanical energy:
+\[
+\boxed{
+P_{TT}=\int r^2d\Omega\,{\cal F}_{TT}[\dot h^{TT}],
+\qquad
+\frac{dE_{\rm orbit}}{dt}=-P_{TT}.
+}
+\]
+For eccentric binaries and timing systems the angular-momentum balance must
+also hold:
+\[
+\boxed{
+\frac{dL_{\rm orbit}}{dt}=-{\cal F}^{\rm ang}_{TT}.
+}
+\]
+The leading chirp mass is built from Root~C source masses
+\[
+\boxed{
+m_A=E_A/c^2,\qquad
+{\cal M}_c=\frac{(m_1m_2)^{3/5}}{(m_1+m_2)^{1/5}}.
+}
+\]
+Non-tensor channels -- scalar monopole, scalar dipole, vector dipole, massive
+spin-2 leakage, second metric flux or pure breathing radiation -- must be
+constraint, gauge, near-zone, short-range, gapped, damped, high-energy
+suppressed or below the relevant binary-pulsar and waveform bounds.  If such a
+classification is not supplied, the channel is an emission anomaly.
+\end{openthm}
+
+\medskip\noindent\textbf{Quantitative emission MVP.}
+The first concrete emission target is a binary-pulsar timing comparison, with
+PSR~B1913+16 as a canonical benchmark.  The table to be filled by the
+calculation is:
+\[
+\boxed{
+\begin{array}{c|c|c}
+\text{quantity} & \text{RMG MVP target} & \text{failure mode}\\
+\hline
+\dot P_b & \text{from }dE_{\rm orbit}/dt=-P_{TT} & \text{wrong damping}\\
+m_A & E_A/c^2\text{ from Root C} & \text{source mass mismatch}\\
+\alpha_A-\alpha_B & 0\text{ or below timing bounds} & \text{scalar dipole loss}\\
+\text{eccentricity effects} & dL_{\rm orbit}/dt=-{\cal F}^{\rm ang}_{TT} &
+\text{wrong timing evolution}
+\end{array}
+}
+\]
+The benchmark observational scale is the Hulse--Taylor orbital decay,
+\(\dot P_b\sim-2.4\times10^{-12}\,{\rm s/s}\), after the standard timing and
+environmental corrections.  RMG must reproduce the tensor energy-loss channel
+without adding a private scalar/vector flux.  For GW speed, the multimessenger
+benchmark remains
+\[
+\boxed{
+\left|c_{\rm GW}/c-1\right|\lesssim10^{-15}
+}
+\]
+as a propagation gate that emission must not disturb.
+
 \begin{gate}[GW detection: common-mode cancellation versus shear signal]
 A uniform or adiabatic compression of the local record system rescales the
 apparatus, clocks, rulers and light standards together; the scalar/compression
@@ -3442,8 +3556,11 @@ not yet promoted them to standalone theorems:
 \begin{itemize}
 \item \textbf{RMG-045} GW emission and radiation reaction: derive tensor
 quadrupole energy loss, radiation reaction and compact-binary waveform phase
-from the same record metric and total-energy source.  Propagation alone is not
-enough.
+from the same record metric and total-energy source.  The audit must show
+\(G_{\rm Newton}=G_{\rm radiation}=G_{\rm record}\),
+\(dE_{\rm orbit}/dt=-P_{TT}\), the angular-momentum flux for eccentric timing
+systems, the source-mass identification \(m_A=E_A/c^2\), and no scalar/vector
+dipole or monopole channel.  Propagation alone is not enough.
 \item \textbf{RMG-046} cosmological background reduction: specify the
 large-scale background state, expansion law and any dark-energy-like sector
 without using cosmology to cover a local-core failure.
@@ -3471,11 +3588,15 @@ RMG-027 and RMG-049.
 \item \textbf{OBS-005} frame dragging and preferred-frame null tests: check
 RMG-016, RMG-023, RMG-027 and RMG-049.
 \item \textbf{OBS-006} binary-pulsar orbital decay: checks RMG-017, RMG-031,
-RMG-035 and RMG-045; no leading scalar dipole loss is allowed.
+RMG-035 and RMG-045; no leading scalar dipole loss is allowed.  The first
+quantitative emission MVP is a PSR~B1913+16-style \(\dot P_b\) comparison,
+with tensor damping and no private scalar/vector flux.
 \item \textbf{OBS-007} GW propagation: checks RMG-028 and RMG-030; requires
-\(c_{\rm GW}=c\) and exactly two tensor polarizations.
+\(c_{\rm GW}=c\) and exactly two tensor polarizations; the multimessenger
+benchmark is \(|c_{\rm GW}/c-1|\lesssim10^{-15}\).
 \item \textbf{OBS-008} compact-binary waveform phase: checks RMG-028--RMG-030
-and RMG-045; propagation and emission must be consistent.
+and RMG-045; propagation and emission must be consistent, with chirp mass built
+from \(m_A=E_A/c^2\) and phase evolution from tensor energy balance.
 \item \textbf{OBS-009} strong-field finite tests: checks RMG-043, RMG-044 and
 RMG-047.
 \item \textbf{OBS-010} MOND transition: checks RMG-023 and RMG-042; any
@@ -3636,9 +3757,14 @@ scalar/vector radiation; prove pure common-mode breathing is locally
 self-calibrated and detector-null; derive the detector-visible TT/shear or
 defect projection for GW signals.  For emission, derive tensor quadrupole
 energy loss, radiation reaction and compact-binary waveform phase from the
-same record metric and total-energy source.  Exclude massive vector modes,
+same record metric and total-energy source; prove
+$G_{\rm Newton}=G_{\rm radiation}=G_{\rm record}$; derive
+$P_{TT}$, $dE_{\rm orbit}/dt=-P_{TT}$ and the angular-momentum flux for
+eccentric systems; build the leading chirp mass from $m_A=E_A/c^2$; run the
+PSR~B1913+16-style binary-pulsar timing MVP; and exclude massive vector modes,
 massive spin-2 leakage, a second metric tensor mode and any hidden
-scalar/vector energy-loss channel in the tested local sector.
+scalar/vector monopole or dipole energy-loss channel in the tested local
+sector.
 
 \medskip\noindent\textit{Observational audit package.}
 Map each local observable to a gate: Newtonian/orbital limit; gravitational
@@ -3694,6 +3820,10 @@ occurs:
 \item binary-pulsar timing or compact-binary waveforms requiring an
   energy-loss law different from the protected tensor channel, or requiring
   an unsuppressed scalar dipole/monopole radiation channel;
+\item GW emission with \(G_{\rm radiation}\neq G_{\rm Newton}\), outgoing
+  tensor flux not balanced by \(dE_{\rm orbit}/dt=-P_{TT}\), missing angular
+  momentum flux for eccentric timing systems, or a chirp mass not built from
+  the Root~C total-energy masses \(m_A=E_A/c^2\);
 \item unsuppressed MOND-type correction in solar-system, binary-pulsar or
   local GW tests, or modification of $\gamma=1$, $\beta=1$, $c_{\rm GW}=c$,
   universal free fall, or the two-tensor-mode vacuum sector;
