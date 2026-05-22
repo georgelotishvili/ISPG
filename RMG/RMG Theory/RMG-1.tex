@@ -1016,10 +1016,12 @@ h_+,
 \qquad
 h_\times.
 \]
-They must have positive energy and propagation speed:
+They must have positive energy and propagate on the single record cone:
 \[
 c_{\rm GW}=c.
 \]
+Here \(c\) is not one of several speeds tuned to agree; it is the unique local
+signal speed defined by the common record cone after Root~A closes.
 \end{target}
 
 Target wave equation:
@@ -1037,6 +1039,12 @@ Vacuum:
 \frac{1}{c^2}\partial_t^2-\nabla^2
 \right)h_{ij}^{TT}=0.
 \]
+
+The propagation target also excludes massive vector modes, massive spin-2
+leakage, a second metric tensor mode, and any extra shear channel in the
+tested local sector.  Propagation alone is not sufficient: compact-binary
+emission must use the same protected tensor channel, with no leading
+scalar-dipole or scalar-monopole excess in binary-pulsar or waveform tests.
 
 \begin{gate}[GW detection: common-mode cancellation versus shear signal]
 A uniform or adiabatic compression of the local record system rescales the
@@ -1065,6 +1073,11 @@ The first term is the protected tensor/shear sector \(h_{ij}^{TT}\).  The
 second term is allowed only as a controlled conversion of breathing/compression
 into detector-visible shear, tidal or symmetry-defect response.  It must not
 survive as an unsuppressed local scalar radiation mode.
+
+Here ``defect projection'' means a detector-visible differential record
+deformation which has a TT/shear component after projection onto the detector
+response.  It is a placeholder for a later detector-response calculation, not
+a license to re-label a pure scalar breathing mode as a tensor wave.
 
 A local apparatus cannot register a uniform rescaling of the medium from which
 its rods, clocks and light standards are built; it can register only
@@ -1123,12 +1136,23 @@ The nonlinear low-energy fixed point is:
 S_{\rm low}
 =
 \frac{c^4}{16\pi G}
-\int d^4x\sqrt{-g}R
+\int d^4x\sqrt{-g_{\rm rec}}\,(R[g_{\rm rec}]-2\Lambda)
 +
-S_{\rm matter}[g,\Psi].
+S_{\rm matter}[g_{\rm rec},\Psi]
++
+S_{\rm suppressed}.
 }
 \]
 \end{target}
+
+\medskip\noindent\textbf{Coefficient status.}
+In the ADM filter below, \(\alpha\) is a temporary curvature coefficient.  The
+Einstein--Hilbert target fixes \(\alpha=1\) after the normalization of the
+measured Newton constant \(G\) is chosen.  The cosmological term \(\Lambda\) is
+kept as a local-core background parameter in the MVP, but in the full program
+it must be derived, regulated, or absorbed into the cosmological-background
+closure.  It may not be used to repair a local ADM/EH or source-universality
+failure.
 
 ADM form:
 \[
@@ -1217,6 +1241,24 @@ two-derivative fixed point.  If this closure filter is derived from
 constrained sector and does not propagate as an independent scalar mode, and
 the local two-derivative fixed point is \(S_{\rm EH}+S_{\rm matter}\) up to
 suppressed corrections.
+\end{openthm}
+
+\begin{openthm}[Constraint preservation and matter-coupled Dirac closure]
+ADM form is not enough.  The Hamiltonian and momentum constraints must be
+preserved by the evolution they generate:
+\[
+\boxed{
+\dot{\mathcal H}\approx0,
+\qquad
+\dot{\mathcal H}_i\approx0.
+}
+\]
+The matter-coupled Dirac analysis must show that primary constraints lead to
+the Hamiltonian and momentum constraints, that secondary constraints close
+without making lapse or shift physical, and that any second-class remnants are
+solved or remove only nonphysical variables.  If matter coupling turns the
+first-class ADM system into a non-closing algebra, the local target action
+fails even if the vacuum bracket has the desired form.
 \end{openthm}
 
 \section{Local Gravity Closure Package}
@@ -1801,6 +1843,11 @@ E_{\rm total}
 E_{\rm rest}+E_{\rm kinetic}+E_{\rm binding}+E_{\rm internal}.
 }
 \]
+Here binding includes self-gravitational binding in the strong-equivalence
+audit.  Self-gravitating bodies must not fall differently merely because a
+different fraction of their total mass is stored as gravitational binding
+energy.  In local tests this is the Nordtvedt-type failure mode; in compact
+binaries it appears as a sensitivity/dipole-radiation audit.
 \end{openthm}
 
 \begin{openthm}[C3 lapse-variation source theorem]
@@ -3217,6 +3264,43 @@ large-scale correction must not leak into the local core.
 \item \textbf{OBS-011} cosmological background: checks RMG-046.
 \end{itemize}
 
+\medskip\noindent\textbf{Medium-to-target verification interface.}
+The microscopic input package must be tested against the low-energy target by
+explicit checks: compute \(\mathrm{Spec}(\mathcal L_{\mathcal M_0})\) and count
+the record cones; derive \(\Pi_{\mathcal R}\) and \(\Pi_{\mathcal I}\) and
+show that internal branches do not become private spacetimes; identify
+presymplectic null directions and first-class generators; compute the
+Schur-complement correction from internal integration and verify that it does
+not alter the local principal tensor or ADM bracket; compute the tensor
+kinetic rank, sign, mass and cone; and vary the lapse/metric to check that
+rest, kinetic, binding, internal/confined and field energy enter the same
+source.
+
+\medskip\noindent\textbf{MVP linearization scope.}
+The first local-gravity MVP is linearized around a Minkowski local core; FLRW
+belongs to the cosmology window.  The first pass requires the quadratic action
+in metric perturbations, the linearized constraints and their relevant
+quadratic-order closure, leading weak-field matter coupling, exactly two TT
+propagating modes, and a leading tensor-emission audit.  Higher
+post-Newtonian terms and full nonlinear closure remain later targets.
+
+\medskip\noindent\textbf{RMG-distinctive observables.}
+The protected local core is deliberately GR-like.  RMG becomes observationally
+distinctive only if controlled windows produce falsifiable deviations after
+the local core is protected:
+\begin{itemize}
+\item high-precision delay tests may search for suppressed post-GR corrections
+only after Root~A/B/C close;
+\item compact-binary waveform residuals, ISCO shifts, shadows and ringdown
+features belong to the compact-object branch;
+\item galaxy rotation belongs to MOND-like large-scale reentry and must not
+leak into Solar-System, binary-pulsar or local GW tests;
+\item cosmological acceleration belongs to the background-state closure, where
+\(\Lambda\) must be derived, regulated or replaced by a medium background law;
+\item preferred-frame null tests remain local-core failure tests, not
+deviation-window successes.
+\end{itemize}
+
 The immediate P0 blockers are therefore the stable phase, relational
 covariance/protection, positive-energy physical modes, the local effective
 hierarchy, Roots A--C, factorization, \(\Delta_{\mathcal M}=0\), ADM/EH
@@ -3257,7 +3341,8 @@ exclude unsuppressed lapse/shift scalar-vector kinetic terms; derive the
 hypersurface-deformation algebra; derive the DeWitt coefficient $\lambda=1/2$;
 prove $\Delta_{\mathcal M}=0$ or suppressed; give a linearized hyperbolicity
 certificate, match the principal symbol to the record cone, and exclude
-ghost/gradient instabilities.
+ghost/gradient instabilities; verify constraint preservation under evolution
+and matter-coupled Dirac closure.
 
 \medskip\noindent\textit{Root C.}
 Verify C1--C5 in the base-medium matter sector; prove $S_u=\rho_E$ for every
@@ -3266,7 +3351,8 @@ prove the absence of explicit species-private $u$-coupling; prove
 $\sigma_{\rm species}^{\rm long,local}=0$; derive the universal gravitational
 tail projection $q_A\propto E_A/c^2$ and the far-tail monopole
 $Q_A^{(0)}=\eta E_A/c^2$; audit compact-object sensitivities so that no
-leading scalar dipole loss appears in binary-pulsar systems.
+leading scalar dipole loss appears in binary-pulsar systems; include
+self-gravitational binding energy in the strong-equivalence/Nordtvedt audit.
 
 \medskip\noindent\textit{Factorization and protection.}
 Derive $Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}$ from the record kinetic kernel;
@@ -3292,7 +3378,9 @@ scalar/vector radiation; prove pure common-mode breathing is locally
 self-calibrated and detector-null; derive the detector-visible TT/shear or
 defect projection for GW signals.  For emission, derive tensor quadrupole
 energy loss, radiation reaction and compact-binary waveform phase from the
-same record metric and total-energy source.
+same record metric and total-energy source.  Exclude massive vector modes,
+massive spin-2 leakage, a second metric tensor mode and any hidden
+scalar/vector energy-loss channel in the tested local sector.
 
 \medskip\noindent\textit{Observational audit package.}
 Map each local observable to a gate: Newtonian/orbital limit; gravitational
@@ -3300,7 +3388,8 @@ redshift; light bending and Shapiro delay; perihelion, ranging and PPN
 \(\beta\); frame dragging and preferred-frame null tests; binary-pulsar
 orbital decay; GW propagation; compact-binary waveform phase; and finite
 strong-field tests such as ISCO, shadow, ringdown, strong lensing and
-late-inspiral behavior.
+late-inspiral behavior.  Separate GR-like local-core recovery from
+RMG-distinctive deviation-window observables.
 
 \medskip\noindent\textit{Foundational and extension programs.}
 Derive Operational Relational Covariance from microscopic $\mathcal M$; derive
