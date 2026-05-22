@@ -4249,6 +4249,214 @@ next artifact is the conditional Root~B record-action bridge; deriving K1 from
 \(\mathcal D_{\mathcal M}\) first is stricter, but may not rescue the local
 core if the Root~B bridge fails even under K1.
 
+\medskip\noindent\textbf{Root B conditional record-action bridge.}
+The Root~B bridge executes the MVP-B B0 task: construct a conditional
+record-action object precise enough for the Root~B ADM audit without treating
+ADM closure, the Einstein--Hilbert action, two TT modes or all-species
+universality as already proven.  The next artifact after this bridge is the
+linearized Root~B audit, which executes B1--B7.
+
+Root~B may import from Root~A/K1 only the following facts, with the following
+status:
+\[
+\boxed{
+\begin{gathered}
+\vartheta:\ \text{conditional record branch},\qquad
+P_{\mathcal R}(\omega,k)=-\omega^2+k^2,\qquad
+c_{\rm record}=1,\\
+\eta,\ q_{ij}:\ \text{gapped/internal in the conservative route},\\
+K1:\ \text{specified bridge, not yet derived from }\mathcal D_{\mathcal M},\\
+\text{all-species universality and }C_0,C_a\text{ closure: open.}
+\end{gathered}
+}
+\]
+It may not import ADM closure, an EH action, two TT gravitons or a universal
+matter metric.
+
+The bridge object is
+\[
+\boxed{
+\begin{aligned}
+S_{\mathcal R}^{\rm bridge}={}&
+S_{K1}[\vartheta;\bar g]
++S_{\rm gap}[\eta,q_{ij};\bar g]
++S_{\rm geom}^{\rm cond}[g_{\rm rec}]\\
+&+S_{\rm coupling}^{\rm cond}[g_{\rm rec},\Psi_{\rm rec}]
++S_{\rm rem}.
+\end{aligned}
+}
+\]
+Here \(S_{K1}\) carries the one-cone phase result; \(S_{\rm gap}\) carries the
+gapped internal branches; \(S_{\rm geom}^{\rm cond}\) is the conditional
+metric-dynamics sector to be audited by Root~B; \(S_{\rm coupling}^{\rm cond}\)
+is only a placeholder for matter/record probes and must not assume Root~C; and
+\(S_{\rm rem}\) must be classified as gauge, constrained, boundary, gapped,
+high-energy suppressed, large-scale-only or fail-risk.
+
+The K1 cone reconstructs only the local background cone metric:
+\[
+\boxed{
+-\omega^2+k^2=0
+\quad\Longleftrightarrow\quad
+\bar g^{\mu\nu}=\eta^{\mu\nu}=\operatorname{diag}(-1,1,1,1)
+}
+\]
+in canonical K1 units.  Thus the bridge takes \(\bar g=\eta\) as the natural
+local background choice.  A constant conformal rescaling is harmless only if
+the measured normalization of \(c_{\rm record}\) is kept fixed.  A nontrivial
+conformal factor, anisotropic background or preferred-frame background must be
+justified separately and is a possible Root~A/Root~B failure mode.
+
+To run the Root~B audit, the bridge introduces conditional record-geometry
+variables
+\[
+\boxed{
+N=1+n,\qquad N^i=n^i,\qquad h_{ij}=\delta_{ij}+\gamma_{ij},\qquad
+\pi^{ij}\ \text{conjugate to }h_{ij}.
+}
+\]
+Their tensor types are the standard ADM types: \(N\) is a scalar lapse,
+\(N^i\) a spatial vector shift, \(h_{ij}\) a symmetric spatial two-tensor and
+\(\pi^{ij}\) the conjugate symmetric tensor density.  The unresolved issue is
+not the ADM tensor type.  The unresolved issue is the medium map: whether
+\(\vartheta\) maps to \(N\), to \(h_{ij}\), to both through \(g_{\rm rec}\), or
+to neither as a directly geometric variable.
+
+Metric reconstruction therefore has three possible routes:
+\begin{enumerate}
+\item build \(g_{\rm rec}^{\mu\nu}\) from Goldstone-gradient data such as
+  \(\partial_\mu\theta\,\partial_\nu\theta\);
+\item build \(g_{\rm rec}\) from the K1 dispersion/principal-symbol
+  structure;
+\item introduce \(g_{\rm rec}\) as a conditional bridge variable and derive it
+  later.
+\end{enumerate}
+The first MVP uses the third route.  The first two routes are deferred to a
+later metric-from-medium derivation.
+
+Root~B may use the two-derivative Hamiltonian form only as an audit filter,
+not as an assumed result:
+\[
+\boxed{
+\mathcal H_B=
+\frac{1}{\sqrt h}\left(\pi^{ij}\pi_{ij}-\lambda\pi^2\right)
+-\sqrt h(\alpha R-2\Lambda)+\Delta_{\mathcal M}.
+}
+\]
+The tested target is
+\[
+\boxed{\lambda=\frac12,\qquad \alpha=1,\qquad \Delta_{\mathcal M}=0}
+\]
+or \(\Delta_{\mathcal M}\) must be a constraint, gauge, boundary, internal,
+gapped, high-energy suppressed or large-scale-only term with a stated control.
+For this MVP, the working controls are:
+\begin{itemize}
+\item high-energy suppression requires a stated \(\Lambda_{\rm UV}\), with
+  \(E_{\rm test}/\Lambda_{\rm UV}<10^{-5}\) as the Solar-System PPN-scale
+  working threshold unless a sharper bound applies;
+\item a gapped branch must satisfy \(m>1/r_{\rm test}\) for the relevant
+  experiment;
+\item a large-scale-only term is allowed only for \(k<H_0/c\) and may not
+  repair a local Solar-System, laboratory, binary-pulsar or GW failure;
+\item a boundary term must live at a declared boundary and not change the
+  local bracket;
+\item a gauge or constraint term must be removed by a stated generator or
+  first-class constraint check.
+\end{itemize}
+
+The re-embedding audit acts on the record fields by
+\[
+\boxed{\delta_\xi\Phi_{\mathcal R}=\mathcal L_\xi\Phi_{\mathcal R}},
+\qquad
+\boxed{\Omega_{\mathcal R}(\delta\Phi,\delta_\xi\Phi)\approx0}
+\]
+or equivalently by the generators \(H[N]+D[N^i]\).  The field types must be
+declared before this calculation: \(\vartheta\) is a scalar with
+\(\mathcal L_\xi\vartheta=\xi^\mu\partial_\mu\vartheta\);
+\(g_{\rm rec\,\mu\nu}\) is a symmetric tensor with
+\(\mathcal L_\xi g_{\mu\nu}=\nabla_\mu\xi_\nu+\nabla_\nu\xi_\mu\);
+\(N,N^i,h_{ij}\) inherit their transformations from the spacetime metric
+split; and retained \(\eta,q_{ij}\) branches must be treated as
+internal/gapped unless a later input freeze revises their role.
+
+The tensor-sector risk is the main conservative-route risk.  Root~A/K1 gives
+one scalar-like phase record branch, a gapped \(Q_{ij}\) branch and no derived
+TT graviton from conservative \(Q\).  Root~B nevertheless requires
+\[
+\boxed{
+\text{physical DOF}=2,\qquad \operatorname{rank}K_{TT}=2,\qquad
+\text{positive tensor kinetic sign},\qquad
+P_{TT}=P_{\mathcal R},
+}
+\]
+with no scalar/vector radiation and no second metric.  The allowed sequence is:
+\begin{enumerate}
+\item first try a conditional TT construction from \(\gamma_{ij}^{TT}\) as a
+  record-geometry variable, carrying the K1 cone;
+\item if the hyperbolicity or rank audit fails on \(\gamma_{ij}^{TT}\), revise
+  the input freeze toward a gapless TT-candidate \(Q\)-route;
+\item if only the scalar one-cone sector remains, count this as a blocking
+  failure of the local tensor-gravity MVP.
+\end{enumerate}
+The forbidden move is to rename the gapped conservative \(Q\)-sector as two TT
+gravitons.
+
+The fifth-force firewall is also only conditional at this bridge stage.  The
+toy action contains derivatives of \(\theta\) but no explicit \(\theta\), so
+\[
+\boxed{\theta\to\theta+\text{constant}}
+\]
+is a shift symmetry of the toy action.  The background
+\(\theta=\nu_0\tau\) breaks this symmetry in the selected phase, and
+\(\vartheta\) is the Goldstone-like fluctuation.  This may protect against a
+private scalar force, but only if the later matter Hamiltonian depends on
+derivatives or common record-metric combinations of \(\theta\), not on
+species-private explicit \(\theta\)-charge.  That test belongs to Root~C and
+the record-action bridge; it is not assumed here.
+
+Root~B may proceed to the linearized ADM audit only with the following labels:
+K1 is specified rather than medium-derived; the metric/tensor sector is
+conditional; two TT modes are an audit target rather than an input; matter
+universality is not assumed; and every anomaly or \(\Delta_{\mathcal M}\)
+must carry a scale or structural reason.  Root~B must stop if the bridge
+requires kinetic lapse, a physical shift, a private preferred-frame tensor,
+scalar/vector radiation in the local vacuum sector, a second metric, or the
+identification of gapped \(Q\) with TT gravity.  If only some Root~B conditions
+fail, each failed condition must be documented separately and the revision
+must be assigned either to the bridge, to the input freeze, or to the program
+status if only a scalar one-cone conditional theory remains.
+
+The accumulated conditional debt is:
+\begin{center}
+\begin{tabular}{p{0.18\textwidth}p{0.21\textwidth}p{0.27\textwidth}p{0.23\textwidth}}
+\hline
+\textbf{Bridge} & \textbf{Source} & \textbf{Risk} & \textbf{Resolution path}\\
+\hline
+K1 specification & Root~A temporal completion &
+\(Z_\eta=Z_\theta=Z_Q=1\) not derived &
+derive K1 from the medium\\
+\(\bar g=\eta\) & this bridge &
+Lorentz invariance not derived from \(\mathcal D_{\mathcal M}\) &
+medium symmetry analysis\\
+\(N,N^i,h_{ij}\) & this bridge &
+metric origin from medium not derived &
+metric-from-medium derivation\\
+\(\gamma_{ij}^{TT}\) existence & this bridge &
+conservative \(Q\) is gapped, so no TT source is derived &
+CB-5 revision or record-geometry route\\
+\(C_0,C_a\) closure & Root~A temporal completion &
+constraint algebra not audited &
+Root~B bracket calculation\\
+matter universality & this bridge &
+matter species not modeled &
+Root~C matter-family audit\\
+\hline
+\end{tabular}
+\end{center}
+No row in this ledger may be silently counted as derived.  Each row must be
+resolved, or explicitly accepted as a final conditional bridge, before any
+Root~B pass claim is allowed.
+
 \medskip\noindent\textbf{Root A execution tasks.}
 Root~A begins only after the medium choice is locked by MVP-0.  The MVP-A
 calculation must verify that the selected \(\mathcal D_{\mathcal M}\) provides
