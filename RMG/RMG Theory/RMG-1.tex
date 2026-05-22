@@ -3756,6 +3756,238 @@ covariance/protection, positive-energy physical modes, the local effective
 hierarchy, Roots A--C, factorization, \(\Delta_{\mathcal M}=0\), ADM/EH
 closure, total-energy source universality, and the microscopic input package.
 
+\section{MVP Local-Core Proof Tasks}
+
+This section converts the specification-stage memos into an execution plan.
+It adds no new physical claim.  Its purpose is to say which calculations must
+be performed, in which order, what each calculation must output, and what
+counts as failure.  The central execution question is:
+\[
+\boxed{
+\text{Which calculations turn the local gravity mechanism from a specification
+into a proof attempt?}
+}
+\]
+
+The first MVP is deliberately narrower than the full RMG program.  It targets
+only the local gravity core: one external record cone; linearized
+ADM/Einstein--Hilbert closure; universal total-energy sourcing; no leading
+scalar/vector dipole radiation; leading tensor radiation-reaction
+consistency; and observation matching only at the level supported by the
+completed gates.  MOND, cosmology, strong-field branches and quantum
+extensions may not repair a failure of this local core.
+
+\medskip\noindent\textbf{Non-circular execution rules.}
+The following rules are stronger than style requirements; if a task violates
+one of them, it is not counted as a proof.
+\begin{itemize}
+\item Root~A may not assume ADM closure.  One record cone must be obtained from
+  the medium spectrum and operational record observables.
+\item Root~B may not assume Einstein equations.  ADM closure and the EH fixed
+  point must come from the projected record action.
+\item Root~C may not assume the equivalence principle.  Universal free fall and
+  universal source strength are output gates.
+\item GW emission may not assume the quadrupole formula.  Tensor flux and
+  radiation reaction must be derived from the radiative channel.
+\item Observations may not outrun proof gates.  An observation row is not
+  marked passed unless every linked local gate is derived or explicitly kept
+  as a conditional target.
+\end{itemize}
+
+\medskip\noindent\textbf{Dependency chain.}
+The execution chain is:
+\[
+\boxed{
+\mathcal D_{\mathcal M}
+\to \text{Root A}
+\to \text{Root B}
+\to \text{Root C}
+\to \text{GW emission}
+\to \text{observation matching}.
+}
+\]
+If Root~A fails, the local core has no unique record spacetime.  If Root~B
+fails, one cone is not enough to obtain the ADM/EH local dynamics.  If Root~C
+fails, the metric dynamics may be right but matter sourcing and free fall are
+wrong.  If GW emission fails, propagation may be correct while binary-pulsar
+and inspiral energy loss fail.  If observation matching fails, the completed
+proof gates are insufficient or a local anchor has been missed.
+
+\medskip\noindent\textbf{MVP task blocks.}
+The execution program is divided into six artifacts.  The effort estimates are
+planning estimates, not proof claims.
+\begin{itemize}
+\item \textbf{MVP-0: \texttt{MVP\_Input\_Freeze.md}.}  Freeze the exact
+  symbols, assumptions, conditional inputs, normalizations and anchors allowed
+  in the MVP.  Planning scale: about one week.
+\item \textbf{MVP-A: \texttt{Root\_A\_MVP\_Spectrum\_Calculation.md}.}
+  Execute the low-energy spectrum audit on the locked toy or candidate
+  \(\mathcal D_{\mathcal M}\).  Expected output: one gapless external record
+  cone.  Planning scale: about four to eight weeks.
+\item \textbf{MVP-B: \texttt{Root\_B\_Linearized\_ADM\_MVP.md}.}  Execute
+  the linearized ADM closure audit on the projected record action
+  \(S_{\mathcal R}\).  Expected output: first-class linearized constraints,
+  two TT modes and record-cone principal symbol.  Planning scale: about
+  eight to twelve weeks.
+\item \textbf{MVP-C: \texttt{Root\_C\_Source\_MVP\_Calculation.md}.}
+  Execute the lapse/source and matter-family audit.  Expected output: the
+  source equals total physical energy density and has no species-private tail.
+  Planning scale: about six to ten weeks.
+\item \textbf{MVP-E: \texttt{PSR\_B1913\_Emission\_MVP.md}.}  Derive leading
+  tensor flux and radiation reaction.  The strict input is the completed
+  Root~B tensor channel plus the completed Root~C source; a conditional draft
+  is allowed only under the fast-track rule below.  Planning scale: about
+  six to ten weeks.
+\item \textbf{MVP-O: \texttt{MVP\_Observation\_Checklist.md}.}  Compare only
+  supported gates against local anchors and keep every row no stronger than
+  its proof-gate status.  Planning scale: about two weeks.
+\end{itemize}
+
+\medskip\noindent\textbf{MVP-0 input freeze.}
+The first artifact prevents later calculations from importing hidden
+assumptions.  It must lock: selected medium variables and background; the
+coarse-graining scale; dimensional normalizations for
+\(G_{\rm RMG}\), \(c\), \(\ell_*\) and \(\Lambda\), or their defining
+relations; the record/internal split convention; the allowed internal gauge
+group and observables; the target low-energy action form; the primary local
+observation anchor; and the exact status vocabulary.
+
+The freeze tasks are:
+\begin{itemize}
+\item list every primitive input used by the MVP;
+\item list every conditional bridge and forbid presenting it later as derived;
+\item list every deferred branch and forbid using it to repair a local-core
+  failure;
+\item lock notation for \(\mathcal D_{\mathcal M}\), \(S_{\mathcal R}\),
+  \(g_{\rm rec}\), \(N\), \(u\), \(\rho_E\) and TT fields;
+\item lock the toy or candidate \(\mathcal D_{\mathcal M}\): fields, tensor
+  types, potential terms, interaction terms, background \(\mathcal M_0\) and
+  scale hierarchy;
+\item lock the dimensional normalization of \(G_{\rm RMG}\), \(c\), \(\ell_*\)
+  and \(\Lambda\);
+\item lock PSR~B1913+16 as the primary binary-pulsar emission anchor; other
+  pulsars are extension targets, not MVP replacements.
+\end{itemize}
+
+\medskip\noindent\textbf{Root A execution tasks.}
+Root~A begins only after the medium choice is locked by MVP-0.  The MVP-A
+calculation must verify that the selected \(\mathcal D_{\mathcal M}\) provides
+all needed components; check stability of the selected phase \(\mathcal M_0\);
+compute \(\mathcal L_{\mathcal M_0}\) and its branches; verify
+\(\Pi_{\mathcal R}+\Pi_{\mathcal I}=1\) and
+\(\Pi_{\mathcal R}\Pi_{\mathcal I}=0\); extract the low-energy dispersion of
+record branches for the selected stable phase; prove
+\[
+\boxed{N_{\rm cone}(B_{\rm rec}^{\rm gapless})=1}
+\]
+for that phase; test \(Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}\); build a
+suppression catalog for every non-record branch; and translate the cone into
+operational clocks, rods and signals.  Alternative stable phases are deferred
+unless they are selected in MVP-0.
+
+\medskip\noindent\textbf{Root B execution tasks.}
+Root~B must construct or explicitly condition the bridge
+\[
+\boxed{
+\mathcal D_{\mathcal M}\to S_{\rm eff}^{\rm rec}\to S_{\mathcal R}.
+}
+\]
+If any part of this bridge is conditional rather than derived, it must already
+appear in the MVP-0 conditional-bridge table.  Root~B then extracts
+\(\Theta_{\mathcal R}\) and \(\Omega_{\mathcal R}\), identifies embedding null
+directions, derives \(H[N]\) and \(D[N^i]\), and computes
+\(\{D,D\}\), \(\{H,D\}\) and \(\{H,H\}\) from the canonical Poisson or Dirac
+structure derived from \(\Omega_{\mathcal R}\), not from target ADM brackets.
+The pass target is \(A[N,M]=0\) or a controlled boundary/gauge term,
+\(\lambda=1/2\), \(\alpha=1\), \(\Delta_{\mathcal M}=0\) or suppressed, two
+positive TT modes, record-cone propagation and matter-coupled constraint
+preservation.
+
+\medskip\noindent\textbf{Root C execution tasks.}
+Root~C begins with an inheritance table saying exactly which Root~A/B outputs
+are used and with what status.  It must verify universal matter action
+\(S_m[g_{\rm rec},\Psi_A]\), define the lapse/compression bridge with \(u\)
+varied at fixed \(h_{ij}\), \(N^i\) and matter variables, and mark
+\(N=e^{-u}\) or its replacement as derived from Root~B or conditional in
+MVP-0.  It must compute
+\[
+\boxed{
+(N\sqrt h)^{-1}\frac{\delta S_m}{\delta u}
+  =\rho_E=T_{\mu\nu}n^\mu n^\nu
+}
+\]
+for the included matter sectors; derive the far-tail monopole
+\(Q_A^{(0)}=\eta E_A/c^2\); enumerate and eliminate species-private force
+terms; audit photons, binding energy, internal energy, composites and compact
+objects; define \(\alpha_A=q_A/(E_A/c^2)\) and prove leading-order
+\(\alpha_A=\alpha_B\); and perform the Nordtvedt/self-binding audit.
+
+\medskip\noindent\textbf{GW-emission execution tasks.}
+The primary MVP anchor is PSR~B1913+16.  PSR~J0737--3039 and
+PSR~J1738+0333 are extension anchors.  The emission task must derive the
+radiative TT action, the retarded wave-zone solution, the multipole hierarchy,
+the tensor flux \(P_{TT}\), radiation reaction
+\[
+\boxed{\frac{dE_{\rm orbit}}{dt}=-P_{TT}}
+\]
+and angular-momentum flux where needed.  It must build source masses from
+\(m_A=E_A/c^2\), re-check the Root~C no-dipole audit in the binary context,
+and produce a quantitative \(\dot P_b\) anchor row.  A correct
+\(c_{\rm GW}=c\) propagation result does not by itself pass this emission
+gate.
+
+\medskip\noindent\textbf{Observation execution tasks.}
+The MVP observation checklist contains only local anchors supported by the
+completed gates: Newtonian \(1/r\) with \(M=E_{\rm total}/c^2\);
+redshift/lapse universality; light bending and Shapiro with one cone and
+\(\gamma=1\); perihelion/ranging with
+\(\lambda=1/2\to\) ADM closure \(\to\) EH \(\to\beta=1\); no preferred-frame
+local flow; GW propagation with \(c_{\rm GW}=c\) and two TT modes; no scalar
+dipole from Root~C; and binary-pulsar tensor \(\dot P_b\) from the
+GW-emission gate.
+
+\medskip\noindent\textbf{MVP pass, fail and soft-fail rules.}
+The MVP passes only if all six blocks are derived at the stated MVP order, all
+six artifacts are completed, and each artifact receives an external reviewer
+check before the next artifact is treated as settled.  The MVP fails if it
+leaves an uncontrolled private cone, species-private principal metric,
+non-closing ADM bracket, extra scalar/vector/massive tensor channel,
+lapse/shift kinetic leak, trace-only or species-label source, unequal
+\(G_{\rm static}\) and \(G_{\rm radiation}\), or any MOND/cosmology/strong-field
+patch for a local-core failure.
+
+Borderline cases are soft failures until numerically controlled: small but
+nonzero cone splitting, tiny species-dependent tail charge or small extra
+radiative channel require an explicit bound and an observation scale.  They
+may not be dismissed by phrases such as ``approximately universal'' or
+``effectively suppressed'' without a calculation.
+
+\medskip\noindent\textbf{Execution order and fast track.}
+The recommended order is
+\[
+\boxed{
+\begin{gathered}
+\text{MVP\_Input\_Freeze}\\
+\Downarrow\\
+\text{Root\_A\_MVP\_Spectrum}\\
+\Downarrow\\
+\text{Root\_B\_Linearized\_ADM}\\
+\Downarrow\\
+\text{Root\_C\_Source}\\
+\Downarrow\\
+\text{PSR\_B1913\_Emission}\\
+\Downarrow\\
+\text{MVP\_Observation\_Checklist}
+\end{gathered}
+}
+\]
+The first physically blocking calculation is the Root~A spectrum/one-cone
+test.  A PSR~B1913+16 emission template may be drafted earlier only after
+Root~A passes, and only as a conditional numerical template; it is not a
+publishable result before Root~B and Root~C have delivered the tensor channel
+and total-energy source.  Every suppression claim in every artifact must name
+a scale or bound.
+
 \section{Open Items}
 
 RMG-1 is not yet a closed theory.  The open items group into the following
