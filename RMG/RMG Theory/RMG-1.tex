@@ -3869,6 +3869,155 @@ The freeze tasks are:
   pulsars are extension targets, not MVP replacements.
 \end{itemize}
 
+\medskip\noindent\textbf{Frozen MVP toy input.}
+The first Root~A execution pass uses a conservative toy input, not a final
+microscopic ontology:
+\[
+\boxed{
+\Phi_{\mathcal M}^{\rm MVP}=(\phi,\theta,Q_{ij}),\qquad
+\phi=\sqrt n,\qquad Q_{ij}=Q_{ji},\qquad Q^i{}_i=0 .
+}
+\]
+The selected phase is
+\[
+\boxed{
+\mathcal M_0:\quad
+\phi=v,\qquad \theta=\nu_0\tau,\qquad Q_{ij}=0 .
+}
+\]
+Background isotropy means \(\phi=v\) is spatially constant,
+\(\partial_i\theta=0\), and \(Q_{ij}=0\); hence spatial rotations act
+trivially on \(\mathcal M_0\).  The coarse-graining scale \(\ell_*\) is a
+primitive input for the MVP, not a fit parameter to repair local failures.
+
+The first toy energy is frozen as
+\[
+\begin{aligned}
+E_{\rm toy}=\int d^3X\,\bigg[
+&\frac{k_\phi}{2}(\nabla\phi)^2
++\frac{k_\theta}{2}\phi^2(\nabla\theta)^2
++\frac{\lambda_\phi}{4}(\phi^2-v^2)^2\\
+&+\frac{k_Q}{2}(\nabla Q_{ij})^2
++\frac{\mu_Q^2}{2}Q_{ij}Q_{ij}
++\frac{g_Q}{2}\phi^2 Q_{ij}Q_{ij}
+\bigg],
+\end{aligned}
+\]
+with \(E_{\rm mix}=0\) in the first spectrum calculation.  Cubic and quartic
+\(Q\)-invariants, such as \(\mathrm{Tr}(Q^3)\) and
+\((\mathrm{Tr}\,Q^2)^2\), are deferred.  Any later nonzero mixing term, for
+example \(\eta(\nabla\theta)^2\), \(\eta Q_{ij}Q_{ij}\), or
+\(Q_{ij}\partial_i\theta\,\partial_j\theta\), requires a revised
+cone-splitting and suppression audit.
+
+\medskip\noindent\textbf{Numerical first-pass regime.}
+The first Root~A calculation uses dimensionless units
+\[
+\boxed{\ell_*=1}
+\]
+and the locked parameter regime
+\[
+\boxed{
+v\ell_*=1,\quad
+\lambda_\phi=\frac12,\quad
+k_\phi=k_\theta=k_Q=1,\quad
+\mu_Q^2\ell_*^2=4,\quad
+g_Q=0 .
+}
+\]
+Therefore
+\[
+\boxed{
+m_\eta^2=2\lambda_\phi v^2=1\,\ell_*^{-2},\qquad
+m_Q^2=\mu_Q^2+g_Qv^2=4\,\ell_*^{-2}.
+}
+\]
+The amplitude branch \(\eta\) and the \(Q_{ij}\) branch are gapped in this
+conservative first pass, while the phase fluctuation \(\vartheta\) is the
+candidate gapless record branch.  These values make the first Hessian
+calculation unambiguous; they are not asserted as measured constants.
+
+\medskip\noindent\textbf{Presymplectic working form.}
+The toy action is frozen as
+\[
+\boxed{
+S_{\rm toy}=\int d\tau\,d^3X\,
+\left[
+\pi_\phi\dot\phi+\pi_\theta\dot\theta+\pi_Q^{ij}\dot Q_{ij}
+-\alpha C_0-\beta^a C_a-E_{\rm toy}
+\right].
+}
+\]
+Both \(Q_{ij}\) and \(\pi_Q^{ij}\) are symmetric traceless \(3\times3\)
+tensors with five independent components.  Before imposing constraints, the
+toy phase space has \(2+2+10=14\) components.  The working constraint forms are
+\[
+\boxed{
+C_a=\pi_\phi\partial_a\phi+\pi_\theta\partial_a\theta
+  +\pi_Q^{ij}\partial_aQ_{ij},
+}
+\]
+and
+\[
+\boxed{
+C_0=\pi_\phi\dot\phi+\pi_\theta\dot\theta+\pi_Q^{ij}\dot Q_{ij}
+  -\mathcal L_{\rm toy}.
+}
+\]
+These are reparametrization/relabeling constraint candidates, not a completed
+ADM derivation.  Root~B must still test whether the resulting constraint
+algebra is first-class.
+
+\medskip\noindent\textbf{Conservative \(Q\)-route firewall.}
+The first MVP chooses the conservative route:
+\[
+\boxed{
+Q_{ij}\text{ is gapped/internal in Root A.}
+}
+\]
+This can support a one-cone Root~A pass, but it cannot by itself prove two
+tensor gravitons.  The alternative TT-candidate route would allow a controlled
+gapless \(q_{ij}^{TT}\) projection only after revising the input freeze and
+proving
+\[
+\boxed{
+\operatorname{rank}K_{Q{\rm -strain},TT}=2,\quad
+\text{positive kinetic sign},\quad
+c_{TT}=c_{\rm record},
+}
+\]
+with no scalar/vector leakage and no second metric tensor mode.  The two
+routes are mutually exclusive within a single MVP input freeze.
+
+\medskip\noindent\textbf{Root A start gate.}
+Root~A may start only from this package:
+\[
+\boxed{
+\begin{gathered}
+(\phi,\theta,Q_{ij}),\quad
+\mathcal M_0=(v,\nu_0\tau,0),\quad
+E_{\rm toy},\quad E_{\rm mix}=0,\\
+\ell_*=1,\quad
+v=1,\quad
+\lambda_\phi=\tfrac12,\quad
+k_\phi=k_\theta=k_Q=1,\quad
+\mu_Q^2=4,\quad g_Q=0,\\
+m_\eta^2=1\,\ell_*^{-2},\quad
+m_Q^2=4\,\ell_*^{-2}.
+\end{gathered}
+}
+\]
+The next calculation must output:
+\begin{itemize}
+\item the explicit quadratic Hessian;
+\item the spectrum classification;
+\item the record/internal projector candidate;
+\item the suppression catalog;
+\item the decision whether Root~B may proceed, proceed conditionally or stop.
+\end{itemize}
+A clean failure is acceptable if it identifies which part of
+\(\mathcal D_{\mathcal M}\) must be changed.
+
 \medskip\noindent\textbf{Root A execution tasks.}
 Root~A begins only after the medium choice is locked by MVP-0.  The MVP-A
 calculation must verify that the selected \(\mathcal D_{\mathcal M}\) provides
