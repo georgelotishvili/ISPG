@@ -3580,13 +3580,16 @@ and frame-dragging tests to explicit RMG gates.
 \item \textbf{OBS-001} Newtonian/orbital limit: checks RMG-012 and
 RMG-031--RMG-033.
 \item \textbf{OBS-002} gravitational redshift: checks RMG-009, RMG-010 and
-RMG-013.
+RMG-013.  Failure means either species-dependent clock response or a physical
+split between the lapse \(N\) and compression \(e^{-u}\).
 \item \textbf{OBS-003} light bending and Shapiro delay: checks RMG-008,
 RMG-013 and RMG-049.
 \item \textbf{OBS-004} perihelion, ranging and PPN \(\beta\): checks RMG-013,
 RMG-027 and RMG-049.
 \item \textbf{OBS-005} frame dragging and preferred-frame null tests: check
-RMG-016, RMG-023, RMG-027 and RMG-049.
+RMG-016, RMG-023, RMG-027 and RMG-049.  This is a conditional-result row:
+it is consistent with frame-dragging data if Root~B closes with
+\(\Delta_{\mathcal M}=0\) or a suppressed/gauge/constrained remnant.
 \item \textbf{OBS-006} binary-pulsar orbital decay: checks RMG-017, RMG-031,
 RMG-035 and RMG-045; no leading scalar dipole loss is allowed.  The first
 quantitative emission MVP is a PSR~B1913+16-style \(\dot P_b\) comparison,
@@ -3602,6 +3605,16 @@ RMG-047.
 \item \textbf{OBS-010} MOND transition: checks RMG-023 and RMG-042; any
 large-scale correction must not leak into the local core.
 \item \textbf{OBS-011} cosmological background: checks RMG-046.
+\item \textbf{OBS-012} high-energy corrections: any higher-derivative or
+  high-energy operator must be below the relevant local bound and may not
+  modify local PPN, GW speed or GW emission.
+\item \textbf{OBS-013} compact-object branch: finite-size, spin, tidal and
+  strong-field internal structure may be tested only after the local core is
+  protected; the branch may not create a private cone or scalar/vector loss
+  channel.
+\item \textbf{OBS-014} quantum-extension boundary: the local-gravity MVP is
+  classical.  Quantum extension is future work and may not be used as an
+  unsupported premise inside the classical proof.
 \end{itemize}
 
 For OBS-004 the chain must be explicit:
@@ -3620,6 +3633,74 @@ For OBS-004 the chain must be explicit:
 \]
 If any arrow is imported rather than derived or audited, the corresponding
 observation row remains conditional.
+
+\medskip\noindent\textbf{Observation matching discipline.}
+Every observation row must name its Status Map IDs, proof gate and failure
+condition.  The word ``partial'' in the dependency map means background
+compatibility, not a completed proof: for example Root~A is partial in the
+Newtonian row because one operational metric is needed before a far-tail
+source can be read geometrically, while Root~C is only partial in the
+Shapiro/light-bending row because source normalization enters the weak-field
+potential but the bending coefficient is mainly a Root~A/B gate.  Cosmology
+partial rows mean Root~A/B/C must be compatible with an FLRW-like background,
+but cosmological dynamics remain an extension window.
+
+\medskip\noindent\textbf{Working observational anchors.}
+The following numerical values are working anchors for future calculation
+memos, not final data-source citations; each execution artifact must re-check
+the exact convention and source before using them:
+\begin{itemize}
+\item Cassini-style Shapiro: \(\gamma-1=(2.1\pm2.3)\times10^{-5}\).
+\item LLR/perihelion-style PPN: \(\beta-1\sim(1.2\pm1.1)\times10^{-4}\) as a
+  working anchor.
+\item GP-B frame dragging: observed about \(37.2\pm7.2\) mas/yr, with the GR
+  target about \(39.2\) mas/yr.
+\item GW170817/GRB timing: \(-3\times10^{-15}\lesssim(c_{\rm GW}-c)/c
+  \lesssim7\times10^{-16}\) as a working benchmark.
+\item PSR~B1913+16-style timing: \(\dot P_b\sim-2.4025\times10^{-12}\,{\rm s/s}\),
+  with tensor damping agreement at the sub-percent scale after standard
+  corrections.
+\item MICROSCOPE-style weak-equivalence anchor:
+  \(\eta\sim(-1.5\pm2.3\pm1.5)\times10^{-15}\).
+\item LLR Nordtvedt anchor: \(\eta_N\sim(2\pm5)\times10^{-4}\).
+\item PSR~J0337+1715-style strong-field free-fall anchor:
+  \(|\Delta a/a|<2.6\times10^{-6}\) as a conservative working bound.
+\end{itemize}
+
+\medskip\noindent\textbf{MVP observation split.}
+The first observation MVP is local and narrow:
+\begin{itemize}
+\item Newtonian \(1/r\) source with \(M=E_{\rm total}/c^2\);
+\item redshift/lapse universality;
+\item light bending and Shapiro with one cone and \(\gamma=1\);
+\item perihelion/ranging with \(\beta=1\) through EH local closure;
+\item no preferred-frame local flow;
+\item GW propagation with \(c_{\rm GW}=c\) and two TT modes;
+\item binary-pulsar scalar-dipole exclusion from Root~C;
+\item binary-pulsar tensor \(\dot P_b\) calculation from the GW-emission gate.
+\end{itemize}
+Compact-binary high-PN waveform templates, merger/ringdown, strong-field
+branch selection, MOND and cosmology are not MVP blockers unless they leak
+into these local tests.
+
+\medskip\noindent\textbf{Falsification priority.}
+After the local core is protected, RMG must either derive the GR-like local
+core from the base medium or produce controlled deviation targets.  Priority
+rows are:
+\begin{itemize}
+\item \textbf{P1} PSR~B1913+16-style timing: tensor \(\dot P_b\) from
+  Root~B/C/GW emission without hidden scalar/vector loss.
+\item \textbf{P2} high-precision 2PN Shapiro/delay: any calculable suppressed
+  post-core correction after Roots~A/B/C close.
+\item \textbf{P3} composition tests: \(\eta=0\) from Root~C source
+  universality at the \(10^{-15}\) scale.
+\item \textbf{P4} GW170817 speed: one record cone gives \(c_{\rm GW}=c\);
+  this is not distinctive from GR if the local core passes, but it is a hard
+  failure gate.
+\item \textbf{P5} neutron-star tidal/compact branch: allowed finite-size
+  response must be predicted explicitly and must not hide a local-core
+  failure.
+\end{itemize}
 
 \medskip\noindent\textbf{Medium-to-target verification interface.}
 The microscopic input package must be tested against the low-energy target by
@@ -3773,7 +3854,11 @@ redshift; light bending and Shapiro delay; perihelion, ranging and PPN
 orbital decay; GW propagation; compact-binary waveform phase; and finite
 strong-field tests such as ISCO, shadow, ringdown, strong lensing and
 late-inspiral behavior.  Separate GR-like local-core recovery from
-RMG-distinctive deviation-window observables.
+RMG-distinctive deviation-window observables.  The execution sequence is:
+first build \(MVP\_Local\_Core\_Proof\_Tasks\), then execute the Root~A toy
+spectrum/one-cone test, the Root~B linearized ADM closure audit, the Root~C
+total-energy/no-dipole audit, and finally the PSR~B1913+16-style numerical
+emission comparison.
 
 \medskip\noindent\textit{Foundational and extension programs.}
 Derive Operational Relational Covariance from microscopic $\mathcal M$; derive
