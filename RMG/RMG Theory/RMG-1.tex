@@ -5468,6 +5468,346 @@ The next Root~B artifact is B4:
 If B4 fails, the B3 secondary constraints do not form the ADM first-class
 system and Root~B fails in the local MVP.
 
+\medskip\noindent\textbf{Root B B4 bracket closure.}
+B4 computes the constraint brackets from the B1--B3 canonical structure.  Its
+job is to separate a real linear checkpoint from the full
+hypersurface-deformation algebra.  The B4 verdict is:
+\[
+\boxed{
+\begin{minipage}{0.86\linewidth}
+The primary constraints and the linear secondary constraints close at
+abelian linear order.  This is a conditional pass, but it is not ADM closure.
+The full ADM/HDA test requires the quadratic supplement B4q.
+\end{minipage}}
+\]
+
+B4 imports the canonical brackets
+\[
+\boxed{
+\{\gamma_{ij}(x),\pi^{kl}(y)\}
+=\delta_{(i}^{\,k}\delta_{j)}^{\,l}\delta^3(x-y),
+\qquad
+\{\vartheta(x),\pi_\vartheta(y)\}=\delta^3(x-y),
+}
+\]
+and
+\[
+\boxed{
+\{n(x),\pi_n(y)\}=\delta^3(x-y),\qquad
+\{n^i(x),\pi_j(y)\}=\delta^i{}_j\delta^3(x-y).
+}
+\]
+Here
+\[
+\boxed{
+\delta_{(i}^{\,k}\delta_{j)}^{\,l}
+=\frac12(\delta_i{}^k\delta_j{}^l+\delta_i{}^l\delta_j{}^k)
+}
+\]
+is the symmetric Kronecker projector.  B4 also imports
+\[
+\boxed{
+{\cal H}_i^{(1)}=-2\partial_j\pi^j{}_i,\qquad
+{\cal H}^{(1)}=-\partial^i\partial^j\gamma_{ij}+\partial^2\gamma,
+}
+\]
+with
+\[
+\boxed{
+D[M^i]=\int d^3x\,M^i{\cal H}_i^{(1)},\qquad
+H[N]=\int d^3x\,N{\cal H}^{(1)}.
+}
+\]
+All smearing functions are compactly supported unless a boundary term is being
+classified.  Non-compact smearing belongs to ADM-charge bookkeeping, not to
+the local MVP bracket test.  B4 inherits the B1--B3 conditional rules: no
+\(\dot n\), no \(\dot n^i\), no algebraic lapse/shift mass, no algebraic
+\(n\vartheta\), and no preferred-frame algebraic remainder.  If these fail in
+a later medium derivation, B4 is revoked with the affected earlier step.
+
+For the momentum generator,
+\[
+\boxed{
+D[M]=\int d^3x\,M^i(-2\partial_j\pi^j{}_i)
+=\int d^3x\,\pi^{ij}(\partial_iM_j+\partial_jM_i)
+}
+\]
+up to boundary.  Therefore
+\[
+\boxed{
+=\frac{\delta D[M]}{\delta\pi^{ij}}
+=\partial_iM_j+\partial_jM_i,\qquad
+\frac{\delta D[M]}{\delta\gamma_{ij}}=0
+}
+\]
+at linear metric order.  For the Hamiltonian generator,
+\[
+\boxed{
+H[N]=\int d^3x\,N(-\partial^i\partial^j\gamma_{ij}+\partial^2\gamma)
+}
+\]
+and, after integrating derivatives onto \(N\),
+\[
+\boxed{
+H[N]=\int d^3x\,\gamma_{ij}
+(-\partial^i\partial^jN+\delta^{ij}\partial^2N)
+}
+\]
+up to boundary.  Thus
+\[
+\boxed{
+=\frac{\delta H[N]}{\delta\gamma_{ij}}
+=-\partial^i\partial^jN+\delta^{ij}\partial^2N,\qquad
+\frac{\delta H[N]}{\delta\pi^{ij}}=0.
+}
+\]
+This matches the B2 normal deformation:
+\[
+\boxed{
+\delta_N\pi^{ij}
+=-\frac{\delta H[N]}{\delta\gamma_{ij}}
+=\partial^i\partial^jN-\delta^{ij}\partial^2N.
+}
+\]
+
+The primary brackets close because the linear secondary constraints are
+independent of the lapse/shift variables and their momenta:
+\[
+\boxed{
+\{\pi_n,{\cal H}^{(1)}\}=0,\quad
+\{\pi_n,{\cal H}_i^{(1)}\}=0,\quad
+\{\pi_i,{\cal H}^{(1)}\}=0,\quad
+\{\pi_i,{\cal H}_j^{(1)}\}=0,\quad
+\{\pi_n,\pi_i\}=0.
+}
+\]
+The reason is purely canonical: \({\cal H}^{(1)}\) depends only on
+\(\gamma_{ij}\), \({\cal H}_i^{(1)}\) depends only on \(\pi^{ij}\), and the
+primary lapse/shift momenta have no canonical bracket with those variables.
+This pass is conditional on the B3 no-algebraic-lapse/shift rule.
+
+For the linear momentum bracket, \(D^{(1)}[M]\) is \(\pi\)-linear:
+\[
+\boxed{D^{(1)}[M]=2\int d^3x\,(\partial_jM_i)\pi^{ij}.}
+\]
+Since
+\[
+\boxed{\{\pi^{ij}(x),\pi^{kl}(y)\}=0,}
+\]
+the bracket of two purely \(\pi\)-linear generators vanishes:
+\[
+\boxed{\{D[L],D[M]\}_{\rm lin}=0.}
+\]
+This is the abelianized linear result.  It is not the full spatial
+diffeomorphism algebra
+\[
+\boxed{\{D[L],D[M]\}=D[[L,M]],\qquad
+[L,M]^i=L^j\partial_jM^i-M^j\partial_jL^i.}
+\]
+The non-abelian term requires nonlinear corrections such as
+\[
+\boxed{D^{(2)}[M]\sim\int \gamma\,\pi\,\partial M,}
+\]
+whose bracket with \(D^{(1)}\) produces the commutator.
+
+For the mixed bracket,
+\[
+\begin{aligned}
+\{H[N],D[M]\}
+&=\int d^3x\,
+(-\partial^i\partial^jN+\delta^{ij}\partial^2N)
+(\partial_iM_j+\partial_jM_i)\\
+&=-2\int d^3x\,(\partial^i\partial^jN)(\partial_iM_j)
++2\int d^3x\,(\partial^2N)(\partial_iM^i).
+\end{aligned}
+\]
+With compact support, integration by parts gives
+\[
+\boxed{
+\begin{aligned}
+-2\int(\partial^i\partial^jN)(\partial_iM_j)
+&\to
+2\int M_j\,\partial_i\partial^i\partial^jN,\\
+2\int(\partial^2N)(\partial_iM^i)
+&\to
+-2\int M^i\,\partial_i\partial^2N.
+\end{aligned}}
+\]
+The sum is
+\[
+\boxed{
+2\int d^3x\,M_j
+\left(\partial_i\partial^i\partial^jN-\partial^j\partial^2N\right)=0,
+}
+\]
+because spatial derivatives commute on smooth fields.  Therefore
+\[
+\boxed{\{H[N],D[M]\}_{\rm lin}=0.}
+\]
+This means that \({\cal H}^{(1)}\) is invariant under the linearized spatial
+gauge transformation.  The full ADM expectation,
+\[
+\boxed{\{H[N],D[M]\}=H[M^i\partial_iN],}
+\]
+requires nonlinear or density-weight corrections.
+
+For the Hamiltonian bracket, at linear order both smeared Hamiltonian
+constraints depend only on \(\gamma_{ij}\):
+\[
+\boxed{\frac{\delta H[N]}{\delta\pi^{ij}}=0,\qquad
+\frac{\delta H[M]}{\delta\pi^{ij}}=0.}
+\]
+Hence
+\[
+\boxed{\{H[N],H[M]\}_{\rm lin}=0.}
+\]
+This result is structurally trivial:
+\[
+\boxed{\{H^{(1)}[N],H^{(1)}[M]\}=0}
+\]
+because \(H^{(1)}\) is configuration-only.  Any linearized theory with a
+configuration-only linear Hamiltonian constraint has this property.  It does
+not distinguish the ADM/EH fixed point from nearby non-ADM theories.
+
+The full target is instead
+\[
+\boxed{
+\{H[N],H[M]\}=D[h^{ij}(N\partial_jM-M\partial_jN)].
+}
+\]
+At the first nontrivial order one must write
+\[
+\boxed{H=H^{(1)}+H^{(2)}+\cdots,\qquad
+D=D^{(1)}+D^{(2)}+\cdots}
+\]
+and test
+\[
+\boxed{
+\begin{aligned}
+A^{(1)}[N,M]
+&=\{H^{(1)}[N],H^{(2)}[M]\}
++\{H^{(2)}[N],H^{(1)}[M]\}\\
+&\quad
+-D^{(1)}[\delta^{ij}(N\partial_jM-M\partial_jN)]
+=0
+\end{aligned}}
+\]
+up to boundary/gauge/constraint terms.  This B4q condition is the first real
+ADM-vs-non-ADM discriminator.  It must produce the specific structure function
+\[
+\boxed{h^{ij}(N\partial_jM-M\partial_jN)}
+\]
+from the same record-geometry variable \(h_{ij}\).  A different coefficient or
+a private background tensor is a non-ADM result.
+
+Thus the B4 linear bracket result is
+\[
+\boxed{
+\{D,D\}_{\rm lin}=0,\qquad
+\{H,D\}_{\rm lin}=0,\qquad
+\{H,H\}_{\rm lin}=0.
+}
+\]
+Together with the primary brackets, the B1--B3 constraint set is first-class
+at abelian linear order.  This is a real checkpoint because it excludes an
+immediate linear local anomaly, lapse/shift auxiliary equation, or
+preferred-frame obstruction.  But it is not Root~B closure.
+
+The record-phase sector remains open.  B4 has used the pure metric linear
+constraints, and \(\vartheta\) is harmless at this level only if the Hamiltonian
+has no explicit \(\vartheta\)-charge and no algebraic lapse/phase coupling.
+The dangerous schematic term is
+\[
+\boxed{
+\{H[N],H[M]\}_\vartheta
+\supset
+\int
+\frac{\delta H[N]}{\delta\vartheta}
+\frac{\delta H[M]}{\delta\pi_\vartheta}
+-(N\leftrightarrow M).
+}
+\]
+Under the B3 safety rule and the shift symmetry
+\[
+\boxed{\theta\mapsto\theta+\text{constant},}
+\]
+there is no explicit \(\vartheta\)-charge in the B4 local metric bracket.
+Pure derivative phase couplings must still be classified as boundary, gauge,
+decoupled or suppressed.  If they survive as long-range scalar source terms,
+B4 passes only in the metric sector and the conservative route fails later at
+B6/Root~C.
+
+The B4 anomaly ledger is:
+\[
+\boxed{
+\begin{array}{lll}
+\text{primary lapse/shift anomaly} &:& \text{absent under B3 rules},\\
+\{D,D\}_{\rm lin}\ \text{anomaly} &:& \text{absent by }\pi\text{-linearity},\\
+\{H,D\}_{\rm lin}\ \text{anomaly} &:& \text{absent by IBP},\\
+\{H,H\}_{\rm lin}\ \text{anomaly} &:& \text{absent trivially},\\
+\text{missing nonlinear structure function} &:& \text{open until B4q},\\
+\vartheta\ \text{scalar bracket leak} &:& \text{open until B6/Root~C},\\
+\text{TT-origin anomaly} &:& \text{open/fail-risk until B6}.
+\end{array}}
+\]
+No anomaly may be called suppressed unless the scale is explicit.  The working
+MVP thresholds are:
+\[
+\boxed{
+\begin{gathered}
+\text{Solar-System/PPN local anomaly: below }10^{-5},\\
+\text{GW cone-changing anomaly: below }10^{-15}\text{ or absent by structure},\\
+\text{binary-pulsar extra loss: below }10^{-3}\text{ at MVP level},\\
+\text{gapped internal sector: }m>1/r_{\rm test}
+\text{ or explicit EFT decoupling.}
+\end{gathered}}
+\]
+These are working thresholds, not final data-analysis bounds.  They prevent
+the word ``suppressed'' from being used without a scale.
+
+B4 therefore proves only:
+\begin{itemize}
+\item primary constraints commute with the linear secondary constraints;
+\item the linear momentum constraints close abelianly;
+\item the linear Hamiltonian is invariant under linear spatial gauge;
+\item linear Hamiltonian constraints commute with each other;
+\item there is no immediate linear bracket anomaly.
+\end{itemize}
+B4 does not prove the full hypersurface-deformation algebra, the structure
+function \(h^{ij}(N\partial_jM-M\partial_jN)\), \(A[N,M]=0\) beyond the
+abelian linear test, \(\lambda=1/2\), the EH fixed point, two TT modes,
+matter-coupled preservation, or microscopic derivation of the bridge.
+
+The honest next artifact is the quadratic supplement:
+\[
+\boxed{\texttt{Root\_B\_B4q\_Quadratic\_HDA\_Closure.md}.}
+\]
+The naming convention is
+\[
+\boxed{
+B4=\text{linear abelian bracket check},\qquad
+B4q=\text{quadratic ADM/HDA discriminator}.
+}
+\]
+Together, B4 and B4q complete the MVP bracket-closure calculation; B4 alone
+does not.  B4q must derive or explicitly condition \(H^{(2)}\) and \(D^{(2)}\),
+then compute \(A^{(1)}[N,M]\).  The expected outcomes are:
+\[
+\boxed{
+\begin{array}{lll}
+A^{(1)}=0 &:& \text{conditional ADM closure at MVP order},\\
+\delta A\ \text{below bound} &:& \text{conditional non-ADM correction},\\
+A^{(1)}=O(1)\ \text{or preferred tensor} &:& \text{conservative route fails},\\
+\text{no derivable }H^{(2)} &:& \text{bridge incomplete}.
+\end{array}}
+\]
+For local Solar-System style checks the first compatibility target is
+\[
+\boxed{|\delta A/A_{\rm ADM}|<10^{-5}.}
+\]
+Any deviation that changes the GW cone must meet the stronger \(10^{-15}\)
+cone/speed target or be absent by structure.
+
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
 are used and with what status.  It must verify universal matter action
