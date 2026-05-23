@@ -5808,6 +5808,287 @@ For local Solar-System style checks the first compatibility target is
 Any deviation that changes the GW cone must meet the stronger \(10^{-15}\)
 cone/speed target or be absent by structure.
 
+\medskip\noindent\textbf{Root B B4q quadratic HDA closure.}
+B4q is the quadratic supplement to B4.  B4 showed only the abelian linear
+closure; B4q tests the first order where \(\{H,H\}\) must reproduce the ADM
+momentum generator with the correct structure function.  Its status is:
+\[
+\boxed{
+\begin{minipage}{0.86\linewidth}
+B4q conditionally passes the ADM-candidate kinetic sector iff
+\(\lambda=1/2\) and \(\Delta^{(2)}\) contributes no local HDA anomaly.  It
+does not prove that the medium derives \(H^{(2)}\).
+\end{minipage}}
+\]
+
+B4q imports
+\[
+\boxed{
+H^{(1)}[N]=\int d^3x\,N
+(-\partial^i\partial^j\gamma_{ij}+\partial^2\gamma),
+\qquad
+D^{(1)}[V]=\int d^3x\,V^i(-2\partial_j\pi^j{}_i).
+}
+\]
+Equivalently, after integration by parts,
+\[
+\boxed{
+H^{(1)}[N]=\int d^3x\,\gamma_{ij}
+(-\partial^i\partial^jN+\delta^{ij}\partial^2N),
+\qquad
+D^{(1)}[V]=2\int d^3x\,(\partial_jV_i)\pi^{ij}.
+}
+\]
+It tests
+\[
+\boxed{
+H=H^{(1)}+H^{(2)}+\cdots,\qquad
+D=D^{(1)}+D^{(2)}+\cdots,
+}
+\]
+through
+\[
+\boxed{
+\begin{aligned}
+A^{(1)}[N,M]
+&=\{H^{(1)}[N],H^{(2)}[M]\}
++\{H^{(2)}[N],H^{(1)}[M]\}\\
+&\quad
+-D^{(1)}[\delta^{ij}(N\partial_jM-M\partial_jN)].
+\end{aligned}}
+\]
+The pass condition is \(A^{(1)}[N,M]=0\), up to boundary/gauge/constraint
+terms.
+
+B4q uses the quadratic audit ansatz
+\[
+\boxed{
+{\cal H}^{(2)}
+={\cal H}_{\rm kin}^{(2)}
++{\cal H}_{\rm curv}^{(2)}
++\Delta^{(2)}.
+}
+\]
+The kinetic part is
+\[
+\boxed{
+{\cal H}_{\rm kin}^{(2)}
+=\pi^{ij}\pi_{ij}-\lambda\pi^2,\qquad
+\pi=\delta_{ij}\pi^{ij}.
+}
+\]
+This is an ADM-candidate audit form, not yet derived from
+\(S_{\mathcal R}^{\rm bridge}\).  Indices are raised and lowered with
+\(\delta_{ij}\) at B4q order; \(\gamma\)-corrections to index raising enter at
+the next perturbative order.
+
+The curvature term \({\cal H}_{\rm curv}^{(2)}[\gamma,\gamma]\) is
+configuration-only, so it does not contribute to the leading B4q bracket with
+\(H^{(1)}\):
+\[
+\boxed{\{H^{(1)},{H}_{\rm curv}^{(2)}\}=0}
+\]
+at this order.  B5 must still check that this curvature sector reduces to the
+EH quadratic curvature operator, not to an unsuppressed \(f(R)\), \(R_{ij}R^{ij}\),
+Weyl-type, or preferred-frame operator.
+
+From B4,
+\[
+\boxed{
+\frac{\delta H^{(1)}[N]}{\delta\gamma_{ij}}
+=-\partial^i\partial^jN+\delta^{ij}\partial^2N,\qquad
+\frac{\delta H^{(1)}[N]}{\delta\pi^{ij}}=0.
+}
+\]
+For the kinetic ansatz,
+\[
+\boxed{
+\frac{\delta H_{\rm kin}^{(2)}[M]}{\delta\pi^{ij}}
+=2M(\pi_{ij}-\lambda\delta_{ij}\pi),\qquad
+\frac{\delta H_{\rm kin}^{(2)}[M]}{\delta\gamma_{ij}}=0.
+}
+\]
+Therefore
+\[
+\boxed{
+\{H^{(1)}[N],H_{\rm kin}^{(2)}[M]\}
+=2\int d^3x\,M
+(-\partial^i\partial^jN+\delta^{ij}\partial^2N)
+(\pi_{ij}-\lambda\delta_{ij}\pi).
+}
+\]
+The antisymmetrized bracket is
+\[
+\boxed{
+B_\lambda[N,M]
+=2\int d^3x\,[M L_N^{ij}-N L_M^{ij}]
+(\pi_{ij}-\lambda\delta_{ij}\pi),
+}
+\]
+where
+\[
+\boxed{L_N^{ij}=-\partial^i\partial^jN+\delta^{ij}\partial^2N.}
+\]
+Terms symmetric under \(N\leftrightarrow M\) cancel.  Expanding gives
+\[
+\boxed{
+\begin{aligned}
+B_\lambda[N,M]
+&=-2\int d^3x\,
+(M\partial^i\partial^jN-N\partial^i\partial^jM)\pi_{ij}\\
+&\quad
++2(1-2\lambda)\int d^3x\,
+(M\partial^2N-N\partial^2M)\pi.
+\end{aligned}}
+\]
+The first term is the ADM momentum generator.  The second term is the trace
+anomaly.
+
+The flat-background ADM structure function is
+\[
+\boxed{V^i=\delta^{ij}(N\partial_jM-M\partial_jN).}
+\]
+With the B2--B4 sign convention,
+\[
+\boxed{
+D^{(1)}[V]
+=\int d^3x\,V^i(-2\partial_j\pi^j{}_i)
+=2\int d^3x\,(\partial_jV_i)\pi^{ji}.
+}
+\]
+Since
+\[
+\partial_jV_i
+=\partial_jN\,\partial_iM+N\partial_j\partial_iM
+-\partial_jM\,\partial_iN-M\partial_j\partial_iN,
+\]
+the first and third terms drop out after contraction with symmetric
+\(\pi^{ij}\).  Thus
+\[
+\boxed{
+D^{(1)}[V]
+=-2\int d^3x\,
+(M\partial_i\partial_jN-N\partial_i\partial_jM)\pi^{ij}.
+}
+\]
+Comparing with \(B_\lambda[N,M]\), the anomaly is
+\[
+\boxed{
+A_\lambda^{(1)}[N,M]
+=2(1-2\lambda)\int d^3x\,
+(M\partial^2N-N\partial^2M)\pi.
+}
+\]
+Hence B4q closes at this order only if
+\[
+\boxed{1-2\lambda=0,\qquad \lambda=\frac12.}
+\]
+If \(\lambda\ne1/2\), the bracket leaves a scalar trace anomaly.  In the
+strict local MVP core the target is
+\[
+\boxed{A_\lambda^{(1)}[N,M]=0.}
+\]
+
+Residual quadratic corrections are collected as \(\Delta^{(2)}\).  Then
+\[
+\boxed{
+A^{(1)}[N,M]=A_\lambda^{(1)}[N,M]+A_\Delta^{(1)}[N,M].
+}
+\]
+B4q passes only if
+\[
+\boxed{A_\Delta^{(1)}[N,M]=0}
+\]
+or if the term is boundary/gauge/constraint-proportional with explicit
+classification.  Failing examples include a preferred tensor
+\(K^{ij}\partial_iN\partial_jM\), a trace kinetic correction shifting
+\(\lambda\), a \(\delta\vartheta\)-driven lapse coupling at quadratic order, a
+second metric structure function, or a species/private record deformation
+vector.  Working thresholds are inherited from the observation table:
+\[
+\boxed{
+\begin{gathered}
+\text{local PPN/Cassini anomaly: below }10^{-5},\\
+\text{GW cone-changing anomaly: below }10^{-15}\text{ or absent by structure},\\
+\text{binary-pulsar scalar/vector channel: below }10^{-3}\text{ at MVP level},\\
+\text{gapped/internal sector: }m>1/r_{\rm test}
+\text{ or explicit decoupling.}
+\end{gathered}}
+\]
+
+The status of \(D^{(2)}\) remains open.  B4q uses only \(D^{(1)}\) because the
+leading structure function is \(\delta^{ij}(N\partial_jM-M\partial_jN)\).  The
+next spatial-metric correction
+\[
+\boxed{h^{ij}=\delta^{ij}-\gamma^{ij}+O(\gamma^2)}
+\]
+requires the corresponding \(D^{(2)}\) and higher metric-dependence terms.
+B4q's conditional pass can be revised later if the actual \(D^{(2)}\)
+calculation cannot extend \(D^{(1)}\) into the spatial-diffeomorphism generator
+needed by the HDA structure function.
+
+The B4q pass/fail ledger is:
+\[
+\boxed{
+\begin{array}{lll}
+\text{B4 linear closure} &:& \text{conditional import},\\
+H_{\rm kin}^{(2)}\ \text{ADM-candidate form} &:& \text{conditional},\\
+\{H^{(1)},H_{\rm kin}^{(2)}\} &:& \text{computed},\\
+\text{ADM structure function} &:& \text{matched iff }\lambda=1/2,\\
+\text{trace anomaly} &:& 2(1-2\lambda),\\
+H_{\rm curv}^{(2)} &:& \text{open for B5},\\
+\Delta^{(2)} &:& \text{open and must not contribute }A_\Delta^{(1)},\\
+\text{medium derivation of }H^{(2)} &:& \text{open},\\
+\text{full nonlinear HDA} &:& \text{open}.
+\end{array}}
+\]
+B4q therefore proves only that the ADM-candidate kinetic completion passes the
+first nontrivial bracket discriminator iff \(\lambda=1/2\).  It does not prove
+that the microscopic medium derives \(H^{(2)}\), that \(\lambda=1/2\) emerges
+without tuning, that the curvature operator is exactly EH, that \(\alpha=1\),
+that all \(\Delta^{(2)}\) terms vanish, that the full nonlinear HDA closes, or
+that two TT modes and matter-coupled preservation are secured.
+
+For the B4q conditional pass to become a medium-derived pass, the bridge must
+produce the quadratic Hamiltonian structure.  The medium-derivation targets
+are:
+\[
+\boxed{
+\begin{array}{lll}
+\text{kinetic sector} &:&
+S_{\mathcal R}^{\rm bridge}\to
+\pi^{ij}\pi_{ij}-\frac12\pi^2\ \text{automatically},\\
+\text{curvature sector} &:&
+S_{\mathcal R}^{\rm bridge}\to
+\text{EH-compatible }H_{\rm curv}^{(2)},\\
+\Delta\text{ sector} &:&
+\Delta^{(2)}\ \text{classified with no local HDA anomaly}.
+\end{array}}
+\]
+If the medium gives \(\lambda\ne1/2\), this is a Root~B failure and may not be
+repaired by rescaling or manual tuning.  If the curvature sector gives a
+leading \(f(R)\), \(R_{ij}R^{ij}\), Weyl-type, or preferred-frame operator at
+the same local order, B5 must mark it as a fixed-point failure unless it is
+explicitly suppressed or outside the local tested regime.  The word
+``suppressed'' is not a pass without a scale.
+
+The next artifact is B5:
+\[
+\boxed{\texttt{Root\_B\_B5\_EH\_Fixed\_Point\_Filter.md}.}
+\]
+B5 imports only
+\[
+\boxed{\lambda=\frac12,\qquad A_\lambda^{(1)}=0}
+\]
+as conditional bracket-closure results for the ADM-candidate kinetic sector.
+It must keep
+\[
+\boxed{\Delta^{(2)}\ \text{open},\qquad
+H^{(2)}\ \text{not yet medium-derived}.}
+\]
+If B5 cannot show \(\alpha=1\) and safe \(\Delta_{\mathcal M}\), Root~B remains
+open even though B4q passed conditionally.
+
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
 are used and with what status.  It must verify universal matter action
