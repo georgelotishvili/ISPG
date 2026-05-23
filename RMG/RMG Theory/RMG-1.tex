@@ -6089,6 +6089,271 @@ H^{(2)}\ \text{not yet medium-derived}.}
 If B5 cannot show \(\alpha=1\) and safe \(\Delta_{\mathcal M}\), Root~B remains
 open even though B4q passed conditionally.
 
+\medskip\noindent\textbf{Root B B5 EH fixed-point filter.}
+B5 uses the B4q result as a conditional input and asks whether the local
+two-derivative record Hamiltonian is the EH fixed point rather than a nearby
+non-EH, preferred-frame, scalar/vector, massive-tensor, or second-metric
+theory.  Its status is deliberately a filter status:
+\[
+\boxed{
+\begin{minipage}{0.86\linewidth}
+B5 imports \(\lambda=1/2\) only as a conditional bracket-closure result.  It
+does not import \(\alpha=1\), the EH curvature operator, or
+\(\Delta_{\mathcal M}=0\).  B5 defines the fixed-point filter; it does not yet
+pass that filter.
+\end{minipage}}
+\]
+The central B5 Hamiltonian form to audit is
+\[
+\boxed{
+{\cal H}_{\rm local}
+=\frac{1}{\sqrt h}\left(\pi^{ij}\pi_{ij}-\frac12\pi^2\right)
+-\sqrt h\,(\alpha R-2\Lambda)+\Delta_{\mathcal M}.
+}
+\]
+Here \(\lambda=1/2\) is inherited from B4q.  B5 tests \(\alpha\), the
+curvature operator, the remainder \(\Delta_{\mathcal M}\), and the equality of
+the gravitational normalization used in static, near-zone, radiative, and
+matter-coupling contexts.
+
+B5 imports only:
+\[
+\boxed{
+\begin{array}{lll}
+\lambda=1/2 &:& \text{conditional bracket-closure result},\\
+A_\lambda^{(1)}[N,M]=0 &:& \text{ADM-candidate kinetic result},\\
+\Delta^{(2)} &:& \text{open and to be classified},\\
+H^{(2)}\ \text{from the medium} &:& \text{not derived},\\
+D^{(2)}\ \text{continuation} &:& \text{open}.
+\end{array}}
+\]
+Forbidden imports are:
+\[
+\boxed{
+\begin{minipage}{0.86\linewidth}
+Do not import Einstein equations; do not import \(\alpha=1\); do not import
+EH curvature as a premise; do not import \(\Delta_{\mathcal M}=0\) without
+classification; do not use MOND, cosmology, quantum, or strong-field branches
+to repair a local fixed-point failure; and do not pass a local core that
+requires a second metric.
+\end{minipage}}
+\]
+
+\medskip\noindent\textbf{B5 alpha normalization gate.}
+The coefficient \(\alpha\) is read from the local curvature response.  The
+extraction rule is:
+\[
+\boxed{
+\begin{array}{ll}
+1. & {\cal H}_{\rm local}=
+{\cal H}_{\rm kin}+{\cal H}_{\rm curv}+\Delta_{\mathcal M},\\
+2. & \text{isolate the coefficient of }-\sqrt h\,R\text{ in }
+{\cal H}_{\rm curv},\\
+3. & \text{call that coefficient }\alpha_{\rm raw},\\
+4. & \text{divide by the single measured-}G_{\rm record}\text{ normalization},\\
+5. & \text{call the result }\alpha_{\rm norm},\\
+6. & \text{pass only if }|\alpha_{\rm norm}-1|<10^{-5}.
+\end{array}}
+\]
+A single universal normalization is allowed only if
+\[
+\boxed{
+G_{\rm static}=G_{\rm dynamic\,near}=G_{\rm radiation}=G_{\rm matter}
+=G_{\rm record}.
+}
+\]
+Separate \(G\)-values for static, orbital, radiative, or matter coupling
+sectors are a B5 failure.  PSR-style orbital decay tests are especially
+sensitive to \(G_{\rm radiation}/G_{\rm dynamic\,near}\).
+
+\medskip\noindent\textbf{B5 curvature gate.}
+The local two-derivative curvature target is
+\[
+\boxed{{\cal H}_{\rm curv}\to -\sqrt h\,R}
+\]
+with the B1--B4q sign convention \(H^{(1)}=-R^{(1)}\) and
+\[
+\boxed{R^{(1)}=\partial^i\partial^j\gamma_{ij}-\partial^2\gamma.}
+\]
+At quadratic order the EH target, up to boundary terms and integration by
+parts, is
+\[
+\boxed{
+\begin{aligned}
+{\cal H}_{{\rm curv},EH}^{(2)}
+&=\frac14(\partial_k\gamma_{ij})(\partial^k\gamma^{ij})
+-\frac14(\partial_k\gamma)(\partial^k\gamma)\\
+&\quad
+-\frac12(\partial_i\gamma^{ij})(\partial^k\gamma_{kj})
++\frac12(\partial_i\gamma^{ij})(\partial_j\gamma).
+\end{aligned}}
+\]
+The execution file may use an integration-by-parts equivalent expression, but
+it must state the equivalence.  A leading \(f(R)\), \(R_{ij}R^{ij}\),
+Weyl-type, preferred-frame, nonlocal, or second-metric curvature term is not
+the EH fixed point unless it is boundary/gauge/constraint-proportional or
+explicitly suppressed outside the local tested regime.
+
+\medskip\noindent\textbf{B5 \(\Delta_{\mathcal M}\) classifier.}
+Every extra local term must be assigned to exactly one class:
+\[
+\boxed{
+\begin{array}{lll}
+\text{absent} &:& \text{passes},\\
+\text{boundary} &:& \text{local pass; charge audit later},\\
+\text{gauge} &:& \text{pass only if bracket-verified},\\
+\text{constraint-proportional} &:& \text{pass only if preserved},\\
+\text{internal/gapped} &:& \text{pass only with a gap and range},\\
+\text{high-energy suppressed} &:& \text{pass only with scale},\\
+\text{large-scale-only} &:& \text{not a local-core repair},\\
+\text{anomaly} &:& \text{fail}.
+\end{array}}
+\]
+The words ``small'', ``irrelevant'', ``negligible'', and ``suppressed'' are not
+passes without a mechanism and a scale.  Working thresholds are:
+\[
+\boxed{
+\begin{array}{lll}
+\text{PPN/local curvature anomaly} &:& <10^{-5}\ \text{or absent},\\
+\text{GW cone-changing operator} &:& <10^{-15}\ \text{or absent},\\
+\text{binary-pulsar scalar/vector leak} &:& <10^{-3}\ \text{at MVP},\\
+\text{gapped/internal mode} &:& m>1/r_{\rm test}\ \text{or decoupled},\\
+\text{high-energy operator} &:& (E/\Lambda_{\rm UV})^p\ \text{with }p
+\text{ and }\Lambda_{\rm UV}.
+\end{array}}
+\]
+Useful mass-range bookkeeping examples are:
+\[
+\boxed{
+\begin{array}{lll}
+r_{\rm test}=1{\rm\,mm} &\Rightarrow& m_{\rm gap}\gtrsim2\times10^{-4}{\rm\,eV},\\
+r_{\rm test}=1{\rm\,AU} &\Rightarrow& m_{\rm gap}\gtrsim10^{-18}{\rm\,eV},\\
+r_{\rm test}=10{\rm\,km} &\Rightarrow& m_{\rm gap}\gtrsim2\times10^{-11}{\rm\,eV},\\
+r_{\rm test}=10^9{\rm\,m} &\Rightarrow& m_{\rm gap}\gtrsim2\times10^{-16}{\rm\,eV}.
+\end{array}}
+\]
+The actual execution file must state the actual \(r_{\rm test}\) used for each
+term.
+
+The main \(\Delta_{\mathcal M}\) sources to check are:
+\[
+\boxed{
+\begin{array}{lll}
+\eta R,\ \eta\gamma,\ \eta\partial^2\gamma
+&:& \text{amplitude integration; gapped/internal or absent},\\
+q_{ij}R^{ij},\ q_{ij}\gamma^{ij}
+&:& \text{strain integration; gapped/internal or TT-route revision},\\
+\partial_\mu\vartheta\,\partial_\nu\vartheta\,\gamma^{\mu\nu}
+&:& \text{gauge/clock/decoupled or Root C audit},\\
+u^iu^jR_{ij} &:& \text{preferred-frame anomaly unless gauge/internal},\\
+R^2,\ R_{ij}R^{ij},\ C^2
+&:& \text{high-energy suppressed or fail},\\
+R\,F(\Box)R &:& \text{requires explicit expansion scale},\\
+R[g_2] &:& \text{second metric; fail in the local MVP},\\
+m_g^2(\gamma_{ij}\gamma^{ij}-\gamma^2)
+&:& \text{fail unless cosmological-scale and local PPN protected}.
+\end{array}}
+\]
+A Fierz--Pauli-like mass term is not harmless merely because its wavelength is
+large.  It must also avoid local PPN discontinuities and preserve the local
+two-TT-mode target; any screening mechanism must itself be proven, not named.
+
+As a worked B5 example, a term
+\[
+\boxed{c_u\,u^iu^jR_{ij}}
+\]
+is classified as an anomaly unless \(u^i\) is gauge/internal and
+non-observable.  Its scale is \(c_u\) plus any explicit suppression scale; its
+windows are local preferred-frame and GW-cone tests; its failure consequence
+is preferred-frame local curvature and possible cone splitting.  It passes
+only if \(c_u=0\), if the whole term is boundary/gauge/internal by derivation,
+or if it is suppressed below the relevant local threshold.
+
+\medskip\noindent\textbf{B5 observation links.}
+The B5 filter blocks local structures that would make the observation gates
+impossible:
+\[
+\boxed{
+\begin{array}{llll}
+\text{Newtonian} &:& \Delta G/G<10^{-5}
+& \text{one }G_{\rm record},\\
+\text{Shapiro/light bending} &:& \gamma_{\rm PPN}-1<2.3\times10^{-5}
+& \text{EH curvature + one cone},\\
+\text{perihelion/LLR} &:& \beta_{\rm PPN}-1<8\times10^{-5}
+& \text{nonlinear EH weak field},\\
+\text{frame dragging} &:& \text{preferred-frame PPN}<10^{-4}
+& \text{no vector/tensor leak},\\
+\text{GW speed} &:& |c_{\rm GW}-c|/c<10^{-15}
+& \text{no cone-changing term},\\
+\text{binary pulsars} &:& \text{dipole excess}<10^{-3}\ \text{at MVP}
+& \text{no scalar/vector leak},\\
+\text{compact binaries} &:& \text{no leading non-tensor channel}
+& \text{correct local tensor baseline}.
+\end{array}}
+\]
+B5 does not prove these observations.  It rejects local cores that would make
+matching them impossible.
+
+\medskip\noindent\textbf{B5 execution algorithm.}
+The executable B5 procedure is:
+\[
+\boxed{
+\begin{array}{ll}
+1. & \text{read the candidate }{\cal H}_{\rm local},\\
+2. & {\cal H}_{\rm local}
+={\cal H}_{\rm kin}+{\cal H}_{\rm curv}+\Delta_{\mathcal M},\\
+3. & \text{read }\lambda\text{ from }
+{\cal H}_{\rm kin}=\pi^{ij}\pi_{ij}-\lambda\pi^2+\cdots,\\
+4. & \text{read }\alpha_{\rm norm}\text{ from }
+{\cal H}_{\rm curv}=-\sqrt h\,\alpha R+\cdots,\\
+5. & \text{list every non-EH curvature operator},\\
+6. & \text{classify every }\Delta_{\mathcal M}\text{ term},\\
+7. & \text{test }G_{\rm static}=G_{\rm dynamic\,near}
+=G_{\rm radiation}=G_{\rm matter},\\
+8. & \text{output the B5 decision table.}
+\end{array}}
+\]
+The decision table must report \(\lambda\), \(\alpha\), the curvature status,
+the complete \(\Delta_{\mathcal M}\) table, \(G_{\rm record}\) consistency,
+and B6 permission.  B6 permission is yes iff
+\[
+\boxed{
+\begin{array}{lll}
+\alpha=1 &:& \text{conditional pass},\\
+{\cal H}_{\rm curv}=EH &:& \text{conditional pass},\\
+\Delta_{\mathcal M} &:& \text{no anomaly row},\\
+G_{\rm record} &:& \text{one universal value passes}.
+\end{array}
+}
+\]
+Otherwise B6 may proceed only as a conditional template.  Any B5 pass is
+twice conditional: B4q's \(\lambda=1/2\) result must survive the \(D^{(2)}\)
+continuation, and \(S_{\mathcal R}^{\rm bridge}\) must produce \(H^{(2)}\)
+automatically without retuning the candidate Hamiltonian by hand.
+
+\medskip\noindent\textbf{B5 pass/fail ledger.}
+At the current stage:
+\[
+\boxed{
+\begin{array}{lll}
+\text{B5-1 import }\lambda=1/2 &:& \text{conditional pass from B4q},\\
+\text{B5-2 candidate Hamiltonian} &:& \text{open; medium derivation pending},\\
+\text{B5-3 }\alpha=1 &:& \text{open},\\
+\text{B5-4 EH curvature operator} &:& \text{open},\\
+\text{B5-5 }\Delta_{\mathcal M}\text{ classified} &:& \text{open},\\
+\text{B5-6 one record metric in all sectors} &:& \text{open},\\
+\text{B5-7 no window repair} &:& \text{active rule},\\
+\text{B5 fixed point passed} &:& \text{no}.
+\end{array}}
+\]
+If B5 is accepted, the next work artifact is
+\[
+\boxed{\texttt{Root\_B\_B5\_EH\_Fixed\_Point\_Filter\_Execution.md}.}
+\]
+Executing B5 before B6 is the recommended order; the tensor/hyperbolicity
+audit is less meaningful if the local two-derivative fixed point is still
+allowed to contain non-EH curvature or unsuppressed \(\Delta_{\mathcal M}\).
+
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
 are used and with what status.  It must verify universal matter action
@@ -6349,15 +6614,13 @@ occurs:
 Principal theorem to be derived:
 \[
 \boxed{
+\begin{aligned}
 \mathcal M
-\Rightarrow
-\text{exact ORC/no-extra-tensor}
-\Rightarrow
-Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}
-\Rightarrow
-\Delta_{\mathcal M}=0
-\Rightarrow
-\text{ADM/Einstein-Hilbert low-energy fixed point}.
+&\Rightarrow \text{exact ORC/no-extra-tensor}\\
+&\Rightarrow Q_{AB}^{\mu\nu}=G^{\mu\nu}K_{AB}\\
+&\Rightarrow \Delta_{\mathcal M}=0\\
+&\Rightarrow \text{ADM/Einstein-Hilbert low-energy fixed point}.
+\end{aligned}
 }
 \]
 
