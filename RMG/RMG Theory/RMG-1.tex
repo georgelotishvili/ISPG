@@ -7066,9 +7066,10 @@ route-by-route derivation agenda.  Its short verdict is:
 \text{minimal B6 TT action} & \text{candidate-level pass only},\\
 \text{gapped }Q\text{ as graviton} & \text{blocked},\\
 \vartheta\text{-only tensor route} & \text{likely insufficient},\\
-\text{relational shear route} & \text{new conservative pre-test},\\
+\text{relational shear route} & \text{no-direct-readout consistency pass},\\
 \text{direct spin-2 route} & \text{possible but revises medium input},\\
-\text{gapless-}Q\text{ route} & \text{first carrier revision if projection fails},\\
+\text{splash/scattering route} & \text{next measurement-response route},\\
+\text{gapless-}Q\text{ route} & \text{carrier-revision fallback},\\
 \text{higher-derivative route} & \text{last resort; ghost-risk}.
 \end{array}}
 \]
@@ -7126,10 +7127,13 @@ template, but not a medium-derived TT origin.  This blocks a Root~B pass.
 The ordered route map is:
 \begin{itemize}
 \item \(P\), relational shear projection: common record oscillation plus local
-  \(Q\)/shear response.  No input revision for the first audit.  First test:
-  true TT radiation or detector artifact?
-\item \(C\), revised gapless \(Q\): input freeze and Root~A rerun.  First
-  test: can scalar/vector \(Q\) parts be removed?
+  \(Q\)/shear response.  Minimal execution says the common carrier cannot be
+  read out directly.  This strengthens the no-direct-measurement core.
+\item \(S\), splash/scattering response: the common wave strikes the local
+  matter/gravity field and creates a measurable disturbance at the same
+  frequency.  This is now the next measurement-response route.
+\item \(C\), revised gapless \(Q\): input freeze and Root~A rerun.  This
+  remains the first carrier-revision fallback if the splash route fails.
 \item \(A\), direct spin-2 field: medium input revision.  First test: can the
   new field avoid a second metric?
 \item \(B\), composite from \(\vartheta\): Root~A/B rerun.  First test: can
@@ -7137,10 +7141,14 @@ The ordered route map is:
 \item \(D\), higher-derivative tensor emergence: higher-order kinetic audit.
   First test: ghosts or extra modes.
 \end{itemize}
-The recommended order is \(P\to C\to A\to B\to D\).  Route~P is first because
-it is the least destructive test of the conservative medium.  Route~C is the
-first true carrier-revision attempt if projection fails.  Route~D is last
-because higher derivatives can hide ghosts and extra polarizations.
+The original order was \(P\to C\to A\to B\to D\).  The minimal Route~P
+execution has now shown that passive direct readout of the common carrier does
+not work.  In RMG this is a core-consistency result: common medium pressure or
+rhythm changes should not be locally visible directly, because rods, clocks,
+masses and detectors co-vary with the same medium state.  The next route is
+therefore \(S\), the active splash/scattering response.  Route~C remains the
+first carrier-revision fallback.  Route~D is last because higher derivatives
+can hide ghosts and extra polarizations.
 
 \medskip\noindent\textit{Route P: relational shear projection.}
 Route~P formalizes the intuition that local oscillations may start as
@@ -7200,6 +7208,130 @@ Route~P may explain detector-visible shear only if the source-side test also
 passes.  A detector-only partial pass is not allowed: detector strain and
 orbital energy loss must use the same channel.
 
+\medskip\noindent\textit{Minimal Route P no-direct-readout result.}
+The minimal relational ansatz is
+\[
+\boxed{
+S_{ij}(k)=\chi_{ij}(k)\,\vartheta(k),\qquad
+r_A(k)=D_A^{ij}(x_A)\chi_{ij}(k)\vartheta(k)
+     =F_A^P(k,x_A)\vartheta(k).
+}
+\]
+Here \(\chi_{ij}(k)\) is the universal record-shear susceptibility and
+\(D_A^{ij}(x_A)\) is the apparatus tensor.  If \(\chi_{ij}\) is
+apparatus-private, Route~P fails universality.  If it is universal, the
+rank-one obstruction remains because \(\vartheta(k)\) is the only carrier
+amplitude.
+
+The detector-network correlation matrix makes the obstruction explicit:
+\[
+\boxed{
+C^{P}_{AB}
+  =\langle r_A r_B^*\rangle
+  =F_A^P F_B^{P*}\,\langle |\vartheta|^2\rangle .
+}
+\]
+This is an outer product of one response vector with itself, so
+\[
+\boxed{\operatorname{rank} C^P\le 1.}
+\]
+By contrast, a two-polarization tensor signal has
+\[
+\boxed{
+C^{TT}_{AB}
+=F_A^+F_B^{+*}\langle |h_+|^2\rangle
+ +F_A^\times F_B^{\times *}\langle |h_\times|^2\rangle
+ +\text{cross terms},
+}
+\]
+which can have rank two when \(h_+\) and \(h_\times\) are independent.
+Changing detector geometry changes \(F_A^P\); it does not create a second
+carrier amplitude.  This is not a failure of the RMG core.  It is what the
+core expects: a common medium change cannot be read out directly by a local
+apparatus whose time, length and mass standards are made from the same medium.
+A projector can produce a real measurement only if there is an active local
+response--a splash--or if the projector itself carries independent two-state
+radiative data.
+
+The source-side scaling warns against treating the carrier as an ordinary
+directly sourced scalar charge.  A
+massless scalar with non-universal scalar charge generically has dipole power
+relative to the GR tensor quadrupole of order
+\[
+\boxed{
+\frac{P_{\rm scalar,dipole}}{P_{\rm GR,tensor}}
+\sim K\,(\Delta\alpha)^2\left(\frac{c}{v}\right)^2,
+}
+\]
+where \(K=O(1)\) and \(\Delta\alpha\) is the difference in scalar charge per
+unit mass.  For binary-pulsar scales, \(v/c\sim10^{-3}\), hence
+\[
+\boxed{
+\left(\frac{c}{v}\right)^2\sim10^6.
+}
+\]
+The MVP binary-pulsar gate requires roughly
+\[
+\boxed{\frac{P_{\rm extra}}{P_{\rm GR,tensor}}<10^{-3}.}
+\]
+Thus a natural non-universal scalar charge, \(\Delta\alpha=O(1)\), misses the
+target by about
+\[
+\boxed{10^6/10^{-3}=10^9.}
+\]
+Equivalently, the dipole channel would require
+\[
+\boxed{(\Delta\alpha)^2<10^{-9}}
+\]
+or exact cancellation at dipole order.  Such a cancellation would have to be
+proved in Root~C.  More importantly, the splash route does not identify the
+observed record with direct scalar charge radiation.
+
+Therefore the minimal Route~P result is:
+\[
+\boxed{
+\begin{array}{lll}
+\text{detector intuition} &:& \text{useful},\\
+\text{direct carrier readout} &:& \text{not locally visible},\\
+\text{core implication} &:& \text{no-direct-measurement principle strengthened},\\
+\text{ordinary scalar-charge warning} &:& \text{generic }10^9\text{ mismatch},\\
+\text{downstream import} &:& \text{forbidden as direct TT input},\\
+\text{next route} &:& \text{Route S, splash/scattering response}.
+\end{array}}
+\]
+
+\medskip\noindent\textit{Route S: splash/scattering response.}
+Route~S is the corrected continuation of Route~P.  It does not claim that the
+common wave is directly measured.  Instead:
+\[
+\boxed{
+\text{incoming common medium wave}
++\text{local matter/gravity field}
+\longrightarrow
+\text{measurable splash disturbance}.
+}
+\]
+The measured disturbance should inherit the driving frequency of the incoming
+wave, just as a vibration can inherit the frequency of a rotating engine even
+when the rotation itself is not measured directly.  The difference between
+Michelson--Morley and LIGO is then structural: Michelson--Morley searched for
+a direct local readout of the common medium state, while LIGO-like detection
+is modeled as an indirect response to a wave interacting with local
+matter/gravity.
+
+Route~S must prove:
+\[
+\boxed{
+\begin{array}{lll}
+\text{no direct pressure readout} &:& \text{common state remains locally hidden},\\
+\text{local splash} &:& \text{matter/gravity field produces measurable disturbance},\\
+\text{same frequency} &:& \text{splash inherits the wave frequency},\\
+\text{two shear channels} &:& \text{response has the observed differential patterns},\\
+\text{source/detector unity} &:& \text{radiation and detection use one mechanism}.
+\end{array}}
+\]
+This route must be calculated before RMG commits to a carrier-revision route.
+
 \medskip\noindent\textit{Route C: revised gapless \(Q\).}
 Route~C changes the \(Q\) sector from
 \[
@@ -7250,22 +7382,19 @@ Otherwise it fails by Ostrogradsky or extra-mode leakage.
 \medskip\noindent\textit{Decision tree.}
 The execution order is:
 \begin{enumerate}
-\item Test Route~P:
-  can common record oscillation plus local \(Q\)/shear susceptibility produce
-  two detector-visible and source-compatible TT responses?
-\item If Route~P passes both detector and source tests, rerun B6 as a
-  relational shear-projection certificate and then test GW emission and binary
-  damping with the same projection.
-\item If Route~P passes the detector test but fails the source test, Route~P
-  fails in full.
-\item If Route~P fails, test Route~C by rerunning the input freeze and Root~A
+\item Route~P minimal form has been tested as a pre-check and gives the
+  expected no-direct-readout result.
+\item Test Route~S: can the incoming common wave, by interacting with local
+  matter/gravity, produce a measurable splash with the observed differential
+  channels and the same frequency?
+\item If Route~S fails, test Route~C by rerunning the input freeze and Root~A
   spectrum with a protected gapless \(Q^{TT}_{ij}\) sector.
 \item If Route~C fails, test Route~A.  If Route~A fails, run Route~B as a
   no-go/composite audit.  Route~D is last.
 \end{enumerate}
 The preferred next artifact is
 \[
-\boxed{\texttt{Root\_B\_TT\_Origin\_Relational\_Shear\_Projection.md}.}
+\boxed{\texttt{Root\_B\_TT\_Origin\_Scattering\_Splash\_Response.md}.}
 \]
 
 \medskip\noindent\textit{Observation-table impact.}
@@ -7292,9 +7421,10 @@ The current status is:
 \text{conservative branch TT origin} & \text{fail} & \text{no gapless tensor},\\
 \text{gapped }Q\text{ as graviton} & \text{fail} & \omega_Q^2=k^2+4,\\
 \vartheta\text{-only tensor} & \text{fail-risk} & \text{one scalar},\\
-\text{Route P} & \text{open} & \text{next executable target},\\
+\text{Route P} & \text{core-consistency pass} & \text{no direct local readout},\\
+\text{Route S} & \text{open} & \text{splash/scattering response},\\
 \text{minimal B6 TT action} & \text{conditional pass} & \text{candidate rank/sign/cone},\\
-\text{Route C} & \text{open} & \text{first revision if Route P fails},\\
+\text{Route C} & \text{open} & \text{carrier-revision fallback},\\
 \text{Route A} & \text{open} & \text{larger medium revision},\\
 \text{Route B} & \text{open/likely no-go} & \text{scalar composite audit},\\
 \text{Route D} & \text{open/last resort} & \text{higher-derivative ghost risk},\\
@@ -7343,12 +7473,16 @@ susceptibility.  If this route passes, RMG is not merely a medium derivation
 of GR; it is a distinct gravity theory whose detector tensor patterns are
 projection effects rather than intrinsic medium polarizations.
 
-The critical falsification anchor is source-side.  PSR~B1913+16-style orbital
-decay and related binary-pulsar tests require the dominant energy-loss channel
-to match the GR tensor quadrupole at about the \(10^{-3}\) MVP level.  If
-Route~P produces scalar/vector flux at \(O(1)\), or even at the
-\(O(10^{-2})\) level, Route~P fails.  Detector shear response alone cannot
-save it.
+The passive direct-readout route does not pass, and that strengthens the
+theory rather than weakening it.  If common medium pressure were directly
+locally measurable, the core claim that pressure determines time, length,
+mass and detector response would be violated.  Its rank is at most one in the
+passive detector-network amplitude space.  Treating the common carrier as an
+ordinary non-universal scalar charge also gives a generic binary-pulsar
+mismatch of about \(10^9\).  Therefore the next RMG-consistent task is not to
+pretend the common wave is directly seen, but to calculate the local
+splash/scattering response it produces when it meets matter's gravitational
+field.
 
 \medskip\noindent\textit{Reviewer questions for the TT-origin map.}
 \begin{enumerate}
