@@ -6346,13 +6346,225 @@ At the current stage:
 \text{B5 fixed point passed} &:& \text{no}.
 \end{array}}
 \]
-If B5 is accepted, the next work artifact is
+The next paragraph executes this filter on the minimal conditional candidate.
+
+\medskip\noindent\textbf{Root B B5 execution on the minimal EH candidate.}
+B5 execution tests the filter machinery on
 \[
-\boxed{\texttt{Root\_B\_B5\_EH\_Fixed\_Point\_Filter\_Execution.md}.}
+\boxed{
+{\cal H}_{\rm local}^{\rm min}
+=\frac{1}{\sqrt h}\left(\pi^{ij}\pi_{ij}-\frac12\pi^2\right)
+-\sqrt h\,(R-2\Lambda)+\Delta_{\mathcal M}^{\rm local}.
+}
 \]
-Executing B5 before B6 is the recommended order; the tensor/hyperbolicity
-audit is less meaningful if the local two-derivative fixed point is still
-allowed to contain non-EH curvature or unsuppressed \(\Delta_{\mathcal M}\).
+For the first local MVP,
+\[
+\boxed{\Lambda=0,\qquad \Delta_{\mathcal M}^{\rm local}=0,}
+\]
+so
+\[
+\boxed{
+{\cal H}_{\rm local}^{\rm min}
+=\frac{1}{\sqrt h}\left(\pi^{ij}\pi_{ij}-\frac12\pi^2\right)-\sqrt h\,R.
+}
+\]
+Its short status is:
+\[
+\boxed{
+\begin{minipage}{0.86\linewidth}
+The minimal candidate passes the B5 filter, but the medium has not yet been
+shown to produce the minimal candidate.  This is a candidate-level consistency
+check, not a medium-level derivation.
+\end{minipage}}
+\]
+B5 execution on the minimal candidate is necessary but tautological: it
+confirms that the filter works on the EH candidate.  The discriminating test
+begins only when a medium-derived \({\cal H}_{\rm local}\) replaces
+\({\cal H}_{\rm local}^{\rm min}\).
+
+The operator decomposition is
+\[
+\boxed{
+\begin{array}{lll}
+\pi^{ij}\pi_{ij} &:& +1,\\
+\pi^2 &:& -1/2,\\
+-\sqrt h\,R &:& +1\ \text{relative to the EH target},\\
+2\Lambda\sqrt h &:& 0\ \text{in the local MVP},\\
+\Delta_{\mathcal M}^{\rm local} &:& 0.
+\end{array}}
+\]
+Thus no unclassified operator remains inside the minimal candidate.  If
+\(S_{\mathcal R}^{\rm bridge}\) later produces an additional local
+two-derivative operator, this table must be reopened and the term must be
+classified.
+
+The kinetic read-off is
+\[
+\boxed{
+{\cal H}_{\rm kin}=\pi^{ij}\pi_{ij}-\lambda\pi^2,\qquad
+\lambda=\frac12,
+}
+\]
+which is a conditional pass because it uses the B4q-required value.  It is not
+a new derivation of \(\lambda=1/2\).
+
+The curvature read-off is
+\[
+\boxed{
+{\cal H}_{\rm curv}=-\sqrt h\,R
+=-\sqrt h\,\alpha R,\qquad
+\alpha_{\rm raw}=1,\qquad
+\alpha_{\rm norm}=1,
+}
+\]
+with
+\[
+\boxed{|\alpha_{\rm norm}-1|=0<10^{-5}.}
+\]
+This is a conditional pass for the minimal candidate.  It does not prove that
+\(S_{\mathcal R}^{\rm bridge}\) produces \(\alpha_{\rm raw}=1\)
+automatically.
+
+The EH curvature check passes by candidate construction:
+\[
+\boxed{{\cal H}_{\rm curv}^{\rm min}=-\sqrt h\,R,}
+\]
+whose weak-field expansion is the EH quadratic operator listed in the B5
+filter above.  The sign convention matches
+\[
+R^{(1)}=\partial^i\partial^j\gamma_{ij}-\partial^2\gamma;
+\]
+after integration by parts, the standard linearized EH curvature term gives
+that quadratic density.  The medium still has to derive this operator rather
+than another two-derivative curvature operator.
+
+In the minimal candidate all non-EH local curvature operators are absent:
+\[
+\boxed{
+\begin{array}{lll}
+f(R)\ \text{beyond EH} &:& 0,\\
+R^2,\ R_{ij}R^{ij},\ C^2 &:& 0,\\
+u^iu^jR_{ij} &:& 0,\\
+R\,F(\Box)R &:& 0,\\
+R[g_2]\ \text{or mixed second-metric curvature} &:& 0,\\
+m_g^2(\gamma_{ij}\gamma^{ij}-\gamma^2) &:& 0.
+\end{array}}
+\]
+If the medium derivation later produces any of these operators, B5 must be
+rerun with nonzero coefficients.
+
+For the minimal candidate,
+\[
+\boxed{\Delta_{\mathcal M}^{\rm local}=0.}
+\]
+Hence the amplitude, strain, phase-gradient, preferred-frame,
+higher-curvature, nonlocal, second-metric, and mass-term sources are absent in
+the candidate.  This does not mean derived absent from the medium.  Promotion
+requires \(S_{\mathcal R}^{\rm bridge}\) to show that the coefficients are
+zero, boundary/gauge, constraint-proportional, gapped/internal with a scale, or
+high-energy suppressed with a scale.
+
+The preferred-frame worked example is
+\[
+\boxed{c_u\,u^iu^jR_{ij}.}
+\]
+In the minimal candidate \(c_u=0\), so the term is absent.  If
+\(c_u\ne0\), it must be bounded:
+\[
+\boxed{
+\begin{array}{lll}
+\text{GW cone safety} &:& |c_u|/|c_{EH}|<10^{-15},\\
+\text{preferred-frame PPN} &:& |c_u|/|c_{EH}|<10^{-7},\\
+\text{strongest local pass} &:& c_u=0\ \text{by derivation}.
+\end{array}}
+\]
+A nonzero and unbounded \(c_u\) is a B5 failure.  Calling it small without a
+bound is also a failure.
+
+B5 also imposes the one-\(G\) normalization
+\[
+\boxed{
+G_{\rm static}=G_{\rm dynamic\,near}=G_{\rm radiation}=G_{\rm matter}
+=G_{\rm record}.
+}
+\]
+This is a conditional pass in the minimal candidate, but it is a major
+fail-risk.  The equality must be revisited in the matter-coupling, tensor
+normalization, and GW-emission calculations; binary-pulsar timing already
+constrains \(G_{\rm radiation}/G_{\rm dynamic\,near}\) at roughly the
+\(10^{-3}\) MVP level.
+
+The B5 observation snapshot for the minimal candidate is:
+\[
+\boxed{
+\begin{array}{llll}
+\text{Newtonian} &:& \Delta G/G<10^{-5} & \text{conditional},\\
+\text{Shapiro/light bending} &:& \gamma_{\rm PPN}-1<2.3\times10^{-5}
+& \text{needs matter/light coupling},\\
+\text{perihelion/LLR} &:& \beta_{\rm PPN}-1<8\times10^{-5}
+& \text{needs nonlinear expansion},\\
+\text{frame dragging} &:& \alpha_1<10^{-4},\ \alpha_2<10^{-7}
+& \text{conditional},\\
+\text{GW speed} &:& |c_{\rm GW}-c|/c<10^{-15}
+& \text{B6 still required},\\
+\text{binary pulsars} &:& \dot P_b\ \text{within }10^{-3}\ \text{at MVP}
+& \text{matter/emission still required}.
+\end{array}}
+\]
+B5 blocks local fixed-point failures; it does not by itself match these
+observations.
+
+The B5 decision table is:
+\[
+\boxed{
+\begin{array}{llll}
+\text{row} & \text{result} & \text{conditional type} & \text{reason}\\
+\lambda & \text{pass} & \text{derived conditional} & \text{B4q value; }D^{(2)}\text{ open}\\
+\alpha & \text{pass} & \text{candidate-imposed} & \alpha_{\rm raw}=\alpha_{\rm norm}=1\\
+{\cal H}_{\rm curv} & \text{pass} & \text{candidate-imposed} & -\sqrt h\,R\\
+\text{non-EH curvature} & \text{pass} & \text{candidate stability} & \text{all coefficients zero}\\
+\Delta_{\mathcal M} & \text{pass} & \text{candidate-imposed} & \Delta_{\mathcal M}^{\rm local}=0\\
+G_{\rm record} & \text{pass} & \text{imposed normalization} & \text{Root C/GW must preserve it}\\
+\text{B5 filter} & \text{pass} & \text{candidate-level only} & \text{medium derivation open}.
+\end{array}}
+\]
+This conditional pass does not equal a Root~B proof.
+
+B6 permission is granted only as a conditional template:
+\[
+\boxed{
+\begin{array}{lll}
+\alpha=1 &:& \text{conditional pass},\\
+{\cal H}_{\rm curv}=EH &:& \text{conditional pass},\\
+\Delta_{\mathcal M} &:& \text{no anomaly row in the candidate},\\
+G_{\rm record} &:& \text{one imposed normalization}.
+\end{array}}
+\]
+B6 may not treat this as a medium-derived hyperbolicity proof.  The active
+conditional stack entering B6 is:
+\[
+\boxed{
+\begin{array}{llll}
+\text{conditional} & \text{source} & \text{type} & \text{test}\\
+\text{K1 kinetic completion} & \text{Root A temporal} & \text{conditional} & \text{derive from medium},\\
+S_{\mathcal R}^{\rm bridge} & \text{Root B bridge} & \text{candidate} & \text{construct from medium},\\
+H^{(2)}\ \text{ADM form} & \text{B4q} & \text{candidate-imposed} & \text{medium reproduces it},\\
+\lambda=1/2 & \text{B4q} & \text{derived conditional} & D^{(2)}\text{ and HDA continuation},\\
+\alpha=1 & \text{B5 execution} & \text{candidate-imposed} & \text{derive normalization},\\
+{\cal H}_{\rm curv}=-\sqrt h\,R & \text{B5 execution} & \text{candidate-imposed} & \text{derive EH operator},\\
+\Delta_{\mathcal M}=0 & \text{B5 execution} & \text{candidate-imposed} & \text{integrate out remainders},\\
+G_{\rm record}\ \text{single} & \text{B5 execution} & \text{imposed} & \text{matter + emission},\\
+\text{two TT modes} & \text{B6 entry} & \text{fail-risk} & \text{rank/sign/cone}.
+\end{array}}
+\]
+This is the anti-amnesia ledger for B6.  No row may be upgraded to established
+unless B6 or a later derivation performs the listed test.  The next artifact is
+\[
+\boxed{\texttt{Root\_B\_B6\_Hyperbolicity\_Certificate.md}.}
+\]
+Its task is to test whether the conditional local fixed-point baseline
+supports exactly two positive TT modes on the K1 record cone, with no
+scalar/vector/massive spin-2 or second-metric leakage.
 
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
