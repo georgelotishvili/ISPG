@@ -6566,6 +6566,266 @@ Its task is to test whether the conditional local fixed-point baseline
 supports exactly two positive TT modes on the K1 record cone, with no
 scalar/vector/massive spin-2 or second-metric leakage.
 
+\medskip\noindent\textbf{Root B B6 hyperbolicity certificate.}
+B6 tests whether the conditional B5 local EH-candidate baseline supports the
+right tensor sector.  Its status is:
+\[
+\boxed{
+\begin{minipage}{0.86\linewidth}
+The minimal TT candidate passes the B6 hyperbolicity certificate, but the
+medium has not yet been shown to produce this TT candidate.  B6 is a
+candidate-level certificate, not a medium-derived proof of gravitational
+tensor modes.
+\end{minipage}}
+\]
+B6 imports the B5 stack only as open debt.  It may not upgrade any previous
+conditional row to established, may not relabel the conservative gapped
+\(q_{ij}\) sector as TT gravity, and may not call the TT candidate
+medium-derived.
+
+The minimal TT action is
+\[
+\boxed{
+S_{TT}^{(2)}
+=\frac12\int dt\,d^3x\,
+\left[
+\dot\gamma^{TT}_{ij}\dot\gamma^{TT}_{ij}
+-(\partial_k\gamma^{TT}_{ij})(\partial_k\gamma^{TT}_{ij})
+\right],
+}
+\]
+with
+\[
+\boxed{
+\partial^i\gamma^{TT}_{ij}=0,\qquad
+\delta^{ij}\gamma^{TT}_{ij}=0,\qquad
+\gamma^{TT}_{ij}=\gamma^{TT}_{ji}.
+}
+\]
+This is the standard minimal local tensor candidate consistent with the B5
+EH baseline.  It is not derived from \(S_{\mathcal R}^{\rm bridge}\) here.
+
+For \(k_i\ne0\),
+\[
+\boxed{
+P_{ij}(k)=\delta_{ij}-\frac{k_ik_j}{k^2},
+\qquad
+\Lambda^{TT}_{ij,kl}
+=\frac12(P_{ik}P_{jl}+P_{il}P_{jk})-\frac12P_{ij}P_{kl}.
+}
+\]
+It satisfies
+\[
+\boxed{
+k^i\Lambda^{TT}_{ij,kl}=0,\qquad
+\delta^{ij}\Lambda^{TT}_{ij,kl}=0,\qquad
+\Lambda^{TT}\Lambda^{TT}=\Lambda^{TT}.
+}
+\]
+The rank count is
+\[
+\boxed{
+\text{symmetric }\gamma_{ij}:6\quad\to\quad
+\text{TT components at }k\ne0:2,
+\qquad \mathrm{rank}\,K_{TT}=2.
+}
+\]
+The projector exists for the conditional record-geometry variable
+\(\gamma^{TT}_{ij}\).  It has not been derived as a projection of the
+conservative medium variables; in the conservative route \(q_{ij}\) is gapped
+and may not be declared to be the two TT gravitons.
+
+Varying the action gives
+\[
+\boxed{(\partial_t^2-\partial^2)\gamma^{TT}_{ij}=0.}
+\]
+For \(\gamma^{TT}_{ij}=\epsilon_{ij}e^{-i\omega t+i k\cdot x}\),
+\[
+\boxed{\omega^2=k^2,\qquad P_{TT}(\omega,k)=-\omega^2+k^2.}
+\]
+Thus
+\[
+\boxed{P_{TT}=P_{\rm record},\qquad c_{TT}=c_{\rm record}=1}
+\]
+in canonical MVP units.  The cone-origin caution is important: in the current
+Root~A spectrum the only medium mode with \(\omega^2=k^2\) is the gapless
+phase scalar \(\vartheta\).  The candidate \(\gamma^{TT}_{ij}\) is required to
+share that cone, but it is not identical to \(\vartheta\).  A later derivation
+must decide whether these are distinct fields or coupled/composite at higher
+order.
+
+The canonical momentum and Hamiltonian density are
+\[
+\boxed{
+\Pi^{ij}_{TT}=\dot\gamma^{TT}_{ij},\qquad
+{\cal H}^{(2)}_{TT}
+=\frac12\Pi^{ij}_{TT}\Pi^{ij}_{TT}
++\frac12(\partial_k\gamma^{TT}_{ij})(\partial_k\gamma^{TT}_{ij}).
+}
+\]
+Both terms are positive squares.  The sign convention is compatible with the
+B5 EH quadratic curvature target: the apparent coefficient shift between the
+B5 curvature density and the B6 TT Hamiltonian comes from the Legendre
+transform and restriction to the TT sector.  Variation gives
+\(\omega^2=k^2\), fixing the sign.
+
+The B6 leakage audit for the candidate is:
+\[
+\boxed{
+\begin{array}{lll}
+\text{scalar trace }\gamma &:& \text{projected out},\\
+\text{longitudinal scalar }\sigma &:& \text{projected out},\\
+\text{vector }V_i^T &:& \text{projected out},\\
+\text{lapse }n &:& \text{no kinetic sector; inherited conditional pass},\\
+\text{shift }n^i &:& \text{no kinetic sector; inherited conditional pass},\\
+\text{massive spin-2 branch} &:& \text{absent},\\
+\text{second metric tensor} &:& \text{absent},\\
+\text{preferred-frame tensor} &:& \text{absent},\\
+\text{phase scalar }\vartheta &:& \text{not in TT action; matter-coupling risk}.
+\end{array}}
+\]
+Projected out in the candidate does not mean absent in the medium-derived
+action.  If the medium produces scalar/vector/tensor leakage before the TT
+projection, B6 must be rerun.  The \(\vartheta\) row is especially sensitive
+because \(\vartheta\) is gapless; scalar matter coupling must remain below
+laboratory fifth-force, Solar-System PPN, and binary-pulsar dipole thresholds.
+
+Forbidden local tensor terms include
+\[
+\boxed{
+\begin{array}{lll}
+m_2^2\gamma^{TT}_{ij}\gamma^{TT}_{ij} &:& \text{massive spin-2},\\
+\gamma^{(2)}_{ij} &:& \text{second TT tensor},\\
+\text{bimetric kinetic mixing} &:& \text{second metric leak},\\
+\text{private tensor cone} &:& \text{species/private propagation},\\
+K^{ij}\ \text{in the principal symbol} &:& \text{preferred tensor}.
+\end{array}
+}
+\]
+All have coefficient zero in the minimal candidate.  A nonzero coefficient
+from the medium is a B6 failure unless it is outside the tested local sector
+with an explicit mechanism and bound.
+
+\medskip\noindent\textbf{TT-origin ledger.}
+The possible TT-origin routes are:
+\[
+\boxed{
+\begin{array}{lll}
+\gamma^{TT}_{ij}\ \text{as conditional record geometry}
+&:& \text{current candidate; allows template pass},\\
+q^{TT}_{ij}\ \text{from conservative }Q
+&:& \text{blocked because }Q\text{ is gapped},\\
+\text{gapless }Q\text{ route}
+&:& \text{deferred; input freeze and Root A rerun},\\
+\text{phase/strain composite}
+&:& \text{speculative; transversality not automatic},\\
+\text{second metric}
+&:& \text{forbidden in the local MVP}.
+\end{array}}
+\]
+The gapless \(Q\) route would require
+\[
+\boxed{
+\begin{array}{l}
+\omega_Q^2=k^2+4\ \to\ \omega_Q^2=k^2,\\
+\text{remove or neutralize the }Q\text{-sector mass},\\
+\text{rerun the input freeze and Root A spectrum}.
+\end{array}
+}
+\]
+It must also verify that \(\eta\) and \(\vartheta\) remain stable and that no
+extra non-TT \(Q\) components become observable long-range modes.  A tentative
+phase-composite route such as
+\[
+\boxed{
+\gamma^{TT}_{ij}\sim
+\left(\partial_i\partial_j-\frac13\delta_{ij}\partial^2\right)\vartheta
+}
+\]
+is traceless but not automatically transverse and may be constrained/gauge
+rather than a propagating spin-2 field.
+
+The actionable TT-origin resolution map is:
+\[
+\boxed{
+\begin{array}{llll}
+\text{route} & \text{mechanism} & \text{revision} & \text{status}\\
+A & \gamma^{TT}_{ij}\in\Phi_{\mathcal M} & \text{medium input revision} & \text{not attempted}\\
+B & \text{composite from }\vartheta & \text{Root A re-derivation} & \text{speculative}\\
+C & \text{gapless }Q & \text{input freeze + Root A rerun} & \text{not attempted}\\
+D & \text{higher-derivative emergent tensor} & \text{higher-order kinetic audit} & \text{not attempted}.
+\end{array}}
+\]
+Route A gives a direct spin-2 carrier but changes the field inventory.  Route
+B uses the existing gapless cone but risks scalar/fifth-force leakage.  Route
+C uses the tensor \(Q\) structure but may create extra long-range tensor
+components.  Route D may preserve the conservative spectrum but risks
+higher-derivative ghosts.  Until one route is executed, TT origin remains the
+leading Root~B fail-risk.
+
+The B6 observation snapshot is:
+\[
+\boxed{
+\begin{array}{llll}
+\text{GW speed} &:& |c_{\rm GW}-c|/c<10^{-15} & \text{conditional pass},\\
+\text{GW polarizations} &:& \text{non-tensor fraction below bounds} & \text{conditional},\\
+\text{no breathing/longitudinal} &:& \text{scalar mode below detector bounds} & \text{open with matter},\\
+\text{binary-pulsar damping} &:& \dot P_b\ \text{within }10^{-3}\ \text{at MVP} & \text{emission still required},\\
+\text{preferred-frame} &:& \alpha_1<10^{-4},\ \alpha_2<10^{-7} & \text{conditional}.
+\end{array}}
+\]
+B6 supplies the propagation and mode-count side of the tensor channel.  It
+does not prove GW emission.
+
+The B6 pass/fail ledger is:
+\[
+\boxed{
+\begin{array}{llll}
+\text{TT rank} & \text{pass} & \text{candidate-imposed} & \text{low priority},\\
+\text{kinetic sign} & \text{pass} & \text{candidate-imposed} & \text{low},\\
+\text{gradient sign} & \text{pass} & \text{candidate-imposed} & \text{low},\\
+\text{principal cone} & \text{pass} & \text{K1-conditional} & \text{medium},\\
+\text{scalar/vector leakage} & \text{pass in candidate} & \text{projection-dependent} & \text{high},\\
+\text{massive spin-2} & \text{pass in candidate} & \text{coefficient zero} & \text{medium},\\
+\text{second metric} & \text{pass in candidate} & \text{absent} & \text{medium},\\
+G_{\rm record} & \text{inherited conditional} & \text{imposed normalization} & \text{high},\\
+\text{TT origin} & \text{open/fail-risk} & \text{not derived} & \text{high},\\
+\text{B6 certificate} & \text{conditional pass} & \text{medium derivation open} & \text{high}.
+\end{array}}
+\]
+B6 proves only that the minimal TT candidate has rank two, positive kinetic
+and gradient signs, the K1 principal cone, no candidate-level leakage, and a
+baseline for the GW-emission memo.  It does not prove that the medium produces
+\(\gamma^{TT}_{ij}\), that the gapped \(q_{ij}\) is a graviton, that tensor
+radiation is emitted with the correct strength, or that binary-pulsar damping
+is correct.
+
+\medskip\noindent\textbf{Root B three pillars after B6.}
+Root~B closure requires more than the B6 local tensor certificate:
+\[
+\boxed{
+\begin{array}{lll}
+\text{local-core hyperbolicity, B1--B6}
+&:& \text{conditional candidate pass; no medium derivation},\\
+\text{matter-coupling interface}
+&:& \text{open; one }G_{\rm record}\text{ and no fifth force},\\
+\text{GW emission/radiation reaction}
+&:& \text{open; quadrupole flux and binary-pulsar damping}.
+\end{array}}
+\]
+B6 closes only the first pillar at candidate level.  Root~B is not near final
+until all three pillars pass with the same record metric and normalization.
+
+If B6 is accepted, the next natural artifact is
+\[
+\boxed{\texttt{Root\_B\_Conditional\_Local\_Core\_Summary.md}.}
+\]
+The summary must explicitly state that Root~B has not passed: it has only a
+candidate-level local-core hyperbolicity chain through B6; the medium has not
+produced the TT origin; and matter coupling plus GW emission remain open.  It
+must avoid language such as ``near final'', ``mostly complete'', or ``Root B
+essentially passed.''
+
 \medskip\noindent\textbf{Root C execution tasks.}
 Root~C begins with an inheritance table saying exactly which Root~A/B outputs
 are used and with what status.  It must verify universal matter action
